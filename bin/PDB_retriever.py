@@ -28,7 +28,7 @@ def retrieve_pdb_info(pdb_list, pdb_dir, fasta_dir):
             header = [template,req[0]["in_chains"][0]]
             headerstr = "_".join(header)
             sequence = req[0]['sequence']
-            f.write(headerstr+"\n")
+            f.write(">"+headerstr+"\n")
             f.write(sequence)
     return
 
