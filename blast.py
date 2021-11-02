@@ -1,6 +1,11 @@
 from Bio.Blast.Applications import NcbiblastpCommandline
 from Bio import SeqIO
+import os
 
+# Set custom db path
+# export BLASTDB="/home/gallegolab/Desktop/TFM/databases/BLAST/pdbaa"
+
+os.environ["BLASTDB"]="/home/gallegolab/Desktop/TFM/databases/BLAST/pdbaa"
 
 db="pdbaa"
 fasta_dir="./templates/FASTA/"
