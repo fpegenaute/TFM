@@ -1,6 +1,7 @@
 from Bio.Blast.Applications import NcbiblastpCommandline
 from Bio import SeqIO
 import os
+import subprocess
 
 # Set custom db path
 # export BLASTDB="/home/gallegolab/Desktop/TFM/databases/BLAST/pdbaa"
@@ -18,7 +19,7 @@ with open(fasta_dir+query+extension, "r") as handle:
         print(record.id)
         print(record.seq)
 
-
+subprocess.run(["ls", "-l", "/dev/null"], capture_output=True)
 
 
 
