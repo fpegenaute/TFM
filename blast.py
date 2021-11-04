@@ -19,13 +19,10 @@ with open(fasta_dir+query+extension, "r") as handle:
         print(record.id)
         print(record.seq)
 
-subprocess.run(["ls", "-l", "/dev/null"], capture_output=True)
-
-
-
-
 blastp_cline = NcbiblastpCommandline(query=fasta_dir+query+extension, db=db, matrix="BLOSUM80",outfmt=6, out=query+"_blast.out")
 
 stdout, stderr = blastp_cline()
 
-# Next, use awk or grep to catch hits with evalue 0 and equal length as the query
+# Catch hits with evalue 0 and equal length as the query
+# Headers for the format 5 in BLAST:
+# qseqid sseqid pident length mismatch gapopen qstart qend sstart send evalue bitscore
