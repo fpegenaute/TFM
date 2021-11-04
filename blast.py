@@ -10,7 +10,7 @@ os.environ["BLASTDB"]="/home/gallegolab/Desktop/TFM/databases/BLAST/pdbaa"
 db="pdbaa"
 fasta_dir="./templates/FASTA/"
 fasta_dir="./input_fasta/"
-query="test"
+query="CREB"
 extension=".fa"
 
 with open(fasta_dir+query+extension, "r") as handle:
