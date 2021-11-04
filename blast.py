@@ -1,7 +1,6 @@
 from Bio.Blast.Applications import NcbiblastpCommandline
 from Bio import SeqIO
 import os
-import subprocess
 
 # Set custom db path
 # export BLASTDB="/home/gallegolab/Desktop/TFM/databases/BLAST/pdbaa"
@@ -26,3 +25,4 @@ stdout, stderr = blastp_cline()
 # Catch hits with evalue 0 and equal length as the query
 # Headers for the format 5 in BLAST:
 # qseqid sseqid pident length mismatch gapopen qstart qend sstart send evalue bitscore
+
