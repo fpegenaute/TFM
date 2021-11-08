@@ -1,0 +1,2758 @@
+<?xml version="1.0"?>
+<!DOCTYPE BlastOutput PUBLIC "-//NCBI//NCBI BlastOutput/EN" "http://www.ncbi.nlm.nih.gov/dtd/NCBI_BlastOutput.dtd">
+<BlastOutput>
+  <BlastOutput_program>blastp</BlastOutput_program>
+  <BlastOutput_version>BLASTP 2.9.0+</BlastOutput_version>
+  <BlastOutput_reference>Stephen F. Altschul, Thomas L. Madden, Alejandro A. Sch&amp;auml;ffer, Jinghui Zhang, Zheng Zhang, Webb Miller, and David J. Lipman (1997), &quot;Gapped BLAST and PSI-BLAST: a new generation of protein database search programs&quot;, Nucleic Acids Res. 25:3389-3402.</BlastOutput_reference>
+  <BlastOutput_db>pdbaa</BlastOutput_db>
+  <BlastOutput_query-ID>Query_1</BlastOutput_query-ID>
+  <BlastOutput_query-def>test</BlastOutput_query-def>
+  <BlastOutput_query-len>306</BlastOutput_query-len>
+  <BlastOutput_param>
+    <Parameters>
+      <Parameters_matrix>BLOSUM80</Parameters_matrix>
+      <Parameters_expect>10</Parameters_expect>
+      <Parameters_gap-open>10</Parameters_gap-open>
+      <Parameters_gap-extend>1</Parameters_gap-extend>
+      <Parameters_filter>F</Parameters_filter>
+    </Parameters>
+  </BlastOutput_param>
+<BlastOutput_iterations>
+<Iteration>
+  <Iteration_iter-num>1</Iteration_iter-num>
+  <Iteration_query-ID>Query_1</Iteration_query-ID>
+  <Iteration_query-def>test</Iteration_query-def>
+  <Iteration_query-len>306</Iteration_query-len>
+<Iteration_hits>
+<Hit>
+  <Hit_num>1</Hit_num>
+  <Hit_id>pdb|1PA2|A</Hit_id>
+  <Hit_def>Arabidopsis Thaliana Peroxidase A2 [Arabidopsis thaliana] &gt;pdb|1QO4|A Arabidopsis Thaliana Peroxidase A2 At Room Temperature [Arabidopsis thaliana]</Hit_def>
+  <Hit_accession>1PA2_A</Hit_accession>
+  <Hit_len>306</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>639.649</Hsp_bit-score>
+      <Hsp_score>1474</Hsp_score>
+      <Hsp_evalue>0</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>306</Hsp_query-to>
+      <Hsp_hit-from>1</Hsp_hit-from>
+      <Hsp_hit-to>306</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>306</Hsp_identity>
+      <Hsp_positive>306</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>306</Hsp_align-len>
+      <Hsp_qseq>MQLNATFYSGTCPNASAIVRSTIQQALQSDTRIGASLIRLHFHDCFVNGCDASILLDDTGSIQSEKNAGPNVNSARGFNVVDNIKTALENACPGVVSCSDVLALASEASVSLAGGPSWTVLLGRRDSLTANLAGANSSIPSPIESLSNITFKFSAVGLNTNDLVALSGAHTFGRARCGVFNNRLFNFSGTGNPDPTLNSTLLSTLQQLCPQNGSASTITNLDLSTPDAFDNNYFANLQSNDGLLQSDQELFSTTGSSTIAIVTSFASNQTLFFQAFAQSMINMGNISPLTGSNGEIRLDCKKVNGS</Hsp_qseq>
+      <Hsp_hseq>MQLNATFYSGTCPNASAIVRSTIQQALQSDTRIGASLIRLHFHDCFVNGCDASILLDDTGSIQSEKNAGPNVNSARGFNVVDNIKTALENACPGVVSCSDVLALASEASVSLAGGPSWTVLLGRRDSLTANLAGANSSIPSPIESLSNITFKFSAVGLNTNDLVALSGAHTFGRARCGVFNNRLFNFSGTGNPDPTLNSTLLSTLQQLCPQNGSASTITNLDLSTPDAFDNNYFANLQSNDGLLQSDQELFSTTGSSTIAIVTSFASNQTLFFQAFAQSMINMGNISPLTGSNGEIRLDCKKVNGS</Hsp_hseq>
+      <Hsp_midline>MQLNATFYSGTCPNASAIVRSTIQQALQSDTRIGASLIRLHFHDCFVNGCDASILLDDTGSIQSEKNAGPNVNSARGFNVVDNIKTALENACPGVVSCSDVLALASEASVSLAGGPSWTVLLGRRDSLTANLAGANSSIPSPIESLSNITFKFSAVGLNTNDLVALSGAHTFGRARCGVFNNRLFNFSGTGNPDPTLNSTLLSTLQQLCPQNGSASTITNLDLSTPDAFDNNYFANLQSNDGLLQSDQELFSTTGSSTIAIVTSFASNQTLFFQAFAQSMINMGNISPLTGSNGEIRLDCKKVNGS</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>2</Hit_num>
+  <Hit_id>pdb|4A5G|A</Hit_id>
+  <Hit_def>Raphanus sativus anionic peroxidase. [Raphanus sativus] &gt;pdb|4A5G|B Raphanus sativus anionic peroxidase. [Raphanus sativus]</Hit_def>
+  <Hit_accession>4A5G_A</Hit_accession>
+  <Hit_len>308</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>543.023</Hsp_bit-score>
+      <Hsp_score>1250</Hsp_score>
+      <Hsp_evalue>0</Hsp_evalue>
+      <Hsp_query-from>3</Hsp_query-from>
+      <Hsp_query-to>306</Hsp_query-to>
+      <Hsp_hit-from>4</Hsp_hit-from>
+      <Hsp_hit-to>307</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>267</Hsp_identity>
+      <Hsp_positive>283</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>304</Hsp_align-len>
+      <Hsp_qseq>LNATFYSGTCPNASAIVRSTIQQALQSDTRIGASLIRLHFHDCFVNGCDASILLDDTGSIQSEKNAGPNVNSARGFNVVDNIKTALENACPGVVSCSDVLALASEASVSLAGGPSWTVLLGRRDSLTANLAGANSSIPSPIESLSNITFKFSAVGLNTNDLVALSGAHTFGRARCGVFNNRLFNFSGTGNPDPTLNSTLLSTLQQLCPQNGSASTITNLDLSTPDAFDNNYFANLQSNDGLLQSDQELFSTTGSSTIAIVTSFASNQTLFFQAFAQSMINMGNISPLTGSNGEIRLDCKKVNGS</Hsp_qseq>
+      <Hsp_hseq>LNATFYAGTCPNASAMVRTIVQQAFQSDSRIGASLIRLHFHDCFVLGCDASILLDNSGSIISEKNAGPNANSARGFNVVDNIKTALENACPGVVSCTDVLALASQASVSLSGGPSWTVDLGRRDTLTANQAGANSSIPSPTQGLSNITSKFSAVGLNTNDLVALSGAHTFGRATCGVFSNRLFNFSGKGNPDPTLNTTLLSTLQELCPQKGRGSGSTNLDLSTPDAFDNNYFTNLQSNNGLLQSDQELFSTTGSATIAIVTSFASNQTLFFQAFAQSMINMGNISPLTGSSGEIRLDCKKTNGS</Hsp_hseq>
+      <Hsp_midline>LNATFY+GTCPNASA+VR+ +QQA QSD+RIGASLIRLHFHDCFV GCDASILLD++GSI SEKNAGPN NSARGFNVVDNIKTALENACPGVVSC+DVLALAS+ASVSL+GGPSWTV LGRRD+LTAN AGANSSIPSP + LSNIT KFSAVGLNTNDLVALSGAHTFGRA CGVF NRLFNFSG GNPDPTLN+TLLSTLQ+LCPQ G  S  TNLDLSTPDAFDNNYF NLQSN+GLLQSDQELFSTTGS+TIAIVTSFASNQTLFFQAFAQSMINMGNISPLTGS GEIRLDCKK NGS</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>3</Hit_num>
+  <Hit_id>pdb|4CUO|A</Hit_id>
+  <Hit_def>Banyan peroxidase with glycosylation [Ficus benghalensis]</Hit_def>
+  <Hit_accession>4CUO_A</Hit_accession>
+  <Hit_len>306</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>420.515</Hsp_bit-score>
+      <Hsp_score>966</Hsp_score>
+      <Hsp_evalue>6.95563e-139</Hsp_evalue>
+      <Hsp_query-from>2</Hsp_query-from>
+      <Hsp_query-to>305</Hsp_query-to>
+      <Hsp_hit-from>1</Hsp_hit-from>
+      <Hsp_hit-to>304</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>203</Hsp_identity>
+      <Hsp_positive>239</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>304</Hsp_align-len>
+      <Hsp_qseq>QLNATFYSGTCPNASAIVRSTIQQALQSDTRIGASLIRLHFHDCFVNGCDASILLDDTGSIQSEKNAGPNVNSARGFNVVDNIKTALENACPGVVSCSDVLALASEASVSLAGGPSWTVLLGRRDSLTANLAGANSSIPSPIESLSNITFKFSAVGLNTNDLVALSGAHTFGRARCGVFNNRLFNFSGTGNPDPTLNSTLLSTLQQLCPQNGSASTITNLDLSTPDAFDNNYFANLQSNDGLLQSDQELFSTTGSSTIAIVTSFASNQTLFFQAFAQSMINMGNISPLTGSNGEIRLDCKKVNG</Hsp_qseq>
+      <Hsp_hseq>QLTPTFYRSTCPNVTSIVRGVIQDALQTDLRIPASLIRLHFHDCFVNGCDGSLLLDNSDTIESEKQAAPNNNSARGFDVVDNIKTAVENACPGVVSCADILTIAAEQSVWLSGGPSWPVPLGRRDSLTANRTLANQTLPSPFLTLDQLKTDFSDQGLNTTDLVALSGAHTFGRAQCQFFSQRLYNFSATGSPDPTLNTTLLETLRNICPQGGNGSTITNLDQTTPDAFDNKYFSNLQTQYGILQTDQELFSTKGANTTAIVTKFSANQSAFFNSFVASMIKMGNIGVLTXDEGEIRSNCRSVNG</Hsp_hseq>
+      <Hsp_midline>QL  TFY  TCPN ++IVR  IQ ALQ+D RI ASLIRLHFHDCFVNGCD S+LLD++ +I+SEK A PN NSARGF+VVDNIKTA+ENACPGVVSC+D+L +A+E SV L+GGPSW V LGRRDSLTAN   AN ++PSP  +L  +   FS  GLNT DLVALSGAHTFGRA+C  F  RL+NFS TG PDPTLN+TLL TL+ +CPQ G  STITNLD +TPDAFDN YF+NLQ+  G+LQ+DQELFST G+ T AIVT F++NQ+ FF +F  SMI MGNI  LT   GEIR +C+ VNG</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>4</Hit_num>
+  <Hit_id>pdb|1FHF|A</Hit_id>
+  <Hit_def>THE STRUCTURE OF SOYBEAN PEROXIDASE [Glycine max] &gt;pdb|1FHF|B THE STRUCTURE OF SOYBEAN PEROXIDASE [Glycine max] &gt;pdb|1FHF|C THE STRUCTURE OF SOYBEAN PEROXIDASE [Glycine max]</Hit_def>
+  <Hit_accession>1FHF_A</Hit_accession>
+  <Hit_len>304</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>375.222</Hsp_bit-score>
+      <Hsp_score>861</Hsp_score>
+      <Hsp_evalue>1.20204e-121</Hsp_evalue>
+      <Hsp_query-from>2</Hsp_query-from>
+      <Hsp_query-to>305</Hsp_query-to>
+      <Hsp_hit-from>1</Hsp_hit-from>
+      <Hsp_hit-to>304</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>186</Hsp_identity>
+      <Hsp_positive>221</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>304</Hsp_align-len>
+      <Hsp_qseq>QLNATFYSGTCPNASAIVRSTIQQALQSDTRIGASLIRLHFHDCFVNGCDASILLDDTGSIQSEKNAGPNVNSARGFNVVDNIKTALENACPGVVSCSDVLALASEASVSLAGGPSWTVLLGRRDSLTANLAGANSSIPSPIESLSNITFKFSAVGLNTNDLVALSGAHTFGRARCGVFNNRLFNFSGTGNPDPTLNSTLLSTLQQLCPQNGSASTITNLDLSTPDAFDNNYFANLQSNDGLLQSDQELFSTTGSSTIAIVTSFASNQTLFFQAFAQSMINMGNISPLTGSNGEIRLDCKKVNG</Hsp_qseq>
+      <Hsp_hseq>QLTPTFYRETCPNLFPIVFGVIFDASFTDPRIGASLMRLHFHDCFVQGCDGSVLLNNTDTIESEQDALPNINSIRGLDVVNDIKTAVENSCPDTVSCADILAIAAEIASVLGGGPGWPVPLGRRDSLTANRTLANQNLPAPFFNLTQLKASFAVQGLNTLDLVTLSGGHTFGRARCSTFINRLYNFSNTGNPDPTLNTTYLEVLRARCPQNATGDNLTNLDLSTPDQFDNRYYSNLLQLNGLLQSDQELFSTPGADTIPIVNSFSSNQNTFFSNFRVSMIKMGNIGVLTGDEGEIRLQCNFVNG</Hsp_hseq>
+      <Hsp_midline>QL  TFY  TCPN   IV   I  A  +D RIGASL+RLHFHDCFV GCD S+LL++T +I+SE++A PN+NS RG +VV++IKTA+EN+CP  VSC+D+LA+A+E +  L GGP W V LGRRDSLTAN   AN  +P+P   L+ +   F+  GLNT DLV LSG HTFGRARC  F NRL+NFS TGNPDPTLN+T L  L+  CPQN +   +TNLDLSTPD FDN Y++NL   +GLLQSDQELFST G+ TI IV SF+SNQ  FF  F  SMI MGNI  LTG  GEIRL C  VNG</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>5</Hit_num>
+  <Hit_id>pdb|1GWT|A</Hit_id>
+  <Hit_def>RECOMBINANT HORSERADISH PEROXIDASE C1A PHE221MET [Armoracia rusticana] &gt;pdb|3ATJ|A HEME LIGAND MUTANT OF RECOMBINANT HORSERADISH PEROXIDASE IN COMPLEX WITH BENZHYDROXAMIC ACID [Armoracia rusticana] &gt;pdb|3ATJ|B HEME LIGAND MUTANT OF RECOMBINANT HORSERADISH PEROXIDASE IN COMPLEX WITH BENZHYDROXAMIC ACID [Armoracia rusticana]</Hit_def>
+  <Hit_accession>1GWT_A</Hit_accession>
+  <Hit_len>309</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>375.222</Hsp_bit-score>
+      <Hsp_score>861</Hsp_score>
+      <Hsp_evalue>1.77717e-121</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>304</Hsp_query-to>
+      <Hsp_hit-from>1</Hsp_hit-from>
+      <Hsp_hit-to>306</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>177</Hsp_identity>
+      <Hsp_positive>223</Hsp_positive>
+      <Hsp_gaps>2</Hsp_gaps>
+      <Hsp_align-len>306</Hsp_align-len>
+      <Hsp_qseq>MQLNATFYSGTCPNASAIVRSTIQQALQSDTRIGASLIRLHFHDCFVNGCDASILLDDTGSIQSEKNAGPNVNSARGFNVVDNIKTALENACPGVVSCSDVLALASEASVSLAGGPSWTVLLGRRDSLTANLAGANSSIPSPIESLSNITFKFSAVGLN-TNDLVALSGAHTFGRARCGVFNNRLFNFSGTGNPDPTLNSTLLSTLQQLCPQNGSASTITNLDLSTPDAFDNNYFANLQSNDGLLQSDQELFSTTGSS-TIAIVTSFASNQTLFFQAFAQSMINMGNISPLTGSNGEIRLDCKKVN</Hsp_qseq>
+      <Hsp_hseq>MQLTPTFYDNSCPNVSNIVRDTIVNELRSDPRIAASILRLHFHDCFVNGCDASILLDNTTSFRTEKDAFGNANSARGFPVIDRMKAAVESACPRTVSCADLLTIAAQQSVTLAGGPSWRVPLGRRDSLQAFLDLANANLPAPFFTLPQLKDSFRNVGLNRSSDLVALSGGHTFGKNQCRFIMDRLYNFSNTGLPDPTLNTTYLQTLRGLCPLNGNLSALVDMDLRTPTIFDNKYYVNLEEQKGLIQSDQELFSSPNATDTIPLVRSFANSTQTFFNAFVEAMDRMGNITPLTGTQGQIRLNCRVVN</Hsp_hseq>
+      <Hsp_midline>MQL  TFY  +CPN S IVR TI   L+SD RI AS++RLHFHDCFVNGCDASILLD+T S ++EK+A  N NSARGF V+D +K A+E ACP  VSC+D+L +A++ SV+LAGGPSW V LGRRDSL A L  AN+ +P+P  +L  +   F  VGLN + DLVALSG HTFG+ +C    +RL+NFS TG PDPTLN+T L TL+ LCP NG  S + ++DL TP  FDN Y+ NL+   GL+QSDQELFS+  ++ TI +V SFA     FF AF ++M  MGNI+PLTG+ G+IRL+C+ VN</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>6</Hit_num>
+  <Hit_id>pdb|2ATJ|A</Hit_id>
+  <Hit_def>Recombinant Horseradish Peroxidase Complex With Benzhydroxamic Acid [Armoracia rusticana] &gt;pdb|2ATJ|B Recombinant Horseradish Peroxidase Complex With Benzhydroxamic Acid [Armoracia rusticana]</Hit_def>
+  <Hit_accession>2ATJ_A</Hit_accession>
+  <Hit_len>308</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>373.928</Hsp_bit-score>
+      <Hsp_score>858</Hsp_score>
+      <Hsp_evalue>4.44877e-121</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>304</Hsp_query-to>
+      <Hsp_hit-from>1</Hsp_hit-from>
+      <Hsp_hit-to>306</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>177</Hsp_identity>
+      <Hsp_positive>222</Hsp_positive>
+      <Hsp_gaps>2</Hsp_gaps>
+      <Hsp_align-len>306</Hsp_align-len>
+      <Hsp_qseq>MQLNATFYSGTCPNASAIVRSTIQQALQSDTRIGASLIRLHFHDCFVNGCDASILLDDTGSIQSEKNAGPNVNSARGFNVVDNIKTALENACPGVVSCSDVLALASEASVSLAGGPSWTVLLGRRDSLTANLAGANSSIPSPIESLSNITFKFSAVGLN-TNDLVALSGAHTFGRARCGVFNNRLFNFSGTGNPDPTLNSTLLSTLQQLCPQNGSASTITNLDLSTPDAFDNNYFANLQSNDGLLQSDQELFSTTGSS-TIAIVTSFASNQTLFFQAFAQSMINMGNISPLTGSNGEIRLDCKKVN</Hsp_qseq>
+      <Hsp_hseq>MQLTPTFYDNSCPNVSNIVRDTIVNELRSDPRIAASILRLHFHDCFVNGCDASILLDNTTSFRTEKDAFGNANSARGFPVIDRMKAAVESACPRTVSCADLLTIAAQQSVTLAGGPSWRVPLGRRDSLQAFLDLANANLPAPFFTLPQLKDSFRNVGLNRSSDLVALSGGHTFGKNQCRFIMDRLYNFSNTGLPDPTLNTTYLQTLRGLCPLNGNLSALVDFDLRTPTIFDNKYYVNLEEQKGLIQSDQELFSSPNATDTIPLVRSFANSTQTFFNAFVEAMDRMGNITPLTGTQGQIRLNCRVVN</Hsp_hseq>
+      <Hsp_midline>MQL  TFY  +CPN S IVR TI   L+SD RI AS++RLHFHDCFVNGCDASILLD+T S ++EK+A  N NSARGF V+D +K A+E ACP  VSC+D+L +A++ SV+LAGGPSW V LGRRDSL A L  AN+ +P+P  +L  +   F  VGLN + DLVALSG HTFG+ +C    +RL+NFS TG PDPTLN+T L TL+ LCP NG  S + + DL TP  FDN Y+ NL+   GL+QSDQELFS+  ++ TI +V SFA     FF AF ++M  MGNI+PLTG+ G+IRL+C+ VN</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>7</Hit_num>
+  <Hit_id>pdb|1GWO|A</Hit_id>
+  <Hit_def>Recombinant horseradish peroxidase C1A ALA170GLN [Armoracia rusticana]</Hit_def>
+  <Hit_accession>1GWO_A</Hit_accession>
+  <Hit_len>309</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>373.497</Hsp_bit-score>
+      <Hsp_score>857</Hsp_score>
+      <Hsp_evalue>6.07809e-121</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>304</Hsp_query-to>
+      <Hsp_hit-from>1</Hsp_hit-from>
+      <Hsp_hit-to>306</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>177</Hsp_identity>
+      <Hsp_positive>221</Hsp_positive>
+      <Hsp_gaps>2</Hsp_gaps>
+      <Hsp_align-len>306</Hsp_align-len>
+      <Hsp_qseq>MQLNATFYSGTCPNASAIVRSTIQQALQSDTRIGASLIRLHFHDCFVNGCDASILLDDTGSIQSEKNAGPNVNSARGFNVVDNIKTALENACPGVVSCSDVLALASEASVSLAGGPSWTVLLGRRDSLTANLAGANSSIPSPIESLSNITFKFSAVGLN-TNDLVALSGAHTFGRARCGVFNNRLFNFSGTGNPDPTLNSTLLSTLQQLCPQNGSASTITNLDLSTPDAFDNNYFANLQSNDGLLQSDQELFSTTGSS-TIAIVTSFASNQTLFFQAFAQSMINMGNISPLTGSNGEIRLDCKKVN</Hsp_qseq>
+      <Hsp_hseq>MQLTPTFYDNSCPNVSNIVRDTIVNELRSDPRIAASILRLHFHDCFVNGCDASILLDNTTSFRTEKDAFGNANSARGFPVIDRMKAAVESACPRTVSCADLLTIAAQQSVTLAGGPSWRVPLGRRDSLQAFLDLANANLPQPFFTLPQLKDSFRNVGLNRSSDLVALSGGHTFGKNQCRFIMDRLYNFSNTGLPDPTLNTTYLQTLRGLCPLNGNLSALVDFDLRTPTIFDNKYYVNLEEQKGLIQSDQELFSSPNATDTIPLVRSFANSTQTFFNAFVEAMDRMGNITPLTGTQGQIRLNCRVVN</Hsp_hseq>
+      <Hsp_midline>MQL  TFY  +CPN S IVR TI   L+SD RI AS++RLHFHDCFVNGCDASILLD+T S ++EK+A  N NSARGF V+D +K A+E ACP  VSC+D+L +A++ SV+LAGGPSW V LGRRDSL A L  AN+ +P P  +L  +   F  VGLN + DLVALSG HTFG+ +C    +RL+NFS TG PDPTLN+T L TL+ LCP NG  S + + DL TP  FDN Y+ NL+   GL+QSDQELFS+  ++ TI +V SFA     FF AF ++M  MGNI+PLTG+ G+IRL+C+ VN</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>8</Hit_num>
+  <Hit_id>pdb|1GX2|A</Hit_id>
+  <Hit_def>Recombinant horseradish peroxidase Phe209Ser complex with benzhydroxamic acid [Armoracia rusticana] &gt;pdb|1GX2|B Recombinant horseradish peroxidase Phe209Ser complex with benzhydroxamic acid [Armoracia rusticana]</Hit_def>
+  <Hit_accession>1GX2_A</Hit_accession>
+  <Hit_len>309</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>373.497</Hsp_bit-score>
+      <Hsp_score>857</Hsp_score>
+      <Hsp_evalue>8.07225e-121</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>304</Hsp_query-to>
+      <Hsp_hit-from>1</Hsp_hit-from>
+      <Hsp_hit-to>306</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>177</Hsp_identity>
+      <Hsp_positive>222</Hsp_positive>
+      <Hsp_gaps>2</Hsp_gaps>
+      <Hsp_align-len>306</Hsp_align-len>
+      <Hsp_qseq>MQLNATFYSGTCPNASAIVRSTIQQALQSDTRIGASLIRLHFHDCFVNGCDASILLDDTGSIQSEKNAGPNVNSARGFNVVDNIKTALENACPGVVSCSDVLALASEASVSLAGGPSWTVLLGRRDSLTANLAGANSSIPSPIESLSNITFKFSAVGLN-TNDLVALSGAHTFGRARCGVFNNRLFNFSGTGNPDPTLNSTLLSTLQQLCPQNGSASTITNLDLSTPDAFDNNYFANLQSNDGLLQSDQELFSTTGSS-TIAIVTSFASNQTLFFQAFAQSMINMGNISPLTGSNGEIRLDCKKVN</Hsp_qseq>
+      <Hsp_hseq>MQLTPTFYDNSCPNVSNIVRDTIVNELRSDPRIAASILRLHFHDCFVNGCDASILLDNTTSFRTEKDAFGNANSARGFPVIDRMKAAVESACPRTVSCADLLTIAAQQSVTLAGGPSWRVPLGRRDSLQAFLDLANANLPAPFFTLPQLKDSFRNVGLNRSSDLVALSGGHTFGKNQCRSIMDRLYNFSNTGLPDPTLNTTYLQTLRGLCPLNGNLSALVDFDLRTPTIFDNKYYVNLEEQKGLIQSDQELFSSPNATDTIPLVRSFANSTQTFFNAFVEAMDRMGNITPLTGTQGQIRLNCRVVN</Hsp_hseq>
+      <Hsp_midline>MQL  TFY  +CPN S IVR TI   L+SD RI AS++RLHFHDCFVNGCDASILLD+T S ++EK+A  N NSARGF V+D +K A+E ACP  VSC+D+L +A++ SV+LAGGPSW V LGRRDSL A L  AN+ +P+P  +L  +   F  VGLN + DLVALSG HTFG+ +C    +RL+NFS TG PDPTLN+T L TL+ LCP NG  S + + DL TP  FDN Y+ NL+   GL+QSDQELFS+  ++ TI +V SFA     FF AF ++M  MGNI+PLTG+ G+IRL+C+ VN</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>9</Hit_num>
+  <Hit_id>pdb|1GWU|A</Hit_id>
+  <Hit_def>RECOMBINANT HORSERADISH PEROXIDASE C1A ALA140GLY [Armoracia rusticana]</Hit_def>
+  <Hit_accession>1GWU_A</Hit_accession>
+  <Hit_len>309</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>373.497</Hsp_bit-score>
+      <Hsp_score>857</Hsp_score>
+      <Hsp_evalue>8.46315e-121</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>304</Hsp_query-to>
+      <Hsp_hit-from>1</Hsp_hit-from>
+      <Hsp_hit-to>306</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>177</Hsp_identity>
+      <Hsp_positive>221</Hsp_positive>
+      <Hsp_gaps>2</Hsp_gaps>
+      <Hsp_align-len>306</Hsp_align-len>
+      <Hsp_qseq>MQLNATFYSGTCPNASAIVRSTIQQALQSDTRIGASLIRLHFHDCFVNGCDASILLDDTGSIQSEKNAGPNVNSARGFNVVDNIKTALENACPGVVSCSDVLALASEASVSLAGGPSWTVLLGRRDSLTANLAGANSSIPSPIESLSNITFKFSAVGLN-TNDLVALSGAHTFGRARCGVFNNRLFNFSGTGNPDPTLNSTLLSTLQQLCPQNGSASTITNLDLSTPDAFDNNYFANLQSNDGLLQSDQELFSTTGSS-TIAIVTSFASNQTLFFQAFAQSMINMGNISPLTGSNGEIRLDCKKVN</Hsp_qseq>
+      <Hsp_hseq>MQLTPTFYDNSCPNVSNIVRDTIVNELRSDPRIAASILRLHFHDCFVNGCDASILLDNTTSFRTEKDAFGNANSARGFPVIDRMKAAVESACPRTVSCADLLTIAAQQSVTLAGGPSWRVPLGRRDSLQAFLDLANANLPGPFFTLPQLKDSFRNVGLNRSSDLVALSGGHTFGKNQCRFIMDRLYNFSNTGLPDPTLNTTYLQTLRGLCPLNGNLSALVDFDLRTPTIFDNKYYVNLEEQKGLIQSDQELFSSPNATDTIPLVRSFANSTQTFFNAFVEAMDRMGNITPLTGTQGQIRLNCRVVN</Hsp_hseq>
+      <Hsp_midline>MQL  TFY  +CPN S IVR TI   L+SD RI AS++RLHFHDCFVNGCDASILLD+T S ++EK+A  N NSARGF V+D +K A+E ACP  VSC+D+L +A++ SV+LAGGPSW V LGRRDSL A L  AN+ +P P  +L  +   F  VGLN + DLVALSG HTFG+ +C    +RL+NFS TG PDPTLN+T L TL+ LCP NG  S + + DL TP  FDN Y+ NL+   GL+QSDQELFS+  ++ TI +V SFA     FF AF ++M  MGNI+PLTG+ G+IRL+C+ VN</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>10</Hit_num>
+  <Hit_id>pdb|1ATJ|A</Hit_id>
+  <Hit_def>RECOMBINANT HORSERADISH PEROXIDASE C1A [Armoracia rusticana] &gt;pdb|1ATJ|B RECOMBINANT HORSERADISH PEROXIDASE C1A [Armoracia rusticana] &gt;pdb|1ATJ|C RECOMBINANT HORSERADISH PEROXIDASE C1A [Armoracia rusticana] &gt;pdb|1ATJ|D RECOMBINANT HORSERADISH PEROXIDASE C1A [Armoracia rusticana] &gt;pdb|1ATJ|E RECOMBINANT HORSERADISH PEROXIDASE C1A [Armoracia rusticana] &gt;pdb|1ATJ|F RECOMBINANT HORSERADISH PEROXIDASE C1A [Armoracia rusticana] &gt;pdb|1HCH|A Structure of horseradish peroxidase C1A compound I [Armoracia rusticana]</Hit_def>
+  <Hit_accession>1ATJ_A</Hit_accession>
+  <Hit_len>306</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>371.34</Hsp_bit-score>
+      <Hsp_score>852</Hsp_score>
+      <Hsp_evalue>3.53087e-120</Hsp_evalue>
+      <Hsp_query-from>2</Hsp_query-from>
+      <Hsp_query-to>304</Hsp_query-to>
+      <Hsp_hit-from>1</Hsp_hit-from>
+      <Hsp_hit-to>305</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>176</Hsp_identity>
+      <Hsp_positive>221</Hsp_positive>
+      <Hsp_gaps>2</Hsp_gaps>
+      <Hsp_align-len>305</Hsp_align-len>
+      <Hsp_qseq>QLNATFYSGTCPNASAIVRSTIQQALQSDTRIGASLIRLHFHDCFVNGCDASILLDDTGSIQSEKNAGPNVNSARGFNVVDNIKTALENACPGVVSCSDVLALASEASVSLAGGPSWTVLLGRRDSLTANLAGANSSIPSPIESLSNITFKFSAVGLN-TNDLVALSGAHTFGRARCGVFNNRLFNFSGTGNPDPTLNSTLLSTLQQLCPQNGSASTITNLDLSTPDAFDNNYFANLQSNDGLLQSDQELFSTTGSS-TIAIVTSFASNQTLFFQAFAQSMINMGNISPLTGSNGEIRLDCKKVN</Hsp_qseq>
+      <Hsp_hseq>QLTPTFYDNSCPNVSNIVRDTIVNELRSDPRIAASILRLHFHDCFVNGCDASILLDNTTSFRTEKDAFGNANSARGFPVIDRMKAAVESACPRTVSCADLLTIAAQQSVTLAGGPSWRVPLGRRDSLQAFLDLANANLPAPFFTLPQLKDSFRNVGLNRSSDLVALSGGHTFGKNQCRFIMDRLYNFSNTGLPDPTLNTTYLQTLRGLCPLNGNLSALVDFDLRTPTIFDNKYYVNLEEQKGLIQSDQELFSSPNATDTIPLVRSFANSTQTFFNAFVEAMDRMGNITPLTGTQGQIRLNCRVVN</Hsp_hseq>
+      <Hsp_midline>QL  TFY  +CPN S IVR TI   L+SD RI AS++RLHFHDCFVNGCDASILLD+T S ++EK+A  N NSARGF V+D +K A+E ACP  VSC+D+L +A++ SV+LAGGPSW V LGRRDSL A L  AN+ +P+P  +L  +   F  VGLN + DLVALSG HTFG+ +C    +RL+NFS TG PDPTLN+T L TL+ LCP NG  S + + DL TP  FDN Y+ NL+   GL+QSDQELFS+  ++ TI +V SFA     FF AF ++M  MGNI+PLTG+ G+IRL+C+ VN</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>11</Hit_num>
+  <Hit_id>pdb|1H55|A</Hit_id>
+  <Hit_def>Structure Of Horseradish Peroxidase C1a Compound Ii [Armoracia rusticana] &gt;pdb|1H57|A Structure of horseradish peroxidase C1A compound III [Armoracia rusticana] &gt;pdb|1H58|A STRUCTURE OF FERROUS HORSERADISH PEROXIDASE C1A [Armoracia rusticana] &gt;pdb|1H5A|A Structure Of Ferric Horseradish Peroxidase C1a In Complex With Acetate [Armoracia rusticana] &gt;pdb|1H5C|A X-ray induced reduction of horseradish peroxidase C1A Compound III (100-200% dose) [Armoracia rusticana] &gt;pdb|1H5D|A X-ray induced reduction of horseradish peroxidase C1A Compound III (0-11% dose) [Armoracia rusticana] &gt;pdb|1H5E|A X-ray induced reduction of horseradish peroxidase C1A Compound III (11-22% dose) [Armoracia rusticana] &gt;pdb|1H5F|A X-ray induced reduction of horseradish peroxidase C1A Compound III (22-33% dose) [Armoracia rusticana] &gt;pdb|1H5G|A X-ray induced reduction of horseradish peroxidase C1A Compound III (33-44% dose) [Armoracia rusticana] &gt;pdb|1H5H|A X-ray induced reduction of horseradish peroxidase C1A Compound III (44-56% dose) [Armoracia rusticana] &gt;pdb|1H5I|A X-ray induced reduction of horseradish peroxidase C1A Compound III (56-67% dose) [Armoracia rusticana] &gt;pdb|1H5J|A X-ray induced reduction of horseradish peroxidase C1A Compound III (67-78% dose) [Armoracia rusticana] &gt;pdb|1H5K|A X-ray induced reduction of horseradish peroxidase C1A Compound III (78-89% dose) [Armoracia rusticana] &gt;pdb|1H5L|A X-ray induced reduction of horseradish peroxidase C1A Compound III (89-100% dose) [Armoracia rusticana] &gt;pdb|1H5M|A X-ray induced reduction of horseradish peroxidase C1A Compound III (0-100% dose) [Armoracia rusticana] &gt;pdb|6ATJ|A RECOMBINANT HORSERADISH PEROXIDASE C COMPLEX WITH FERULIC ACID [Armoracia rusticana] &gt;pdb|7ATJ|A RECOMBINANT HORSERADISH PEROXIDASE C1A COMPLEX WITH CYANIDE AND FERULIC ACID [Armoracia rusticana]</Hit_def>
+  <Hit_accession>1H55_A</Hit_accession>
+  <Hit_len>308</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>371.34</Hsp_bit-score>
+      <Hsp_score>852</Hsp_score>
+      <Hsp_evalue>4.10678e-120</Hsp_evalue>
+      <Hsp_query-from>2</Hsp_query-from>
+      <Hsp_query-to>304</Hsp_query-to>
+      <Hsp_hit-from>1</Hsp_hit-from>
+      <Hsp_hit-to>305</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>176</Hsp_identity>
+      <Hsp_positive>221</Hsp_positive>
+      <Hsp_gaps>2</Hsp_gaps>
+      <Hsp_align-len>305</Hsp_align-len>
+      <Hsp_qseq>QLNATFYSGTCPNASAIVRSTIQQALQSDTRIGASLIRLHFHDCFVNGCDASILLDDTGSIQSEKNAGPNVNSARGFNVVDNIKTALENACPGVVSCSDVLALASEASVSLAGGPSWTVLLGRRDSLTANLAGANSSIPSPIESLSNITFKFSAVGLN-TNDLVALSGAHTFGRARCGVFNNRLFNFSGTGNPDPTLNSTLLSTLQQLCPQNGSASTITNLDLSTPDAFDNNYFANLQSNDGLLQSDQELFSTTGSS-TIAIVTSFASNQTLFFQAFAQSMINMGNISPLTGSNGEIRLDCKKVN</Hsp_qseq>
+      <Hsp_hseq>QLTPTFYDNSCPNVSNIVRDTIVNELRSDPRIAASILRLHFHDCFVNGCDASILLDNTTSFRTEKDAFGNANSARGFPVIDRMKAAVESACPRTVSCADLLTIAAQQSVTLAGGPSWRVPLGRRDSLQAFLDLANANLPAPFFTLPQLKDSFRNVGLNRSSDLVALSGGHTFGKNQCRFIMDRLYNFSNTGLPDPTLNTTYLQTLRGLCPLNGNLSALVDFDLRTPTIFDNKYYVNLEEQKGLIQSDQELFSSPNATDTIPLVRSFANSTQTFFNAFVEAMDRMGNITPLTGTQGQIRLNCRVVN</Hsp_hseq>
+      <Hsp_midline>QL  TFY  +CPN S IVR TI   L+SD RI AS++RLHFHDCFVNGCDASILLD+T S ++EK+A  N NSARGF V+D +K A+E ACP  VSC+D+L +A++ SV+LAGGPSW V LGRRDSL A L  AN+ +P+P  +L  +   F  VGLN + DLVALSG HTFG+ +C    +RL+NFS TG PDPTLN+T L TL+ LCP NG  S + + DL TP  FDN Y+ NL+   GL+QSDQELFS+  ++ TI +V SFA     FF AF ++M  MGNI+PLTG+ G+IRL+C+ VN</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>12</Hit_num>
+  <Hit_id>pdb|1W4W|A</Hit_id>
+  <Hit_def>Ferric horseradish peroxidase C1A in complex with formate [Armoracia rusticana] &gt;pdb|1W4Y|A Ferrous horseradish peroxidase C1A in complex with carbon monoxide [Armoracia rusticana]</Hit_def>
+  <Hit_accession>1W4W_A</Hit_accession>
+  <Hit_len>323</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>372.202</Hsp_bit-score>
+      <Hsp_score>854</Hsp_score>
+      <Hsp_evalue>4.96876e-120</Hsp_evalue>
+      <Hsp_query-from>2</Hsp_query-from>
+      <Hsp_query-to>304</Hsp_query-to>
+      <Hsp_hit-from>1</Hsp_hit-from>
+      <Hsp_hit-to>305</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>176</Hsp_identity>
+      <Hsp_positive>221</Hsp_positive>
+      <Hsp_gaps>2</Hsp_gaps>
+      <Hsp_align-len>305</Hsp_align-len>
+      <Hsp_qseq>QLNATFYSGTCPNASAIVRSTIQQALQSDTRIGASLIRLHFHDCFVNGCDASILLDDTGSIQSEKNAGPNVNSARGFNVVDNIKTALENACPGVVSCSDVLALASEASVSLAGGPSWTVLLGRRDSLTANLAGANSSIPSPIESLSNITFKFSAVGLN-TNDLVALSGAHTFGRARCGVFNNRLFNFSGTGNPDPTLNSTLLSTLQQLCPQNGSASTITNLDLSTPDAFDNNYFANLQSNDGLLQSDQELFSTTGSS-TIAIVTSFASNQTLFFQAFAQSMINMGNISPLTGSNGEIRLDCKKVN</Hsp_qseq>
+      <Hsp_hseq>QLTPTFYDNSCPNVSNIVRDTIVNELRSDPRIAASILRLHFHDCFVNGCDASILLDNTTSFRTEKDAFGNANSARGFPVIDRMKAAVESACPRTVSCADLLTIAAQQSVTLAGGPSWRVPLGRRDSLQAFLDLANANLPAPFFTLPQLKDSFRNVGLNRSSDLVALSGGHTFGKNQCRFIMDRLYNFSNTGLPDPTLNTTYLQTLRGLCPLNGNLSALVDFDLRTPTIFDNKYYVNLEEQKGLIQSDQELFSSPNATDTIPLVRSFANSTQTFFNAFVEAMDRMGNITPLTGTQGQIRLNCRVVN</Hsp_hseq>
+      <Hsp_midline>QL  TFY  +CPN S IVR TI   L+SD RI AS++RLHFHDCFVNGCDASILLD+T S ++EK+A  N NSARGF V+D +K A+E ACP  VSC+D+L +A++ SV+LAGGPSW V LGRRDSL A L  AN+ +P+P  +L  +   F  VGLN + DLVALSG HTFG+ +C    +RL+NFS TG PDPTLN+T L TL+ LCP NG  S + + DL TP  FDN Y+ NL+   GL+QSDQELFS+  ++ TI +V SFA     FF AF ++M  MGNI+PLTG+ G+IRL+C+ VN</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>13</Hit_num>
+  <Hit_id>pdb|4ATJ|A</Hit_id>
+  <Hit_def>DISTAL HEME POCKET MUTANT (H42E) OF RECOMBINANT HORSERADISH PEROXIDASE IN COMPLEX WITH BENZHYDROXAMIC ACID [Armoracia rusticana] &gt;pdb|4ATJ|B DISTAL HEME POCKET MUTANT (H42E) OF RECOMBINANT HORSERADISH PEROXIDASE IN COMPLEX WITH BENZHYDROXAMIC ACID [Armoracia rusticana]</Hit_def>
+  <Hit_accession>4ATJ_A</Hit_accession>
+  <Hit_len>309</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>370.908</Hsp_bit-score>
+      <Hsp_score>851</Hsp_score>
+      <Hsp_evalue>7.1053e-120</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>304</Hsp_query-to>
+      <Hsp_hit-from>1</Hsp_hit-from>
+      <Hsp_hit-to>306</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>176</Hsp_identity>
+      <Hsp_positive>221</Hsp_positive>
+      <Hsp_gaps>2</Hsp_gaps>
+      <Hsp_align-len>306</Hsp_align-len>
+      <Hsp_qseq>MQLNATFYSGTCPNASAIVRSTIQQALQSDTRIGASLIRLHFHDCFVNGCDASILLDDTGSIQSEKNAGPNVNSARGFNVVDNIKTALENACPGVVSCSDVLALASEASVSLAGGPSWTVLLGRRDSLTANLAGANSSIPSPIESLSNITFKFSAVGLN-TNDLVALSGAHTFGRARCGVFNNRLFNFSGTGNPDPTLNSTLLSTLQQLCPQNGSASTITNLDLSTPDAFDNNYFANLQSNDGLLQSDQELFSTTGSS-TIAIVTSFASNQTLFFQAFAQSMINMGNISPLTGSNGEIRLDCKKVN</Hsp_qseq>
+      <Hsp_hseq>MQLTPTFYDNSCPNVSNIVRDTIVNELRSDPRIAASILRLHFEDCFVNGCDASILLDNTTSFRTEKDAFGNANSARGFPVIDRMKAAVESACPRTVSCADLLTIAAQQSVTLAGGPSWRVPLGRRDSLQAFLDLANANLPAPFFTLPQLKDSFRNVGLNRSSDLVALSGGHTFGKNQCRFIMDRLYNFSNTGLPDPTLNTTYLQTLRGLCPLNGNLSALVDFDLRTPTIFDNKYYVNLEEQKGLIQSDQELFSSPNATDTIPLVRSFANSTQTFFNAFVEAMDRMGNITPLTGTQGQIRLNCRVVN</Hsp_hseq>
+      <Hsp_midline>MQL  TFY  +CPN S IVR TI   L+SD RI AS++RLHF DCFVNGCDASILLD+T S ++EK+A  N NSARGF V+D +K A+E ACP  VSC+D+L +A++ SV+LAGGPSW V LGRRDSL A L  AN+ +P+P  +L  +   F  VGLN + DLVALSG HTFG+ +C    +RL+NFS TG PDPTLN+T L TL+ LCP NG  S + + DL TP  FDN Y+ NL+   GL+QSDQELFS+  ++ TI +V SFA     FF AF ++M  MGNI+PLTG+ G+IRL+C+ VN</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>14</Hit_num>
+  <Hit_id>pdb|2YLJ|A</Hit_id>
+  <Hit_def>Horse Radish Peroxidase, mutant S167Y [Armoracia rusticana]</Hit_def>
+  <Hit_accession>2YLJ_A</Hit_accession>
+  <Hit_len>306</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>369.614</Hsp_bit-score>
+      <Hsp_score>848</Hsp_score>
+      <Hsp_evalue>2.07947e-119</Hsp_evalue>
+      <Hsp_query-from>2</Hsp_query-from>
+      <Hsp_query-to>304</Hsp_query-to>
+      <Hsp_hit-from>1</Hsp_hit-from>
+      <Hsp_hit-to>305</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>175</Hsp_identity>
+      <Hsp_positive>220</Hsp_positive>
+      <Hsp_gaps>2</Hsp_gaps>
+      <Hsp_align-len>305</Hsp_align-len>
+      <Hsp_qseq>QLNATFYSGTCPNASAIVRSTIQQALQSDTRIGASLIRLHFHDCFVNGCDASILLDDTGSIQSEKNAGPNVNSARGFNVVDNIKTALENACPGVVSCSDVLALASEASVSLAGGPSWTVLLGRRDSLTANLAGANSSIPSPIESLSNITFKFSAVGLN-TNDLVALSGAHTFGRARCGVFNNRLFNFSGTGNPDPTLNSTLLSTLQQLCPQNGSASTITNLDLSTPDAFDNNYFANLQSNDGLLQSDQELFSTTGSS-TIAIVTSFASNQTLFFQAFAQSMINMGNISPLTGSNGEIRLDCKKVN</Hsp_qseq>
+      <Hsp_hseq>QLTPTFYDNSCPNVSNIVRDTIVNELRSDPRIAASILRLHFHDCFVNGCDASILLDNTTSFRTEKDAFGNANSARGFPVIDRMKAAVESACPRTVSCADLLTIAAQQSVTLAGGPSWRVPLGRRDSLQAFLDLANANLPAPFFTLPQLKDSFRNVGLNRSSDLVALYGGHTFGKNQCRFIMDRLYNFSNTGLPDPTLNTTYLQTLRGLCPLNGNLSALVDFDLRTPTIFDNKYYVNLEEQKGLIQSDQELFSSPNATDTIPLVRSFANSTQTFFNAFVEAMDRMGNITPLTGTQGQIRLNCRVVN</Hsp_hseq>
+      <Hsp_midline>QL  TFY  +CPN S IVR TI   L+SD RI AS++RLHFHDCFVNGCDASILLD+T S ++EK+A  N NSARGF V+D +K A+E ACP  VSC+D+L +A++ SV+LAGGPSW V LGRRDSL A L  AN+ +P+P  +L  +   F  VGLN + DLVAL G HTFG+ +C    +RL+NFS TG PDPTLN+T L TL+ LCP NG  S + + DL TP  FDN Y+ NL+   GL+QSDQELFS+  ++ TI +V SFA     FF AF ++M  MGNI+PLTG+ G+IRL+C+ VN</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>15</Hit_num>
+  <Hit_id>pdb|1GW2|A</Hit_id>
+  <Hit_def>RECOMBINANT HORSERADISH PEROXIDASE C1A THR171SER IN COMPLEX WITH FERULIC ACID [Armoracia rusticana]</Hit_def>
+  <Hit_accession>1GW2_A</Hit_accession>
+  <Hit_len>308</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>369.614</Hsp_bit-score>
+      <Hsp_score>848</Hsp_score>
+      <Hsp_evalue>2.27924e-119</Hsp_evalue>
+      <Hsp_query-from>2</Hsp_query-from>
+      <Hsp_query-to>304</Hsp_query-to>
+      <Hsp_hit-from>1</Hsp_hit-from>
+      <Hsp_hit-to>305</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>175</Hsp_identity>
+      <Hsp_positive>221</Hsp_positive>
+      <Hsp_gaps>2</Hsp_gaps>
+      <Hsp_align-len>305</Hsp_align-len>
+      <Hsp_qseq>QLNATFYSGTCPNASAIVRSTIQQALQSDTRIGASLIRLHFHDCFVNGCDASILLDDTGSIQSEKNAGPNVNSARGFNVVDNIKTALENACPGVVSCSDVLALASEASVSLAGGPSWTVLLGRRDSLTANLAGANSSIPSPIESLSNITFKFSAVGLN-TNDLVALSGAHTFGRARCGVFNNRLFNFSGTGNPDPTLNSTLLSTLQQLCPQNGSASTITNLDLSTPDAFDNNYFANLQSNDGLLQSDQELFSTTGSS-TIAIVTSFASNQTLFFQAFAQSMINMGNISPLTGSNGEIRLDCKKVN</Hsp_qseq>
+      <Hsp_hseq>QLTPTFYDNSCPNVSNIVRDTIVNELRSDPRIAASILRLHFHDCFVNGCDASILLDNTTSFRTEKDAFGNANSARGFPVIDRMKAAVESACPRTVSCADLLTIAAQQSVTLAGGPSWRVPLGRRDSLQAFLDLANANLPAPFFTLPQLKDSFRNVGLNRSSDLVALSGGHSFGKNQCRFIMDRLYNFSNTGLPDPTLNTTYLQTLRGLCPLNGNLSALVDFDLRTPTIFDNKYYVNLEEQKGLIQSDQELFSSPNATDTIPLVRSFANSTQTFFNAFVEAMDRMGNITPLTGTQGQIRLNCRVVN</Hsp_hseq>
+      <Hsp_midline>QL  TFY  +CPN S IVR TI   L+SD RI AS++RLHFHDCFVNGCDASILLD+T S ++EK+A  N NSARGF V+D +K A+E ACP  VSC+D+L +A++ SV+LAGGPSW V LGRRDSL A L  AN+ +P+P  +L  +   F  VGLN + DLVALSG H+FG+ +C    +RL+NFS TG PDPTLN+T L TL+ LCP NG  S + + DL TP  FDN Y+ NL+   GL+QSDQELFS+  ++ TI +V SFA     FF AF ++M  MGNI+PLTG+ G+IRL+C+ VN</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>16</Hit_num>
+  <Hit_id>pdb|1KZM|A</Hit_id>
+  <Hit_def>Distal Heme Pocket Mutant (R38S/H42E) of Recombinant Horseradish Peroxidase C (HRP C). [Armoracia rusticana]</Hit_def>
+  <Hit_accession>1KZM_A</Hit_accession>
+  <Hit_len>308</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>364.869</Hsp_bit-score>
+      <Hsp_score>837</Hsp_score>
+      <Hsp_evalue>1.47575e-117</Hsp_evalue>
+      <Hsp_query-from>2</Hsp_query-from>
+      <Hsp_query-to>304</Hsp_query-to>
+      <Hsp_hit-from>1</Hsp_hit-from>
+      <Hsp_hit-to>305</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>174</Hsp_identity>
+      <Hsp_positive>219</Hsp_positive>
+      <Hsp_gaps>2</Hsp_gaps>
+      <Hsp_align-len>305</Hsp_align-len>
+      <Hsp_qseq>QLNATFYSGTCPNASAIVRSTIQQALQSDTRIGASLIRLHFHDCFVNGCDASILLDDTGSIQSEKNAGPNVNSARGFNVVDNIKTALENACPGVVSCSDVLALASEASVSLAGGPSWTVLLGRRDSLTANLAGANSSIPSPIESLSNITFKFSAVGLN-TNDLVALSGAHTFGRARCGVFNNRLFNFSGTGNPDPTLNSTLLSTLQQLCPQNGSASTITNLDLSTPDAFDNNYFANLQSNDGLLQSDQELFSTTGSS-TIAIVTSFASNQTLFFQAFAQSMINMGNISPLTGSNGEIRLDCKKVN</Hsp_qseq>
+      <Hsp_hseq>QLTPTFYDNSCPNVSNIVRDTIVNELRSDPRIAASILSLHFEDCFVNGCDASILLDNTTSFRTEKDAFGNANSARGFPVIDRMKAAVESACPRTVSCADLLTIAAQQSVTLAGGPSWRVPLGRRDSLQAFLDLANANLPAPFFTLPQLKDSFRNVGLNRSSDLVALSGGHTFGKNQCRFIMDRLYNFSNTGLPDPTLNTTYLQTLRGLCPLNGNLSALVDFDLRTPTIFDNKYYVNLEEQKGLIQSDQELFSSPNATDTIPLVRSFANSTQTFFNAFVEAMDRMGNITPLTGTQGQIRLNCRVVN</Hsp_hseq>
+      <Hsp_midline>QL  TFY  +CPN S IVR TI   L+SD RI AS++ LHF DCFVNGCDASILLD+T S ++EK+A  N NSARGF V+D +K A+E ACP  VSC+D+L +A++ SV+LAGGPSW V LGRRDSL A L  AN+ +P+P  +L  +   F  VGLN + DLVALSG HTFG+ +C    +RL+NFS TG PDPTLN+T L TL+ LCP NG  S + + DL TP  FDN Y+ NL+   GL+QSDQELFS+  ++ TI +V SFA     FF AF ++M  MGNI+PLTG+ G+IRL+C+ VN</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>17</Hit_num>
+  <Hit_id>pdb|1QGJ|A</Hit_id>
+  <Hit_def>Arabidopsis Thaliana Peroxidase N [Arabidopsis thaliana] &gt;pdb|1QGJ|B Arabidopsis Thaliana Peroxidase N [Arabidopsis thaliana]</Hit_def>
+  <Hit_accession>1QGJ_A</Hit_accession>
+  <Hit_len>300</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>351.497</Hsp_bit-score>
+      <Hsp_score>806</Hsp_score>
+      <Hsp_evalue>1.15183e-112</Hsp_evalue>
+      <Hsp_query-from>2</Hsp_query-from>
+      <Hsp_query-to>304</Hsp_query-to>
+      <Hsp_hit-from>1</Hsp_hit-from>
+      <Hsp_hit-to>299</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>172</Hsp_identity>
+      <Hsp_positive>211</Hsp_positive>
+      <Hsp_gaps>8</Hsp_gaps>
+      <Hsp_align-len>305</Hsp_align-len>
+      <Hsp_qseq>QLNATFYSGTCPNASAIVRSTIQQALQSDTRIGASLIRLHFHDCFVNGCDASILLDDTGSIQSEKNAGPNVNSARGFNVVDNIKTALENACPGVVSCSDVLALASEASVSLAGGPSWTVLLGRRDSLTANLAGANSSIPSPIESLSNITFKFSAVGLNTNDLVALSGAHTFGRARCGVFNNRLFNFSGTGNPDPTLNSTLLSTLQQLCPQNGSASTITNLDLSTPDAFDNNYFANLQSNDGLLQSDQELFST--TGSSTIAIVTSFASNQTLFFQAFAQSMINMGNISPLTGSNGEIRLDCKKVN</Hsp_qseq>
+      <Hsp_hseq>QLSPDIYAKSCPNLVQIVRKQVAIALKAEIRMAASLIRLHFHDCFVNGCDASLLLDGA---DSEKLAIPNINSARGFEVIDTIKAAVENACPGVVSCADILTLAARDSVVLSGGPGWRVALGRKDGLVANQNSANN-LPSPFEPLDAIIAKFVAVNLNITDVVALSGAHTFGQAKCAVFSNRLFNFTGAGNPDATLETSLLSNLQTVCPLGGNSNITAPLDRSTTDTFDNNYFKNLLEGKGLLSSDQILFSSDLAVNTTKKLVEAYSRSQSLFFRDFTCAMIRMGNIS--NGASGEVRTNCRVIN</Hsp_hseq>
+      <Hsp_midline>QL    Y+ +CPN   IVR  +  AL+++ R+ ASLIRLHFHDCFVNGCDAS+LLD      SEK A PN+NSARGF V+D IK A+ENACPGVVSC+D+L LA+  SV L+GGP W V LGR+D L AN   AN  +PSP E L  I  KF AV LN  D+VALSGAHTFG+A+C VF NRLFNF+G GNPD TL ++LLS LQ +CP  G +     LD ST D FDNNYF NL    GLL SDQ LFS+     +T  +V +++  Q+LFF+ F  +MI MGNIS   G+ GE+R +C+ +N</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>18</Hit_num>
+  <Hit_id>pdb|1SCH|A</Hit_id>
+  <Hit_def>PEANUT PEROXIDASE [Arachis hypogaea] &gt;pdb|1SCH|B PEANUT PEROXIDASE [Arachis hypogaea]</Hit_def>
+  <Hit_accession>1SCH_A</Hit_accession>
+  <Hit_len>294</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>319.576</Hsp_bit-score>
+      <Hsp_score>732</Hsp_score>
+      <Hsp_evalue>1.21549e-100</Hsp_evalue>
+      <Hsp_query-from>3</Hsp_query-from>
+      <Hsp_query-to>304</Hsp_query-to>
+      <Hsp_hit-from>2</Hsp_hit-from>
+      <Hsp_hit-to>294</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>153</Hsp_identity>
+      <Hsp_positive>201</Hsp_positive>
+      <Hsp_gaps>9</Hsp_gaps>
+      <Hsp_align-len>302</Hsp_align-len>
+      <Hsp_qseq>LNATFYSGTCPNASAIVRSTIQQALQSDTRIGASLIRLHFHDCFVNGCDASILLDDTGSIQSEKNAGPNVNSARGFNVVDNIKTALENACPGVVSCSDVLALASEASVSLAGGPSWTVLLGRRDSLTANLAGANSSIPSPIESLSNITFKFSAVGLNTNDLVALSGAHTFGRARCGVFNNRLFNFSGTGNPDPTLNSTLLSTLQQLCPQNGSASTITNLDLSTPDAFDNNYFANLQSNDGLLQSDQELFSTTGSSTIAIVTSFASNQTLFFQAFAQSMINMGNISPLTGSNGEIRLDCKKVN</Hsp_qseq>
+      <Hsp_hseq>LSSNFYATKCPNALSTIKSAVNSAVAKEARMGASLLRLHFHDCFVQGCDASVLLDDTSNFTGEKTAGPNANSIRGFEVIDTIKSQVESLCPGVVSCADILAVAARDSVVALGGASWNVLLGRRDSTTASLSSANSDLPAPFFNLSGLISAFSNKGFTTKELVTLSGAHTIGQAQCTAFRTRIYNES---NIDP----TYAKSLQANCPSVGGDTNLSPFDVTTPNKFDNAYYINLRNKKGLLHSDQQLFN--GVSTDSQVTAYSNNAATFNTDFGNAMIKMGNLSPLTGTSGQIRTNCRKTN</Hsp_hseq>
+      <Hsp_midline>L + FY+  CPNA + ++S +  A+  + R+GASL+RLHFHDCFV GCDAS+LLDDT     EK AGPN NS RGF V+D IK+ +E  CPGVVSC+D+LA+A+  SV   GG SW VLLGRRDS TA L+ ANS +P+P   LS +   FS  G  T +LV LSGAHT G+A+C  F  R++N S   N DP    T   +LQ  CP  G  + ++  D++TP+ FDN Y+ NL+   GLL+SDQ+LF   G ST + VT+++ N   F   F  +MI MGN+SPLTG+ G+IR +C+K N</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>19</Hit_num>
+  <Hit_id>pdb|5TWT|A</Hit_id>
+  <Hit_def>Characterization of class III peroxidase from switchgrass (Panicum virgatum) [Panicum virgatum]</Hit_def>
+  <Hit_accession>5TWT_A</Hit_accession>
+  <Hit_len>331</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>288.517</Hsp_bit-score>
+      <Hsp_score>660</Hsp_score>
+      <Hsp_evalue>2.5339e-88</Hsp_evalue>
+      <Hsp_query-from>2</Hsp_query-from>
+      <Hsp_query-to>306</Hsp_query-to>
+      <Hsp_hit-from>39</Hsp_hit-from>
+      <Hsp_hit-to>331</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>150</Hsp_identity>
+      <Hsp_positive>195</Hsp_positive>
+      <Hsp_gaps>12</Hsp_gaps>
+      <Hsp_align-len>305</Hsp_align-len>
+      <Hsp_qseq>QLNATFYSGTCPNASAIVRSTIQQALQSDTRIGASLIRLHFHDCFVNGCDASILLDDTGSIQSEKNAGPNVNSARGFNVVDNIKTALENACPGVVSCSDVLALASEASVSLAGGPSWTVLLGRRDSLTANLAGANSSIPSPIESLSNITFKFSAVGLNTNDLVALSGAHTFGRARCGVFNNRLFNFSGTGNPDPTLNSTLLSTLQQLCPQNGSASTITNLDLSTPDAFDNNYFANLQSNDGLLQSDQELFSTTGSSTIAIVTSFASNQTLFFQAFAQSMINMGNISPLTGSNGEIRLDCKKVNGS</Hsp_qseq>
+      <Hsp_hseq>QLSSTFYDTSCPNALSTIRSAVNAAVAQENRMGASLLRLHFHDCFVQGCDASVLLNDTNG--GEQNALPNAGSLRGFGVIDNIKAQVEALCPQTVSCADILAVAARDSVVALGGPSWTVPLGRRDSTNSSAALANSDLPPPQFNLSQLITAFGNKNLDPTDLVALSGAHTIGQAQCLNFRAHIT--------EPNINPTFAASLRANCPATGGDTNLAPLDVTTPNTFDNAYYTNLLNQRGLLHSDQELFNN--ASTDSTVRNFASNAAAFTTAFTTAMIKMGNLQPLTGTQGQIRRNCWRVNSS</Hsp_hseq>
+      <Hsp_midline>QL +TFY  +CPNA + +RS +  A+  + R+GASL+RLHFHDCFV GCDAS+LL+DT     E+NA PN  S RGF V+DNIK  +E  CP  VSC+D+LA+A+  SV   GGPSWTV LGRRDS  +  A ANS +P P   LS +   F    L+  DLVALSGAHT G+A+C  F   +         +P +N T  ++L+  CP  G  + +  LD++TP+ FDN Y+ NL    GLL+SDQELF    +ST + V  FASN   F  AF  +MI MGN+ PLTG+ G+IR +C +VN S</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>20</Hit_num>
+  <Hit_id>pdb|5AOG|A</Hit_id>
+  <Hit_def>Structure of Sorghum peroxidase [Sorghum bicolor]</Hit_def>
+  <Hit_accession>5AOG_A</Hit_accession>
+  <Hit_len>307</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>265.224</Hsp_bit-score>
+      <Hsp_score>606</Hsp_score>
+      <Hsp_evalue>5.38171e-80</Hsp_evalue>
+      <Hsp_query-from>3</Hsp_query-from>
+      <Hsp_query-to>306</Hsp_query-to>
+      <Hsp_hit-from>8</Hsp_hit-from>
+      <Hsp_hit-to>306</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>139</Hsp_identity>
+      <Hsp_positive>183</Hsp_positive>
+      <Hsp_gaps>11</Hsp_gaps>
+      <Hsp_align-len>307</Hsp_align-len>
+      <Hsp_qseq>LNATFYSGTCPNASAIVRSTIQQALQSDTRIGASLIRLHFHDCFVNGCDASILLDDTGSIQSEKNAGPNVN-SARGFNVVDNIKTALENACPG-VVSCSDVLALASEASVSLAGGPSWTVLLGRRDSLT-ANLAGANSSIPSPIESLSNITFKFSAVGLNTNDLVALSGAHTFGRARCGVFNNRLFNFSGTGNPDPTLNSTLLSTLQQLCPQNGSASTITNLDLSTPDAFDNNYFANLQSNDGLLQSDQELFSTTGSSTIAIVTSFASNQTLFFQAFAQSMINMGNISPLTGSNGEIRLDCKKVNGS</Hsp_qseq>
+      <Hsp_hseq>LSFDFYKRSCPKAESIVRSFVQDAVRRDVGLAAGLLRLHFHDCFVQGCDASVLLDGSATGPGEQQAPPNLTLRPTAFKAINDIHDRLHKECGGTVVSCSDVLALAARDSVVVSGGPSYRVPLGRRDSASFATQQDVLSGLPPPTAAVPALLAVLSKINLDATDLVALSGGHTIGLGHCTSFEDRLFP-----RPDPTLNATFAGQLRRTCPAKGTDRR-TPLDVRTPNAFDNKYYVNLVNREGLFTSDQDLFSN--ARTRALVDKFARSQRDFFDQFAFSVVKMGQIKVLTGTQGQIRTNCSARNAA</Hsp_hseq>
+      <Hsp_midline>L   FY  +CP A +IVRS +Q A++ D  + A L+RLHFHDCFV GCDAS+LLD + +   E+ A PN+      F  +++I   L   C G VVSCSDVLALA+  SV ++GGPS+ V LGRRDS + A      S +P P  ++  +    S + L+  DLVALSG HT G   C  F +RLF       PDPTLN+T    L++ CP  G+    T LD+ TP+AFDN Y+ NL   +GL  SDQ+LFS   + T A+V  FA  Q  FF  FA S++ MG I  LTG+ G+IR +C   N +</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>21</Hit_num>
+  <Hit_id>pdb|1BGP|A</Hit_id>
+  <Hit_def>Crystal Structure Of Barley Grain Peroxidase 1 [Hordeum vulgare]</Hit_def>
+  <Hit_accession>1BGP_A</Hit_accession>
+  <Hit_len>309</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>246.244</Hsp_bit-score>
+      <Hsp_score>562</Hsp_score>
+      <Hsp_evalue>6.99943e-73</Hsp_evalue>
+      <Hsp_query-from>3</Hsp_query-from>
+      <Hsp_query-to>300</Hsp_query-to>
+      <Hsp_hit-from>9</Hsp_hit-from>
+      <Hsp_hit-to>301</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>131</Hsp_identity>
+      <Hsp_positive>175</Hsp_positive>
+      <Hsp_gaps>11</Hsp_gaps>
+      <Hsp_align-len>301</Hsp_align-len>
+      <Hsp_qseq>LNATFYSGTCPNASAIVRSTIQQALQSDTRIGASLIRLHFHDCFVNGCDASILLDDTGSIQSEKNAGPNVN-SARGFNVVDNIKTALENACPG-VVSCSDVLALASEASVSLAGGPSWTVLLGRRDSLT-ANLAGANSSIPSPIESLSNITFKFSAVGLNTNDLVALSGAHTFGRARCGVFNNRLFNFSGTGNPDPTLNSTLLSTLQQLCPQNGSASTITNLDLSTPDAFDNNYFANLQSNDGLLQSDQELFSTTGSSTIAIVTSFASNQTLFFQAFAQSMINMGNISPLTGSNGEIRLDC</Hsp_qseq>
+      <Hsp_hseq>LSFDFYWQTCPRAESIVREFVQEAVRKDIGLAAGLLRLHFHDCFVQGCDASVLLDGSATGPGEQQAPPNLTLRPSAFKAVNDIRDRLERECRGAVVSCSDILALAARDSVVVSGGPDYRVPLGRRDSRSFASTQDVLSDLPGPSSNVQSLLALLGRLGLDATDLVTISGGHTIGLAHCSSFEDRLFP-----RPDPTISPTFLSRLKRTCPAKGTDRR-TVLDVRTPNVFDNKYYIDLVNREGLFVSDQDLF--TNAITRPIVERFAQSQQDFFEQFGVSIGKMGQMRVRTSDQGEVRRNC</Hsp_hseq>
+      <Hsp_midline>L   FY  TCP A +IVR  +Q+A++ D  + A L+RLHFHDCFV GCDAS+LLD + +   E+ A PN+      F  V++I+  LE  C G VVSCSD+LALA+  SV ++GGP + V LGRRDS + A      S +P P   +  +      +GL+  DLV +SG HT G A C  F +RLF       PDPT+  T LS L++ CP  G+    T LD+ TP+ FDN Y+ +L   +GL  SDQ+LF  T + T  IV  FA  Q  FF+ F  S+  MG +   T   GE+R +C</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>22</Hit_num>
+  <Hit_id>pdb|3HDL|A</Hit_id>
+  <Hit_def>Crystal Structure of Highly Glycosylated Peroxidase from Royal Palm Tree [Roystonea regia]</Hit_def>
+  <Hit_accession>3HDL_A</Hit_accession>
+  <Hit_len>304</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>240.636</Hsp_bit-score>
+      <Hsp_score>549</Hsp_score>
+      <Hsp_evalue>5.88728e-71</Hsp_evalue>
+      <Hsp_query-from>7</Hsp_query-from>
+      <Hsp_query-to>304</Hsp_query-to>
+      <Hsp_hit-from>6</Hsp_hit-from>
+      <Hsp_hit-to>303</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>129</Hsp_identity>
+      <Hsp_positive>173</Hsp_positive>
+      <Hsp_gaps>4</Hsp_gaps>
+      <Hsp_align-len>300</Hsp_align-len>
+      <Hsp_qseq>FYSGTCPNASAIVRSTIQQALQSDTRIGASLIRLHFHDCFVNGCDASILLDDTGSIQSEKNAGPNVNSARGFNVVDNIKTALENACPGVVSCSDVLALASEASVSLAGGPSWTVLLGRRDSLTANLAGANSSIPSPIESLSNITFKFSAVGLNTNDLVALSGAHTFGRARCGVFNNRLFNFSGTGNPDPTLNSTLLSTLQQLCPQNGSAST--ITNLDLSTPDAFDNNYFANLQSNDGLLQSDQELFSTTGSSTIAIVTSFASNQTLFFQAFAQSMINMGNISPLTGSNGEIRLDCKKVN</Hsp_qseq>
+      <Hsp_hseq>FYNTSCPTAESLVQQAVAAAFANNSGIAPGLIRMHFHDCFVRGCDASVLLDSTANNTAEKDAIPNNPSLRGFEVITAAKSAVEAACPQTVSCADILAFAARDSANLAGNITYQVPSGRRDGTVSLASEANAQIPSPLFNATQLINSFANKTLTADEMVTLSGAHSIGVAHCSSFTNRLYNFNSGSGIDPTLSPSYAALLRNTCPANSTRFTPITVSLDIITPSVLDNMYYTGVQLTLGLLTSDQALVTEANLS--AAVKANAMNLTAWASKFAQAMVKMGQIEVLTGTQGEIRTNCSVVN</Hsp_hseq>
+      <Hsp_midline>FY  +CP A ++V+  +  A   ++ I   LIR+HFHDCFV GCDAS+LLD T    +EK+A PN  S RGF V+   K+A+E ACP  VSC+D+LA A+  S  LAG  ++ V  GRRD   +  + AN+ IPSP+   + +   F+   L  +++V LSGAH+ G A C  F NRL+NF      DPTL  +  + L+  CP N +  T     LD+ TP   DN Y+  +Q   GLL SDQ L +    S  A V + A N T     FAQ+M+ MG I  LTG+ GEIR +C  VN</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>23</Hit_num>
+  <Hit_id>pdb|4USC|A</Hit_id>
+  <Hit_def>Crystal structure of peroxidase from palm tree Chamaerops excelsa [Trachycarpus fortunei] &gt;pdb|4USC|B Crystal structure of peroxidase from palm tree Chamaerops excelsa [Trachycarpus fortunei]</Hit_def>
+  <Hit_accession>4USC_A</Hit_accession>
+  <Hit_len>303</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>233.303</Hsp_bit-score>
+      <Hsp_score>532</Hsp_score>
+      <Hsp_evalue>2.75731e-68</Hsp_evalue>
+      <Hsp_query-from>3</Hsp_query-from>
+      <Hsp_query-to>304</Hsp_query-to>
+      <Hsp_hit-from>2</Hsp_hit-from>
+      <Hsp_hit-to>303</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>127</Hsp_identity>
+      <Hsp_positive>174</Hsp_positive>
+      <Hsp_gaps>4</Hsp_gaps>
+      <Hsp_align-len>304</Hsp_align-len>
+      <Hsp_qseq>LNATFYSGTCPNASAIVRSTIQQALQSDTRIGASLIRLHFHDCFVNGCDASILLDDTGSIQSEKNAGPNVNSARGFNVVDNIKTALENACPGVVSCSDVLALASEASVSLAGGPSWTVLLGRRDSLTANLAGANSSIPSPIESLSNITFKFSAVGLNTNDLVALSGAHTFGRARCGVFNNRLFNFSGTGNPDPTLNSTLLSTLQQLCPQNGSAST--ITNLDLSTPDAFDNNYFANLQSNDGLLQSDQELFSTTGSSTIAIVTSFASNQTLFFQAFAQSMINMGNISPLTGSNGEIRLDCKKVN</Hsp_qseq>
+      <Hsp_hseq>LQIGFYNQSCPSAESLVQQGVAAAFANNSGIAPGLIRMHFHDCFVRGCDGSVLLDSTDTNTAEKDAAPNNPSLRGFEVIAAAKSAVEAACPKTVSCADILAFAARDSAALAGNITYQVPSGRRDGNVSLASEALTNIPAPTFNATQLINSFAGKNLTADEMVTLSGAHSIGVSHCFSFLNRIYNFSNTSQVDPTLSSSYADLLRTKCPSNSTRFTPITVSLDIITPTVLDNRYYTGVQLTLGLLTSDQALVTEANLS--AAVKNNADNLTAWVAEFAQAIVKMGQIEVLTGTQGEIRTNCSVVN</Hsp_hseq>
+      <Hsp_midline>L   FY  +CP A ++V+  +  A   ++ I   LIR+HFHDCFV GCD S+LLD T +  +EK+A PN  S RGF V+   K+A+E ACP  VSC+D+LA A+  S +LAG  ++ V  GRRD   +  + A + IP+P    + +   F+   L  +++V LSGAH+ G + C  F NR++NFS T   DPTL S+    L+  CP N +  T     LD+ TP   DN Y+  +Q   GLL SDQ L +    S  A V   A N T     FAQ+++ MG I  LTG+ GEIR +C  VN</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>24</Hit_num>
+  <Hit_id>pdb|1IYN|A</Hit_id>
+  <Hit_def>Crystal structure of chloroplastic ascorbate peroxidase from tobacco plants and structural insights for its instability [Nicotiana tabacum]</Hit_def>
+  <Hit_accession>1IYN_A</Hit_accession>
+  <Hit_len>295</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>70.6777</Hsp_bit-score>
+      <Hsp_score>155</Hsp_score>
+      <Hsp_evalue>1.22759e-12</Hsp_evalue>
+      <Hsp_query-from>37</Hsp_query-from>
+      <Hsp_query-to>286</Hsp_query-to>
+      <Hsp_hit-from>28</Hsp_hit-from>
+      <Hsp_hit-to>261</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>67</Hsp_identity>
+      <Hsp_positive>107</Hsp_positive>
+      <Hsp_gaps>56</Hsp_gaps>
+      <Hsp_align-len>270</Hsp_align-len>
+      <Hsp_qseq>LIRLHFHDCFV-----------NGCDASILLDDTGSIQSEKNAGPNVNSARGFNVVDNIKTALENACPGVVSCSDVLALASEASVSLAGGPSWTVLLGRRDSLTANLAGANSSIP-----SPIESLSNITFKFSAVGLNTNDLVALSGAHTFGRARCGVFNNRLFNFSGTGNPDPTLNSTLLSTLQQLCPQNGSASTITNLDLSTPDAFDNNYFANLQSNDG----LLQSDQELFSTTGSSTIAIVTSFASNQTLFFQAFAQSMINMGNI</Hsp_qseq>
+      <Hsp_hseq>MVRLGWHDAGTYNKNIEEWPQRGGANGSLRFD------VELKHGANAGLVNALNLLKPIKDKYSG-----VTYADLFQLASATAIEEAGGPKIPMKYGRVDVTEPEQCPEEGRLPDAGPPSPAQHLRDVFYR---MGLNDKEIVALSGAHTLGRSRP--------DRSGWGKPE-----TKYTKDGPGAP-GGQSWTAQWL------KFDNSYFKDIKERRDEDLLVLPTDAALFED--PSFKVYAEKYAADPEAFFKDYAEAHAKLSNL</Hsp_hseq>
+      <Hsp_midline>++RL  HD               G + S+  D       E   G N       N++  IK          V+ +D+  LAS  ++  AGGP   +  GR D            +P     SP + L ++ ++   +GLN  ++VALSGAHT GR+R         + SG G P+     T  +      P  G + T   L       FDN YF +++        +L +D  LF     S       +A++   FF+ +A++   + N+</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>25</Hit_num>
+  <Hit_id>pdb|4GED|A</Hit_id>
+  <Hit_def>Crystal Structure of the Leishmania Major Peroxidase-Cytochrome C Complex [Leishmania major]</Hit_def>
+  <Hit_accession>4GED_A</Hit_accession>
+  <Hit_len>268</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>63.3445</Hsp_bit-score>
+      <Hsp_score>138</Hsp_score>
+      <Hsp_evalue>2.55243e-10</Hsp_evalue>
+      <Hsp_query-from>19</Hsp_query-from>
+      <Hsp_query-to>193</Hsp_query-to>
+      <Hsp_hit-from>11</Hsp_hit-from>
+      <Hsp_hit-to>174</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>47</Hsp_identity>
+      <Hsp_positive>75</Hsp_positive>
+      <Hsp_gaps>33</Hsp_gaps>
+      <Hsp_align-len>186</Hsp_align-len>
+      <Hsp_qseq>VRSTIQQALQSDTRIGASLIRLHFHDCFVNGCDASILLDDTGSIQSEKNAGPNVNSAR-----------GFNVVDNIKTALENACPGVVSCSDVLALASEASVSLAGGPSWTVLLGRRDSLTANLAGANSSIPSPIESLSNITFKFSAVGLNTNDLVALSGAHTFGRARCGVFNNRLFNFSGTGNP</Hsp_qseq>
+      <Hsp_hseq>LRADIEDMISEKLELGPSLIRLAWHEAASYDC-------------FKKDGSPNSASMRFKPECLYAGNKGLDIPRKALETLKKKYPQI-SYADLWVLAAYVAIEYMGGPTIPFCWGRVDAKDGSVCGPDGRLPDGSKTQSHVREVFRRLGFNDQETVALIGAHTCG--ECHI------EFSGYHGP</Hsp_hseq>
+      <Hsp_midline>+R+ I+  +     +G SLIRL  H+     C              +K+  PN  S R           G ++       L+   P + S +D+  LA+  ++   GGP+     GR D+    + G +  +P   ++ S +   F  +G N  + VAL GAHT G   C +       FSG   P</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>26</Hit_num>
+  <Hit_id>pdb|3RIV|A</Hit_id>
+  <Hit_def>The Crystal Structure of Leishmania major Peroxidase [Leishmania major strain Friedlin] &gt;pdb|3RIV|B The Crystal Structure of Leishmania major Peroxidase [Leishmania major strain Friedlin]</Hit_def>
+  <Hit_accession>3RIV_A</Hit_accession>
+  <Hit_len>271</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>63.3445</Hsp_bit-score>
+      <Hsp_score>138</Hsp_score>
+      <Hsp_evalue>2.68121e-10</Hsp_evalue>
+      <Hsp_query-from>19</Hsp_query-from>
+      <Hsp_query-to>193</Hsp_query-to>
+      <Hsp_hit-from>12</Hsp_hit-from>
+      <Hsp_hit-to>175</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>47</Hsp_identity>
+      <Hsp_positive>75</Hsp_positive>
+      <Hsp_gaps>33</Hsp_gaps>
+      <Hsp_align-len>186</Hsp_align-len>
+      <Hsp_qseq>VRSTIQQALQSDTRIGASLIRLHFHDCFVNGCDASILLDDTGSIQSEKNAGPNVNSAR-----------GFNVVDNIKTALENACPGVVSCSDVLALASEASVSLAGGPSWTVLLGRRDSLTANLAGANSSIPSPIESLSNITFKFSAVGLNTNDLVALSGAHTFGRARCGVFNNRLFNFSGTGNP</Hsp_qseq>
+      <Hsp_hseq>LRADIEDMISEKLELGPSLIRLAWHEAASYDC-------------FKKDGSPNSASMRFKPECLYAGNKGLDIPRKALETLKKKYPQI-SYADLWVLAAYVAIEYMGGPTIPFCWGRVDAKDGSVCGPDGRLPDGSKTQSHVREVFRRLGFNDQETVALIGAHTCG--ECHI------EFSGYHGP</Hsp_hseq>
+      <Hsp_midline>+R+ I+  +     +G SLIRL  H+     C              +K+  PN  S R           G ++       L+   P + S +D+  LA+  ++   GGP+     GR D+    + G +  +P   ++ S +   F  +G N  + VAL GAHT G   C +       FSG   P</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>27</Hit_num>
+  <Hit_id>pdb|5AMM|A</Hit_id>
+  <Hit_def>Structure of Leishmania major peroxidase D211N mutant [Leishmania major] &gt;pdb|5AMM|B Structure of Leishmania major peroxidase D211N mutant [Leishmania major]</Hit_def>
+  <Hit_accession>5AMM_A</Hit_accession>
+  <Hit_len>270</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>63.3445</Hsp_bit-score>
+      <Hsp_score>138</Hsp_score>
+      <Hsp_evalue>2.69844e-10</Hsp_evalue>
+      <Hsp_query-from>19</Hsp_query-from>
+      <Hsp_query-to>193</Hsp_query-to>
+      <Hsp_hit-from>11</Hsp_hit-from>
+      <Hsp_hit-to>174</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>47</Hsp_identity>
+      <Hsp_positive>75</Hsp_positive>
+      <Hsp_gaps>33</Hsp_gaps>
+      <Hsp_align-len>186</Hsp_align-len>
+      <Hsp_qseq>VRSTIQQALQSDTRIGASLIRLHFHDCFVNGCDASILLDDTGSIQSEKNAGPNVNSAR-----------GFNVVDNIKTALENACPGVVSCSDVLALASEASVSLAGGPSWTVLLGRRDSLTANLAGANSSIPSPIESLSNITFKFSAVGLNTNDLVALSGAHTFGRARCGVFNNRLFNFSGTGNP</Hsp_qseq>
+      <Hsp_hseq>LRADIEDMISEKLELGPSLIRLAWHEAASYDC-------------FKKDGSPNSASMRFKPECLYAGNKGLDIPRKALETLKKKYPQI-SYADLWVLAAYVAIEYMGGPTIPFCWGRVDAKDGSVCGPDGRLPDGSKTQSHVREVFRRLGFNDQETVALIGAHTCG--ECHI------EFSGYHGP</Hsp_hseq>
+      <Hsp_midline>+R+ I+  +     +G SLIRL  H+     C              +K+  PN  S R           G ++       L+   P + S +D+  LA+  ++   GGP+     GR D+    + G +  +P   ++ S +   F  +G N  + VAL GAHT G   C +       FSG   P</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>28</Hit_num>
+  <Hit_id>pdb|5AL9|A</Hit_id>
+  <Hit_def>Structure of Leishmania major peroxidase D211R mutant (high res) [Leishmania major] &gt;pdb|5ALA|A Structure of Leishmania major peroxidase D211R mutant (low res) [Leishmania major] &gt;pdb|5ALA|B Structure of Leishmania major peroxidase D211R mutant (low res) [Leishmania major]</Hit_def>
+  <Hit_accession>5AL9_A</Hit_accession>
+  <Hit_len>270</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>63.3445</Hsp_bit-score>
+      <Hsp_score>138</Hsp_score>
+      <Hsp_evalue>3.03366e-10</Hsp_evalue>
+      <Hsp_query-from>19</Hsp_query-from>
+      <Hsp_query-to>193</Hsp_query-to>
+      <Hsp_hit-from>11</Hsp_hit-from>
+      <Hsp_hit-to>174</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>47</Hsp_identity>
+      <Hsp_positive>75</Hsp_positive>
+      <Hsp_gaps>33</Hsp_gaps>
+      <Hsp_align-len>186</Hsp_align-len>
+      <Hsp_qseq>VRSTIQQALQSDTRIGASLIRLHFHDCFVNGCDASILLDDTGSIQSEKNAGPNVNSAR-----------GFNVVDNIKTALENACPGVVSCSDVLALASEASVSLAGGPSWTVLLGRRDSLTANLAGANSSIPSPIESLSNITFKFSAVGLNTNDLVALSGAHTFGRARCGVFNNRLFNFSGTGNP</Hsp_qseq>
+      <Hsp_hseq>LRADIEDMISEKLELGPSLIRLAWHEAASYDC-------------FKKDGSPNSASMRFKPECLYAGNKGLDIPRKALETLKKKYPQI-SYADLWVLAAYVAIEYMGGPTIPFCWGRVDAKDGSVCGPDGRLPDGSKTQSHVREVFRRLGFNDQETVALIGAHTCG--ECHI------EFSGYHGP</Hsp_hseq>
+      <Hsp_midline>+R+ I+  +     +G SLIRL  H+     C              +K+  PN  S R           G ++       L+   P + S +D+  LA+  ++   GGP+     GR D+    + G +  +P   ++ S +   F  +G N  + VAL GAHT G   C +       FSG   P</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>29</Hit_num>
+  <Hit_id>pdb|3RIW|A</Hit_id>
+  <Hit_def>The Crystal Structure of Leishmania major Peroxidase mutant C197T [Leishmania major strain Friedlin] &gt;pdb|3RIW|B The Crystal Structure of Leishmania major Peroxidase mutant C197T [Leishmania major strain Friedlin]</Hit_def>
+  <Hit_accession>3RIW_A</Hit_accession>
+  <Hit_len>271</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>63.3445</Hsp_bit-score>
+      <Hsp_score>138</Hsp_score>
+      <Hsp_evalue>3.0438e-10</Hsp_evalue>
+      <Hsp_query-from>19</Hsp_query-from>
+      <Hsp_query-to>193</Hsp_query-to>
+      <Hsp_hit-from>12</Hsp_hit-from>
+      <Hsp_hit-to>175</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>46</Hsp_identity>
+      <Hsp_positive>73</Hsp_positive>
+      <Hsp_gaps>33</Hsp_gaps>
+      <Hsp_align-len>186</Hsp_align-len>
+      <Hsp_qseq>VRSTIQQALQSDTRIGASLIRLHFHDCFVNGCDASILLDDTGSIQSEKNAGPNVNSAR-----------GFNVVDNIKTALENACPGVVSCSDVLALASEASVSLAGGPSWTVLLGRRDSLTANLAGANSSIPSPIESLSNITFKFSAVGLNTNDLVALSGAHTFGRARCGVFNNRLFNFSGTGNP</Hsp_qseq>
+      <Hsp_hseq>LRADIEDMISEKLELGPSLIRLAWHEAASYDC-------------FKKDGSPNSASMRFKPECLYAGNKGLDIPRKALETLKKKYPQI-SYADLWVLAAYVAIEYMGGPTIPFCWGRVDAKDGSVCGPDGRLPDGSKTQSHVREVFRRLGFNDQETVALIGAHTCGETH--------IEFSGYHGP</Hsp_hseq>
+      <Hsp_midline>+R+ I+  +     +G SLIRL  H+     C              +K+  PN  S R           G ++       L+   P + S +D+  LA+  ++   GGP+     GR D+    + G +  +P   ++ S +   F  +G N  + VAL GAHT G             FSG   P</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>30</Hit_num>
+  <Hit_id>pdb|1APX|A</Hit_id>
+  <Hit_def>CRYSTAL STRUCTURE OF RECOMBINANT ASCORBATE PEROXIDASE [Pisum sativum] &gt;pdb|1APX|B CRYSTAL STRUCTURE OF RECOMBINANT ASCORBATE PEROXIDASE [Pisum sativum] &gt;pdb|1APX|C CRYSTAL STRUCTURE OF RECOMBINANT ASCORBATE PEROXIDASE [Pisum sativum] &gt;pdb|1APX|D CRYSTAL STRUCTURE OF RECOMBINANT ASCORBATE PEROXIDASE [Pisum sativum]</Hit_def>
+  <Hit_accession>1APX_A</Hit_accession>
+  <Hit_len>249</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>59.8936</Hsp_bit-score>
+      <Hsp_score>130</Hsp_score>
+      <Hsp_evalue>2.82013e-09</Hsp_evalue>
+      <Hsp_query-from>77</Hsp_query-from>
+      <Hsp_query-to>286</Hsp_query-to>
+      <Hsp_hit-from>72</Hsp_hit-from>
+      <Hsp_hit-to>244</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>54</Hsp_identity>
+      <Hsp_positive>84</Hsp_positive>
+      <Hsp_gaps>45</Hsp_gaps>
+      <Hsp_align-len>214</Hsp_align-len>
+      <Hsp_qseq>GFNVVDNIKTALENACPGVVSCSDVLALASEASVSLAGGPSWTVLLGRRDSLTANLAGANSSIPSPIESLSNITFKFSAVGLNTNDLVALSGAHTFGRARCGVFNNRLFNFSGTGNPDPTLNSTLLSTLQQLCPQNGSASTITNLDLSTPDAFDNNYFANLQS--NDGLLQ--SDQELFSTTGSSTIAIVTSFASNQTLFFQAFAQSMINMGNI</Hsp_qseq>
+      <Hsp_hseq>GLDIAVRLLEPIKEQFP-IVSYADFYQLAGVVAVEITGGPEVPFHPGREDKPEPPPEGRLPDATKGSDHLRDVFGK--AMGLSDQDIVALSGGHTIGAA-----HKERSGFEGPWTSNPLI-------------------------------FDNSYFTELLTGEKDGLLQLPSDKALL--TDSVFRPLVEKYAADEDVFFADYAEAHLKLSEL</Hsp_hseq>
+      <Hsp_midline>G ++   +   ++   P +VS +D   LA   +V + GGP      GR D       G         + L ++  K  A+GL   D+VALSG HT G A           F G    +P +                               FDN YF  L +   DGLLQ  SD+ L   T S    +V  +A+++ +FF  +A++ + +  +</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>31</Hit_num>
+  <Hit_id>pdb|5L86|A</Hit_id>
+  <Hit_def>engineered ascorbate peroxidise [Glycine max] &gt;pdb|5L86|B engineered ascorbate peroxidise [Glycine max]</Hit_def>
+  <Hit_accession>5L86_A</Hit_accession>
+  <Hit_len>247</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>56.4427</Hsp_bit-score>
+      <Hsp_score>122</Hsp_score>
+      <Hsp_evalue>4.06615e-08</Hsp_evalue>
+      <Hsp_query-from>11</Hsp_query-from>
+      <Hsp_query-to>286</Hsp_query-to>
+      <Hsp_hit-from>2</Hsp_hit-from>
+      <Hsp_hit-to>243</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>68</Hsp_identity>
+      <Hsp_positive>107</Hsp_positive>
+      <Hsp_gaps>62</Hsp_gaps>
+      <Hsp_align-len>290</Hsp_align-len>
+      <Hsp_qseq>TCPNASAIVRSTIQQALQ------SDTRIGASLIRLHFHDC--FVNGCDASILLDDTGSIQSEKNAGPNVNSAR-GFNVVDNIKTALENACPGVVSCSDVLALASEASVSLAGGPSWTVLLGRRDSLTANLAGANSSIPSPIESLSNITFKF-SAVGLNTNDLVALSGAHTFGRARCGVFNNRLFNFSGTGNPDPTLNSTLLSTLQQLCPQNGSASTITNLDLSTPDAFDNNYFANLQS--NDGLLQ--SDQELFSTTGSSTIAIVTSFASNQTLFFQAFAQSMINMGNI</Hsp_qseq>
+      <Hsp_hseq>SYPTVSADYQDAVEKAKKKLRGFIAEKRCAPLMLRLAFHSAGTFDKGTKTG------GPFGTIKHPAELAHSANNGLDIAVRLLEPLKAEFP-ILSYADFYQLAGVVAVEVTGGPKVPFHPGREDKPEPPPEG---RLPDPTKGSDHLRDVFGKAMGLTDQDIVALSGGXTIGAA-----HKERSGFEGPWTSNPLI-------------------------------FDNSYFTELLSGEKEGLLQLPSDKALLSD--PVFRPLVDKYAADEDAFFADYAEAHQKLSEL</Hsp_hseq>
+      <Hsp_midline>+ P  SA  +  +++A +      ++ R    ++RL FH    F  G          G   + K       SA  G ++   +   L+   P ++S +D   LA   +V + GGP      GR D       G    +P P +    +   F  A+GL   D+VALSG  T G A           F G    +P +                               FDN YF  L S   +GLLQ  SD+ L S        +V  +A+++  FF  +A++   +  +</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>32</Hit_num>
+  <Hit_id>pdb|2CL4|X</Hit_id>
+  <Hit_def>Ascorbate Peroxidase R172A mutant [Glycine max]</Hit_def>
+  <Hit_accession>2CL4_X</Hit_accession>
+  <Hit_len>261</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>56.0113</Hsp_bit-score>
+      <Hsp_score>121</Hsp_score>
+      <Hsp_evalue>5.86013e-08</Hsp_evalue>
+      <Hsp_query-from>11</Hsp_query-from>
+      <Hsp_query-to>286</Hsp_query-to>
+      <Hsp_hit-from>15</Hsp_hit-from>
+      <Hsp_hit-to>256</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>68</Hsp_identity>
+      <Hsp_positive>105</Hsp_positive>
+      <Hsp_gaps>60</Hsp_gaps>
+      <Hsp_align-len>289</Hsp_align-len>
+      <Hsp_qseq>TCPNASAIVRSTIQQALQ------SDTRIGASLIRLHFHDC--FVNGCDASILLDDTGSIQSEKNAGPNVNSAR-GFNVVDNIKTALENACPGVVSCSDVLALASEASVSLAGGPSWTVLLGRRDSLTANLAGANSSIPSPIESLSNITFKFSAVGLNTNDLVALSGAHTFGRARCGVFNNRLFNFSGTGNPDPTLNSTLLSTLQQLCPQNGSASTITNLDLSTPDAFDNNYFANLQS--NDGLLQ--SDQELFSTTGSSTIAIVTSFASNQTLFFQAFAQSMINMGNI</Hsp_qseq>
+      <Hsp_hseq>SYPTVSADYQKAVEKAKKKLRGFIAEKRCAPLMLRLAWHSAGTFDKGTKTG------GPFGTIKHPAELAHSANNGLDIAVRLLEPLKAEFP-ILSYADFYQLAGVVAVEVTGGPEVPFHPGREDKPEPPPEGRLPDATKGSDHLRDVFGK--AMGLTDQDIVALSGGHTIGAA------------------------------------HKEASGFEGPWTSNPLIFDNSYFTELLSGEKEGLLQLPSDKALLSD--PVFRPLVDKYAADEDAFFADYAEAHQKLSEL</Hsp_hseq>
+      <Hsp_midline>+ P  SA  +  +++A +      ++ R    ++RL  H    F  G          G   + K       SA  G ++   +   L+   P ++S +D   LA   +V + GGP      GR D       G         + L ++  K  A+GL   D+VALSG HT G A                                       AS       S P  FDN YF  L S   +GLLQ  SD+ L S        +V  +A+++  FF  +A++   +  +</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>33</Hit_num>
+  <Hit_id>pdb|1OAF|A</Hit_id>
+  <Hit_def>Ascobate peroxidase from soybean cytosol in complex with ascorbate [Glycine max] &gt;pdb|1OAG|A Ascorbate peroxidase from soybean cytosol [Glycine max] &gt;pdb|1V0H|X ASCOBATE PEROXIDASE FROM SOYBEAN CYTOSOL IN COMPLEX WITH SALICYLHYDROXAMIC ACID [Glycine max] &gt;pdb|2GHH|X Conformational mobility in the active site of a heme peroxidase [Glycine max] &gt;pdb|2GHK|X Conformational mobility in the active site of a heme peroxidase [Glycine max] &gt;pdb|5JPR|A Neutron Structure of Compound II of Ascorbate Peroxidase [Glycine max] &gt;pdb|6TAE|A Neutron structure of ferric ascorbate peroxidase [Glycine max] &gt;pdb|6XV4|A Neutron structure of ferric ascorbate peroxidase-ascorbate complex [Glycine max] &gt;pdb|7BI1|A Chain A, Ascorbate peroxidase [Glycine max]</Hit_def>
+  <Hit_accession>1OAF_A</Hit_accession>
+  <Hit_len>261</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>55.5799</Hsp_bit-score>
+      <Hsp_score>120</Hsp_score>
+      <Hsp_evalue>8.07946e-08</Hsp_evalue>
+      <Hsp_query-from>11</Hsp_query-from>
+      <Hsp_query-to>286</Hsp_query-to>
+      <Hsp_hit-from>15</Hsp_hit-from>
+      <Hsp_hit-to>256</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>67</Hsp_identity>
+      <Hsp_positive>106</Hsp_positive>
+      <Hsp_gaps>60</Hsp_gaps>
+      <Hsp_align-len>289</Hsp_align-len>
+      <Hsp_qseq>TCPNASAIVRSTIQQALQ------SDTRIGASLIRLHFHDC--FVNGCDASILLDDTGSIQSEKNAGPNVNSAR-GFNVVDNIKTALENACPGVVSCSDVLALASEASVSLAGGPSWTVLLGRRDSLTANLAGANSSIPSPIESLSNITFKFSAVGLNTNDLVALSGAHTFGRARCGVFNNRLFNFSGTGNPDPTLNSTLLSTLQQLCPQNGSASTITNLDLSTPDAFDNNYFANLQS--NDGLLQ--SDQELFSTTGSSTIAIVTSFASNQTLFFQAFAQSMINMGNI</Hsp_qseq>
+      <Hsp_hseq>SYPTVSADYQKAVEKAKKKLRGFIAEKRCAPLMLRLAWHSAGTFDKGTKTG------GPFGTIKHPAELAHSANNGLDIAVRLLEPLKAEFP-ILSYADFYQLAGVVAVEVTGGPEVPFHPGREDKPEPPPEGRLPDATKGSDHLRDVFGK--AMGLTDQDIVALSGGHTIGAA-----HKERSGFEGPWTSNPLI-------------------------------FDNSYFTELLSGEKEGLLQLPSDKALLSD--PVFRPLVDKYAADEDAFFADYAEAHQKLSEL</Hsp_hseq>
+      <Hsp_midline>+ P  SA  +  +++A +      ++ R    ++RL  H    F  G          G   + K       SA  G ++   +   L+   P ++S +D   LA   +V + GGP      GR D       G         + L ++  K  A+GL   D+VALSG HT G A           F G    +P +                               FDN YF  L S   +GLLQ  SD+ L S        +V  +A+++  FF  +A++   +  +</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>34</Hit_num>
+  <Hit_id>pdb|2XI6|A</Hit_id>
+  <Hit_def>The structure of ascorbate peroxidase Compound I [Glycine max] &gt;pdb|2XIF|A The structure of ascorbate peroxidase Compound II [Glycine max] &gt;pdb|2XIH|A The structure of ascorbate peroxidase Compound III [Glycine max] &gt;pdb|2XJ6|A The structure of ferrous ascorbate peroxidase [Glycine max] &gt;pdb|5JQR|A The Structure of Ascorbate Peroxidase Compound II formed by reaction with m-CPBA [Glycine max]</Hit_def>
+  <Hit_accession>2XI6_A</Hit_accession>
+  <Hit_len>249</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>55.1486</Hsp_bit-score>
+      <Hsp_score>119</Hsp_score>
+      <Hsp_evalue>8.42324e-08</Hsp_evalue>
+      <Hsp_query-from>11</Hsp_query-from>
+      <Hsp_query-to>286</Hsp_query-to>
+      <Hsp_hit-from>3</Hsp_hit-from>
+      <Hsp_hit-to>244</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>67</Hsp_identity>
+      <Hsp_positive>106</Hsp_positive>
+      <Hsp_gaps>60</Hsp_gaps>
+      <Hsp_align-len>289</Hsp_align-len>
+      <Hsp_qseq>TCPNASAIVRSTIQQALQ------SDTRIGASLIRLHFHDC--FVNGCDASILLDDTGSIQSEKNAGPNVNSAR-GFNVVDNIKTALENACPGVVSCSDVLALASEASVSLAGGPSWTVLLGRRDSLTANLAGANSSIPSPIESLSNITFKFSAVGLNTNDLVALSGAHTFGRARCGVFNNRLFNFSGTGNPDPTLNSTLLSTLQQLCPQNGSASTITNLDLSTPDAFDNNYFANLQS--NDGLLQ--SDQELFSTTGSSTIAIVTSFASNQTLFFQAFAQSMINMGNI</Hsp_qseq>
+      <Hsp_hseq>SYPTVSADYQKAVEKAKKKLRGFIAEKRCAPLMLRLAWHSAGTFDKGTKTG------GPFGTIKHPAELAHSANNGLDIAVRLLEPLKAEFP-ILSYADFYQLAGVVAVEVTGGPEVPFHPGREDKPEPPPEGRLPDATKGSDHLRDVFGK--AMGLTDQDIVALSGGHTIGAA-----HKERSGFEGPWTSNPLI-------------------------------FDNSYFTELLSGEKEGLLQLPSDKALLSD--PVFRPLVDKYAADEDAFFADYAEAHQKLSEL</Hsp_hseq>
+      <Hsp_midline>+ P  SA  +  +++A +      ++ R    ++RL  H    F  G          G   + K       SA  G ++   +   L+   P ++S +D   LA   +V + GGP      GR D       G         + L ++  K  A+GL   D+VALSG HT G A           F G    +P +                               FDN YF  L S   +GLLQ  SD+ L S        +V  +A+++  FF  +A++   +  +</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>35</Hit_num>
+  <Hit_id>pdb|2VCF|X</Hit_id>
+  <Hit_def>Structure of isoniazid (INH) bound to cytosolic soybean ascorbate peroxidase [Glycine max]</Hit_def>
+  <Hit_accession>2VCF_X</Hit_accession>
+  <Hit_len>264</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>55.1486</Hsp_bit-score>
+      <Hsp_score>119</Hsp_score>
+      <Hsp_evalue>9.61233e-08</Hsp_evalue>
+      <Hsp_query-from>11</Hsp_query-from>
+      <Hsp_query-to>286</Hsp_query-to>
+      <Hsp_hit-from>15</Hsp_hit-from>
+      <Hsp_hit-to>256</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>67</Hsp_identity>
+      <Hsp_positive>106</Hsp_positive>
+      <Hsp_gaps>60</Hsp_gaps>
+      <Hsp_align-len>289</Hsp_align-len>
+      <Hsp_qseq>TCPNASAIVRSTIQQALQ------SDTRIGASLIRLHFHDC--FVNGCDASILLDDTGSIQSEKNAGPNVNSAR-GFNVVDNIKTALENACPGVVSCSDVLALASEASVSLAGGPSWTVLLGRRDSLTANLAGANSSIPSPIESLSNITFKFSAVGLNTNDLVALSGAHTFGRARCGVFNNRLFNFSGTGNPDPTLNSTLLSTLQQLCPQNGSASTITNLDLSTPDAFDNNYFANLQS--NDGLLQ--SDQELFSTTGSSTIAIVTSFASNQTLFFQAFAQSMINMGNI</Hsp_qseq>
+      <Hsp_hseq>SYPTVSADYQKAVEKAKKKLRGFIAEKRCAPLMLRLAWHSAGTFDKGTKTG------GPFGTIKHPAELAHSANNGLDIAVRLLEPLKAEFP-ILSYADFYQLAGVVAVEVTGGPEVPFHPGREDKPEPPPEGRLPDATKGSDHLRDVFGK--AMGLTDQDIVALSGGHTIGAA-----HKERSGFEGPWTSNPLI-------------------------------FDNSYFTELLSGEKEGLLQLPSDKALLSD--PVFRPLVDKYAADEDAFFADYAEAHQKLSEL</Hsp_hseq>
+      <Hsp_midline>+ P  SA  +  +++A +      ++ R    ++RL  H    F  G          G   + K       SA  G ++   +   L+   P ++S +D   LA   +V + GGP      GR D       G         + L ++  K  A+GL   D+VALSG HT G A           F G    +P +                               FDN YF  L S   +GLLQ  SD+ L S        +V  +A+++  FF  +A++   +  +</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>36</Hit_num>
+  <Hit_id>pdb|2Y6B|A</Hit_id>
+  <Hit_def>Ascorbate Peroxidase R38K mutant [Glycine max]</Hit_def>
+  <Hit_accession>2Y6B_A</Hit_accession>
+  <Hit_len>249</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>53.8545</Hsp_bit-score>
+      <Hsp_score>116</Hsp_score>
+      <Hsp_evalue>2.4843e-07</Hsp_evalue>
+      <Hsp_query-from>11</Hsp_query-from>
+      <Hsp_query-to>286</Hsp_query-to>
+      <Hsp_hit-from>3</Hsp_hit-from>
+      <Hsp_hit-to>244</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>66</Hsp_identity>
+      <Hsp_positive>106</Hsp_positive>
+      <Hsp_gaps>60</Hsp_gaps>
+      <Hsp_align-len>289</Hsp_align-len>
+      <Hsp_qseq>TCPNASAIVRSTIQQALQ------SDTRIGASLIRLHFHDC--FVNGCDASILLDDTGSIQSEKNAGPNVNSAR-GFNVVDNIKTALENACPGVVSCSDVLALASEASVSLAGGPSWTVLLGRRDSLTANLAGANSSIPSPIESLSNITFKFSAVGLNTNDLVALSGAHTFGRARCGVFNNRLFNFSGTGNPDPTLNSTLLSTLQQLCPQNGSASTITNLDLSTPDAFDNNYFANLQS--NDGLLQ--SDQELFSTTGSSTIAIVTSFASNQTLFFQAFAQSMINMGNI</Hsp_qseq>
+      <Hsp_hseq>SYPTVSADYQKAVEKAKKKLRGFIAEKRCAPLMLKLAWHSAGTFDKGTKTG------GPFGTIKHPAELAHSANNGLDIAVRLLEPLKAEFP-ILSYADFYQLAGVVAVEVTGGPEVPFHPGREDKPEPPPEGRLPDATKGSDHLRDVFGK--AMGLTDQDIVALSGGHTIGAA-----HKERSGFEGPWTSNPLI-------------------------------FDNSYFTELLSGEKEGLLQLPSDKALLSD--PVFRPLVDKYAADEDAFFADYAEAHQKLSEL</Hsp_hseq>
+      <Hsp_midline>+ P  SA  +  +++A +      ++ R    +++L  H    F  G          G   + K       SA  G ++   +   L+   P ++S +D   LA   +V + GGP      GR D       G         + L ++  K  A+GL   D+VALSG HT G A           F G    +P +                               FDN YF  L S   +GLLQ  SD+ L S        +V  +A+++  FF  +A++   +  +</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>37</Hit_num>
+  <Hit_id>pdb|2GGN|X</Hit_id>
+  <Hit_def>Conformational mobility in the active site of a heme peroxidase [Glycine max] &gt;pdb|2GHC|X Conformational mobility in the active site of a heme peroxidase [Glycine max] &gt;pdb|2GHD|X Conformational mobility in the active site of a heme peroxidase [Glycine max] &gt;pdb|2GHE|X Conformational mobility in the active site of a heme peroxidase [Glycine max] &gt;pdb|2VCN|A Structure of isoniazid (INH) bound to cytosolic soybean ascorbate peroxidase mutant W41A [Glycine max] &gt;pdb|2VNX|X Crystal structure of soybean ascorbate peroxidase mutant W41A after exposure to a high dose of x-rays [Glycine max] &gt;pdb|2VNZ|X Crystal structure of dithinonite reduced soybean ascorbate peroxidase mutant W41A. [Glycine max] &gt;pdb|2VO2|X Crystal structure of soybean ascorbate peroxidase mutant W41A subjected to low dose X-rays [Glycine max] &gt;pdb|2WD4|A Ascorbate Peroxidase as a heme oxygenase: w41A variant product with t-butyl peroxide [Glycine max]</Hit_def>
+  <Hit_accession>2GGN_X</Hit_accession>
+  <Hit_len>261</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>53.4231</Hsp_bit-score>
+      <Hsp_score>115</Hsp_score>
+      <Hsp_evalue>3.82993e-07</Hsp_evalue>
+      <Hsp_query-from>11</Hsp_query-from>
+      <Hsp_query-to>286</Hsp_query-to>
+      <Hsp_hit-from>15</Hsp_hit-from>
+      <Hsp_hit-to>256</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>67</Hsp_identity>
+      <Hsp_positive>106</Hsp_positive>
+      <Hsp_gaps>60</Hsp_gaps>
+      <Hsp_align-len>289</Hsp_align-len>
+      <Hsp_qseq>TCPNASAIVRSTIQQALQ------SDTRIGASLIRLHFHDC--FVNGCDASILLDDTGSIQSEKNAGPNVNSAR-GFNVVDNIKTALENACPGVVSCSDVLALASEASVSLAGGPSWTVLLGRRDSLTANLAGANSSIPSPIESLSNITFKFSAVGLNTNDLVALSGAHTFGRARCGVFNNRLFNFSGTGNPDPTLNSTLLSTLQQLCPQNGSASTITNLDLSTPDAFDNNYFANLQS--NDGLLQ--SDQELFSTTGSSTIAIVTSFASNQTLFFQAFAQSMINMGNI</Hsp_qseq>
+      <Hsp_hseq>SYPTVSADYQKAVEKAKKKLRGFIAEKRCAPLMLRLAAHSAGTFDKGTKTG------GPFGTIKHPAELAHSANNGLDIAVRLLEPLKAEFP-ILSYADFYQLAGVVAVEVTGGPEVPFHPGREDKPEPPPEGRLPDATKGSDHLRDVFGK--AMGLTDQDIVALSGGHTIGAA-----HKERSGFEGPWTSNPLI-------------------------------FDNSYFTELLSGEKEGLLQLPSDKALLSD--PVFRPLVDKYAADEDAFFADYAEAHQKLSEL</Hsp_hseq>
+      <Hsp_midline>+ P  SA  +  +++A +      ++ R    ++RL  H    F  G          G   + K       SA  G ++   +   L+   P ++S +D   LA   +V + GGP      GR D       G         + L ++  K  A+GL   D+VALSG HT G A           F G    +P +                               FDN YF  L S   +GLLQ  SD+ L S        +V  +A+++  FF  +A++   +  +</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>38</Hit_num>
+  <Hit_id>pdb|3ZCG|A</Hit_id>
+  <Hit_def>Ascorbate peroxidase W41A-H42C mutant [Glycine max]</Hit_def>
+  <Hit_accession>3ZCG_A</Hit_accession>
+  <Hit_len>261</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>52.9917</Hsp_bit-score>
+      <Hsp_score>114</Hsp_score>
+      <Hsp_evalue>4.38823e-07</Hsp_evalue>
+      <Hsp_query-from>77</Hsp_query-from>
+      <Hsp_query-to>286</Hsp_query-to>
+      <Hsp_hit-from>84</Hsp_hit-from>
+      <Hsp_hit-to>256</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>53</Hsp_identity>
+      <Hsp_positive>81</Hsp_positive>
+      <Hsp_gaps>45</Hsp_gaps>
+      <Hsp_align-len>214</Hsp_align-len>
+      <Hsp_qseq>GFNVVDNIKTALENACPGVVSCSDVLALASEASVSLAGGPSWTVLLGRRDSLTANLAGANSSIPSPIESLSNITFKFSAVGLNTNDLVALSGAHTFGRARCGVFNNRLFNFSGTGNPDPTLNSTLLSTLQQLCPQNGSASTITNLDLSTPDAFDNNYFANLQS--NDGLLQ--SDQELFSTTGSSTIAIVTSFASNQTLFFQAFAQSMINMGNI</Hsp_qseq>
+      <Hsp_hseq>GLDIAVRLLEPLKAEFP-ILSYADFYQLAGVVAVEVTGGPEVPFHPGREDKPEPPPEGRLPDATKGSDHLRDVFGK--AMGLTDQDIVALSGGHTIGAA-----HKERSGFEGPWTSNPLI-------------------------------FDNSYFTELLSGEKEGLLQLPSDKALLSD--PVFRPLVDKYAADEDAFFADYAEAHQKLSEL</Hsp_hseq>
+      <Hsp_midline>G ++   +   L+   P ++S +D   LA   +V + GGP      GR D       G         + L ++  K  A+GL   D+VALSG HT G A           F G    +P +                               FDN YF  L S   +GLLQ  SD+ L S        +V  +A+++  FF  +A++   +  +</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>39</Hit_num>
+  <Hit_id>pdb|3ZCH|A</Hit_id>
+  <Hit_def>Ascorbate peroxidase W41A-H42M mutant [Glycine max]</Hit_def>
+  <Hit_accession>3ZCH_A</Hit_accession>
+  <Hit_len>261</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>52.9917</Hsp_bit-score>
+      <Hsp_score>114</Hsp_score>
+      <Hsp_evalue>5.07697e-07</Hsp_evalue>
+      <Hsp_query-from>77</Hsp_query-from>
+      <Hsp_query-to>286</Hsp_query-to>
+      <Hsp_hit-from>84</Hsp_hit-from>
+      <Hsp_hit-to>256</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>53</Hsp_identity>
+      <Hsp_positive>81</Hsp_positive>
+      <Hsp_gaps>45</Hsp_gaps>
+      <Hsp_align-len>214</Hsp_align-len>
+      <Hsp_qseq>GFNVVDNIKTALENACPGVVSCSDVLALASEASVSLAGGPSWTVLLGRRDSLTANLAGANSSIPSPIESLSNITFKFSAVGLNTNDLVALSGAHTFGRARCGVFNNRLFNFSGTGNPDPTLNSTLLSTLQQLCPQNGSASTITNLDLSTPDAFDNNYFANLQS--NDGLLQ--SDQELFSTTGSSTIAIVTSFASNQTLFFQAFAQSMINMGNI</Hsp_qseq>
+      <Hsp_hseq>GLDIAVRLLEPLKAEFP-ILSYADFYQLAGVVAVEVTGGPEVPFHPGREDKPEPPPEGRLPDATKGSDHLRDVFGK--AMGLTDQDIVALSGGHTIGAA-----HKERSGFEGPWTSNPLI-------------------------------FDNSYFTELLSGEKEGLLQLPSDKALLSD--PVFRPLVDKYAADEDAFFADYAEAHQKLSEL</Hsp_hseq>
+      <Hsp_midline>G ++   +   L+   P ++S +D   LA   +V + GGP      GR D       G         + L ++  K  A+GL   D+VALSG HT G A           F G    +P +                               FDN YF  L S   +GLLQ  SD+ L S        +V  +A+++  FF  +A++   +  +</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>40</Hit_num>
+  <Hit_id>pdb|2VCS|A</Hit_id>
+  <Hit_def>Structure of isoniazid (INH) bound to cytosolic soybean ascorbate peroxidase mutant H42A [Glycine max]</Hit_def>
+  <Hit_accession>2VCS_A</Hit_accession>
+  <Hit_len>261</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>52.5604</Hsp_bit-score>
+      <Hsp_score>113</Hsp_score>
+      <Hsp_evalue>5.38182e-07</Hsp_evalue>
+      <Hsp_query-from>77</Hsp_query-from>
+      <Hsp_query-to>286</Hsp_query-to>
+      <Hsp_hit-from>84</Hsp_hit-from>
+      <Hsp_hit-to>256</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>53</Hsp_identity>
+      <Hsp_positive>81</Hsp_positive>
+      <Hsp_gaps>45</Hsp_gaps>
+      <Hsp_align-len>214</Hsp_align-len>
+      <Hsp_qseq>GFNVVDNIKTALENACPGVVSCSDVLALASEASVSLAGGPSWTVLLGRRDSLTANLAGANSSIPSPIESLSNITFKFSAVGLNTNDLVALSGAHTFGRARCGVFNNRLFNFSGTGNPDPTLNSTLLSTLQQLCPQNGSASTITNLDLSTPDAFDNNYFANLQS--NDGLLQ--SDQELFSTTGSSTIAIVTSFASNQTLFFQAFAQSMINMGNI</Hsp_qseq>
+      <Hsp_hseq>GLDIAVRLLEPLKAEFP-ILSYADFYQLAGVVAVEVTGGPEVPFHPGREDKPEPPPEGRLPDATKGSDHLRDVFGK--AMGLTDQDIVALSGGHTIGAA-----HKERSGFEGPWTSNPLI-------------------------------FDNSYFTELLSGEKEGLLQLPSDKALLSD--PVFRPLVDKYAADEDAFFADYAEAHQKLSEL</Hsp_hseq>
+      <Hsp_midline>G ++   +   L+   P ++S +D   LA   +V + GGP      GR D       G         + L ++  K  A+GL   D+VALSG HT G A           F G    +P +                               FDN YF  L S   +GLLQ  SD+ L S        +V  +A+++  FF  +A++   +  +</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>41</Hit_num>
+  <Hit_id>pdb|3ZCY|A</Hit_id>
+  <Hit_def>Ascorbate peroxidase W41A-H42Y mutant [Glycine max]</Hit_def>
+  <Hit_accession>3ZCY_A</Hit_accession>
+  <Hit_len>249</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>52.5604</Hsp_bit-score>
+      <Hsp_score>113</Hsp_score>
+      <Hsp_evalue>5.73955e-07</Hsp_evalue>
+      <Hsp_query-from>77</Hsp_query-from>
+      <Hsp_query-to>286</Hsp_query-to>
+      <Hsp_hit-from>72</Hsp_hit-from>
+      <Hsp_hit-to>244</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>53</Hsp_identity>
+      <Hsp_positive>81</Hsp_positive>
+      <Hsp_gaps>45</Hsp_gaps>
+      <Hsp_align-len>214</Hsp_align-len>
+      <Hsp_qseq>GFNVVDNIKTALENACPGVVSCSDVLALASEASVSLAGGPSWTVLLGRRDSLTANLAGANSSIPSPIESLSNITFKFSAVGLNTNDLVALSGAHTFGRARCGVFNNRLFNFSGTGNPDPTLNSTLLSTLQQLCPQNGSASTITNLDLSTPDAFDNNYFANLQS--NDGLLQ--SDQELFSTTGSSTIAIVTSFASNQTLFFQAFAQSMINMGNI</Hsp_qseq>
+      <Hsp_hseq>GLDIAVRLLEPLKAEFP-ILSYADFYQLAGVVAVEVTGGPEVPFHPGREDKPEPPPEGRLPDATKGSDHLRDVFGK--AMGLTDQDIVALSGGHTIGAA-----HKERSGFEGPWTSNPLI-------------------------------FDNSYFTELLSGEKEGLLQLPSDKALLSD--PVFRPLVDKYAADEDAFFADYAEAHQKLSEL</Hsp_hseq>
+      <Hsp_midline>G ++   +   L+   P ++S +D   LA   +V + GGP      GR D       G         + L ++  K  A+GL   D+VALSG HT G A           F G    +P +                               FDN YF  L S   +GLLQ  SD+ L S        +V  +A+++  FF  +A++   +  +</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>42</Hit_num>
+  <Hit_id>pdb|2Y6A|A</Hit_id>
+  <Hit_def>Ascorbate Peroxidase R38A mutant [Glycine max]</Hit_def>
+  <Hit_accession>2Y6A_A</Hit_accession>
+  <Hit_len>249</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>52.5604</Hsp_bit-score>
+      <Hsp_score>113</Hsp_score>
+      <Hsp_evalue>6.20435e-07</Hsp_evalue>
+      <Hsp_query-from>77</Hsp_query-from>
+      <Hsp_query-to>286</Hsp_query-to>
+      <Hsp_hit-from>72</Hsp_hit-from>
+      <Hsp_hit-to>244</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>53</Hsp_identity>
+      <Hsp_positive>81</Hsp_positive>
+      <Hsp_gaps>45</Hsp_gaps>
+      <Hsp_align-len>214</Hsp_align-len>
+      <Hsp_qseq>GFNVVDNIKTALENACPGVVSCSDVLALASEASVSLAGGPSWTVLLGRRDSLTANLAGANSSIPSPIESLSNITFKFSAVGLNTNDLVALSGAHTFGRARCGVFNNRLFNFSGTGNPDPTLNSTLLSTLQQLCPQNGSASTITNLDLSTPDAFDNNYFANLQS--NDGLLQ--SDQELFSTTGSSTIAIVTSFASNQTLFFQAFAQSMINMGNI</Hsp_qseq>
+      <Hsp_hseq>GLDIAVRLLEPLKAEFP-ILSYADFYQLAGVVAVEVTGGPEVPFHPGREDKPEPPPEGRLPDATKGSDHLRDVFGK--AMGLTDQDIVALSGGHTIGAA-----HKERSGFEGPWTSNPLI-------------------------------FDNSYFTELLSGEKEGLLQLPSDKALLSD--PVFRPLVDKYAADEDAFFADYAEAHQKLSEL</Hsp_hseq>
+      <Hsp_midline>G ++   +   L+   P ++S +D   LA   +V + GGP      GR D       G         + L ++  K  A+GL   D+VALSG HT G A           F G    +P +                               FDN YF  L S   +GLLQ  SD+ L S        +V  +A+++  FF  +A++   +  +</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>43</Hit_num>
+  <Hit_id>pdb|1JCI|A</Hit_id>
+  <Hit_def>Stabilization of the Engineered Cation-binding Loop in Cytochrome c Peroxidase (CcP) [Saccharomyces cerevisiae]</Hit_def>
+  <Hit_accession>1JCI_A</Hit_accession>
+  <Hit_len>294</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>48.6781</Hsp_bit-score>
+      <Hsp_score>104</Hsp_score>
+      <Hsp_evalue>9.57868e-06</Hsp_evalue>
+      <Hsp_query-from>33</Hsp_query-from>
+      <Hsp_query-to>283</Hsp_query-to>
+      <Hsp_hit-from>42</Hsp_hit-from>
+      <Hsp_hit-to>269</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>60</Hsp_identity>
+      <Hsp_positive>96</Hsp_positive>
+      <Hsp_gaps>37</Hsp_gaps>
+      <Hsp_align-len>258</Hsp_align-len>
+      <Hsp_qseq>IGASLIRLHFHDCFVNGCDASILLDDTG-------SIQSEKNAGPNVNSARGFNVVDNIKTALENACPGVVSCSDVLALASEASVSLAGGPSWTVLLGRRDSLTANLAGANSSIPSPIESLSNITFKFSAVGLNTNDLVALSGAHTFGRARCGVFNNRLFNFSGTGNPDPTLNSTLLSTLQQLCPQNGSASTITNLDLSTPDAFDNNYFANLQSNDGLLQSDQELFSTTGSSTIAIVTSFASNQTLFFQAFAQSMINM</Hsp_qseq>
+      <Hsp_hseq>YGPVLVRLAWHTS--GTWDKH---DNTGGSYGGTYRFKKEFNDPSNAGLQNGFKFLEPIHKEFP-----WISSGDLFSLGGVTAVQEMQGPKIPWRCGRVDT-PEDTTPDNGRLPDADKDADYVRTFFQRLNMNDREVVALMGAHTLGKTHL---KNSGYEGPWTANPNVFDNSFYLNLLNE------------DWKLEKNDA--NNEQWDSKSGYMMLPTDYSLIQD--PKYLSIVKEYANDQDKFFKDFSKAFEKL</Hsp_hseq>
+      <Hsp_midline> G  L+RL  H       D     D+TG         + E N   N     GF  ++ I           +S  D+ +L    +V    GP      GR D+   +    N  +P   +    +   F  + +N  ++VAL GAHT G+       N  +    T NP+   NS  L  L +            +  L   DA  NN   + +S   +L +D  L        ++IV  +A +Q  FF+ F+++   +</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>44</Hit_num>
+  <Hit_id>pdb|1STQ|A</Hit_id>
+  <Hit_def>Cyrstal Structure of Cytochrome c Peroxidase Mutant: CcPK2M3 [Saccharomyces cerevisiae]</Hit_def>
+  <Hit_accession>1STQ_A</Hit_accession>
+  <Hit_len>294</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>47.384</Hsp_bit-score>
+      <Hsp_score>101</Hsp_score>
+      <Hsp_evalue>3.02618e-05</Hsp_evalue>
+      <Hsp_query-from>33</Hsp_query-from>
+      <Hsp_query-to>283</Hsp_query-to>
+      <Hsp_hit-from>42</Hsp_hit-from>
+      <Hsp_hit-to>269</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>60</Hsp_identity>
+      <Hsp_positive>93</Hsp_positive>
+      <Hsp_gaps>37</Hsp_gaps>
+      <Hsp_align-len>258</Hsp_align-len>
+      <Hsp_qseq>IGASLIRLHFHDCFVNGCDASILLDDTG-------SIQSEKNAGPNVNSARGFNVVDNIKTALENACPGVVSCSDVLALASEASVSLAGGPSWTVLLGRRDSLTANLAGANSSIPSPIESLSNITFKFSAVGLNTNDLVALSGAHTFGRARCGVFNNRLFNFSGTGNPDPTLNSTLLSTLQQLCPQNGSASTITNLDLSTPDAFDNNYFANLQSNDGLLQSDQELFSTTGSSTIAIVTSFASNQTLFFQAFAQSMINM</Hsp_qseq>
+      <Hsp_hseq>YGPVLVRLAWHTS--GTWDKH---DNTGGSYGGTYRFKKEFNDPSNAGLQNGFKFLEPIHKEFP-----WISSGDLFSLGGVTAVQEMQGPKIPWRCGRVDT-PEDTTPDNGRLPDADKDADYVRTFFQRLNMNDREVVALSGAHTLGKTHL---KNSGYEGPWTANNNVFDNSFYLNLLNE------------DWKLEKNDA--NN--EQWDSKSGYLQLPTDYSLIQDPKYLSIVKEYANDQDKFFKDFSKAFEKL</Hsp_hseq>
+      <Hsp_midline> G  L+RL  H       D     D+TG         + E N   N     GF  ++ I           +S  D+ +L    +V    GP      GR D+   +    N  +P   +    +   F  + +N  ++VALSGAHT G+       N  +    T N +   NS  L  L +            +  L   DA  NN      S  G LQ   +         ++IV  +A +Q  FF+ F+++   +</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>45</Hit_num>
+  <Hit_id>pdb|1SOG|A</Hit_id>
+  <Hit_def>Cyrstal Structure of Cytochrome c Peroxidase Mutant: CcPK2M2 [Saccharomyces cerevisiae]</Hit_def>
+  <Hit_accession>1SOG_A</Hit_accession>
+  <Hit_len>294</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>45.2272</Hsp_bit-score>
+      <Hsp_score>96</Hsp_score>
+      <Hsp_evalue>0.000144728</Hsp_evalue>
+      <Hsp_query-from>33</Hsp_query-from>
+      <Hsp_query-to>283</Hsp_query-to>
+      <Hsp_hit-from>42</Hsp_hit-from>
+      <Hsp_hit-to>269</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>59</Hsp_identity>
+      <Hsp_positive>92</Hsp_positive>
+      <Hsp_gaps>37</Hsp_gaps>
+      <Hsp_align-len>258</Hsp_align-len>
+      <Hsp_qseq>IGASLIRLHFHDCFVNGCDASILLDDTG-------SIQSEKNAGPNVNSARGFNVVDNIKTALENACPGVVSCSDVLALASEASVSLAGGPSWTVLLGRRDSLTANLAGANSSIPSPIESLSNITFKFSAVGLNTNDLVALSGAHTFGRARCGVFNNRLFNFSGTGNPDPTLNSTLLSTLQQLCPQNGSASTITNLDLSTPDAFDNNYFANLQSNDGLLQSDQELFSTTGSSTIAIVTSFASNQTLFFQAFAQSMINM</Hsp_qseq>
+      <Hsp_hseq>YGPVLVRLAWHTS--GTWDKH---DNTGGSYGGTYRFKKEFNDPSNAGLQNGFKFLEPIHKEFP-----WISSGDLFSLGGVTAVQEMQGPKIPWRCGRVDT-PEDTTPDNGRLPDADKDADYVRTFFQRLNMNDREVVALMGAHTLGKTHL---KNSGYEGPWTANNNVFDNSFYLNLLNE------------DWKLEKNDA--NN--EQWDSKSGYLQLPTDYSLIQDPKYLSIVKEYANDQDKFFKDFSKAFEKL</Hsp_hseq>
+      <Hsp_midline> G  L+RL  H       D     D+TG         + E N   N     GF  ++ I           +S  D+ +L    +V    GP      GR D+   +    N  +P   +    +   F  + +N  ++VAL GAHT G+       N  +    T N +   NS  L  L +            +  L   DA  NN      S  G LQ   +         ++IV  +A +Q  FF+ F+++   +</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>46</Hit_num>
+  <Hit_id>pdb|1JDR|A</Hit_id>
+  <Hit_def>Crystal Structure of a Proximal Domain Potassium Binding Variant of Cytochrome c Peroxidase [Saccharomyces cerevisiae]</Hit_def>
+  <Hit_accession>1JDR_A</Hit_accession>
+  <Hit_len>294</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>44.3644</Hsp_bit-score>
+      <Hsp_score>94</Hsp_score>
+      <Hsp_evalue>0.000268485</Hsp_evalue>
+      <Hsp_query-from>33</Hsp_query-from>
+      <Hsp_query-to>283</Hsp_query-to>
+      <Hsp_hit-from>42</Hsp_hit-from>
+      <Hsp_hit-to>269</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>59</Hsp_identity>
+      <Hsp_positive>95</Hsp_positive>
+      <Hsp_gaps>37</Hsp_gaps>
+      <Hsp_align-len>258</Hsp_align-len>
+      <Hsp_qseq>IGASLIRLHFHDCFVNGCDASILLDDTG-------SIQSEKNAGPNVNSARGFNVVDNIKTALENACPGVVSCSDVLALASEASVSLAGGPSWTVLLGRRDSLTANLAGANSSIPSPIESLSNITFKFSAVGLNTNDLVALSGAHTFGRARCGVFNNRLFNFSGTGNPDPTLNSTLLSTLQQLCPQNGSASTITNLDLSTPDAFDNNYFANLQSNDGLLQSDQELFSTTGSSTIAIVTSFASNQTLFFQAFAQSMINM</Hsp_qseq>
+      <Hsp_hseq>YGPVLVRLAWHTS--GTWDKH---DNTGGSYGGTYRFKKEFNDPSNAGLQNGFKFLEPIHKEFP-----WISSGDLFSLGGVTAVQEMQGPKIPWRCGRVDT-PEDTTPDNGRLPDADKDADYVRTFFQRLNMNDREVVALMGAHTLGKTHL---KNSGYEGPWTANNNVFDNSFYLNLLNE------------DWKLEKNDA--NNEQWDSKSGYMMLPTDYSLIQD--PKYLSIVKEYANDQDKFFKDFSKAFEKL</Hsp_hseq>
+      <Hsp_midline> G  L+RL  H       D     D+TG         + E N   N     GF  ++ I           +S  D+ +L    +V    GP      GR D+   +    N  +P   +    +   F  + +N  ++VAL GAHT G+       N  +    T N +   NS  L  L +            +  L   DA  NN   + +S   +L +D  L        ++IV  +A +Q  FF+ F+++   +</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>47</Hit_num>
+  <Hit_id>pdb|1KRJ|A</Hit_id>
+  <Hit_def>Engineering Calcium-binding site into Cytochrome c Peroxidase (CcP) [Saccharomyces cerevisiae]</Hit_def>
+  <Hit_accession>1KRJ_A</Hit_accession>
+  <Hit_len>294</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>40.4821</Hsp_bit-score>
+      <Hsp_score>85</Hsp_score>
+      <Hsp_evalue>0.00403936</Hsp_evalue>
+      <Hsp_query-from>33</Hsp_query-from>
+      <Hsp_query-to>283</Hsp_query-to>
+      <Hsp_hit-from>42</Hsp_hit-from>
+      <Hsp_hit-to>269</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>61</Hsp_identity>
+      <Hsp_positive>95</Hsp_positive>
+      <Hsp_gaps>45</Hsp_gaps>
+      <Hsp_align-len>262</Hsp_align-len>
+      <Hsp_qseq>IGASLIRLHFHDCFVNGCDASILLDDTG-------SIQSEKNAGPNVNSARGFNVVDNIKTALENACPGVVSCSDVLALASEASVSLAGGPSWTVLLGRRDSLTANLAGANSSIPSPIESLSNITFKFSAVGLNTNDLVALSGAHTFGRARCGVFNNRLFNFSGTGNPDPT----LNSTLLSTLQQLCPQNGSASTITNLDLSTPDAFDNNYFANLQSNDGLLQSDQELFSTTGSSTIAIVTSFASNQTLFFQAFAQSMINM</Hsp_qseq>
+      <Hsp_hseq>YGPVLVRLAWHTS--GTWDKH---DNTGGSYGGTYRFKKEFNDPSNAGLQNGFKFLEPIHKEFP-----WISSGDLFSLGGVTAVQEMQGPKIPWRCGRVDT-PEDTTPDNGRLPDADKDADYVRTFFQRLNMNDREVVALMGAHTLGKT-------HLKNSGYEGPWDATNNVFDNSFYLNLLNE------------DWKLEKNDA--NNEQWDSKSGYMMLPTDYSLIQD--PKYLSIVKEYANDQDKFFKDFSKAFEKL</Hsp_hseq>
+      <Hsp_midline> G  L+RL  H       D     D+TG         + E N   N     GF  ++ I           +S  D+ +L    +V    GP      GR D+   +    N  +P   +    +   F  + +N  ++VAL GAHT G+         L N    G  D T     NS  L  L +            +  L   DA  NN   + +S   +L +D  L        ++IV  +A +Q  FF+ F+++   +</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>48</Hit_num>
+  <Hit_id>pdb|1A2F|A</Hit_id>
+  <Hit_def>PROBING THE STRENGTH AND CHARACTER OF AN ASP-HIS-X HYDROGEN BOND BY INTRODUCING BURIED CHARGES [Saccharomyces cerevisiae]</Hit_def>
+  <Hit_accession>1A2F_A</Hit_accession>
+  <Hit_len>291</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>38.3253</Hsp_bit-score>
+      <Hsp_score>80</Hsp_score>
+      <Hsp_evalue>0.0188212</Hsp_evalue>
+      <Hsp_query-from>33</Hsp_query-from>
+      <Hsp_query-to>283</Hsp_query-to>
+      <Hsp_hit-from>39</Hsp_hit-from>
+      <Hsp_hit-to>266</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>56</Hsp_identity>
+      <Hsp_positive>90</Hsp_positive>
+      <Hsp_gaps>39</Hsp_gaps>
+      <Hsp_align-len>259</Hsp_align-len>
+      <Hsp_qseq>IGASLIRLHFHDCFVNG-CDASILLDDTG-------SIQSEKNAGPNVNSARGFNVVDNIKTALENACPGVVSCSDVLALASEASVSLAGGPSWTVLLGRRDSLTANLAGANSSIPSPIESLSNITFKFSAVGLNTNDLVALSGAHTFGRARCGVFNNRLFNFSGTGNPDPTLNSTLLSTLQQLCPQNGSASTITNLDLSTPDAFDNNYFANLQSNDGLLQSDQELFSTTGSSTIAIVTSFASNQTLFFQAFAQSMINM</Hsp_qseq>
+      <Hsp_hseq>YGPVLVRLAWH---ISGTWDKH---DNTGGSYGGTYRFKKEFNDPSNAGLQNGFKFLEPIHKEFP-----WISSGDLFSLGGVTAVQEMQGPKIPWRCGRVDT-PEDTTPDNGRLPDADKDAGYVRTFFQRLNMNDREVVALKGAHALGKTHL--------KNSGYEGPWGAANNVF---------TNEFYLNLLNEDWKLEKNDANNEQWDSKSGYMMLPTDYSLIQD--PKYLSIVKEYANDQDKFFKDFSKAFEKL</Hsp_hseq>
+      <Hsp_midline> G  L+RL  H   + G  D     D+TG         + E N   N     GF  ++ I           +S  D+ +L    +V    GP      GR D+   +    N  +P   +    +   F  + +N  ++VAL GAH  G+             SG   P    N             N     + N D        NN   + +S   +L +D  L        ++IV  +A +Q  FF+ F+++   +</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>49</Hit_num>
+  <Hit_id>pdb|4BM1|A</Hit_id>
+  <Hit_def>CRYSTAL STRUCTURE OF MANGANESE PEROXIDASE 4 FROM PLEUROTUS OSTREATUS - CRYSTAL FORM I [Pleurotus ostreatus] &gt;pdb|4BM1|B CRYSTAL STRUCTURE OF MANGANESE PEROXIDASE 4 FROM PLEUROTUS OSTREATUS - CRYSTAL FORM I [Pleurotus ostreatus] &gt;pdb|4BM2|A Crystal Structure Of Manganese Peroxidase 4 From Pleurotus Ostreatus - Crystal Form Ii [Pleurotus ostreatus] &gt;pdb|4BM3|A Crystal Structure Of Manganese Peroxidase 4 From Pleurotus Ostreatus - Crystal Form Iii [Pleurotus ostreatus] &gt;pdb|4BM4|A Crystal Structure Of Manganese Peroxidase 4 From Pleurotus Ostreatus - Crystal Form Iv [Pleurotus ostreatus]</Hit_def>
+  <Hit_accession>4BM1_A</Hit_accession>
+  <Hit_len>338</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>34.8744</Hsp_bit-score>
+      <Hsp_score>72</Hsp_score>
+      <Hsp_evalue>0.189926</Hsp_evalue>
+      <Hsp_query-from>96</Hsp_query-from>
+      <Hsp_query-to>303</Hsp_query-to>
+      <Hsp_hit-from>104</Hsp_hit-from>
+      <Hsp_hit-to>288</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>50</Hsp_identity>
+      <Hsp_positive>77</Hsp_positive>
+      <Hsp_gaps>25</Hsp_gaps>
+      <Hsp_align-len>209</Hsp_align-len>
+      <Hsp_qseq>VSCSDVLALA-SEASVSLAGGPSWTVLLGRRDSLTANLAGANSSIPSPIESLSNITFKFSAVGLNTNDLVALSGAHTFGRARCGVFNNRLFNFSGTGNPDPTLNSTLLSTLQQLCPQNGSASTITNLDLSTPDAFDNNYFANLQSNDGLLQSDQELFSTTGSSTIAIVTSFASNQTLFFQAFAQSMINMGNISPLTGSNGEIRLDCKKV</Hsp_qseq>
+      <Hsp_hseq>VSFGDFIQFAGAVGSSNCAGGPRIQFLAGRSN---VTKPSPDHLVPEPFDSVTSILARMGDAGFKPDEVVALLASHSV--AAQDTIDPKL-----AGHP---FDSTPSDFDSQFF-----VETLLKGTLIPGDSLHKGQVKSPLPGEFRLQSDELL--ARDSRTSCEWQSFISNPNSMVPKFERAMAKMATL----GQNPKKLIDCSEV</Hsp_hseq>
+      <Hsp_midline>VS  D +  A +  S   AGGP    L GR +         +  +P P +S++ I  +    G   +++VAL  +H+   A     + +L      G P    +ST      Q         T+    L   D+            +  LQSD+ L     S T     SF SN       F ++M  M  +    G N +  +DC +V</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>50</Hit_num>
+  <Hit_id>pdb|4R6H|A</Hit_id>
+  <Hit_def>Crystal structure of putative binding protein msme from bacillus subtilis subsp. subtilis str. 168, target efi-510764, an open conformation [Bacillus subtilis subsp. subtilis str. 168]</Hit_def>
+  <Hit_accession>4R6H_A</Hit_accession>
+  <Hit_len>428</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>34.443</Hsp_bit-score>
+      <Hsp_score>71</Hsp_score>
+      <Hsp_evalue>0.27852</Hsp_evalue>
+      <Hsp_query-from>156</Hsp_query-from>
+      <Hsp_query-to>201</Hsp_query-to>
+      <Hsp_hit-from>81</Hsp_hit-from>
+      <Hsp_hit-to>126</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>17</Hsp_identity>
+      <Hsp_positive>22</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>46</Hsp_align-len>
+      <Hsp_qseq>VGLNTNDLVALSGAHTFGRARCGVFNNRLFNFSGTGNPDPTLNSTL</Hsp_qseq>
+      <Hsp_hseq>VRMAANDLPDLFDTHGWGKIRYGEYTADLRDMKWTQDLDPNLNSIL</Hsp_hseq>
+      <Hsp_midline>V +  NDL  L   H  G+ R G +   L +   T + DP LNS L</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>51</Hit_num>
+  <Hit_id>pdb|5CJH|A</Hit_id>
+  <Hit_def>Crystal Structure of Eukaryotic Oxoiron MagKatG2 at pH 8.5 [Pyricularia oryzae 70-15] &gt;pdb|5CJH|B Crystal Structure of Eukaryotic Oxoiron MagKatG2 at pH 8.5 [Pyricularia oryzae 70-15] &gt;pdb|5JHX|A Crystal Structure of Fungal MagKatG2 at pH 3.0 [Pyricularia oryzae 70-15] &gt;pdb|5JHX|B Crystal Structure of Fungal MagKatG2 at pH 3.0 [Pyricularia oryzae 70-15] &gt;pdb|5JHY|A Crystal Structure of Fungal MagKatG2 at pH 5.5 [Pyricularia oryzae 70-15] &gt;pdb|5JHY|B Crystal Structure of Fungal MagKatG2 at pH 5.5 [Pyricularia oryzae 70-15] &gt;pdb|5JHZ|A Crystal Structure of Fungal MagKatG2 at pH 7.0 [Pyricularia oryzae 70-15] &gt;pdb|5JHZ|B Crystal Structure of Fungal MagKatG2 at pH 7.0 [Pyricularia oryzae 70-15]</Hit_def>
+  <Hit_accession>5CJH_A</Hit_accession>
+  <Hit_len>764</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>31.8548</Hsp_bit-score>
+      <Hsp_score>65</Hsp_score>
+      <Hsp_evalue>1.8669</Hsp_evalue>
+      <Hsp_query-from>128</Hsp_query-from>
+      <Hsp_query-to>179</Hsp_query-to>
+      <Hsp_hit-from>250</Hsp_hit-from>
+      <Hsp_hit-to>301</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>18</Hsp_identity>
+      <Hsp_positive>26</Hsp_positive>
+      <Hsp_gaps>2</Hsp_gaps>
+      <Hsp_align-len>53</Hsp_align-len>
+      <Hsp_qseq>LTANLAGANSSIPSPIESLSNITFKFSAVGLNTNDLVAL-SGAHTFGRARCGV</Hsp_qseq>
+      <Hsp_hseq>IYVNPEGPNGT-PDPAASAKDIREAFGRMGMNDTETVALIAGGHAFGKTHGAV</Hsp_hseq>
+      <Hsp_midline>+  N  G N + P P  S  +I   F  +G+N  + VAL +G H FG+    V</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>52</Hit_num>
+  <Hit_id>pdb|3UT2|A</Hit_id>
+  <Hit_def>Crystal Structure of Fungal MagKatG2 [Pyricularia oryzae 70-15] &gt;pdb|3UT2|B Crystal Structure of Fungal MagKatG2 [Pyricularia oryzae 70-15]</Hit_def>
+  <Hit_accession>3UT2_A</Hit_accession>
+  <Hit_len>764</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>31.8548</Hsp_bit-score>
+      <Hsp_score>65</Hsp_score>
+      <Hsp_evalue>1.90282</Hsp_evalue>
+      <Hsp_query-from>128</Hsp_query-from>
+      <Hsp_query-to>179</Hsp_query-to>
+      <Hsp_hit-from>250</Hsp_hit-from>
+      <Hsp_hit-to>301</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>18</Hsp_identity>
+      <Hsp_positive>26</Hsp_positive>
+      <Hsp_gaps>2</Hsp_gaps>
+      <Hsp_align-len>53</Hsp_align-len>
+      <Hsp_qseq>LTANLAGANSSIPSPIESLSNITFKFSAVGLNTNDLVAL-SGAHTFGRARCGV</Hsp_qseq>
+      <Hsp_hseq>IYVNPEGPNGT-PDPAASAKDIREAFGRMGMNDTETVALIAGGHAFGKTHGAV</Hsp_hseq>
+      <Hsp_midline>+  N  G N + P P  S  +I   F  +G+N  + VAL +G H FG+    V</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>53</Hit_num>
+  <Hit_id>pdb|3WNU|A</Hit_id>
+  <Hit_def>The crystal structure of catalase-peroxidase, KatG, from Synechococcus PCC7942 [Synechococcus elongatus PCC 7942 = FACHB-805]</Hit_def>
+  <Hit_accession>3WNU_A</Hit_accession>
+  <Hit_len>720</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>31.4234</Hsp_bit-score>
+      <Hsp_score>64</Hsp_score>
+      <Hsp_evalue>3.10825</Hsp_evalue>
+      <Hsp_query-from>140</Hsp_query-from>
+      <Hsp_query-to>246</Hsp_query-to>
+      <Hsp_hit-from>232</Hsp_hit-from>
+      <Hsp_hit-to>338</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>26</Hsp_identity>
+      <Hsp_positive>41</Hsp_positive>
+      <Hsp_gaps>2</Hsp_gaps>
+      <Hsp_align-len>108</Hsp_align-len>
+      <Hsp_qseq>PSPIESLSNITFKFSAVGLNTNDLVAL-SGAHTFGRARCGVFNNRLFNFSGTGNPDPTLNSTLLSTLQQLCPQNGSASTITNLDLSTPDAFDNNYFANLQSNDGLLQS</Hsp_qseq>
+      <Hsp_hseq>PDPLKTAHDVRVTFARMAMNDEETVALTAGGHTVGKCH-GNGNAALLGPEPEGADVEDQGLGWINKTQSGIGRNAVTSGLEGAWTPHPTQWDNGYFRMLLNYDWELKK</Hsp_hseq>
+      <Hsp_midline>P P+++  ++   F+ + +N  + VAL +G HT G+   G  N  L      G          +   Q    +N   S +       P   DN YF  L   D  L+ </Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>54</Hit_num>
+  <Hit_id>pdb|2CU5|A</Hit_id>
+  <Hit_def>Crystal Structure Of The Conserved Hypothetical Protein TT1486 From Thermus Thermophilus HB8 [Thermus thermophilus HB8] &gt;pdb|2CU5|B Crystal Structure Of The Conserved Hypothetical Protein TT1486 From Thermus Thermophilus HB8 [Thermus thermophilus HB8] &gt;pdb|2CU5|C Crystal Structure Of The Conserved Hypothetical Protein TT1486 From Thermus Thermophilus HB8 [Thermus thermophilus HB8]</Hit_def>
+  <Hit_accession>2CU5_A</Hit_accession>
+  <Hit_len>129</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>30.5607</Hsp_bit-score>
+      <Hsp_score>62</Hsp_score>
+      <Hsp_evalue>3.17884</Hsp_evalue>
+      <Hsp_query-from>138</Hsp_query-from>
+      <Hsp_query-to>212</Hsp_query-to>
+      <Hsp_hit-from>8</Hsp_hit-from>
+      <Hsp_hit-to>70</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>23</Hsp_identity>
+      <Hsp_positive>29</Hsp_positive>
+      <Hsp_gaps>12</Hsp_gaps>
+      <Hsp_align-len>75</Hsp_align-len>
+      <Hsp_qseq>SIPSPIESLSNITFKFSAVGLNTNDLVALSGAHTFGRARCGVFNNRLFNFSGTGNPDPTLNSTLLSTLQQLCPQN</Hsp_qseq>
+      <Hsp_hseq>EVPTPEEGFVNITRKVEAALSGHTGLVYLFVPHTT----CG--------LTVQEGADPTVAQDLLGRLAELAPRH</Hsp_hseq>
+      <Hsp_midline> +P+P E   NIT K  A       LV L   HT     CG         +     DPT+   LL  L +L P+ </Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>55</Hit_num>
+  <Hit_id>pdb|5L02|A</Hit_id>
+  <Hit_def>S324T variant of B. pseudomallei KatG [Burkholderia pseudomallei 1710b] &gt;pdb|5L02|B S324T variant of B. pseudomallei KatG [Burkholderia pseudomallei 1710b]</Hit_def>
+  <Hit_accession>5L02_A</Hit_accession>
+  <Hit_len>728</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>31.4234</Hsp_bit-score>
+      <Hsp_score>64</Hsp_score>
+      <Hsp_evalue>3.20128</Hsp_evalue>
+      <Hsp_query-from>140</Hsp_query-from>
+      <Hsp_query-to>237</Hsp_query-to>
+      <Hsp_hit-from>228</Hsp_hit-from>
+      <Hsp_hit-to>325</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>26</Hsp_identity>
+      <Hsp_positive>43</Hsp_positive>
+      <Hsp_gaps>10</Hsp_gaps>
+      <Hsp_align-len>103</Hsp_align-len>
+      <Hsp_qseq>PSPIESLSNITFKFSAVGLNTNDLVAL-SGAHTFGRAR-CGVFNNRLFNFSGTGNPDPTLNSTLLSTLQQLCPQNGSASTITNLDL---STPDAFDNNYFANL</Hsp_qseq>
+      <Hsp_hseq>PDPVAAARDIRDTFARMAMNDEETVALIAGGHTFGKTHGAGPASNVGAEPEAAG-----IEAQGLGWKSAYRTGKGADAITTGLEVTWTTTPTQWSHNFFENL</Hsp_hseq>
+      <Hsp_midline>P P+ +  +I   F+ + +N  + VAL +G HTFG+    G   N        G     + +  L          G+ +  T L++   +TP     N+F NL</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>56</Hit_num>
+  <Hit_id>pdb|3X16|A</Hit_id>
+  <Hit_def>Crystal structure of the catalase-peroxidase KatG W78F mutant from Synechococcus elongatus PCC7942 [Synechococcus elongatus PCC 7942 = FACHB-805] &gt;pdb|4PAE|A Crystal structure of catalase-peroxidase (KatG) W78F mutant from Synechococcus elongatus PCC7942 [Synechococcus elongatus PCC 7942 = FACHB-805]</Hit_def>
+  <Hit_accession>3X16_A</Hit_accession>
+  <Hit_len>720</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>31.4234</Hsp_bit-score>
+      <Hsp_score>64</Hsp_score>
+      <Hsp_evalue>3.22902</Hsp_evalue>
+      <Hsp_query-from>140</Hsp_query-from>
+      <Hsp_query-to>246</Hsp_query-to>
+      <Hsp_hit-from>232</Hsp_hit-from>
+      <Hsp_hit-to>338</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>26</Hsp_identity>
+      <Hsp_positive>41</Hsp_positive>
+      <Hsp_gaps>2</Hsp_gaps>
+      <Hsp_align-len>108</Hsp_align-len>
+      <Hsp_qseq>PSPIESLSNITFKFSAVGLNTNDLVAL-SGAHTFGRARCGVFNNRLFNFSGTGNPDPTLNSTLLSTLQQLCPQNGSASTITNLDLSTPDAFDNNYFANLQSNDGLLQS</Hsp_qseq>
+      <Hsp_hseq>PDPLKTAHDVRVTFARMAMNDEETVALTAGGHTVGKCH-GNGNAALLGPEPEGADVEDQGLGWINKTQSGIGRNAVTSGLEGAWTPHPTQWDNGYFRMLLNYDWELKK</Hsp_hseq>
+      <Hsp_midline>P P+++  ++   F+ + +N  + VAL +G HT G+   G  N  L      G          +   Q    +N   S +       P   DN YF  L   D  L+ </Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>57</Hit_num>
+  <Hit_id>pdb|5SXT|A</Hit_id>
+  <Hit_def>Crystal structure of the S324T variant of Burkholderia pseudomallei KatG with isonicotinic acid hydrazide bound [Burkholderia pseudomallei 1710b] &gt;pdb|5SXT|B Crystal structure of the S324T variant of Burkholderia pseudomallei KatG with isonicotinic acid hydrazide bound [Burkholderia pseudomallei 1710b]</Hit_def>
+  <Hit_accession>5SXT_A</Hit_accession>
+  <Hit_len>728</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>30.9921</Hsp_bit-score>
+      <Hsp_score>63</Hsp_score>
+      <Hsp_evalue>3.32567</Hsp_evalue>
+      <Hsp_query-from>140</Hsp_query-from>
+      <Hsp_query-to>237</Hsp_query-to>
+      <Hsp_hit-from>228</Hsp_hit-from>
+      <Hsp_hit-to>325</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>26</Hsp_identity>
+      <Hsp_positive>43</Hsp_positive>
+      <Hsp_gaps>10</Hsp_gaps>
+      <Hsp_align-len>103</Hsp_align-len>
+      <Hsp_qseq>PSPIESLSNITFKFSAVGLNTNDLVAL-SGAHTFGRAR-CGVFNNRLFNFSGTGNPDPTLNSTLLSTLQQLCPQNGSASTITNLDL---STPDAFDNNYFANL</Hsp_qseq>
+      <Hsp_hseq>PDPVAAARDIRDTFARMAMNDEETVALIAGGHTFGKTHGAGPASNVGAEPEAAG-----IEAQGLGWKSAYRTGKGADAITTGLEVTWTTTPTQWSHNFFENL</Hsp_hseq>
+      <Hsp_midline>P P+ +  +I   F+ + +N  + VAL +G HTFG+    G   N        G     + +  L          G+ +  T L++   +TP     N+F NL</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>58</Hit_num>
+  <Hit_id>pdb|3WXO|A</Hit_id>
+  <Hit_def>Crystal structure of isoniazid bound KatG catalase peroxidase from Synechococcus elongatus PCC7942 [Synechococcus elongatus PCC 7942 = FACHB-805]</Hit_def>
+  <Hit_accession>3WXO_A</Hit_accession>
+  <Hit_len>710</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>30.9921</Hsp_bit-score>
+      <Hsp_score>63</Hsp_score>
+      <Hsp_evalue>3.68568</Hsp_evalue>
+      <Hsp_query-from>140</Hsp_query-from>
+      <Hsp_query-to>246</Hsp_query-to>
+      <Hsp_hit-from>222</Hsp_hit-from>
+      <Hsp_hit-to>328</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>26</Hsp_identity>
+      <Hsp_positive>41</Hsp_positive>
+      <Hsp_gaps>2</Hsp_gaps>
+      <Hsp_align-len>108</Hsp_align-len>
+      <Hsp_qseq>PSPIESLSNITFKFSAVGLNTNDLVAL-SGAHTFGRARCGVFNNRLFNFSGTGNPDPTLNSTLLSTLQQLCPQNGSASTITNLDLSTPDAFDNNYFANLQSNDGLLQS</Hsp_qseq>
+      <Hsp_hseq>PDPLKTAHDVRVTFARMAMNDEETVALTAGGHTVGKCH-GNGNAALLGPEPEGADVEDQGLGWINKTQSGIGRNAVTSGLEGAWTPHPTQWDNGYFRMLLNYDWELKK</Hsp_hseq>
+      <Hsp_midline>P P+++  ++   F+ + +N  + VAL +G HT G+   G  N  L      G          +   Q    +N   S +       P   DN YF  L   D  L+ </Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>59</Hit_num>
+  <Hit_id>pdb|1UB2|A</Hit_id>
+  <Hit_def>Crystal structure of catalase-peroxidase from Synechococcus PCC 7942 [Synechococcus elongatus PCC 7942 = FACHB-805]</Hit_def>
+  <Hit_accession>1UB2_A</Hit_accession>
+  <Hit_len>720</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>30.9921</Hsp_bit-score>
+      <Hsp_score>63</Hsp_score>
+      <Hsp_evalue>3.86999</Hsp_evalue>
+      <Hsp_query-from>140</Hsp_query-from>
+      <Hsp_query-to>235</Hsp_query-to>
+      <Hsp_hit-from>231</Hsp_hit-from>
+      <Hsp_hit-to>326</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>24</Hsp_identity>
+      <Hsp_positive>38</Hsp_positive>
+      <Hsp_gaps>2</Hsp_gaps>
+      <Hsp_align-len>97</Hsp_align-len>
+      <Hsp_qseq>PSPIESLSNITFKFSAVGLNTNDLVAL-SGAHTFGRARCGVFNNRLFNFSGTGNPDPTLNSTLLSTLQQLCPQNGSASTITNLDLSTPDAFDNNYFA</Hsp_qseq>
+      <Hsp_hseq>PDPLKTAHDVRVTFARMAMNDEETVALTAGGHTVGKCH-GNGNAALLGPEPEGADVEDQGLGWINKTQSGIGRNAVTSGLEGAWTPHPTQWDNGYFA</Hsp_hseq>
+      <Hsp_midline>P P+++  ++   F+ + +N  + VAL +G HT G+   G  N  L      G          +   Q    +N   S +       P   DN YFA</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>60</Hit_num>
+  <Hit_id>pdb|7OO5|A</Hit_id>
+  <Hit_def>Chain A, lignin peroxidase [Agrocybe pediades]</Hit_def>
+  <Hit_accession>7OO5_A</Hit_accession>
+  <Hit_len>331</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>30.5607</Hsp_bit-score>
+      <Hsp_score>62</Hsp_score>
+      <Hsp_evalue>4.32435</Hsp_evalue>
+      <Hsp_query-from>114</Hsp_query-from>
+      <Hsp_query-to>175</Hsp_query-to>
+      <Hsp_hit-from>118</Hsp_hit-from>
+      <Hsp_hit-to>176</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>15</Hsp_identity>
+      <Hsp_positive>29</Hsp_positive>
+      <Hsp_gaps>3</Hsp_gaps>
+      <Hsp_align-len>62</Hsp_align-len>
+      <Hsp_qseq>GGPSWTVLLGRRDSLTANLAGANSSIPSPIESLSNITFKFSAVGLNTNDLVALSGAHTFGRA</Hsp_qseq>
+      <Hsp_hseq>GSPQLAYSFGRPPPVAP---APDGTVPEPTDSVTDILARFSEAGFVTAEVIWLLASHSIAAA</Hsp_hseq>
+      <Hsp_midline>G P      GR   +       + ++P P +S+++I  +FS  G  T +++ L  +H+   A</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>61</Hit_num>
+  <Hit_id>pdb|5KQH|A</Hit_id>
+  <Hit_def>Crystal structure of the V293D variant of catalase-peroxidase from B. pseudomallei [Burkholderia pseudomallei 1710b] &gt;pdb|5KQH|B Crystal structure of the V293D variant of catalase-peroxidase from B. pseudomallei [Burkholderia pseudomallei 1710b]</Hit_def>
+  <Hit_accession>5KQH_A</Hit_accession>
+  <Hit_len>728</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>30.5607</Hsp_bit-score>
+      <Hsp_score>62</Hsp_score>
+      <Hsp_evalue>4.64224</Hsp_evalue>
+      <Hsp_query-from>140</Hsp_query-from>
+      <Hsp_query-to>174</Hsp_query-to>
+      <Hsp_hit-from>228</Hsp_hit-from>
+      <Hsp_hit-to>263</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>13</Hsp_identity>
+      <Hsp_positive>22</Hsp_positive>
+      <Hsp_gaps>1</Hsp_gaps>
+      <Hsp_align-len>36</Hsp_align-len>
+      <Hsp_qseq>PSPIESLSNITFKFSAVGLNTNDLVAL-SGAHTFGR</Hsp_qseq>
+      <Hsp_hseq>PDPVAAARDIRDTFARMAMNDEETVALIAGGHTFGK</Hsp_hseq>
+      <Hsp_midline>P P+ +  +I   F+ + +N  + VAL +G HTFG+</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>62</Hit_num>
+  <Hit_id>pdb|5SYV|A</Hit_id>
+  <Hit_def>Crystal structure of Burkholderia pseudomallei KatG N240D variant [Burkholderia pseudomallei 1710b] &gt;pdb|5SYV|B Crystal structure of Burkholderia pseudomallei KatG N240D variant [Burkholderia pseudomallei 1710b]</Hit_def>
+  <Hit_accession>5SYV_A</Hit_accession>
+  <Hit_len>728</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>30.5607</Hsp_bit-score>
+      <Hsp_score>62</Hsp_score>
+      <Hsp_evalue>4.68668</Hsp_evalue>
+      <Hsp_query-from>140</Hsp_query-from>
+      <Hsp_query-to>174</Hsp_query-to>
+      <Hsp_hit-from>228</Hsp_hit-from>
+      <Hsp_hit-to>263</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>13</Hsp_identity>
+      <Hsp_positive>22</Hsp_positive>
+      <Hsp_gaps>1</Hsp_gaps>
+      <Hsp_align-len>36</Hsp_align-len>
+      <Hsp_qseq>PSPIESLSNITFKFSAVGLNTNDLVAL-SGAHTFGR</Hsp_qseq>
+      <Hsp_hseq>PDPVAAARDIRDTFARMAMNDEETVALIAGGHTFGK</Hsp_hseq>
+      <Hsp_midline>P P+ +  +I   F+ + +N  + VAL +G HTFG+</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>63</Hit_num>
+  <Hit_id>pdb|5KQI|A</Hit_id>
+  <Hit_def>Crystal structure of the L326D variant of catalase-peroxidase from B. pseudomallei [Burkholderia pseudomallei 1710b] &gt;pdb|5KQI|B Crystal structure of the L326D variant of catalase-peroxidase from B. pseudomallei [Burkholderia pseudomallei 1710b]</Hit_def>
+  <Hit_accession>5KQI_A</Hit_accession>
+  <Hit_len>728</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>30.5607</Hsp_bit-score>
+      <Hsp_score>62</Hsp_score>
+      <Hsp_evalue>4.68668</Hsp_evalue>
+      <Hsp_query-from>140</Hsp_query-from>
+      <Hsp_query-to>174</Hsp_query-to>
+      <Hsp_hit-from>228</Hsp_hit-from>
+      <Hsp_hit-to>263</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>13</Hsp_identity>
+      <Hsp_positive>22</Hsp_positive>
+      <Hsp_gaps>1</Hsp_gaps>
+      <Hsp_align-len>36</Hsp_align-len>
+      <Hsp_qseq>PSPIESLSNITFKFSAVGLNTNDLVAL-SGAHTFGR</Hsp_qseq>
+      <Hsp_hseq>PDPVAAARDIRDTFARMAMNDEETVALIAGGHTFGK</Hsp_hseq>
+      <Hsp_midline>P P+ +  +I   F+ + +N  + VAL +G HTFG+</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>64</Hit_num>
+  <Hit_id>pdb|5SXW|A</Hit_id>
+  <Hit_def>Crystal structure of the E198A variant of catalase-peroxidase KatG of Burkholderia pseudomallei [Burkholderia pseudomallei 1710b] &gt;pdb|5SXW|B Crystal structure of the E198A variant of catalase-peroxidase KatG of Burkholderia pseudomallei [Burkholderia pseudomallei 1710b]</Hit_def>
+  <Hit_accession>5SXW_A</Hit_accession>
+  <Hit_len>728</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>30.5607</Hsp_bit-score>
+      <Hsp_score>62</Hsp_score>
+      <Hsp_evalue>4.68668</Hsp_evalue>
+      <Hsp_query-from>140</Hsp_query-from>
+      <Hsp_query-to>174</Hsp_query-to>
+      <Hsp_hit-from>228</Hsp_hit-from>
+      <Hsp_hit-to>263</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>13</Hsp_identity>
+      <Hsp_positive>22</Hsp_positive>
+      <Hsp_gaps>1</Hsp_gaps>
+      <Hsp_align-len>36</Hsp_align-len>
+      <Hsp_qseq>PSPIESLSNITFKFSAVGLNTNDLVAL-SGAHTFGR</Hsp_qseq>
+      <Hsp_hseq>PDPVAAARDIRDTFARMAMNDEETVALIAGGHTFGK</Hsp_hseq>
+      <Hsp_midline>P P+ +  +I   F+ + +N  + VAL +G HTFG+</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>65</Hit_num>
+  <Hit_id>pdb|5SX2|A</Hit_id>
+  <Hit_def>Crystal structure of the D141E mutant of B. pseudomallei KatG at pH 8.0. [Burkholderia pseudomallei 1710b] &gt;pdb|5SX2|B Crystal structure of the D141E mutant of B. pseudomallei KatG at pH 8.0. [Burkholderia pseudomallei 1710b]</Hit_def>
+  <Hit_accession>5SX2_A</Hit_accession>
+  <Hit_len>728</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>30.5607</Hsp_bit-score>
+      <Hsp_score>62</Hsp_score>
+      <Hsp_evalue>4.73156</Hsp_evalue>
+      <Hsp_query-from>140</Hsp_query-from>
+      <Hsp_query-to>174</Hsp_query-to>
+      <Hsp_hit-from>228</Hsp_hit-from>
+      <Hsp_hit-to>263</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>13</Hsp_identity>
+      <Hsp_positive>22</Hsp_positive>
+      <Hsp_gaps>1</Hsp_gaps>
+      <Hsp_align-len>36</Hsp_align-len>
+      <Hsp_qseq>PSPIESLSNITFKFSAVGLNTNDLVAL-SGAHTFGR</Hsp_qseq>
+      <Hsp_hseq>PDPVAAARDIRDTFARMAMNDEETVALIAGGHTFGK</Hsp_hseq>
+      <Hsp_midline>P P+ +  +I   F+ + +N  + VAL +G HTFG+</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>66</Hit_num>
+  <Hit_id>pdb|5KQK|A</Hit_id>
+  <Hit_def>Crystal structure of the Q233E/N240D variant of the catalase-peroxidase from B. pseudomallei [Burkholderia pseudomallei 1710b] &gt;pdb|5KQK|B Crystal structure of the Q233E/N240D variant of the catalase-peroxidase from B. pseudomallei [Burkholderia pseudomallei 1710b]</Hit_def>
+  <Hit_accession>5KQK_A</Hit_accession>
+  <Hit_len>728</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>30.5607</Hsp_bit-score>
+      <Hsp_score>62</Hsp_score>
+      <Hsp_evalue>4.73156</Hsp_evalue>
+      <Hsp_query-from>140</Hsp_query-from>
+      <Hsp_query-to>174</Hsp_query-to>
+      <Hsp_hit-from>228</Hsp_hit-from>
+      <Hsp_hit-to>263</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>13</Hsp_identity>
+      <Hsp_positive>22</Hsp_positive>
+      <Hsp_gaps>1</Hsp_gaps>
+      <Hsp_align-len>36</Hsp_align-len>
+      <Hsp_qseq>PSPIESLSNITFKFSAVGLNTNDLVAL-SGAHTFGR</Hsp_qseq>
+      <Hsp_hseq>PDPVAAARDIRDTFARMAMNDEETVALIAGGHTFGK</Hsp_hseq>
+      <Hsp_midline>P P+ +  +I   F+ + +N  + VAL +G HTFG+</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>67</Hit_num>
+  <Hit_id>pdb|5SYH|A</Hit_id>
+  <Hit_def>Structure of D141A variant of B. pseudomallei KatG [Burkholderia pseudomallei 1710b] &gt;pdb|5SYH|B Structure of D141A variant of B. pseudomallei KatG [Burkholderia pseudomallei 1710b]</Hit_def>
+  <Hit_accession>5SYH_A</Hit_accession>
+  <Hit_len>728</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>30.5607</Hsp_bit-score>
+      <Hsp_score>62</Hsp_score>
+      <Hsp_evalue>4.77686</Hsp_evalue>
+      <Hsp_query-from>140</Hsp_query-from>
+      <Hsp_query-to>174</Hsp_query-to>
+      <Hsp_hit-from>228</Hsp_hit-from>
+      <Hsp_hit-to>263</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>13</Hsp_identity>
+      <Hsp_positive>22</Hsp_positive>
+      <Hsp_gaps>1</Hsp_gaps>
+      <Hsp_align-len>36</Hsp_align-len>
+      <Hsp_qseq>PSPIESLSNITFKFSAVGLNTNDLVAL-SGAHTFGR</Hsp_qseq>
+      <Hsp_hseq>PDPVAAARDIRDTFARMAMNDEETVALIAGGHTFGK</Hsp_hseq>
+      <Hsp_midline>P P+ +  +I   F+ + +N  + VAL +G HTFG+</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>68</Hit_num>
+  <Hit_id>pdb|5KQ6|A</Hit_id>
+  <Hit_def>Crystal structure of the A359D variant of catalase-peroxidase from B. pseudomallei [Burkholderia pseudomallei 1710b] &gt;pdb|5KQ6|B Crystal structure of the A359D variant of catalase-peroxidase from B. pseudomallei [Burkholderia pseudomallei 1710b]</Hit_def>
+  <Hit_accession>5KQ6_A</Hit_accession>
+  <Hit_len>728</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>30.5607</Hsp_bit-score>
+      <Hsp_score>62</Hsp_score>
+      <Hsp_evalue>4.77686</Hsp_evalue>
+      <Hsp_query-from>140</Hsp_query-from>
+      <Hsp_query-to>174</Hsp_query-to>
+      <Hsp_hit-from>228</Hsp_hit-from>
+      <Hsp_hit-to>263</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>13</Hsp_identity>
+      <Hsp_positive>22</Hsp_positive>
+      <Hsp_gaps>1</Hsp_gaps>
+      <Hsp_align-len>36</Hsp_align-len>
+      <Hsp_qseq>PSPIESLSNITFKFSAVGLNTNDLVAL-SGAHTFGR</Hsp_qseq>
+      <Hsp_hseq>PDPVAAARDIRDTFARMAMNDEETVALIAGGHTFGK</Hsp_hseq>
+      <Hsp_midline>P P+ +  +I   F+ + +N  + VAL +G HTFG+</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>69</Hit_num>
+  <Hit_id>pdb|5V53|A</Hit_id>
+  <Hit_def>Crystal structure of the D141A/Q233E/N240D variant of catalase-peroxidase from B. pseudomallei with acetate bound [Burkholderia pseudomallei 1710b] &gt;pdb|5V53|B Crystal structure of the D141A/Q233E/N240D variant of catalase-peroxidase from B. pseudomallei with acetate bound [Burkholderia pseudomallei 1710b]</Hit_def>
+  <Hit_accession>5V53_A</Hit_accession>
+  <Hit_len>728</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>30.5607</Hsp_bit-score>
+      <Hsp_score>62</Hsp_score>
+      <Hsp_evalue>4.77686</Hsp_evalue>
+      <Hsp_query-from>140</Hsp_query-from>
+      <Hsp_query-to>174</Hsp_query-to>
+      <Hsp_hit-from>228</Hsp_hit-from>
+      <Hsp_hit-to>263</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>13</Hsp_identity>
+      <Hsp_positive>22</Hsp_positive>
+      <Hsp_gaps>1</Hsp_gaps>
+      <Hsp_align-len>36</Hsp_align-len>
+      <Hsp_qseq>PSPIESLSNITFKFSAVGLNTNDLVAL-SGAHTFGR</Hsp_qseq>
+      <Hsp_hseq>PDPVAAARDIRDTFARMAMNDEETVALIAGGHTFGK</Hsp_hseq>
+      <Hsp_midline>P P+ +  +I   F+ + +N  + VAL +G HTFG+</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>70</Hit_num>
+  <Hit_id>pdb|5SYU|A</Hit_id>
+  <Hit_def>Crystal structure of Burkholderia pseudomallei KatG E242Q variant [Burkholderia pseudomallei 1710b] &gt;pdb|5SYU|B Crystal structure of Burkholderia pseudomallei KatG E242Q variant [Burkholderia pseudomallei 1710b]</Hit_def>
+  <Hit_accession>5SYU_A</Hit_accession>
+  <Hit_len>728</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>30.5607</Hsp_bit-score>
+      <Hsp_score>62</Hsp_score>
+      <Hsp_evalue>4.77686</Hsp_evalue>
+      <Hsp_query-from>140</Hsp_query-from>
+      <Hsp_query-to>174</Hsp_query-to>
+      <Hsp_hit-from>228</Hsp_hit-from>
+      <Hsp_hit-to>263</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>13</Hsp_identity>
+      <Hsp_positive>22</Hsp_positive>
+      <Hsp_gaps>1</Hsp_gaps>
+      <Hsp_align-len>36</Hsp_align-len>
+      <Hsp_qseq>PSPIESLSNITFKFSAVGLNTNDLVAL-SGAHTFGR</Hsp_qseq>
+      <Hsp_hseq>PDPVAAARDIRDTFARMAMNDEETVALIAGGHTFGK</Hsp_hseq>
+      <Hsp_midline>P P+ +  +I   F+ + +N  + VAL +G HTFG+</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>71</Hit_num>
+  <Hit_id>pdb|5KSK|A</Hit_id>
+  <Hit_def>Crystal structure of the catalase-peroxidase from B. pseudomallei treated with acetate [Burkholderia pseudomallei 1710b] &gt;pdb|5KSK|B Crystal structure of the catalase-peroxidase from B. pseudomallei treated with acetate [Burkholderia pseudomallei 1710b] &gt;pdb|5KT9|A Crystal structure of the catalase-peroxidase from B. pseudomallei treated with hydrogen peroxide and carbon monoxide [Burkholderia pseudomallei 1710b] &gt;pdb|5KT9|B Crystal structure of the catalase-peroxidase from B. pseudomallei treated with hydrogen peroxide and carbon monoxide [Burkholderia pseudomallei 1710b] &gt;pdb|5SW4|A Crystal structure of native catalase-peroxidase KatG at pH8.0 [Burkholderia pseudomallei 1710b] &gt;pdb|5SW4|B Crystal structure of native catalase-peroxidase KatG at pH8.0 [Burkholderia pseudomallei 1710b] &gt;pdb|5SW5|A Crystal structure of native catalase-peroxidase KatG at pH7.5 [Burkholderia pseudomallei 1710b] &gt;pdb|5SW5|B Crystal structure of native catalase-peroxidase KatG at pH7.5 [Burkholderia pseudomallei 1710b] &gt;pdb|5SX6|A Crystal structure of the catalase-peroxidase KatG of B. pseudomallei at pH 6.5 [Burkholderia pseudomallei 1710b] &gt;pdb|5SX6|B Crystal structure of the catalase-peroxidase KatG of B. pseudomallei at pH 6.5 [Burkholderia pseudomallei 1710b] &gt;pdb|5SX7|A Crystal structure of catalase-peroxidase KatG of B. pseudomallei at pH 8.5 [Burkholderia pseudomallei 1710b] &gt;pdb|5SX7|B Crystal structure of catalase-peroxidase KatG of B. pseudomallei at pH 8.5 [Burkholderia pseudomallei 1710b] &gt;pdb|5SXR|A Crystal structure of B. pseudomallei KatG with NAD bound [Burkholderia pseudomallei 1710b] &gt;pdb|5SXR|B Crystal structure of B. pseudomallei KatG with NAD bound [Burkholderia pseudomallei 1710b] &gt;pdb|5SYK|A Crystal structure of B. pseudomallei KatG treated with hydrogen peroxide [Burkholderia pseudomallei 1710b] &gt;pdb|5SYK|B Crystal structure of B. pseudomallei KatG treated with hydrogen peroxide [Burkholderia pseudomallei 1710b] &gt;pdb|6B9B|A Crystal structure of the catalase-peroxidase from B. pseudomallei with maltose bound [Burkholderia pseudomallei 1710b] &gt;pdb|6B9B|B Crystal structure of the catalase-peroxidase from B. pseudomallei with maltose bound [Burkholderia pseudomallei 1710b]</Hit_def>
+  <Hit_accession>5KSK_A</Hit_accession>
+  <Hit_len>728</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>30.5607</Hsp_bit-score>
+      <Hsp_score>62</Hsp_score>
+      <Hsp_evalue>4.77686</Hsp_evalue>
+      <Hsp_query-from>140</Hsp_query-from>
+      <Hsp_query-to>174</Hsp_query-to>
+      <Hsp_hit-from>228</Hsp_hit-from>
+      <Hsp_hit-to>263</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>13</Hsp_identity>
+      <Hsp_positive>22</Hsp_positive>
+      <Hsp_gaps>1</Hsp_gaps>
+      <Hsp_align-len>36</Hsp_align-len>
+      <Hsp_qseq>PSPIESLSNITFKFSAVGLNTNDLVAL-SGAHTFGR</Hsp_qseq>
+      <Hsp_hseq>PDPVAAARDIRDTFARMAMNDEETVALIAGGHTFGK</Hsp_hseq>
+      <Hsp_midline>P P+ +  +I   F+ + +N  + VAL +G HTFG+</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>72</Hit_num>
+  <Hit_id>pdb|5KQ0|A</Hit_id>
+  <Hit_def>Crystal structure of the A290D variant of catalase-peroxidase from B. pseudomallei [Burkholderia pseudomallei 1710b] &gt;pdb|5KQ0|B Crystal structure of the A290D variant of catalase-peroxidase from B. pseudomallei [Burkholderia pseudomallei 1710b]</Hit_def>
+  <Hit_accession>5KQ0_A</Hit_accession>
+  <Hit_len>728</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>30.5607</Hsp_bit-score>
+      <Hsp_score>62</Hsp_score>
+      <Hsp_evalue>4.77686</Hsp_evalue>
+      <Hsp_query-from>140</Hsp_query-from>
+      <Hsp_query-to>174</Hsp_query-to>
+      <Hsp_hit-from>228</Hsp_hit-from>
+      <Hsp_hit-to>263</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>13</Hsp_identity>
+      <Hsp_positive>22</Hsp_positive>
+      <Hsp_gaps>1</Hsp_gaps>
+      <Hsp_align-len>36</Hsp_align-len>
+      <Hsp_qseq>PSPIESLSNITFKFSAVGLNTNDLVAL-SGAHTFGR</Hsp_qseq>
+      <Hsp_hseq>PDPVAAARDIRDTFARMAMNDEETVALIAGGHTFGK</Hsp_hseq>
+      <Hsp_midline>P P+ +  +I   F+ + +N  + VAL +G HTFG+</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>73</Hit_num>
+  <Hit_id>pdb|5KQ3|A</Hit_id>
+  <Hit_def>Crystal structure of the D141A/Q233E variant of catalase-peroxidase from B. pseudomallei [Burkholderia pseudomallei 1710b] &gt;pdb|5KQ3|B Crystal structure of the D141A/Q233E variant of catalase-peroxidase from B. pseudomallei [Burkholderia pseudomallei 1710b]</Hit_def>
+  <Hit_accession>5KQ3_A</Hit_accession>
+  <Hit_len>728</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>30.5607</Hsp_bit-score>
+      <Hsp_score>62</Hsp_score>
+      <Hsp_evalue>4.77686</Hsp_evalue>
+      <Hsp_query-from>140</Hsp_query-from>
+      <Hsp_query-to>174</Hsp_query-to>
+      <Hsp_hit-from>228</Hsp_hit-from>
+      <Hsp_hit-to>263</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>13</Hsp_identity>
+      <Hsp_positive>22</Hsp_positive>
+      <Hsp_gaps>1</Hsp_gaps>
+      <Hsp_align-len>36</Hsp_align-len>
+      <Hsp_qseq>PSPIESLSNITFKFSAVGLNTNDLVAL-SGAHTFGR</Hsp_qseq>
+      <Hsp_hseq>PDPVAAARDIRDTFARMAMNDEETVALIAGGHTFGK</Hsp_hseq>
+      <Hsp_midline>P P+ +  +I   F+ + +N  + VAL +G HTFG+</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>74</Hit_num>
+  <Hit_id>pdb|5V4O|A</Hit_id>
+  <Hit_def>Crystal structure of the D141A/Q233E/N240D variant of catalase-peroxidase from B. pseudomallei [Burkholderia pseudomallei 1710b] &gt;pdb|5V4O|B Crystal structure of the D141A/Q233E/N240D variant of catalase-peroxidase from B. pseudomallei [Burkholderia pseudomallei 1710b]</Hit_def>
+  <Hit_accession>5V4O_A</Hit_accession>
+  <Hit_len>728</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>30.5607</Hsp_bit-score>
+      <Hsp_score>62</Hsp_score>
+      <Hsp_evalue>4.77686</Hsp_evalue>
+      <Hsp_query-from>140</Hsp_query-from>
+      <Hsp_query-to>174</Hsp_query-to>
+      <Hsp_hit-from>228</Hsp_hit-from>
+      <Hsp_hit-to>263</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>13</Hsp_identity>
+      <Hsp_positive>22</Hsp_positive>
+      <Hsp_gaps>1</Hsp_gaps>
+      <Hsp_align-len>36</Hsp_align-len>
+      <Hsp_qseq>PSPIESLSNITFKFSAVGLNTNDLVAL-SGAHTFGR</Hsp_qseq>
+      <Hsp_hseq>PDPVAAARDIRDTFARMAMNDEETVALIAGGHTFGK</Hsp_hseq>
+      <Hsp_midline>P P+ +  +I   F+ + +N  + VAL +G HTFG+</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>75</Hit_num>
+  <Hit_id>pdb|5TXQ|A</Hit_id>
+  <Hit_def>Crystal structure of the A143D variant of catalase-peroxidase from B. pseudomallei [Burkholderia pseudomallei 1710b] &gt;pdb|5TXQ|B Crystal structure of the A143D variant of catalase-peroxidase from B. pseudomallei [Burkholderia pseudomallei 1710b]</Hit_def>
+  <Hit_accession>5TXQ_A</Hit_accession>
+  <Hit_len>728</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>30.5607</Hsp_bit-score>
+      <Hsp_score>62</Hsp_score>
+      <Hsp_evalue>4.77686</Hsp_evalue>
+      <Hsp_query-from>140</Hsp_query-from>
+      <Hsp_query-to>174</Hsp_query-to>
+      <Hsp_hit-from>228</Hsp_hit-from>
+      <Hsp_hit-to>263</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>13</Hsp_identity>
+      <Hsp_positive>22</Hsp_positive>
+      <Hsp_gaps>1</Hsp_gaps>
+      <Hsp_align-len>36</Hsp_align-len>
+      <Hsp_qseq>PSPIESLSNITFKFSAVGLNTNDLVAL-SGAHTFGR</Hsp_qseq>
+      <Hsp_hseq>PDPVAAARDIRDTFARMAMNDEETVALIAGGHTFGK</Hsp_hseq>
+      <Hsp_midline>P P+ +  +I   F+ + +N  + VAL +G HTFG+</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>76</Hit_num>
+  <Hit_id>pdb|5KQ2|A</Hit_id>
+  <Hit_def>Crystal structure of the A357D variant of catalase-peroxidase from B. pseudomallei [Burkholderia pseudomallei 1710b] &gt;pdb|5KQ2|B Crystal structure of the A357D variant of catalase-peroxidase from B. pseudomallei [Burkholderia pseudomallei 1710b]</Hit_def>
+  <Hit_accession>5KQ2_A</Hit_accession>
+  <Hit_len>728</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>30.5607</Hsp_bit-score>
+      <Hsp_score>62</Hsp_score>
+      <Hsp_evalue>4.77686</Hsp_evalue>
+      <Hsp_query-from>140</Hsp_query-from>
+      <Hsp_query-to>174</Hsp_query-to>
+      <Hsp_hit-from>228</Hsp_hit-from>
+      <Hsp_hit-to>263</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>13</Hsp_identity>
+      <Hsp_positive>22</Hsp_positive>
+      <Hsp_gaps>1</Hsp_gaps>
+      <Hsp_align-len>36</Hsp_align-len>
+      <Hsp_qseq>PSPIESLSNITFKFSAVGLNTNDLVAL-SGAHTFGR</Hsp_qseq>
+      <Hsp_hseq>PDPVAAARDIRDTFARMAMNDEETVALIAGGHTFGK</Hsp_hseq>
+      <Hsp_midline>P P+ +  +I   F+ + +N  + VAL +G HTFG+</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>77</Hit_num>
+  <Hit_id>pdb|6W1S|L</Hit_id>
+  <Hit_def>Chain L, Mediator of RNA polymerase II transcription subunit 17 [Mus musculus]</Hit_def>
+  <Hit_accession>6W1S_L</Hit_accession>
+  <Hit_len>631</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>30.5607</Hsp_bit-score>
+      <Hsp_score>62</Hsp_score>
+      <Hsp_evalue>4.80973</Hsp_evalue>
+      <Hsp_query-from>219</Hsp_query-from>
+      <Hsp_query-to>268</Hsp_query-to>
+      <Hsp_hit-from>387</Hsp_hit-from>
+      <Hsp_hit-to>438</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>19</Hsp_identity>
+      <Hsp_positive>24</Hsp_positive>
+      <Hsp_gaps>2</Hsp_gaps>
+      <Hsp_align-len>52</Hsp_align-len>
+      <Hsp_qseq>TNLDLSTPDAFDNNYFANLQSNDGLLQS--DQELFSTTGSSTIAIVTSFASN</Hsp_qseq>
+      <Hsp_hseq>KRMRLSGPQAFDKNEINSIQSTEGLLEKIIKQAKHIFLRSRTAATIDSLASR</Hsp_hseq>
+      <Hsp_midline>  + LS P AFD N    +QS +GLL+    Q       S T A + S AS </Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>78</Hit_num>
+  <Hit_id>pdb|6CEK|A</Hit_id>
+  <Hit_def>Crystal structure of the D141N variant of catalase-peroxidase from B. pseudomallei [Burkholderia pseudomallei 1710b] &gt;pdb|6CEK|B Crystal structure of the D141N variant of catalase-peroxidase from B. pseudomallei [Burkholderia pseudomallei 1710b]</Hit_def>
+  <Hit_accession>6CEK_A</Hit_accession>
+  <Hit_len>728</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>30.5607</Hsp_bit-score>
+      <Hsp_score>62</Hsp_score>
+      <Hsp_evalue>4.82259</Hsp_evalue>
+      <Hsp_query-from>140</Hsp_query-from>
+      <Hsp_query-to>174</Hsp_query-to>
+      <Hsp_hit-from>228</Hsp_hit-from>
+      <Hsp_hit-to>263</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>13</Hsp_identity>
+      <Hsp_positive>22</Hsp_positive>
+      <Hsp_gaps>1</Hsp_gaps>
+      <Hsp_align-len>36</Hsp_align-len>
+      <Hsp_qseq>PSPIESLSNITFKFSAVGLNTNDLVAL-SGAHTFGR</Hsp_qseq>
+      <Hsp_hseq>PDPVAAARDIRDTFARMAMNDEETVALIAGGHTFGK</Hsp_hseq>
+      <Hsp_midline>P P+ +  +I   F+ + +N  + VAL +G HTFG+</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>79</Hit_num>
+  <Hit_id>pdb|5KSF|A</Hit_id>
+  <Hit_def>Crystal structure of the D141A variant of the catalase-peroxidase from B. pseudomallei treated with acetate [Burkholderia pseudomallei 1710b] &gt;pdb|5KSF|B Crystal structure of the D141A variant of the catalase-peroxidase from B. pseudomallei treated with acetate [Burkholderia pseudomallei 1710b] &gt;pdb|5SYI|A Structure of D141A variant of B. pseudomallei KatG complexed with INH [Burkholderia pseudomallei 1710b] &gt;pdb|5SYI|B Structure of D141A variant of B. pseudomallei KatG complexed with INH [Burkholderia pseudomallei 1710b] &gt;pdb|5SYJ|A Crystal structure of the D141A variant of B. pseudomallei KatGin complex with isoniazid [Burkholderia pseudomallei 1710b] &gt;pdb|5SYJ|B Crystal structure of the D141A variant of B. pseudomallei KatGin complex with isoniazid [Burkholderia pseudomallei 1710b]</Hit_def>
+  <Hit_accession>5KSF_A</Hit_accession>
+  <Hit_len>728</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>30.5607</Hsp_bit-score>
+      <Hsp_score>62</Hsp_score>
+      <Hsp_evalue>4.82259</Hsp_evalue>
+      <Hsp_query-from>140</Hsp_query-from>
+      <Hsp_query-to>174</Hsp_query-to>
+      <Hsp_hit-from>228</Hsp_hit-from>
+      <Hsp_hit-to>263</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>13</Hsp_identity>
+      <Hsp_positive>22</Hsp_positive>
+      <Hsp_gaps>1</Hsp_gaps>
+      <Hsp_align-len>36</Hsp_align-len>
+      <Hsp_qseq>PSPIESLSNITFKFSAVGLNTNDLVAL-SGAHTFGR</Hsp_qseq>
+      <Hsp_hseq>PDPVAAARDIRDTFARMAMNDEETVALIAGGHTFGK</Hsp_hseq>
+      <Hsp_midline>P P+ +  +I   F+ + +N  + VAL +G HTFG+</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>80</Hit_num>
+  <Hit_id>pdb|5SYW|A</Hit_id>
+  <Hit_def>Crystal structure of Burkhoderia pseudomallei KatG variant Q233E [Burkholderia pseudomallei 1710b] &gt;pdb|5SYW|B Crystal structure of Burkhoderia pseudomallei KatG variant Q233E [Burkholderia pseudomallei 1710b]</Hit_def>
+  <Hit_accession>5SYW_A</Hit_accession>
+  <Hit_len>728</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>30.5607</Hsp_bit-score>
+      <Hsp_score>62</Hsp_score>
+      <Hsp_evalue>4.82259</Hsp_evalue>
+      <Hsp_query-from>140</Hsp_query-from>
+      <Hsp_query-to>174</Hsp_query-to>
+      <Hsp_hit-from>228</Hsp_hit-from>
+      <Hsp_hit-to>263</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>13</Hsp_identity>
+      <Hsp_positive>22</Hsp_positive>
+      <Hsp_gaps>1</Hsp_gaps>
+      <Hsp_align-len>36</Hsp_align-len>
+      <Hsp_qseq>PSPIESLSNITFKFSAVGLNTNDLVAL-SGAHTFGR</Hsp_qseq>
+      <Hsp_hseq>PDPVAAARDIRDTFARMAMNDEETVALIAGGHTFGK</Hsp_hseq>
+      <Hsp_midline>P P+ +  +I   F+ + +N  + VAL +G HTFG+</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>81</Hit_num>
+  <Hit_id>pdb|5SX0|A</Hit_id>
+  <Hit_def>Crystal structure of an oxoferryl species of catalase-peroxidase KatG at pH7.5 [Burkholderia pseudomallei 1710b]</Hit_def>
+  <Hit_accession>5SX0_A</Hit_accession>
+  <Hit_len>728</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>30.5607</Hsp_bit-score>
+      <Hsp_score>62</Hsp_score>
+      <Hsp_evalue>4.82259</Hsp_evalue>
+      <Hsp_query-from>140</Hsp_query-from>
+      <Hsp_query-to>174</Hsp_query-to>
+      <Hsp_hit-from>228</Hsp_hit-from>
+      <Hsp_hit-to>263</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>13</Hsp_identity>
+      <Hsp_positive>22</Hsp_positive>
+      <Hsp_gaps>1</Hsp_gaps>
+      <Hsp_align-len>36</Hsp_align-len>
+      <Hsp_qseq>PSPIESLSNITFKFSAVGLNTNDLVAL-SGAHTFGR</Hsp_qseq>
+      <Hsp_hseq>PDPVAAARDIRDTFARMAMNDEETVALIAGGHTFGK</Hsp_hseq>
+      <Hsp_midline>P P+ +  +I   F+ + +N  + VAL +G HTFG+</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>82</Hit_num>
+  <Hit_id>pdb|5KQN|A</Hit_id>
+  <Hit_def>Crystal structure of the H381S variant of catalase-peroxidase from B. pseudomallei [Burkholderia pseudomallei 1710b] &gt;pdb|5KQN|B Crystal structure of the H381S variant of catalase-peroxidase from B. pseudomallei [Burkholderia pseudomallei 1710b]</Hit_def>
+  <Hit_accession>5KQN_A</Hit_accession>
+  <Hit_len>728</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>30.5607</Hsp_bit-score>
+      <Hsp_score>62</Hsp_score>
+      <Hsp_evalue>4.82259</Hsp_evalue>
+      <Hsp_query-from>140</Hsp_query-from>
+      <Hsp_query-to>174</Hsp_query-to>
+      <Hsp_hit-from>228</Hsp_hit-from>
+      <Hsp_hit-to>263</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>13</Hsp_identity>
+      <Hsp_positive>22</Hsp_positive>
+      <Hsp_gaps>1</Hsp_gaps>
+      <Hsp_align-len>36</Hsp_align-len>
+      <Hsp_qseq>PSPIESLSNITFKFSAVGLNTNDLVAL-SGAHTFGR</Hsp_qseq>
+      <Hsp_hseq>PDPVAAARDIRDTFARMAMNDEETVALIAGGHTFGK</Hsp_hseq>
+      <Hsp_midline>P P+ +  +I   F+ + +N  + VAL +G HTFG+</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>83</Hit_num>
+  <Hit_id>pdb|5SXX|A</Hit_id>
+  <Hit_def>Crystal structure of the E198A variant of Burkholderia pseudomallei catalase-peroxidase KatG with INH [Burkholderia pseudomallei 1710b] &gt;pdb|5SXX|B Crystal structure of the E198A variant of Burkholderia pseudomallei catalase-peroxidase KatG with INH [Burkholderia pseudomallei 1710b]</Hit_def>
+  <Hit_accession>5SXX_A</Hit_accession>
+  <Hit_len>728</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>30.5607</Hsp_bit-score>
+      <Hsp_score>62</Hsp_score>
+      <Hsp_evalue>4.82259</Hsp_evalue>
+      <Hsp_query-from>140</Hsp_query-from>
+      <Hsp_query-to>174</Hsp_query-to>
+      <Hsp_hit-from>228</Hsp_hit-from>
+      <Hsp_hit-to>263</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>13</Hsp_identity>
+      <Hsp_positive>22</Hsp_positive>
+      <Hsp_gaps>1</Hsp_gaps>
+      <Hsp_align-len>36</Hsp_align-len>
+      <Hsp_qseq>PSPIESLSNITFKFSAVGLNTNDLVAL-SGAHTFGR</Hsp_qseq>
+      <Hsp_hseq>PDPVAAARDIRDTFARMAMNDEETVALIAGGHTFGK</Hsp_hseq>
+      <Hsp_midline>P P+ +  +I   F+ + +N  + VAL +G HTFG+</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>84</Hit_num>
+  <Hit_id>pdb|5SYY|A</Hit_id>
+  <Hit_def>Crystal structure of the S324G variant of catalase-peroxidase from B. pseudomallei [Burkholderia pseudomallei 1710b] &gt;pdb|5SYY|B Crystal structure of the S324G variant of catalase-peroxidase from B. pseudomallei [Burkholderia pseudomallei 1710b]</Hit_def>
+  <Hit_accession>5SYY_A</Hit_accession>
+  <Hit_len>728</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>30.5607</Hsp_bit-score>
+      <Hsp_score>62</Hsp_score>
+      <Hsp_evalue>4.82259</Hsp_evalue>
+      <Hsp_query-from>140</Hsp_query-from>
+      <Hsp_query-to>174</Hsp_query-to>
+      <Hsp_hit-from>228</Hsp_hit-from>
+      <Hsp_hit-to>263</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>13</Hsp_identity>
+      <Hsp_positive>22</Hsp_positive>
+      <Hsp_gaps>1</Hsp_gaps>
+      <Hsp_align-len>36</Hsp_align-len>
+      <Hsp_qseq>PSPIESLSNITFKFSAVGLNTNDLVAL-SGAHTFGR</Hsp_qseq>
+      <Hsp_hseq>PDPVAAARDIRDTFARMAMNDEETVALIAGGHTFGK</Hsp_hseq>
+      <Hsp_midline>P P+ +  +I   F+ + +N  + VAL +G HTFG+</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>85</Hit_num>
+  <Hit_id>pdb|5L05|A</Hit_id>
+  <Hit_def>Crystal structure of catalase-peroxidase KATG of burkholderia pseudomallei treated with INH [Burkholderia pseudomallei 1710b] &gt;pdb|5L05|B Crystal structure of catalase-peroxidase KATG of burkholderia pseudomallei treated with INH [Burkholderia pseudomallei 1710b] &gt;pdb|5SW6|A Crystal structure of an oxoferryl species of catalase-peroxidase KatG at pH5.6 [Burkholderia pseudomallei 1710b] &gt;pdb|5SW6|B Crystal structure of an oxoferryl species of catalase-peroxidase KatG at pH5.6 [Burkholderia pseudomallei 1710b] &gt;pdb|5SX0|B Crystal structure of an oxoferryl species of catalase-peroxidase KatG at pH7.5 [Burkholderia pseudomallei 1710b] &gt;pdb|5SX3|A Crystal structure of the catalase-peroxidase KatG of B. pseudomaallei at pH 4.5 [Burkholderia pseudomallei 1710b] &gt;pdb|5SX3|B Crystal structure of the catalase-peroxidase KatG of B. pseudomaallei at pH 4.5 [Burkholderia pseudomallei 1710b] &gt;pdb|5SXQ|A Crystal structure of B. pseudomallei KatG with isonicotinic acid hydrazide bound [Burkholderia pseudomallei 1710b] &gt;pdb|5SXQ|B Crystal structure of B. pseudomallei KatG with isonicotinic acid hydrazide bound [Burkholderia pseudomallei 1710b] &gt;pdb|5SXS|A Crystal structure of catalase-peroxidase KatG with isonicotinic acid hydrazide and AMP bound [Burkholderia pseudomallei 1710b] &gt;pdb|5SXS|B Crystal structure of catalase-peroxidase KatG with isonicotinic acid hydrazide and AMP bound [Burkholderia pseudomallei 1710b] &gt;pdb|5SYL|A B. pseudomallei KatG with KCN bound [Burkholderia pseudomallei 1710b] &gt;pdb|5SYL|B B. pseudomallei KatG with KCN bound [Burkholderia pseudomallei 1710b] &gt;pdb|6MPY|A B. pseudomallei KatG crystallized in the presence of benzoyl hydrazide [Burkholderia pseudomallei] &gt;pdb|6MPY|B B. pseudomallei KatG crystallized in the presence of benzoyl hydrazide [Burkholderia pseudomallei] &gt;pdb|6MQ0|A B. pseudomallei KatG crystallized in the presence of furoyl hydrazide [Burkholderia pseudomallei] &gt;pdb|6MQ0|B B. pseudomallei KatG crystallized in the presence of furoyl hydrazide [Burkholderia pseudomallei] &gt;pdb|6MQ1|A B. pseudomallei KatG crystalized in the presence of ABTS [Burkholderia pseudomallei] &gt;pdb|6MQ1|B B. pseudomallei KatG crystalized in the presence of ABTS [Burkholderia pseudomallei]</Hit_def>
+  <Hit_accession>5L05_A</Hit_accession>
+  <Hit_len>728</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>30.5607</Hsp_bit-score>
+      <Hsp_score>62</Hsp_score>
+      <Hsp_evalue>4.86877</Hsp_evalue>
+      <Hsp_query-from>140</Hsp_query-from>
+      <Hsp_query-to>174</Hsp_query-to>
+      <Hsp_hit-from>228</Hsp_hit-from>
+      <Hsp_hit-to>263</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>13</Hsp_identity>
+      <Hsp_positive>22</Hsp_positive>
+      <Hsp_gaps>1</Hsp_gaps>
+      <Hsp_align-len>36</Hsp_align-len>
+      <Hsp_qseq>PSPIESLSNITFKFSAVGLNTNDLVAL-SGAHTFGR</Hsp_qseq>
+      <Hsp_hseq>PDPVAAARDIRDTFARMAMNDEETVALIAGGHTFGK</Hsp_hseq>
+      <Hsp_midline>P P+ +  +I   F+ + +N  + VAL +G HTFG+</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>86</Hit_num>
+  <Hit_id>pdb|6CFQ|A</Hit_id>
+  <Hit_def>Crystal structure of the D141N variant of catalase-peroxidase from B. pseudomallei with INH bound [Burkholderia pseudomallei] &gt;pdb|6CFQ|B Crystal structure of the D141N variant of catalase-peroxidase from B. pseudomallei with INH bound [Burkholderia pseudomallei]</Hit_def>
+  <Hit_accession>6CFQ_A</Hit_accession>
+  <Hit_len>728</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>30.5607</Hsp_bit-score>
+      <Hsp_score>62</Hsp_score>
+      <Hsp_evalue>4.86877</Hsp_evalue>
+      <Hsp_query-from>140</Hsp_query-from>
+      <Hsp_query-to>174</Hsp_query-to>
+      <Hsp_hit-from>228</Hsp_hit-from>
+      <Hsp_hit-to>263</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>13</Hsp_identity>
+      <Hsp_positive>22</Hsp_positive>
+      <Hsp_gaps>1</Hsp_gaps>
+      <Hsp_align-len>36</Hsp_align-len>
+      <Hsp_qseq>PSPIESLSNITFKFSAVGLNTNDLVAL-SGAHTFGR</Hsp_qseq>
+      <Hsp_hseq>PDPVAAARDIRDTFARMAMNDEETVALIAGGHTFGK</Hsp_hseq>
+      <Hsp_midline>P P+ +  +I   F+ + +N  + VAL +G HTFG+</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>87</Hit_num>
+  <Hit_id>pdb|5SX1|A</Hit_id>
+  <Hit_def>Crystal structure of D141E variant of B. pseudomallei KatG [Burkholderia pseudomallei 1710b] &gt;pdb|5SX1|B Crystal structure of D141E variant of B. pseudomallei KatG [Burkholderia pseudomallei 1710b]</Hit_def>
+  <Hit_accession>5SX1_A</Hit_accession>
+  <Hit_len>728</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>30.5607</Hsp_bit-score>
+      <Hsp_score>62</Hsp_score>
+      <Hsp_evalue>4.86877</Hsp_evalue>
+      <Hsp_query-from>140</Hsp_query-from>
+      <Hsp_query-to>174</Hsp_query-to>
+      <Hsp_hit-from>228</Hsp_hit-from>
+      <Hsp_hit-to>263</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>13</Hsp_identity>
+      <Hsp_positive>22</Hsp_positive>
+      <Hsp_gaps>1</Hsp_gaps>
+      <Hsp_align-len>36</Hsp_align-len>
+      <Hsp_qseq>PSPIESLSNITFKFSAVGLNTNDLVAL-SGAHTFGR</Hsp_qseq>
+      <Hsp_hseq>PDPVAAARDIRDTFARMAMNDEETVALIAGGHTFGK</Hsp_hseq>
+      <Hsp_midline>P P+ +  +I   F+ + +N  + VAL +G HTFG+</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>88</Hit_num>
+  <Hit_id>pdb|5KSN|A</Hit_id>
+  <Hit_def>Crystal structure of the S324G variant of catalase-peroxidase from B. pseudomallei with INH bound [Burkholderia pseudomallei 1710b] &gt;pdb|5KSN|B Crystal structure of the S324G variant of catalase-peroxidase from B. pseudomallei with INH bound [Burkholderia pseudomallei 1710b]</Hit_def>
+  <Hit_accession>5KSN_A</Hit_accession>
+  <Hit_len>728</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>30.5607</Hsp_bit-score>
+      <Hsp_score>62</Hsp_score>
+      <Hsp_evalue>4.91538</Hsp_evalue>
+      <Hsp_query-from>140</Hsp_query-from>
+      <Hsp_query-to>174</Hsp_query-to>
+      <Hsp_hit-from>228</Hsp_hit-from>
+      <Hsp_hit-to>263</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>13</Hsp_identity>
+      <Hsp_positive>22</Hsp_positive>
+      <Hsp_gaps>1</Hsp_gaps>
+      <Hsp_align-len>36</Hsp_align-len>
+      <Hsp_qseq>PSPIESLSNITFKFSAVGLNTNDLVAL-SGAHTFGR</Hsp_qseq>
+      <Hsp_hseq>PDPVAAARDIRDTFARMAMNDEETVALIAGGHTFGK</Hsp_hseq>
+      <Hsp_midline>P P+ +  +I   F+ + +N  + VAL +G HTFG+</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>89</Hit_num>
+  <Hit_id>pdb|5KT8|A</Hit_id>
+  <Hit_def>Crystal structure of the W139F variant of the catalase-peroxidase from B. pseudomallei treated with isoniazid [Burkholderia pseudomallei 1710b] &gt;pdb|5KT8|B Crystal structure of the W139F variant of the catalase-peroxidase from B. pseudomallei treated with isoniazid [Burkholderia pseudomallei 1710b] &gt;pdb|5SYX|A Crystal structure of Burkholderia pseudomallei KatG variant W139F [Burkholderia pseudomallei 1710b] &gt;pdb|5SYX|B Crystal structure of Burkholderia pseudomallei KatG variant W139F [Burkholderia pseudomallei 1710b]</Hit_def>
+  <Hit_accession>5KT8_A</Hit_accession>
+  <Hit_len>728</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>30.5607</Hsp_bit-score>
+      <Hsp_score>62</Hsp_score>
+      <Hsp_evalue>4.91538</Hsp_evalue>
+      <Hsp_query-from>140</Hsp_query-from>
+      <Hsp_query-to>174</Hsp_query-to>
+      <Hsp_hit-from>228</Hsp_hit-from>
+      <Hsp_hit-to>263</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>13</Hsp_identity>
+      <Hsp_positive>22</Hsp_positive>
+      <Hsp_gaps>1</Hsp_gaps>
+      <Hsp_align-len>36</Hsp_align-len>
+      <Hsp_qseq>PSPIESLSNITFKFSAVGLNTNDLVAL-SGAHTFGR</Hsp_qseq>
+      <Hsp_hseq>PDPVAAARDIRDTFARMAMNDEETVALIAGGHTFGK</Hsp_hseq>
+      <Hsp_midline>P P+ +  +I   F+ + +N  + VAL +G HTFG+</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>90</Hit_num>
+  <Hit_id>pdb|5KSG|A</Hit_id>
+  <Hit_def>Crystal structure of the W153F variant of catalase-peroxidase from B. pseudomallei treated with isoniazid [Burkholderia pseudomallei 1710b] &gt;pdb|5KSG|B Crystal structure of the W153F variant of catalase-peroxidase from B. pseudomallei treated with isoniazid [Burkholderia pseudomallei 1710b]</Hit_def>
+  <Hit_accession>5KSG_A</Hit_accession>
+  <Hit_len>728</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>30.5607</Hsp_bit-score>
+      <Hsp_score>62</Hsp_score>
+      <Hsp_evalue>4.91538</Hsp_evalue>
+      <Hsp_query-from>140</Hsp_query-from>
+      <Hsp_query-to>174</Hsp_query-to>
+      <Hsp_hit-from>228</Hsp_hit-from>
+      <Hsp_hit-to>263</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>13</Hsp_identity>
+      <Hsp_positive>22</Hsp_positive>
+      <Hsp_gaps>1</Hsp_gaps>
+      <Hsp_align-len>36</Hsp_align-len>
+      <Hsp_qseq>PSPIESLSNITFKFSAVGLNTNDLVAL-SGAHTFGR</Hsp_qseq>
+      <Hsp_hseq>PDPVAAARDIRDTFARMAMNDEETVALIAGGHTFGK</Hsp_hseq>
+      <Hsp_midline>P P+ +  +I   F+ + +N  + VAL +G HTFG+</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>91</Hit_num>
+  <Hit_id>pdb|6CC6|A</Hit_id>
+  <Hit_def>Crystal structure of the W202F variant of catalase-peroxidase from B. pseudomallei [Burkholderia pseudomallei 1710b] &gt;pdb|6CC6|B Crystal structure of the W202F variant of catalase-peroxidase from B. pseudomallei [Burkholderia pseudomallei 1710b]</Hit_def>
+  <Hit_accession>6CC6_A</Hit_accession>
+  <Hit_len>728</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>30.5607</Hsp_bit-score>
+      <Hsp_score>62</Hsp_score>
+      <Hsp_evalue>4.91538</Hsp_evalue>
+      <Hsp_query-from>140</Hsp_query-from>
+      <Hsp_query-to>174</Hsp_query-to>
+      <Hsp_hit-from>228</Hsp_hit-from>
+      <Hsp_hit-to>263</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>13</Hsp_identity>
+      <Hsp_positive>22</Hsp_positive>
+      <Hsp_gaps>1</Hsp_gaps>
+      <Hsp_align-len>36</Hsp_align-len>
+      <Hsp_qseq>PSPIESLSNITFKFSAVGLNTNDLVAL-SGAHTFGR</Hsp_qseq>
+      <Hsp_hseq>PDPVAAARDIRDTFARMAMNDEETVALIAGGHTFGK</Hsp_hseq>
+      <Hsp_midline>P P+ +  +I   F+ + +N  + VAL +G HTFG+</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>92</Hit_num>
+  <Hit_id>pdb|6CDQ|A</Hit_id>
+  <Hit_def>Crystal structure of the W202F variant of catalase-peroxidase from B. pseudomallei with INH bound. [Burkholderia pseudomallei 1710b] &gt;pdb|6CDQ|B Crystal structure of the W202F variant of catalase-peroxidase from B. pseudomallei with INH bound. [Burkholderia pseudomallei 1710b]</Hit_def>
+  <Hit_accession>6CDQ_A</Hit_accession>
+  <Hit_len>728</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>30.5607</Hsp_bit-score>
+      <Hsp_score>62</Hsp_score>
+      <Hsp_evalue>4.91538</Hsp_evalue>
+      <Hsp_query-from>140</Hsp_query-from>
+      <Hsp_query-to>174</Hsp_query-to>
+      <Hsp_hit-from>228</Hsp_hit-from>
+      <Hsp_hit-to>263</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>13</Hsp_identity>
+      <Hsp_positive>22</Hsp_positive>
+      <Hsp_gaps>1</Hsp_gaps>
+      <Hsp_align-len>36</Hsp_align-len>
+      <Hsp_qseq>PSPIESLSNITFKFSAVGLNTNDLVAL-SGAHTFGR</Hsp_qseq>
+      <Hsp_hseq>PDPVAAARDIRDTFARMAMNDEETVALIAGGHTFGK</Hsp_hseq>
+      <Hsp_midline>P P+ +  +I   F+ + +N  + VAL +G HTFG+</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>93</Hit_num>
+  <Hit_id>pdb|5KQQ|A</Hit_id>
+  <Hit_def>Crystal structure of the W153F variant of catalase-peroxidase from B. pseudomallei treated [Burkholderia pseudomallei 1710b] &gt;pdb|5KQQ|B Crystal structure of the W153F variant of catalase-peroxidase from B. pseudomallei treated [Burkholderia pseudomallei 1710b]</Hit_def>
+  <Hit_accession>5KQQ_A</Hit_accession>
+  <Hit_len>728</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>30.5607</Hsp_bit-score>
+      <Hsp_score>62</Hsp_score>
+      <Hsp_evalue>4.91538</Hsp_evalue>
+      <Hsp_query-from>140</Hsp_query-from>
+      <Hsp_query-to>174</Hsp_query-to>
+      <Hsp_hit-from>228</Hsp_hit-from>
+      <Hsp_hit-to>263</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>13</Hsp_identity>
+      <Hsp_positive>22</Hsp_positive>
+      <Hsp_gaps>1</Hsp_gaps>
+      <Hsp_align-len>36</Hsp_align-len>
+      <Hsp_qseq>PSPIESLSNITFKFSAVGLNTNDLVAL-SGAHTFGR</Hsp_qseq>
+      <Hsp_hseq>PDPVAAARDIRDTFARMAMNDEETVALIAGGHTFGK</Hsp_hseq>
+      <Hsp_midline>P P+ +  +I   F+ + +N  + VAL +G HTFG+</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>94</Hit_num>
+  <Hit_id>pdb|6CAW|A</Hit_id>
+  <Hit_def>Crystal structure of the W95F variant of catalase-peroxidase from B. pseudomallei [Burkholderia pseudomallei 1710b] &gt;pdb|6CAW|B Crystal structure of the W95F variant of catalase-peroxidase from B. pseudomallei [Burkholderia pseudomallei 1710b]</Hit_def>
+  <Hit_accession>6CAW_A</Hit_accession>
+  <Hit_len>728</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>30.5607</Hsp_bit-score>
+      <Hsp_score>62</Hsp_score>
+      <Hsp_evalue>4.91538</Hsp_evalue>
+      <Hsp_query-from>140</Hsp_query-from>
+      <Hsp_query-to>174</Hsp_query-to>
+      <Hsp_hit-from>228</Hsp_hit-from>
+      <Hsp_hit-to>263</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>13</Hsp_identity>
+      <Hsp_positive>22</Hsp_positive>
+      <Hsp_gaps>1</Hsp_gaps>
+      <Hsp_align-len>36</Hsp_align-len>
+      <Hsp_qseq>PSPIESLSNITFKFSAVGLNTNDLVAL-SGAHTFGR</Hsp_qseq>
+      <Hsp_hseq>PDPVAAARDIRDTFARMAMNDEETVALIAGGHTFGK</Hsp_hseq>
+      <Hsp_midline>P P+ +  +I   F+ + +N  + VAL +G HTFG+</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>95</Hit_num>
+  <Hit_id>pdb|5K9A|A</Hit_id>
+  <Hit_def>Sortase A from Corynebacterium diphtheriae [Corynebacterium diphtheriae NCTC 13129]</Hit_def>
+  <Hit_accession>5K9A_A</Hit_accession>
+  <Hit_len>215</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>30.1294</Hsp_bit-score>
+      <Hsp_score>61</Hsp_score>
+      <Hsp_evalue>6.53799</Hsp_evalue>
+      <Hsp_query-from>183</Hsp_query-from>
+      <Hsp_query-to>272</Hsp_query-to>
+      <Hsp_hit-from>35</Hsp_hit-from>
+      <Hsp_hit-to>136</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>32</Hsp_identity>
+      <Hsp_positive>39</Hsp_positive>
+      <Hsp_gaps>12</Hsp_gaps>
+      <Hsp_align-len>102</Hsp_align-len>
+      <Hsp_qseq>RLFNFSGTGNP--DPTLNST------LLSTLQQLCPQNGSASTITNLDLSTPDAFDNNYF----ANLQSNDGLLQSDQELFSTTGSSTIAIVTSFASNQTLF</Hsp_qseq>
+      <Hsp_hseq>RQYNTSVVGFPILDPWLNRASKNSGPYLDYLQQLNPQRAERPVIASISIPTIDAHLPIYHGTDTATLEHGLGHLYGSALPVGGTGTHPVITGHSGLANATLF</Hsp_hseq>
+      <Hsp_midline>R +N S  G P  DP LN         L  LQQL PQ      I  + + T DA    Y     A L+   G L         TG+  +    S  +N TLF</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>96</Hit_num>
+  <Hit_id>pdb|7EMF|Q</Hit_id>
+  <Hit_def>Chain Q, Mediator of RNA polymerase II transcription subunit 17 [Homo sapiens] &gt;pdb|7ENA|q Chain q, Mediator of RNA polymerase II transcription subunit 17 [Homo sapiens] &gt;pdb|7ENC|q Chain q, Mediator of RNA polymerase II transcription subunit 17 [Homo sapiens] &gt;pdb|7ENJ|Q Chain Q, Mediator of RNA polymerase II transcription subunit 17 [Homo sapiens] &gt;pdb|7LBM|j Chain j, Mediator of RNA polymerase II transcription subunit 17 [Homo sapiens] &gt;pdb|7NVR|d Chain d, Mediator of RNA polymerase II transcription subunit 17 [Homo sapiens]</Hit_def>
+  <Hit_accession>7EMF_Q</Hit_accession>
+  <Hit_len>651</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>30.1294</Hsp_bit-score>
+      <Hsp_score>61</Hsp_score>
+      <Hsp_evalue>6.99584</Hsp_evalue>
+      <Hsp_query-from>219</Hsp_query-from>
+      <Hsp_query-to>245</Hsp_query-to>
+      <Hsp_hit-from>403</Hsp_hit-from>
+      <Hsp_hit-to>429</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>13</Hsp_identity>
+      <Hsp_positive>16</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>27</Hsp_align-len>
+      <Hsp_qseq>TNLDLSTPDAFDNNYFANLQSNDGLLQ</Hsp_qseq>
+      <Hsp_hseq>KRMRLSGPQAFDKNEINSLQSSEGLLE</Hsp_hseq>
+      <Hsp_midline>  + LS P AFD N    LQS +GLL+</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>97</Hit_num>
+  <Hit_id>pdb|7BX9|A</Hit_id>
+  <Hit_def>Purification, characterization and X-ray structure of YhdA-type azoreductase from Bacillus velezensis [Bacillus amyloliquefaciens]</Hit_def>
+  <Hit_accession>7BX9_A</Hit_accession>
+  <Hit_len>168</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>29.698</Hsp_bit-score>
+      <Hsp_score>60</Hsp_score>
+      <Hsp_evalue>8.22514</Hsp_evalue>
+      <Hsp_query-from>31</Hsp_query-from>
+      <Hsp_query-to>76</Hsp_query-to>
+      <Hsp_hit-from>17</Hsp_hit-from>
+      <Hsp_hit-to>59</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>16</Hsp_identity>
+      <Hsp_positive>25</Hsp_positive>
+      <Hsp_gaps>3</Hsp_gaps>
+      <Hsp_align-len>46</Hsp_align-len>
+      <Hsp_qseq>TRIGASLIRLHFHDCFVNGCDASILLDDTGSIQSEKNAGPNVNSAR</Hsp_qseq>
+      <Hsp_hseq>TRIAASYIRDRFHTDFIDLSESELPLYNG---EEEQNELPSVQALR</Hsp_hseq>
+      <Hsp_midline>TRI AS IR  FH  F++  ++ + L +    + E+N  P V + R</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+</Iteration_hits>
+  <Iteration_stat>
+    <Statistics>
+      <Statistics_db-num>132700</Statistics_db-num>
+      <Statistics_db-len>35487807</Statistics_db-len>
+      <Statistics_hsp-len>59</Statistics_hsp-len>
+      <Statistics_eff-space>6831651229</Statistics_eff-space>
+      <Statistics_kappa>0.071</Statistics_kappa>
+      <Statistics_lambda>0.299</Statistics_lambda>
+      <Statistics_entropy>0.27</Statistics_entropy>
+    </Statistics>
+  </Iteration_stat>
+</Iteration>
+</BlastOutput_iterations>
+</BlastOutput>
+
