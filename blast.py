@@ -3,9 +3,16 @@ from Bio import SeqIO
 import os
 from Bio.Blast import NCBIXML
 
-def run_blast_local(blastdb, db, fasta_dir, query, extension=".fa"):
+def run_blast_local(blastdb, fasta_dir, query, db="pdbaa", extension=".fa"):
     """
     Run BLAST Locally
+
+    - blastdb = Path were the BLAST databases are stored (echo $BLASTDB)
+    - fasta_dir = Path where your target fasta sequence is
+    - query = name of the query (has to correspond to the name of the fasta file)
+    - db = Which database to search against (default pdbaa)
+
+    Returns a string announcing where the results are
     """
 
     # Set custom db path
@@ -17,8 +24,6 @@ def run_blast_local(blastdb, db, fasta_dir, query, extension=".fa"):
 
     outblast = "The results are stored in "+query+"_blast.out"
     return outblast
-
-
 
 
 
@@ -54,7 +59,7 @@ if __name__ == "__main__":
     extension=".fa"
 
     # Run BLAST
-    outblast =run_blast_local(blastdb, db, fasta_dir, query)
+    outblast =run_blast_local(blastdb, fasta_dir, query)
     print(outblast)
 
     matches = exact_match_retriever("test_blast.out")
