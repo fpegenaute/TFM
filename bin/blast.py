@@ -15,8 +15,11 @@ def run_blast_local(fasta, blastdb, db="pdbaa"):
 
     Returns a string announcing where the results are
     """
+
+    # Extract query name from filename
     query = Path(fasta).stem
-    # Set custom db path
+
+    # Set environment variable to the DB path
     os.environ["BLASTDB"]=blastdb
     
     # Call BLAST
