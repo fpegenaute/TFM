@@ -46,13 +46,15 @@ def exact_match_retriever(filename):
 
     # Get exact matches Eval+length
     matches = {}
-    E_VALUE_THRESH =  0.000000005
+    E_VALUE_THRESH = 0.00000005
+    i = 0
     for alignment in blast_record.alignments:
         for hsp in alignment.hsps:
-            if float(hsp.expect) < E_VALUE_THRESH:
+            if float(hsp.expect) < E_VALUE_THRESH and i < 4:
                 if alignment.length == len(hsp.query):
                     ID = alignment.title[4:8]
                     Chain = alignment.title[10]
+                    i+=1
 
                     matches.update({ID : Chain})
     return(matches)

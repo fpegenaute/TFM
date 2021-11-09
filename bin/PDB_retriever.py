@@ -18,7 +18,8 @@ def retrieve_pdb_info(pdb_list, pdb_dir, fasta_dir):
 
     # Initialize object PDBList
     pdbl = PDBList() 
-
+    
+    input(f"PDB List = {len(pdb_list)} Press Enter to continue...")
     for template in pdb_list:
         # Dowload the PDB file from the web
         pdbl.retrieve_pdb_file(template, pdir=pdb_dir)
