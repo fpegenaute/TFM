@@ -27,7 +27,7 @@ def run_blast_local(fasta, blastdb, db="pdbaa"):
     db=db, matrix="BLOSUM80",outfmt=5, out=query+"_blast.out")
     stdout, stderr = blastp_cline()
 
-    outblast = "The results are stored in "+query+"_blast.out"
+    outblast = query+"_blast.out"
     return outblast
 
 
@@ -35,22 +35,26 @@ def run_blast_local(fasta, blastdb, db="pdbaa"):
 def exact_match_retriever(filename):
     """
     Given a XML (format 5) formatted BLAST output, 
-    return a list of exact matches, meaning e-value == 0.0
+    return a dictionary of exact matches, meaning e-value == 0.0
     AND length of the query == length of the match.
+    
+    Each dictionary entry has the format "PDB ID : Chain"
     """
 
     with open(filename) as result_handle:
         blast_record = NCBIXML.read(result_handle)
 
     # Get exact matches Eval+length
-    matches = []
-    E_VALUE_THRESH = 0.0
+    matches = {}
+    E_VALUE_THRESH =  0.000000005
     for alignment in blast_record.alignments:
         for hsp in alignment.hsps:
-            if hsp.expect == E_VALUE_THRESH:
+            if float(hsp.expect) < E_VALUE_THRESH:
                 if alignment.length == len(hsp.query):
                     ID = alignment.title[4:8]
-                    matches.append(ID)
+                    Chain = alignment.title[10]
+
+                    matches.update({ID : Chain})
     return(matches)
 
 
@@ -63,6 +67,3 @@ if __name__ == "__main__":
     # Run BLAST
     outblast =run_blast_local(fasta, blastdb)
     print(outblast)
-
-    # matches = exact_match_retriever("test_blast.out")
-    # print(matches)

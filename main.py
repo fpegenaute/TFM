@@ -20,6 +20,12 @@ parser.add_argument("FASTA",
 parser.add_argument("-v", "--verbose", 
                     help="Increase output verbosity", 
                     action="store_true")
+parser.add_argument("-p", "--pdbdir", 
+                    help="Directory to store the retrieved PDBs", 
+                    default=".")
+parser.add_argument("-f", "--fastadir", 
+                    help="Directory to store the retrieved FASTA files", 
+                    default=".")
 
 args = parser.parse_args()
 
@@ -28,9 +34,10 @@ args = parser.parse_args()
 
 ### Initializing the LOG system ###
 
-fasta= args.FASTA
+fasta = args.FASTA
+query_name = Path(fasta).stem
 l.basicConfig(format = "%(levelname)s:%(message)s", 
-                        filename = f"{Path(fasta).stem}.log", level = l.DEBUG)
+                        filename = f"{query_name}.log", level = l.DEBUG)
 l.debug("...STARTING...\n")		
 
 # If verbose is set, the LOG file is also printed in STDOUT
@@ -44,9 +51,23 @@ if args.verbose:
 blastdb = "/home/gallegolab/Desktop/TFM/databases/BLAST/pdbaa"
 l.info(f"BLAST database is located at: {blastdb}")
 
-
-
 # Run BLAST
+l.info(f"Starting BLAST. Query: {fasta}, Database: {Path(blastdb).stem}")
 outblast = run_blast_local(fasta, blastdb)
-print(outblast)
-print(fasta)
+l.info(f"BLAST results stored in : {outblast}")
+
+# Catch exact matches
+exact_matches = exact_match_retriever(outblast)
+l.info(f" The target sequence is already in the PDB with code/s: {exact_matches.keys()}")
+
+
+# Retrieve exact matches from the PDB
+pdb_dir = args.pdbdir
+fasta_dir = args.fastadir
+
+if exact_matches:
+    retrieve_pdb_info(exact_matches.keys(), pdb_dir, fasta_dir)
+if not exact_matches:
+    l.info("Your full sequence is not on the PDB")
+
+
