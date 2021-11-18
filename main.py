@@ -7,7 +7,9 @@
 import argparse
 from bin.blast import *
 from bin.PDB_retriever import *
+import  bin.config as cfg
 import logging as l
+from pathlib import Path
 
 
 parser = argparse.ArgumentParser(description="""This program retrieves
@@ -48,7 +50,8 @@ if args.verbose:
 ## 1. Check if the input sequence is already in the PDB  
 
 # Locate the Database
-blastdb = "/home/gallegolab/Desktop/TFM/databases/BLAST/pdbaa"
+blastdb = cfg.blastconfig["blastdb"]
+# blastdb = "/home/gallegolab/Desktop/TFM/databases/BLAST/pdbaa"
 l.info(f"BLAST database is located at: {blastdb}")
 
 # Run BLAST
@@ -62,9 +65,15 @@ l.info(f" The target sequence is already in the PDB with code/s: {exact_matches.
 
 
 # Retrieve exact matches from the PDB
-pdb_dir = args.pdbdir
-fasta_dir = args.fastadir
 
+# Create folders
+pdb_dir = f"{args.pdbdir}/{query_name}"
+fasta_dir = f"{args.fastadir}/{query_name}"
+
+Path(pdb_dir).mkdir(parents=True, exist_ok=True)
+Path(fasta_dir).mkdir(parents=True, exist_ok=True)
+
+# Retrieve
 if exact_matches:
     retrieve_pdb_info(exact_matches.keys(), pdb_dir, fasta_dir)
 if not exact_matches:

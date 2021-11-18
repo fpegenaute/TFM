@@ -1,0 +1,1666 @@
+<?xml version="1.0"?>
+<!DOCTYPE BlastOutput PUBLIC "-//NCBI//NCBI BlastOutput/EN" "http://www.ncbi.nlm.nih.gov/dtd/NCBI_BlastOutput.dtd">
+<BlastOutput>
+  <BlastOutput_program>blastp</BlastOutput_program>
+  <BlastOutput_version>BLASTP 2.9.0+</BlastOutput_version>
+  <BlastOutput_reference>Stephen F. Altschul, Thomas L. Madden, Alejandro A. Sch&amp;auml;ffer, Jinghui Zhang, Zheng Zhang, Webb Miller, and David J. Lipman (1997), &quot;Gapped BLAST and PSI-BLAST: a new generation of protein database search programs&quot;, Nucleic Acids Res. 25:3389-3402.</BlastOutput_reference>
+  <BlastOutput_db>pdbaa</BlastOutput_db>
+  <BlastOutput_query-ID>Query_1</BlastOutput_query-ID>
+  <BlastOutput_query-def>test</BlastOutput_query-def>
+  <BlastOutput_query-len>21</BlastOutput_query-len>
+  <BlastOutput_param>
+    <Parameters>
+      <Parameters_matrix>BLOSUM80</Parameters_matrix>
+      <Parameters_expect>10</Parameters_expect>
+      <Parameters_gap-open>10</Parameters_gap-open>
+      <Parameters_gap-extend>1</Parameters_gap-extend>
+      <Parameters_filter>F</Parameters_filter>
+    </Parameters>
+  </BlastOutput_param>
+<BlastOutput_iterations>
+<Iteration>
+  <Iteration_iter-num>1</Iteration_iter-num>
+  <Iteration_query-ID>Query_1</Iteration_query-ID>
+  <Iteration_query-def>test</Iteration_query-def>
+  <Iteration_query-len>21</Iteration_query-len>
+<Iteration_hits>
+<Hit>
+  <Hit_num>1</Hit_num>
+  <Hit_id>pdb|6B3Q|a</Hit_id>
+  <Hit_def>Cryo-EM structure of human insulin degrading enzyme in complex with insulin [Homo sapiens] &gt;pdb|6B3Q|b Cryo-EM structure of human insulin degrading enzyme in complex with insulin [Homo sapiens] &gt;pdb|6B70|a Cryo-EM structure of human insulin degrading enzyme in complex with FAB H11-E heavy chain, FAB H11-E light chain and insulin [Homo sapiens] &gt;pdb|6B70|c Cryo-EM structure of human insulin degrading enzyme in complex with FAB H11-E heavy chain, FAB H11-E light chain and insulin [Homo sapiens] &gt;pdb|6BFC|a Cryo-EM structure of human insulin degrading enzyme in complex with insulin [Homo sapiens] &gt;pdb|6BFC|b Cryo-EM structure of human insulin degrading enzyme in complex with insulin [Homo sapiens] &gt;pdb|6JK8|C Cryo-EM structure of the full-length human IGF-1R in complex with insulin [Homo sapiens] &gt;pdb|6JK8|D Cryo-EM structure of the full-length human IGF-1R in complex with insulin [Homo sapiens] &gt;pdb|6TC2|A Monoclinic human insulin in complex with p-coumaric acid [Homo sapiens] &gt;pdb|6TC2|B Monoclinic human insulin in complex with p-coumaric acid [Homo sapiens] &gt;pdb|6TC2|C Monoclinic human insulin in complex with p-coumaric acid [Homo sapiens] &gt;pdb|6TC2|D Monoclinic human insulin in complex with p-coumaric acid [Homo sapiens] &gt;pdb|6TC2|E Monoclinic human insulin in complex with p-coumaric acid [Homo sapiens] &gt;pdb|6TC2|F Monoclinic human insulin in complex with p-coumaric acid [Homo sapiens] &gt;pdb|6TC2|G Monoclinic human insulin in complex with p-coumaric acid [Homo sapiens] &gt;pdb|6TC2|H Monoclinic human insulin in complex with p-coumaric acid [Homo sapiens] &gt;pdb|6TC2|I Monoclinic human insulin in complex with p-coumaric acid [Homo sapiens] &gt;pdb|6TC2|J Monoclinic human insulin in complex with p-coumaric acid [Homo sapiens] &gt;pdb|6TC2|K Monoclinic human insulin in complex with p-coumaric acid [Homo sapiens] &gt;pdb|6TC2|L Monoclinic human insulin in complex with p-coumaric acid [Homo sapiens]</Hit_def>
+  <Hit_accession>6B3Q_a</Hit_accession>
+  <Hit_len>110</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>53.8545</Hsp_bit-score>
+      <Hsp_score>116</Hsp_score>
+      <Hsp_evalue>8.23196e-11</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>21</Hsp_query-to>
+      <Hsp_hit-from>90</Hsp_hit-from>
+      <Hsp_hit-to>110</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>21</Hsp_identity>
+      <Hsp_positive>21</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>21</Hsp_align-len>
+      <Hsp_qseq>GIVEQCCTSICSLYQLENYCN</Hsp_qseq>
+      <Hsp_hseq>GIVEQCCTSICSLYQLENYCN</Hsp_hseq>
+      <Hsp_midline>GIVEQCCTSICSLYQLENYCN</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>2</Hit_num>
+  <Hit_id>pdb|2QIU|A</Hit_id>
+  <Hit_def>Structure of Human Arg-Insulin [Homo sapiens] &gt;pdb|2QIU|C Structure of Human Arg-Insulin [Homo sapiens] &gt;pdb|2R34|A Crystal structure of MN human arg-insulin [Homo sapiens] &gt;pdb|2R34|C Crystal structure of MN human arg-insulin [Homo sapiens] &gt;pdb|2R35|A Crystal structure of RB human arg-insulin [Homo sapiens] &gt;pdb|2R35|C Crystal structure of RB human arg-insulin [Homo sapiens] &gt;pdb|2R36|A Crystal structure of ni human ARG-insulin [synthetic construct] &gt;pdb|2R36|C Crystal structure of ni human ARG-insulin [synthetic construct]</Hit_def>
+  <Hit_accession>2QIU_A</Hit_accession>
+  <Hit_len>22</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>45.6585</Hsp_bit-score>
+      <Hsp_score>97</Hsp_score>
+      <Hsp_evalue>7.86442e-09</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>21</Hsp_query-to>
+      <Hsp_hit-from>2</Hsp_hit-from>
+      <Hsp_hit-to>22</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>21</Hsp_identity>
+      <Hsp_positive>21</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>21</Hsp_align-len>
+      <Hsp_qseq>GIVEQCCTSICSLYQLENYCN</Hsp_qseq>
+      <Hsp_hseq>GIVEQCCTSICSLYQLENYCN</Hsp_hseq>
+      <Hsp_midline>GIVEQCCTSICSLYQLENYCN</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>3</Hit_num>
+  <Hit_id>pdb|5MHD|A</Hit_id>
+  <Hit_def>Biosynthetic engineered A22S-B3K-B31R human insulin monomer structure in water/acetonitrile solutions. [Homo sapiens]</Hit_def>
+  <Hit_accession>5MHD_A</Hit_accession>
+  <Hit_len>22</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>45.6585</Hsp_bit-score>
+      <Hsp_score>97</Hsp_score>
+      <Hsp_evalue>8.15444e-09</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>21</Hsp_query-to>
+      <Hsp_hit-from>1</Hsp_hit-from>
+      <Hsp_hit-to>21</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>21</Hsp_identity>
+      <Hsp_positive>21</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>21</Hsp_align-len>
+      <Hsp_qseq>GIVEQCCTSICSLYQLENYCN</Hsp_qseq>
+      <Hsp_hseq>GIVEQCCTSICSLYQLENYCN</Hsp_hseq>
+      <Hsp_midline>GIVEQCCTSICSLYQLENYCN</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>4</Hit_num>
+  <Hit_id>pdb|1A7F|A</Hit_id>
+  <Hit_def>INSULIN MUTANT B16 GLU, B24 GLY, DES-B30, NMR, 20 STRUCTURES [Homo sapiens] &gt;pdb|1AI0|A R6 HUMAN INSULIN HEXAMER (NON-SYMMETRIC), NMR, 10 STRUCTURES [Homo sapiens] &gt;pdb|1AI0|C R6 HUMAN INSULIN HEXAMER (NON-SYMMETRIC), NMR, 10 STRUCTURES [Homo sapiens] &gt;pdb|1AI0|E R6 HUMAN INSULIN HEXAMER (NON-SYMMETRIC), NMR, 10 STRUCTURES [Homo sapiens] &gt;pdb|1AI0|G R6 HUMAN INSULIN HEXAMER (NON-SYMMETRIC), NMR, 10 STRUCTURES [Homo sapiens] &gt;pdb|1AI0|I R6 HUMAN INSULIN HEXAMER (NON-SYMMETRIC), NMR, 10 STRUCTURES [Homo sapiens] &gt;pdb|1AI0|K R6 HUMAN INSULIN HEXAMER (NON-SYMMETRIC), NMR, 10 STRUCTURES [Homo sapiens] &gt;pdb|1AIY|A R6 HUMAN INSULIN HEXAMER (SYMMETRIC), NMR, 10 STRUCTURES [Homo sapiens] &gt;pdb|1AIY|C R6 HUMAN INSULIN HEXAMER (SYMMETRIC), NMR, 10 STRUCTURES [Homo sapiens] &gt;pdb|1AIY|E R6 HUMAN INSULIN HEXAMER (SYMMETRIC), NMR, 10 STRUCTURES [Homo sapiens] &gt;pdb|1AIY|G R6 HUMAN INSULIN HEXAMER (SYMMETRIC), NMR, 10 STRUCTURES [Homo sapiens] &gt;pdb|1AIY|I R6 HUMAN INSULIN HEXAMER (SYMMETRIC), NMR, 10 STRUCTURES [Homo sapiens] &gt;pdb|1AIY|K R6 HUMAN INSULIN HEXAMER (SYMMETRIC), NMR, 10 STRUCTURES [Homo sapiens] &gt;pdb|1B17|A Ph Affects Glu B13 Switching And Sulfate Binding In Cubic Insulin Crystals (Ph 5.00 Coordinates) [Sus scrofa] &gt;pdb|1B18|A Ph Affects Glu B13 Switching And Sulfate Binding In Cubic Insulin Crystals (Ph 5.53 Coordinates) [Sus scrofa] &gt;pdb|1B19|A Ph Affects Glu B13 Switching And Sulfate Binding In Cubic Insulin Crystals (Ph 5.80 Coordinates) [Sus scrofa] &gt;pdb|1B2A|A Ph Affects Glu B13 Switching And Sulfate Binding In Cubic Insulin Crystals (Ph 6.00 Coordinates) [Sus scrofa] &gt;pdb|1B2B|A Ph Affects Glu B13 Switching And Sulfate Binding In Cubic Insulin Crystals (Ph 6.16 Coordinates) [Sus scrofa] &gt;pdb|1B2C|A Ph Affects Glu B13 Switching And Sulfate Binding In Cubic Insulin Crystals (Ph 6.26 Coordinates) [Sus scrofa] &gt;pdb|1B2D|A Ph Affects Glu B13 Switching And Sulfate Binding In Cubic Insulin Crystals (Ph 6.35 Coordinates) [Sus scrofa] &gt;pdb|1B2E|A Ph Affects Glu B13 Switching And Sulfate Binding In Cubic Insulin Crystals (Ph 6.50 Coordinates) [Sus scrofa] &gt;pdb|1B2F|A Ph Affects Glu B13 Switching And Sulfate Binding In Cubic Insulin Crystals (Ph 6.98 Coordinates) [Sus scrofa] &gt;pdb|1B2G|A Ph Affects Glu B13 Switching And Sulfate Binding In Cubic Insulin Crystals (Ph 9.00 Coordinates) [Sus scrofa] &gt;pdb|1B9E|A Human Insulin Mutant Serb9glu [Homo sapiens] &gt;pdb|1B9E|C Human Insulin Mutant Serb9glu [Homo sapiens] &gt;pdb|1BEN|A INSULIN COMPLEXED WITH 4-HYDROXYBENZAMIDE &gt;pdb|1BEN|C INSULIN COMPLEXED WITH 4-HYDROXYBENZAMIDE &gt;pdb|1BZV|A [D-ALAB26]-DES(B27-B30)-INSULIN-B26-AMIDE A SUPERPOTENT SINGLE-REPLACEMENT INSULIN ANALOGUE, NMR, MINIMIZED AVERAGE STRUCTURE [unidentified] &gt;pdb|1DEI|A DESHEPTAPEPTIDE (B24-B30) INSULIN [Sus scrofa] &gt;pdb|1DEI|C DESHEPTAPEPTIDE (B24-B30) INSULIN [Sus scrofa] &gt;pdb|1EV3|A Structure of the rhombohedral form of the M-cresol/insulin R6 hexamer [synthetic construct] &gt;pdb|1EV3|C Structure of the rhombohedral form of the M-cresol/insulin R6 hexamer [synthetic construct] &gt;pdb|1EV6|A Structure of the monoclinic form of the M-cresol/insulin R6 hexamer [synthetic construct] &gt;pdb|1EV6|C Structure of the monoclinic form of the M-cresol/insulin R6 hexamer [synthetic construct] &gt;pdb|1EV6|E Structure of the monoclinic form of the M-cresol/insulin R6 hexamer [synthetic construct] &gt;pdb|1EV6|G Structure of the monoclinic form of the M-cresol/insulin R6 hexamer [synthetic construct] &gt;pdb|1EV6|I Structure of the monoclinic form of the M-cresol/insulin R6 hexamer [synthetic construct] &gt;pdb|1EV6|K Structure of the monoclinic form of the M-cresol/insulin R6 hexamer [synthetic construct] &gt;pdb|1EVR|A The structure of the resorcinol/insulin R6 hexamer [synthetic construct] &gt;pdb|1EVR|C The structure of the resorcinol/insulin R6 hexamer [synthetic construct] &gt;pdb|1EVR|E The structure of the resorcinol/insulin R6 hexamer [synthetic construct] &gt;pdb|1EVR|G The structure of the resorcinol/insulin R6 hexamer [synthetic construct] &gt;pdb|1EVR|I The structure of the resorcinol/insulin R6 hexamer [synthetic construct] &gt;pdb|1EVR|K The structure of the resorcinol/insulin R6 hexamer [synthetic construct] &gt;pdb|1FU2|A FIRST PROTEIN STRUCTURE DETERMINED FROM X-RAY POWDER DIFFRACTION DATA [synthetic construct] &gt;pdb|1FU2|C FIRST PROTEIN STRUCTURE DETERMINED FROM X-RAY POWDER DIFFRACTION DATA [synthetic construct] &gt;pdb|1FU2|E FIRST PROTEIN STRUCTURE DETERMINED FROM X-RAY POWDER DIFFRACTION DATA [synthetic construct] &gt;pdb|1FU2|G FIRST PROTEIN STRUCTURE DETERMINED FROM X-RAY POWDER DIFFRACTION DATA [synthetic construct] &gt;pdb|1FUB|A FIRST PROTEIN STRUCTURE DETERMINED FROM X-RAY POWDER DIFFRACTION DATA [synthetic construct] &gt;pdb|1FUB|C FIRST PROTEIN STRUCTURE DETERMINED FROM X-RAY POWDER DIFFRACTION DATA [synthetic construct] &gt;pdb|1G7A|A 1.2 A structure of T3R3 human insulin at 100 K [synthetic construct] &gt;pdb|1G7A|C 1.2 A structure of T3R3 human insulin at 100 K [synthetic construct] &gt;pdb|1G7A|E 1.2 A structure of T3R3 human insulin at 100 K [synthetic construct] &gt;pdb|1G7A|G 1.2 A structure of T3R3 human insulin at 100 K [synthetic construct] &gt;pdb|1G7B|A 1.3 A STRUCTURE OF T3R3 HUMAN INSULIN AT 100 K [synthetic construct] &gt;pdb|1G7B|C 1.3 A STRUCTURE OF T3R3 HUMAN INSULIN AT 100 K [synthetic construct] &gt;pdb|1G7B|E 1.3 A STRUCTURE OF T3R3 HUMAN INSULIN AT 100 K [synthetic construct] &gt;pdb|1G7B|G 1.3 A STRUCTURE OF T3R3 HUMAN INSULIN AT 100 K [synthetic construct] &gt;pdb|1GUJ|A Insulin at pH 2: structural analysis of the conditions promoting insulin fibre formation. [Homo sapiens] &gt;pdb|1GUJ|C Insulin at pH 2: structural analysis of the conditions promoting insulin fibre formation. [Homo sapiens] &gt;pdb|1HIQ|A PARADOXICAL STRUCTURE AND FUNCTION IN A MUTANT HUMAN INSULIN ASSOCIATED WITH DIABETES MELLITUS [Homo sapiens] &gt;pdb|1HIS|A Structure and dynamics of des-pentapeptide-insulin in solution: the molten-globule hypothesis. [Homo sapiens] &gt;pdb|1HIT|A Receptor binding redefined by a structural switch in a mutant Human Insulin [Homo sapiens] &gt;pdb|1HLS|A NMR STRUCTURE OF THE HUMAN INSULIN-HIS(B16) [Homo sapiens] &gt;pdb|1HTV|A Crystal Structure Of Destripeptide (B28-B30) Insulin [Homo sapiens] &gt;pdb|1HTV|C Crystal Structure Of Destripeptide (B28-B30) Insulin [Homo sapiens] &gt;pdb|1HTV|E Crystal Structure Of Destripeptide (B28-B30) Insulin [Homo sapiens] &gt;pdb|1HTV|G Crystal Structure Of Destripeptide (B28-B30) Insulin [Homo sapiens] &gt;pdb|1HTV|I Crystal Structure Of Destripeptide (B28-B30) Insulin [Homo sapiens] &gt;pdb|1HTV|K Crystal Structure Of Destripeptide (B28-B30) Insulin [Homo sapiens] &gt;pdb|1HUI|A INSULIN MUTANT (B1, B10, B16, B27)GLU, DES-B30, NMR, 25 STRUCTURES [Homo sapiens] &gt;pdb|1IZA|A Role Of B13 Glu In Insulin Assembly: The Hexamer Structure Of Recombinant Mutant (B13 Glu-&gt; Gln) Insulin [Sus scrofa] &gt;pdb|1IZA|C Role Of B13 Glu In Insulin Assembly: The Hexamer Structure Of Recombinant Mutant (B13 Glu-&gt; Gln) Insulin [Sus scrofa] &gt;pdb|1IZB|A Role Of B13 Glu In Insulin Assembly: The Hexamer Structure Of Recombinant Mutant (B13 Glu-&gt; Gln) Insulin [Sus scrofa] &gt;pdb|1IZB|C Role Of B13 Glu In Insulin Assembly: The Hexamer Structure Of Recombinant Mutant (B13 Glu-&gt; Gln) Insulin [Sus scrofa] &gt;pdb|1JCO|A Solution structure of the monomeric [Thr(B27)-&gt;Pro,Pro(B28)-&gt;Thr] insulin mutant (PT insulin) [Homo sapiens] &gt;pdb|1LPH|A Lys(B28)pro(B29)-Human Insulin [Homo sapiens] &gt;pdb|1LPH|C Lys(B28)pro(B29)-Human Insulin [Homo sapiens] &gt;pdb|1M5A|A Crystal Structure of 2-Co(2+)-Insulin at 1.2A Resolution [Sus scrofa] &gt;pdb|1M5A|C Crystal Structure of 2-Co(2+)-Insulin at 1.2A Resolution [Sus scrofa] &gt;pdb|1MHJ|A SOLUTION STRUCTURE OF THE SUPERACTIVE MONOMERIC DES-[PHE(B25)] HUMAN INSULIN MUTANT. ELUCIDATION OF THE STRUCTURAL BASIS FOR THE MONOMERIZATION OF THE DES-[PHE(B25)] INSULIN AND THE DIMERIZATION OF NATIVE INSULIN [Homo sapiens] &gt;pdb|1MPJ|A X-Ray Crystallographic Studies On Hexameric Insulins In The Presence Of Helix-Stabilizing Agents, Thiocyanate, Methylparaben And Phenol [Sus scrofa] &gt;pdb|1MPJ|C X-Ray Crystallographic Studies On Hexameric Insulins In The Presence Of Helix-Stabilizing Agents, Thiocyanate, Methylparaben And Phenol [Sus scrofa] &gt;pdb|1MSO|A T6 Human Insulin at 1.0 A Resolution [synthetic construct] &gt;pdb|1MSO|C T6 Human Insulin at 1.0 A Resolution [synthetic construct] &gt;pdb|1OS3|A Dehydrated T6 human insulin at 100 K [Homo sapiens] &gt;pdb|1OS3|C Dehydrated T6 human insulin at 100 K [Homo sapiens] &gt;pdb|1OS4|A Dehydrated T6 human insulin at 295 K [Homo sapiens] &gt;pdb|1OS4|C Dehydrated T6 human insulin at 295 K [Homo sapiens] &gt;pdb|1OS4|E Dehydrated T6 human insulin at 295 K [Homo sapiens] &gt;pdb|1OS4|G Dehydrated T6 human insulin at 295 K [Homo sapiens] &gt;pdb|1OS4|I Dehydrated T6 human insulin at 295 K [Homo sapiens] &gt;pdb|1OS4|K Dehydrated T6 human insulin at 295 K [Homo sapiens] &gt;pdb|1QIY|A Human Insulin Hexamers With Chain B His Mutated To Tyr Complexed With Phenol [Homo sapiens] &gt;pdb|1QIY|C Human Insulin Hexamers With Chain B His Mutated To Tyr Complexed With Phenol [Homo sapiens] &gt;pdb|1QIY|E Human Insulin Hexamers With Chain B His Mutated To Tyr Complexed With Phenol [Homo sapiens] &gt;pdb|1QIY|G Human Insulin Hexamers With Chain B His Mutated To Tyr Complexed With Phenol [Homo sapiens] &gt;pdb|1QIY|I Human Insulin Hexamers With Chain B His Mutated To Tyr Complexed With Phenol [Homo sapiens] &gt;pdb|1QIY|K Human Insulin Hexamers With Chain B His Mutated To Tyr Complexed With Phenol [Homo sapiens] &gt;pdb|1QIZ|A Human Insulin Hexamers With Chain B His Mutated To Tyr Complexed With Resorcinol [Homo sapiens] &gt;pdb|1QIZ|C Human Insulin Hexamers With Chain B His Mutated To Tyr Complexed With Resorcinol [Homo sapiens] &gt;pdb|1QIZ|E Human Insulin Hexamers With Chain B His Mutated To Tyr Complexed With Resorcinol [Homo sapiens] &gt;pdb|1QIZ|G Human Insulin Hexamers With Chain B His Mutated To Tyr Complexed With Resorcinol [Homo sapiens] &gt;pdb|1QIZ|I Human Insulin Hexamers With Chain B His Mutated To Tyr Complexed With Resorcinol [Homo sapiens] &gt;pdb|1QIZ|K Human Insulin Hexamers With Chain B His Mutated To Tyr Complexed With Resorcinol [Homo sapiens] &gt;pdb|1QJ0|A Human Insulin Hexamers With Chain B His Mutated To Tyr [Homo sapiens] &gt;pdb|1QJ0|C Human Insulin Hexamers With Chain B His Mutated To Tyr [Homo sapiens] &gt;pdb|1SDB|A Porcine Desb1-2 Despentapeptide(B26-B30) Insulin [Sus scrofa] &gt;pdb|1SF1|A NMR STRUCTURE OF HUMAN INSULIN under Amyloidogenic Condition, 15 STRUCTURES [Homo sapiens] &gt;pdb|1SJT|A MINI-PROINSULIN, TWO CHAIN INSULIN ANALOG MUTANT: DES B30, HIS(B 10)ASP, PRO(B 28)ASP, NMR, 20 STRUCTURES [Homo sapiens] &gt;pdb|1T1K|A NMR STRUCTURE OF HUMAN INSULIN MUTANT HIS-B10-ASP, VAL-B12-ALA, PRO-B28-LYS, LYS-B29-PRO, 15 STRUCTURES &gt;pdb|1T1P|A NMR STRUCTURE OF HUMAN INSULIN MUTANT HIS-B10-ASP, VAL-B12-THR, PRO-B28-LYS, LYS-B29-PRO, 15 STRUCTURES &gt;pdb|1T1Q|A NMR STRUCTURE OF HUMAN INSULIN MUTANT HIS-B10-ASP, VAL-B12-ABA, PRO-B28-LYS, LYS-B29-PRO, 15 STRUCTURES &gt;pdb|1TRZ|A Crystallographic Evidence For Dual Coordination Around Zinc In The T3r3 Human Insulin Hexamer [synthetic construct] &gt;pdb|1TRZ|C Crystallographic Evidence For Dual Coordination Around Zinc In The T3r3 Human Insulin Hexamer [synthetic construct] &gt;pdb|1TYL|A The Structure Of A Complex Of Hexameric Insulin And 4&apos;- Hydroxyacetanilide [Homo sapiens] &gt;pdb|1TYL|C The Structure Of A Complex Of Hexameric Insulin And 4&apos;- Hydroxyacetanilide [Homo sapiens] &gt;pdb|1TYM|A The Structure Of A Complex Of Hexameric Insulin And 4&apos;- Hydroxyacetanilide [Homo sapiens] &gt;pdb|1TYM|C The Structure Of A Complex Of Hexameric Insulin And 4&apos;- Hydroxyacetanilide [Homo sapiens] &gt;pdb|1UZ9|A Crystallographic and solution studies of N-lithocholyl insulin: a new generation of prolonged-acting insulins. [Homo sapiens] &gt;pdb|1W8P|A Structural properties of the B25Tyr-NMe-B26Phe insulin mutant. [Homo sapiens] &gt;pdb|1W8P|C Structural properties of the B25Tyr-NMe-B26Phe insulin mutant. [Homo sapiens] &gt;pdb|1W8P|E Structural properties of the B25Tyr-NMe-B26Phe insulin mutant. [Homo sapiens] &gt;pdb|1W8P|G Structural properties of the B25Tyr-NMe-B26Phe insulin mutant. [Homo sapiens] &gt;pdb|1W8P|I Structural properties of the B25Tyr-NMe-B26Phe insulin mutant. [Homo sapiens] &gt;pdb|1W8P|K Structural properties of the B25Tyr-NMe-B26Phe insulin mutant. [Homo sapiens] &gt;pdb|1WAV|A Crystal Structure Of Form B Monoclinic Crystal Of Insulin [Sus scrofa] &gt;pdb|1WAV|C Crystal Structure Of Form B Monoclinic Crystal Of Insulin [Sus scrofa] &gt;pdb|1WAV|E Crystal Structure Of Form B Monoclinic Crystal Of Insulin [Sus scrofa] &gt;pdb|1WAV|G Crystal Structure Of Form B Monoclinic Crystal Of Insulin [Sus scrofa] &gt;pdb|1WAV|I Crystal Structure Of Form B Monoclinic Crystal Of Insulin [Sus scrofa] &gt;pdb|1WAV|K Crystal Structure Of Form B Monoclinic Crystal Of Insulin [Sus scrofa] &gt;pdb|1XDA|A Structure Of Insulin [Homo sapiens] &gt;pdb|1XDA|C Structure Of Insulin [Homo sapiens] &gt;pdb|1XDA|E Structure Of Insulin [Homo sapiens] &gt;pdb|1XDA|G Structure Of Insulin [Homo sapiens] &gt;pdb|1XGL|A HUMAN INSULIN DISULFIDE ISOMER, NMR, 10 STRUCTURES [Homo sapiens] &gt;pdb|1ZEG|A Structure Of B28 Asp Insulin In Complex With Phenol [Homo sapiens] &gt;pdb|1ZEG|C Structure Of B28 Asp Insulin In Complex With Phenol [Homo sapiens] &gt;pdb|1ZEH|A Structure Of Insulin [Homo sapiens] &gt;pdb|1ZEH|C Structure Of Insulin [Homo sapiens] &gt;pdb|1ZNI|A INSULIN [Sus scrofa] &gt;pdb|1ZNI|C INSULIN [Sus scrofa] &gt;pdb|1ZNJ|A Insulin, Monoclinic Crystal Form [Homo sapiens] &gt;pdb|1ZNJ|C Insulin, Monoclinic Crystal Form [Homo sapiens] &gt;pdb|1ZNJ|E Insulin, Monoclinic Crystal Form [Homo sapiens] &gt;pdb|1ZNJ|G Insulin, Monoclinic Crystal Form [Homo sapiens] &gt;pdb|1ZNJ|I Insulin, Monoclinic Crystal Form [Homo sapiens] &gt;pdb|1ZNJ|K Insulin, Monoclinic Crystal Form [Homo sapiens] &gt;pdb|2AIY|A R6 HUMAN INSULIN HEXAMER (SYMMETRIC), NMR, 20 STRUCTURES &gt;pdb|2AIY|C R6 HUMAN INSULIN HEXAMER (SYMMETRIC), NMR, 20 STRUCTURES &gt;pdb|2AIY|E R6 HUMAN INSULIN HEXAMER (SYMMETRIC), NMR, 20 STRUCTURES &gt;pdb|2AIY|G R6 HUMAN INSULIN HEXAMER (SYMMETRIC), NMR, 20 STRUCTURES &gt;pdb|2AIY|I R6 HUMAN INSULIN HEXAMER (SYMMETRIC), NMR, 20 STRUCTURES &gt;pdb|2AIY|K R6 HUMAN INSULIN HEXAMER (SYMMETRIC), NMR, 20 STRUCTURES &gt;pdb|2C8Q|A insuline(1sec) and UV laser excited fluorescence [Homo sapiens] &gt;pdb|2C8R|A insuline(60sec) and UV laser excited fluorescence [Homo sapiens] &gt;pdb|2CEU|A Despentapeptide insulin in acetic acid (pH 2) [Homo sapiens] &gt;pdb|2CEU|C Despentapeptide insulin in acetic acid (pH 2) [Homo sapiens] &gt;pdb|2EFA|A Neutron crystal structure of cubic insulin at pD6.6 [Sus scrofa] &gt;pdb|2G4M|A Insulin collected at 2.0 A wavelength [Sus scrofa] &gt;pdb|2H67|A NMR structure of human insulin mutant HIS-B5-ALA, HIS-B10-ASP PRO-B28-LYS, LYS-B29-PRO, 20 structures [Homo sapiens] &gt;pdb|2HH4|A NMR structure of human insulin mutant GLY-B8-D-SER, HIS-B10-ASP PRO-B28-LYS, LYS-B29-PRO, 20 structures [Homo sapiens] &gt;pdb|2HHO|A NMR structure of human insulin mutant GLY-B8-SER, HIS-B10-ASP PRO-B28-LYS, LYS-B29-PRO, 20 structures [Homo sapiens] &gt;pdb|2HIU|A NMR STRUCTURE OF HUMAN INSULIN IN 20% ACETIC ACID, ZINC-FREE, 10 STRUCTURES [Homo sapiens] &gt;pdb|2JMN|A NMR structure of human insulin mutant His-B10-Asp, Pro-B28-Lys, Lys-B29-Pro, 20 structures [Homo sapiens] &gt;pdb|2JV1|A NMR structure of human insulin monomer in 35% CD3CN zinc free, 50 structures [Homo sapiens] &gt;pdb|2K91|A Enhancing the activity of insulin by stereospecific unfolding [Homo sapiens] &gt;pdb|2K9R|A Enhancing the activity of insulin by stereospecific unfolding [Homo sapiens] &gt;pdb|2KJJ|A Chain A, Insulin [Homo sapiens] &gt;pdb|2KJU|A Chain A, Insulin [Homo sapiens] &gt;pdb|2KQQ|A Chain A, Insulin B chain [Homo sapiens] &gt;pdb|2L1Y|A NMR Structure of human insulin mutant GLY-B20-D-ALA, GLY-B23-D-ALA PRO-B28-LYS, LYS-B29-PRO, 20 Structures [Homo sapiens] &gt;pdb|2M1D|A Biosynthetic engineered B28K-B29P human insulin monomer structure in in water/acetonitrile solutions. [Homo sapiens] &gt;pdb|2M1E|A Biosynthetic engineered B28K-B29P human insulin monomer structure in in water solutions. [Homo sapiens] &gt;pdb|2M2M|A Structure of [L-HisB24] insulin analogue at pH 1.9 [Homo sapiens] &gt;pdb|2M2N|A Structure of [L-HisB24] insulin analogue at pH 8.0 [Homo sapiens] &gt;pdb|2M2O|A Structure of [D-HisB24] insulin analogue at pH 1.9 [Homo sapiens] &gt;pdb|2M2P|A Structure of [D-HisB24] insulin analogue at pH 8.0 [Homo sapiens] &gt;pdb|2MLI|A NMR structure of B25-(alpha, beta)-dehydro-phenylalanine insulin [Homo sapiens] &gt;pdb|2MPG|A Solution structure of the [AibB8,LysB28,ProB29]-insulin analogue [Homo sapiens] &gt;pdb|2MPI|A Solution structure of B24G insulin [Homo sapiens] &gt;pdb|2MVC|A Solution structure of human insulin at pH 1.9 [Homo sapiens] &gt;pdb|2MVD|A Solution structure of [GlnB22]-insulin mutant at pH 1.9 [Homo sapiens] &gt;pdb|2N2V|A Solution structure of [B26-B29 triazole cross-linked]-insulin analogue at pH 1.9 [Homo sapiens] &gt;pdb|2N2W|A Solution structure of [B26-B29 triazole cross-linked]-insulin analogue at pH 8.0 [Homo sapiens] &gt;pdb|2N2X|A Solution structure of [GlyB24,B27-B29 triazole cross-linked]-insulin analogue at pH 1.9 [Homo sapiens] &gt;pdb|2OLY|A Structure of human insulin in presence of urea at pH 7.0 [Homo sapiens] &gt;pdb|2OLY|C Structure of human insulin in presence of urea at pH 7.0 [Homo sapiens] &gt;pdb|2OLY|E Structure of human insulin in presence of urea at pH 7.0 [Homo sapiens] &gt;pdb|2OLY|G Structure of human insulin in presence of urea at pH 7.0 [Homo sapiens] &gt;pdb|2OLY|I Structure of human insulin in presence of urea at pH 7.0 [Homo sapiens] &gt;pdb|2OLY|K Structure of human insulin in presence of urea at pH 7.0 [Homo sapiens] &gt;pdb|2OLZ|A Structure of human insulin in presence of thiocyanate at pH 7.0 [Homo sapiens] &gt;pdb|2OLZ|C Structure of human insulin in presence of thiocyanate at pH 7.0 [Homo sapiens] &gt;pdb|2OLZ|E Structure of human insulin in presence of thiocyanate at pH 7.0 [Homo sapiens] &gt;pdb|2OLZ|G Structure of human insulin in presence of thiocyanate at pH 7.0 [Homo sapiens] &gt;pdb|2OLZ|I Structure of human insulin in presence of thiocyanate at pH 7.0 [Homo sapiens] &gt;pdb|2OLZ|K Structure of human insulin in presence of thiocyanate at pH 7.0 [Homo sapiens] &gt;pdb|2OM0|1 Structure of human insulin in presence of urea at pH 6.5 [Homo sapiens] &gt;pdb|2OM0|3 Structure of human insulin in presence of urea at pH 6.5 [Homo sapiens] &gt;pdb|2OM0|A Structure of human insulin in presence of urea at pH 6.5 [Homo sapiens] &gt;pdb|2OM0|C Structure of human insulin in presence of urea at pH 6.5 [Homo sapiens] &gt;pdb|2OM0|E Structure of human insulin in presence of urea at pH 6.5 [Homo sapiens] &gt;pdb|2OM0|G Structure of human insulin in presence of urea at pH 6.5 [Homo sapiens] &gt;pdb|2OM0|I Structure of human insulin in presence of urea at pH 6.5 [Homo sapiens] &gt;pdb|2OM0|K Structure of human insulin in presence of urea at pH 6.5 [Homo sapiens] &gt;pdb|2OM0|Q Structure of human insulin in presence of urea at pH 6.5 [Homo sapiens] &gt;pdb|2OM0|S Structure of human insulin in presence of urea at pH 6.5 [Homo sapiens] &gt;pdb|2OM0|U Structure of human insulin in presence of urea at pH 6.5 [Homo sapiens] &gt;pdb|2OM0|X Structure of human insulin in presence of urea at pH 6.5 [Homo sapiens] &gt;pdb|2OM0|a Structure of human insulin in presence of urea at pH 6.5 [Homo sapiens] &gt;pdb|2OM0|c Structure of human insulin in presence of urea at pH 6.5 [Homo sapiens] &gt;pdb|2OM0|e Structure of human insulin in presence of urea at pH 6.5 [Homo sapiens] &gt;pdb|2OM0|g Structure of human insulin in presence of urea at pH 6.5 [Homo sapiens] &gt;pdb|2OM0|i Structure of human insulin in presence of urea at pH 6.5 [Homo sapiens] &gt;pdb|2OM0|k Structure of human insulin in presence of urea at pH 6.5 [Homo sapiens] &gt;pdb|2OM1|1 Structure of human insulin in presence of thiocyanate at pH 6.5 [Homo sapiens] &gt;pdb|2OM1|3 Structure of human insulin in presence of thiocyanate at pH 6.5 [Homo sapiens] &gt;pdb|2OM1|A Structure of human insulin in presence of thiocyanate at pH 6.5 [Homo sapiens] &gt;pdb|2OM1|C Structure of human insulin in presence of thiocyanate at pH 6.5 [Homo sapiens] &gt;pdb|2OM1|E Structure of human insulin in presence of thiocyanate at pH 6.5 [Homo sapiens] &gt;pdb|2OM1|G Structure of human insulin in presence of thiocyanate at pH 6.5 [Homo sapiens] &gt;pdb|2OM1|I Structure of human insulin in presence of thiocyanate at pH 6.5 [Homo sapiens] &gt;pdb|2OM1|K Structure of human insulin in presence of thiocyanate at pH 6.5 [Homo sapiens] &gt;pdb|2OM1|Q Structure of human insulin in presence of thiocyanate at pH 6.5 [Homo sapiens] &gt;pdb|2OM1|S Structure of human insulin in presence of thiocyanate at pH 6.5 [Homo sapiens] &gt;pdb|2OM1|U Structure of human insulin in presence of thiocyanate at pH 6.5 [Homo sapiens] &gt;pdb|2OM1|X Structure of human insulin in presence of thiocyanate at pH 6.5 [Homo sapiens] &gt;pdb|2OM1|a Structure of human insulin in presence of thiocyanate at pH 6.5 [Homo sapiens] &gt;pdb|2OM1|c Structure of human insulin in presence of thiocyanate at pH 6.5 [Homo sapiens] &gt;pdb|2OM1|e Structure of human insulin in presence of thiocyanate at pH 6.5 [Homo sapiens] &gt;pdb|2OM1|g Structure of human insulin in presence of thiocyanate at pH 6.5 [Homo sapiens] &gt;pdb|2OM1|i Structure of human insulin in presence of thiocyanate at pH 6.5 [Homo sapiens] &gt;pdb|2OM1|k Structure of human insulin in presence of thiocyanate at pH 6.5 [Homo sapiens] &gt;pdb|2OMG|A Structure of human insulin cocrystallized with protamine and urea [Homo sapiens] &gt;pdb|2OMG|C Structure of human insulin cocrystallized with protamine and urea [Homo sapiens] &gt;pdb|2OMG|E Structure of human insulin cocrystallized with protamine and urea [Homo sapiens] &gt;pdb|2OMH|A Structure of human insulin cocrystallized with ARG-12 peptide in presence of urea [Homo sapiens] &gt;pdb|2OMH|C Structure of human insulin cocrystallized with ARG-12 peptide in presence of urea [Homo sapiens] &gt;pdb|2OMH|E Structure of human insulin cocrystallized with ARG-12 peptide in presence of urea [Homo sapiens] &gt;pdb|2OMI|A Structure of human insulin cocrystallized with protamine [Homo sapiens] &gt;pdb|2OMI|C Structure of human insulin cocrystallized with protamine [Homo sapiens] &gt;pdb|2OMI|E Structure of human insulin cocrystallized with protamine [Homo sapiens] &gt;pdb|2OMI|G Structure of human insulin cocrystallized with protamine [Homo sapiens] &gt;pdb|2OMI|I Structure of human insulin cocrystallized with protamine [Homo sapiens] &gt;pdb|2OMI|K Structure of human insulin cocrystallized with protamine [Homo sapiens] &gt;pdb|2RN5|A Humal Insulin Mutant B31Lys-B32Arg [Homo sapiens] &gt;pdb|2TCI|A X-Ray Crystallographic Studies On Hexameric Insulins In The Presence Of Helix-Stabilizing Agents, Thiocyanate, Methylparaben And Phenol [Sus scrofa] &gt;pdb|2TCI|C X-Ray Crystallographic Studies On Hexameric Insulins In The Presence Of Helix-Stabilizing Agents, Thiocyanate, Methylparaben And Phenol [Sus scrofa] &gt;pdb|2VJZ|A Crystal structure form ultalente insulin microcrystals [Homo sapiens] &gt;pdb|2VJZ|C Crystal structure form ultalente insulin microcrystals [Homo sapiens] &gt;pdb|2VK0|A Crystal structure form ultalente insulin microcrystals [Homo sapiens] &gt;pdb|2VK0|C Crystal structure form ultalente insulin microcrystals [Homo sapiens] &gt;pdb|2WC0|C crystal structure of human insulin degrading enzyme in complex with iodinated insulin [synthetic construct] &gt;pdb|2WC0|E crystal structure of human insulin degrading enzyme in complex with iodinated insulin [synthetic construct] &gt;pdb|2WRU|A Semi-synthetic highly active analogue of human insulin NMeAlaB26-DTI- NH2 [Homo sapiens] &gt;pdb|2WRV|A Semi-synthetic highly active analogue of human insulin NMeHisB26-DTI- NH2 [Homo sapiens] &gt;pdb|2WRW|A Semi-synthetic highly active analogue of human insulin D-ProB26-DTI- NH2 [Homo sapiens] &gt;pdb|2WRX|A Semi-synthetic analogue of human insulin NMeAlaB26-insulin at pH 3.0 [Homo sapiens] &gt;pdb|2WRX|C Semi-synthetic analogue of human insulin NMeAlaB26-insulin at pH 3.0 [Homo sapiens] &gt;pdb|2WS0|A Semi-synthetic analogue of human insulin NMeAlaB26-insulin at pH 7.5 [Homo sapiens] &gt;pdb|2WS1|A Semi-synthetic analogue of human insulin NMeTyrB26-insulin in monomer form [Homo sapiens] &gt;pdb|2WS4|A Semi-synthetic analogue of human insulin ProB26-DTI in monomer form [Homo sapiens] &gt;pdb|2WS6|A Semi-synthetic analogue of human insulin NMeTyrB26-insulin in hexamer form [Homo sapiens] &gt;pdb|2WS6|C Semi-synthetic analogue of human insulin NMeTyrB26-insulin in hexamer form [Homo sapiens] &gt;pdb|2WS6|E Semi-synthetic analogue of human insulin NMeTyrB26-insulin in hexamer form [Homo sapiens] &gt;pdb|2WS6|G Semi-synthetic analogue of human insulin NMeTyrB26-insulin in hexamer form [Homo sapiens] &gt;pdb|2WS6|I Semi-synthetic analogue of human insulin NMeTyrB26-insulin in hexamer form [Homo sapiens] &gt;pdb|2WS6|K Semi-synthetic analogue of human insulin NMeTyrB26-insulin in hexamer form [Homo sapiens] &gt;pdb|2WS7|A Semi-synthetic analogue of human insulin ProB26-DTI [Homo sapiens] &gt;pdb|2WS7|C Semi-synthetic analogue of human insulin ProB26-DTI [Homo sapiens] &gt;pdb|2WS7|E Semi-synthetic analogue of human insulin ProB26-DTI [Homo sapiens] &gt;pdb|2WS7|G Semi-synthetic analogue of human insulin ProB26-DTI [Homo sapiens] &gt;pdb|2WS7|I Semi-synthetic analogue of human insulin ProB26-DTI [Homo sapiens] &gt;pdb|2WS7|K Semi-synthetic analogue of human insulin ProB26-DTI [Homo sapiens] &gt;pdb|2ZPP|A Neutron crystal structure of cubic insulin at pD9 [Sus scrofa] &gt;pdb|3AIY|A R6 HUMAN INSULIN HEXAMER (SYMMETRIC), NMR, REFINED AVERAGE STRUCTURE &gt;pdb|3AIY|C R6 HUMAN INSULIN HEXAMER (SYMMETRIC), NMR, REFINED AVERAGE STRUCTURE &gt;pdb|3AIY|E R6 HUMAN INSULIN HEXAMER (SYMMETRIC), NMR, REFINED AVERAGE STRUCTURE &gt;pdb|3AIY|G R6 HUMAN INSULIN HEXAMER (SYMMETRIC), NMR, REFINED AVERAGE STRUCTURE &gt;pdb|3AIY|I R6 HUMAN INSULIN HEXAMER (SYMMETRIC), NMR, REFINED AVERAGE STRUCTURE &gt;pdb|3AIY|K R6 HUMAN INSULIN HEXAMER (SYMMETRIC), NMR, REFINED AVERAGE STRUCTURE &gt;pdb|3BXQ|A The structure of a mutant insulin uncouples receptor binding from protein allostery. An electrostatic block to the TR transition &gt;pdb|3BXQ|C The structure of a mutant insulin uncouples receptor binding from protein allostery. An electrostatic block to the TR transition &gt;pdb|3E7Y|A Structure of human insulin [Homo sapiens] &gt;pdb|3E7Y|C Structure of human insulin [Homo sapiens] &gt;pdb|3E7Z|A Structure of human insulin [Homo sapiens] &gt;pdb|3E7Z|C Structure of human insulin [Homo sapiens] &gt;pdb|3EXX|A Structure of the T6 human insulin derivative with nickel at 1.35 A resolution [Homo sapiens] &gt;pdb|3EXX|C Structure of the T6 human insulin derivative with nickel at 1.35 A resolution [Homo sapiens] &gt;pdb|3FHP|A A neutron crystallographic analysis of a porcine 2Zn insulin at 2.0 A resolution [Sus scrofa] &gt;pdb|3FHP|C A neutron crystallographic analysis of a porcine 2Zn insulin at 2.0 A resolution [Sus scrofa] &gt;pdb|3I3Z|A Human insulin [Homo sapiens] &gt;pdb|3I40|A Human insulin [Homo sapiens] &gt;pdb|3ILG|A Crystal structure of humnan insulin Sr+2 complex [Homo sapiens] &gt;pdb|3ILG|C Crystal structure of humnan insulin Sr+2 complex [Homo sapiens] &gt;pdb|3INC|A Crystal structure of human insulin with Ni+2 complex [Homo sapiens] &gt;pdb|3INC|C Crystal structure of human insulin with Ni+2 complex [Homo sapiens] &gt;pdb|3INS|A STRUCTURE OF INSULIN. RESULTS OF JOINT NEUTRON AND X-RAY REFINEMENT [Sus scrofa] &gt;pdb|3INS|C STRUCTURE OF INSULIN. RESULTS OF JOINT NEUTRON AND X-RAY REFINEMENT [Sus scrofa] &gt;pdb|3IR0|A Crystal Structure of Human Insulin complexed with Cu+2 metal ion [Homo sapiens] &gt;pdb|3IR0|C Crystal Structure of Human Insulin complexed with Cu+2 metal ion [Homo sapiens] &gt;pdb|3IR0|E Crystal Structure of Human Insulin complexed with Cu+2 metal ion [Homo sapiens] &gt;pdb|3IR0|G Crystal Structure of Human Insulin complexed with Cu+2 metal ion [Homo sapiens] &gt;pdb|3IR0|I Crystal Structure of Human Insulin complexed with Cu+2 metal ion [Homo sapiens] &gt;pdb|3IR0|K Crystal Structure of Human Insulin complexed with Cu+2 metal ion [Homo sapiens] &gt;pdb|3IR0|M Crystal Structure of Human Insulin complexed with Cu+2 metal ion [Homo sapiens] &gt;pdb|3IR0|O Crystal Structure of Human Insulin complexed with Cu+2 metal ion [Homo sapiens] &gt;pdb|3IR0|R Crystal Structure of Human Insulin complexed with Cu+2 metal ion [Homo sapiens] &gt;pdb|3IR0|T Crystal Structure of Human Insulin complexed with Cu+2 metal ion [Homo sapiens] &gt;pdb|3IR0|V Crystal Structure of Human Insulin complexed with Cu+2 metal ion [Homo sapiens] &gt;pdb|3IR0|X Crystal Structure of Human Insulin complexed with Cu+2 metal ion [Homo sapiens] &gt;pdb|3JSD|A Chain A, Insulin A chain [synthetic construct] &gt;pdb|3JSD|C Chain C, Insulin A chain [synthetic construct] &gt;pdb|3MTH|A X-Ray Crystallographic Studies On Hexameric Insulins In The Presence Of Helix-Stabilizing Agents, Thiocyanate, Methylparaben And Phenol [Sus scrofa] &gt;pdb|3MTH|C X-Ray Crystallographic Studies On Hexameric Insulins In The Presence Of Helix-Stabilizing Agents, Thiocyanate, Methylparaben And Phenol [Sus scrofa] &gt;pdb|3P2X|A Insulin fibrillation is the Janus face of induced fit. A chiaral clamp stabilizes the native state at the expense of activity [Homo sapiens] &gt;pdb|3P2X|C Insulin fibrillation is the Janus face of induced fit. A chiaral clamp stabilizes the native state at the expense of activity [Homo sapiens] &gt;pdb|3P33|A Insulin fibrillation is the Janus face of induced fit. A chiral clamp stabilizes the native state at the expense of activity [Homo sapiens] &gt;pdb|3P33|C Insulin fibrillation is the Janus face of induced fit. A chiral clamp stabilizes the native state at the expense of activity [Homo sapiens] &gt;pdb|3P33|E Insulin fibrillation is the Janus face of induced fit. A chiral clamp stabilizes the native state at the expense of activity [Homo sapiens] &gt;pdb|3P33|G Insulin fibrillation is the Janus face of induced fit. A chiral clamp stabilizes the native state at the expense of activity [Homo sapiens] &gt;pdb|3Q6E|A Human insulin in complex with cucurbit[7]uril [Homo sapiens] &gt;pdb|3Q6E|C Human insulin in complex with cucurbit[7]uril [Homo sapiens] &gt;pdb|3ROV|A Insulin&apos;s biosynthesis and activity have opposing structural requirements: a new factor in neonatal diabetes mellitus [Homo sapiens] &gt;pdb|3ROV|C Insulin&apos;s biosynthesis and activity have opposing structural requirements: a new factor in neonatal diabetes mellitus [Homo sapiens] &gt;pdb|3ROV|E Insulin&apos;s biosynthesis and activity have opposing structural requirements: a new factor in neonatal diabetes mellitus [Homo sapiens] &gt;pdb|3ROV|G Insulin&apos;s biosynthesis and activity have opposing structural requirements: a new factor in neonatal diabetes mellitus [Homo sapiens] &gt;pdb|3ROV|I Insulin&apos;s biosynthesis and activity have opposing structural requirements: a new factor in neonatal diabetes mellitus [Homo sapiens] &gt;pdb|3ROV|K Insulin&apos;s biosynthesis and activity have opposing structural requirements: a new factor in neonatal diabetes mellitus [Homo sapiens] &gt;pdb|3RTO|A Acoustically mounted porcine insulin microcrystals yield an X-ray SAD structure [Sus scrofa] &gt;pdb|3RTO|C Acoustically mounted porcine insulin microcrystals yield an X-ray SAD structure [Sus scrofa] &gt;pdb|3T2A|A TMAO-grown cubic insulin (porcine) [Sus scrofa] &gt;pdb|3TT8|A Crystal Structure Analysis of Cu Human Insulin Derivative [Homo sapiens] &gt;pdb|3TT8|C Crystal Structure Analysis of Cu Human Insulin Derivative [Homo sapiens] &gt;pdb|3U4N|A A novel covalently linked insulin dimer [Homo sapiens] &gt;pdb|3V1G|A Forestalling insulin fibrillation by insertion of a chiral clamp mechanism-based application of protein engineering to global health [Homo sapiens] &gt;pdb|3V1G|C Forestalling insulin fibrillation by insertion of a chiral clamp mechanism-based application of protein engineering to global health [Homo sapiens] &gt;pdb|3W11|A Insulin receptor ectodomain construct comprising domains L1-CR in complex with human insulin, Alpha-CT peptide(704-719) and FAB 83-7 [Homo sapiens] &gt;pdb|3W12|A Insulin receptor ectodomain construct comprising domains L1-CR in complex with high-affinity insulin analogue [D-PRO-B26]-DTI-NH2, alpha-CT peptide(704-719) and FAB 83-7 [Homo sapiens] &gt;pdb|3W13|A Insulin receptor ectodomain construct comprising domains L1-CR in complex with high-affinity insulin analogue [D-PRO-B26]-DTI-NH2, alphact peptide(693-719) and FAB 83-7 [Homo sapiens] &gt;pdb|3W7Y|A 0.92A structure of 2Zn human insulin at 100K [Homo sapiens] &gt;pdb|3W7Y|C 0.92A structure of 2Zn human insulin at 100K [Homo sapiens] &gt;pdb|3W7Z|A 1.15A structure of human 2Zn insulin at 293K [Homo sapiens] &gt;pdb|3W7Z|C 1.15A structure of human 2Zn insulin at 293K [Homo sapiens] &gt;pdb|3W80|A Crystal structure of dodecamer human insulin with double C-axis length of the hexamer 2 Zn insulin cell [Homo sapiens] &gt;pdb|3W80|C Crystal structure of dodecamer human insulin with double C-axis length of the hexamer 2 Zn insulin cell [Homo sapiens] &gt;pdb|3W80|E Crystal structure of dodecamer human insulin with double C-axis length of the hexamer 2 Zn insulin cell [Homo sapiens] &gt;pdb|3W80|G Crystal structure of dodecamer human insulin with double C-axis length of the hexamer 2 Zn insulin cell [Homo sapiens] &gt;pdb|3ZI3|A Crystal structure of the B24His-insulin - human analogue [Homo sapiens] &gt;pdb|3ZQR|A NMePheB25 insulin analogue crystal structure [Homo sapiens] &gt;pdb|3ZQR|C NMePheB25 insulin analogue crystal structure [Homo sapiens] &gt;pdb|3ZQR|E NMePheB25 insulin analogue crystal structure [Homo sapiens] &gt;pdb|3ZQR|G NMePheB25 insulin analogue crystal structure [Homo sapiens] &gt;pdb|3ZQR|I NMePheB25 insulin analogue crystal structure [Homo sapiens] &gt;pdb|3ZQR|K NMePheB25 insulin analogue crystal structure [Homo sapiens] &gt;pdb|3ZS2|A TyrB25,NMePheB26,LysB28,ProB29-insulin analogue crystal structure [Homo sapiens] &gt;pdb|3ZS2|C TyrB25,NMePheB26,LysB28,ProB29-insulin analogue crystal structure [Homo sapiens] &gt;pdb|3ZS2|E TyrB25,NMePheB26,LysB28,ProB29-insulin analogue crystal structure [Homo sapiens] &gt;pdb|3ZS2|G TyrB25,NMePheB26,LysB28,ProB29-insulin analogue crystal structure [Homo sapiens] &gt;pdb|3ZS2|I TyrB25,NMePheB26,LysB28,ProB29-insulin analogue crystal structure [Homo sapiens] &gt;pdb|3ZS2|K TyrB25,NMePheB26,LysB28,ProB29-insulin analogue crystal structure [Homo sapiens] &gt;pdb|3ZU1|A Structure of LysB29(Nepsilon omega-carboxyheptadecanoyl) des(B30) Human Insulin [Homo sapiens] &gt;pdb|3ZU1|C Structure of LysB29(Nepsilon omega-carboxyheptadecanoyl) des(B30) Human Insulin [Homo sapiens] &gt;pdb|4AIY|A R6 HUMAN INSULIN HEXAMER (SYMMETRIC), NMR, &apos;GREEN&apos; SUBSTATE, AVERAGE STRUCTURE &gt;pdb|4AIY|C R6 HUMAN INSULIN HEXAMER (SYMMETRIC), NMR, &apos;GREEN&apos; SUBSTATE, AVERAGE STRUCTURE &gt;pdb|4AIY|E R6 HUMAN INSULIN HEXAMER (SYMMETRIC), NMR, &apos;GREEN&apos; SUBSTATE, AVERAGE STRUCTURE &gt;pdb|4AIY|G R6 HUMAN INSULIN HEXAMER (SYMMETRIC), NMR, &apos;GREEN&apos; SUBSTATE, AVERAGE STRUCTURE &gt;pdb|4AIY|I R6 HUMAN INSULIN HEXAMER (SYMMETRIC), NMR, &apos;GREEN&apos; SUBSTATE, AVERAGE STRUCTURE &gt;pdb|4AIY|K R6 HUMAN INSULIN HEXAMER (SYMMETRIC), NMR, &apos;GREEN&apos; SUBSTATE, AVERAGE STRUCTURE &gt;pdb|4AJX|A Ligand controlled assembly of hexamers, dihexamers, and linear multihexamer structures by an engineered acylated insulin [Homo sapiens] &gt;pdb|4AJX|C Ligand controlled assembly of hexamers, dihexamers, and linear multihexamer structures by an engineered acylated insulin [Homo sapiens] &gt;pdb|4AJX|E Ligand controlled assembly of hexamers, dihexamers, and linear multihexamer structures by an engineered acylated insulin [Homo sapiens] &gt;pdb|4AJX|G Ligand controlled assembly of hexamers, dihexamers, and linear multihexamer structures by an engineered acylated insulin [Homo sapiens] &gt;pdb|4AJX|I Ligand controlled assembly of hexamers, dihexamers, and linear multihexamer structures by an engineered acylated insulin [Homo sapiens] &gt;pdb|4AJX|K Ligand controlled assembly of hexamers, dihexamers, and linear multihexamer structures by an engineered acylated insulin [Homo sapiens] &gt;pdb|4AJZ|A Ligand controlled assembly of hexamers, dihexamers, and linear multihexamer structures by an engineered acylated insulin [Homo sapiens] &gt;pdb|4AJZ|C Ligand controlled assembly of hexamers, dihexamers, and linear multihexamer structures by an engineered acylated insulin [Homo sapiens] &gt;pdb|4AK0|A Ligand controlled assembly of hexamers, dihexamers, and linear multihexamer structures by an engineered acylated insulin [Homo sapiens] &gt;pdb|4AKJ|A Ligand controlled assembly of hexamers, dihexamers, and linear multihexamer structures by an engineered acylated insulin [Homo sapiens] &gt;pdb|4AKJ|C Ligand controlled assembly of hexamers, dihexamers, and linear multihexamer structures by an engineered acylated insulin [Homo sapiens] &gt;pdb|4CXL|A Human insulin analogue (D-ProB8)-insulin [Homo sapiens] &gt;pdb|4CXN|A Crystal structure of human insulin analogue (NMe-AlaB8)-insulin crystal form I [Homo sapiens] &gt;pdb|4CY7|A Crystal structure of human insulin analogue (NMe-AlaB8)-insulin crystal form II [Homo sapiens] &gt;pdb|4CY7|C Crystal structure of human insulin analogue (NMe-AlaB8)-insulin crystal form II [Homo sapiens] &gt;pdb|4EWW|A Human Insulin [Homo sapiens] &gt;pdb|4EWW|C Human Insulin [Homo sapiens] &gt;pdb|4EWX|A Human Insulin [Homo sapiens] &gt;pdb|4EWX|C Human Insulin [Homo sapiens] &gt;pdb|4EWZ|A Human Insulin [Homo sapiens] &gt;pdb|4EWZ|C Human Insulin [Homo sapiens] &gt;pdb|4EX0|A Human Insulin [Homo sapiens] &gt;pdb|4EX0|C Human Insulin [Homo sapiens] &gt;pdb|4EX1|A Human Insulin [Homo sapiens] &gt;pdb|4EX1|C Human Insulin [Homo sapiens] &gt;pdb|4EXX|A Human Insulin [Homo sapiens] &gt;pdb|4EXX|C Human Insulin [Homo sapiens] &gt;pdb|4EY1|A Human Insulin [Homo sapiens] &gt;pdb|4EY1|C Human Insulin [Homo sapiens] &gt;pdb|4EY9|A Human Insulin [Homo sapiens] &gt;pdb|4EY9|C Human Insulin [Homo sapiens] &gt;pdb|4EYD|A Human Insulin [Homo sapiens] &gt;pdb|4EYD|C Human Insulin [Homo sapiens] &gt;pdb|4EYN|A Human Insulin [Homo sapiens] &gt;pdb|4EYN|C Human Insulin [Homo sapiens] &gt;pdb|4EYP|A Human Insulin [Homo sapiens] &gt;pdb|4EYP|C Human Insulin [Homo sapiens] &gt;pdb|4F0N|A Human Insulin [Homo sapiens] &gt;pdb|4F0N|C Human Insulin [Homo sapiens] &gt;pdb|4F0O|A Human Insulin [Homo sapiens] &gt;pdb|4F0O|C Human Insulin [Homo sapiens] &gt;pdb|4F1A|A Human Insulin [Homo sapiens] &gt;pdb|4F1A|C Human Insulin [Homo sapiens] &gt;pdb|4F1B|A Human Insulin [Homo sapiens] &gt;pdb|4F1B|C Human Insulin [Homo sapiens] &gt;pdb|4F1C|A Human Insulin [Homo sapiens] &gt;pdb|4F1C|C Human Insulin [Homo sapiens] &gt;pdb|4F1D|A Human Insulin [Homo sapiens] &gt;pdb|4F1D|C Human Insulin [Homo sapiens] &gt;pdb|4F1F|A Human Insulin [Homo sapiens] &gt;pdb|4F1F|C Human Insulin [Homo sapiens] &gt;pdb|4F1G|A Human insulin [Homo sapiens] &gt;pdb|4F1G|C Human insulin [Homo sapiens] &gt;pdb|4F4T|A Human Insulin [Homo sapiens] &gt;pdb|4F4T|C Human Insulin [Homo sapiens] &gt;pdb|4F4V|A Human Insulin [Homo sapiens] &gt;pdb|4F4V|C Human Insulin [Homo sapiens] &gt;pdb|4F51|A Human Insulin [Homo sapiens] &gt;pdb|4F51|C Human Insulin [Homo sapiens] &gt;pdb|4F8F|A Human Insulin [Homo sapiens] &gt;pdb|4F8F|C Human Insulin [Homo sapiens] &gt;pdb|4FG3|A Crystal Structure Analysis of the Human Insulin [Homo sapiens] &gt;pdb|4FG3|C Crystal Structure Analysis of the Human Insulin [Homo sapiens] &gt;pdb|4FKA|A High resolution structure of the manganese derivative of insulin [Homo sapiens] &gt;pdb|4FKA|C High resolution structure of the manganese derivative of insulin [Homo sapiens] &gt;pdb|4GBC|A Crystal structure of aspart insulin at pH 6.5 [Homo sapiens] &gt;pdb|4GBC|C Crystal structure of aspart insulin at pH 6.5 [Homo sapiens] &gt;pdb|4GBI|A Crystal structure of aspart insulin at pH 6.5 [Homo sapiens] &gt;pdb|4GBI|C Crystal structure of aspart insulin at pH 6.5 [Homo sapiens] &gt;pdb|4GBK|A Crystal structure of aspart insulin at pH 8.5 [Homo sapiens] &gt;pdb|4GBK|C Crystal structure of aspart insulin at pH 8.5 [Homo sapiens] &gt;pdb|4GBL|A Crystal structure of aspart insulin at pH 8.5 [Homo sapiens] &gt;pdb|4GBL|C Crystal structure of aspart insulin at pH 8.5 [Homo sapiens] &gt;pdb|4GBN|A Crystal structure of aspart insulin at pH 6.5 [Homo sapiens] &gt;pdb|4GBN|C Crystal structure of aspart insulin at pH 6.5 [Homo sapiens] &gt;pdb|4INS|A THE STRUCTURE OF 2ZN PIG INSULIN CRYSTALS AT 1.5 ANGSTROMS RESOLUTION [Sus scrofa] &gt;pdb|4INS|C THE STRUCTURE OF 2ZN PIG INSULIN CRYSTALS AT 1.5 ANGSTROMS RESOLUTION [Sus scrofa] &gt;pdb|4IUZ|A High resolution crystal structure of racemic ester insulin [Homo sapiens] &gt;pdb|4NIB|A Crystal structure of human insulin mutant B20 D-ala, B23 D-ala &gt;pdb|4OGA|A Insulin in complex with Site 1 of the human insulin receptor [Homo sapiens] &gt;pdb|4P65|A Crystal structure of an cyclohexylalanine substituted insulin analog. &gt;pdb|4P65|C Crystal structure of an cyclohexylalanine substituted insulin analog. &gt;pdb|4P65|E Crystal structure of an cyclohexylalanine substituted insulin analog. &gt;pdb|4P65|G Crystal structure of an cyclohexylalanine substituted insulin analog. &gt;pdb|4P65|I Crystal structure of an cyclohexylalanine substituted insulin analog. &gt;pdb|4P65|K Crystal structure of an cyclohexylalanine substituted insulin analog. &gt;pdb|4RXW|A Crystal Structure of the cobalt human insulin derivative [Homo sapiens] &gt;pdb|4RXW|C Crystal Structure of the cobalt human insulin derivative [Homo sapiens] &gt;pdb|4UNE|A Human insulin B26Phe mutant crystal structure &gt;pdb|4UNE|C Human insulin B26Phe mutant crystal structure &gt;pdb|4UNG|A Human insulin B26Asn mutant crystal structure [Homo sapiens] &gt;pdb|4UNG|C Human insulin B26Asn mutant crystal structure [Homo sapiens] &gt;pdb|4UNH|A Human insulin B26Gly mutant crystal structure [Homo sapiens] &gt;pdb|4XC4|A Insulin co-crystallizes in the presence of it beta-cell chaperone sulfatide [Homo sapiens] &gt;pdb|4XC4|C Insulin co-crystallizes in the presence of it beta-cell chaperone sulfatide [Homo sapiens] &gt;pdb|5AIY|A R6 HUMAN INSULIN HEXAMER (SYMMETRIC), NMR, &apos;RED&apos; SUBSTATE, AVERAGE STRUCTURE &gt;pdb|5AIY|C R6 HUMAN INSULIN HEXAMER (SYMMETRIC), NMR, &apos;RED&apos; SUBSTATE, AVERAGE STRUCTURE &gt;pdb|5AIY|E R6 HUMAN INSULIN HEXAMER (SYMMETRIC), NMR, &apos;RED&apos; SUBSTATE, AVERAGE STRUCTURE &gt;pdb|5AIY|G R6 HUMAN INSULIN HEXAMER (SYMMETRIC), NMR, &apos;RED&apos; SUBSTATE, AVERAGE STRUCTURE &gt;pdb|5AIY|I R6 HUMAN INSULIN HEXAMER (SYMMETRIC), NMR, &apos;RED&apos; SUBSTATE, AVERAGE STRUCTURE &gt;pdb|5AIY|K R6 HUMAN INSULIN HEXAMER (SYMMETRIC), NMR, &apos;RED&apos; SUBSTATE, AVERAGE STRUCTURE &gt;pdb|5BOQ|A Human insulin with intra-chain chemical crosslink between modified B24 and B29 [Homo sapiens] &gt;pdb|5BOQ|C Human insulin with intra-chain chemical crosslink between modified B24 and B29 [Homo sapiens] &gt;pdb|5BOQ|E Human insulin with intra-chain chemical crosslink between modified B24 and B29 [Homo sapiens] &gt;pdb|5BOQ|G Human insulin with intra-chain chemical crosslink between modified B24 and B29 [Homo sapiens] &gt;pdb|5BPO|A Human insulin with intra-chain chemical crosslink between modified B27 and B29 [Homo sapiens] &gt;pdb|5BPO|C Human insulin with intra-chain chemical crosslink between modified B27 and B29 [Homo sapiens] &gt;pdb|5BQQ|A Human insulin with intra-chain chemical crosslink between modified B27 and B30 [Homo sapiens] &gt;pdb|5BQQ|C Human insulin with intra-chain chemical crosslink between modified B27 and B30 [Homo sapiens] &gt;pdb|5BQQ|E Human insulin with intra-chain chemical crosslink between modified B27 and B30 [Homo sapiens] &gt;pdb|5BQQ|G Human insulin with intra-chain chemical crosslink between modified B27 and B30 [Homo sapiens] &gt;pdb|5BQQ|I Human insulin with intra-chain chemical crosslink between modified B27 and B30 [Homo sapiens] &gt;pdb|5BQQ|K Human insulin with intra-chain chemical crosslink between modified B27 and B30 [Homo sapiens] &gt;pdb|5BTS|A Structural and biophysical characterization of a covalent insulin dimer formed during storage of neutral formulation of human insulin [Homo sapiens] &gt;pdb|5CNY|A Crystal Structure of human zinc insulin at pH 5.5 [Homo sapiens] &gt;pdb|5CNY|C Crystal Structure of human zinc insulin at pH 5.5 [Homo sapiens] &gt;pdb|5CO2|A Crystalization of human zinc insulin at pH 5.5 [Homo sapiens] &gt;pdb|5CO2|C Crystalization of human zinc insulin at pH 5.5 [Homo sapiens] &gt;pdb|5CO6|A Crystal structure of human zinc insulin at pH 6.5 [Homo sapiens] &gt;pdb|5CO6|C Crystal structure of human zinc insulin at pH 6.5 [Homo sapiens] &gt;pdb|5CO9|A Crystal structure of human zinc insulin at pH 6.5 [Homo sapiens] &gt;pdb|5CO9|C Crystal structure of human zinc insulin at pH 6.5 [Homo sapiens] &gt;pdb|5D52|A In meso in situ serial X-ray crystallography structure of insulin at room temperature [Sus scrofa] &gt;pdb|5D53|A In meso in situ serial X-ray crystallography structure of insulin at 100 K [Sus scrofa] &gt;pdb|5D54|A In meso X-ray crystallography structure of insulin at 100 K [Sus scrofa] &gt;pdb|5D5E|A In meso in situ serial X-ray crystallography structure of insulin by sulfur-SAD at 100 K [Sus scrofa] &gt;pdb|5E7W|A X-ray Structure of Human Recombinant 2Zn insulin at 0.92 Angstrom [Homo sapiens] &gt;pdb|5E7W|C X-ray Structure of Human Recombinant 2Zn insulin at 0.92 Angstrom [Homo sapiens] &gt;pdb|5EMS|A Crystal Structure of an iodinated insulin analog [Homo sapiens] &gt;pdb|5EMS|C Crystal Structure of an iodinated insulin analog [Homo sapiens] &gt;pdb|5EMS|E Crystal Structure of an iodinated insulin analog [Homo sapiens] &gt;pdb|5EMS|G Crystal Structure of an iodinated insulin analog [Homo sapiens] &gt;pdb|5EMS|I Crystal Structure of an iodinated insulin analog [Homo sapiens] &gt;pdb|5EMS|K Crystal Structure of an iodinated insulin analog [Homo sapiens] &gt;pdb|5EN9|A High resolution x-ray crystal structure of isotope-labeled ester-insulin [Homo sapiens] &gt;pdb|5ENA|A Xray crystal structure of isotope-labeled human insulin [Homo sapiens] &gt;pdb|5FB6|A Room-temperature macromolecular crystallography using a micro-patterned silicon chip with minimal background scattering [Sus scrofa] &gt;pdb|5HPR|A Insulin with proline analog HyP at position B28 in the T2 state [Homo sapiens] &gt;pdb|5HPU|A Insulin with proline analog HyP at position B28 in the R6 state [Homo sapiens] &gt;pdb|5HPU|C Insulin with proline analog HyP at position B28 in the R6 state [Homo sapiens] &gt;pdb|5HQI|A Insulin with proline analog HzP at position B28 in the T2 state [Homo sapiens] &gt;pdb|5HRQ|A Insulin with proline analog HzP at position B28 in the R6 state [Homo sapiens] &gt;pdb|5HRQ|C Insulin with proline analog HzP at position B28 in the R6 state [Homo sapiens] &gt;pdb|5HRQ|E Insulin with proline analog HzP at position B28 in the R6 state [Homo sapiens] &gt;pdb|5HRQ|G Insulin with proline analog HzP at position B28 in the R6 state [Homo sapiens] &gt;pdb|5HRQ|I Insulin with proline analog HzP at position B28 in the R6 state [Homo sapiens] &gt;pdb|5HRQ|K Insulin with proline analog HzP at position B28 in the R6 state [Homo sapiens] &gt;pdb|5LIS|A Insulin solved by Native SAD from a dataset collected in one second [Sus scrofa] &gt;pdb|5MAM|0 Human insulin in complex with serotonin [Homo sapiens] &gt;pdb|5MAM|2 Human insulin in complex with serotonin [Homo sapiens] &gt;pdb|5MAM|4 Human insulin in complex with serotonin [Homo sapiens] &gt;pdb|5MAM|A Human insulin in complex with serotonin [Homo sapiens] &gt;pdb|5MAM|C Human insulin in complex with serotonin [Homo sapiens] &gt;pdb|5MAM|E Human insulin in complex with serotonin [Homo sapiens] &gt;pdb|5MAM|G Human insulin in complex with serotonin [Homo sapiens] &gt;pdb|5MAM|I Human insulin in complex with serotonin [Homo sapiens] &gt;pdb|5MAM|K Human insulin in complex with serotonin [Homo sapiens] &gt;pdb|5MAM|M Human insulin in complex with serotonin [Homo sapiens] &gt;pdb|5MAM|O Human insulin in complex with serotonin [Homo sapiens] &gt;pdb|5MAM|Q Human insulin in complex with serotonin [Homo sapiens] &gt;pdb|5MAM|S Human insulin in complex with serotonin [Homo sapiens] &gt;pdb|5MAM|U Human insulin in complex with serotonin [Homo sapiens] &gt;pdb|5MAM|W Human insulin in complex with serotonin [Homo sapiens] &gt;pdb|5MAM|Y Human insulin in complex with serotonin [Homo sapiens] &gt;pdb|5MT3|A Human insulin in complex with serotonin and arginine [Homo sapiens] &gt;pdb|5MT3|C Human insulin in complex with serotonin and arginine [Homo sapiens] &gt;pdb|5MT3|E Human insulin in complex with serotonin and arginine [Homo sapiens] &gt;pdb|5MT3|G Human insulin in complex with serotonin and arginine [Homo sapiens] &gt;pdb|5MT3|I Human insulin in complex with serotonin and arginine [Homo sapiens] &gt;pdb|5MT3|K Human insulin in complex with serotonin and arginine [Homo sapiens] &gt;pdb|5MT3|M Human insulin in complex with serotonin and arginine [Homo sapiens] &gt;pdb|5MT3|O Human insulin in complex with serotonin and arginine [Homo sapiens] &gt;pdb|5MT3|Q Human insulin in complex with serotonin and arginine [Homo sapiens] &gt;pdb|5MT3|S Human insulin in complex with serotonin and arginine [Homo sapiens] &gt;pdb|5MT3|U Human insulin in complex with serotonin and arginine [Homo sapiens] &gt;pdb|5MT3|W Human insulin in complex with serotonin and arginine [Homo sapiens] &gt;pdb|5MT3|Y Human insulin in complex with serotonin and arginine [Homo sapiens] &gt;pdb|5MT3|a Human insulin in complex with serotonin and arginine [Homo sapiens] &gt;pdb|5MT3|c Human insulin in complex with serotonin and arginine [Homo sapiens] &gt;pdb|5MT3|e Human insulin in complex with serotonin and arginine [Homo sapiens] &gt;pdb|5MT9|A Human insulin in complex with serotonin and arginine [Homo sapiens] &gt;pdb|5MT9|C Human insulin in complex with serotonin and arginine [Homo sapiens] &gt;pdb|5MT9|E Human insulin in complex with serotonin and arginine [Homo sapiens] &gt;pdb|5MT9|G Human insulin in complex with serotonin and arginine [Homo sapiens] &gt;pdb|5MT9|I Human insulin in complex with serotonin and arginine [Homo sapiens] &gt;pdb|5MT9|K Human insulin in complex with serotonin and arginine [Homo sapiens] &gt;pdb|5MT9|M Human insulin in complex with serotonin and arginine [Homo sapiens] &gt;pdb|5MT9|O Human insulin in complex with serotonin and arginine [Homo sapiens] &gt;pdb|5MT9|Q Human insulin in complex with serotonin and arginine [Homo sapiens] &gt;pdb|5MT9|S Human insulin in complex with serotonin and arginine [Homo sapiens] &gt;pdb|5MT9|U Human insulin in complex with serotonin and arginine [Homo sapiens] &gt;pdb|5MT9|W Human insulin in complex with serotonin and arginine [Homo sapiens] &gt;pdb|5MT9|Y Human insulin in complex with serotonin and arginine [Homo sapiens] &gt;pdb|5MT9|a Human insulin in complex with serotonin and arginine [Homo sapiens] &gt;pdb|5MT9|c Human insulin in complex with serotonin and arginine [Homo sapiens] &gt;pdb|5MT9|e Human insulin in complex with serotonin and arginine [Homo sapiens] &gt;pdb|5UDP|A High resolution x-ray crystal structure of synthetic insulin lispro [Homo sapiens] &gt;pdb|5UDP|C High resolution x-ray crystal structure of synthetic insulin lispro [Homo sapiens] &gt;pdb|5UDP|E High resolution x-ray crystal structure of synthetic insulin lispro [Homo sapiens] &gt;pdb|5UDP|G High resolution x-ray crystal structure of synthetic insulin lispro [Homo sapiens] &gt;pdb|5UDP|I High resolution x-ray crystal structure of synthetic insulin lispro [Homo sapiens] &gt;pdb|5UDP|K High resolution x-ray crystal structure of synthetic insulin lispro [Homo sapiens] &gt;pdb|5UOZ|A Insulin with proline analog FyP at position B28 in the T2 state [Homo sapiens] &gt;pdb|5UQA|A Insulin with proline analog FzP at position B28 in the R6 state [Homo sapiens] &gt;pdb|5UQA|C Insulin with proline analog FzP at position B28 in the R6 state [Homo sapiens] &gt;pdb|5UQA|E Insulin with proline analog FzP at position B28 in the R6 state [Homo sapiens] &gt;pdb|5UQA|G Insulin with proline analog FzP at position B28 in the R6 state [Homo sapiens] &gt;pdb|5UQA|I Insulin with proline analog FzP at position B28 in the R6 state [Homo sapiens] &gt;pdb|5UQA|K Insulin with proline analog FzP at position B28 in the R6 state [Homo sapiens] &gt;pdb|5URT|A Insulin with proline analog DhP at position B28 in the T2 state [Homo sapiens] &gt;pdb|5URU|A Insulin with proline analog DhP at position B28 in the R6 state [Homo sapiens] &gt;pdb|5URU|C Insulin with proline analog DhP at position B28 in the R6 state [Homo sapiens] &gt;pdb|5URU|E Insulin with proline analog DhP at position B28 in the R6 state [Homo sapiens] &gt;pdb|5URU|G Insulin with proline analog DhP at position B28 in the R6 state [Homo sapiens] &gt;pdb|5USP|A Insulin with proline analog Pip at position B28 in the T2 state [Homo sapiens] &gt;pdb|5USS|A Insulin with proline analog PiP at position B28 in the R6 state [Homo sapiens] &gt;pdb|5USS|C Insulin with proline analog PiP at position B28 in the R6 state [Homo sapiens] &gt;pdb|5USV|A Insulin with proline analog AzeP at position B28 in the T2 state [Homo sapiens] &gt;pdb|5UU2|A Insulin with proline analog ThioP at position B28 in the T2 state [Homo sapiens] &gt;pdb|5UU3|A Insulin with proline analog DfP at position B28 in the R6 state [Homo sapiens] &gt;pdb|5UU3|C Insulin with proline analog DfP at position B28 in the R6 state [Homo sapiens] &gt;pdb|5UU3|E Insulin with proline analog DfP at position B28 in the R6 state [Homo sapiens] &gt;pdb|5UU3|G Insulin with proline analog DfP at position B28 in the R6 state [Homo sapiens] &gt;pdb|5UU3|I Insulin with proline analog DfP at position B28 in the R6 state [Homo sapiens] &gt;pdb|5UU3|K Insulin with proline analog DfP at position B28 in the R6 state [Homo sapiens] &gt;pdb|5UU3|M Insulin with proline analog DfP at position B28 in the R6 state [Homo sapiens] &gt;pdb|5UU3|O Insulin with proline analog DfP at position B28 in the R6 state [Homo sapiens] &gt;pdb|5UU3|Q Insulin with proline analog DfP at position B28 in the R6 state [Homo sapiens] &gt;pdb|5UU3|S Insulin with proline analog DfP at position B28 in the R6 state [Homo sapiens] &gt;pdb|5UU3|U Insulin with proline analog DfP at position B28 in the R6 state [Homo sapiens] &gt;pdb|5UU3|W Insulin with proline analog DfP at position B28 in the R6 state [Homo sapiens] &gt;pdb|5UU4|A Insulin with proline analog ThioP at position B28 in the R6 state [Homo sapiens] &gt;pdb|5UU4|C Insulin with proline analog ThioP at position B28 in the R6 state [Homo sapiens] &gt;pdb|6CE7|N Insulin Receptor ectodomain in complex with one insulin molecule [Homo sapiens] &gt;pdb|6CE9|K Insulin Receptor ectodomain in complex with two insulin molecules [Homo sapiens] &gt;pdb|6CE9|N Insulin Receptor ectodomain in complex with two insulin molecules [Homo sapiens] &gt;pdb|6CEB|K Insulin Receptor ectodomain in complex with two insulin molecules - C1 symmetry [Homo sapiens] &gt;pdb|6CEB|N Insulin Receptor ectodomain in complex with two insulin molecules - C1 symmetry [Homo sapiens] &gt;pdb|6CK2|A Insulin analog containing a YB26W mutation [Homo sapiens] &gt;pdb|6CK2|C Insulin analog containing a YB26W mutation [Homo sapiens] &gt;pdb|6GNQ|A Monoclinic crystalline form of human insulin, complexed with meta-cresol [Homo sapiens] &gt;pdb|6GNQ|C Monoclinic crystalline form of human insulin, complexed with meta-cresol [Homo sapiens] &gt;pdb|6GNQ|E Monoclinic crystalline form of human insulin, complexed with meta-cresol [Homo sapiens] &gt;pdb|6GNQ|G Monoclinic crystalline form of human insulin, complexed with meta-cresol [Homo sapiens] &gt;pdb|6GNQ|I Monoclinic crystalline form of human insulin, complexed with meta-cresol [Homo sapiens] &gt;pdb|6GNQ|K Monoclinic crystalline form of human insulin, complexed with meta-cresol [Homo sapiens] &gt;pdb|6GNQ|M Monoclinic crystalline form of human insulin, complexed with meta-cresol [Homo sapiens] &gt;pdb|6GNQ|O Monoclinic crystalline form of human insulin, complexed with meta-cresol [Homo sapiens] &gt;pdb|6GNQ|Q Monoclinic crystalline form of human insulin, complexed with meta-cresol [Homo sapiens] &gt;pdb|6GNQ|S Monoclinic crystalline form of human insulin, complexed with meta-cresol [Homo sapiens] &gt;pdb|6GNQ|U Monoclinic crystalline form of human insulin, complexed with meta-cresol [Homo sapiens] &gt;pdb|6GNQ|W Monoclinic crystalline form of human insulin, complexed with meta-cresol [Homo sapiens] &gt;pdb|6GV0|G Insulin glulisine [Homo sapiens] &gt;pdb|6GV0|I Insulin glulisine [Homo sapiens] &gt;pdb|6HN5|A Leucine-zippered human insulin receptor ectodomain with single bound insulin - &apos;upper&apos; membrane-distal part [Homo sapiens] &gt;pdb|6JR3|A Crystal structure of insulin hexamer fitted into cryo EM density map where each dimer was kept as rigid body [Homo sapiens] &gt;pdb|6JR3|C Crystal structure of insulin hexamer fitted into cryo EM density map where each dimer was kept as rigid body [Homo sapiens] &gt;pdb|6JR3|E Crystal structure of insulin hexamer fitted into cryo EM density map where each dimer was kept as rigid body [Homo sapiens] &gt;pdb|6JR3|G Crystal structure of insulin hexamer fitted into cryo EM density map where each dimer was kept as rigid body [Homo sapiens] &gt;pdb|6JR3|I Crystal structure of insulin hexamer fitted into cryo EM density map where each dimer was kept as rigid body [Homo sapiens] &gt;pdb|6JR3|K Crystal structure of insulin hexamer fitted into cryo EM density map where each dimer was kept as rigid body [Homo sapiens] &gt;pdb|6NWV|A Insulin Lispro Analog [Homo sapiens] &gt;pdb|6NWV|C Insulin Lispro Analog [Homo sapiens] &gt;pdb|6NWV|E Insulin Lispro Analog [Homo sapiens] &gt;pdb|6NWV|G Insulin Lispro Analog [Homo sapiens] &gt;pdb|6NWV|I Insulin Lispro Analog [Homo sapiens] &gt;pdb|6NWV|K Insulin Lispro Analog [Homo sapiens] &gt;pdb|6O17|A Recombinant Human Insulin [Homo sapiens] &gt;pdb|6P4Z|A Structure of gadolinium-caged cobalt (III) insulin hexamer [Homo sapiens] &gt;pdb|6P4Z|C Structure of gadolinium-caged cobalt (III) insulin hexamer [Homo sapiens] &gt;pdb|6S34|A Zinc free, dimeric human insulin determined to 1.35 Angstrom resolution [Homo sapiens] &gt;pdb|6SOF|E human insulin receptor ectodomain bound by 4 insulin [Homo sapiens] &gt;pdb|6SOF|G human insulin receptor ectodomain bound by 4 insulin [Homo sapiens] &gt;pdb|6SOF|I human insulin receptor ectodomain bound by 4 insulin [Homo sapiens] &gt;pdb|6SOF|K human insulin receptor ectodomain bound by 4 insulin [Homo sapiens] &gt;pdb|6VEP|A Human insulin in complex with the human insulin microreceptor in turn in complex with Fv 83-7 [Homo sapiens] &gt;pdb|6VEP|G Human insulin in complex with the human insulin microreceptor in turn in complex with Fv 83-7 [Homo sapiens] &gt;pdb|6VEP|M Human insulin in complex with the human insulin microreceptor in turn in complex with Fv 83-7 [Homo sapiens] &gt;pdb|6VEP|S Human insulin in complex with the human insulin microreceptor in turn in complex with Fv 83-7 [Homo sapiens] &gt;pdb|6VER|A Human insulin analog: [GluB10,TyrB20]-DOI [Homo sapiens] &gt;pdb|6X4X|A B24Y DKP insulin [Homo sapiens] &gt;pdb|6Z7W|I Chain I, Insulin [Homo sapiens] &gt;pdb|6Z7W|K Chain K, Insulin [Homo sapiens] &gt;pdb|6Z7W|M Chain M, Insulin [Homo sapiens] &gt;pdb|6Z7W|O Chain O, Insulin [Homo sapiens] &gt;pdb|6Z7Y|E Chain E, Insulin [Homo sapiens] &gt;pdb|6Z7Y|G Chain G, Insulin [Homo sapiens] &gt;pdb|6Z7Z|E Chain E, Insulin [Sus scrofa] &gt;pdb|6Z7Z|G Chain G, Insulin [Sus scrofa] &gt;pdb|7AC4|A Chain A, Insulin [Sus scrofa] &gt;pdb|7INS|A Structure Of Porcine Insulin Cocrystallized With Clupeine Z [Sus scrofa] &gt;pdb|7INS|C Structure Of Porcine Insulin Cocrystallized With Clupeine Z [Sus scrofa] &gt;pdb|7INS|E Structure Of Porcine Insulin Cocrystallized With Clupeine Z [Sus scrofa] &gt;pdb|7NHU|A Chain A, Insulin [Homo sapiens] &gt;pdb|9INS|A MONOVALENT CATION BINDING IN CUBIC INSULIN CRYSTALS [Sus scrofa]</Hit_def>
+  <Hit_accession>1A7F_A</Hit_accession>
+  <Hit_len>21</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>45.2272</Hsp_bit-score>
+      <Hsp_score>96</Hsp_score>
+      <Hsp_evalue>8.80203e-09</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>21</Hsp_query-to>
+      <Hsp_hit-from>1</Hsp_hit-from>
+      <Hsp_hit-to>21</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>21</Hsp_identity>
+      <Hsp_positive>21</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>21</Hsp_align-len>
+      <Hsp_qseq>GIVEQCCTSICSLYQLENYCN</Hsp_qseq>
+      <Hsp_hseq>GIVEQCCTSICSLYQLENYCN</Hsp_hseq>
+      <Hsp_midline>GIVEQCCTSICSLYQLENYCN</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>5</Hit_num>
+  <Hit_id>pdb|2KXK|A</Hit_id>
+  <Hit_def>Human Insulin Mutant A22Gly-B31Lys-B32Arg [Homo sapiens] &gt;pdb|2LGB|A Modified A22Gly-B31Arg Human Insulin [Homo sapiens]</Hit_def>
+  <Hit_accession>2KXK_A</Hit_accession>
+  <Hit_len>22</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>45.2272</Hsp_bit-score>
+      <Hsp_score>96</Hsp_score>
+      <Hsp_evalue>9.09025e-09</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>21</Hsp_query-to>
+      <Hsp_hit-from>1</Hsp_hit-from>
+      <Hsp_hit-to>21</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>21</Hsp_identity>
+      <Hsp_positive>21</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>21</Hsp_align-len>
+      <Hsp_qseq>GIVEQCCTSICSLYQLENYCN</Hsp_qseq>
+      <Hsp_hseq>GIVEQCCTSICSLYQLENYCN</Hsp_hseq>
+      <Hsp_midline>GIVEQCCTSICSLYQLENYCN</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>6</Hit_num>
+  <Hit_id>pdb|1ZEI|A</Hit_id>
+  <Hit_def>Cross-Linked B28 Asp Insulin [Sus scrofa] &gt;pdb|1ZEI|B Cross-Linked B28 Asp Insulin [Sus scrofa] &gt;pdb|1ZEI|C Cross-Linked B28 Asp Insulin [Sus scrofa] &gt;pdb|1ZEI|D Cross-Linked B28 Asp Insulin [Sus scrofa] &gt;pdb|1ZEI|E Cross-Linked B28 Asp Insulin [Sus scrofa] &gt;pdb|1ZEI|F Cross-Linked B28 Asp Insulin [Sus scrofa]</Hit_def>
+  <Hit_accession>1ZEI_A</Hit_accession>
+  <Hit_len>53</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>46.5213</Hsp_bit-score>
+      <Hsp_score>99</Hsp_score>
+      <Hsp_evalue>1.13409e-08</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>21</Hsp_query-to>
+      <Hsp_hit-from>33</Hsp_hit-from>
+      <Hsp_hit-to>53</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>21</Hsp_identity>
+      <Hsp_positive>21</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>21</Hsp_align-len>
+      <Hsp_qseq>GIVEQCCTSICSLYQLENYCN</Hsp_qseq>
+      <Hsp_hseq>GIVEQCCTSICSLYQLENYCN</Hsp_hseq>
+      <Hsp_midline>GIVEQCCTSICSLYQLENYCN</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>7</Hit_num>
+  <Hit_id>pdb|6TYH|A</Hit_id>
+  <Hit_def>Four-Disulfide Insulin Analog A22/B22 [Homo sapiens] &gt;pdb|6TYH|C Four-Disulfide Insulin Analog A22/B22 [Homo sapiens] &gt;pdb|6TYH|E Four-Disulfide Insulin Analog A22/B22 [Homo sapiens] &gt;pdb|6TYH|G Four-Disulfide Insulin Analog A22/B22 [Homo sapiens] &gt;pdb|6TYH|I Four-Disulfide Insulin Analog A22/B22 [Homo sapiens] &gt;pdb|6TYH|K Four-Disulfide Insulin Analog A22/B22 [Homo sapiens]</Hit_def>
+  <Hit_accession>6TYH_A</Hit_accession>
+  <Hit_len>22</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>45.2272</Hsp_bit-score>
+      <Hsp_score>96</Hsp_score>
+      <Hsp_evalue>1.21449e-08</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>21</Hsp_query-to>
+      <Hsp_hit-from>1</Hsp_hit-from>
+      <Hsp_hit-to>21</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>21</Hsp_identity>
+      <Hsp_positive>21</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>21</Hsp_align-len>
+      <Hsp_qseq>GIVEQCCTSICSLYQLENYCN</Hsp_qseq>
+      <Hsp_hseq>GIVEQCCTSICSLYQLENYCN</Hsp_hseq>
+      <Hsp_midline>GIVEQCCTSICSLYQLENYCN</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>8</Hit_num>
+  <Hit_id>pdb|1EFE|A</Hit_id>
+  <Hit_def>AN ACTIVE MINI-PROINSULIN, M2PI [Homo sapiens]</Hit_def>
+  <Hit_accession>1EFE_A</Hit_accession>
+  <Hit_len>60</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>46.5213</Hsp_bit-score>
+      <Hsp_score>99</Hsp_score>
+      <Hsp_evalue>1.34236e-08</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>21</Hsp_query-to>
+      <Hsp_hit-from>40</Hsp_hit-from>
+      <Hsp_hit-to>60</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>21</Hsp_identity>
+      <Hsp_positive>21</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>21</Hsp_align-len>
+      <Hsp_qseq>GIVEQCCTSICSLYQLENYCN</Hsp_qseq>
+      <Hsp_hseq>GIVEQCCTSICSLYQLENYCN</Hsp_hseq>
+      <Hsp_midline>GIVEQCCTSICSLYQLENYCN</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>9</Hit_num>
+  <Hit_id>pdb|6PXV|D</Hit_id>
+  <Hit_def>Cryo-EM structure of full-length insulin receptor bound to 4 insulin. 3D refinement was focused on the extracellular region. [Homo sapiens] &gt;pdb|6PXV|E Cryo-EM structure of full-length insulin receptor bound to 4 insulin. 3D refinement was focused on the extracellular region. [Homo sapiens] &gt;pdb|6PXV|F Cryo-EM structure of full-length insulin receptor bound to 4 insulin. 3D refinement was focused on the extracellular region. [Homo sapiens] &gt;pdb|6PXV|G Cryo-EM structure of full-length insulin receptor bound to 4 insulin. 3D refinement was focused on the extracellular region. [Homo sapiens] &gt;pdb|6PXW|C Cryo-EM structure of full-length insulin receptor bound to 4 insulin. 3D refinement was focused on the top part of the receptor complex. [Homo sapiens] &gt;pdb|6PXW|D Cryo-EM structure of full-length insulin receptor bound to 4 insulin. 3D refinement was focused on the top part of the receptor complex. [Homo sapiens] &gt;pdb|6PXW|E Cryo-EM structure of full-length insulin receptor bound to 4 insulin. 3D refinement was focused on the top part of the receptor complex. [Homo sapiens] &gt;pdb|6PXW|F Cryo-EM structure of full-length insulin receptor bound to 4 insulin. 3D refinement was focused on the top part of the receptor complex. [Homo sapiens] &gt;pdb|7BW7|D Chain D, Insulin fusion [Homo sapiens] &gt;pdb|7BW8|D Chain D, Insulin fusion [Homo sapiens] &gt;pdb|7BWA|D Chain D, Insulin fusion [Homo sapiens] &gt;pdb|7BWA|E Chain E, Insulin fusion [Homo sapiens]</Hit_def>
+  <Hit_accession>6PXV_D</Hit_accession>
+  <Hit_len>74</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>46.9526</Hsp_bit-score>
+      <Hsp_score>100</Hsp_score>
+      <Hsp_evalue>1.38201e-08</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>21</Hsp_query-to>
+      <Hsp_hit-from>54</Hsp_hit-from>
+      <Hsp_hit-to>74</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>21</Hsp_identity>
+      <Hsp_positive>21</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>21</Hsp_align-len>
+      <Hsp_qseq>GIVEQCCTSICSLYQLENYCN</Hsp_qseq>
+      <Hsp_hseq>GIVEQCCTSICSLYQLENYCN</Hsp_hseq>
+      <Hsp_midline>GIVEQCCTSICSLYQLENYCN</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>10</Hit_num>
+  <Hit_id>pdb|2BN3|A</Hit_id>
+  <Hit_def>Insulin before a high dose x-ray burn [Bos taurus] &gt;pdb|4BS3|A Bovin insulin structure determined by in situ crystal analysis and sulfur-SAD phasing at room temperature [Bos taurus] &gt;pdb|6Q8Q|A Bovine Insulin under 2 kbar of argon [Bos taurus]</Hit_def>
+  <Hit_accession>2BN3_A</Hit_accession>
+  <Hit_len>21</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>44.7958</Hsp_bit-score>
+      <Hsp_score>95</Hsp_score>
+      <Hsp_evalue>1.44386e-08</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>21</Hsp_query-to>
+      <Hsp_hit-from>1</Hsp_hit-from>
+      <Hsp_hit-to>21</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>20</Hsp_identity>
+      <Hsp_positive>21</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>21</Hsp_align-len>
+      <Hsp_qseq>GIVEQCCTSICSLYQLENYCN</Hsp_qseq>
+      <Hsp_hseq>GIVEQCCTSVCSLYQLENYCN</Hsp_hseq>
+      <Hsp_midline>GIVEQCCTS+CSLYQLENYCN</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>11</Hit_num>
+  <Hit_id>pdb|2KQP|A</Hit_id>
+  <Hit_def>Chain A, Insulin [Homo sapiens]</Hit_def>
+  <Hit_accession>2KQP_A</Hit_accession>
+  <Hit_len>86</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>47.384</Hsp_bit-score>
+      <Hsp_score>101</Hsp_score>
+      <Hsp_evalue>1.46324e-08</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>21</Hsp_query-to>
+      <Hsp_hit-from>66</Hsp_hit-from>
+      <Hsp_hit-to>86</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>21</Hsp_identity>
+      <Hsp_positive>21</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>21</Hsp_align-len>
+      <Hsp_qseq>GIVEQCCTSICSLYQLENYCN</Hsp_qseq>
+      <Hsp_hseq>GIVEQCCTSICSLYQLENYCN</Hsp_hseq>
+      <Hsp_midline>GIVEQCCTSICSLYQLENYCN</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>12</Hit_num>
+  <Hit_id>pdb|6INS|E</Hit_id>
+  <Hit_def>X-Ray Analysis Of The Single Chain B29-A1 Peptide-Linked Insulin Molecule. A Completely Inactive Analogue [Sus scrofa] &gt;pdb|6INS|F X-Ray Analysis Of The Single Chain B29-A1 Peptide-Linked Insulin Molecule. A Completely Inactive Analogue [Sus scrofa]</Hit_def>
+  <Hit_accession>6INS_E</Hit_accession>
+  <Hit_len>50</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>46.0899</Hsp_bit-score>
+      <Hsp_score>98</Hsp_score>
+      <Hsp_evalue>1.47382e-08</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>21</Hsp_query-to>
+      <Hsp_hit-from>30</Hsp_hit-from>
+      <Hsp_hit-to>50</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>21</Hsp_identity>
+      <Hsp_positive>21</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>21</Hsp_align-len>
+      <Hsp_qseq>GIVEQCCTSICSLYQLENYCN</Hsp_qseq>
+      <Hsp_hseq>GIVEQCCTSICSLYQLENYCN</Hsp_hseq>
+      <Hsp_midline>GIVEQCCTSICSLYQLENYCN</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>13</Hit_num>
+  <Hit_id>pdb|1SJU|A</Hit_id>
+  <Hit_def>MINI-PROINSULIN, SINGLE CHAIN INSULIN ANALOG MUTANT: DES B30, HIS(B 10)ASP, PRO(B 28)ASP AND PEPTIDE BOND BETWEEN LYS B 29 AND GLY A 1, NMR, 20 STRUCTURES [Homo sapiens]</Hit_def>
+  <Hit_accession>1SJU_A</Hit_accession>
+  <Hit_len>50</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>46.0899</Hsp_bit-score>
+      <Hsp_score>98</Hsp_score>
+      <Hsp_evalue>1.50948e-08</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>21</Hsp_query-to>
+      <Hsp_hit-from>30</Hsp_hit-from>
+      <Hsp_hit-to>50</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>21</Hsp_identity>
+      <Hsp_positive>21</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>21</Hsp_align-len>
+      <Hsp_qseq>GIVEQCCTSICSLYQLENYCN</Hsp_qseq>
+      <Hsp_hseq>GIVEQCCTSICSLYQLENYCN</Hsp_hseq>
+      <Hsp_midline>GIVEQCCTSICSLYQLENYCN</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>14</Hit_num>
+  <Hit_id>pdb|1XW7|A</Hit_id>
+  <Hit_def>Diabetes-Associated Mutations in Human Insulin: Crystal Structure and Photo-Cross-Linking Studies of A-Chain Variant Insulin Wakayama [synthetic construct] &gt;pdb|1XW7|C Diabetes-Associated Mutations in Human Insulin: Crystal Structure and Photo-Cross-Linking Studies of A-Chain Variant Insulin Wakayama [synthetic construct]</Hit_def>
+  <Hit_accession>1XW7_A</Hit_accession>
+  <Hit_len>21</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>43.9331</Hsp_bit-score>
+      <Hsp_score>93</Hsp_score>
+      <Hsp_evalue>2.8045e-08</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>21</Hsp_query-to>
+      <Hsp_hit-from>1</Hsp_hit-from>
+      <Hsp_hit-to>21</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>20</Hsp_identity>
+      <Hsp_positive>21</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>21</Hsp_align-len>
+      <Hsp_qseq>GIVEQCCTSICSLYQLENYCN</Hsp_qseq>
+      <Hsp_hseq>GILEQCCTSICSLYQLENYCN</Hsp_hseq>
+      <Hsp_midline>GI+EQCCTSICSLYQLENYCN</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>15</Hit_num>
+  <Hit_id>pdb|2JUM|A</Hit_id>
+  <Hit_def>ThrA3-DKP-insulin [unidentified]</Hit_def>
+  <Hit_accession>2JUM_A</Hit_accession>
+  <Hit_len>21</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>43.9331</Hsp_bit-score>
+      <Hsp_score>93</Hsp_score>
+      <Hsp_evalue>3.65751e-08</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>21</Hsp_query-to>
+      <Hsp_hit-from>1</Hsp_hit-from>
+      <Hsp_hit-to>21</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>20</Hsp_identity>
+      <Hsp_positive>20</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>21</Hsp_align-len>
+      <Hsp_qseq>GIVEQCCTSICSLYQLENYCN</Hsp_qseq>
+      <Hsp_hseq>GITEQCCTSICSLYQLENYCN</Hsp_hseq>
+      <Hsp_midline>GI EQCCTSICSLYQLENYCN</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>16</Hit_num>
+  <Hit_id>pdb|5MWQ|A</Hit_id>
+  <Hit_def>Biosynthetic engineered A21K-B31K-B32R human insulin monomer structure in water/acetonitrile solution [Homo sapiens]</Hit_def>
+  <Hit_accession>5MWQ_A</Hit_accession>
+  <Hit_len>21</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>43.5017</Hsp_bit-score>
+      <Hsp_score>92</Hsp_score>
+      <Hsp_evalue>4.12675e-08</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>21</Hsp_query-to>
+      <Hsp_hit-from>1</Hsp_hit-from>
+      <Hsp_hit-to>21</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>20</Hsp_identity>
+      <Hsp_positive>20</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>21</Hsp_align-len>
+      <Hsp_qseq>GIVEQCCTSICSLYQLENYCN</Hsp_qseq>
+      <Hsp_hseq>GIVEQCCTSICSLYQLENYCK</Hsp_hseq>
+      <Hsp_midline>GIVEQCCTSICSLYQLENYC </Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>17</Hit_num>
+  <Hit_id>pdb|1K3M|A</Hit_id>
+  <Hit_def>NMR STRUCTURE OF HUMAN INSULIN MUTANT ILE-A2-ALA, HIS-B10-ASP, PRO-B28-LYS, LYS-B29-PRO, 15 STRUCTURES</Hit_def>
+  <Hit_accession>1K3M_A</Hit_accession>
+  <Hit_len>21</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>43.5017</Hsp_bit-score>
+      <Hsp_score>92</Hsp_score>
+      <Hsp_evalue>4.4906e-08</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>21</Hsp_query-to>
+      <Hsp_hit-from>1</Hsp_hit-from>
+      <Hsp_hit-to>21</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>20</Hsp_identity>
+      <Hsp_positive>20</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>21</Hsp_align-len>
+      <Hsp_qseq>GIVEQCCTSICSLYQLENYCN</Hsp_qseq>
+      <Hsp_hseq>GAVEQCCTSICSLYQLENYCN</Hsp_hseq>
+      <Hsp_midline>G VEQCCTSICSLYQLENYCN</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>18</Hit_num>
+  <Hit_id>pdb|1JCA|A</Hit_id>
+  <Hit_def>Non-standard Design of Unstable Insulin Analogues with Enhanced Activity [synthetic construct] &gt;pdb|1JCA|C Non-standard Design of Unstable Insulin Analogues with Enhanced Activity [synthetic construct]</Hit_def>
+  <Hit_accession>1JCA_A</Hit_accession>
+  <Hit_len>21</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>43.5017</Hsp_bit-score>
+      <Hsp_score>92</Hsp_score>
+      <Hsp_evalue>4.54513e-08</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>21</Hsp_query-to>
+      <Hsp_hit-from>1</Hsp_hit-from>
+      <Hsp_hit-to>21</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>20</Hsp_identity>
+      <Hsp_positive>20</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>21</Hsp_align-len>
+      <Hsp_qseq>GIVEQCCTSICSLYQLENYCN</Hsp_qseq>
+      <Hsp_hseq>GIVEQCCKSICSLYQLENYCN</Hsp_hseq>
+      <Hsp_midline>GIVEQCC SICSLYQLENYCN</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>19</Hit_num>
+  <Hit_id>pdb|4IYD|A</Hit_id>
+  <Hit_def>Insulin glargine crystal structure 1 [Homo sapiens] &gt;pdb|4IYF|A Insulin glargine crystal structure 2 [Homo sapiens] &gt;pdb|5VIZ|A X-Ray structure of Insulin Glargine [Homo sapiens] &gt;pdb|6K59|A Structure of Glargine insulin in 20% acetic acid-d4 (pH 1.9) [synthetic construct]</Hit_def>
+  <Hit_accession>4IYD_A</Hit_accession>
+  <Hit_len>21</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>43.5017</Hsp_bit-score>
+      <Hsp_score>92</Hsp_score>
+      <Hsp_evalue>5.19051e-08</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>21</Hsp_query-to>
+      <Hsp_hit-from>1</Hsp_hit-from>
+      <Hsp_hit-to>21</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>20</Hsp_identity>
+      <Hsp_positive>20</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>21</Hsp_align-len>
+      <Hsp_qseq>GIVEQCCTSICSLYQLENYCN</Hsp_qseq>
+      <Hsp_hseq>GIVEQCCTSICSLYQLENYCG</Hsp_hseq>
+      <Hsp_midline>GIVEQCCTSICSLYQLENYC </Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>20</Hit_num>
+  <Hit_id>pdb|2JUU|A</Hit_id>
+  <Hit_def>allo-ThrA3 DKP-insulin [unidentified] &gt;pdb|2JUV|A AbaA3-DKP-insulin [unidentified]</Hit_def>
+  <Hit_accession>2JUU_A</Hit_accession>
+  <Hit_len>21</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>43.0703</Hsp_bit-score>
+      <Hsp_score>91</Hsp_score>
+      <Hsp_evalue>5.78616e-08</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>21</Hsp_query-to>
+      <Hsp_hit-from>1</Hsp_hit-from>
+      <Hsp_hit-to>21</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>20</Hsp_identity>
+      <Hsp_positive>20</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>21</Hsp_align-len>
+      <Hsp_qseq>GIVEQCCTSICSLYQLENYCN</Hsp_qseq>
+      <Hsp_hseq>GIXEQCCTSICSLYQLENYCN</Hsp_hseq>
+      <Hsp_midline>GI EQCCTSICSLYQLENYCN</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>21</Hit_num>
+  <Hit_id>pdb|2WBY|C</Hit_id>
+  <Hit_def>Crystal structure of human insulin-degrading enzyme in complex with insulin [synthetic construct] &gt;pdb|2WBY|E Crystal structure of human insulin-degrading enzyme in complex with insulin [synthetic construct] &gt;pdb|5CJO|a Crystal Structure Analysis of Elbow-Engineered-Fab-Bound Human Insulin Degrading Enzyme (IDE) in Complex with Insulin [Homo sapiens] &gt;pdb|5WOB|a Crystal Structure Analysis of Fab1-Bound Human Insulin Degrading Enzyme (IDE) in Complex with Insulin [Homo sapiens] &gt;pdb|5WOB|b Crystal Structure Analysis of Fab1-Bound Human Insulin Degrading Enzyme (IDE) in Complex with Insulin [Homo sapiens] &gt;pdb|5WOB|c Crystal Structure Analysis of Fab1-Bound Human Insulin Degrading Enzyme (IDE) in Complex with Insulin [Homo sapiens] &gt;pdb|5WOB|d Crystal Structure Analysis of Fab1-Bound Human Insulin Degrading Enzyme (IDE) in Complex with Insulin [Homo sapiens] &gt;pdb|5WOB|e Crystal Structure Analysis of Fab1-Bound Human Insulin Degrading Enzyme (IDE) in Complex with Insulin [Homo sapiens] &gt;pdb|5WOB|f Crystal Structure Analysis of Fab1-Bound Human Insulin Degrading Enzyme (IDE) in Complex with Insulin [Homo sapiens] &gt;pdb|5WOB|g Crystal Structure Analysis of Fab1-Bound Human Insulin Degrading Enzyme (IDE) in Complex with Insulin [Homo sapiens] &gt;pdb|5WOB|h Crystal Structure Analysis of Fab1-Bound Human Insulin Degrading Enzyme (IDE) in Complex with Insulin [Homo sapiens]</Hit_def>
+  <Hit_accession>2WBY_C</Hit_accession>
+  <Hit_len>20</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>43.0703</Hsp_bit-score>
+      <Hsp_score>91</Hsp_score>
+      <Hsp_evalue>5.88839e-08</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>20</Hsp_query-to>
+      <Hsp_hit-from>1</Hsp_hit-from>
+      <Hsp_hit-to>20</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>20</Hsp_identity>
+      <Hsp_positive>20</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>20</Hsp_align-len>
+      <Hsp_qseq>GIVEQCCTSICSLYQLENYC</Hsp_qseq>
+      <Hsp_hseq>GIVEQCCTSICSLYQLENYC</Hsp_hseq>
+      <Hsp_midline>GIVEQCCTSICSLYQLENYC</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>22</Hit_num>
+  <Hit_id>pdb|1APH|A</Hit_id>
+  <Hit_def>CONFORMATIONAL CHANGES IN CUBIC INSULIN CRYSTALS IN THE PH RANGE 7-11 [Bos taurus] &gt;pdb|1BPH|A CONFORMATIONAL CHANGES IN CUBIC INSULIN CRYSTALS IN THE PH RANGE 7-11 [Bos taurus] &gt;pdb|1CPH|A CONFORMATIONAL CHANGES IN CUBIC INSULIN CRYSTALS IN THE PH RANGE 7-11 [Bos taurus] &gt;pdb|1DPH|A CONFORMATIONAL CHANGES IN CUBIC INSULIN CRYSTALS IN THE PH RANGE 7-11 [Bos taurus] &gt;pdb|1PID|A Bovine Despentapeptide Insulin [Bos taurus] &gt;pdb|1PID|C Bovine Despentapeptide Insulin [Bos taurus] &gt;pdb|2A3G|A The structure of T6 bovine insulin [Bos taurus] &gt;pdb|2A3G|C The structure of T6 bovine insulin [Bos taurus] &gt;pdb|2BN1|A Insulin after a high dose x-ray burn [Bos taurus] &gt;pdb|2INS|A THE STRUCTURE OF DES-PHE B1 BOVINE INSULIN [Bos taurus] &gt;pdb|2INS|C THE STRUCTURE OF DES-PHE B1 BOVINE INSULIN [Bos taurus] &gt;pdb|2ZP6|A Crystal structure of Bovine Insulin (Hexameric form) [Bos taurus] &gt;pdb|2ZP6|C Crystal structure of Bovine Insulin (Hexameric form) [Bos taurus] &gt;pdb|4E7T|A The structure of T6 bovine insulin [Bos taurus] &gt;pdb|4E7T|C The structure of T6 bovine insulin [Bos taurus] &gt;pdb|4E7U|A The structure of T3R3 bovine insulin [Bos taurus] &gt;pdb|4E7U|C The structure of T3R3 bovine insulin [Bos taurus] &gt;pdb|4E7V|1 The structure of R6 bovine insulin [Bos taurus] &gt;pdb|4E7V|3 The structure of R6 bovine insulin [Bos taurus] &gt;pdb|4E7V|5 The structure of R6 bovine insulin [Bos taurus] &gt;pdb|4E7V|A The structure of R6 bovine insulin [Bos taurus] &gt;pdb|4E7V|C The structure of R6 bovine insulin [Bos taurus] &gt;pdb|4E7V|E The structure of R6 bovine insulin [Bos taurus] &gt;pdb|4E7V|G The structure of R6 bovine insulin [Bos taurus] &gt;pdb|4E7V|I The structure of R6 bovine insulin [Bos taurus] &gt;pdb|4E7V|K The structure of R6 bovine insulin [Bos taurus] &gt;pdb|4E7V|M The structure of R6 bovine insulin [Bos taurus] &gt;pdb|4E7V|O The structure of R6 bovine insulin [Bos taurus] &gt;pdb|4E7V|Q The structure of R6 bovine insulin [Bos taurus] &gt;pdb|4E7V|S The structure of R6 bovine insulin [Bos taurus] &gt;pdb|4E7V|U The structure of R6 bovine insulin [Bos taurus] &gt;pdb|4E7V|W The structure of R6 bovine insulin [Bos taurus] &gt;pdb|4E7V|Y The structure of R6 bovine insulin [Bos taurus] &gt;pdb|4I5Y|A Insulin protein crystallization via langmuir-blodgett [Bos taurus] &gt;pdb|4I5Z|A Insulin protein crystallization via langmuir-blodgett [Bos taurus] &gt;pdb|4IDW|A Polycrystalline T6 Bovine Insulin: Anisotropic Lattice Evolution and Novel Structure Refinement Strategy [Bos taurus] &gt;pdb|4IDW|C Polycrystalline T6 Bovine Insulin: Anisotropic Lattice Evolution and Novel Structure Refinement Strategy [Bos taurus] &gt;pdb|4IHN|A High Resolution Insulin by Langmuir-Blodgett Modified Hanging Drop Vapour Diffusion [Bos taurus] &gt;pdb|4M4F|A Radiation damage study of Cu T6-insulin - 0.01 MGy [Bos taurus] &gt;pdb|4M4F|C Radiation damage study of Cu T6-insulin - 0.01 MGy [Bos taurus] &gt;pdb|4M4H|A Radiation damage study of Cu T6-insulin - 0.06 MGy [Bos taurus] &gt;pdb|4M4H|C Radiation damage study of Cu T6-insulin - 0.06 MGy [Bos taurus] &gt;pdb|4M4I|A Radiation damage study of Cu T6-insulin - 0.12 MGy [Bos taurus] &gt;pdb|4M4I|C Radiation damage study of Cu T6-insulin - 0.12 MGy [Bos taurus] &gt;pdb|4M4J|A Radiation damage study of Cu T6-insulin - 0.30 MGy [Bos taurus] &gt;pdb|4M4J|C Radiation damage study of Cu T6-insulin - 0.30 MGy [Bos taurus] &gt;pdb|4M4L|A The structure of Cu T6 bovine insulin [Bos taurus] &gt;pdb|4M4L|C The structure of Cu T6 bovine insulin [Bos taurus] &gt;pdb|4M4M|A The structure of Ni T6 bovine insulin [Bos taurus] &gt;pdb|4M4M|C The structure of Ni T6 bovine insulin [Bos taurus] &gt;pdb|5KQV|A Insulin receptor ectodomain construct comprising domains L1,CR,L2, FnIII-1 and alphaCT peptide in complex with bovine insulin and FAB 83-14 (REVISED STRUCTURE) [Bos taurus] &gt;pdb|5KQV|I Insulin receptor ectodomain construct comprising domains L1,CR,L2, FnIII-1 and alphaCT peptide in complex with bovine insulin and FAB 83-14 (REVISED STRUCTURE) [Bos taurus] &gt;pdb|5MIZ|A MD ensemble of bovine insulin [Bos taurus] &gt;pdb|6KH8|A Solution structure of Zn free Bovine Pancreatic Insulin in 20% acetic acid-d4 (pH 1.9) [Bos taurus] &gt;pdb|6KH9|A Solution structure of bovine insulin amyloid intermediate-1 [Bos taurus] &gt;pdb|6KHA|A Solution structure of bovine insulin amyloid intermediate-2 [Bos taurus] &gt;pdb|6OR0|A Crystal structure of Insulin from Non-merohedrally twinned crystals [Bos taurus] &gt;pdb|6QQ7|A Bovine insulin at ambient pressure [Bos taurus] &gt;pdb|6QQG|A High pressure structure of bovine insulin (60 MPa) [Bos taurus] &gt;pdb|6QRH|A High pressure structure of bovine insulin (100 MPa) [Bos taurus] &gt;pdb|6QRK|A High pressure structure of bovine insulin (200 MPa) [Bos taurus] &gt;pdb|6ZHB|A Chain A, Insulin [Bos taurus] &gt;pdb|6ZHB|C Chain C, Insulin [Bos taurus] &gt;pdb|7ELJ|A Chain A, Insulin A Chain [Bos taurus]</Hit_def>
+  <Hit_accession>1APH_A</Hit_accession>
+  <Hit_len>21</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>43.0703</Hsp_bit-score>
+      <Hsp_score>91</Hsp_score>
+      <Hsp_evalue>5.92754e-08</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>21</Hsp_query-to>
+      <Hsp_hit-from>1</Hsp_hit-from>
+      <Hsp_hit-to>21</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>19</Hsp_identity>
+      <Hsp_positive>20</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>21</Hsp_align-len>
+      <Hsp_qseq>GIVEQCCTSICSLYQLENYCN</Hsp_qseq>
+      <Hsp_hseq>GIVEQCCASVCSLYQLENYCN</Hsp_hseq>
+      <Hsp_midline>GIVEQCC S+CSLYQLENYCN</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>23</Hit_num>
+  <Hit_id>pdb|1KMF|A</Hit_id>
+  <Hit_def>NMR STRUCTURE OF HUMAN INSULIN MUTANT ILE-A2-ALLO-ILE, HIS-B10-ASP, PRO-B28-LYS, LYS-B29-PRO, 15 STRUCTURES &gt;pdb|1Q4V|A Crystal Structure Of Allo-Ilea2-Insulin, An Inactive Chiral Analogue: Implications For The Mechanism Of Receptor [synthetic construct] &gt;pdb|1Q4V|C Crystal Structure Of Allo-Ilea2-Insulin, An Inactive Chiral Analogue: Implications For The Mechanism Of Receptor [synthetic construct]</Hit_def>
+  <Hit_accession>1KMF_A</Hit_accession>
+  <Hit_len>21</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>43.0703</Hsp_bit-score>
+      <Hsp_score>91</Hsp_score>
+      <Hsp_evalue>5.92754e-08</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>21</Hsp_query-to>
+      <Hsp_hit-from>1</Hsp_hit-from>
+      <Hsp_hit-to>21</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>20</Hsp_identity>
+      <Hsp_positive>20</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>21</Hsp_align-len>
+      <Hsp_qseq>GIVEQCCTSICSLYQLENYCN</Hsp_qseq>
+      <Hsp_hseq>GXVEQCCTSICSLYQLENYCN</Hsp_hseq>
+      <Hsp_midline>G VEQCCTSICSLYQLENYCN</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>24</Hit_num>
+  <Hit_id>pdb|1IOH|A</Hit_id>
+  <Hit_def>INSULIN MUTANT A8 HIS,(B1, B10, B16, B27)GLU, DES-B30, NMR, 26 STRUCTURES [Homo sapiens] &gt;pdb|1RWE|A Enhancing the activity of insulin at receptor edge: crystal structure and photo-cross-linking of A8 analogues [synthetic construct] &gt;pdb|1RWE|C Enhancing the activity of insulin at receptor edge: crystal structure and photo-cross-linking of A8 analogues [synthetic construct]</Hit_def>
+  <Hit_accession>1IOH_A</Hit_accession>
+  <Hit_len>21</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>43.0703</Hsp_bit-score>
+      <Hsp_score>91</Hsp_score>
+      <Hsp_evalue>5.99952e-08</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>21</Hsp_query-to>
+      <Hsp_hit-from>1</Hsp_hit-from>
+      <Hsp_hit-to>21</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>20</Hsp_identity>
+      <Hsp_positive>20</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>21</Hsp_align-len>
+      <Hsp_qseq>GIVEQCCTSICSLYQLENYCN</Hsp_qseq>
+      <Hsp_hseq>GIVEQCCHSICSLYQLENYCN</Hsp_hseq>
+      <Hsp_midline>GIVEQCC SICSLYQLENYCN</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>25</Hit_num>
+  <Hit_id>pdb|1J73|A</Hit_id>
+  <Hit_def>Crystal structure of an unstable insulin analog with native activity. [synthetic construct] &gt;pdb|1J73|C Crystal structure of an unstable insulin analog with native activity. [synthetic construct]</Hit_def>
+  <Hit_accession>1J73_A</Hit_accession>
+  <Hit_len>21</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>43.0703</Hsp_bit-score>
+      <Hsp_score>91</Hsp_score>
+      <Hsp_evalue>6.52847e-08</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>21</Hsp_query-to>
+      <Hsp_hit-from>1</Hsp_hit-from>
+      <Hsp_hit-to>21</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>20</Hsp_identity>
+      <Hsp_positive>20</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>21</Hsp_align-len>
+      <Hsp_qseq>GIVEQCCTSICSLYQLENYCN</Hsp_qseq>
+      <Hsp_hseq>GIVEQCCXSICSLYQLENYCN</Hsp_hseq>
+      <Hsp_midline>GIVEQCC SICSLYQLENYCN</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>26</Hit_num>
+  <Hit_id>pdb|4A7E|A</Hit_id>
+  <Hit_def>X-ray crystal structure of porcine insulin flash-cooled at high pressure [Sus scrofa]</Hit_def>
+  <Hit_accession>4A7E_A</Hit_accession>
+  <Hit_len>21</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>43.0703</Hsp_bit-score>
+      <Hsp_score>91</Hsp_score>
+      <Hsp_evalue>7.27764e-08</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>21</Hsp_query-to>
+      <Hsp_hit-from>1</Hsp_hit-from>
+      <Hsp_hit-to>21</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>20</Hsp_identity>
+      <Hsp_positive>20</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>21</Hsp_align-len>
+      <Hsp_qseq>GIVEQCCTSICSLYQLENYCN</Hsp_qseq>
+      <Hsp_hseq>GIVEXCCTSICSLYQLENYCN</Hsp_hseq>
+      <Hsp_midline>GIVE CCTSICSLYQLENYCN</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>27</Hit_num>
+  <Hit_id>pdb|1MHI|A</Hit_id>
+  <Hit_def>THREE-DIMENSIONAL SOLUTION STRUCTURE OF AN INSULIN DIMER. A STUDY OF THE B9(ASP) MUTANT OF HUMAN INSULIN USING NUCLEAR MAGNETIC RESONANCE DISTANCE GEOMETRY AND RESTRAINED MOLECULAR DYNAMICS [Homo sapiens]</Hit_def>
+  <Hit_accession>1MHI_A</Hit_accession>
+  <Hit_len>21</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>42.639</Hsp_bit-score>
+      <Hsp_score>90</Hsp_score>
+      <Hsp_evalue>8.51409e-08</Hsp_evalue>
+      <Hsp_query-from>2</Hsp_query-from>
+      <Hsp_query-to>21</Hsp_query-to>
+      <Hsp_hit-from>2</Hsp_hit-from>
+      <Hsp_hit-to>21</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>20</Hsp_identity>
+      <Hsp_positive>20</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>20</Hsp_align-len>
+      <Hsp_qseq>IVEQCCTSICSLYQLENYCN</Hsp_qseq>
+      <Hsp_hseq>IVEQCCTSICSLYQLENYCN</Hsp_hseq>
+      <Hsp_midline>IVEQCCTSICSLYQLENYCN</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>28</Hit_num>
+  <Hit_id>pdb|4EFX|A</Hit_id>
+  <Hit_def>Highly biologically active insulin with additional disulfide bond [Homo sapiens] &gt;pdb|4EFX|C Highly biologically active insulin with additional disulfide bond [Homo sapiens]</Hit_def>
+  <Hit_accession>4EFX_A</Hit_accession>
+  <Hit_len>21</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>42.639</Hsp_bit-score>
+      <Hsp_score>90</Hsp_score>
+      <Hsp_evalue>9.26473e-08</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>21</Hsp_query-to>
+      <Hsp_hit-from>1</Hsp_hit-from>
+      <Hsp_hit-to>21</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>20</Hsp_identity>
+      <Hsp_positive>20</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>21</Hsp_align-len>
+      <Hsp_qseq>GIVEQCCTSICSLYQLENYCN</Hsp_qseq>
+      <Hsp_hseq>GIVEQCCTSCCSLYQLENYCN</Hsp_hseq>
+      <Hsp_midline>GIVEQCCTS CSLYQLENYCN</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>29</Hit_num>
+  <Hit_id>pdb|1IOG|A</Hit_id>
+  <Hit_def>INSULIN MUTANT A3 GLY,(B1, B10, B16, B27)GLU, DES-B30, NMR, 19 STRUCTURES [Homo sapiens]</Hit_def>
+  <Hit_accession>1IOG_A</Hit_accession>
+  <Hit_len>21</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>42.639</Hsp_bit-score>
+      <Hsp_score>90</Hsp_score>
+      <Hsp_evalue>9.49111e-08</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>21</Hsp_query-to>
+      <Hsp_hit-from>1</Hsp_hit-from>
+      <Hsp_hit-to>21</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>20</Hsp_identity>
+      <Hsp_positive>20</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>21</Hsp_align-len>
+      <Hsp_qseq>GIVEQCCTSICSLYQLENYCN</Hsp_qseq>
+      <Hsp_hseq>GIGEQCCTSICSLYQLENYCN</Hsp_hseq>
+      <Hsp_midline>GI EQCCTSICSLYQLENYCN</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>30</Hit_num>
+  <Hit_id>pdb|2JZQ|A</Hit_id>
+  <Hit_def>Design of an Active Ultra-Stable Single-Chain Insulin Analog 20 Structures [unidentified] &gt;pdb|2LWZ|A NMR Structures of Single-chain Insulin [Homo sapiens]</Hit_def>
+  <Hit_accession>2JZQ_A</Hit_accession>
+  <Hit_len>57</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>43.9331</Hsp_bit-score>
+      <Hsp_score>93</Hsp_score>
+      <Hsp_evalue>9.72315e-08</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>21</Hsp_query-to>
+      <Hsp_hit-from>37</Hsp_hit-from>
+      <Hsp_hit-to>57</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>20</Hsp_identity>
+      <Hsp_positive>20</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>21</Hsp_align-len>
+      <Hsp_qseq>GIVEQCCTSICSLYQLENYCN</Hsp_qseq>
+      <Hsp_hseq>GIVEQCCHSICSLYQLENYCN</Hsp_hseq>
+      <Hsp_midline>GIVEQCC SICSLYQLENYCN</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>31</Hit_num>
+  <Hit_id>pdb|6ZI8|A</Hit_id>
+  <Hit_def>Chain A, Insulin [Bos taurus] &gt;pdb|6ZI8|B Chain B, Insulin [Bos taurus] &gt;pdb|6ZI8|C Chain C, Insulin [Bos taurus] &gt;pdb|6ZI8|D Chain D, Insulin [Bos taurus]</Hit_def>
+  <Hit_accession>6ZI8_A</Hit_accession>
+  <Hit_len>105</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>45.2272</Hsp_bit-score>
+      <Hsp_score>96</Hsp_score>
+      <Hsp_evalue>1.16694e-07</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>21</Hsp_query-to>
+      <Hsp_hit-from>85</Hsp_hit-from>
+      <Hsp_hit-to>105</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>19</Hsp_identity>
+      <Hsp_positive>20</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>21</Hsp_align-len>
+      <Hsp_qseq>GIVEQCCTSICSLYQLENYCN</Hsp_qseq>
+      <Hsp_hseq>GIVEQCCASVCSLYQLENYCN</Hsp_hseq>
+      <Hsp_midline>GIVEQCC S+CSLYQLENYCN</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>32</Hit_num>
+  <Hit_id>pdb|6S4I|A</Hit_id>
+  <Hit_def>Crystal structure of zinc free A14E, B25H, B29K(N(eps)-[2-(2-[2-(2-[2-(Octadecandioyl-gamma-Glu)amino]ethoxy)ethoxy]acetylamino)ethoxy]ethoxy)acetyl]), desB30 human insulin [Homo sapiens] &gt;pdb|6S4J|A Crystal structure of zinc free A14E, B25H, B29K(N(eps)-[2-(2-[2-(2-[2-(Octadecandioyl-gamma-Glu)amino]ethoxy)ethoxy]acetylamino)ethoxy]ethoxy)acetyl]), desB27, desB30 human insulin [Homo sapiens]</Hit_def>
+  <Hit_accession>6S4I_A</Hit_accession>
+  <Hit_len>21</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>42.2076</Hsp_bit-score>
+      <Hsp_score>89</Hsp_score>
+      <Hsp_evalue>1.43069e-07</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>21</Hsp_query-to>
+      <Hsp_hit-from>1</Hsp_hit-from>
+      <Hsp_hit-to>21</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>20</Hsp_identity>
+      <Hsp_positive>20</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>21</Hsp_align-len>
+      <Hsp_qseq>GIVEQCCTSICSLYQLENYCN</Hsp_qseq>
+      <Hsp_hseq>GIVEQCCTSICSLEQLENYCN</Hsp_hseq>
+      <Hsp_midline>GIVEQCCTSICSL QLENYCN</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>33</Hit_num>
+  <Hit_id>pdb|3GKY|A</Hit_id>
+  <Hit_def>The Structural Basis of an ER Stress-Associated Bottleneck in a Protein Folding Landscape [Sus scrofa] &gt;pdb|3GKY|C The Structural Basis of an ER Stress-Associated Bottleneck in a Protein Folding Landscape [Sus scrofa]</Hit_def>
+  <Hit_accession>3GKY_A</Hit_accession>
+  <Hit_len>21</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>42.2076</Hsp_bit-score>
+      <Hsp_score>89</Hsp_score>
+      <Hsp_evalue>1.71465e-07</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>21</Hsp_query-to>
+      <Hsp_hit-from>1</Hsp_hit-from>
+      <Hsp_hit-to>21</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>19</Hsp_identity>
+      <Hsp_positive>20</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>21</Hsp_align-len>
+      <Hsp_qseq>GIVEQCCTSICSLYQLENYCN</Hsp_qseq>
+      <Hsp_hseq>GIVEQCCHSICSLYQVENYCN</Hsp_hseq>
+      <Hsp_midline>GIVEQCC SICSLYQ+ENYCN</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>34</Hit_num>
+  <Hit_id>pdb|3KQ6|A</Hit_id>
+  <Hit_def>Chain A, Insulin A chain [Homo sapiens] &gt;pdb|3KQ6|C Chain C, Insulin A chain [Homo sapiens]</Hit_def>
+  <Hit_accession>3KQ6_A</Hit_accession>
+  <Hit_len>21</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>41.7762</Hsp_bit-score>
+      <Hsp_score>88</Hsp_score>
+      <Hsp_evalue>2.15661e-07</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>21</Hsp_query-to>
+      <Hsp_hit-from>1</Hsp_hit-from>
+      <Hsp_hit-to>21</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>19</Hsp_identity>
+      <Hsp_positive>19</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>21</Hsp_align-len>
+      <Hsp_qseq>GIVEQCCTSICSLYQLENYCN</Hsp_qseq>
+      <Hsp_hseq>GIVHQCCHSICSLYQLENYCN</Hsp_hseq>
+      <Hsp_midline>GIV QCC SICSLYQLENYCN</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>35</Hit_num>
+  <Hit_id>pdb|6VES|A</Hit_id>
+  <Hit_def>Human insulin analog: [GluB10,HisA8,ArgA9]-DOI [Homo sapiens] &gt;pdb|6VET|A Human insulin analog: [GluB10,HisA8,ArgA9,TyrB20]-DOI [Homo sapiens] &gt;pdb|6VET|C Human insulin analog: [GluB10,HisA8,ArgA9,TyrB20]-DOI [Homo sapiens] &gt;pdb|6VET|E Human insulin analog: [GluB10,HisA8,ArgA9,TyrB20]-DOI [Homo sapiens]</Hit_def>
+  <Hit_accession>6VES_A</Hit_accession>
+  <Hit_len>21</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>41.7762</Hsp_bit-score>
+      <Hsp_score>88</Hsp_score>
+      <Hsp_evalue>2.37523e-07</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>21</Hsp_query-to>
+      <Hsp_hit-from>1</Hsp_hit-from>
+      <Hsp_hit-to>21</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>19</Hsp_identity>
+      <Hsp_positive>19</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>21</Hsp_align-len>
+      <Hsp_qseq>GIVEQCCTSICSLYQLENYCN</Hsp_qseq>
+      <Hsp_hseq>GIVEQCCHRICSLYQLENYCN</Hsp_hseq>
+      <Hsp_midline>GIVEQCC  ICSLYQLENYCN</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>36</Hit_num>
+  <Hit_id>pdb|2L1Z|A</Hit_id>
+  <Hit_def>NMR Structure of human insulin mutant GLY-B20-D-ALA, GLY-B23-D-ALA PRO-B28-LYS, LYS-B29-PRO, 20 Structures [Homo sapiens] &gt;pdb|3V19|A Forestalling insulin fibrillation by insertion of a chiral clamp mechanism-based application of protein engineering to global health [Homo sapiens] &gt;pdb|3V19|C Forestalling insulin fibrillation by insertion of a chiral clamp mechanism-based application of protein engineering to global health [Homo sapiens]</Hit_def>
+  <Hit_accession>2L1Z_A</Hit_accession>
+  <Hit_len>21</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>40.9135</Hsp_bit-score>
+      <Hsp_score>86</Hsp_score>
+      <Hsp_evalue>4.1886e-07</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>21</Hsp_query-to>
+      <Hsp_hit-from>1</Hsp_hit-from>
+      <Hsp_hit-to>21</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>18</Hsp_identity>
+      <Hsp_positive>20</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>21</Hsp_align-len>
+      <Hsp_qseq>GIVEQCCTSICSLYQLENYCN</Hsp_qseq>
+      <Hsp_hseq>GLLEQCCHSICSLYQLENYCN</Hsp_hseq>
+      <Hsp_midline>G++EQCC SICSLYQLENYCN</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>37</Hit_num>
+  <Hit_id>pdb|6U46|A</Hit_id>
+  <Hit_def>Solution Structure of a Heat-Resistant Long-Acting Insulin Analog [Homo sapiens]</Hit_def>
+  <Hit_accession>6U46_A</Hit_accession>
+  <Hit_len>59</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>42.639</Hsp_bit-score>
+      <Hsp_score>90</Hsp_score>
+      <Hsp_evalue>4.29652e-07</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>21</Hsp_query-to>
+      <Hsp_hit-from>39</Hsp_hit-from>
+      <Hsp_hit-to>59</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>19</Hsp_identity>
+      <Hsp_positive>19</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>21</Hsp_align-len>
+      <Hsp_qseq>GIVEQCCTSICSLYQLENYCN</Hsp_qseq>
+      <Hsp_hseq>GIVEQCCRSICSLYQLENYCG</Hsp_hseq>
+      <Hsp_midline>GIVEQCC SICSLYQLENYC </Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>38</Hit_num>
+  <Hit_id>pdb|1VKT|A</Hit_id>
+  <Hit_def>HUMAN INSULIN TWO DISULFIDE MODEL, NMR, 10 STRUCTURES [Homo sapiens]</Hit_def>
+  <Hit_accession>1VKT_A</Hit_accession>
+  <Hit_len>21</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>40.9135</Hsp_bit-score>
+      <Hsp_score>86</Hsp_score>
+      <Hsp_evalue>4.50318e-07</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>21</Hsp_query-to>
+      <Hsp_hit-from>1</Hsp_hit-from>
+      <Hsp_hit-to>21</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>19</Hsp_identity>
+      <Hsp_positive>19</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>21</Hsp_align-len>
+      <Hsp_qseq>GIVEQCCTSICSLYQLENYCN</Hsp_qseq>
+      <Hsp_hseq>GIVEQSCTSISSLYQLENYCN</Hsp_hseq>
+      <Hsp_midline>GIVEQ CTSI SLYQLENYCN</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>39</Hit_num>
+  <Hit_id>pdb|5AZZ|A</Hit_id>
+  <Hit_def>Crystal structure of seleno-insulin [Bos taurus]</Hit_def>
+  <Hit_accession>5AZZ_A</Hit_accession>
+  <Hit_len>22</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>40.9135</Hsp_bit-score>
+      <Hsp_score>86</Hsp_score>
+      <Hsp_evalue>5.57288e-07</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>21</Hsp_query-to>
+      <Hsp_hit-from>1</Hsp_hit-from>
+      <Hsp_hit-to>21</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>18</Hsp_identity>
+      <Hsp_positive>19</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>21</Hsp_align-len>
+      <Hsp_qseq>GIVEQCCTSICSLYQLENYCN</Hsp_qseq>
+      <Hsp_hseq>GIVEQCXASVCSLYQLENYCN</Hsp_hseq>
+      <Hsp_midline>GIVEQC  S+CSLYQLENYCN</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>40</Hit_num>
+  <Hit_id>pdb|3FQ9|A</Hit_id>
+  <Hit_def>Design of an insulin analog with enhanced receptor-binding selectivity. Rationale, structure, and therapeutic implications &gt;pdb|3FQ9|C Design of an insulin analog with enhanced receptor-binding selectivity. Rationale, structure, and therapeutic implications</Hit_def>
+  <Hit_accession>3FQ9_A</Hit_accession>
+  <Hit_len>21</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>40.4821</Hsp_bit-score>
+      <Hsp_score>85</Hsp_score>
+      <Hsp_evalue>6.31372e-07</Hsp_evalue>
+      <Hsp_query-from>2</Hsp_query-from>
+      <Hsp_query-to>21</Hsp_query-to>
+      <Hsp_hit-from>2</Hsp_hit-from>
+      <Hsp_hit-to>21</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>19</Hsp_identity>
+      <Hsp_positive>19</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>20</Hsp_align-len>
+      <Hsp_qseq>IVEQCCTSICSLYQLENYCN</Hsp_qseq>
+      <Hsp_hseq>IVEQCCXSICSLYQLENYCN</Hsp_hseq>
+      <Hsp_midline>IVEQCC SICSLYQLENYCN</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>41</Hit_num>
+  <Hit_id>pdb|5T7R|A</Hit_id>
+  <Hit_def>A6-A11 trans-dicarba human insulin [Homo sapiens] &gt;pdb|5T7R|C A6-A11 trans-dicarba human insulin [Homo sapiens] &gt;pdb|6H3M|A The crystal structure of a human seleno-insulin analog [Homo sapiens] &gt;pdb|6H3M|C The crystal structure of a human seleno-insulin analog [Homo sapiens] &gt;pdb|6H3M|E The crystal structure of a human seleno-insulin analog [Homo sapiens] &gt;pdb|6H3M|G The crystal structure of a human seleno-insulin analog [Homo sapiens] &gt;pdb|6H3M|I The crystal structure of a human seleno-insulin analog [Homo sapiens] &gt;pdb|6H3M|K The crystal structure of a human seleno-insulin analog [Homo sapiens] &gt;pdb|6H3M|N The crystal structure of a human seleno-insulin analog [Homo sapiens] &gt;pdb|6H3M|R The crystal structure of a human seleno-insulin analog [Homo sapiens]</Hit_def>
+  <Hit_accession>5T7R_A</Hit_accession>
+  <Hit_len>21</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>40.4821</Hsp_bit-score>
+      <Hsp_score>85</Hsp_score>
+      <Hsp_evalue>7.29768e-07</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>21</Hsp_query-to>
+      <Hsp_hit-from>1</Hsp_hit-from>
+      <Hsp_hit-to>21</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>19</Hsp_identity>
+      <Hsp_positive>19</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>21</Hsp_align-len>
+      <Hsp_qseq>GIVEQCCTSICSLYQLENYCN</Hsp_qseq>
+      <Hsp_hseq>GIVEQXCTSIXSLYQLENYCN</Hsp_hseq>
+      <Hsp_midline>GIVEQ CTSI SLYQLENYCN</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>42</Hit_num>
+  <Hit_id>pdb|1LKQ|A</Hit_id>
+  <Hit_def>NMR STRUCTURE OF HUMAN INSULIN MUTANT ILE-A2-GLY, VAL-A3-GLY, HIS-B10-ASP, PRO-B28-LYS, LYS-B29-PRO, 20 STRUCTURES</Hit_def>
+  <Hit_accession>1LKQ_A</Hit_accession>
+  <Hit_len>21</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>40.0508</Hsp_bit-score>
+      <Hsp_score>84</Hsp_score>
+      <Hsp_evalue>9.74947e-07</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>21</Hsp_query-to>
+      <Hsp_hit-from>1</Hsp_hit-from>
+      <Hsp_hit-to>21</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>19</Hsp_identity>
+      <Hsp_positive>19</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>21</Hsp_align-len>
+      <Hsp_qseq>GIVEQCCTSICSLYQLENYCN</Hsp_qseq>
+      <Hsp_hseq>GGGEQCCTSICSLYQLENYCN</Hsp_hseq>
+      <Hsp_midline>G  EQCCTSICSLYQLENYCN</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>43</Hit_num>
+  <Hit_id>pdb|5WBT|A</Hit_id>
+  <Hit_def>Solution Structure and Dynamics of an Ultra-Stable Single-Chain Insulin Analog STUDIES OF AN ENGINEERED MONOMER AND IMPLICATIONS FOR RECEPTOR BINDING [Homo sapiens] &gt;pdb|7KD6|B Chain B, Single-chain Insulin SCI-b [Homo sapiens] &gt;pdb|7KD6|H Chain H, Single-chain Insulin SCI-b [Homo sapiens] &gt;pdb|7KD6|N Chain N, Single-chain Insulin SCI-b [Homo sapiens] &gt;pdb|7KD6|T Chain T, Single-chain Insulin SCI-b [Homo sapiens]</Hit_def>
+  <Hit_accession>5WBT_A</Hit_accession>
+  <Hit_len>57</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>40.9135</Hsp_bit-score>
+      <Hsp_score>86</Hsp_score>
+      <Hsp_evalue>1.90774e-06</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>21</Hsp_query-to>
+      <Hsp_hit-from>37</Hsp_hit-from>
+      <Hsp_hit-to>57</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>19</Hsp_identity>
+      <Hsp_positive>19</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>21</Hsp_align-len>
+      <Hsp_qseq>GIVEQCCTSICSLYQLENYCN</Hsp_qseq>
+      <Hsp_hseq>GIVEQCCHSICSLEQLENYCN</Hsp_hseq>
+      <Hsp_midline>GIVEQCC SICSL QLENYCN</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>44</Hit_num>
+  <Hit_id>pdb|5WDM|A</Hit_id>
+  <Hit_def>An ultra-stable single-chain insulin analog resists thermal inactivation and exhibits biological signaling duration equivalent to the native protein [Homo sapiens] &gt;pdb|5WDM|B An ultra-stable single-chain insulin analog resists thermal inactivation and exhibits biological signaling duration equivalent to the native protein [Homo sapiens] &gt;pdb|5WDM|C An ultra-stable single-chain insulin analog resists thermal inactivation and exhibits biological signaling duration equivalent to the native protein [Homo sapiens] &gt;pdb|5WDM|D An ultra-stable single-chain insulin analog resists thermal inactivation and exhibits biological signaling duration equivalent to the native protein [Homo sapiens] &gt;pdb|5WDM|E An ultra-stable single-chain insulin analog resists thermal inactivation and exhibits biological signaling duration equivalent to the native protein [Homo sapiens] &gt;pdb|5WDM|F An ultra-stable single-chain insulin analog resists thermal inactivation and exhibits biological signaling duration equivalent to the native protein [Homo sapiens]</Hit_def>
+  <Hit_accession>5WDM_A</Hit_accession>
+  <Hit_len>57</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>40.4821</Hsp_bit-score>
+      <Hsp_score>85</Hsp_score>
+      <Hsp_evalue>2.04817e-06</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>21</Hsp_query-to>
+      <Hsp_hit-from>37</Hsp_hit-from>
+      <Hsp_hit-to>57</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>19</Hsp_identity>
+      <Hsp_positive>19</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>21</Hsp_align-len>
+      <Hsp_qseq>GIVEQCCTSICSLYQLENYCN</Hsp_qseq>
+      <Hsp_hseq>GIVEQCCHSICSLEQLENYCN</Hsp_hseq>
+      <Hsp_midline>GIVEQCC SICSL QLENYCN</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>45</Hit_num>
+  <Hit_id>pdb|2W44|A</Hit_id>
+  <Hit_def>Structure DeltaA1-A4 insulin [Homo sapiens] &gt;pdb|2W44|C Structure DeltaA1-A4 insulin [Homo sapiens] &gt;pdb|2W44|E Structure DeltaA1-A4 insulin [Homo sapiens]</Hit_def>
+  <Hit_accession>2W44_A</Hit_accession>
+  <Hit_len>17</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>37.4626</Hsp_bit-score>
+      <Hsp_score>78</Hsp_score>
+      <Hsp_evalue>1.11098e-05</Hsp_evalue>
+      <Hsp_query-from>5</Hsp_query-from>
+      <Hsp_query-to>21</Hsp_query-to>
+      <Hsp_hit-from>1</Hsp_hit-from>
+      <Hsp_hit-to>17</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>17</Hsp_identity>
+      <Hsp_positive>17</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>17</Hsp_align-len>
+      <Hsp_qseq>QCCTSICSLYQLENYCN</Hsp_qseq>
+      <Hsp_hseq>QCCTSICSLYQLENYCN</Hsp_hseq>
+      <Hsp_midline>QCCTSICSLYQLENYCN</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>46</Hit_num>
+  <Hit_id>pdb|5L3M|A</Hit_id>
+  <Hit_def>D11 bound [S39_PQ]-IGF-II [Homo sapiens]</Hit_def>
+  <Hit_accession>5L3M_A</Hit_accession>
+  <Hit_len>69</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>27.9725</Hsp_bit-score>
+      <Hsp_score>56</Hsp_score>
+      <Hsp_evalue>0.158609</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>20</Hsp_query-to>
+      <Hsp_hit-from>43</Hsp_hit-from>
+      <Hsp_hit-to>62</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>12</Hsp_identity>
+      <Hsp_positive>13</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>20</Hsp_align-len>
+      <Hsp_qseq>GIVEQCCTSICSLYQLENYC</Hsp_qseq>
+      <Hsp_hseq>GIVEECCFRSCDLALLETYC</Hsp_hseq>
+      <Hsp_midline>GIVE+CC   C L  LE YC</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>47</Hit_num>
+  <Hit_id>pdb|5L3N|A</Hit_id>
+  <Hit_def>D11 bound [N29, S39_PQ]-IGF-II [Homo sapiens]</Hit_def>
+  <Hit_accession>5L3N_A</Hit_accession>
+  <Hit_len>69</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>27.9725</Hsp_bit-score>
+      <Hsp_score>56</Hsp_score>
+      <Hsp_evalue>0.162232</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>20</Hsp_query-to>
+      <Hsp_hit-from>43</Hsp_hit-from>
+      <Hsp_hit-to>62</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>12</Hsp_identity>
+      <Hsp_positive>13</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>20</Hsp_align-len>
+      <Hsp_qseq>GIVEQCCTSICSLYQLENYC</Hsp_qseq>
+      <Hsp_hseq>GIVEECCFRSCDLALLETYC</Hsp_hseq>
+      <Hsp_midline>GIVE+CC   C L  LE YC</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>48</Hit_num>
+  <Hit_id>pdb|6UM2|B</Hit_id>
+  <Hit_def>Structure of M-6-P/IGFII Receptor and IGFII complex [Homo sapiens]</Hit_def>
+  <Hit_accession>6UM2_B</Hit_accession>
+  <Hit_len>68</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>27.9725</Hsp_bit-score>
+      <Hsp_score>56</Hsp_score>
+      <Hsp_evalue>0.168397</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>20</Hsp_query-to>
+      <Hsp_hit-from>42</Hsp_hit-from>
+      <Hsp_hit-to>61</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>12</Hsp_identity>
+      <Hsp_positive>13</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>20</Hsp_align-len>
+      <Hsp_qseq>GIVEQCCTSICSLYQLENYC</Hsp_qseq>
+      <Hsp_hseq>GIVEECCFRSCDLALLETYC</Hsp_hseq>
+      <Hsp_midline>GIVE+CC   C L  LE YC</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>49</Hit_num>
+  <Hit_id>pdb|1IGL|A</Hit_id>
+  <Hit_def>SOLUTION STRUCTURE OF HUMAN INSULIN-LIKE GROWTH FACTOR II RELATIONSHIP TO RECEPTOR AND BINDING PROTEIN INTERACTIONS [Homo sapiens] &gt;pdb|2L29|B Complex structure of E4 mutant human IGF2R domain 11 bound to IGF-II [Homo sapiens] &gt;pdb|2V5P|C COMPLEX STRUCTURE OF HUMAN IGF2R DOMAINS 11-13 BOUND TO IGF-II [Homo sapiens] &gt;pdb|2V5P|D COMPLEX STRUCTURE OF HUMAN IGF2R DOMAINS 11-13 BOUND TO IGF-II [Homo sapiens] &gt;pdb|3E4Z|C Crystal structure of human insulin degrading enzyme in complex with insulin-like growth factor II [Homo sapiens] &gt;pdb|3E4Z|D Crystal structure of human insulin degrading enzyme in complex with insulin-like growth factor II [Homo sapiens] &gt;pdb|3KR3|D Crystal structure of IGF-II antibody complex [Homo sapiens] &gt;pdb|5L3L|A D11 bound IGF-II [Homo sapiens] &gt;pdb|6VWG|I Head region of the open conformation of the human type 1 insulin-like growth factor receptor ectodomain in complex with human insulin-like growth factor II. [Homo sapiens] &gt;pdb|6VWI|I Head region of the closed conformation of the human type 1 insulin-like growth factor receptor ectodomain in complex with human insulin-like growth factor II. [Homo sapiens]</Hit_def>
+  <Hit_accession>1IGL_A</Hit_accession>
+  <Hit_len>67</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>27.5412</Hsp_bit-score>
+      <Hsp_score>55</Hsp_score>
+      <Hsp_evalue>0.184915</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>20</Hsp_query-to>
+      <Hsp_hit-from>41</Hsp_hit-from>
+      <Hsp_hit-to>60</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>12</Hsp_identity>
+      <Hsp_positive>13</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>20</Hsp_align-len>
+      <Hsp_qseq>GIVEQCCTSICSLYQLENYC</Hsp_qseq>
+      <Hsp_hseq>GIVEECCFRSCDLALLETYC</Hsp_hseq>
+      <Hsp_midline>GIVE+CC   C L  LE YC</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>50</Hit_num>
+  <Hit_id>pdb|3LRI|A</Hit_id>
+  <Hit_def>Solution structure and backbone dynamics of long-[Arg(3)]insulin-like growth factor-I [Homo sapiens]</Hit_def>
+  <Hit_accession>3LRI_A</Hit_accession>
+  <Hit_len>83</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>27.5412</Hsp_bit-score>
+      <Hsp_score>55</Hsp_score>
+      <Hsp_evalue>0.20557</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>20</Hsp_query-to>
+      <Hsp_hit-from>55</Hsp_hit-from>
+      <Hsp_hit-to>74</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>11</Hsp_identity>
+      <Hsp_positive>14</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>20</Hsp_align-len>
+      <Hsp_qseq>GIVEQCCTSICSLYQLENYC</Hsp_qseq>
+      <Hsp_hseq>GIVDECCFRSCDLRRLEMYC</Hsp_hseq>
+      <Hsp_midline>GIV++CC   C L +LE YC</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>51</Hit_num>
+  <Hit_id>pdb|1BQT|A</Hit_id>
+  <Hit_def>THREE-DIMENSIONAL STRUCTURE OF HUMAN INSULIN-LIKE GROWTH FACTOR-I (IGF-I) DETERMINED BY 1H-NMR AND DISTANCE GEOMETRY, 6 STRUCTURES [Homo sapiens] &gt;pdb|1GZR|B Human Insulin-like growth factor; ESRF data [Homo sapiens] &gt;pdb|1GZY|B Human Insulin-like growth factor; In-house data [Homo sapiens] &gt;pdb|1GZZ|B Human Insulin-like growth factor; Hamburg data [Homo sapiens] &gt;pdb|1H02|B Human Insulin-like growth factor; SRS Daresbury data [Homo sapiens] &gt;pdb|1H59|A Complex of IGFBP-5 with IGF-I [Homo sapiens] &gt;pdb|1IMX|A 1.8 Angstrom crystal structure of IGF-1 [Homo sapiens] &gt;pdb|1PMX|A INSULIN-LIKE GROWTH FACTOR-I BOUND TO A PHAGE-DERIVED PEPTIDE [Homo sapiens] &gt;pdb|1WQJ|I Structural Basis for the Regulation of Insulin-Like Growth Factors (IGFs) by IGF Binding Proteins (IGFBPs) [Homo sapiens] &gt;pdb|2DSP|I Structural Basis for the Inhibition of Insulin-like Growth Factors by IGF Binding Proteins [Homo sapiens] &gt;pdb|2DSQ|C Structural Basis for the Inhibition of Insulin-like Growth Factors by IGF Binding Proteins [Homo sapiens] &gt;pdb|2DSQ|I Structural Basis for the Inhibition of Insulin-like Growth Factors by IGF Binding Proteins [Homo sapiens] &gt;pdb|2DSR|I Structural Basis for the Inhibition of Insulin-like Growth Factors by IGF Binding Proteins [Homo sapiens] &gt;pdb|2GF1|A SOLUTION STRUCTURE OF HUMAN INSULIN-LIKE GROWTH FACTOR 1: A NUCLEAR MAGNETIC RESONANCE AND RESTRAINED MOLECULAR DYNAMICS STUDY [Homo sapiens] &gt;pdb|3GF1|A SOLUTION STRUCTURE OF HUMAN INSULIN-LIKE GROWTH FACTOR 1: A NUCLEAR MAGNETIC RESONANCE AND RESTRAINED MOLECULAR DYNAMICS STUDY [Homo sapiens] &gt;pdb|4XSS|B Insulin-like growth factor I in complex with site 1 of a hybrid insulin receptor / Type 1 insulin-like growth factor receptor [Homo sapiens] &gt;pdb|5U8Q|B Structure of the ectodomain of the human Type 1 insulin-like growth factor receptor in complex with IGF-I [Homo sapiens] &gt;pdb|6FF3|B Crystal structure of Drosophila neural ectodermal development factor Imp-L1 with Human IGF-I [Homo sapiens] &gt;pdb|6PYH|B Cryo-EM structure of full-length IGF1R-IGF1 complex. Only the extracellular region of the complex is resolved. [Homo sapiens]</Hit_def>
+  <Hit_accession>1BQT_A</Hit_accession>
+  <Hit_len>70</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>27.5412</Hsp_bit-score>
+      <Hsp_score>55</Hsp_score>
+      <Hsp_evalue>0.209446</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>20</Hsp_query-to>
+      <Hsp_hit-from>42</Hsp_hit-from>
+      <Hsp_hit-to>61</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>11</Hsp_identity>
+      <Hsp_positive>14</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>20</Hsp_align-len>
+      <Hsp_qseq>GIVEQCCTSICSLYQLENYC</Hsp_qseq>
+      <Hsp_hseq>GIVDECCFRSCDLRRLEMYC</Hsp_hseq>
+      <Hsp_midline>GIV++CC   C L +LE YC</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>52</Hit_num>
+  <Hit_id>pdb|1B9G|A</Hit_id>
+  <Hit_def>INSULIN-LIKE-GROWTH-FACTOR-1 [Homo sapiens]</Hit_def>
+  <Hit_accession>1B9G_A</Hit_accession>
+  <Hit_len>57</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>27.1098</Hsp_bit-score>
+      <Hsp_score>54</Hsp_score>
+      <Hsp_evalue>0.256132</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>20</Hsp_query-to>
+      <Hsp_hit-from>29</Hsp_hit-from>
+      <Hsp_hit-to>48</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>11</Hsp_identity>
+      <Hsp_positive>14</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>20</Hsp_align-len>
+      <Hsp_qseq>GIVEQCCTSICSLYQLENYC</Hsp_qseq>
+      <Hsp_hseq>GIVDECCFRSCDLRRLEMYC</Hsp_hseq>
+      <Hsp_midline>GIV++CC   C L +LE YC</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>53</Hit_num>
+  <Hit_id>pdb|1TGR|A</Hit_id>
+  <Hit_def>Crystal Structure of mini-IGF-1(2) [Homo sapiens] &gt;pdb|1TGR|B Crystal Structure of mini-IGF-1(2) [Homo sapiens]</Hit_def>
+  <Hit_accession>1TGR_A</Hit_accession>
+  <Hit_len>52</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>27.1098</Hsp_bit-score>
+      <Hsp_score>54</Hsp_score>
+      <Hsp_evalue>0.269972</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>20</Hsp_query-to>
+      <Hsp_hit-from>32</Hsp_hit-from>
+      <Hsp_hit-to>51</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>11</Hsp_identity>
+      <Hsp_positive>14</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>20</Hsp_align-len>
+      <Hsp_qseq>GIVEQCCTSICSLYQLENYC</Hsp_qseq>
+      <Hsp_hseq>GIVDECCFRSCDLRRLEMYC</Hsp_hseq>
+      <Hsp_midline>GIV++CC   C L +LE YC</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>54</Hit_num>
+  <Hit_id>pdb|6RVA|X</Hit_id>
+  <Hit_def>STRUCTURE OF [ASP58]-IGF-I ANALOGUE [Homo sapiens]</Hit_def>
+  <Hit_accession>6RVA_X</Hit_accession>
+  <Hit_len>71</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>26.2471</Hsp_bit-score>
+      <Hsp_score>52</Hsp_score>
+      <Hsp_evalue>0.626293</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>20</Hsp_query-to>
+      <Hsp_hit-from>43</Hsp_hit-from>
+      <Hsp_hit-to>62</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>10</Hsp_identity>
+      <Hsp_positive>14</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>20</Hsp_align-len>
+      <Hsp_qseq>GIVEQCCTSICSLYQLENYC</Hsp_qseq>
+      <Hsp_hseq>GIVDECCFRSCDLRRLDMYC</Hsp_hseq>
+      <Hsp_midline>GIV++CC   C L +L+ YC</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>55</Hit_num>
+  <Hit_id>pdb|2WFV|A</Hit_id>
+  <Hit_def>Crystal structure of DILP5 variant C4 [Drosophila melanogaster] &gt;pdb|6FEY|E Crystal structure of Drosophila neural ectodermal development factor Imp-L2 with Drosophila DILP5 insulin [Drosophila melanogaster] &gt;pdb|6FEY|G Crystal structure of Drosophila neural ectodermal development factor Imp-L2 with Drosophila DILP5 insulin [Drosophila melanogaster] &gt;pdb|6FEY|I Crystal structure of Drosophila neural ectodermal development factor Imp-L2 with Drosophila DILP5 insulin [Drosophila melanogaster] &gt;pdb|6FEY|K Crystal structure of Drosophila neural ectodermal development factor Imp-L2 with Drosophila DILP5 insulin [Drosophila melanogaster]</Hit_def>
+  <Hit_accession>2WFV_A</Hit_accession>
+  <Hit_len>25</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>24.5216</Hsp_bit-score>
+      <Hsp_score>48</Hsp_score>
+      <Hsp_evalue>1.03148</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>21</Hsp_query-to>
+      <Hsp_hit-from>4</Hsp_hit-from>
+      <Hsp_hit-to>24</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>9</Hsp_identity>
+      <Hsp_positive>12</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>21</Hsp_align-len>
+      <Hsp_qseq>GIVEQCCTSICSLYQLENYCN</Hsp_qseq>
+      <Hsp_hseq>GVVDSCCRNSCSFSTLRAYCD</Hsp_hseq>
+      <Hsp_midline>G+V+ CC   CS   L  YC+</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>56</Hit_num>
+  <Hit_id>pdb|2WFU|A</Hit_id>
+  <Hit_def>Crystal structure of DILP5 variant DB [Drosophila melanogaster]</Hit_def>
+  <Hit_accession>2WFU_A</Hit_accession>
+  <Hit_len>22</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>24.5216</Hsp_bit-score>
+      <Hsp_score>48</Hsp_score>
+      <Hsp_evalue>1.22436</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>21</Hsp_query-to>
+      <Hsp_hit-from>1</Hsp_hit-from>
+      <Hsp_hit-to>21</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>9</Hsp_identity>
+      <Hsp_positive>12</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>21</Hsp_align-len>
+      <Hsp_qseq>GIVEQCCTSICSLYQLENYCN</Hsp_qseq>
+      <Hsp_hseq>GVVDSCCRNSCSFSTLRAYCD</Hsp_hseq>
+      <Hsp_midline>G+V+ CC   CS   L  YC+</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>57</Hit_num>
+  <Hit_id>pdb|5NCN|B</Hit_id>
+  <Hit_def>Crystal structure Dbf2(NTR)-Mob1 complex [Saccharomyces cerevisiae S288C]</Hit_def>
+  <Hit_accession>5NCN_B</Hit_accession>
+  <Hit_len>93</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>24.5216</Hsp_bit-score>
+      <Hsp_score>48</Hsp_score>
+      <Hsp_evalue>2.66319</Hsp_evalue>
+      <Hsp_query-from>5</Hsp_query-from>
+      <Hsp_query-to>21</Hsp_query-to>
+      <Hsp_hit-from>21</Hsp_hit-from>
+      <Hsp_hit-to>37</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>8</Hsp_identity>
+      <Hsp_positive>11</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>17</Hsp_align-len>
+      <Hsp_qseq>QCCTSICSLYQLENYCN</Hsp_qseq>
+      <Hsp_hseq>QRVVSVCKMYFLEHYCD</Hsp_hseq>
+      <Hsp_midline>Q   S+C +Y LE YC+</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>58</Hit_num>
+  <Hit_id>pdb|1BOM|A</Hit_id>
+  <Hit_def>THREE-DIMENSIONAL STRUCTURE OF BOMBYXIN-II, AN INSULIN-RELATED BRAIN-SECRETORY PEPTIDE OF THE SILKMOTH BOMBYX MORI: COMPARISON WITH INSULIN AND RELAXIN [Bombyx mori] &gt;pdb|1BON|A THREE-DIMENSIONAL STRUCTURE OF BOMBYXIN-II, AN INSULIN-RELATED BRAIN-SECRETORY PEPTIDE OF THE SILKMOTH BOMBYX MORI: COMPARISON WITH INSULIN AND RELAXIN [Bombyx mori]</Hit_def>
+  <Hit_accession>1BOM_A</Hit_accession>
+  <Hit_len>20</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>22.7961</Hsp_bit-score>
+      <Hsp_score>44</Hsp_score>
+      <Hsp_evalue>4.93915</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>20</Hsp_query-to>
+      <Hsp_hit-from>1</Hsp_hit-from>
+      <Hsp_hit-to>20</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>10</Hsp_identity>
+      <Hsp_positive>13</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>20</Hsp_align-len>
+      <Hsp_qseq>GIVEQCCTSICSLYQLENYC</Hsp_qseq>
+      <Hsp_hseq>GIVDECCLRPCSVDVLLSYC</Hsp_hseq>
+      <Hsp_midline>GIV++CC   CS+  L  YC</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+</Iteration_hits>
+  <Iteration_stat>
+    <Statistics>
+      <Statistics_db-num>132700</Statistics_db-num>
+      <Statistics_db-len>35487807</Statistics_db-len>
+      <Statistics_hsp-len>6</Statistics_hsp-len>
+      <Statistics_eff-space>520374105</Statistics_eff-space>
+      <Statistics_kappa>0.071</Statistics_kappa>
+      <Statistics_lambda>0.299</Statistics_lambda>
+      <Statistics_entropy>0.27</Statistics_entropy>
+    </Statistics>
+  </Iteration_stat>
+</Iteration>
+</BlastOutput_iterations>
+</BlastOutput>
+

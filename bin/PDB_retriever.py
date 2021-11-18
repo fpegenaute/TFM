@@ -24,7 +24,7 @@ def retrieve_pdb_info(pdb_list, pdb_dir, fasta_dir):
         # Dowload the PDB file from the web
         pdbl.retrieve_pdb_file(template, pdir=pdb_dir)
         req = requests.get(f'https://www.ebi.ac.uk/pdbe/api/pdb/entry/molecules/{template}').json()[template.lower()]
-        with open(fasta_dir+template+".fa", "w") as f:
+        with open(f"{fasta_dir}/{template}.fa", "w") as f:
             # Print chain (usually A)
             header = [template,req[0]["in_chains"][0]]
             headerstr = "_".join(header)
