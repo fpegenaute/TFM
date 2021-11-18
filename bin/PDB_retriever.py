@@ -14,6 +14,8 @@ def retrieve_pdb_info(pdb_list, pdb_dir, fasta_dir):
     - pdb_list: List of PDB codes
     - pdb_dir: Directory to store the PDB files
     - fasta_dir: Directory to store the Fasta files
+
+    It returns the request
     """
 
     # Initialize object PDBList
@@ -31,7 +33,7 @@ def retrieve_pdb_info(pdb_list, pdb_dir, fasta_dir):
             sequence = req[0]['sequence']
             f.write(">"+headerstr+"\n")
             f.write(sequence)
-    return
+    return req
 
 if __name__ == "__main__":
     
@@ -39,6 +41,6 @@ if __name__ == "__main__":
     pdb_list = ["1pa2","5tnt"]
     pdb_dir = "./templates/PDB/"
     fasta_dir="./templates/FASTA/"
-    retrieve_pdb_info(pdb_list, pdb_dir, fasta_dir)
+    req = retrieve_pdb_info(pdb_list, pdb_dir, fasta_dir)
 
 

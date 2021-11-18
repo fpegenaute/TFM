@@ -75,8 +75,8 @@ Path(fasta_dir).mkdir(parents=True, exist_ok=True)
 
 # Retrieve
 if exact_matches:
-    retrieve_pdb_info(exact_matches.keys(), pdb_dir, fasta_dir)
+    req = retrieve_pdb_info(exact_matches.keys(), pdb_dir, fasta_dir)
 if not exact_matches:
-    l.info("Your full sequence is not on the PDB")
+    l.info("No templates were found in the PDB")
 
 
