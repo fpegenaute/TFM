@@ -262,20 +262,19 @@ def process_predicted_model(
 
   """
 
-  # Make sure we have what we expect:
+  # Make sure we have the model class we expect:
   import mmtbx.model
   assert isinstance(model, mmtbx.model.manager)
 
-  # Decide what to do
+  # store the parameters
   p = params.process_predicted_model
 
   # Determine if input lddt is fractional and get b values
 
   b_value_field = model.get_hierarchy().atoms().extract_b()
-  if p.b_value_field_is == 'lddt':
-    if p.input_lddt_is_fractional is None:
-      sel = (b_value_field < 0) | (b_value_field > 1)
-      p.input_lddt_is_fractional = (sel.count(True) == 0)
+  if p.b_value_field_is == 'lddt' and p.input_lddt_is_fractional is None:
+    sel = (b_value_field < 0) | (b_value_field > 1)
+    p.input_lddt_is_fractional = (sel.count(True) == 0)
 
     b_values = get_b_values_from_lddt(b_value_field,
        input_lddt_is_fractional = p.input_lddt_is_fractional)
@@ -1495,23 +1494,44 @@ def add_model(s1, s2):
 
 
 
+import pickle
 
 
 def parse_pae_file(pae_json_file):
-    import json, numpy
+  import json, numpy
 
-    with open(pae_json_file, 'rt') as f:
-        data = json.load(f)[0]
+  with open(pae_json_file, 'rt') as f:
+      data = json.load(f)[0]
 
-    r1, d = data['residue1'],data['distance']
+  r1, d = data['residue1'],data['distance']
 
-    size = max(r1)
+  size = max(r1)
 
-    matrix = numpy.empty((size,size))
+  matrix = numpy.empty((size,size))
+  matrix.ravel()[:] = d
 
-    matrix.ravel()[:] = d
+  return matrix
 
-    return matrix
+
+def parse_pickle_PAE(pickle_file):
+  """
+  Parse pickled output file from AlphaFold2 output and extract the PAE matrix
+  The PAE matrix is a numpy array
+  """
+  objects = []
+  with (open(pickle_file, "rb")) as openfile:
+      while True:
+          try:
+              objects.append(pickle.load(openfile))
+          except EOFError:
+              break
+  # Extract the distogram
+  pae_matrix = objects[0]["predicted_aligned_error"]
+
+  return pae_matrix
+
+
+
 ################################################################################
 ####################   END Convenience functions          ######################
 ################################################################################
@@ -1525,7 +1545,7 @@ if __name__ == "__main__":
   master_phil.format(python_object=params).show(out=sys.stdout)
   p = params.process_predicted_model
 
-  if len(args) < 2:
+  if len(args) < 3:
     print("libtbx.python process_predicted_model.py input.pdb output.pdb pae_matrix b_factor_field domain size")
   else:
     input_file_name = args[0]
@@ -1562,10 +1582,12 @@ if __name__ == "__main__":
 
     mmm = model_info.model.as_map_model_manager()
     mmm.write_model(output_file_name)
-    for chainid in chainid_list:
-      selection_string = "chain %s" %(chainid)
-      ph = model_info.model.get_hierarchy()
-      asc1 = ph.atom_selection_cache()
-      sel = asc1.selection(selection_string)
-      m1 = model_info.model.select(sel)
-      dm.write_model_file(m1, '%s_%s.pdb' %(output_file_name[:-4],chainid))
+    
+    
+    # for chainid in chainid_list:
+    #   selection_string = "chain %s" %(chainid)
+    #   ph = model_info.model.get_hierarchy()
+    #   asc1 = ph.atom_selection_cache()
+    #   sel = asc1.selection(selection_string)
+    #   m1 = model_info.model.select(sel)
+    #   dm.write_model_file(m1, '%s_%s.pdb' %(output_file_name[:-4],chainid))
