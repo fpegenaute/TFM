@@ -1,5 +1,6 @@
 from __future__ import division, print_function
 import sys
+from Bio.PDB.PDBParser import PDBParser
 
 ################################################################################
 #################### TOOLS FOR PROCESSING A PREDICTED MODEL ####################
@@ -17,6 +18,8 @@ from scitbx.matrix import col
 from libtbx import group_args
 from cctbx.maptbx.segment_and_split_map import get_co
 import iotbx.phil
+from Bio.PDB import MMCIFParser, PDBParser
+
 
 ################################################################################
 ####################   process_predicted_model  ################################
@@ -1530,6 +1533,21 @@ def parse_pickle_PAE(pickle_file):
 
   return pae_matrix
 
+def extract_residue_list(model, mmcif):
+  """
+  given a model object, return a list of resIDs and their chain
+  """
+  if mmcif == True:
+    structure = MMCIFParser().get_structure('1a7f', '1a7f.cif')
+  if mmcif == False:
+    structure = PDBParser().get_structure('1a7f', '1a7f.cif')
+
+
+  model = structure[0]
+  chain = model['A']
+
+  for i in chain.get_residues():
+      print(f"{i.get_full_id()[2]}\t{i.get_full_id()[3][1]}" )
 
 
 ################################################################################

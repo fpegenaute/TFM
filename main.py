@@ -51,7 +51,6 @@ if args.verbose:
 
 # Locate the Database
 blastdb = cfg.blastconfig["blastdb"]
-# blastdb = "/home/gallegolab/Desktop/TFM/databases/BLAST/pdbaa"
 l.info(f"BLAST database is located at: {blastdb}")
 
 # Run BLAST
