@@ -60,7 +60,7 @@ l.info(f"BLAST results stored in : {outblast}")
 
 # Catch exact matches
 exact_matches = exact_match_retriever(outblast)
-l.info(f" The target sequence is already in the PDB with code/s: {exact_matches.keys()}")
+l.info(f" The target sequence has close homologs in the PDB with code/s: {exact_matches.keys()}")
 
 
 # Retrieve exact matches from the PDB
@@ -74,7 +74,14 @@ Path(fasta_dir).mkdir(parents=True, exist_ok=True)
 
 # Retrieve
 if exact_matches:
-    req = retrieve_pdb_info(exact_matches.keys(), pdb_dir, fasta_dir)
+    req = retrieve_pdb_info(exact_matches, pdb_dir, fasta_dir)
+    # Check lengths of the actual PDBs
+
+
+
+
+
+
 if not exact_matches:
     l.info("No templates were found in the PDB")
 

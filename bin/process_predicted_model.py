@@ -1116,6 +1116,7 @@ def merge_very_close_regions(sites_cart, regions_list, close_distance,
       update_regions_list(regions_list)
 
   return regions_list
+
 def merge_closest_regions(sites_cart, regions_list, close_distance,
      log = sys.stdout):
   unique_values = get_unique_values(regions_list)
@@ -1500,7 +1501,7 @@ def add_model(s1, s2):
 import pickle
 
 
-def parse_pae_file(pae_json_file):
+def parse_json_PAE(pae_json_file):
   import json, numpy
 
   with open(pae_json_file, 'rt') as f:
@@ -1531,12 +1532,16 @@ def parse_pickle_PAE(pickle_file):
   # Extract the distogram
   pae_matrix = objects[0]["predicted_aligned_error"]
 
-  return pae_matrix
+  return NotImplementedError
 
-def extract_residue_list(model, mmcif):
+def extract_residue_list(structure, mmcif=True):
   """
-  given a model object, return a list of resIDs and their chain
+  Given a mmCif/PDB file, return a list of resIDs and their chain
+
+  mmcif: True by default, if False, the function will use the PDBParser()
+
   """
+  
   if mmcif == True:
     structure = MMCIFParser().get_structure('1a7f', '1a7f.cif')
   if mmcif == False:
@@ -1548,6 +1553,8 @@ def extract_residue_list(model, mmcif):
 
   for i in chain.get_residues():
       print(f"{i.get_full_id()[2]}\t{i.get_full_id()[3][1]}" )
+
+  return NotImplementedError
 
 
 ################################################################################
@@ -1568,7 +1575,7 @@ if __name__ == "__main__":
   else:
     input_file_name = args[0]
     output_file_name = args[1]
-    pae_matrix = parse_pae_file(args[2])
+    pae_matrix = parse_json_PAE(args[2])
 
     if len(args) > 3:
        p.b_value_field_is = args[3]
@@ -1578,10 +1585,6 @@ if __name__ == "__main__":
        p.domain_size = float(args[4])
     else:
        p.domain_size = 15
-
-
-
-
 
     from iotbx.data_manager import DataManager
     dm = DataManager()
