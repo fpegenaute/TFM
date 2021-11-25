@@ -12,7 +12,7 @@ import  bin.config as cfg
 import logging as l
 from pathlib import Path
 import os
-import sys
+import shutil
 
 
 parser = argparse.ArgumentParser(description="""This program retrieves
@@ -44,10 +44,10 @@ if len(record_dict.keys()) == 1:
     if list(record_dict.keys())[0] != query_name:
         raise NameError(f"""Please, make sure your filename and fasta identifier 
         coincide. filename: {query_name} / ID name: {record_dict.keys()}""")
+    
     query_length = len(record_dict[query_name].seq)
     print(f"{query_length}")
 
-exit()
 
 # For now, it only forks with one squence at a time
 # for key in record_dict.items():
@@ -106,8 +106,17 @@ if exact_matches:
             identifier = file.split(".")[0].upper()
             pdb_len = check_PDB_len(current, exact_matches[identifier])
             l.info(f"Length of the template {identifier}: {pdb_len}")
-            if pdb_len < 10 and pdb_len < (0.1*query_length):
+            # Store partial matches (<90% of the query length)
+            if pdb_len < 10 and pdb_len < (0.9*query_length):
                 print(f"{identifier} has length {pdb_len}, it will be stored as a partial match")
+                try:
+                    shutil.move(file, f"./partial/{file}")
+                except Exception:
+                    l.info(f"./partial/{file} does not exist, it will be created")
+                    os.mkdir("./partial/")
+                    shutil.move(file, f"./partial/{file}")
+
+
 else:
     l.info("No templates were found in the PDB")
 
