@@ -4,6 +4,8 @@ import os
 from Bio.Blast import NCBIXML
 from pathlib import Path
 
+from Bio.PDB.Dice import extract
+
 def run_blast_local(fasta, blastdb, db="pdbaa"):
     """
     Run BLAST Locally
@@ -24,7 +26,7 @@ def run_blast_local(fasta, blastdb, db="pdbaa"):
     
     # Call BLAST
     blastp_cline = NcbiblastpCommandline(query=fasta, 
-    db=db, matrix="BLOSUM80",outfmt=5, out=query+"_blast.out")
+    db=db, matrix="BLOSUM80",outfmt=5, out=query+"_blast.out", evalue=0.00000005)
     stdout, stderr = blastp_cline()
 
     outblast = query+"_blast.out"
@@ -50,10 +52,10 @@ def exact_match_retriever(filename):
     i = 0
     for alignment in blast_record.alignments:
         for hsp in alignment.hsps:
-            if float(hsp.expect) < E_VALUE_THRESH and i < 4:
+            if i < 4:
                 if alignment.length == len(hsp.query):
                     ID = alignment.title[4:8]
-                    Chain = alignment.title[10]
+                    Chain = alignment.title[9]
                     i+=1
 
                     matches.update({ID : Chain})
@@ -64,8 +66,10 @@ if __name__ == "__main__":
     # Set vars for BLAST
     blastdb = "/home/gallegolab/Desktop/TFM/databases/BLAST/pdbaa"
     
-    fasta= "test.fa"
+    fasta= "input_fasta/test.fa"
   
     # Run BLAST
     outblast =run_blast_local(fasta, blastdb)
     print(outblast)
+    matches = exact_match_retriever(outblast)
+    print(matches)

@@ -3,7 +3,7 @@ from Bio import PDB
 from Bio.PDB import *
 from iotbx import pdb
 import requests
-
+import os
   
 def retrieve_pdb_info(hit_dict, pdb_dir, fasta_dir):
     """
@@ -22,13 +22,13 @@ def retrieve_pdb_info(hit_dict, pdb_dir, fasta_dir):
     # Initialize object PDBList
     pdbl = PDBList() 
     pdb_list = hit_dict.keys()
-    
+
     input(f"PDB List = {len(pdb_list)} Press Enter to continue...")
     for template in pdb_list:
         # Dowload the PDB file from the web
         pdbl.retrieve_pdb_file(template, pdir=pdb_dir)     
         req = requests.get(f'https://www.ebi.ac.uk/pdbe/api/pdb/entry/molecules/{template}').json()[template.lower()]
-        fasta_template_name = f"{fasta_dir}/{template}_full.fa"
+        fasta_template_name = f"{fasta_dir}/{template}.fa"
         with open(fasta_template_name, "w") as f:
             # Print chain (atm A)
             header = [template,req[0]["in_chains"][0]]
@@ -37,7 +37,7 @@ def retrieve_pdb_info(hit_dict, pdb_dir, fasta_dir):
             f.write(">"+headerstr+"\n")
             f.write(sequence)
 
-    return req
+    return
 
 def check_PDB_len(pdbfile, chain):
     """
@@ -46,13 +46,13 @@ def check_PDB_len(pdbfile, chain):
 
     # get ID and extension
     extension = pdbfile.split(".")[-1]
-    identifier = pdbfile.split(".")[0]
-    print(f"ID: {identifier}. Extension: {extension}, ")
+    identifier = os.path.basename(pdbfile).split('.')[0].upper()
+    print(f"ID: {identifier} . Extension: {extension}, ")
 
     if extension == "pdb":
-        parser = PDB.PDBParser()
+        parser = PDB.PDBParser(QUIET=True)
     elif extension == "cif":
-        parser = PDB.MMCIFParser()
+        parser = PDB.MMCIFParser(QUIET=True)
     else:
         raise NameError("Your file has to have \"pdb\" or \"cif\" as an extension")
 
