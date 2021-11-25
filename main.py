@@ -116,6 +116,11 @@ if exact_matches:
                     os.mkdir("./partial/")
                     shutil.move(file, f"./partial/{file}")
 
+# Submit a sob in Slurb with the AlphaFold run
+
+
+
+# Extract confident regions
 
 else:
     l.info("No templates were found in the PDB")
