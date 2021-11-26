@@ -1,6 +1,6 @@
 import subprocess
 
-multimer_preset= """#!/bin/bash\n
+multimer_preset_str= """#!/bin/bash\n
     #SBATCH -N 1
     #SBATCH -n 2
     #SBATCH -p normal
@@ -28,7 +28,7 @@ multimer_preset= """#!/bin/bash\n
 
 """
 
-monomer_preset= """#!/bin/bash\n
+monomer_preset_str= """#!/bin/bash\n
 #SBATCH -N 1
 #SBATCH -n 2
 #SBATCH -p normal
@@ -80,19 +80,22 @@ bash $alphafold_path/run_alphafold.sh -d $ALPHAFOLD_DATA_DIR -o $outdir -m multi
 conda deactivate
 """
 
-def write_batch_script(slurm_dir, model_preset, submit=True):
-    """
-    Given a preset name for AlphaFold2, generate a batch script, and submit it
-    if submit=True (default)
-    """
+af_presets = {
+    "monomer":monomer_preset_str,
+    "multimer": multimer_preset_str,
+}
 
+def write_batch_script(slurm_dir, model_preset_str):
+    """
+    Given a preset name for AlphaFold2, generate a batch script
 
+    -usage write_batch_script(slurm_dir, af_presets["preset"])
+    """
 
     with open(f"{slurm_dir}/testslurm.txt", "w") as slurmfile:
-        slurmfile.write(model_preset)
-
-    if submit == True:
-        subprocess.call("sbatch", slurmfile)
+        slurmfile.write(model_preset_str)
+    
+    return
 
 
 

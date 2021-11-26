@@ -14,11 +14,12 @@ from pathlib import Path
 import os
 import shutil
 from bin.extract_flexible_residues import extract_residue_list
+from bin.slurm_utilities import write_batch_script
 
 
 parser = argparse.ArgumentParser(description="""This program retrieves
                         Structural information from a sequence in a fasta file
-                        """, usage="main.py input_fasta outdir [options]")
+                        """, usage="main.py input_fasta outdir AF_preset [options]")
 
 parser.add_argument("FASTA", 
                     help="Input sequence in FASTA format")
@@ -26,9 +27,21 @@ parser.add_argument("FASTA",
 parser.add_argument("outdir", 
                     help="Output directory to store the retrieved PDBs", 
                     default=".")
+parser.add_argument("model_preset", 
+                    help="model preset for AlphaFold2", 
+                    default="monomer")
 parser.add_argument("-v", "--verbose", 
                     help="Increase output verbosity", 
                     action="store_true")
+parser.add_argument("-c", "--custom", 
+                    help="Use custom slurm batch script for AlphaFold2")
+parser.add_argument("-n", "--noslurm",
+                    help="""run AlphaFold2 locally, without using SLURM.
+                    Only recommended if this python script is submitted on a 
+                    batch script on its own""", 
+                    default=False, 
+                    action="store_true")
+
 
 
 
@@ -123,6 +136,12 @@ if exact_matches:
 af_dir = f"{args.outdir}/ALPHAFOLD/{query_name}"
 Path(af_dir).mkdir(parents=True, exist_ok=True)
 
+if args.custom:
+    slurm_script = args.custom
+else:
+    slurm_dir = f"{af_dir}"
+    Path(slurm_dir).mkdir(parents=True, exist_ok=True)
+    write_batch_script(slurm_dir, model_preset)
 
 
 
