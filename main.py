@@ -13,6 +13,7 @@ import logging as l
 from pathlib import Path
 import os
 import shutil
+from bin.extract_flexible_residues import extract_residue_list
 
 
 parser = argparse.ArgumentParser(description="""This program retrieves
@@ -116,13 +117,19 @@ if exact_matches:
                     os.mkdir("./partial/")
                     shutil.move(file, f"./partial/{file}")
 
-# Submit a sob in Slurb with the AlphaFold run
+# Submit a sob in Slurm with the AlphaFold run
+
+# Make folder for the AF2 output
+af_dir = f"{args.outdir}/ALPHAFOLD/{query_name}"
+Path(af_dir).mkdir(parents=True, exist_ok=True)
+
+
 
 
 
 # Extract confident regions
 
-else:
-    l.info("No templates were found in the PDB")
+
+
 
 

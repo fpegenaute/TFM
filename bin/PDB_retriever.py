@@ -4,6 +4,8 @@ from Bio.PDB import *
 from iotbx import pdb
 import requests
 import os
+import logging as l
+from utilities import get_filename_ext
   
 def retrieve_pdb_info(hit_dict, pdb_dir, fasta_dir):
     """
@@ -39,15 +41,19 @@ def retrieve_pdb_info(hit_dict, pdb_dir, fasta_dir):
 
     return
 
+
+
+
 def check_PDB_len(pdbfile, chain):
     """
     Given a PDB/mmCIF file, check the length of the desired chain
     """
 
     # get ID and extension
-    extension = pdbfile.split(".")[-1]
-    identifier = os.path.basename(pdbfile).split('.')[0].upper()
-    print(f"ID: {identifier} . Extension: {extension}, ")
+
+    identifier, extension= get_filename_ext(pdbfile)
+    identifier = identifier.upper()
+    l.info(f"ID: {identifier} . Extension: {extension}, ")
 
     if extension == "pdb":
         parser = PDB.PDBParser(QUIET=True)
