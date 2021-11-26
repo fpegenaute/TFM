@@ -117,7 +117,7 @@ if exact_matches:
                     os.mkdir("./partial/")
                     shutil.move(file, f"./partial/{file}")
 
-# Submit a sob in Slurm with the AlphaFold run
+### Submit a sob in Slurm with the AlphaFold run
 
 # Make folder for the AF2 output
 af_dir = f"{args.outdir}/ALPHAFOLD/{query_name}"
@@ -127,9 +127,11 @@ Path(af_dir).mkdir(parents=True, exist_ok=True)
 
 
 
+
 # Extract confident regions
 
-
+domains_dir = f"{af_dir}/DOMAINS/"
+Path(domains_dir).mkdir(parents=True, exist_ok=True)
 
 
 
