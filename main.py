@@ -75,7 +75,7 @@ if len(record_dict.keys()) == 1:
         coincide. filename: {query_name} / ID name: {record_dict.keys()}""")
     
     query_length = len(record_dict[query_name].seq)
-    print(f"{query_length}")
+    l.info(f"Query length: {query_length}")
 
 
 # For now, it only forks with one squence at a time
@@ -107,7 +107,8 @@ l.info(f"BLAST results stored in : {outblast}")
 
 # Catch exact matches
 exact_matches = exact_match_retriever(outblast)
-l.info(f" The target sequence has close homologs in the PDB with code/s: {exact_matches.keys()}")
+l.info(f""" The target sequence has close homologs in the PDB with 
+    code/s: {exact_matches.keys()}""")
 
 
 # Retrieve exact matches from the PDB
@@ -121,18 +122,43 @@ if exact_matches:
         current = os.path.join(pdb_dir, file)
         if os.path.isfile(current):
             identifier = file.split(".")[0].upper()
-            pdb_len = check_PDB_len(current, exact_matches[identifier])
-            l.info(f"Length of the template {identifier}: {pdb_len}")
-            # Store partial matches (<90% of the query length)
-            if pdb_len < 10 and pdb_len < (0.9*query_length):
-                l.info(f"{identifier} has length {pdb_len}, it will be stored as a partial match")
+            # Check which chain of the hit should it choose
+            
+            # Make the directory for the chains
+            chain_dir = os.path.join(pdb_dir, "CHAINS", "" )
+            Path(chain_dir).mkdir(parents=True, exist_ok=True)
+            # Extract the desired chain
+            splitter = ChainSplitter(mmcif=True, out_dir=os.path.join(pdb_dir, "CHAINS"))
+            splitter.make_pdb(os.path.join(pdb_dir, file), exact_matches[identifier[:4]] )
+
+
+            pdb_len = check_PDB_len(current, exact_matches[identifier[:4]])
+            l.info(f"Length of the template {identifier[:4]}: {pdb_len}")
+            # Store partial matches (<95% of the query length)
+            l.info(f"PDB_LEN: {pdb_len} . QUERY_LEN: {0.95*query_length}")
+            if pdb_len > 10 and pdb_len < (query_length):
+                l.info(f"""{identifier[:4]} has length {pdb_len}, it will be stored 
+                    as a partial match""")
                 try:
-                    shutil.move(file, os.path.join(pdb_dir,"partial", file))
+                    shutil.move(os.path.join(pdb_dir, file), os.path.join(pdb_dir,"partial", file))
                 except Exception:
                     directory = os.path.join(pdb_dir,"partial",file)
-                    l.info(f"{directory}does not exist, it will be created")
-                    os.mkdir("./partial/")
-                    shutil.move(file, f"./partial/{file}")
+                    l.info(f"\"{directory}\" does not exist, it will be created")
+                    os.mkdir(os.path.join(pdb_dir,"partial"))
+                    shutil.move(os.path.join(pdb_dir, file), os.path.join(pdb_dir,"partial", file))
+            if pdb_len < 10 and pdb_len > (0.95*query_length):
+                l.info(f"""{identifier[:4]} has length {pdb_len}, it will be stored 
+                    as a full-length match""")
+                try:
+                    shutil.move(os.path.join(pdb_dir, file), os.path.join(pdb_dir,"total", file))
+                except Exception:
+                    directory = os.path.join(pdb_dir,"total",file)
+                    l.info(f"\"{directory}\" does not exist, it will be created")
+                    os.mkdir(os.path.join(pdb_dir,"partial"))
+                    shutil.move(os.path.join(pdb_dir, file), os.path.join(pdb_dir,"total", file))
+
+
+
 
 ### Submit a sob in Slurm with the AlphaFold run
 
@@ -163,7 +189,8 @@ l.info(f"Domains will be stored in:{domains_dir}")
 for filename in os.listdir(af_dir):
     if os.path.isfile(join(af_dir, filename)):
         l.info(f"Processing file: {filename}")
-        conf_domains = extract_residue_list(os.path.join(af_dir, filename), domains_dir)
+        conf_domains = extract_residue_list(os.path.join(af_dir, filename), 
+        domains_dir)
         l.info(f"Residue list of confident domains: {conf_domains}")
 
 

@@ -48,13 +48,12 @@ def exact_match_retriever(filename):
 
     # Get exact matches Eval+length
     matches = {}
-    E_VALUE_THRESH = 0.00000005
     i = 0
     for alignment in blast_record.alignments:
         for hsp in alignment.hsps:
             if i < 4:
                 if alignment.length == len(hsp.query):
-                    ID = alignment.title[4:8]
+                    ID = alignment.title[4:8].upper()
                     Chain = alignment.title[9]
                     i+=1
 

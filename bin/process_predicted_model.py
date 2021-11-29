@@ -1567,7 +1567,7 @@ def extract_residue_list(structure_file, outdir="."):
 
   with open(os.path.join(outdir, f"{identifier}_confident.pdb"), "w") as f:
     for i in chains[0].get_residues():
-        f.write(f"{i.get_full_id()[2]}\t{i.get_full_id()[3][1]}" )
+        f.write(f"{i.get_full_id()[2]}\t{i.get_full_id()[3][1]}\n" )
         residue_list.append(tuple([i.get_full_id()[2], i.get_full_id()[3][1]]))
 
   return residue_list
