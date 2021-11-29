@@ -3,7 +3,7 @@ import sys
 from Bio.PDB.PDBParser import PDBParser
 from bin.utilities import get_filename_ext
 import logging as l
-
+import os
 
 ################################################################################
 #################### TOOLS FOR PROCESSING A PREDICTED MODEL ####################
@@ -1540,7 +1540,7 @@ def parse_pickle_PAE(pickle_file):
 def extract_residue_list(structure_file, outdir="."):
   """
   Given a mmCif/PDB file, return a tuples list of resIDs and their chain, 
-  separated by a "\\t" symbol and generate a text file containing the same info
+  and generate a text file containing the same info
 
   """
 
@@ -1565,10 +1565,10 @@ def extract_residue_list(structure_file, outdir="."):
   chains = list(models[0].get_chains())
   residue_list = []
 
-  with open(f"{outdir}/{identifier}_condident.pdb") as f:
+  with open(os.path.join(outdir, f"{identifier}_confident.pdb"), "w") as f:
     for i in chains[0].get_residues():
         f.write(f"{i.get_full_id()[2]}\t{i.get_full_id()[3][1]}" )
-        list.append((i.get_full_id()[2], "\t", i.get_full_id()[3][1]))
+        residue_list.append(tuple([i.get_full_id()[2], i.get_full_id()[3][1]]))
 
   return residue_list
 

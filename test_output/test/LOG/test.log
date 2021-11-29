@@ -5,6 +5,13 @@ INFO:The BLAST output will be stored in:test_output/test/BLAST/
 INFO:Starting BLAST. Query: input_fasta/test.fa, Database: pdbaa
 INFO:BLAST results stored in : test_output/test/BLAST/test_blast.out
 INFO: The target sequence has close homologs in the PDB with code/s: dict_keys(['1PA2', '1FHF', '5AOG'])
+DEBUG:...STARTING...
+
+INFO:BLAST database is located at: /home/gallegolab/Desktop/TFM/databases/BLAST/pdbaa
+INFO:The BLAST output will be stored in:test_output/test/BLAST/
+INFO:Starting BLAST. Query: input_fasta/test.fa, Database: pdbaa
+INFO:BLAST results stored in : test_output/test/BLAST/test_blast.out
+INFO: The target sequence has close homologs in the PDB with code/s: dict_keys(['1PA2', '1FHF', '5AOG'])
 DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
 DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/1PA2 HTTP/1.1" 200 872
 DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
@@ -20,3 +27,477 @@ INFO:Length of the template 1PA2: 306
 INFO:File: 1fhf.cif
 INFO:ID: 1FHF . Extension: cif, 
 INFO:Length of the template 1FHF: 304
+INFO:Creating folder for AF2 output in:test_output/test/ALPHAFOLD/
+INFO:Extracting high confidence domains
+INFO:Domains will be stored at:test_output/test/ALPHAFOLD/DOMAINS/
+INFO:Processing file: DOMAINS
+DEBUG:...STARTING...
+
+INFO:BLAST database is located at: /home/gallegolab/Desktop/TFM/databases/BLAST/pdbaa
+INFO:The BLAST output will be stored in:test_output/test/BLAST/
+INFO:Starting BLAST. Query: input_fasta/test.fa, Database: pdbaa
+INFO:BLAST results stored in : test_output/test/BLAST/test_blast.out
+INFO: The target sequence has close homologs in the PDB with code/s: dict_keys(['1PA2', '1FHF', '5AOG'])
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/1PA2 HTTP/1.1" 200 872
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/1FHF HTTP/1.1" 200 929
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/5AOG HTTP/1.1" 200 1101
+INFO:File: 5aog.cif
+INFO:ID: 5AOG . Extension: cif, 
+INFO:Length of the template 5AOG: 307
+INFO:File: 1pa2.cif
+INFO:ID: 1PA2 . Extension: cif, 
+INFO:Length of the template 1PA2: 306
+INFO:File: 1fhf.cif
+INFO:ID: 1FHF . Extension: cif, 
+INFO:Length of the template 1FHF: 304
+INFO:Creating folder for AF2 output in:test_output/test/ALPHAFOLD/
+INFO:Extracting high confidence domains
+INFO:Domains will be stored at:test_output/test/ALPHAFOLD/DOMAINS/
+INFO:Processing file: DOMAINS
+DEBUG:...STARTING...
+
+INFO:BLAST database is located at: /home/gallegolab/Desktop/TFM/databases/BLAST/pdbaa
+INFO:The BLAST output will be stored in:test_output/test/BLAST/
+INFO:Starting BLAST. Query: input_fasta/test.fa, Database: pdbaa
+INFO:BLAST results stored in : test_output/test/BLAST/test_blast.out
+INFO: The target sequence has close homologs in the PDB with code/s: dict_keys(['1PA2', '1FHF', '5AOG'])
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/1PA2 HTTP/1.1" 200 872
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/1FHF HTTP/1.1" 200 929
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/5AOG HTTP/1.1" 200 1101
+INFO:File: 5aog.cif
+INFO:ID: 5AOG . Extension: cif, 
+INFO:Length of the template 5AOG: 307
+INFO:File: 1pa2.cif
+INFO:ID: 1PA2 . Extension: cif, 
+INFO:Length of the template 1PA2: 306
+INFO:File: 1fhf.cif
+INFO:ID: 1FHF . Extension: cif, 
+INFO:Length of the template 1FHF: 304
+INFO:Creating folder for AF2 output in:test_output/test/ALPHAFOLD/
+INFO:Extracting high confidence domains
+INFO:Domains will be stored at:test_output/test/ALPHAFOLD/DOMAINS/
+DEBUG:...STARTING...
+
+INFO:BLAST database is located at: /home/gallegolab/Desktop/TFM/databases/BLAST/pdbaa
+INFO:The BLAST output will be stored in:test_output/test/BLAST/
+INFO:Starting BLAST. Query: input_fasta/test.fa, Database: pdbaa
+INFO:BLAST results stored in : test_output/test/BLAST/test_blast.out
+INFO: The target sequence has close homologs in the PDB with code/s: dict_keys(['1PA2', '1FHF', '5AOG'])
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/1PA2 HTTP/1.1" 200 872
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/1FHF HTTP/1.1" 200 929
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/5AOG HTTP/1.1" 200 1101
+INFO:File: 5aog.cif
+INFO:ID: 5AOG . Extension: cif, 
+INFO:Length of the template 5AOG: 307
+INFO:File: 1pa2.cif
+INFO:ID: 1PA2 . Extension: cif, 
+INFO:Length of the template 1PA2: 306
+INFO:File: 1fhf.cif
+INFO:ID: 1FHF . Extension: cif, 
+INFO:Length of the template 1FHF: 304
+INFO:Creating folder for AF2 output in:test_output/test/ALPHAFOLD/
+INFO:Extracting high confidence domains
+INFO:Domains will be stored at:test_output/test/ALPHAFOLD/DOMAINS/
+DEBUG:...STARTING...
+
+INFO:BLAST database is located at: /home/gallegolab/Desktop/TFM/databases/BLAST/pdbaa
+INFO:The BLAST output will be stored in:test_output/test/BLAST/
+INFO:Starting BLAST. Query: input_fasta/test.fa, Database: pdbaa
+INFO:BLAST results stored in : test_output/test/BLAST/test_blast.out
+INFO: The target sequence has close homologs in the PDB with code/s: dict_keys(['1PA2', '1FHF', '5AOG'])
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/1PA2 HTTP/1.1" 200 872
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/1FHF HTTP/1.1" 200 929
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/5AOG HTTP/1.1" 200 1101
+INFO:File: 5aog.cif
+INFO:ID: 5AOG . Extension: cif, 
+INFO:Length of the template 5AOG: 307
+INFO:File: 1pa2.cif
+INFO:ID: 1PA2 . Extension: cif, 
+INFO:Length of the template 1PA2: 306
+INFO:File: 1fhf.cif
+INFO:ID: 1FHF . Extension: cif, 
+INFO:Length of the template 1FHF: 304
+INFO:Creating folder for AF2 output in:test_output/test/ALPHAFOLD/
+INFO:Extracting high confidence domains
+INFO:Domains will be stored at:test_output/test/ALPHAFOLD/DOMAINS/
+DEBUG:...STARTING...
+
+INFO:BLAST database is located at: /home/gallegolab/Desktop/TFM/databases/BLAST/pdbaa
+INFO:The BLAST output will be stored in:test_output/test/BLAST/
+INFO:Starting BLAST. Query: input_fasta/test.fa, Database: pdbaa
+INFO:BLAST results stored in : test_output/test/BLAST/test_blast.out
+INFO: The target sequence has close homologs in the PDB with code/s: dict_keys(['1PA2', '1FHF', '5AOG'])
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/1PA2 HTTP/1.1" 200 872
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/1FHF HTTP/1.1" 200 929
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/5AOG HTTP/1.1" 200 1101
+INFO:File: 5aog.cif
+INFO:ID: 5AOG . Extension: cif, 
+INFO:Length of the template 5AOG: 307
+INFO:File: 1pa2.cif
+INFO:ID: 1PA2 . Extension: cif, 
+INFO:Length of the template 1PA2: 306
+INFO:File: 1fhf.cif
+INFO:ID: 1FHF . Extension: cif, 
+INFO:Length of the template 1FHF: 304
+INFO:Creating folder for AF2 output in:test_output/test/ALPHAFOLD/
+INFO:Extracting high confidence domains
+INFO:Domains will be stored at:test_output/test/ALPHAFOLD/DOMAINS/
+DEBUG:...STARTING...
+
+INFO:BLAST database is located at: /home/gallegolab/Desktop/TFM/databases/BLAST/pdbaa
+INFO:The BLAST output will be stored in:test_output/test/BLAST/
+INFO:Starting BLAST. Query: input_fasta/test.fa, Database: pdbaa
+INFO:BLAST results stored in : test_output/test/BLAST/test_blast.out
+INFO: The target sequence has close homologs in the PDB with code/s: dict_keys(['1PA2', '1FHF', '5AOG'])
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/1PA2 HTTP/1.1" 200 872
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/1FHF HTTP/1.1" 200 929
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/5AOG HTTP/1.1" 200 1101
+INFO:File: 5aog.cif
+INFO:ID: 5AOG . Extension: cif, 
+INFO:Length of the template 5AOG: 307
+INFO:File: 1pa2.cif
+INFO:ID: 1PA2 . Extension: cif, 
+INFO:Length of the template 1PA2: 306
+INFO:File: 1fhf.cif
+INFO:ID: 1FHF . Extension: cif, 
+INFO:Length of the template 1FHF: 304
+INFO:Creating folder for AF2 output in:test_output/test/ALPHAFOLD/
+INFO:Extracting high confidence domains
+INFO:Domains will be stored at:test_output/test/ALPHAFOLD/DOMAINS/
+DEBUG:...STARTING...
+
+INFO:BLAST database is located at: /home/gallegolab/Desktop/TFM/databases/BLAST/pdbaa
+INFO:The BLAST output will be stored in:test_output/test/BLAST/
+INFO:Starting BLAST. Query: input_fasta/test.fa, Database: pdbaa
+INFO:BLAST results stored in : test_output/test/BLAST/test_blast.out
+INFO: The target sequence has close homologs in the PDB with code/s: dict_keys(['1PA2', '1FHF', '5AOG'])
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/1PA2 HTTP/1.1" 200 872
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/1FHF HTTP/1.1" 200 929
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/5AOG HTTP/1.1" 200 1101
+INFO:File: 5aog.cif
+INFO:ID: 5AOG . Extension: cif, 
+INFO:Length of the template 5AOG: 307
+INFO:File: 1pa2.cif
+INFO:ID: 1PA2 . Extension: cif, 
+INFO:Length of the template 1PA2: 306
+INFO:File: 1fhf.cif
+INFO:ID: 1FHF . Extension: cif, 
+INFO:Length of the template 1FHF: 304
+INFO:Creating folder for AF2 output in:test_output/test/ALPHAFOLD/
+INFO:Extracting high confidence domains
+INFO:Domains will be stored at:test_output/test/ALPHAFOLD/DOMAINS/
+DEBUG:...STARTING...
+
+INFO:BLAST database is located at: /home/gallegolab/Desktop/TFM/databases/BLAST/pdbaa
+INFO:The BLAST output will be stored in:test_output/test/BLAST/
+INFO:Starting BLAST. Query: input_fasta/test.fa, Database: pdbaa
+INFO:BLAST results stored in : test_output/test/BLAST/test_blast.out
+INFO: The target sequence has close homologs in the PDB with code/s: dict_keys(['1PA2', '1FHF', '5AOG'])
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/1PA2 HTTP/1.1" 200 872
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/1FHF HTTP/1.1" 200 929
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/5AOG HTTP/1.1" 200 1101
+INFO:File: 5aog.cif
+INFO:ID: 5AOG . Extension: cif, 
+INFO:Length of the template 5AOG: 307
+INFO:File: 1pa2.cif
+INFO:ID: 1PA2 . Extension: cif, 
+INFO:Length of the template 1PA2: 306
+INFO:File: 1fhf.cif
+INFO:ID: 1FHF . Extension: cif, 
+INFO:Length of the template 1FHF: 304
+INFO:Creating folder for AF2 output in:test_output/test/ALPHAFOLD/
+INFO:Extracting high confidence domains
+INFO:Domains will be stored at:test_output/test/ALPHAFOLD/DOMAINS/
+DEBUG:...STARTING...
+
+INFO:BLAST database is located at: /home/gallegolab/Desktop/TFM/databases/BLAST/pdbaa
+INFO:The BLAST output will be stored in:test_output/test/BLAST/
+INFO:Starting BLAST. Query: input_fasta/test.fa, Database: pdbaa
+INFO:BLAST results stored in : test_output/test/BLAST/test_blast.out
+INFO: The target sequence has close homologs in the PDB with code/s: dict_keys(['1PA2', '1FHF', '5AOG'])
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/1PA2 HTTP/1.1" 200 872
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/1FHF HTTP/1.1" 200 929
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/5AOG HTTP/1.1" 200 1101
+INFO:File: 5aog.cif
+INFO:ID: 5AOG . Extension: cif, 
+INFO:Length of the template 5AOG: 307
+INFO:File: 1pa2.cif
+INFO:ID: 1PA2 . Extension: cif, 
+INFO:Length of the template 1PA2: 306
+INFO:File: 1fhf.cif
+INFO:ID: 1FHF . Extension: cif, 
+INFO:Length of the template 1FHF: 304
+INFO:Creating folder for AF2 output in:test_output/test/ALPHAFOLD/
+INFO:Extracting high confidence domains
+INFO:Domains will be stored at:test_output/test/ALPHAFOLD/DOMAINS/
+DEBUG:...STARTING...
+
+INFO:BLAST database is located at: /home/gallegolab/Desktop/TFM/databases/BLAST/pdbaa
+INFO:The BLAST output will be stored in:test_output/test/BLAST/
+INFO:Starting BLAST. Query: input_fasta/test.fa, Database: pdbaa
+INFO:BLAST results stored in : test_output/test/BLAST/test_blast.out
+INFO: The target sequence has close homologs in the PDB with code/s: dict_keys(['1PA2', '1FHF', '5AOG'])
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/1PA2 HTTP/1.1" 200 872
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/1FHF HTTP/1.1" 200 929
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/5AOG HTTP/1.1" 200 1101
+INFO:File: 5aog.cif
+INFO:ID: 5AOG . Extension: cif, 
+INFO:Length of the template 5AOG: 307
+INFO:File: 1pa2.cif
+INFO:ID: 1PA2 . Extension: cif, 
+INFO:Length of the template 1PA2: 306
+INFO:File: 1fhf.cif
+INFO:ID: 1FHF . Extension: cif, 
+INFO:Length of the template 1FHF: 304
+INFO:Creating folder for AF2 output in:test_output/test/ALPHAFOLD/
+INFO:Extracting high confidence domains
+INFO:Domains will be stored at:test_output/test/ALPHAFOLD/DOMAINS/
+INFO:Processing file: ranked_0.pdb
+DEBUG:...STARTING...
+
+INFO:BLAST database is located at: /home/gallegolab/Desktop/TFM/databases/BLAST/pdbaa
+INFO:The BLAST output will be stored in:test_output/test/BLAST/
+INFO:Starting BLAST. Query: input_fasta/test.fa, Database: pdbaa
+INFO:BLAST results stored in : test_output/test/BLAST/test_blast.out
+INFO: The target sequence has close homologs in the PDB with code/s: dict_keys(['1PA2', '1FHF', '5AOG'])
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/1PA2 HTTP/1.1" 200 872
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/1FHF HTTP/1.1" 200 929
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/5AOG HTTP/1.1" 200 1101
+INFO:File: 5aog.cif
+INFO:ID: 5AOG . Extension: cif, 
+INFO:Length of the template 5AOG: 307
+INFO:File: 1pa2.cif
+INFO:ID: 1PA2 . Extension: cif, 
+INFO:Length of the template 1PA2: 306
+INFO:File: 1fhf.cif
+INFO:ID: 1FHF . Extension: cif, 
+INFO:Length of the template 1FHF: 304
+INFO:Creating folder for AF2 output in:test_output/test/ALPHAFOLD/
+INFO:Extracting high confidence domains
+INFO:Domains will be stored in:test_output/test/ALPHAFOLD/DOMAINS/
+INFO:Processing file: ranked_0.pdb
+INFO:Extracting residues from a PDB file: test_output/test/ALPHAFOLD/ranked_0.pdb
+DEBUG:...STARTING...
+
+INFO:BLAST database is located at: /home/gallegolab/Desktop/TFM/databases/BLAST/pdbaa
+INFO:The BLAST output will be stored in:test_output/test/BLAST/
+INFO:Starting BLAST. Query: input_fasta/test.fa, Database: pdbaa
+INFO:BLAST results stored in : test_output/test/BLAST/test_blast.out
+INFO: The target sequence has close homologs in the PDB with code/s: dict_keys(['1PA2', '1FHF', '5AOG'])
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/1PA2 HTTP/1.1" 200 872
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/1FHF HTTP/1.1" 200 929
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/5AOG HTTP/1.1" 200 1101
+INFO:File: 5aog.cif
+INFO:ID: 5AOG . Extension: cif, 
+INFO:Length of the template 5AOG: 307
+INFO:File: 1pa2.cif
+INFO:ID: 1PA2 . Extension: cif, 
+INFO:Length of the template 1PA2: 306
+INFO:File: 1fhf.cif
+INFO:ID: 1FHF . Extension: cif, 
+INFO:Length of the template 1FHF: 304
+INFO:Creating folder for AF2 output in:test_output/test/ALPHAFOLD/
+INFO:Extracting high confidence domains
+INFO:Domains will be stored in:test_output/test/ALPHAFOLD/DOMAINS/
+INFO:Processing file: ranked_0.pdb
+INFO:Extracting residues from a PDB file: test_output/test/ALPHAFOLD/ranked_0.pdb
+DEBUG:...STARTING...
+
+INFO:BLAST database is located at: /home/gallegolab/Desktop/TFM/databases/BLAST/pdbaa
+INFO:The BLAST output will be stored in:test_output/test/BLAST/
+INFO:Starting BLAST. Query: input_fasta/test.fa, Database: pdbaa
+INFO:BLAST results stored in : test_output/test/BLAST/test_blast.out
+INFO: The target sequence has close homologs in the PDB with code/s: dict_keys(['1PA2', '1FHF', '5AOG'])
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/1PA2 HTTP/1.1" 200 872
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/1FHF HTTP/1.1" 200 929
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/5AOG HTTP/1.1" 200 1101
+INFO:File: 5aog.cif
+INFO:ID: 5AOG . Extension: cif, 
+INFO:Length of the template 5AOG: 307
+INFO:File: 1pa2.cif
+INFO:ID: 1PA2 . Extension: cif, 
+INFO:Length of the template 1PA2: 306
+INFO:File: 1fhf.cif
+INFO:ID: 1FHF . Extension: cif, 
+INFO:Length of the template 1FHF: 304
+INFO:Creating folder for AF2 output in:test_output/test/ALPHAFOLD/
+INFO:Extracting high confidence domains
+INFO:Domains will be stored in:test_output/test/ALPHAFOLD/DOMAINS/
+INFO:Processing file: ranked_0.pdb
+INFO:Extracting residues from a PDB file: test_output/test/ALPHAFOLD/ranked_0.pdb
+DEBUG:...STARTING...
+
+INFO:BLAST database is located at: /home/gallegolab/Desktop/TFM/databases/BLAST/pdbaa
+INFO:The BLAST output will be stored in:test_output/test/BLAST/
+INFO:Starting BLAST. Query: input_fasta/test.fa, Database: pdbaa
+INFO:BLAST results stored in : test_output/test/BLAST/test_blast.out
+INFO: The target sequence has close homologs in the PDB with code/s: dict_keys(['1PA2', '1FHF', '5AOG'])
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/1PA2 HTTP/1.1" 200 872
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/1FHF HTTP/1.1" 200 929
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/5AOG HTTP/1.1" 200 1101
+INFO:File: 5aog.cif
+INFO:ID: 5AOG . Extension: cif, 
+INFO:Length of the template 5AOG: 307
+INFO:File: 1pa2.cif
+INFO:ID: 1PA2 . Extension: cif, 
+INFO:Length of the template 1PA2: 306
+INFO:File: 1fhf.cif
+INFO:ID: 1FHF . Extension: cif, 
+INFO:Length of the template 1FHF: 304
+INFO:Creating folder for AF2 output in:test_output/test/ALPHAFOLD/
+INFO:Extracting high confidence domains
+INFO:Domains will be stored in:test_output/test/ALPHAFOLD/DOMAINS/
+INFO:Processing file: ranked_0.pdb
+INFO:Extracting residues from a PDB file: test_output/test/ALPHAFOLD/ranked_0.pdb
+DEBUG:...STARTING...
+
+INFO:BLAST database is located at: /home/gallegolab/Desktop/TFM/databases/BLAST/pdbaa
+INFO:The BLAST output will be stored in:test_output/test/BLAST/
+INFO:Starting BLAST. Query: input_fasta/test.fa, Database: pdbaa
+INFO:BLAST results stored in : test_output/test/BLAST/test_blast.out
+INFO: The target sequence has close homologs in the PDB with code/s: dict_keys(['1PA2', '1FHF', '5AOG'])
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/1PA2 HTTP/1.1" 200 872
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/1FHF HTTP/1.1" 200 929
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/5AOG HTTP/1.1" 200 1101
+INFO:File: 5aog.cif
+INFO:ID: 5AOG . Extension: cif, 
+INFO:Length of the template 5AOG: 307
+INFO:File: 1pa2.cif
+INFO:ID: 1PA2 . Extension: cif, 
+INFO:Length of the template 1PA2: 306
+INFO:File: 1fhf.cif
+INFO:ID: 1FHF . Extension: cif, 
+INFO:Length of the template 1FHF: 304
+INFO:Creating folder for AF2 output in:test_output/test/ALPHAFOLD/
+INFO:Extracting high confidence domains
+INFO:Domains will be stored in:test_output/test/ALPHAFOLD/DOMAINS/
+INFO:Processing file: ranked_0.pdb
+INFO:Extracting residues from a PDB file: test_output/test/ALPHAFOLD/ranked_0.pdb
+DEBUG:...STARTING...
+
+INFO:BLAST database is located at: /home/gallegolab/Desktop/TFM/databases/BLAST/pdbaa
+INFO:The BLAST output will be stored in:test_output/test/BLAST/
+INFO:Starting BLAST. Query: input_fasta/test.fa, Database: pdbaa
+INFO:BLAST results stored in : test_output/test/BLAST/test_blast.out
+INFO: The target sequence has close homologs in the PDB with code/s: dict_keys(['1PA2', '1FHF', '5AOG'])
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/1PA2 HTTP/1.1" 200 872
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/1FHF HTTP/1.1" 200 929
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/5AOG HTTP/1.1" 200 1101
+INFO:File: 5aog.cif
+INFO:ID: 5AOG . Extension: cif, 
+INFO:Length of the template 5AOG: 307
+INFO:File: 1pa2.cif
+INFO:ID: 1PA2 . Extension: cif, 
+INFO:Length of the template 1PA2: 306
+INFO:File: 1fhf.cif
+INFO:ID: 1FHF . Extension: cif, 
+INFO:Length of the template 1FHF: 304
+INFO:Creating folder for AF2 output in:test_output/test/ALPHAFOLD/
+INFO:Extracting high confidence domains
+INFO:Domains will be stored in:test_output/test/ALPHAFOLD/DOMAINS/
+INFO:Processing file: ranked_0.pdb
+INFO:Extracting residues from a PDB file: test_output/test/ALPHAFOLD/ranked_0.pdb
+DEBUG:...STARTING...
+
+INFO:BLAST database is located at: /home/gallegolab/Desktop/TFM/databases/BLAST/pdbaa
+INFO:The BLAST output will be stored in:test_output/test/BLAST/
+INFO:Starting BLAST. Query: input_fasta/test.fa, Database: pdbaa
+INFO:BLAST results stored in : test_output/test/BLAST/test_blast.out
+INFO: The target sequence has close homologs in the PDB with code/s: dict_keys(['1PA2', '1FHF', '5AOG'])
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/1PA2 HTTP/1.1" 200 872
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/1FHF HTTP/1.1" 200 929
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/5AOG HTTP/1.1" 200 1101
+INFO:File: 5aog.cif
+INFO:ID: 5AOG . Extension: cif, 
+INFO:Length of the template 5AOG: 307
+INFO:File: 1pa2.cif
+INFO:ID: 1PA2 . Extension: cif, 
+INFO:Length of the template 1PA2: 306
+INFO:File: 1fhf.cif
+INFO:ID: 1FHF . Extension: cif, 
+INFO:Length of the template 1FHF: 304
+INFO:Creating folder for AF2 output in:test_output/test/ALPHAFOLD/
+INFO:Extracting high confidence domains
+INFO:Domains will be stored in:test_output/test/ALPHAFOLD/DOMAINS/
+INFO:Processing file: ranked_0.pdb
+INFO:Extracting residues from a PDB file: test_output/test/ALPHAFOLD/ranked_0.pdb
+INFO:Residue list of confident domains: [('A', '\t', 1), ('A', '\t', 2), ('A', '\t', 3), ('A', '\t', 4), ('A', '\t', 5), ('A', '\t', 6), ('A', '\t', 7), ('A', '\t', 8), ('A', '\t', 9), ('A', '\t', 10), ('A', '\t', 11), ('A', '\t', 12), ('A', '\t', 13), ('A', '\t', 14), ('A', '\t', 15), ('A', '\t', 16), ('A', '\t', 17), ('A', '\t', 18), ('A', '\t', 19), ('A', '\t', 20), ('A', '\t', 21), ('A', '\t', 22), ('A', '\t', 23), ('A', '\t', 24), ('A', '\t', 25), ('A', '\t', 26), ('A', '\t', 27), ('A', '\t', 28), ('A', '\t', 29), ('A', '\t', 30), ('A', '\t', 31), ('A', '\t', 32), ('A', '\t', 33), ('A', '\t', 34), ('A', '\t', 35), ('A', '\t', 36), ('A', '\t', 37), ('A', '\t', 38), ('A', '\t', 39), ('A', '\t', 40), ('A', '\t', 41), ('A', '\t', 42), ('A', '\t', 43), ('A', '\t', 44), ('A', '\t', 45), ('A', '\t', 46), ('A', '\t', 47), ('A', '\t', 48), ('A', '\t', 49), ('A', '\t', 50), ('A', '\t', 51), ('A', '\t', 52), ('A', '\t', 53), ('A', '\t', 54), ('A', '\t', 55), ('A', '\t', 56), ('A', '\t', 57), ('A', '\t', 58), ('A', '\t', 59), ('A', '\t', 60), ('A', '\t', 61), ('A', '\t', 62), ('A', '\t', 63), ('A', '\t', 64), ('A', '\t', 65), ('A', '\t', 66), ('A', '\t', 67), ('A', '\t', 68), ('A', '\t', 69), ('A', '\t', 70), ('A', '\t', 71), ('A', '\t', 72), ('A', '\t', 73), ('A', '\t', 74), ('A', '\t', 75), ('A', '\t', 76), ('A', '\t', 77), ('A', '\t', 78), ('A', '\t', 79), ('A', '\t', 80), ('A', '\t', 81), ('A', '\t', 82), ('A', '\t', 83), ('A', '\t', 84), ('A', '\t', 85), ('A', '\t', 86), ('A', '\t', 87), ('A', '\t', 88), ('A', '\t', 89), ('A', '\t', 90), ('A', '\t', 91), ('A', '\t', 92), ('A', '\t', 93), ('A', '\t', 94), ('A', '\t', 95), ('A', '\t', 96), ('A', '\t', 97), ('A', '\t', 98), ('A', '\t', 99), ('A', '\t', 100), ('A', '\t', 101), ('A', '\t', 102), ('A', '\t', 103), ('A', '\t', 104), ('A', '\t', 105), ('A', '\t', 106), ('A', '\t', 107), ('A', '\t', 108), ('A', '\t', 109), ('A', '\t', 110), ('A', '\t', 111), ('A', '\t', 112), ('A', '\t', 113), ('A', '\t', 114), ('A', '\t', 115), ('A', '\t', 116), ('A', '\t', 117), ('A', '\t', 118), ('A', '\t', 119), ('A', '\t', 120), ('A', '\t', 121), ('A', '\t', 122), ('A', '\t', 123), ('A', '\t', 124), ('A', '\t', 125), ('A', '\t', 126), ('A', '\t', 127), ('A', '\t', 128), ('A', '\t', 129), ('A', '\t', 130), ('A', '\t', 131), ('A', '\t', 132), ('A', '\t', 133), ('A', '\t', 134), ('A', '\t', 135), ('A', '\t', 136), ('A', '\t', 137), ('A', '\t', 138), ('A', '\t', 139), ('A', '\t', 140), ('A', '\t', 141), ('A', '\t', 142), ('A', '\t', 143), ('A', '\t', 144), ('A', '\t', 145), ('A', '\t', 146), ('A', '\t', 147), ('A', '\t', 148), ('A', '\t', 149), ('A', '\t', 150), ('A', '\t', 151), ('A', '\t', 152), ('A', '\t', 153), ('A', '\t', 154), ('A', '\t', 155), ('A', '\t', 156), ('A', '\t', 157), ('A', '\t', 158), ('A', '\t', 159), ('A', '\t', 160), ('A', '\t', 161), ('A', '\t', 162), ('A', '\t', 163), ('A', '\t', 164), ('A', '\t', 165), ('A', '\t', 166), ('A', '\t', 167), ('A', '\t', 168), ('A', '\t', 169), ('A', '\t', 170), ('A', '\t', 171), ('A', '\t', 172), ('A', '\t', 173), ('A', '\t', 174), ('A', '\t', 175), ('A', '\t', 176), ('A', '\t', 177), ('A', '\t', 178), ('A', '\t', 179), ('A', '\t', 180), ('A', '\t', 181), ('A', '\t', 182), ('A', '\t', 183), ('A', '\t', 184), ('A', '\t', 185), ('A', '\t', 186), ('A', '\t', 187), ('A', '\t', 188), ('A', '\t', 189), ('A', '\t', 190), ('A', '\t', 191), ('A', '\t', 192), ('A', '\t', 193), ('A', '\t', 194), ('A', '\t', 195), ('A', '\t', 196), ('A', '\t', 197), ('A', '\t', 198), ('A', '\t', 199), ('A', '\t', 200), ('A', '\t', 201), ('A', '\t', 202), ('A', '\t', 203), ('A', '\t', 204), ('A', '\t', 205), ('A', '\t', 206), ('A', '\t', 207), ('A', '\t', 208), ('A', '\t', 209), ('A', '\t', 210), ('A', '\t', 211), ('A', '\t', 212), ('A', '\t', 213), ('A', '\t', 214), ('A', '\t', 215), ('A', '\t', 216), ('A', '\t', 217), ('A', '\t', 218), ('A', '\t', 219), ('A', '\t', 220), ('A', '\t', 221), ('A', '\t', 222), ('A', '\t', 223), ('A', '\t', 224), ('A', '\t', 225), ('A', '\t', 226), ('A', '\t', 227), ('A', '\t', 228), ('A', '\t', 229), ('A', '\t', 230), ('A', '\t', 231), ('A', '\t', 232), ('A', '\t', 233), ('A', '\t', 234), ('A', '\t', 235), ('A', '\t', 236), ('A', '\t', 237), ('A', '\t', 238), ('A', '\t', 239), ('A', '\t', 240), ('A', '\t', 241), ('A', '\t', 242), ('A', '\t', 243), ('A', '\t', 244), ('A', '\t', 245), ('A', '\t', 246), ('A', '\t', 247), ('A', '\t', 248), ('A', '\t', 249), ('A', '\t', 250), ('A', '\t', 251), ('A', '\t', 252), ('A', '\t', 253), ('A', '\t', 254), ('A', '\t', 255), ('A', '\t', 256), ('A', '\t', 257), ('A', '\t', 258), ('A', '\t', 259), ('A', '\t', 260), ('A', '\t', 261), ('A', '\t', 262), ('A', '\t', 263), ('A', '\t', 264), ('A', '\t', 265), ('A', '\t', 266), ('A', '\t', 267), ('A', '\t', 268), ('A', '\t', 269), ('A', '\t', 270), ('A', '\t', 271), ('A', '\t', 272), ('A', '\t', 273), ('A', '\t', 274), ('A', '\t', 275), ('A', '\t', 276), ('A', '\t', 277), ('A', '\t', 278), ('A', '\t', 279), ('A', '\t', 280), ('A', '\t', 281), ('A', '\t', 282), ('A', '\t', 283), ('A', '\t', 284), ('A', '\t', 285), ('A', '\t', 286), ('A', '\t', 287), ('A', '\t', 288), ('A', '\t', 289), ('A', '\t', 290), ('A', '\t', 291), ('A', '\t', 292), ('A', '\t', 293), ('A', '\t', 294), ('A', '\t', 295)]
+DEBUG:...STARTING...
+
+INFO:BLAST database is located at: /home/gallegolab/Desktop/TFM/databases/BLAST/pdbaa
+INFO:The BLAST output will be stored in:test_output/test/BLAST/
+INFO:Starting BLAST. Query: input_fasta/test.fa, Database: pdbaa
+INFO:BLAST results stored in : test_output/test/BLAST/test_blast.out
+INFO: The target sequence has close homologs in the PDB with code/s: dict_keys(['1PA2', '1FHF', '5AOG'])
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/1PA2 HTTP/1.1" 200 872
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/1FHF HTTP/1.1" 200 929
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/5AOG HTTP/1.1" 200 1101
+INFO:File: 5aog.cif
+INFO:ID: 5AOG . Extension: cif, 
+INFO:Length of the template 5AOG: 307
+INFO:File: 1pa2.cif
+INFO:ID: 1PA2 . Extension: cif, 
+INFO:Length of the template 1PA2: 306
+INFO:File: 1fhf.cif
+INFO:ID: 1FHF . Extension: cif, 
+INFO:Length of the template 1FHF: 304
+INFO:Creating folder for AF2 output in:test_output/test/ALPHAFOLD/
+INFO:Extracting high confidence domains
+INFO:Domains will be stored in:test_output/test/ALPHAFOLD/DOMAINS/
+INFO:Processing file: ranked_0.pdb
+INFO:Extracting residues from a PDB file: test_output/test/ALPHAFOLD/ranked_0.pdb
+INFO:Residue list of confident domains: [('A', 1), ('A', 2), ('A', 3), ('A', 4), ('A', 5), ('A', 6), ('A', 7), ('A', 8), ('A', 9), ('A', 10), ('A', 11), ('A', 12), ('A', 13), ('A', 14), ('A', 15), ('A', 16), ('A', 17), ('A', 18), ('A', 19), ('A', 20), ('A', 21), ('A', 22), ('A', 23), ('A', 24), ('A', 25), ('A', 26), ('A', 27), ('A', 28), ('A', 29), ('A', 30), ('A', 31), ('A', 32), ('A', 33), ('A', 34), ('A', 35), ('A', 36), ('A', 37), ('A', 38), ('A', 39), ('A', 40), ('A', 41), ('A', 42), ('A', 43), ('A', 44), ('A', 45), ('A', 46), ('A', 47), ('A', 48), ('A', 49), ('A', 50), ('A', 51), ('A', 52), ('A', 53), ('A', 54), ('A', 55), ('A', 56), ('A', 57), ('A', 58), ('A', 59), ('A', 60), ('A', 61), ('A', 62), ('A', 63), ('A', 64), ('A', 65), ('A', 66), ('A', 67), ('A', 68), ('A', 69), ('A', 70), ('A', 71), ('A', 72), ('A', 73), ('A', 74), ('A', 75), ('A', 76), ('A', 77), ('A', 78), ('A', 79), ('A', 80), ('A', 81), ('A', 82), ('A', 83), ('A', 84), ('A', 85), ('A', 86), ('A', 87), ('A', 88), ('A', 89), ('A', 90), ('A', 91), ('A', 92), ('A', 93), ('A', 94), ('A', 95), ('A', 96), ('A', 97), ('A', 98), ('A', 99), ('A', 100), ('A', 101), ('A', 102), ('A', 103), ('A', 104), ('A', 105), ('A', 106), ('A', 107), ('A', 108), ('A', 109), ('A', 110), ('A', 111), ('A', 112), ('A', 113), ('A', 114), ('A', 115), ('A', 116), ('A', 117), ('A', 118), ('A', 119), ('A', 120), ('A', 121), ('A', 122), ('A', 123), ('A', 124), ('A', 125), ('A', 126), ('A', 127), ('A', 128), ('A', 129), ('A', 130), ('A', 131), ('A', 132), ('A', 133), ('A', 134), ('A', 135), ('A', 136), ('A', 137), ('A', 138), ('A', 139), ('A', 140), ('A', 141), ('A', 142), ('A', 143), ('A', 144), ('A', 145), ('A', 146), ('A', 147), ('A', 148), ('A', 149), ('A', 150), ('A', 151), ('A', 152), ('A', 153), ('A', 154), ('A', 155), ('A', 156), ('A', 157), ('A', 158), ('A', 159), ('A', 160), ('A', 161), ('A', 162), ('A', 163), ('A', 164), ('A', 165), ('A', 166), ('A', 167), ('A', 168), ('A', 169), ('A', 170), ('A', 171), ('A', 172), ('A', 173), ('A', 174), ('A', 175), ('A', 176), ('A', 177), ('A', 178), ('A', 179), ('A', 180), ('A', 181), ('A', 182), ('A', 183), ('A', 184), ('A', 185), ('A', 186), ('A', 187), ('A', 188), ('A', 189), ('A', 190), ('A', 191), ('A', 192), ('A', 193), ('A', 194), ('A', 195), ('A', 196), ('A', 197), ('A', 198), ('A', 199), ('A', 200), ('A', 201), ('A', 202), ('A', 203), ('A', 204), ('A', 205), ('A', 206), ('A', 207), ('A', 208), ('A', 209), ('A', 210), ('A', 211), ('A', 212), ('A', 213), ('A', 214), ('A', 215), ('A', 216), ('A', 217), ('A', 218), ('A', 219), ('A', 220), ('A', 221), ('A', 222), ('A', 223), ('A', 224), ('A', 225), ('A', 226), ('A', 227), ('A', 228), ('A', 229), ('A', 230), ('A', 231), ('A', 232), ('A', 233), ('A', 234), ('A', 235), ('A', 236), ('A', 237), ('A', 238), ('A', 239), ('A', 240), ('A', 241), ('A', 242), ('A', 243), ('A', 244), ('A', 245), ('A', 246), ('A', 247), ('A', 248), ('A', 249), ('A', 250), ('A', 251), ('A', 252), ('A', 253), ('A', 254), ('A', 255), ('A', 256), ('A', 257), ('A', 258), ('A', 259), ('A', 260), ('A', 261), ('A', 262), ('A', 263), ('A', 264), ('A', 265), ('A', 266), ('A', 267), ('A', 268), ('A', 269), ('A', 270), ('A', 271), ('A', 272), ('A', 273), ('A', 274), ('A', 275), ('A', 276), ('A', 277), ('A', 278), ('A', 279), ('A', 280), ('A', 281), ('A', 282), ('A', 283), ('A', 284), ('A', 285), ('A', 286), ('A', 287), ('A', 288), ('A', 289), ('A', 290), ('A', 291), ('A', 292), ('A', 293), ('A', 294), ('A', 295)]

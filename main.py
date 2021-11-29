@@ -127,17 +127,22 @@ if exact_matches:
             if pdb_len < 10 and pdb_len < (0.9*query_length):
                 l.info(f"{identifier} has length {pdb_len}, it will be stored as a partial match")
                 try:
-                    shutil.move(file, f"./partial/{file}")
+                    shutil.move(file, os.path.join(pdb_dir,"partial", file))
                 except Exception:
-                    l.info(f"./partial/{file} does not exist, it will be created")
+                    directory = os.path.join(pdb_dir,"partial",file)
+                    l.info(f"{directory}does not exist, it will be created")
                     os.mkdir("./partial/")
                     shutil.move(file, f"./partial/{file}")
 
 ### Submit a sob in Slurm with the AlphaFold run
 
-# Make folder for the AF2 output
+print("Alphafold will not run, this is a test")
+
+
 af_dir = os.path.join(args.outdir,  query_name, "ALPHAFOLD", "" )
 Path(af_dir).mkdir(parents=True, exist_ok=True)
+# Make folder for the AF2 output
+l.info(f"Creating folder for AF2 output in:{af_dir}")
 
 if args.custom:
     slurm_script = args.custom
@@ -151,12 +156,15 @@ else:
 
 # Extract confident regions
 
+l.info("Extracting high confidence domains")
 domains_dir = os.path.join(af_dir, "DOMAINS", "")
 Path(domains_dir).mkdir(parents=True, exist_ok=True)
-
-for filename in os.listdir(domains_dir):
-    l.info(f"File: {filename}")
-    extract_residue_list(os.path.join(af_dir, filename))
+l.info(f"Domains will be stored in:{domains_dir}")
+for filename in os.listdir(af_dir):
+    if os.path.isfile(join(af_dir, filename)):
+        l.info(f"Processing file: {filename}")
+        conf_domains = extract_residue_list(os.path.join(af_dir, filename), domains_dir)
+        l.info(f"Residue list of confident domains: {conf_domains}")
 
 
 
