@@ -23,11 +23,10 @@ parser = argparse.ArgumentParser(description="""This program retrieves
 
 parser.add_argument("FASTA", 
                     help="Input sequence in FASTA format")
-
 parser.add_argument("outdir", 
                     help="Output directory to store the retrieved PDBs", 
                     default=".")
-parser.add_argument("model_preset", 
+parser.add_argument("-m", "--model_preset", 
                     help="model preset for AlphaFold2", 
                     default="monomer")
 parser.add_argument("-v", "--verbose", 
@@ -46,10 +45,26 @@ parser.add_argument("-n", "--noslurm",
 
 
 args = parser.parse_args()
+fasta = args.FASTA
+query_name = Path(fasta).stem.split('.')[0]
+
+### Initializing the LOG system ###
+
+logdir = os.path.join(args.outdir, query_name, "LOG", "")
+Path(logdir).mkdir(parents=True, exist_ok=True)
+
+l.basicConfig(format = "%(levelname)s:%(message)s", 
+                        filename = os.path.join(logdir, f"{query_name}.log"), 
+                        level = l.DEBUG)
+
+l.debug("...STARTING...\n")		
+
+# If verbose is set, the LOG file is also printed in STDOUT
+if args.verbose:		
+	l.getLogger().addHandler(l.StreamHandler())		
+
 
 ## Info about the query
-fasta = args.FASTA
-query_name = Path(fasta).stem
 
 record_dict = IO.to_dict(IO.parse(fasta, "fasta"))
 if len(record_dict.keys()) > 1:
@@ -67,22 +82,12 @@ if len(record_dict.keys()) == 1:
 # for key in record_dict.items():
 #     print(key[0],"\n ",len(key[1].seq))
 
+# Create folders. last path element is empty to add a slash
+pdb_dir = os.path.join(args.outdir, query_name, "PDB", "" )
+fasta_dir = os.path.join(args.outdir, query_name, "FASTA", "" )
 
-
-
-
-
-### Initializing the LOG system ###
-
-
-l.basicConfig(format = "%(levelname)s:%(message)s", 
-                        filename = f"{query_name}.log", level = l.DEBUG)
-l.debug("...STARTING...\n")		
-
-# If verbose is set, the LOG file is also printed in STDOUT
-if args.verbose:		
-	l.getLogger().addHandler(l.StreamHandler())		
-
+Path(pdb_dir).mkdir(parents=True, exist_ok=True)
+Path(fasta_dir).mkdir(parents=True, exist_ok=True)
 
 ## 1. Check if the input sequence is already in the PDB  
 
@@ -90,9 +95,14 @@ if args.verbose:
 blastdb = cfg.blastconfig["blastdb"]
 l.info(f"BLAST database is located at: {blastdb}")
 
+# Create folders. last path element is empty to add a slash
+blast_dir = os.path.join(args.outdir, query_name,  "BLAST", "" )
+Path(blast_dir).mkdir(parents=True, exist_ok=True)
+l.info(f"The BLAST output will be stored in:{blast_dir}")
+
 # Run BLAST
 l.info(f"Starting BLAST. Query: {fasta}, Database: {Path(blastdb).stem}")
-outblast = run_blast_local(fasta, blastdb)
+outblast = run_blast_local(fasta, blastdb, blast_dir)
 l.info(f"BLAST results stored in : {outblast}")
 
 # Catch exact matches
@@ -101,13 +111,6 @@ l.info(f" The target sequence has close homologs in the PDB with code/s: {exact_
 
 
 # Retrieve exact matches from the PDB
-
-# Create folders
-pdb_dir = f"{args.outdir}/PDB/{query_name}"
-fasta_dir = f"{args.outdir}/FASTA/{query_name}"
-
-Path(pdb_dir).mkdir(parents=True, exist_ok=True)
-Path(fasta_dir).mkdir(parents=True, exist_ok=True)
 
 # Retrieve
 if exact_matches:
@@ -122,7 +125,7 @@ if exact_matches:
             l.info(f"Length of the template {identifier}: {pdb_len}")
             # Store partial matches (<90% of the query length)
             if pdb_len < 10 and pdb_len < (0.9*query_length):
-                print(f"{identifier} has length {pdb_len}, it will be stored as a partial match")
+                l.info(f"{identifier} has length {pdb_len}, it will be stored as a partial match")
                 try:
                     shutil.move(file, f"./partial/{file}")
                 except Exception:
@@ -133,7 +136,7 @@ if exact_matches:
 ### Submit a sob in Slurm with the AlphaFold run
 
 # Make folder for the AF2 output
-af_dir = f"{args.outdir}/ALPHAFOLD/{query_name}"
+af_dir = os.path.join(args.outdir,  query_name, "ALPHAFOLD", "" )
 Path(af_dir).mkdir(parents=True, exist_ok=True)
 
 if args.custom:
@@ -141,7 +144,6 @@ if args.custom:
 else:
     slurm_dir = f"{af_dir}"
     Path(slurm_dir).mkdir(parents=True, exist_ok=True)
-    write_batch_script(slurm_dir, model_preset)
 
 
 
@@ -149,8 +151,12 @@ else:
 
 # Extract confident regions
 
-domains_dir = f"{af_dir}/DOMAINS/"
+domains_dir = os.path.join(af_dir, "DOMAINS", "")
 Path(domains_dir).mkdir(parents=True, exist_ok=True)
+
+for filename in os.listdir(domains_dir):
+    l.info(f"File: {filename}")
+    extract_residue_list(os.path.join(af_dir, filename))
 
 
 

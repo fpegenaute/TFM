@@ -1,6 +1,9 @@
 from __future__ import division, print_function
 import sys
 from Bio.PDB.PDBParser import PDBParser
+from bin.utilities import get_filename_ext
+import logging as l
+
 
 ################################################################################
 #################### TOOLS FOR PROCESSING A PREDICTED MODEL ####################
@@ -1520,7 +1523,7 @@ def parse_json_PAE(pae_json_file):
 def parse_pickle_PAE(pickle_file):
   """
   Parse pickled output file from AlphaFold2 output and extract the PAE matrix
-  The PAE matrix is a numpy array
+  The PAE matrix is a numpy array. NOT FINISHED
   """
   objects = []
   with (open(pickle_file, "rb")) as openfile:
@@ -1534,27 +1537,40 @@ def parse_pickle_PAE(pickle_file):
 
   return NotImplementedError
 
-def extract_residue_list(structure, mmcif=True):
+def extract_residue_list(structure_file, outdir="."):
   """
-  Given a mmCif/PDB file, return a list of resIDs and their chain
-
-  mmcif: True by default, if False, the function will use the PDBParser()
+  Given a mmCif/PDB file, return a tuples list of resIDs and their chain, 
+  separated by a "\\t" symbol and generate a text file containing the same info
 
   """
+
+  identifier, extension= get_filename_ext(structure_file)
+  identifier = identifier.upper()
   
-  if mmcif == True:
-    structure = MMCIFParser().get_structure('1a7f', '1a7f.cif')
-  if mmcif == False:
-    structure = PDBParser().get_structure('1a7f', '1a7f.cif')
+  if extension == "pdb":
+        parser = PDBParser(QUIET=True)
+        structure = parser.get_structure(identifier, structure_file)
+        l.info(f"Extracting residues from a PDB file: {structure_file}")
+  elif extension == "cif":
+      parser = MMCIFParser(QUIET=True)
+      structure = parser.get_structure(identifier, structure_file)
+      l.info(f"Extracting residues from a MMcif file: {structure_file}")
 
+  else:
+      raise NameError(f"""Your file has to have \"pdb\" or \"cif\" as an 
+      extension. File: {structure_file}""")
 
-  model = structure[0]
-  chain = model['A']
+  
+  models = list(structure.get_models())
+  chains = list(models[0].get_chains())
+  residue_list = []
 
-  for i in chain.get_residues():
-      print(f"{i.get_full_id()[2]}\t{i.get_full_id()[3][1]}" )
+  with open(f"{outdir}/{identifier}_condident.pdb") as f:
+    for i in chains[0].get_residues():
+        f.write(f"{i.get_full_id()[2]}\t{i.get_full_id()[3][1]}" )
+        list.append((i.get_full_id()[2], "\t", i.get_full_id()[3][1]))
 
-  return NotImplementedError
+  return residue_list
 
 
 ################################################################################

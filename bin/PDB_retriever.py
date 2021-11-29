@@ -5,7 +5,7 @@ from iotbx import pdb
 import requests
 import os
 import logging as l
-from utilities import get_filename_ext
+from bin.utilities import get_filename_ext
   
 def retrieve_pdb_info(hit_dict, pdb_dir, fasta_dir):
     """

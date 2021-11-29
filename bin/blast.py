@@ -6,7 +6,7 @@ from pathlib import Path
 
 from Bio.PDB.Dice import extract
 
-def run_blast_local(fasta, blastdb, db="pdbaa"):
+def run_blast_local(fasta, blastdb, outdir, db="pdbaa"):
     """
     Run BLAST Locally
 
@@ -19,17 +19,17 @@ def run_blast_local(fasta, blastdb, db="pdbaa"):
     """
 
     # Extract query name from filename
-    query = Path(fasta).stem
+    query = Path(fasta).stem.split('.')[0]
 
     # Set environment variable to the DB path
     os.environ["BLASTDB"]=blastdb
     
     # Call BLAST
     blastp_cline = NcbiblastpCommandline(query=fasta, 
-    db=db, matrix="BLOSUM80",outfmt=5, out=query+"_blast.out", evalue=0.00000005)
+    db=db, matrix="BLOSUM80",outfmt=5, out=os.path.join(outdir, f"{query}_blast.out"), evalue=0.00000005)
     stdout, stderr = blastp_cline()
 
-    outblast = query+"_blast.out"
+    outblast = os.path.join(outdir, f"{query}_blast.out")
     return outblast
 
 

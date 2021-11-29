@@ -1,0 +1,22 @@
+DEBUG:...STARTING...
+
+INFO:BLAST database is located at: /home/gallegolab/Desktop/TFM/databases/BLAST/pdbaa
+INFO:The BLAST output will be stored in:test_output/test/BLAST/
+INFO:Starting BLAST. Query: input_fasta/test.fa, Database: pdbaa
+INFO:BLAST results stored in : test_output/test/BLAST/test_blast.out
+INFO: The target sequence has close homologs in the PDB with code/s: dict_keys(['1PA2', '1FHF', '5AOG'])
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/1PA2 HTTP/1.1" 200 872
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/1FHF HTTP/1.1" 200 929
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/5AOG HTTP/1.1" 200 1101
+INFO:File: 5aog.cif
+INFO:ID: 5AOG . Extension: cif, 
+INFO:Length of the template 5AOG: 307
+INFO:File: 1pa2.cif
+INFO:ID: 1PA2 . Extension: cif, 
+INFO:Length of the template 1PA2: 306
+INFO:File: 1fhf.cif
+INFO:ID: 1FHF . Extension: cif, 
+INFO:Length of the template 1FHF: 304
