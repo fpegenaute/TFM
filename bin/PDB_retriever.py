@@ -109,7 +109,9 @@ class ChainSplitter:
         """ Create parsing and writing objects, specify output directory. """
         if mmcif ==True:
             self.parser = PDB.MMCIFParser()
-            self.writer = PDB.MMCIFIO()
+            # self.writer = PDB.MMCIFIO()
+            self.writer = PDB.PDBIO()
+
         if mmcif ==False:
             self.parser = PDB.PDBParser()
             self.writer = PDB.PDBIO()

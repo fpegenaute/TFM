@@ -775,9 +775,9 @@ def split_model_with_pae(
       good_selections.append(selection_string)
     else:
       keep_list.append(False)
-      print("Skipping region with selection '%s' that contains %s residues" %(
-         selection_string,sel.count(True)),
-        file = log)
+      # print("Skipping region with selection '%s' that contains %s residues" %(
+      #   selection_string,sel.count(True)),
+      #  file = log)
 
   region_name_dict, chainid_list = get_region_name_dict(m, unique_regions,
     keep_list = keep_list)
@@ -1571,6 +1571,7 @@ def extract_residue_list(structure_file, outdir="."):
         residue_list.append(tuple([i.get_full_id()[2], i.get_full_id()[3][1]]))
 
   return residue_list
+
 
 
 ################################################################################
