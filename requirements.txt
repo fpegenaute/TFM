@@ -1,5 +1,2 @@
-biopython
-modeller
-requests
 cctbx-base
 networkx
