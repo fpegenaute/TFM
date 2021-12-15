@@ -8,6 +8,16 @@ INFO:BLAST results stored in : test_output/SEC3/BLAST/SEC3_blast.out
 INFO: The target sequence has close homologs in the PDB with 
     code/s: dict_keys(['5YFP', '3HIE'])
 DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:...STARTING...
+
+INFO:Query length: 1336
+INFO:BLAST database is located at: /home/gallegolab/Desktop/TFM/databases/BLAST/pdbaa
+INFO:The BLAST output will be stored in:test_output/SEC3/BLAST/
+INFO:Starting BLAST. Query: input_fasta/SEC3.fa, Database: pdbaa
+INFO:BLAST results stored in : test_output/SEC3/BLAST/SEC3_blast.out
+INFO: The target sequence has close homologs in the PDB with 
+    code/s: dict_keys(['5YFP', '3HIE'])
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
 DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/5YFP HTTP/1.1" 200 5548
 DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
 DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/3HIE HTTP/1.1" 200 751
@@ -32,46 +42,6 @@ INFO:Length of the template 5yfp_A.pdb: 672
 INFO:PDB_LEN: 672 . QUERY_LEN: 1269.2
 INFO:5yfp_A.pdb has length 672, it will be stored 
                     as a partial match
-DEBUG:Alphafold will not run, this is a test
-INFO:Creating folder for AF2 output in:test_output/SEC3/ALPHAFOLD/
-INFO:Extracting high confidence domains
-INFO:Domains will be stored in:test_output/SEC3/ALPHAFOLD/DOMAINS/
-INFO:Processing file: SEC3.pdb
-DEBUG:...STARTING...
-
-INFO:Query length: 1336
-INFO:BLAST database is located at: /home/gallegolab/Desktop/TFM/databases/BLAST/pdbaa
-INFO:The BLAST output will be stored in:test_output/SEC3/BLAST/
-INFO:Starting BLAST. Query: input_fasta/SEC3.fa, Database: pdbaa
-INFO:BLAST results stored in : test_output/SEC3/BLAST/SEC3_blast.out
-INFO: The target sequence has close homologs in the PDB with 
-    code/s: dict_keys(['5YFP', '3HIE'])
-DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
-DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/5YFP HTTP/1.1" 200 5552
-DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
-DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/3HIE HTTP/1.1" 200 751
-INFO:File being processed: partial
-INFO:File being processed: 3hie.cif
-INFO:Making directory for the chains at test_output/SEC3/PDB/CHAINS/
-INFO:Extracting the chain
-INFO:OUT PATH:test_output/SEC3/PDB/CHAINS/3hie_A.pdb
-DEBUG:CHAIN PATH: test_output/SEC3/PDB/CHAINS/3hie_A.pdb
-INFO:ID: 3HIE_A . Extension: pdb, 
-INFO:Length of the template 3hie_A.pdb: 160
-INFO:PDB_LEN: 160 . QUERY_LEN: 1269.2
-INFO:3hie_A.pdb has length 160, it will be stored 
-                    as a partial match
-INFO:File being processed: 5yfp.cif
-INFO:Making directory for the chains at test_output/SEC3/PDB/CHAINS/
-INFO:Extracting the chain
-INFO:OUT PATH:test_output/SEC3/PDB/CHAINS/5yfp_A.pdb
-DEBUG:CHAIN PATH: test_output/SEC3/PDB/CHAINS/5yfp_A.pdb
-INFO:ID: 5YFP_A . Extension: pdb, 
-INFO:Length of the template 5yfp_A.pdb: 672
-INFO:PDB_LEN: 672 . QUERY_LEN: 1269.2
-INFO:5yfp_A.pdb has length 672, it will be stored 
-                    as a partial match
-INFO:File being processed: CHAINS
 DEBUG:Alphafold will not run, this is a test
 INFO:Creating folder for AF2 output in:test_output/SEC3/ALPHAFOLD/
 INFO:Extracting high confidence domains
