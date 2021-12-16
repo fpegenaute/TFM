@@ -79,7 +79,7 @@ def compare_dict_set(dict, set):
 
 
 
-def plot_coincident_positions(reference_fasta, pdbfile):
+def extract_coincident_positions(reference_fasta, pdbfile):
     """
     Plot the coincident resid positions of a PDB wrt a PDB file.
     it returns a matpotlib pyplot object
@@ -99,6 +99,27 @@ def plot_coincident_positions(reference_fasta, pdbfile):
     return reference_array, covered_array
 
 
+def generate_plots(fasta_reference, pdb_chains, ):
+    
+    for chain in pdb_chains:
+        x, y = extract_coincident_positions(fasta_reference, chain) 
+
+        # Grid of plots, no ylabel, row headers and title
+        cols = []
+
+        pdbs = pdb_chains
+        rows = ['Template {}'.format(template) for template in pdbs]
+
+        fig, axes = plt.subplots(nrows=4, ncols=1, figsize=(12, 8))
+
+
+
+        for ax, row in zip(axes, rows):
+            ax.set_ylabel(row, rotation=0, size='large', labelpad=90)
+            ax.plot(x, y)
+
+        fig.tight_layout()
+    return plt
 
 
 
@@ -118,8 +139,7 @@ if __name__ == "__main__":
 
     fasta_test = "/home/gallegolab/Desktop/TFM/TFM/input_fasta/SEC3.fa"
     pdb_test = "/home/gallegolab/Desktop/TFM/TFM/test_output/SEC3/PDB/CHAINS/3hie_A.pdb"
-    x, y = plot_coincident_positions(fasta_test, pdb_test) 
-
+    x, y = extract_coincident_positions(fasta_test, pdb_test) 
 
 
 
@@ -127,16 +147,27 @@ if __name__ == "__main__":
     # Grid of plots, no ylabel, row headers and title
     cols = []
 
-    pdbs = ["pdb1.pdb", "pdb2.pdb", "pdb3.pdb", "pdb4.pdb"]
-    rows = ['Template {}'.format(template) for template in pdbs]
-
-    fig, axes = plt.subplots(nrows=4, ncols=1, figsize=(12, 8))
+    
 
 
+    pdbs = ["/home/gallegolab/Desktop/TFM/TFM/test_output/SEC3/PDB/CHAINS/3hie_A.pdb", "/home/gallegolab/Desktop/TFM/TFM/test_output/SEC3/PDB/CHAINS/5yfp_A.pdb"]
 
+    
+    rows = ['Template {}'.format(pdb) for pdb in pdbs]
+
+    
+    
+    
+    
+    fig, axes = plt.subplots(nrows=len(pdbs), ncols=1, figsize=(12, 8))
+
+
+    i = 0
     for ax, row in zip(axes, rows):
         ax.set_ylabel(row, rotation=0, size='large', labelpad=90)
+        x, y = extract_coincident_positions(fasta_test, pdbs[i]) 
         ax.plot(x, y)
+        i += 1
 
     fig.tight_layout()
     plt.show()
