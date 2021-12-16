@@ -122,7 +122,25 @@ def generate_plots(fasta_reference, pdb_chains, ):
     return plt
 
 
+def plot_coverage(fastafile, pdblist):
+    """
+    Plot The coverage of a pdb list wrt to a reference fasta file in different 
+    plots
+    """
+    
+    rows = ['Template {}'.format(pdb) for pdb in pdblist]     
+    fig, axes = plt.subplots(nrows=len(pdblist), ncols=1, figsize=(12, 8))
 
+
+    i = 0
+    for ax, row in zip(axes, rows):
+        ax.set_ylabel(row, rotation=0, size='large', labelpad=90)
+        x, y = extract_coincident_positions(fastafile, pdblist[i]) 
+        ax.plot(x, y)
+        i += 1
+
+    fig.tight_layout()
+    plt.show()
 
 
 
@@ -132,42 +150,7 @@ def generate_plots(fasta_reference, pdb_chains, ):
 
 if __name__ == "__main__":
 
-
-    # Some example data to display
-    x = np.linspace(0, 2 * np.pi, 400)
-    y = np.sin(x ** 2)
-
     fasta_test = "/home/gallegolab/Desktop/TFM/TFM/input_fasta/SEC3.fa"
-    pdb_test = "/home/gallegolab/Desktop/TFM/TFM/test_output/SEC3/PDB/CHAINS/3hie_A.pdb"
-    x, y = extract_coincident_positions(fasta_test, pdb_test) 
-
-
-
-
-    # Grid of plots, no ylabel, row headers and title
-    cols = []
-
-    
-
-
     pdbs = ["/home/gallegolab/Desktop/TFM/TFM/test_output/SEC3/PDB/CHAINS/3hie_A.pdb", "/home/gallegolab/Desktop/TFM/TFM/test_output/SEC3/PDB/CHAINS/5yfp_A.pdb"]
 
-    
-    rows = ['Template {}'.format(pdb) for pdb in pdbs]
-
-    
-    
-    
-    
-    fig, axes = plt.subplots(nrows=len(pdbs), ncols=1, figsize=(12, 8))
-
-
-    i = 0
-    for ax, row in zip(axes, rows):
-        ax.set_ylabel(row, rotation=0, size='large', labelpad=90)
-        x, y = extract_coincident_positions(fasta_test, pdbs[i]) 
-        ax.plot(x, y)
-        i += 1
-
-    fig.tight_layout()
-    plt.show()
+    plot_coverage(fasta_test, pdbs)
