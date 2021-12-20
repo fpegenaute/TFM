@@ -15,6 +15,7 @@ import os
 import shutil
 from bin.extract_flexible_residues import extract_residue_list
 from bin.process_predicted_model import *
+from bin.graphical_summary import plot_coverage
 
 
 parser = argparse.ArgumentParser(description="""This program retrieves
@@ -110,7 +111,7 @@ exact_matches = exact_match_retriever(outblast)
 l.info(f""" The target sequence has close homologs in the PDB with 
     code/s: {exact_matches.keys()}""")
 
-
+structures_for_query = []
 # Retrieve exact matches from the PDB
 
 # Retrieve
@@ -118,26 +119,29 @@ if exact_matches:
     retrieve_pdb_info(exact_matches, pdb_dir, fasta_dir)
     # Check lengths of the actual PDB Chains and store them accordingly
     for file in os.listdir(pdb_dir):
-        l.info(f"File being processed: {file}")
         current = os.path.join(pdb_dir, file)
         if os.path.isfile(current):
+            l.info(f"File being processed: {file}")
             identifier = file.split(".")[0].upper()
             # Check which chain of the hit should it choose
             
             # Make the directory for the chains
-            
             chain_dir = os.path.join(pdb_dir, "CHAINS", "" )
             l.info(f"Making directory for the chains at {chain_dir}")
             Path(chain_dir).mkdir(parents=True, exist_ok=True)
+            
             # Extract the desired chain
             l.info(f"Extracting the chain")
             splitter = ChainSplitter(mmcif=True, out_dir=os.path.join(pdb_dir, "CHAINS"))
             chain_path = splitter.make_pdb(os.path.join(pdb_dir, file), exact_matches[identifier] )
+            structures_for_query.append(chain_path)
             l.debug(f"CHAIN PATH: {chain_path}")
 
+            
+            # Store partial matches (<95% of the query length)
             pdb_len = check_PDB_len(chain_path, exact_matches[identifier])
             l.info(f"Length of the template {PurePosixPath(chain_path).name}: {pdb_len}")
-            # Store partial matches (<95% of the query length)
+            
             l.info(f"PDB_LEN: {pdb_len} . QUERY_LEN: {0.95*query_length}")
             if pdb_len > 10 and pdb_len < (query_length):
                 l.info(f"""{PurePosixPath(chain_path).name} has length {pdb_len}, it will be stored 
@@ -145,20 +149,22 @@ if exact_matches:
                 try:
                     shutil.move(os.path.join(pdb_dir, file), os.path.join(pdb_dir,"partial", file))
                 except Exception:
-                    directory = os.path.join(pdb_dir,"partial",file)
+                    directory = os.path.join(pdb_dir,"partial")
                     l.info(f"\"{directory}\" does not exist, it will be created")
                     os.mkdir(os.path.join(pdb_dir,"partial"))
                     shutil.move(os.path.join(pdb_dir, file), os.path.join(pdb_dir,"partial", file))
-            if pdb_len < 10 and pdb_len > (0.95*query_length):
+            if pdb_len > 10 and pdb_len > (0.95*query_length):
                 l.info(f"""{PurePosixPath(chain_path).name} has length {pdb_len}, it will be stored 
                     as a full-length match""")
                 try:
                     shutil.move(os.path.join(pdb_dir, file), os.path.join(pdb_dir,"total", file))
+                    structures_for_query.append(os.path.join(pdb_dir,"total", file))
                 except Exception:
-                    directory = os.path.join(pdb_dir,"total",file)
+                    directory = os.path.join(pdb_dir,"total")
                     l.info(f"\"{directory}\" does not exist, it will be created")
-                    os.mkdir(os.path.join(pdb_dir,"partial"))
+                    os.mkdir(os.path.join(pdb_dir,"total"))
                     shutil.move(os.path.join(pdb_dir, file), os.path.join(pdb_dir,"total", file))
+                    structures_for_query.append(os.path.join(pdb_dir,"total", file))
 
 
 
@@ -212,6 +218,8 @@ l.info("Extracting high confidence domains")
 domains_dir = os.path.join(af_dir, "DOMAINS", "")
 Path(domains_dir).mkdir(parents=True, exist_ok=True)
 l.info(f"Domains will be stored in:{domains_dir}")
+af_conficent_regions = []
+
 for filename in os.listdir(af_dir):
     if os.path.isfile(os.path.join(af_dir, filename)):
         l.info(f"Processing file: {filename}")
@@ -226,9 +234,15 @@ for filename in os.listdir(af_dir):
 
         mmm = model_info.model.as_map_model_manager()
         mmm.write_model(os.path.join(domains_dir, f"{PurePosixPath(filename).stem}_domains.pdb"))
+        
+        structures_for_query.append(os.path.join(domains_dir, f"{PurePosixPath(filename).stem}_domains.pdb"))
 
         conf_domains = extract_residue_list(os.path.join(domains_dir, f"{PurePosixPath(filename).stem}_domains.pdb"), domains_dir)
         l.info(f"Residue list of confident domains: {conf_domains}")
 
 
+
+## Launch graphical summary 
+print(f"CONFIDENT FILES: {structures_for_query}")
+plot_coverage(fasta, structures_for_query)
 

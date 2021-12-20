@@ -1,2 +1,4 @@
 cctbx-base
 networkx
+paramiko
+mplcursors

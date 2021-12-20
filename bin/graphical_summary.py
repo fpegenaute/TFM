@@ -1,17 +1,45 @@
 
 import matplotlib.pyplot as plt
+from matplotlib.widgets import Cursor, Button
 import numpy as np
-from bin.utilities import get_filename_ext
 from Bio.PDB import PDBParser, MMCIFParser
 import logging as l
 from Bio import SeqIO
+import os
+from bin.utilities import get_filename_ext
+import mplcursors
 
 
+# def PDB_get_resid_set(structure_file):
+#     """
+#     Given a PDB or MMCif File, return a set of [Res_ID] ONE CHAIN
+#     """
+#     identifier, extension = get_filename_ext(structure_file)
 
+#     if extension == "pdb":
+#         parser = PDBParser(QUIET=True)
+#     elif extension == "cif":
+#         parser = MMCIFParser(QUIET=True)
+#     else:
+#         raise NameError("Your file has to have \"pdb\" or \"cif\" as an extension")
+
+#     structure = parser.get_structure(identifier, structure_file)    
+
+#     model = structure[0]
+#     resid_set = set()
+#     chain_num = 0
+#     for chain in model:
+#         if chain_num == 0: 
+#             for i in chain.get_residues():               
+#                 resid_set.add(i.get_full_id()[3][1])
+#             chain_num += 1
+#         else:
+#             l.info(f"Only chain {chain} in {structure_file} selected.")
+#     return resid_set
 
 def PDB_get_resid_set(structure_file):
     """
-    Given a PDB or MMCif File, return a set of [Res_ID]
+    Given a PDB or MMCif File, return a set of [Res_ID] ALL CHAINS
     """
     identifier, extension = get_filename_ext(structure_file)
 
@@ -28,14 +56,9 @@ def PDB_get_resid_set(structure_file):
     resid_set = set()
     chain_num = 0
     for chain in model:
-        if chain_num == 0: 
-            for i in chain.get_residues():               
-                resid_set.add(i.get_full_id()[3][1])
-            chain_num += 1
-        else:
-            l.info(f"Only chain {chain} in {structure_file} selected.")
+        for i in chain.get_residues():               
+            resid_set.add(i.get_full_id()[3][1])
     return resid_set
-
 
 
 def string_to_dict(string):
@@ -121,6 +144,8 @@ def generate_plots(fasta_reference, pdb_chains, ):
         fig.tight_layout()
     return plt
 
+def summarize_coverage():
+    pass
 
 def plot_coverage(fastafile, pdblist):
     """
@@ -128,18 +153,30 @@ def plot_coverage(fastafile, pdblist):
     plots
     """
     
-    rows = ['Template {}'.format(pdb) for pdb in pdblist]     
+    rows = ['Template {}'.format(os.path.basename(pdb)) for pdb in pdblist]     
     fig, axes = plt.subplots(nrows=len(pdblist), ncols=1, figsize=(12, 8))
 
 
     i = 0
-    for ax, row in zip(axes, rows):
+    for ax, row in zip(axes, rows):        
         ax.set_ylabel(row, rotation=0, size='large', labelpad=90)
         x, y = extract_coincident_positions(fastafile, pdblist[i]) 
         ax.plot(x, y)
-        i += 1
+        ax.get_yaxis().set_ticks([])  
+        if "domains" in row: 
+            ax.fill_between(x, y, color = "orange")
+            mplcursors.cursor(ax, hover=True).connect(
+                "add", lambda sel: sel.annotation.set_text("AF2 Domains model\n text"))
+        else:
+            ax.fill_between(x, y)
+            mplcursors.cursor(ax, hover=True).connect(
+                "add", lambda sel: sel.annotation.set_text("Experimental Structure\n text"))
 
+
+        i += 1
+    ax.set_xlabel(f"Query: {os.path.basename(fastafile)}", rotation=0, size='large')
     fig.tight_layout()
+    
     plt.show()
 
 
