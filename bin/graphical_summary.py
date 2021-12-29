@@ -9,34 +9,6 @@ import os
 from bin.utilities import get_filename_ext
 import mplcursors
 
-
-# def PDB_get_resid_set(structure_file):
-#     """
-#     Given a PDB or MMCif File, return a set of [Res_ID] ONE CHAIN
-#     """
-#     identifier, extension = get_filename_ext(structure_file)
-
-#     if extension == "pdb":
-#         parser = PDBParser(QUIET=True)
-#     elif extension == "cif":
-#         parser = MMCIFParser(QUIET=True)
-#     else:
-#         raise NameError("Your file has to have \"pdb\" or \"cif\" as an extension")
-
-#     structure = parser.get_structure(identifier, structure_file)    
-
-#     model = structure[0]
-#     resid_set = set()
-#     chain_num = 0
-#     for chain in model:
-#         if chain_num == 0: 
-#             for i in chain.get_residues():               
-#                 resid_set.add(i.get_full_id()[3][1])
-#             chain_num += 1
-#         else:
-#             l.info(f"Only chain {chain} in {structure_file} selected.")
-#     return resid_set
-
 def PDB_get_resid_set(structure_file):
     """
     Given a PDB or MMCif File, return a set of [Res_ID] ALL CHAINS
@@ -178,9 +150,7 @@ def plot_coverage(fastafile, pdblist):
 
 
 
-
-
-from bin.dfi.DFI_plotter import run_dfi, plot_peaks
+from bin.dfi.DFI_plotter import run_dfi
 from scipy.signal import find_peaks
 import matplotlib.ticker as plticker
 
@@ -216,7 +186,9 @@ def plot_dfi_summary(structure_list):
         ax.plot(x, y)
         ax.plot(idx, y[idx], "x")
         ax.set_title("x = peaks")
-        loc = plticker.MultipleLocator(base=20) # this locator puts ticks at regular intervals
+        
+        # this locator puts ticks at regular intervals
+        loc = plticker.MultipleLocator(base=20)
         ax.xaxis.set_major_locator(loc)
         
         if "domains" in row: 
@@ -238,6 +210,7 @@ def plot_dfi_summary(structure_list):
 if __name__ == "__main__":
 
     fasta_test = "/home/gallegolab/Desktop/TFM/TFM/input_fasta/SEC3.fa"
-    pdbs = ["/home/gallegolab/Desktop/TFM/TFM/test_output/SEC3/PDB/CHAINS/3hie_A.pdb", "/home/gallegolab/Desktop/TFM/TFM/test_output/SEC3/PDB/CHAINS/5yfp_A.pdb"]
+    pdbs = ["/home/gallegolab/Desktop/TFM/TFM/test_output/SEC3/PDB/CHAINS/3hie_A.pdb",
+     "/home/gallegolab/Desktop/TFM/TFM/test_output/SEC3/PDB/CHAINS/5yfp_A.pdb"]
 
     plot_coverage(fasta_test, pdbs)

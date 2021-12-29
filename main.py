@@ -249,19 +249,6 @@ from bin.graphical_summary import plot_dfi_summary
     
 plot_dfi_summary(structures_for_query)
 
-# for file in structures_for_query:
-#     print(f"Running DFI analysis for {file}")
-#     DFI_df = run_dfi(file)
-#     # print(ref_df["ResI"].to_list())
-#     # print(ref_df["pctdfi"].to_list())
-
-#     top5percent = extract_flexible_residues(DFI_df) 
-    
-#     plt = plot_peaks(DFI_df)
-
-#     # print(top5percent.head(10) )
-#     # plt = plot_dfi(DFI_df, top5percent)         
-#     plt.show()
 
 
 ## Launch graphical summary 
