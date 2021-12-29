@@ -2,3 +2,5 @@ cctbx-base
 networkx
 paramiko
 mplcursors
+seaborn
+six

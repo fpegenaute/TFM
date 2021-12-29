@@ -104,8 +104,7 @@ def compare_dict_set(dict, set):
 
 def extract_coincident_positions(reference_fasta, pdbfile):
     """
-    Plot the coincident resid positions of a PDB wrt a PDB file.
-    it returns a matpotlib pyplot object
+    Plot the coincident resid positions of a PDB wrt a FASTA file.
     """
     # Get the dictionary of {position: aa} from the reference fasta file
     fasta_dict = FASTA_get_resid_dict(reference_fasta)
@@ -127,8 +126,7 @@ def generate_plots(fasta_reference, pdb_chains, ):
     for chain in pdb_chains:
         x, y = extract_coincident_positions(fasta_reference, chain) 
 
-        # Grid of plots, no ylabel, row headers and title
-        cols = []
+        
 
         pdbs = pdb_chains
         rows = ['Template {}'.format(template) for template in pdbs]
@@ -144,8 +142,6 @@ def generate_plots(fasta_reference, pdb_chains, ):
         fig.tight_layout()
     return plt
 
-def summarize_coverage():
-    pass
 
 def plot_coverage(fastafile, pdblist):
     """
