@@ -139,7 +139,7 @@ def plot_peaks(dataframe):
     # that is your original plot:
     axes.plot(y)
     axes.plot(idx,y[idx],"x")
-    axes.set_title("unsorted, x = peaks")
+    axes.set_title("x = peaks")
 
 
     plt.tight_layout()

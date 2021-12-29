@@ -180,6 +180,60 @@ def plot_coverage(fastafile, pdblist):
 
 
 
+from bin.dfi.DFI_plotter import run_dfi, plot_peaks
+from scipy.signal import find_peaks
+import matplotlib.ticker as plticker
+
+def plot_dfi_summary(structure_list):
+    """
+    Given a list of PDB files, run DFI analysis and plot the results indicating
+    the putative flexible residues, selected using peak detection in scipy
+    
+    Return a df with theses putative flexible residues
+    """
+
+    DFI_list = []
+    rows = []
+    for file in structure_list:
+        print(f"Running DFI analysis for {file}")
+        DFI_df = run_dfi(file)
+        DFI_list.append(DFI_df)
+        rows.append('Template {}'.format(os.path.basename(file)))
+    
+    fig, axes = plt.subplots(nrows=len(structure_list), ncols=1, figsize=(12, 8))
+    print(f"AXES: {axes}")
+
+    i = 0
+    for ax, row in zip(axes, rows):        
+        ax.set_ylabel(row, rotation=0, size='large', labelpad=90)
+       
+        x = DFI_list[i].iloc[:, 0].values
+        y = DFI_list[i].iloc[:, 1].values
+
+        idx, properties = find_peaks(y, prominence=0.5, width=1)
+
+        x = np.array(x)
+        ax.plot(x, y)
+        ax.plot(idx, y[idx], "x")
+        ax.set_title("x = peaks")
+        loc = plticker.MultipleLocator(base=20) # this locator puts ticks at regular intervals
+        ax.xaxis.set_major_locator(loc)
+        
+        if "domains" in row: 
+            ax.get_lines()[0].set_color("orange")
+            mplcursors.cursor(ax, hover=True).connect(
+                "add", lambda sel: sel.annotation.set_text("AF2 Domains model\n text"))
+        else:
+            ax.get_lines()[0].set_color("blue")
+            mplcursors.cursor(ax, hover=True).connect(
+                "add", lambda sel: sel.annotation.set_text("Experimental Structure\n text"))
+        i += 1
+
+    ax.set_xlabel(f"ResID", rotation=0, size='large')
+    fig.tight_layout()
+
+
+
 
 if __name__ == "__main__":
 

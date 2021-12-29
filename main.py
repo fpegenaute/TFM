@@ -15,7 +15,7 @@ import os
 import shutil
 from bin.extract_flexible_residues import extract_residue_list
 from bin.process_predicted_model import *
-from bin.graphical_summary import plot_coverage
+from bin.graphical_summary import plot_coverage, plot_dfi_summary
 from bin.dfi.DFI_plotter import run_dfi , extract_flexible_residues, plot_dfi, plot_peaks
 
 parser = argparse.ArgumentParser(description="""This program retrieves
@@ -245,20 +245,23 @@ for filename in os.listdir(af_dir):
 
   # START DFI   
    
+from bin.graphical_summary import plot_dfi_summary
     
-    for file in structures_for_query:
-        print(f"Running DFI analysis for {file}")
-        DFI_df = run_dfi(file)
-        # print(ref_df["ResI"].to_list())
-        # print(ref_df["pctdfi"].to_list())
+plot_dfi_summary(structures_for_query)
 
-        top5percent = extract_flexible_residues(DFI_df) 
-        
-        plt = plot_peaks(DFI_df)
+# for file in structures_for_query:
+#     print(f"Running DFI analysis for {file}")
+#     DFI_df = run_dfi(file)
+#     # print(ref_df["ResI"].to_list())
+#     # print(ref_df["pctdfi"].to_list())
 
-        # print(top5percent.head(10) )
-        # plt = plot_dfi(DFI_df, top5percent)         
-        plt.show()
+#     top5percent = extract_flexible_residues(DFI_df) 
+    
+#     plt = plot_peaks(DFI_df)
+
+#     # print(top5percent.head(10) )
+#     # plt = plot_dfi(DFI_df, top5percent)         
+#     plt.show()
 
 
 ## Launch graphical summary 
