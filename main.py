@@ -4,6 +4,8 @@
 ###################### ferran.pegenaute@upf.edu ###############################
 #################### ferran.pegenaute01@gmail.com #############################
 
+import matplotlib.pyplot as plt
+
 import Bio.SeqIO as IO
 import argparse
 from bin.blast import *
@@ -17,6 +19,8 @@ from bin.extract_flexible_residues import extract_residue_list
 from bin.process_predicted_model import *
 from bin.graphical_summary import plot_coverage, plot_dfi_summary
 from bin.dfi.DFI_plotter import run_dfi , extract_flexible_residues, plot_dfi, plot_peaks
+
+
 
 parser = argparse.ArgumentParser(description="""This program retrieves
                         Structural information from a sequence in a fasta file
@@ -247,13 +251,15 @@ for filename in os.listdir(af_dir):
    
 from bin.graphical_summary import plot_dfi_summary
     
-plot_dfi_summary(structures_for_query)
+plot_dfi_summary(structures_for_query, fasta)
 
 
 
 ## Launch graphical summary 
 print(f"CONFIDENT FILES: {structures_for_query}")
 plot_coverage(fasta, structures_for_query)
+
+plt.show()
 
 
 

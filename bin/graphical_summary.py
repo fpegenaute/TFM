@@ -9,6 +9,8 @@ import os
 from bin.utilities import get_filename_ext
 import mplcursors
 
+
+
 def PDB_get_resid_set(structure_file):
     """
     Given a PDB or MMCif File, return a set of [Res_ID] ALL CHAINS
@@ -28,8 +30,14 @@ def PDB_get_resid_set(structure_file):
     resid_set = set()
     chain_num = 0
     for chain in model:
-        for i in chain.get_residues():               
-            resid_set.add(i.get_full_id()[3][1])
+        for r in chain.get_residues():    
+            # Avoid heteroatoms
+            if r.id[0] == ' ':
+                resid_set.add(r.get_full_id()[3][1])
+
+
+
+            
     return resid_set
 
 
@@ -72,6 +80,18 @@ def compare_dict_set(dict, set):
 
     return dict
 
+def compare_dict_dict(dict1, dict2):
+    """
+    Given two dictionaries, it checks if the keys of the first (reference) are in the second. If they are, 
+    it updates the value of the given key with a the value of the second, if not, with a 0. It
+    returns the updated dict {key : 0/value}
+    """
+    for key in dict1.keys():
+        if key in dict2.keys():
+            dict1.update({key : dict2[key]})
+        if key not in dict2.keys():
+            dict1.update({key : 0})
+    return dict1
 
 
 def extract_coincident_positions(reference_fasta, pdbfile):
@@ -114,6 +134,19 @@ def generate_plots(fasta_reference, pdb_chains, ):
         fig.tight_layout()
     return plt
 
+def set_size(w,h, ax=None):
+    """ w, h: width, height in inches """
+    if not ax: ax=plt.gca()
+    l = ax.figure.subplotpars.left
+    r = ax.figure.subplotpars.right
+    t = ax.figure.subplotpars.top
+    b = ax.figure.subplotpars.bottom
+    figw = float(w)/(r-l)
+    figh = float(h)/(t-b)
+    ax.figure.set_size_inches(figw, figh)
+
+    return
+
 
 def plot_coverage(fastafile, pdblist):
     """
@@ -145,7 +178,7 @@ def plot_coverage(fastafile, pdblist):
     ax.set_xlabel(f"Query: {os.path.basename(fastafile)}", rotation=0, size='large')
     fig.tight_layout()
     
-    plt.show()
+    # plt.show()
 
 
 
@@ -153,14 +186,23 @@ def plot_coverage(fastafile, pdblist):
 from bin.dfi.DFI_plotter import run_dfi
 from scipy.signal import find_peaks
 import matplotlib.ticker as plticker
+import pandas as pd
 
-def plot_dfi_summary(structure_list):
+
+
+def plot_dfi_summary(structure_list, fasta_reference):
     """
-    Given a list of PDB files, run DFI analysis and plot the results indicating
-    the putative flexible residues, selected using peak detection in scipy
+    Given a list of PDB files and a reference fasta file, run DFI analysis and plot the results indicating
+    the putative flexible residues, selected using peak detection in scipy and only in the regions available in the structures
     
     Return a df with theses putative flexible residues
     """
+    fasta_dict = FASTA_get_resid_dict(fasta_reference)
+    # fasta_df = pd.DataFrame.from_dict(fasta_dict, orient='index')
+    
+    
+    
+
 
     DFI_list = []
     rows = []
@@ -177,19 +219,35 @@ def plot_dfi_summary(structure_list):
     for ax, row in zip(axes, rows):        
         ax.set_ylabel(row, rotation=0, size='large', labelpad=90)
        
-        x = DFI_list[i].iloc[:, 0].values
-        y = DFI_list[i].iloc[:, 1].values
+        # Convert DFI df to a dict {ResI : DFI}
+        DFI_dict = DFI_list[i].set_index("ResI")["pctdfi"].to_dict()
+        print(f"DFI DICT: {fasta_dict}")
+        # Compare the reference Fasta and DFI dicts
+        
+        # Ensure the types
+        DFI_dict = {int(key) : float(value) for key ,value in DFI_dict.items()}
 
-        idx, properties = find_peaks(y, prominence=0.5, width=1)
+        DFI_coverage_dict = compare_dict_dict(fasta_dict, DFI_dict)
+        
+                
+        lists = sorted(DFI_coverage_dict.items()) # sorted by key, return a list of tuples
 
+        x, y = zip(*lists) # unpack a list of pairs into two tuples
         x = np.array(x)
+        y = np.array(y)
+
+        idx, properties = find_peaks(y, prominence=0.2, width=1)
+
         ax.plot(x, y)
         ax.plot(idx, y[idx], "x")
         ax.set_title("x = peaks")
+        plt.setp(ax.get_xticklabels(), rotation=30, ha="right")
         
         # this locator puts ticks at regular intervals
         loc = plticker.MultipleLocator(base=20)
         ax.xaxis.set_major_locator(loc)
+        
+        
         
         if "domains" in row: 
             ax.get_lines()[0].set_color("orange")
@@ -203,6 +261,7 @@ def plot_dfi_summary(structure_list):
 
     ax.set_xlabel(f"ResID", rotation=0, size='large')
     fig.tight_layout()
+    # plt.show()
 
 
 

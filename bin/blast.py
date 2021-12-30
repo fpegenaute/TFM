@@ -51,7 +51,7 @@ def exact_match_retriever(filename):
     i = 0
     for alignment in blast_record.alignments:
         for hsp in alignment.hsps:
-            if i < 4:
+            if i < 20:
                 if alignment.length == len(hsp.query):
                     ID = alignment.title[4:8].upper()
                     Chain = alignment.title[9]
