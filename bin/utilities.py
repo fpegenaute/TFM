@@ -128,3 +128,5 @@ def submit_AF_to_SLURM(query_fasta, outdir, workload_manager="sbatch", dummy_dir
       
     os.system("%s %s" % (workload_manager,script))
 
+
+

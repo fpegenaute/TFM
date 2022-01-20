@@ -1,0 +1,397 @@
+DEBUG:...STARTING...
+
+INFO:Query length: 759
+INFO:BLAST database is located at: /home/gallegolab/Desktop/TFM/databases/BLAST/pdbaa
+INFO:The BLAST output will be stored in:test_output/SEC2/BLAST/
+INFO:Starting BLAST. Query: input_fasta/SEC2.fa, Database: pdbaa
+INFO:BLAST results stored in : test_output/SEC2/BLAST/SEC2_blast.out
+INFO: The target sequence has close homologs in the PDB with 
+    code/s: dict_keys([])
+DEBUG:Alphafold will not run, this is a test
+INFO:Creating folder for AF2 output in:test_output/SEC2/ALPHAFOLD/
+INFO:Extracting high confidence domains
+INFO:Domains will be stored in:test_output/SEC2/ALPHAFOLD/DOMAINS/
+DEBUG:STREAM b'IHDR' 16 13
+DEBUG:STREAM b'sBIT' 41 4
+DEBUG:b'sBIT' 41 4 (unknown)
+DEBUG:STREAM b'pHYs' 57 9
+DEBUG:STREAM b'IDAT' 78 374
+DEBUG:STREAM b'IHDR' 16 13
+DEBUG:STREAM b'sBIT' 41 4
+DEBUG:b'sBIT' 41 4 (unknown)
+DEBUG:STREAM b'pHYs' 57 9
+DEBUG:STREAM b'IDAT' 78 286
+DEBUG:STREAM b'IHDR' 16 13
+DEBUG:STREAM b'sBIT' 41 4
+DEBUG:b'sBIT' 41 4 (unknown)
+DEBUG:STREAM b'pHYs' 57 9
+DEBUG:STREAM b'IDAT' 78 263
+DEBUG:STREAM b'IHDR' 16 13
+DEBUG:STREAM b'sBIT' 41 4
+DEBUG:b'sBIT' 41 4 (unknown)
+DEBUG:STREAM b'pHYs' 57 9
+DEBUG:STREAM b'IDAT' 78 387
+DEBUG:STREAM b'IHDR' 16 13
+DEBUG:STREAM b'sBIT' 41 4
+DEBUG:b'sBIT' 41 4 (unknown)
+DEBUG:STREAM b'pHYs' 57 9
+DEBUG:STREAM b'IDAT' 78 436
+DEBUG:STREAM b'IHDR' 16 13
+DEBUG:STREAM b'sBIT' 41 4
+DEBUG:b'sBIT' 41 4 (unknown)
+DEBUG:STREAM b'pHYs' 57 9
+DEBUG:STREAM b'IDAT' 78 351
+DEBUG:STREAM b'IHDR' 16 13
+DEBUG:STREAM b'sBIT' 41 4
+DEBUG:b'sBIT' 41 4 (unknown)
+DEBUG:STREAM b'pHYs' 57 9
+DEBUG:STREAM b'IDAT' 78 364
+DEBUG:...STARTING...
+
+INFO:Query length: 759
+INFO:BLAST database is located at: /home/gallegolab/Desktop/TFM/databases/BLAST/pdbaa
+INFO:The BLAST output will be stored in:test_output/SEC2/BLAST/
+INFO:Starting BLAST. Query: input_fasta/SEC2.fa, Database: pdbaa
+INFO:BLAST results stored in : test_output/SEC2/BLAST/SEC2_blast.out
+INFO: The target sequence has close homologs in the PDB with 
+    code/s: dict_keys([])
+DEBUG:Alphafold will not run, this is a test
+INFO:Creating folder for AF2 output in:test_output/SEC2/ALPHAFOLD/
+INFO:Extracting high confidence domains
+INFO:Domains will be stored in:test_output/SEC2/ALPHAFOLD/DOMAINS/
+DEBUG:...STARTING...
+
+INFO:Query length: 759
+INFO:BLAST database is located at: /home/gallegolab/Desktop/TFM/databases/BLAST/pdbaa
+INFO:The BLAST output will be stored in:test_output/SEC2/BLAST/
+INFO:Starting BLAST. Query: input_fasta/SEC2.fa, Database: pdbaa
+INFO:BLAST results stored in : test_output/SEC2/BLAST/SEC2_blast.out
+INFO: The target sequence has close homologs in the PDB with 
+    code/s: dict_keys([])
+DEBUG:Alphafold will not run, this is a test
+INFO:Creating folder for AF2 output in:test_output/SEC2/ALPHAFOLD/
+INFO:Extracting high confidence domains
+INFO:Domains will be stored in:test_output/SEC2/ALPHAFOLD/DOMAINS/
+DEBUG:STREAM b'IHDR' 16 13
+DEBUG:STREAM b'sBIT' 41 4
+DEBUG:b'sBIT' 41 4 (unknown)
+DEBUG:STREAM b'pHYs' 57 9
+DEBUG:STREAM b'IDAT' 78 374
+DEBUG:STREAM b'IHDR' 16 13
+DEBUG:STREAM b'sBIT' 41 4
+DEBUG:b'sBIT' 41 4 (unknown)
+DEBUG:STREAM b'pHYs' 57 9
+DEBUG:STREAM b'IDAT' 78 286
+DEBUG:STREAM b'IHDR' 16 13
+DEBUG:STREAM b'sBIT' 41 4
+DEBUG:b'sBIT' 41 4 (unknown)
+DEBUG:STREAM b'pHYs' 57 9
+DEBUG:STREAM b'IDAT' 78 263
+DEBUG:STREAM b'IHDR' 16 13
+DEBUG:STREAM b'sBIT' 41 4
+DEBUG:b'sBIT' 41 4 (unknown)
+DEBUG:STREAM b'pHYs' 57 9
+DEBUG:STREAM b'IDAT' 78 387
+DEBUG:STREAM b'IHDR' 16 13
+DEBUG:STREAM b'sBIT' 41 4
+DEBUG:b'sBIT' 41 4 (unknown)
+DEBUG:STREAM b'pHYs' 57 9
+DEBUG:STREAM b'IDAT' 78 436
+DEBUG:STREAM b'IHDR' 16 13
+DEBUG:STREAM b'sBIT' 41 4
+DEBUG:b'sBIT' 41 4 (unknown)
+DEBUG:STREAM b'pHYs' 57 9
+DEBUG:STREAM b'IDAT' 78 351
+DEBUG:STREAM b'IHDR' 16 13
+DEBUG:STREAM b'sBIT' 41 4
+DEBUG:b'sBIT' 41 4 (unknown)
+DEBUG:STREAM b'pHYs' 57 9
+DEBUG:STREAM b'IDAT' 78 364
+DEBUG:...STARTING...
+
+INFO:Query length: 759
+INFO:BLAST database is located at: /home/gallegolab/Desktop/TFM/databases/BLAST/pdbaa
+INFO:The BLAST output will be stored in:test_output/SEC2/BLAST/
+INFO:Starting BLAST. Query: input_fasta/SEC2.fa, Database: pdbaa
+INFO:BLAST results stored in : test_output/SEC2/BLAST/SEC2_blast.out
+INFO: The target sequence has close homologs in the PDB with 
+    code/s: dict_keys([])
+DEBUG:Alphafold will not run, this is a test
+INFO:Creating folder for AF2 output in:test_output/SEC2/ALPHAFOLD/
+INFO:Extracting high confidence domains
+INFO:Domains will be stored in:test_output/SEC2/ALPHAFOLD/DOMAINS/
+DEBUG:STREAM b'IHDR' 16 13
+DEBUG:STREAM b'sBIT' 41 4
+DEBUG:b'sBIT' 41 4 (unknown)
+DEBUG:STREAM b'pHYs' 57 9
+DEBUG:STREAM b'IDAT' 78 374
+DEBUG:STREAM b'IHDR' 16 13
+DEBUG:STREAM b'sBIT' 41 4
+DEBUG:b'sBIT' 41 4 (unknown)
+DEBUG:STREAM b'pHYs' 57 9
+DEBUG:STREAM b'IDAT' 78 286
+DEBUG:STREAM b'IHDR' 16 13
+DEBUG:STREAM b'sBIT' 41 4
+DEBUG:b'sBIT' 41 4 (unknown)
+DEBUG:STREAM b'pHYs' 57 9
+DEBUG:STREAM b'IDAT' 78 263
+DEBUG:STREAM b'IHDR' 16 13
+DEBUG:STREAM b'sBIT' 41 4
+DEBUG:b'sBIT' 41 4 (unknown)
+DEBUG:STREAM b'pHYs' 57 9
+DEBUG:STREAM b'IDAT' 78 387
+DEBUG:STREAM b'IHDR' 16 13
+DEBUG:STREAM b'sBIT' 41 4
+DEBUG:b'sBIT' 41 4 (unknown)
+DEBUG:STREAM b'pHYs' 57 9
+DEBUG:STREAM b'IDAT' 78 436
+DEBUG:STREAM b'IHDR' 16 13
+DEBUG:STREAM b'sBIT' 41 4
+DEBUG:b'sBIT' 41 4 (unknown)
+DEBUG:STREAM b'pHYs' 57 9
+DEBUG:STREAM b'IDAT' 78 351
+DEBUG:STREAM b'IHDR' 16 13
+DEBUG:STREAM b'sBIT' 41 4
+DEBUG:b'sBIT' 41 4 (unknown)
+DEBUG:STREAM b'pHYs' 57 9
+DEBUG:STREAM b'IDAT' 78 364
+DEBUG:...STARTING...
+
+INFO:Query length: 759
+INFO:BLAST database is located at: /home/gallegolab/Desktop/TFM/databases/BLAST/pdbaa
+INFO:The BLAST output will be stored in:test_output/SEC2/BLAST/
+INFO:Starting BLAST. Query: input_fasta/SEC2.fa, Database: pdbaa
+INFO:BLAST results stored in : test_output/SEC2/BLAST/SEC2_blast.out
+INFO: The target sequence has close homologs in the PDB with 
+    code/s: dict_keys([])
+DEBUG:Alphafold will not run, this is a test
+INFO:Creating folder for AF2 output in:test_output/SEC2/ALPHAFOLD/
+INFO:Extracting high confidence domains
+INFO:Domains will be stored in:test_output/SEC2/ALPHAFOLD/DOMAINS/
+DEBUG:STREAM b'IHDR' 16 13
+DEBUG:STREAM b'sBIT' 41 4
+DEBUG:b'sBIT' 41 4 (unknown)
+DEBUG:STREAM b'pHYs' 57 9
+DEBUG:STREAM b'IDAT' 78 374
+DEBUG:STREAM b'IHDR' 16 13
+DEBUG:STREAM b'sBIT' 41 4
+DEBUG:b'sBIT' 41 4 (unknown)
+DEBUG:STREAM b'pHYs' 57 9
+DEBUG:STREAM b'IDAT' 78 286
+DEBUG:STREAM b'IHDR' 16 13
+DEBUG:STREAM b'sBIT' 41 4
+DEBUG:b'sBIT' 41 4 (unknown)
+DEBUG:STREAM b'pHYs' 57 9
+DEBUG:STREAM b'IDAT' 78 263
+DEBUG:STREAM b'IHDR' 16 13
+DEBUG:STREAM b'sBIT' 41 4
+DEBUG:b'sBIT' 41 4 (unknown)
+DEBUG:STREAM b'pHYs' 57 9
+DEBUG:STREAM b'IDAT' 78 387
+DEBUG:STREAM b'IHDR' 16 13
+DEBUG:STREAM b'sBIT' 41 4
+DEBUG:b'sBIT' 41 4 (unknown)
+DEBUG:STREAM b'pHYs' 57 9
+DEBUG:STREAM b'IDAT' 78 436
+DEBUG:STREAM b'IHDR' 16 13
+DEBUG:STREAM b'sBIT' 41 4
+DEBUG:b'sBIT' 41 4 (unknown)
+DEBUG:STREAM b'pHYs' 57 9
+DEBUG:STREAM b'IDAT' 78 351
+DEBUG:STREAM b'IHDR' 16 13
+DEBUG:STREAM b'sBIT' 41 4
+DEBUG:b'sBIT' 41 4 (unknown)
+DEBUG:STREAM b'pHYs' 57 9
+DEBUG:STREAM b'IDAT' 78 364
+DEBUG:...STARTING...
+
+INFO:Query length: 759
+INFO:BLAST database is located at: /home/gallegolab/Desktop/TFM/databases/BLAST/pdbaa
+INFO:The BLAST output will be stored in:test_output/SEC2/BLAST/
+INFO:Starting BLAST. Query: input_fasta/SEC2.fa, Database: pdbaa
+INFO:BLAST results stored in : test_output/SEC2/BLAST/SEC2_blast.out
+INFO: The target sequence has close homologs in the PDB with 
+    code/s: dict_keys([])
+DEBUG:Alphafold will not run, this is a test
+INFO:Creating folder for AF2 output in:test_output/SEC2/ALPHAFOLD/
+INFO:Extracting high confidence domains
+INFO:Domains will be stored in:test_output/SEC2/ALPHAFOLD/DOMAINS/
+DEBUG:STREAM b'IHDR' 16 13
+DEBUG:STREAM b'sBIT' 41 4
+DEBUG:b'sBIT' 41 4 (unknown)
+DEBUG:STREAM b'pHYs' 57 9
+DEBUG:STREAM b'IDAT' 78 374
+DEBUG:STREAM b'IHDR' 16 13
+DEBUG:STREAM b'sBIT' 41 4
+DEBUG:b'sBIT' 41 4 (unknown)
+DEBUG:STREAM b'pHYs' 57 9
+DEBUG:STREAM b'IDAT' 78 286
+DEBUG:STREAM b'IHDR' 16 13
+DEBUG:STREAM b'sBIT' 41 4
+DEBUG:b'sBIT' 41 4 (unknown)
+DEBUG:STREAM b'pHYs' 57 9
+DEBUG:STREAM b'IDAT' 78 263
+DEBUG:STREAM b'IHDR' 16 13
+DEBUG:STREAM b'sBIT' 41 4
+DEBUG:b'sBIT' 41 4 (unknown)
+DEBUG:STREAM b'pHYs' 57 9
+DEBUG:STREAM b'IDAT' 78 387
+DEBUG:STREAM b'IHDR' 16 13
+DEBUG:STREAM b'sBIT' 41 4
+DEBUG:b'sBIT' 41 4 (unknown)
+DEBUG:STREAM b'pHYs' 57 9
+DEBUG:STREAM b'IDAT' 78 436
+DEBUG:STREAM b'IHDR' 16 13
+DEBUG:STREAM b'sBIT' 41 4
+DEBUG:b'sBIT' 41 4 (unknown)
+DEBUG:STREAM b'pHYs' 57 9
+DEBUG:STREAM b'IDAT' 78 351
+DEBUG:STREAM b'IHDR' 16 13
+DEBUG:STREAM b'sBIT' 41 4
+DEBUG:b'sBIT' 41 4 (unknown)
+DEBUG:STREAM b'pHYs' 57 9
+DEBUG:STREAM b'IDAT' 78 364
+DEBUG:...STARTING...
+
+INFO:Query length: 759
+INFO:BLAST database is located at: /home/gallegolab/Desktop/TFM/databases/BLAST/pdbaa
+INFO:The BLAST output will be stored in:test_output/SEC2/BLAST/
+INFO:Starting BLAST. Query: input_fasta/SEC2.fa, Database: pdbaa
+INFO:BLAST results stored in : test_output/SEC2/BLAST/SEC2_blast.out
+INFO: The target sequence has close homologs in the PDB with 
+    code/s: dict_keys([])
+DEBUG:Alphafold will not run, this is a test
+INFO:Creating folder for AF2 output in:test_output/SEC2/ALPHAFOLD/
+INFO:Extracting high confidence domains
+INFO:Domains will be stored in:test_output/SEC2/ALPHAFOLD/DOMAINS/
+DEBUG:STREAM b'IHDR' 16 13
+DEBUG:STREAM b'sBIT' 41 4
+DEBUG:b'sBIT' 41 4 (unknown)
+DEBUG:STREAM b'pHYs' 57 9
+DEBUG:STREAM b'IDAT' 78 374
+DEBUG:STREAM b'IHDR' 16 13
+DEBUG:STREAM b'sBIT' 41 4
+DEBUG:b'sBIT' 41 4 (unknown)
+DEBUG:STREAM b'pHYs' 57 9
+DEBUG:STREAM b'IDAT' 78 286
+DEBUG:STREAM b'IHDR' 16 13
+DEBUG:STREAM b'sBIT' 41 4
+DEBUG:b'sBIT' 41 4 (unknown)
+DEBUG:STREAM b'pHYs' 57 9
+DEBUG:STREAM b'IDAT' 78 263
+DEBUG:STREAM b'IHDR' 16 13
+DEBUG:STREAM b'sBIT' 41 4
+DEBUG:b'sBIT' 41 4 (unknown)
+DEBUG:STREAM b'pHYs' 57 9
+DEBUG:STREAM b'IDAT' 78 387
+DEBUG:STREAM b'IHDR' 16 13
+DEBUG:STREAM b'sBIT' 41 4
+DEBUG:b'sBIT' 41 4 (unknown)
+DEBUG:STREAM b'pHYs' 57 9
+DEBUG:STREAM b'IDAT' 78 436
+DEBUG:STREAM b'IHDR' 16 13
+DEBUG:STREAM b'sBIT' 41 4
+DEBUG:b'sBIT' 41 4 (unknown)
+DEBUG:STREAM b'pHYs' 57 9
+DEBUG:STREAM b'IDAT' 78 351
+DEBUG:STREAM b'IHDR' 16 13
+DEBUG:STREAM b'sBIT' 41 4
+DEBUG:b'sBIT' 41 4 (unknown)
+DEBUG:STREAM b'pHYs' 57 9
+DEBUG:STREAM b'IDAT' 78 364
+DEBUG:...STARTING...
+
+INFO:Query length: 759
+INFO:BLAST database is located at: /home/gallegolab/Desktop/TFM/databases/BLAST/pdbaa
+INFO:The BLAST output will be stored in:test_output/SEC2/BLAST/
+INFO:Starting BLAST. Query: input_fasta/SEC2.fa, Database: pdbaa
+INFO:BLAST results stored in : test_output/SEC2/BLAST/SEC2_blast.out
+INFO: The target sequence has close homologs in the PDB with 
+    code/s: dict_keys([])
+DEBUG:Alphafold will not run, this is a test
+INFO:Creating folder for AF2 output in:test_output/SEC2/ALPHAFOLD/
+INFO:Extracting high confidence domains
+INFO:Domains will be stored in:test_output/SEC2/ALPHAFOLD/DOMAINS/
+DEBUG:STREAM b'IHDR' 16 13
+DEBUG:STREAM b'sBIT' 41 4
+DEBUG:b'sBIT' 41 4 (unknown)
+DEBUG:STREAM b'pHYs' 57 9
+DEBUG:STREAM b'IDAT' 78 374
+DEBUG:STREAM b'IHDR' 16 13
+DEBUG:STREAM b'sBIT' 41 4
+DEBUG:b'sBIT' 41 4 (unknown)
+DEBUG:STREAM b'pHYs' 57 9
+DEBUG:STREAM b'IDAT' 78 286
+DEBUG:STREAM b'IHDR' 16 13
+DEBUG:STREAM b'sBIT' 41 4
+DEBUG:b'sBIT' 41 4 (unknown)
+DEBUG:STREAM b'pHYs' 57 9
+DEBUG:STREAM b'IDAT' 78 263
+DEBUG:STREAM b'IHDR' 16 13
+DEBUG:STREAM b'sBIT' 41 4
+DEBUG:b'sBIT' 41 4 (unknown)
+DEBUG:STREAM b'pHYs' 57 9
+DEBUG:STREAM b'IDAT' 78 387
+DEBUG:STREAM b'IHDR' 16 13
+DEBUG:STREAM b'sBIT' 41 4
+DEBUG:b'sBIT' 41 4 (unknown)
+DEBUG:STREAM b'pHYs' 57 9
+DEBUG:STREAM b'IDAT' 78 436
+DEBUG:STREAM b'IHDR' 16 13
+DEBUG:STREAM b'sBIT' 41 4
+DEBUG:b'sBIT' 41 4 (unknown)
+DEBUG:STREAM b'pHYs' 57 9
+DEBUG:STREAM b'IDAT' 78 351
+DEBUG:STREAM b'IHDR' 16 13
+DEBUG:STREAM b'sBIT' 41 4
+DEBUG:b'sBIT' 41 4 (unknown)
+DEBUG:STREAM b'pHYs' 57 9
+DEBUG:STREAM b'IDAT' 78 364
+DEBUG:...STARTING...
+
+INFO:Query length: 759
+INFO:BLAST database is located at: /home/gallegolab/Desktop/TFM/databases/BLAST/pdbaa
+INFO:The BLAST output will be stored in:test_output/SEC2/BLAST/
+INFO:Starting BLAST. Query: input_fasta/SEC2.fa, Database: pdbaa
+INFO:BLAST results stored in : test_output/SEC2/BLAST/SEC2_blast.out
+INFO: The target sequence has close homologs in the PDB with 
+    code/s: dict_keys([])
+DEBUG:Alphafold will not run, this is a test
+INFO:Creating folder for AF2 output in:test_output/SEC2/ALPHAFOLD/
+INFO:Extracting high confidence domains
+INFO:Domains will be stored in:test_output/SEC2/ALPHAFOLD/DOMAINS/
+DEBUG:STREAM b'IHDR' 16 13
+DEBUG:STREAM b'sBIT' 41 4
+DEBUG:b'sBIT' 41 4 (unknown)
+DEBUG:STREAM b'pHYs' 57 9
+DEBUG:STREAM b'IDAT' 78 374
+DEBUG:STREAM b'IHDR' 16 13
+DEBUG:STREAM b'sBIT' 41 4
+DEBUG:b'sBIT' 41 4 (unknown)
+DEBUG:STREAM b'pHYs' 57 9
+DEBUG:STREAM b'IDAT' 78 286
+DEBUG:STREAM b'IHDR' 16 13
+DEBUG:STREAM b'sBIT' 41 4
+DEBUG:b'sBIT' 41 4 (unknown)
+DEBUG:STREAM b'pHYs' 57 9
+DEBUG:STREAM b'IDAT' 78 263
+DEBUG:STREAM b'IHDR' 16 13
+DEBUG:STREAM b'sBIT' 41 4
+DEBUG:b'sBIT' 41 4 (unknown)
+DEBUG:STREAM b'pHYs' 57 9
+DEBUG:STREAM b'IDAT' 78 387
+DEBUG:STREAM b'IHDR' 16 13
+DEBUG:STREAM b'sBIT' 41 4
+DEBUG:b'sBIT' 41 4 (unknown)
+DEBUG:STREAM b'pHYs' 57 9
+DEBUG:STREAM b'IDAT' 78 436
+DEBUG:STREAM b'IHDR' 16 13
+DEBUG:STREAM b'sBIT' 41 4
+DEBUG:b'sBIT' 41 4 (unknown)
+DEBUG:STREAM b'pHYs' 57 9
+DEBUG:STREAM b'IDAT' 78 351
+DEBUG:STREAM b'IHDR' 16 13
+DEBUG:STREAM b'sBIT' 41 4
+DEBUG:b'sBIT' 41 4 (unknown)
+DEBUG:STREAM b'pHYs' 57 9
+DEBUG:STREAM b'IDAT' 78 364

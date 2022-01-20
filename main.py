@@ -12,13 +12,14 @@ from bin.blast import *
 from bin.PDB_retriever import *
 import  bin.config as cfg
 import logging as l
-from pathlib import Path, PurePath, PurePosixPath
+from pathlib import Path, PurePosixPath
 import os
 import shutil
 from bin.extract_flexible_residues import extract_residue_list
 from bin.process_predicted_model import *
 from bin.graphical_summary import plot_coverage, plot_dfi_summary
-from bin.dfi.DFI_plotter import run_dfi , extract_flexible_residues, plot_dfi, plot_peaks
+from bin.graphical_summary import plot_dfi_summary
+
 
 
 
@@ -123,6 +124,7 @@ if exact_matches:
     retrieve_pdb_info(exact_matches, pdb_dir, fasta_dir)
     # Check lengths of the actual PDB Chains and store them accordingly
     for file in os.listdir(pdb_dir):
+        
         current = os.path.join(pdb_dir, file)
         if os.path.isfile(current):
             l.info(f"File being processed: {file}")
@@ -136,39 +138,43 @@ if exact_matches:
             
             # Extract the desired chain
             l.info(f"Extracting the chain")
-            splitter = ChainSplitter(mmcif=True, out_dir=os.path.join(pdb_dir, "CHAINS"))
-            chain_path = splitter.make_pdb(os.path.join(pdb_dir, file), exact_matches[identifier] )
-            structures_for_query.append(chain_path)
-            l.debug(f"CHAIN PATH: {chain_path}")
-
+            splitter = ChainSplitter(mmcif=True, out_dir=chain_dir)
+            chain_path = splitter.make_pdb(os.path.join(pdb_dir, file), exact_matches[identifier], overwrite=True )
+            # structures_for_query.append(chain_path)
+            # print(f"STRUCTURES FOR QUERY: {structures_for_query}")
             
             # Store partial matches (<95% of the query length)
             pdb_len = check_PDB_len(chain_path, exact_matches[identifier])
             l.info(f"Length of the template {PurePosixPath(chain_path).name}: {pdb_len}")
             
-            l.info(f"PDB_LEN: {pdb_len} . QUERY_LEN: {0.95*query_length}")
+            l.info(f"PDB_LEN: {pdb_len} . QUERY_LEN: {query_length}")
             if pdb_len > 10 and pdb_len < (query_length):
                 l.info(f"""{PurePosixPath(chain_path).name} has length {pdb_len}, it will be stored 
                     as a partial match""")
+                newpath = os.path.join(pdb_dir,"partial", f"{PurePosixPath(chain_path).name}")
                 try:
-                    shutil.move(os.path.join(pdb_dir, file), os.path.join(pdb_dir,"partial", file))
+                    print(f"MOVINF {chain_path} TO {newpath}")
+                    shutil.move(chain_path, newpath)
+                    structures_for_query.append(newpath)
                 except Exception:
-                    directory = os.path.join(pdb_dir,"partial")
+                    directory = os.path.join(pdb_dir,"partial", "")
                     l.info(f"\"{directory}\" does not exist, it will be created")
-                    os.mkdir(os.path.join(pdb_dir,"partial"))
-                    shutil.move(os.path.join(pdb_dir, file), os.path.join(pdb_dir,"partial", file))
+                    Path(directory).mkdir(parents=True, exist_ok=True)
+                    shutil.move(chain_path, newpath)
+                    structures_for_query.append(newpath)
             if pdb_len > 10 and pdb_len > (0.95*query_length):
                 l.info(f"""{PurePosixPath(chain_path).name} has length {pdb_len}, it will be stored 
                     as a full-length match""")
+                newpath = os.path.join(pdb_dir,"total", f"{PurePosixPath(chain_path).name}")
                 try:
-                    shutil.move(os.path.join(pdb_dir, file), os.path.join(pdb_dir,"total", file))
-                    structures_for_query.append(os.path.join(pdb_dir,"total", file))
+                    shutil.move(chain_path, newpath)
+                    structures_for_query.append(newpath)
                 except Exception:
-                    directory = os.path.join(pdb_dir,"total")
+                    directory = os.path.join(pdb_dir, "total", "")
                     l.info(f"\"{directory}\" does not exist, it will be created")
-                    os.mkdir(os.path.join(pdb_dir,"total"))
-                    shutil.move(os.path.join(pdb_dir, file), os.path.join(pdb_dir,"total", file))
-                    structures_for_query.append(os.path.join(pdb_dir,"total", file))
+                    Path(directory).mkdir(parents=True, exist_ok=True)          
+                    shutil.move(chain_path, newpath)
+                    structures_for_query.append(newpath)
 
 
 
@@ -249,15 +255,17 @@ for filename in os.listdir(af_dir):
 
   # START DFI   
    
-from bin.graphical_summary import plot_dfi_summary
     
-plot_dfi_summary(structures_for_query, fasta)
 
 
 
 ## Launch graphical summary 
 print(f"CONFIDENT FILES: {structures_for_query}")
-plot_coverage(fasta, structures_for_query)
+nrow = len(structures_for_query)
+print(f"NROW: {nrow}")
+plot_coverage(fasta, structures_for_query, nrow)
+plot_dfi_summary(structures_for_query, fasta)
+
 
 plt.show()
 

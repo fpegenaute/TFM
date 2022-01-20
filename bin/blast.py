@@ -36,11 +36,10 @@ def run_blast_local(fasta, blastdb, outdir, db="pdbaa"):
 
 def exact_match_retriever(filename):
     """
-    Given a XML (format 5) formatted BLAST output, 
-    return a dictionary of exact matches, meaning e-value == 0.0
-    AND length of the query == length of the match.
-    
-    Each dictionary entry has the format "PDB ID : Chain"
+    Given a XML (format 5) formatted BLAST output retrieve the matches (up to 10)
+
+
+
     """
 
     with open(filename) as result_handle:
@@ -53,8 +52,8 @@ def exact_match_retriever(filename):
         for hsp in alignment.hsps:
             if i < 20:
                 if alignment.length == len(hsp.query):
-                    ID = alignment.title[4:8].upper()
-                    Chain = alignment.title[9]
+                    ID = alignment.hit_id[4:8].upper()
+                    Chain = alignment.hit_id[-1]
                     i+=1
 
                     matches.update({ID : Chain})

@@ -148,14 +148,14 @@ def set_size(w,h, ax=None):
     return
 
 
-def plot_coverage(fastafile, pdblist):
+def plot_coverage(fastafile, pdblist, nrow):
     """
     Plot The coverage of a pdb list wrt to a reference fasta file in different 
     plots
     """
     
     rows = ['Template {}'.format(os.path.basename(pdb)) for pdb in pdblist]     
-    fig, axes = plt.subplots(nrows=len(pdblist), ncols=1, figsize=(12, 8))
+    fig, axes = plt.subplots(nrows=nrow, ncols=1, figsize=(12, 8))
 
 
     i = 0
@@ -200,10 +200,6 @@ def plot_dfi_summary(structure_list, fasta_reference):
     fasta_dict = FASTA_get_resid_dict(fasta_reference)
     # fasta_df = pd.DataFrame.from_dict(fasta_dict, orient='index')
     
-    
-    
-
-
     DFI_list = []
     rows = []
     for file in structure_list:
@@ -221,12 +217,11 @@ def plot_dfi_summary(structure_list, fasta_reference):
        
         # Convert DFI df to a dict {ResI : DFI}
         DFI_dict = DFI_list[i].set_index("ResI")["pctdfi"].to_dict()
-        print(f"DFI DICT: {fasta_dict}")
-        # Compare the reference Fasta and DFI dicts
-        
+
         # Ensure the types
         DFI_dict = {int(key) : float(value) for key ,value in DFI_dict.items()}
-
+        
+        # Compare the reference Fasta and DFI dicts
         DFI_coverage_dict = compare_dict_dict(fasta_dict, DFI_dict)
         
                 

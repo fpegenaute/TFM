@@ -141,11 +141,11 @@ class ChainSplitter:
 
         # Skip PDB generation if the file already exists
         if (not overwrite) and (os.path.isfile(out_path)):
-            print("Chain%s %s of '%s' already extracted to '%s'." %
+            l.info("Chain%s %s of '%s' already extracted to '%s'." %
                     (plural, ", ".join(chain_letters), pdb_id, out_name))
             return out_path
 
-        print("Extracting chain%s %s from %s..." % (plural,
+        l.info("Extracting chain%s %s from %s..." % (plural,
                 ", ".join(chain_letters), pdb_filename))
 
         # Get structure, write new file with only given chains

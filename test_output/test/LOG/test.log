@@ -17,34 +17,268 @@ INFO:File being processed: 5aog.cif
 INFO:Making directory for the chains at test_output/test/PDB/CHAINS/
 INFO:Extracting the chain
 INFO:OUT PATH:test_output/test/PDB/CHAINS/5aog_A.pdb
-DEBUG:CHAIN PATH: test_output/test/PDB/CHAINS/5aog_A.pdb
 INFO:ID: 5AOG_A . Extension: pdb, 
 INFO:Length of the template 5aog_A.pdb: 307
-INFO:PDB_LEN: 307 . QUERY_LEN: 290.7
+INFO:PDB_LEN: 307 . QUERY_LEN: 306
 INFO:5aog_A.pdb has length 307, it will be stored 
                     as a full-length match
-INFO:"test_output/test/PDB/total" does not exist, it will be created
+INFO:"test_output/test/PDB/total/" does not exist, it will be created
 INFO:File being processed: 1pa2.cif
 INFO:Making directory for the chains at test_output/test/PDB/CHAINS/
 INFO:Extracting the chain
 INFO:OUT PATH:test_output/test/PDB/CHAINS/1pa2_A.pdb
-DEBUG:CHAIN PATH: test_output/test/PDB/CHAINS/1pa2_A.pdb
 INFO:ID: 1PA2_A . Extension: pdb, 
 INFO:Length of the template 1pa2_A.pdb: 306
-INFO:PDB_LEN: 306 . QUERY_LEN: 290.7
+INFO:PDB_LEN: 306 . QUERY_LEN: 306
 INFO:1pa2_A.pdb has length 306, it will be stored 
                     as a full-length match
 INFO:File being processed: 1fhf.cif
 INFO:Making directory for the chains at test_output/test/PDB/CHAINS/
 INFO:Extracting the chain
 INFO:OUT PATH:test_output/test/PDB/CHAINS/1fhf_A.pdb
-DEBUG:CHAIN PATH: test_output/test/PDB/CHAINS/1fhf_A.pdb
 INFO:ID: 1FHF_A . Extension: pdb, 
 INFO:Length of the template 1fhf_A.pdb: 304
-INFO:PDB_LEN: 304 . QUERY_LEN: 290.7
+INFO:PDB_LEN: 304 . QUERY_LEN: 306
 INFO:1fhf_A.pdb has length 304, it will be stored 
                     as a partial match
-INFO:"test_output/test/PDB/partial" does not exist, it will be created
+INFO:"test_output/test/PDB/partial/" does not exist, it will be created
 INFO:1fhf_A.pdb has length 304, it will be stored 
                     as a full-length match
-INFO:"test_output/test/PDB/total" does not exist, it will be created
+INFO:"test_output/test/PDB/total/" does not exist, it will be created
+DEBUG:...STARTING...
+
+INFO:Query length: 306
+INFO:BLAST database is located at: /home/gallegolab/Desktop/TFM/databases/BLAST/pdbaa
+INFO:The BLAST output will be stored in:test_output/test/BLAST/
+INFO:Starting BLAST. Query: input_fasta/test.fa, Database: pdbaa
+INFO:BLAST results stored in : test_output/test/BLAST/test_blast.out
+INFO: The target sequence has close homologs in the PDB with 
+    code/s: dict_keys(['1PA2', '1FHF', '5AOG'])
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/1PA2 HTTP/1.1" 200 872
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/1FHF HTTP/1.1" 200 929
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/5AOG HTTP/1.1" 200 1101
+INFO:File being processed: 5aog.cif
+INFO:Making directory for the chains at test_output/test/PDB/CHAINS/
+INFO:Extracting the chain
+INFO:OUT PATH:test_output/test/PDB/CHAINS/5aog_A.pdb
+INFO:ID: 5AOG_A . Extension: pdb, 
+INFO:Length of the template 5aog_A.pdb: 307
+INFO:PDB_LEN: 307 . QUERY_LEN: 306
+INFO:5aog_A.pdb has length 307, it will be stored 
+                    as a full-length match
+INFO:File being processed: 1pa2.cif
+INFO:Making directory for the chains at test_output/test/PDB/CHAINS/
+INFO:Extracting the chain
+INFO:OUT PATH:test_output/test/PDB/CHAINS/1pa2_A.pdb
+INFO:ID: 1PA2_A . Extension: pdb, 
+INFO:Length of the template 1pa2_A.pdb: 306
+INFO:PDB_LEN: 306 . QUERY_LEN: 306
+INFO:1pa2_A.pdb has length 306, it will be stored 
+                    as a full-length match
+INFO:File being processed: 1fhf.cif
+INFO:Making directory for the chains at test_output/test/PDB/CHAINS/
+INFO:Extracting the chain
+INFO:OUT PATH:test_output/test/PDB/CHAINS/1fhf_A.pdb
+INFO:ID: 1FHF_A . Extension: pdb, 
+INFO:Length of the template 1fhf_A.pdb: 304
+INFO:PDB_LEN: 304 . QUERY_LEN: 306
+INFO:1fhf_A.pdb has length 304, it will be stored 
+                    as a partial match
+INFO:1fhf_A.pdb has length 304, it will be stored 
+                    as a full-length match
+INFO:"test_output/test/PDB/total/" does not exist, it will be created
+DEBUG:...STARTING...
+
+INFO:Query length: 306
+INFO:BLAST database is located at: /home/gallegolab/Desktop/TFM/databases/BLAST/pdbaa
+INFO:The BLAST output will be stored in:test_output/test/BLAST/
+INFO:Starting BLAST. Query: input_fasta/test.fa, Database: pdbaa
+INFO:BLAST results stored in : test_output/test/BLAST/test_blast.out
+INFO: The target sequence has close homologs in the PDB with 
+    code/s: dict_keys(['1PA2', '1FHF', '5AOG'])
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/1PA2 HTTP/1.1" 200 872
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/1FHF HTTP/1.1" 200 929
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/5AOG HTTP/1.1" 200 1101
+INFO:File being processed: 5aog.cif
+INFO:Making directory for the chains at test_output/test/PDB/CHAINS/
+INFO:Extracting the chain
+INFO:OUT PATH:test_output/test/PDB/CHAINS/5aog_A.pdb
+INFO:ID: 5AOG_A . Extension: pdb, 
+INFO:Length of the template 5aog_A.pdb: 307
+INFO:PDB_LEN: 307 . QUERY_LEN: 306
+INFO:5aog_A.pdb has length 307, it will be stored 
+                    as a full-length match
+INFO:File being processed: 1pa2.cif
+INFO:Making directory for the chains at test_output/test/PDB/CHAINS/
+INFO:Extracting the chain
+INFO:OUT PATH:test_output/test/PDB/CHAINS/1pa2_A.pdb
+INFO:ID: 1PA2_A . Extension: pdb, 
+INFO:Length of the template 1pa2_A.pdb: 306
+INFO:PDB_LEN: 306 . QUERY_LEN: 306
+INFO:1pa2_A.pdb has length 306, it will be stored 
+                    as a full-length match
+INFO:File being processed: 1fhf.cif
+INFO:Making directory for the chains at test_output/test/PDB/CHAINS/
+INFO:Extracting the chain
+INFO:OUT PATH:test_output/test/PDB/CHAINS/1fhf_A.pdb
+INFO:ID: 1FHF_A . Extension: pdb, 
+INFO:Length of the template 1fhf_A.pdb: 304
+INFO:PDB_LEN: 304 . QUERY_LEN: 306
+INFO:1fhf_A.pdb has length 304, it will be stored 
+                    as a partial match
+INFO:1fhf_A.pdb has length 304, it will be stored 
+                    as a full-length match
+INFO:"test_output/test/PDB/total/" does not exist, it will be created
+DEBUG:...STARTING...
+
+INFO:Query length: 306
+INFO:BLAST database is located at: /home/gallegolab/Desktop/TFM/databases/BLAST/pdbaa
+INFO:The BLAST output will be stored in:test_output/test/BLAST/
+INFO:Starting BLAST. Query: input_fasta/test.fa, Database: pdbaa
+INFO:BLAST results stored in : test_output/test/BLAST/test_blast.out
+INFO: The target sequence has close homologs in the PDB with 
+    code/s: dict_keys(['1PA2', '1FHF', '5AOG'])
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/1PA2 HTTP/1.1" 200 872
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/1FHF HTTP/1.1" 200 929
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/5AOG HTTP/1.1" 200 1101
+INFO:File being processed: 5aog.cif
+INFO:Making directory for the chains at test_output/test/PDB/CHAINS/
+INFO:Extracting the chain
+INFO:OUT PATH:test_output/test/PDB/CHAINS/CHAINS/5aog_A.pdb
+DEBUG:...STARTING...
+
+INFO:Query length: 306
+INFO:BLAST database is located at: /home/gallegolab/Desktop/TFM/databases/BLAST/pdbaa
+INFO:The BLAST output will be stored in:test_output/test/BLAST/
+INFO:Starting BLAST. Query: input_fasta/test.fa, Database: pdbaa
+INFO:BLAST results stored in : test_output/test/BLAST/test_blast.out
+INFO: The target sequence has close homologs in the PDB with 
+    code/s: dict_keys(['1PA2', '1FHF', '5AOG'])
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/1PA2 HTTP/1.1" 200 872
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/1FHF HTTP/1.1" 200 929
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/5AOG HTTP/1.1" 200 1101
+INFO:File being processed: 5aog.cif
+INFO:Making directory for the chains at test_output/test/PDB/CHAINS/
+INFO:Extracting the chain
+INFO:OUT PATH:test_output/test/PDB/CHAINS/CHAINS/5aog_A.pdb
+DEBUG:...STARTING...
+
+INFO:Query length: 306
+INFO:BLAST database is located at: /home/gallegolab/Desktop/TFM/databases/BLAST/pdbaa
+INFO:The BLAST output will be stored in:test_output/test/BLAST/
+INFO:Starting BLAST. Query: input_fasta/test.fa, Database: pdbaa
+INFO:BLAST results stored in : test_output/test/BLAST/test_blast.out
+INFO: The target sequence has close homologs in the PDB with 
+    code/s: dict_keys(['1PA2', '1FHF', '5AOG'])
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/1PA2 HTTP/1.1" 200 872
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/1FHF HTTP/1.1" 200 929
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/5AOG HTTP/1.1" 200 1101
+INFO:File being processed: 5aog.cif
+INFO:Making directory for the chains at test_output/test/PDB/CHAINS/
+INFO:Extracting the chain
+INFO:OUT PATH:test_output/test/PDB/CHAINS/CHAINS/5aog_A.pdb
+DEBUG:...STARTING...
+
+INFO:Query length: 306
+INFO:BLAST database is located at: /home/gallegolab/Desktop/TFM/databases/BLAST/pdbaa
+INFO:The BLAST output will be stored in:test_output/test/BLAST/
+INFO:Starting BLAST. Query: input_fasta/test.fa, Database: pdbaa
+INFO:BLAST results stored in : test_output/test/BLAST/test_blast.out
+INFO: The target sequence has close homologs in the PDB with 
+    code/s: dict_keys(['1PA2', '1FHF', '5AOG'])
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/1PA2 HTTP/1.1" 200 872
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/1FHF HTTP/1.1" 200 929
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/5AOG HTTP/1.1" 200 1101
+INFO:File being processed: 5aog.cif
+INFO:Making directory for the chains at test_output/test/PDB/CHAINS/
+INFO:Extracting the chain
+INFO:OUT PATH:test_output/test/PDB/CHAINS/5aog_A.pdb
+INFO:ID: 5AOG_A . Extension: pdb, 
+INFO:Length of the template 5aog_A.pdb: 307
+INFO:PDB_LEN: 307 . QUERY_LEN: 306
+INFO:5aog_A.pdb has length 307, it will be stored 
+                    as a full-length match
+INFO:File being processed: 1pa2.cif
+INFO:Making directory for the chains at test_output/test/PDB/CHAINS/
+INFO:Extracting the chain
+INFO:OUT PATH:test_output/test/PDB/CHAINS/1pa2_A.pdb
+INFO:ID: 1PA2_A . Extension: pdb, 
+INFO:Length of the template 1pa2_A.pdb: 306
+INFO:PDB_LEN: 306 . QUERY_LEN: 306
+INFO:1pa2_A.pdb has length 306, it will be stored 
+                    as a full-length match
+INFO:File being processed: 1fhf.cif
+INFO:Making directory for the chains at test_output/test/PDB/CHAINS/
+INFO:Extracting the chain
+INFO:OUT PATH:test_output/test/PDB/CHAINS/1fhf_A.pdb
+INFO:ID: 1FHF_A . Extension: pdb, 
+INFO:Length of the template 1fhf_A.pdb: 304
+INFO:PDB_LEN: 304 . QUERY_LEN: 306
+INFO:1fhf_A.pdb has length 304, it will be stored 
+                    as a partial match
+INFO:1fhf_A.pdb has length 304, it will be stored 
+                    as a full-length match
+INFO:"test_output/test/PDB/total/" does not exist, it will be created
+DEBUG:...STARTING...
+
+INFO:Query length: 306
+INFO:BLAST database is located at: /home/gallegolab/Desktop/TFM/databases/BLAST/pdbaa
+INFO:The BLAST output will be stored in:test_output/test/BLAST/
+INFO:Starting BLAST. Query: input_fasta/test.fa, Database: pdbaa
+INFO:BLAST results stored in : test_output/test/BLAST/test_blast.out
+INFO: The target sequence has close homologs in the PDB with 
+    code/s: dict_keys(['1PA2', '1FHF', '5AOG'])
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/1PA2 HTTP/1.1" 200 872
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/1FHF HTTP/1.1" 200 929
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/5AOG HTTP/1.1" 200 1101
+INFO:File being processed: 5aog.cif
+INFO:Making directory for the chains at test_output/test/PDB/CHAINS/
+INFO:Extracting the chain
+INFO:OUT PATH:test_output/test/PDB/CHAINS/5aog_A.pdb
+INFO:ID: 5AOG_A . Extension: pdb, 
+INFO:Length of the template 5aog_A.pdb: 307
+INFO:PDB_LEN: 307 . QUERY_LEN: 306
+INFO:5aog_A.pdb has length 307, it will be stored 
+                    as a full-length match
+INFO:File being processed: 1pa2.cif
+INFO:Making directory for the chains at test_output/test/PDB/CHAINS/
+INFO:Extracting the chain
+INFO:OUT PATH:test_output/test/PDB/CHAINS/1pa2_A.pdb
+INFO:ID: 1PA2_A . Extension: pdb, 
+INFO:Length of the template 1pa2_A.pdb: 306
+INFO:PDB_LEN: 306 . QUERY_LEN: 306
+INFO:1pa2_A.pdb has length 306, it will be stored 
+                    as a full-length match
+INFO:File being processed: 1fhf.cif
+INFO:Making directory for the chains at test_output/test/PDB/CHAINS/
+INFO:Extracting the chain
+INFO:OUT PATH:test_output/test/PDB/CHAINS/1fhf_A.pdb
+INFO:ID: 1FHF_A . Extension: pdb, 
+INFO:Length of the template 1fhf_A.pdb: 304
+INFO:PDB_LEN: 304 . QUERY_LEN: 306
+INFO:1fhf_A.pdb has length 304, it will be stored 
+                    as a partial match
+INFO:1fhf_A.pdb has length 304, it will be stored 
+                    as a full-length match
+INFO:"test_output/test/PDB/total/" does not exist, it will be created
