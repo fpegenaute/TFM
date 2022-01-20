@@ -11,7 +11,7 @@
   <BlastOutput_param>
     <Parameters>
       <Parameters_matrix>BLOSUM80</Parameters_matrix>
-      <Parameters_expect>5e-08</Parameters_expect>
+      <Parameters_expect>5e-06</Parameters_expect>
       <Parameters_gap-open>10</Parameters_gap-open>
       <Parameters_gap-extend>1</Parameters_gap-extend>
       <Parameters_filter>F</Parameters_filter>
