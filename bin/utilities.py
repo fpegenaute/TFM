@@ -94,9 +94,6 @@ def submit_AF_to_SLURM(query_fasta, outdir, workload_manager="sbatch", dummy_dir
 
     today = str(date.today())
     
-
-
-
     if max_jobs_in_queue is not None:
         while number_of_jobs_in_queue("squeue") >= max_jobs_in_queue: time.sleep(5)
 
@@ -112,8 +109,7 @@ def submit_AF_to_SLURM(query_fasta, outdir, workload_manager="sbatch", dummy_dir
                                                         -f {query_fasta} 
                                                         -t {today} 
                                                        --is_prokaryote_list={AF2config["AF2_prokaryote"]} 
-                                                        -g {AF2config["AF2_useGPU"]}
-    """ 
+                                                        -g {AF2config["AF2_useGPU"]}"""
 
     # Use the config for SLURM given in a file and add your command
     with open(script,"w") as batch_script:
@@ -126,7 +122,7 @@ def submit_AF_to_SLURM(query_fasta, outdir, workload_manager="sbatch", dummy_dir
     # result = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stdin=subprocess.PIPE).communicate()
     # Better like this: https://kb.iu.edu/d/aews, https://stackoverflow.com/questions/8382847/how-to-ssh-connect-through-python-paramiko-with-ppk-public-key
       
-    os.system("%s %s" % (workload_manager,script))
+    os.system("%s %s" % (workload_manager, script))
 
 
 

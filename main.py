@@ -4,6 +4,7 @@
 ###################### ferran.pegenaute@upf.edu ###############################
 #################### ferran.pegenaute01@gmail.com #############################
 
+from re import T
 import matplotlib.pyplot as plt
 
 import Bio.SeqIO as IO
@@ -25,24 +26,30 @@ from bin.graphical_summary import plot_dfi_summary
 
 parser = argparse.ArgumentParser(description="""This program retrieves
                         Structural information from a sequence in a fasta file
-                        """, usage="main.py input_fasta outdir AF_preset [options]")
+                        """, usage="main.py input_fasta outdir [options]")
 
 parser.add_argument("FASTA", 
                     help="Input sequence in FASTA format")
 parser.add_argument("outdir", 
                     help="Output directory to store the retrieved PDBs", 
                     default=".")
-parser.add_argument("alphamodel", 
-                    help="AlphaFold2 model in PDB format")
-parser.add_argument("PAE_json", 
-                    help="AlphaFold2 PAE JSON file from the AF-EBI server")
+parser.add_argument("-a", "--alphamodel",  nargs='?',
+                    help="AlphaFold2 model in PDB format", 
+                    default=None)
+parser.add_argument("-j", "--PAE_json",  nargs='?',
+                    help="AlphaFold2 PAE JSON file from the AF-EBI server",
+                    default=None)
+parser.add_argument("-r", "--run_alphafold", 
+                    help="Send an batch script using SLURM (you need to be in a cluster with slurm and AF2 installed)", 
+                    action="store_true")
+parser.add_argument("-v", "--verbose", 
+                    help="Increase output verbosity", 
+                    action="store_true")
+
 
 # parser.add_argument("-m", "--model_preset", 
 #                     help="model preset for AlphaFold2", 
 #                     default="monomer")
-parser.add_argument("-v", "--verbose", 
-                    help="Increase output verbosity", 
-                    action="store_true")
 # parser.add_argument("-c", "--custom", 
 #                     help="Use custom slurm batch script for AlphaFold2")
 # parser.add_argument("-n", "--noslurm",
@@ -186,22 +193,28 @@ if exact_matches:
 
 ### ALPHAFOLD & PAE
 
-l.debug("Alphafold will not run, this is a test")
-
 # Make folder for the AF2 output
 af_dir = os.path.join(args.outdir,  query_name, "ALPHAFOLD", "" )
 l.info(f"Creating folder for AF2 output in:{af_dir}")
 Path(af_dir).mkdir(parents=True, exist_ok=True)
 
-
-## Make the directory for PAE
+# Make the directory for PAE
 PAE_dir = os.path.join(af_dir,  "PAE", "" )
 Path(PAE_dir).mkdir(parents=True, exist_ok=True)
 
-# Store the AF model and the PAE file in the correct folders
-AF_server_model = args.alphamodel
-shutil.move(AF_server_model, os.path.join(af_dir, PurePosixPath(AF_server_model).name))
-PAE_json = args.PAE_json
+   
+# If you want to use your AF model and PAE file:
+if args.alphamodel:
+    # Store the AF model and the PAE file in the correct folders
+    AF_server_model = args.alphamodel
+    shutil.copy(AF_server_model, os.path.join(af_dir, PurePosixPath(AF_server_model).name))
+if args.PAE_json:
+    PAE_json = args.PAE_json
+
+from bin.utilities import submit_AF_to_SLURM
+
+if args.run_alphafold:
+    submit_AF_to_SLURM(fasta, af_dir, workload_manager="sbatch", dummy_dir=".", max_jobs_in_queue=None )
 
 
 ### Extract confident regions
@@ -233,39 +246,34 @@ Path(domains_dir).mkdir(parents=True, exist_ok=True)
 l.info(f"Domains will be stored in:{domains_dir}")
 af_conficent_regions = []
 
-for filename in os.listdir(af_dir):
-    if os.path.isfile(os.path.join(af_dir, filename)):
-        l.info(f"Processing file: {filename}")
-        print("\nProcessing and splitting model into domains")
-        
-        m = dm.get_model(os.path.join(af_dir, filename))
-        pae_matrix = pae_matrix = parse_json_PAE(PAE_json)
-        model_info = process_predicted_model(m,  params, pae_matrix)
+if (args.alphamodel and args.PAE_json) or (args.run_alphafold):
+    for filename in os.listdir(af_dir):
+        if os.path.isfile(os.path.join(af_dir, filename)):
+            l.info(f"Processing file: {filename}")
+            print("\nProcessing and splitting model into domains")
+            
+            m = dm.get_model(os.path.join(af_dir, filename))
+            pae_matrix = pae_matrix = parse_json_PAE(PAE_json)
+            model_info = process_predicted_model(m,  params, pae_matrix)
 
-        chainid_list = model_info.chainid_list
-        print("Segments found: %s" %(" ".join(chainid_list)))
+            chainid_list = model_info.chainid_list
+            print("Segments found: %s" %(" ".join(chainid_list)))
 
-        mmm = model_info.model.as_map_model_manager()
-        mmm.write_model(os.path.join(domains_dir, f"{PurePosixPath(filename).stem}_domains.pdb"))
-        
-        structures_for_query.append(os.path.join(domains_dir, f"{PurePosixPath(filename).stem}_domains.pdb"))
+            mmm = model_info.model.as_map_model_manager()
+            mmm.write_model(os.path.join(domains_dir, f"{PurePosixPath(filename).stem}_domains.pdb"))
+            
+            structures_for_query.append(os.path.join(domains_dir, f"{PurePosixPath(filename).stem}_domains.pdb"))
 
-        conf_domains = extract_residue_list(os.path.join(domains_dir, f"{PurePosixPath(filename).stem}_domains.pdb"), domains_dir)
-        l.info(f"Residue list of confident domains: {conf_domains}")
+            conf_domains = extract_residue_list(os.path.join(domains_dir, f"{PurePosixPath(filename).stem}_domains.pdb"), domains_dir)
+            l.info(f"Residue list of confident domains: {conf_domains}")
 
-
-
-
-  # START DFI   
-   
-    
 
 
 
 ## Launch graphical summary 
-print(f"CONFIDENT FILES: {structures_for_query}")
+l.info(f"CONFIDENT FILES: {structures_for_query}")
 nrow = len(structures_for_query)
-print(f"NROW: {nrow}")
+l.info(f"NROW: {nrow}")
 plot_coverage(fasta, structures_for_query, nrow)
 plot_dfi_summary(structures_for_query, fasta)
 
