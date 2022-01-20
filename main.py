@@ -32,6 +32,11 @@ parser.add_argument("FASTA",
 parser.add_argument("outdir", 
                     help="Output directory to store the retrieved PDBs", 
                     default=".")
+parser.add_argument("alphamodel", 
+                    help="AlphaFold2 model in PDB format")
+parser.add_argument("PAE_json", 
+                    help="AlphaFold2 PAE JSON file from the AF-EBI server")
+
 # parser.add_argument("-m", "--model_preset", 
 #                     help="model preset for AlphaFold2", 
 #                     default="monomer")
@@ -153,7 +158,7 @@ if exact_matches:
                     as a partial match""")
                 newpath = os.path.join(pdb_dir,"partial", f"{PurePosixPath(chain_path).name}")
                 try:
-                    print(f"MOVINF {chain_path} TO {newpath}")
+                    l.info(f"MOVING {chain_path} TO {newpath}")
                     shutil.move(chain_path, newpath)
                     structures_for_query.append(newpath)
                 except Exception:
@@ -179,24 +184,24 @@ if exact_matches:
 
 
 
-### Submit a sob in Slurm with the AlphaFold run
+### ALPHAFOLD & PAE
 
 l.debug("Alphafold will not run, this is a test")
 
-
-af_dir = os.path.join(args.outdir,  query_name, "ALPHAFOLD", "" )
-Path(af_dir).mkdir(parents=True, exist_ok=True)
 # Make folder for the AF2 output
+af_dir = os.path.join(args.outdir,  query_name, "ALPHAFOLD", "" )
 l.info(f"Creating folder for AF2 output in:{af_dir}")
-
-# if args.custom:
-#     slurm_script = args.custom
-# else:
-#     slurm_dir = f"{af_dir}"
-#     Path(slurm_dir).mkdir(parents=True, exist_ok=True)
+Path(af_dir).mkdir(parents=True, exist_ok=True)
 
 
+## Make the directory for PAE
+PAE_dir = os.path.join(af_dir,  "PAE", "" )
+Path(PAE_dir).mkdir(parents=True, exist_ok=True)
 
+# Store the AF model and the PAE file in the correct folders
+AF_server_model = args.alphamodel
+shutil.move(AF_server_model, os.path.join(af_dir, PurePosixPath(AF_server_model).name))
+PAE_json = args.PAE_json
 
 
 ### Extract confident regions
@@ -218,10 +223,8 @@ from iotbx.data_manager import DataManager
 dm = DataManager()
 dm.set_overwrite(True)
 
-## PROVISIONAL
-PAE_dir = os.path.join(af_dir,  "PAE", "" )
-Path(PAE_dir).mkdir(parents=True, exist_ok=True)
-PAE_json = os.path.join(PAE_dir, "sec3_PAE.json")
+
+
 
 
 l.info("Extracting high confidence domains")
@@ -236,7 +239,7 @@ for filename in os.listdir(af_dir):
         print("\nProcessing and splitting model into domains")
         
         m = dm.get_model(os.path.join(af_dir, filename))
-        pae_matrix = pae_matrix = parse_json_PAE(PAE_json )
+        pae_matrix = pae_matrix = parse_json_PAE(PAE_json)
         model_info = process_predicted_model(m,  params, pae_matrix)
 
         chainid_list = model_info.chainid_list
