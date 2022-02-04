@@ -20,6 +20,11 @@ from bin.extract_flexible_residues import extract_residue_list
 from bin.process_predicted_model import *
 from bin.graphical_summary import plot_coverage, plot_dfi_summary
 from bin.graphical_summary import plot_dfi_summary
+from bin.packman import predict_hinge, write_hng_file
+from packman.anm import hdANM
+from packman import molecule
+from packman import ANM
+
 
 
 
@@ -268,11 +273,7 @@ if (args.alphamodel and args.PAE_json) or (args.run_alphafold):
             l.info(f"Residue list of confident domains: {conf_domains}")
 
 
-### REMOVE THIS
-from bin.dfi.DFI_plotter import run_dfi
-# df = run_dfi("test_output/SEC3/ALPHAFOLD/SEC3.pdb", save_csv=True)
 
-df = run_dfi("/home/gallegolab/Desktop/rosetta_tests/SEC2/pdb-3track/model0_1_0.05.pdb", save_csv=True)
 
 ## Launch graphical summary 
 l.info(f"CONFIDENT FILES: {structures_for_query}")
@@ -281,8 +282,103 @@ l.info(f"NROW: {nrow}")
 plot_coverage(fasta, structures_for_query, nrow)
 plot_dfi_summary(structures_for_query, fasta)
 
-
 plt.show()
 
+### HINGE DETECTION ###
+
+
+
+for structure in structures_for_query:
+    Protein = molecule.load_structure(structure)
+    filename, ext = get_filename_ext(structure)
+    try:
+        Protein[0]
+    except Exception:
+        print("Make sure your filename is  of the form: XXXXX.pdb/XXXX.cif")
+
+    chains = [chain for chain in Protein[0].get_chains()]
+    backbone = [j for i in Protein[0][chains[0].get_id()].get_backbone() for j in i if j is not None]
+
+        
+    
+    ##### For running iteratively several values of alpha:
+    # alpha_start, alpha_stop, step_size = 2.5 , 4.5 , 0.5 # Previously from 1 to 10
+    # for i in np.arange(alpha_start, alpha_stop, step_size):
+    #     i = np.around(i, decimals=1)
+    #     try:
+    #         predict_hinge(backbone, Alpha=i, outputfile=open(str(i)+'.txt', 'w'))
+    #         # predict_hinge(backbone, outfile, Alpha=4,method='alpha_shape',filename='Output.pdb',MinimumHingeLength=5,nclusters=2)
+
+    #     except:
+    #         continue    
+
+    predict_hinge(backbone, Alpha=3.65, outputfile=open(str(f"{filename}_packman_output")+'.txt', 'w'))
+
+    hinges = []
+    hinges_nosig = []
+    l.info("Significant hinges")
+    for hinge in backbone[0].get_parent().get_parent().get_hinges():
+        resids = [x.get_id() for x in hinge.get_elements()]
+        if hinge.get_pvalue() < 0.05: 
+            hinges.append(hinge)
+            print(f"""HINGE {hinge.get_id()}
+            \t p-value: {hinge.get_pvalue()}
+            \t alpha-value: {hinge.get_alpha_value()}
+            \t Location: {resids[0]} - {resids[-1]}  
+            \t Length: {resids[-1] - resids[-0]}
+            """)
+        else:
+            hinges_nosig.append(hinge)
+
+    write_hng_file(structure, hinges, f"{filename}_hinges.hng")  
+
+    l.info("### MOTION MOVIE ###")
+    calpha=[i for i in Protein[0][chains[0].get_id()].get_calpha() if i is not None]
+    Model=hdANM(calpha,dr=15,power=0,hng_file=f"{filename}_hinges.hng")
+    Model.calculate_hessian(mass_type='residue')
+    Model.calculate_decomposition()
+    Model.get_eigenvalues()
+    Model.get_eigenvectors()
+    Model.calculate_movie(6,scale=2,n=40, ftype="pdb")
+
+
+    print("### STRUCTURAL COMPLIANCE ###")
+
+
+    resids = [j.get_id() for  j in Protein[0][chains[0].get_id()].get_residues() if j is not None]
+
+    #Step 2.3
+    ANM_MODEL = ANM( calpha, pf=True, dr=float('Inf'), power=3 )
+
+    #Step 3
+    ANM_MODEL.calculate_hessian()
+    ANM_MODEL.calculate_decomposition()
+    ANM_MODEL.calculate_stiffness_compliance()
+
+    stiffness_map  = ANM_MODEL.get_stiffness_map()
+    compliance_map = ANM_MODEL.get_compliance_map()
+
+    b_factors          = [i.get_bfactor() for i in calpha]
+    fluctuations       = ANM_MODEL.get_fluctuations()
+    stiffness_profile  = ANM_MODEL.get_stiffness_profile()
+    compliance_profile = ANM_MODEL.get_compliance_profile()
+
+
+    # PLOTTING
+
+    from matplotlib import pyplot as plt
+    import numpy
+
+    plt.plot(resids, b_factors/numpy.linalg.norm(b_factors), color= 'blue', alpha=0.4)
+    plt.plot(resids, compliance_profile/numpy.linalg.norm(compliance_profile),color=  'black')
+    # plt.plot(resids, stiffness_profile/numpy.linalg.norm(stiffness_profile),color='green')
+    for hinge in hinges:
+        resid = [x.get_id() for x in hinge.get_elements()]
+        plt.axvspan(resid[0], resid[-1], color='green', alpha=0.4)
+    for hinge in hinges_nosig:
+        resid = [x.get_id() for x in hinge.get_elements()]
+        plt.axvspan(resid[0], resid[-1], color='red', alpha=0.4)
+
+    plt.show()
 
 
