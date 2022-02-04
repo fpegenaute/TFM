@@ -517,8 +517,8 @@ def calc_covariance(numres, x, y, z, invhessfile=None, Verbose=False,
     invHrs = np.dot(np.dot(U, np.diag(invw)), Vt)
     if(Verbose):
         flatandwrite(invHrs, invhessfile)
-    assert np.sum(
-        singular) == 6., "# of near-singular eigenvals: %f" % np.sum(singular)
+    # assert np.sum(
+    #    singular) == 6., "# of near-singular eigenvals: %f" % np.sum(singular)
     return invHrs
 
 

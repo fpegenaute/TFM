@@ -42,9 +42,11 @@ def plot_dfi(reference_df, top_df):
 
 
 
-def run_dfi(structure):
+def run_dfi(structure, save_csv=False):
     """
-    Calculate DFI from a reference and a compared structure.
+    Calculate DFI from a structure.
+
+    - structure = PDB/mmCif file
 
     return a pandas DF of (ResI, pctdfi) columns for each structure
     """
@@ -60,9 +62,13 @@ def run_dfi(structure):
     ref_resid_array = np.array(df_dfi["ResI"].tolist())
     ref_pctdfi_array = np.array(df_dfi["pctdfi"].tolist())
     reference_df = pd.DataFrame({"ResI":ref_resid_array, "pctdfi":ref_pctdfi_array })
-   
 
-    
+    # Insert a column with the name of the structure
+    ID_list = [ref_name] * len(ref_pctdfi_array)
+    reference_df.insert(loc=0, column="Chain", value=ID_list)
+
+    if save_csv:
+        reference_df.to_csv(f"{ref_name}_DFI.csv", encoding='utf-8', index=False, float_format='%.3f')
     return reference_df
 
 

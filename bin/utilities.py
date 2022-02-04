@@ -2,7 +2,47 @@ import os
 import pwd
 import subprocess
 import time
-from bin.config import AF2config, SLURMconfig, SSHconfig
+
+## CONFIG ##
+
+blastconfig = {
+    "blastdb" : "/home/gallegolab/Desktop/TFM/databases/BLAST/pdbaa"
+
+}
+
+AF2config = {
+    "AF2command" : "bash $alphafold_path/run_alphafold.sh", 
+    "AF2datadir" : "$ALPHAFOLD_DATA_DIR", 
+    "AF2preset_monomer" : "monomer",
+    "AF2preset_monomer_ptm" : "monomer_ptm", 
+    "AF2preset_multimer" : "multimer", 
+    "AF2_useGPU" : "true", 
+    "AF2_prokaryote" : "false", 
+    }
+SLURMconfig = """#!/bin/bash
+
+#SBATCH -N 1
+#SBATCH -n 2
+#SBATCH -p normal
+#SBATCH --gres=gpu:1
+#SBATCH --gres-flags=enforce-binding
+#SBATCH --mem 200G
+#SBATCH -t 5-20:00:00
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=ferran.pegenaute@upf.edu
+
+module purge
+module load modulepath/noarch
+module load AlphaFold/2.1.0-Miniconda3-4.7.10
+source activate alphafold-2.1.0
+module load CUDA/11.1.0
+"""
+SSHconfig = {
+    "HPCCluster" : "marvin",
+    "Public_key": "", 
+}
+
+## FUNCTIONS ##
 
 def get_filename_ext(filepath):
     """
@@ -27,7 +67,7 @@ def number_of_jobs_in_queue(squeue="squeue"):
 
     process = subprocess.check_output([squeue, "-u", user_name])
 
-    return len([line for line in process.split("\n") if user_name in line])
+    return process
 
 
 def submit_command_to_queue(command, queue="normal", max_jobs_in_queue=None, queue_file=None, dummy_dir=".", submit="sbatch", squeue="squeue"):
@@ -94,22 +134,17 @@ def submit_AF_to_SLURM(query_fasta, outdir, workload_manager="sbatch", dummy_dir
 
     today = str(date.today())
     
-    if max_jobs_in_queue is not None:
-        while number_of_jobs_in_queue("squeue") >= max_jobs_in_queue: time.sleep(5)
 
+    process = number_of_jobs_in_queue("squeue")
+    print(process)
+    
     cwd = os.path.join(dummy_dir)
     if not os.path.exists(cwd): 
         os.makedirs(cwd)
 
-    script= os.path.join(cwd,"alpha_"+hashlib.sha224("Alphafold").hexdigest()+".sh")
+    script = os.path.join(cwd,"alpha_test.sh")
 
-    command = f"""bash $alphafold_path/run_alphafold.sh -d {AF2config["AF2datadir"]} 
-                                                        -o {outdir} 
-                                                        -m {AF2config["AF2preset_monomer"]} 
-                                                        -f {query_fasta} 
-                                                        -t {today} 
-                                                       --is_prokaryote_list={AF2config["AF2_prokaryote"]} 
-                                                        -g {AF2config["AF2_useGPU"]}"""
+    command = f"""echo $alphafold_path/run_alphafold.sh -d {AF2config["AF2datadir"]} -o {outdir} -m {AF2config["AF2preset_monomer"]} -f {query_fasta} -t {today} --is_prokaryote_list={AF2config["AF2_prokaryote"]} -g {AF2config["AF2_useGPU"]}"""
 
     # Use the config for SLURM given in a file and add your command
     with open(script,"w") as batch_script:
@@ -126,3 +161,8 @@ def submit_AF_to_SLURM(query_fasta, outdir, workload_manager="sbatch", dummy_dir
 
 
 
+if __name__ == "__main__":
+    query_fasta = "query.fa"
+    outdir =  "outdir"
+
+    submit_AF_to_SLURM(query_fasta, outdir, workload_manager="sbatch", dummy_dir=".", max_jobs_in_queue=None )

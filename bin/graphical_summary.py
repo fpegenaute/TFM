@@ -157,28 +157,42 @@ def plot_coverage(fastafile, pdblist, nrow):
     rows = ['Template {}'.format(os.path.basename(pdb)) for pdb in pdblist]     
     fig, axes = plt.subplots(nrows=nrow, ncols=1, figsize=(12, 8))
 
-
-    i = 0
-    for ax, row in zip(axes, rows):        
-        ax.set_ylabel(row, rotation=0, size='large', labelpad=90)
-        x, y = extract_coincident_positions(fastafile, pdblist[i]) 
-        ax.plot(x, y)
-        ax.get_yaxis().set_ticks([])  
-        if "domains" in row: 
-            ax.fill_between(x, y, color = "orange")
-            mplcursors.cursor(ax, hover=True).connect(
+    if len(pdblist) > 1:
+        i = 0
+        for ax, row in zip(axes, rows):        
+            ax.set_ylabel(row, rotation=0, size='large', labelpad=90)
+            x, y = extract_coincident_positions(fastafile, pdblist[i]) 
+            ax.plot(x, y)
+            ax.get_yaxis().set_ticks([])  
+            if "domains" in row: 
+                ax.fill_between(x, y, color = "orange")
+                mplcursors.cursor(ax, hover=True).connect(
+                    "add", lambda sel: sel.annotation.set_text("AF2 Domains model\n text"))
+            else:
+                ax.fill_between(x, y)
+                mplcursors.cursor(ax, hover=True).connect(
+                    "add", lambda sel: sel.annotation.set_text("Experimental Structure\n text"))
+        ax.set_xlabel(f"Query: {os.path.basename(fastafile)}", rotation=0, size='large')
+        fig.tight_layout()
+        i += 1
+    else:
+        axes.set_ylabel(rows, rotation=0, size='large', labelpad=90)
+        x, y = extract_coincident_positions(fastafile, pdblist[0]) 
+        axes.plot(x, y)
+        axes.get_yaxis().set_ticks([])  
+        if "domains" in rows: 
+            axes.fill_between(x, y, color = "orange")
+            mplcursors.cursor(axes, hover=True).connect(
                 "add", lambda sel: sel.annotation.set_text("AF2 Domains model\n text"))
         else:
-            ax.fill_between(x, y)
-            mplcursors.cursor(ax, hover=True).connect(
+            axes.fill_between(x, y)
+            mplcursors.cursor(axes, hover=True).connect(
                 "add", lambda sel: sel.annotation.set_text("Experimental Structure\n text"))
-
-
-        i += 1
-    ax.set_xlabel(f"Query: {os.path.basename(fastafile)}", rotation=0, size='large')
-    fig.tight_layout()
+        axes.set_xlabel(f"Query: {os.path.basename(fastafile)}", rotation=0, size='large')
+        fig.tight_layout()
     
-    # plt.show()
+        
+    
 
 
 
@@ -203,7 +217,6 @@ def plot_dfi_summary(structure_list, fasta_reference):
     DFI_list = []
     rows = []
     for file in structure_list:
-        print(f"Running DFI analysis for {file}")
         DFI_df = run_dfi(file)
         DFI_list.append(DFI_df)
         rows.append('Template {}'.format(os.path.basename(file)))
@@ -211,12 +224,58 @@ def plot_dfi_summary(structure_list, fasta_reference):
     fig, axes = plt.subplots(nrows=len(structure_list), ncols=1, figsize=(12, 8))
     print(f"AXES: {axes}")
 
-    i = 0
-    for ax, row in zip(axes, rows):        
-        ax.set_ylabel(row, rotation=0, size='large', labelpad=90)
-       
+    if len(structure_list) > 1:
+        i = 0
+        for ax, row in zip(axes, rows):        
+            ax.set_ylabel(row, rotation=0, size='large', labelpad=90)
+        
+            # Convert DFI df to a dict {ResI : DFI}
+            DFI_dict = DFI_list[i].set_index("ResI")["pctdfi"].to_dict()
+
+            # Ensure the types
+            DFI_dict = {int(key) : float(value) for key ,value in DFI_dict.items()}
+            
+            # Compare the reference Fasta and DFI dicts
+            DFI_coverage_dict = compare_dict_dict(fasta_dict, DFI_dict)
+            
+                    
+            lists = sorted(DFI_coverage_dict.items()) # sorted by key, return a list of tuples
+
+            x, y = zip(*lists) # unpack a list of pairs into two tuples
+            x = np.array(x)
+            y = np.array(y)
+
+            idx, properties = find_peaks(y, prominence=0.2, width=1)
+
+            ax.plot(x, y)
+            ax.plot(idx, y[idx], "x")
+            ax.set_title("x = peaks")
+            plt.setp(ax.get_xticklabels(), rotation=30, ha="right")
+            
+            # this locator puts ticks at regular intervals
+            loc = plticker.MultipleLocator(base=20)
+            ax.xaxis.set_major_locator(loc)
+            
+            
+            
+            if "domains" in row: 
+                ax.get_lines()[0].set_color("orange")
+                mplcursors.cursor(ax, hover=True).connect(
+                    "add", lambda sel: sel.annotation.set_text("AF2 Domains model\n text"))
+            else:
+                ax.get_lines()[0].set_color("blue")
+                mplcursors.cursor(ax, hover=True).connect(
+                    "add", lambda sel: sel.annotation.set_text("Experimental Structure\n text"))
+            i += 1
+
+        ax.set_xlabel(f"ResID", rotation=0, size='large')
+        fig.tight_layout()
+    else:
+     
+        axes.set_ylabel(rows, rotation=0, size='large', labelpad=90)
+    
         # Convert DFI df to a dict {ResI : DFI}
-        DFI_dict = DFI_list[i].set_index("ResI")["pctdfi"].to_dict()
+        DFI_dict = DFI_list[0].set_index("ResI")["pctdfi"].to_dict()
 
         # Ensure the types
         DFI_dict = {int(key) : float(value) for key ,value in DFI_dict.items()}
@@ -233,30 +292,30 @@ def plot_dfi_summary(structure_list, fasta_reference):
 
         idx, properties = find_peaks(y, prominence=0.2, width=1)
 
-        ax.plot(x, y)
-        ax.plot(idx, y[idx], "x")
-        ax.set_title("x = peaks")
-        plt.setp(ax.get_xticklabels(), rotation=30, ha="right")
+        axes.plot(x, y)
+        axes.plot(idx, y[idx], "x")
+        axes.set_title("x = peaks")
+        plt.setp(axes.get_xticklabels(), rotation=30, ha="right")
         
         # this locator puts ticks at regular intervals
         loc = plticker.MultipleLocator(base=20)
-        ax.xaxis.set_major_locator(loc)
+        axes.xaxis.set_major_locator(loc)
         
         
         
-        if "domains" in row: 
-            ax.get_lines()[0].set_color("orange")
-            mplcursors.cursor(ax, hover=True).connect(
+        if "domains" in rows: 
+            axes.get_lines()[0].set_color("orange")
+            mplcursors.cursor(axes, hover=True).connect(
                 "add", lambda sel: sel.annotation.set_text("AF2 Domains model\n text"))
         else:
-            ax.get_lines()[0].set_color("blue")
-            mplcursors.cursor(ax, hover=True).connect(
+            axes.get_lines()[0].set_color("blue")
+            mplcursors.cursor(axes, hover=True).connect(
                 "add", lambda sel: sel.annotation.set_text("Experimental Structure\n text"))
-        i += 1
+    
 
-    ax.set_xlabel(f"ResID", rotation=0, size='large')
-    fig.tight_layout()
-    # plt.show()
+        axes.set_xlabel(f"ResID", rotation=0, size='large')
+        fig.tight_layout()
+
 
 
 

@@ -160,7 +160,7 @@ if exact_matches:
             l.info(f"Length of the template {PurePosixPath(chain_path).name}: {pdb_len}")
             
             l.info(f"PDB_LEN: {pdb_len} . QUERY_LEN: {query_length}")
-            if pdb_len > 10 and pdb_len < (query_length):
+            if pdb_len > 10 and pdb_len < (0.95*query_length):
                 l.info(f"""{PurePosixPath(chain_path).name} has length {pdb_len}, it will be stored 
                     as a partial match""")
                 newpath = os.path.join(pdb_dir,"partial", f"{PurePosixPath(chain_path).name}")
@@ -268,7 +268,11 @@ if (args.alphamodel and args.PAE_json) or (args.run_alphafold):
             l.info(f"Residue list of confident domains: {conf_domains}")
 
 
+### REMOVE THIS
+from bin.dfi.DFI_plotter import run_dfi
+# df = run_dfi("test_output/SEC3/ALPHAFOLD/SEC3.pdb", save_csv=True)
 
+df = run_dfi("/home/gallegolab/Desktop/rosetta_tests/SEC2/pdb-3track/model0_1_0.05.pdb", save_csv=True)
 
 ## Launch graphical summary 
 l.info(f"CONFIDENT FILES: {structures_for_query}")
