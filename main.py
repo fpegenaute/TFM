@@ -280,7 +280,7 @@ l.info(f"CONFIDENT FILES: {structures_for_query}")
 nrow = len(structures_for_query)
 l.info(f"NROW: {nrow}")
 plot_coverage(fasta, structures_for_query, nrow)
-plot_dfi_summary(structures_for_query, fasta)
+# plot_dfi_summary(structures_for_query, fasta)
 
 plt.show()
 
@@ -299,20 +299,23 @@ for structure in structures_for_query:
     chains = [chain for chain in Protein[0].get_chains()]
     backbone = [j for i in Protein[0][chains[0].get_id()].get_backbone() for j in i if j is not None]
 
-        
+    import numpy as np
     
-    ##### For running iteratively several values of alpha:
-    # alpha_start, alpha_stop, step_size = 2.5 , 4.5 , 0.5 # Previously from 1 to 10
-    # for i in np.arange(alpha_start, alpha_stop, step_size):
-    #     i = np.around(i, decimals=1)
-    #     try:
-    #         predict_hinge(backbone, Alpha=i, outputfile=open(str(i)+'.txt', 'w'))
-    #         # predict_hinge(backbone, outfile, Alpha=4,method='alpha_shape',filename='Output.pdb',MinimumHingeLength=5,nclusters=2)
+    #### For running iteratively several values of alpha:
+    print("HINGE DETECTION")
+    alpha_start, alpha_stop, step_size = 2.5 , 4.5 , 0.5 # Previously from 1 to 10
+    for i in np.arange(alpha_start, alpha_stop, step_size):
+        i = np.around(i, decimals=1)
+        l.info(f"Hinge detection with alpha {i}=")
+        try:
+            predict_hinge(backbone, Alpha=i, outputfile=open(str(i)+'.txt', 'w'))
+            # predict_hinge(backbone, outfile, Alpha=4,method='alpha_shape',filename='Output.pdb',MinimumHingeLength=5,nclusters=2)
 
-    #     except:
-    #         continue    
+        except:
+            l.info(f"Exception for alpha {i}")
+            continue    
 
-    predict_hinge(backbone, Alpha=3.65, outputfile=open(str(f"{filename}_packman_output")+'.txt', 'w'))
+    # predict_hinge(backbone, Alpha=4.5, outputfile=open(str(f"{filename}_packman_output")+'.txt', 'w'))
 
     hinges = []
     hinges_nosig = []
@@ -342,26 +345,29 @@ for structure in structures_for_query:
     Model.calculate_movie(6,scale=2,n=40, ftype="pdb")
 
 
-    print("### STRUCTURAL COMPLIANCE ###")
+    # print("### STRUCTURAL COMPLIANCE ###")
 
 
-    resids = [j.get_id() for  j in Protein[0][chains[0].get_id()].get_residues() if j is not None]
+    # resids = [j.get_id() for  j in Protein[0][chains[0].get_id()].get_residues() if j is not None]
 
-    #Step 2.3
-    ANM_MODEL = ANM( calpha, pf=True, dr=float('Inf'), power=3 )
+    # #Step 2.3
+    # ANM_MODEL = ANM( calpha, pf=True, dr=float('Inf'), power=3 )
 
-    #Step 3
-    ANM_MODEL.calculate_hessian()
-    ANM_MODEL.calculate_decomposition()
-    ANM_MODEL.calculate_stiffness_compliance()
+    # #Step 3
+    # print("### Calc Hessian ###")
+    # ANM_MODEL.calculate_hessian()
+    # print("### Eigen decomposition ###")
+    # ANM_MODEL.calculate_decomposition()
+    # print("### Calc Compliance ###")
+    # ANM_MODEL.calculate_stiffness_compliance()
 
-    stiffness_map  = ANM_MODEL.get_stiffness_map()
-    compliance_map = ANM_MODEL.get_compliance_map()
+    # stiffness_map  = ANM_MODEL.get_stiffness_map()
+    # compliance_map = ANM_MODEL.get_compliance_map()
 
-    b_factors          = [i.get_bfactor() for i in calpha]
-    fluctuations       = ANM_MODEL.get_fluctuations()
-    stiffness_profile  = ANM_MODEL.get_stiffness_profile()
-    compliance_profile = ANM_MODEL.get_compliance_profile()
+    # b_factors          = [i.get_bfactor() for i in calpha]
+    # fluctuations       = ANM_MODEL.get_fluctuations()
+    # stiffness_profile  = ANM_MODEL.get_stiffness_profile()
+    # compliance_profile = ANM_MODEL.get_compliance_profile()
 
 
     # PLOTTING
@@ -369,8 +375,10 @@ for structure in structures_for_query:
     from matplotlib import pyplot as plt
     import numpy
 
-    plt.plot(resids, b_factors/numpy.linalg.norm(b_factors), color= 'blue', alpha=0.4)
-    plt.plot(resids, compliance_profile/numpy.linalg.norm(compliance_profile),color=  'black')
+    plot_dfi_summary(structures_for_query, fasta)
+
+    # plt.plot(resids, b_factors/numpy.linalg.norm(b_factors), color= 'blue', alpha=0.4)
+    # plt.plot(resids, compliance_profile/numpy.linalg.norm(compliance_profile),color=  'black')
     # plt.plot(resids, stiffness_profile/numpy.linalg.norm(stiffness_profile),color='green')
     for hinge in hinges:
         resid = [x.get_id() for x in hinge.get_elements()]
@@ -378,6 +386,7 @@ for structure in structures_for_query:
     for hinge in hinges_nosig:
         resid = [x.get_id() for x in hinge.get_elements()]
         plt.axvspan(resid[0], resid[-1], color='red', alpha=0.4)
+    
 
     plt.show()
 
