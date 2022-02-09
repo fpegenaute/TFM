@@ -1,4 +1,5 @@
 cctbx-base
+py-packman
 networkx
 paramiko
 mplcursors
