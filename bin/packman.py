@@ -3,21 +3,7 @@ from packman.apps import predict_hinge
 from packman import molecule
 import numpy as np
 from pathlib import Path
-from scipy.special import softmax
-def hinges_multiple_alpha(atoms, alpha_start, alpha_stop, step_size):
-    """
-    given an Atom list, and the alpha parameters, return the atom list with the 
-    hinges data included. access it like:
 
-    backbone[0].get_parent().get_parent().get_hinges()
-    """
-    for i in np.arange(alpha_start, alpha_stop, step_size):
-            i = np.around(i, decimals=1)
-            try:
-                predict_hinge(atoms, Alpha=i, outputfile=open(str(i)+'.txt', 'w'))
-            except:
-                continue
-    return atoms
 
 def write_hng_file(pdbfile, hinges, outfile):
     """

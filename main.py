@@ -38,14 +38,23 @@ parser.add_argument("FASTA",
 parser.add_argument("outdir", 
                     help="Output directory to store the retrieved PDBs", 
                     default=".")
-parser.add_argument("-a", "--alphamodel",  nargs='?',
+parser.add_argument("-af", "--alphamodel",  nargs='?',
                     help="AlphaFold2 model in PDB format", 
+                    default=None)
+parser.add_argument("-rf", "--rosettamodel",  nargs='?',
+                    help="RoseTTaFold model in PDB format", 
                     default=None)
 parser.add_argument("-j", "--PAE_json",  nargs='?',
                     help="AlphaFold2 PAE JSON file from the AF-EBI server",
                     default=None)
-parser.add_argument("-r", "--run_alphafold", 
+parser.add_argument("-c", "--custom_templates",  nargs='?',
+                    help="A custom experimentally solved PDB provided by the user",
+                    default=None)
+parser.add_argument("-ra", "--run_alphafold", 
                     help="Send an batch script using SLURM (you need to be in a cluster with slurm and AF2 installed)", 
+                    action="store_true")
+parser.add_argument("-rr", "--run_rosettafold", 
+                    help="Send an batch script using SLURM (you need to be in a cluster with slurm and RoseTTafold installed)", 
                     action="store_true")
 parser.add_argument("-v", "--verbose", 
                     help="Increase output verbosity", 
@@ -156,7 +165,8 @@ if exact_matches:
             # Extract the desired chain
             l.info(f"Extracting the chain")
             splitter = ChainSplitter(mmcif=True, out_dir=chain_dir)
-            chain_path = splitter.make_pdb(os.path.join(pdb_dir, file), exact_matches[identifier], overwrite=True )
+            chain_path = splitter.make_pdb(os.path.join(pdb_dir, file), 
+                                    exact_matches[identifier], overwrite=True )
             # structures_for_query.append(chain_path)
             # print(f"STRUCTURES FOR QUERY: {structures_for_query}")
             
@@ -193,7 +203,10 @@ if exact_matches:
                     shutil.move(chain_path, newpath)
                     structures_for_query.append(newpath)
 
-
+# Don't forget the user's templates!
+if args.custom_templates:
+        structures_for_query.append(args.custom_templates)
+        
 
 
 ### ALPHAFOLD & PAE
@@ -216,11 +229,29 @@ if args.alphamodel:
 if args.PAE_json:
     PAE_json = args.PAE_json
 
-from bin.utilities import submit_AF_to_SLURM
+from bin.utilities import submit_AF_to_SLURM, submit_RF_to_SLURM
 
 if args.run_alphafold:
     submit_AF_to_SLURM(fasta, af_dir, workload_manager="sbatch", dummy_dir=".", max_jobs_in_queue=None )
 
+
+### ROSETTAFOLD
+
+# Make folder for the RFoutput
+rf_dir = os.path.join(args.outdir,  query_name, "ROSETTAFOLD", "" )
+l.info(f"Creating folder for RoseTTaFold output in:{rf_dir}")
+Path(rf_dir).mkdir(parents=True, exist_ok=True)
+
+
+   
+# If you want to use your RF model and PAE file:
+if args.rosettamodel:
+    # Store the AF model and the PAE file in the correct folders
+    RF_custom_model = args.rosettamodel
+    shutil.copy(RF_custom_model, os.path.join(rf_dir, PurePosixPath(RF_custom_model).name))
+# If you want to send a RF job to a HPC Cluster
+if args.run_rosettafold:
+    submit_RF_to_SLURM(fasta, rf_dir, workload_manager="sbatch", dummy_dir=".", max_jobs_in_queue=None)
 
 ### Extract confident regions
 

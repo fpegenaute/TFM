@@ -19,7 +19,10 @@ AF2config = {
     "AF2_useGPU" : "true", 
     "AF2_prokaryote" : "false", 
     }
-SLURMconfig = """#!/bin/bash
+
+
+
+SLURMconfig_AF = """#!/bin/bash
 
 #SBATCH -N 1
 #SBATCH -n 2
@@ -37,10 +40,24 @@ module load AlphaFold/2.1.0-Miniconda3-4.7.10
 source activate alphafold-2.1.0
 module load CUDA/11.1.0
 """
-SSHconfig = {
-    "HPCCluster" : "marvin",
-    "Public_key": "", 
-}
+
+SLURMconfig_RF = """#!/bin/bash
+
+#SBATCH -N 1
+#SBATCH -n 2
+#SBATCH -p normal
+#SBATCH --gres=gpu:1
+#SBATCH --gres-flags=enforce-binding
+#SBATCH --mem 200G
+#SBATCH -t 5-20:00:00
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=ferran.pegenaute@upf.edu
+
+module purge
+module load modulepath/noarch
+module load RoseTTAFold/v1.1.0-Miniconda3-4.7.10
+"""
+
 
 ## FUNCTIONS ##
 
@@ -148,7 +165,7 @@ def submit_AF_to_SLURM(query_fasta, outdir, workload_manager="sbatch", dummy_dir
 
     # Use the config for SLURM given in a file and add your command
     with open(script,"w") as batch_script:
-        batch_script.write(SLURMconfig)
+        batch_script.write(SLURMconfig_AF)
         batch_script.write("%s\n\n"%(command))
         batch_script.write("conda deactivate\n")
 
@@ -157,6 +174,43 @@ def submit_AF_to_SLURM(query_fasta, outdir, workload_manager="sbatch", dummy_dir
     # result = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stdin=subprocess.PIPE).communicate()
     # Better like this: https://kb.iu.edu/d/aews, https://stackoverflow.com/questions/8382847/how-to-ssh-connect-through-python-paramiko-with-ppk-public-key
       
+    os.system("%s %s" % (workload_manager, script))
+
+
+def submit_RF_to_SLURM(query_fasta, outdir, workload_manager="sbatch", dummy_dir=".", max_jobs_in_queue=None ):
+    """
+    This function submits AF2 command to a cluster via {workload_manager}.
+    
+    @input:
+    query_fasta: fasta file to be analyzed
+    outdir: output for *AlphaFold*, not SLURM
+    workload_manager: SLURM by default
+    dummy_dir=default directory for SLURM to look at, defaul: the current
+    max_jobs_in_queue {int} limits the number of jobs in queue
+
+    """
+    from datetime import date
+
+    today = str(date.today())
+    
+
+    process = number_of_jobs_in_queue("squeue")
+    print(process)
+    
+    cwd = os.path.join(dummy_dir)
+    if not os.path.exists(cwd): 
+        os.makedirs(cwd)
+
+    script = os.path.join(cwd,"alpha_test.sh")
+
+    command = f"""run_pyrosetta_ver.sh {query_fasta} {outdir}"""
+
+    # Use the config for SLURM given in a file and add your command
+    with open(script,"w") as batch_script:
+        batch_script.write(SLURMconfig_RF)
+        batch_script.write("%s\n\n"%(command))
+        batch_script.write("conda deactivate\n")
+
     os.system("%s %s" % (workload_manager, script))
 
 
