@@ -1,5 +1,6 @@
 cctbx-base
 py-packman
+matplotlib
 # networkx
 mplcursors
 six
