@@ -1,7 +1,5 @@
 cctbx-base
 py-packman
-networkx
-paramiko
+# networkx
 mplcursors
-seaborn
 six
