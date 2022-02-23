@@ -39,8 +39,8 @@ import pandas as pd
 from scipy import linalg as LA
 from scipy import stats
 from six.moves import range
-from ..dfi.pdbio import *
-from ..dfi.colordfi import colorbydfi
+from .pdbio import *
+from .colordfi import colorbydfi
 
 
 if __name__ == "__main__" and len(sys.argv) < 2:

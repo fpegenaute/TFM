@@ -1,5 +1,6 @@
 import os
 import pwd
+from struct import pack
 import subprocess
 import time
 
@@ -214,9 +215,117 @@ def submit_RF_to_SLURM(query_fasta, outdir, workload_manager="sbatch", dummy_dir
     os.system("%s %s" % (workload_manager, script))
 
 
+import numpy as np
+from pathlib import Path
+import packman
+
+
+def write_hng_file(pdbfile, hinges, outfile):
+    """
+    Generate a hinge file
+    """
+    filename = Path(pdbfile).stem
+    ALL_RESIDUES = {}
+    Protein = packman.molecule.load_structure(pdbfile)
+    for i in Protein[0].get_chains():
+        try:
+            ALL_RESIDUES[i.get_id()] = sorted([i.get_id() for i in Protein[0][i.get_id()].get_residues() if i!=None])
+        except:
+            None
+
+    select_count = 0
+    last_hinge_end = 0
+    fh = open(outfile, 'w')
+    for numi, i in enumerate(hinges):
+        current_hinge = hinges[numi]
+        ChainOfHinge = current_hinge.get_elements()[0].get_parent().get_id()
+
+        if select_count==0:
+            hinge_res_ids = sorted([j.get_id() for j in current_hinge.get_elements()])
+            
+            select_count += 1
+            if(ALL_RESIDUES[ChainOfHinge][0]!=hinge_res_ids[0]):
+                fh.write(filename+'_'+ChainOfHinge +'\t'+ 'D'+str(select_count) +'\t'+ str(ALL_RESIDUES[ChainOfHinge][0])+':'+str(hinge_res_ids[0]-1)+'\n' )
+                fh.write(filename+'_'+ChainOfHinge +'\t'+ 'H'+str(select_count) +'\t'+ str(hinge_res_ids[0])+':'+str(hinge_res_ids[-1])+'\n' )
+            else:
+                fh.write(filename+'_'+ChainOfHinge +'\t'+ 'H'+str(select_count) +'\t'+ str(hinge_res_ids[0])+':'+str(hinge_res_ids[-1])+'\n' )
+            last_hinge_end = hinge_res_ids[-1]
+        else:
+            hinge_res_ids = sorted([j.get_id() for j in current_hinge.get_elements()])
+            select_count += 1
+            fh.write(filename+'_'+ChainOfHinge +'\t'+ 'D'+str(select_count) +'\t'+ str(last_hinge_end+1)+':'+str(hinge_res_ids[0]-1)+'\n' )
+            fh.write(filename+'_'+ChainOfHinge +'\t'+ 'H'+str(select_count) +'\t'+ str(hinge_res_ids[0])+':'+str(hinge_res_ids[-1])+'\n' )
+            last_hinge_end = hinge_res_ids[-1]
+        try:
+            if(ChainOfHinge != hinges[numi+1].get_elements()[0].get_parent().get_id() ):
+                select_count += 1
+                fh.write(filename+'_'+ChainOfHinge +'\t'+ 'D'+str(select_count) +'\t'+ str(last_hinge_end+1)+':'+str(ALL_RESIDUES[ChainOfHinge][-1])+'\n' )
+                last_hinge_end = 0
+        except:
+            None
+
+        if(last_hinge_end != ALL_RESIDUES[ChainOfHinge][-1]):
+            select_count += 1
+            fh.write(filename+'_'+ChainOfHinge +'\t'+ 'D'+str(select_count) +'\t'+ str(last_hinge_end+1)+':'+str(ALL_RESIDUES[ChainOfHinge][-1])+'\n' )
+    fh.flush()
+    fh.close()
+
+
+
+## CLASSES
+import dfi.DFI_plotter
+import packman
+
+class StructuReport():
+    """
+    This is a class for reporting info about structures
+    """
+    def __init__(self, pdb_structure):
+        self.structure = pdb_structure
+
+    def get_dfi(self, save_csv=False):
+        """
+        returns a pandas dataframe with the Dynamic Flexibility Index
+        per residue
+        """
+        dfi_df = dfi.DFI_plotter.run_dfi(self.structure, save_csv)
+        return dfi_df
+    def get_hinges(self):
+        """
+        Run Hinge prediction from PACKMAN package. 
+        Returns a list of significant packman hinge objects, and a list of 
+        non-significant ones
+        """
+        Protein = packman.molecule.load_structure(self.structure)
+        filename, ext = get_filename_ext(self.structure)
+        try:
+            Protein[0]
+        except Exception:
+            print("Make sure your filename is  of the form: XXXXX.pdb/XXXX.cif")
+
+        chains = [chain for chain in Protein[0].get_chains()]
+        backbone = [j for i in Protein[0][chains[0].get_id()].get_backbone() for j in i if j is not None]
+
+        packman.predict_hinge(backbone, Alpha=4.5, outputfile=open(str(f"{filename}_packman_output")+'.txt', 'w'))
+        
+        hinges = []
+        hinges_nosig = []
+        for hinge in backbone[0].get_parent().get_parent().get_hinges():
+            resids = [x.get_id() for x in hinge.get_elements()]
+            if hinge.get_pvalue() < 0.05: 
+                hinges.append(hinge)
+            else:
+                hinges_nosig.append(hinge)
+        return hinges, hinges_nosig
+    
+    
+
+
+
+
 
 if __name__ == "__main__":
-    query_fasta = "query.fa"
-    outdir =  "outdir"
-
-    submit_AF_to_SLURM(query_fasta, outdir, workload_manager="sbatch", dummy_dir=".", max_jobs_in_queue=None )
+    
+    reporter = StructuReport("/home/gallegolab/Desktop/TFM/recovery/TFM/test_output/SEC3/PDB/partial/5yfp_A.pdb")
+    dfi_df = reporter.get_dfi()
+    print(dfi_df)

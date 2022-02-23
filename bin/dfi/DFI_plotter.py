@@ -1,4 +1,5 @@
-from  ..dfi.dfi_calc import calc_dfi
+# from  ..dfi.dfi_calc import calc_dfi
+import dfi.dfi_calc
 import matplotlib.pyplot as plt
 from pathlib import PurePosixPath
 import numpy as np
@@ -54,7 +55,7 @@ def run_dfi(structure, save_csv=False):
     ref_name = PurePosixPath(structure).stem
     
     print("Running DFI analysis")
-    df_dfi = calc_dfi(structure)
+    df_dfi = dfi.dfi_calc.calc_dfi(structure)
 
 
 

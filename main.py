@@ -317,7 +317,7 @@ plt.show()
 
 ### HINGE DETECTION ###
 
-
+summary_dict ={}
 
 for structure in structures_for_query:
     Protein = molecule.load_structure(structure)
@@ -333,20 +333,20 @@ for structure in structures_for_query:
     import numpy as np
     
     #### For running iteratively several values of alpha:
-    print("HINGE DETECTION")
-    alpha_start, alpha_stop, step_size = 2.5 , 4.5 , 0.5 # Previously from 1 to 10
-    for i in np.arange(alpha_start, alpha_stop, step_size):
-        i = np.around(i, decimals=1)
-        l.info(f"Hinge detection with alpha {i}=")
-        try:
-            predict_hinge(backbone, Alpha=i, outputfile=open(str(i)+'.txt', 'w'))
-            # predict_hinge(backbone, outfile, Alpha=4,method='alpha_shape',filename='Output.pdb',MinimumHingeLength=5,nclusters=2)
+    # print("HINGE DETECTION")
+    # alpha_start, alpha_stop, step_size = 2.5 , 4.5 , 0.5 # Previously from 1 to 10
+    # for i in np.arange(alpha_start, alpha_stop, step_size):
+    #     i = np.around(i, decimals=1)
+    #     l.info(f"Hinge detection with alpha {i}=")
+    #     try:
+    #         predict_hinge(backbone, Alpha=i, outputfile=open(str(i)+'.txt', 'w'))
+    #         # predict_hinge(backbone, outfile, Alpha=4,method='alpha_shape',filename='Output.pdb',MinimumHingeLength=5,nclusters=2)
 
-        except:
-            l.info(f"Exception for alpha {i}")
-            continue    
+    #     except:
+    #         l.info(f"Exception for alpha {i}")
+    #         continue    
 
-    # predict_hinge(backbone, Alpha=4.5, outputfile=open(str(f"{filename}_packman_output")+'.txt', 'w'))
+    predict_hinge(backbone, Alpha=4.5, outputfile=open(str(f"{filename}_packman_output")+'.txt', 'w'))
 
     hinges = []
     hinges_nosig = []
@@ -363,7 +363,7 @@ for structure in structures_for_query:
             """)
         else:
             hinges_nosig.append(hinge)
-
+    
     write_hng_file(structure, hinges, f"{filename}_hinges.hng")  
 
     l.info("### MOTION MOVIE ###")
