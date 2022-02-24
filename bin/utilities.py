@@ -1,6 +1,5 @@
 import os
 import pwd
-from struct import pack
 import subprocess
 import time
 
@@ -273,50 +272,6 @@ def write_hng_file(pdbfile, hinges, outfile):
 
 
 ## CLASSES
-import dfi.DFI_plotter
-import packman
-
-class StructuReport():
-    """
-    This is a class for reporting info about structures
-    """
-    def __init__(self, pdb_structure):
-        self.structure = pdb_structure
-
-    def get_dfi(self, save_csv=False):
-        """
-        returns a pandas dataframe with the Dynamic Flexibility Index
-        per residue
-        """
-        dfi_df = dfi.DFI_plotter.run_dfi(self.structure, save_csv)
-        return dfi_df
-    def get_hinges(self):
-        """
-        Run Hinge prediction from PACKMAN package. 
-        Returns a list of significant packman hinge objects, and a list of 
-        non-significant ones
-        """
-        Protein = packman.molecule.load_structure(self.structure)
-        filename, ext = get_filename_ext(self.structure)
-        try:
-            Protein[0]
-        except Exception:
-            print("Make sure your filename is  of the form: XXXXX.pdb/XXXX.cif")
-
-        chains = [chain for chain in Protein[0].get_chains()]
-        backbone = [j for i in Protein[0][chains[0].get_id()].get_backbone() for j in i if j is not None]
-
-        packman.predict_hinge(backbone, Alpha=4.5, outputfile=open(str(f"{filename}_packman_output")+'.txt', 'w'))
-        
-        hinges = []
-        hinges_nosig = []
-        for hinge in backbone[0].get_parent().get_parent().get_hinges():
-            resids = [x.get_id() for x in hinge.get_elements()]
-            if hinge.get_pvalue() < 0.05: 
-                hinges.append(hinge)
-            else:
-                hinges_nosig.append(hinge)
-        return hinges, hinges_nosig
     
     
 
@@ -325,7 +280,4 @@ class StructuReport():
 
 
 if __name__ == "__main__":
-    
-    reporter = StructuReport("/home/gallegolab/Desktop/TFM/recovery/TFM/test_output/SEC3/PDB/partial/5yfp_A.pdb")
-    dfi_df = reporter.get_dfi()
-    print(dfi_df)
+    pass

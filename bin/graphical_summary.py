@@ -6,7 +6,7 @@ from Bio.PDB import PDBParser, MMCIFParser
 import logging as l
 from Bio import SeqIO
 import os
-from bin.utilities import get_filename_ext
+import bin.utilities
 import mplcursors
 
 
@@ -15,7 +15,7 @@ def PDB_get_resid_set(structure_file):
     """
     Given a PDB or MMCif File, return a set of [Res_ID] ALL CHAINS
     """
-    identifier, extension = get_filename_ext(structure_file)
+    identifier, extension = bin.utilities.get_filename_ext(structure_file)
 
     if extension == "pdb":
         parser = PDBParser(QUIET=True)
@@ -113,7 +113,7 @@ def extract_coincident_positions(reference_fasta, pdbfile):
     return reference_array, covered_array
 
 
-def generate_plots(fasta_reference, pdb_chains, ):
+def generate_plots(fasta_reference, pdb_chains):
     
     for chain in pdb_chains:
         x, y = extract_coincident_positions(fasta_reference, chain) 
@@ -193,26 +193,20 @@ def plot_coverage(fastafile, pdblist, nrow):
     
         
     
-
-
-
-
 from bin.dfi.DFI_plotter import run_dfi
 from scipy.signal import find_peaks
 import matplotlib.ticker as plticker
 import pandas as pd
 
-
-
-def plot_dfi_summary(structure_list, fasta_reference):
+def plot_dfi_hinge_summary(structure_list, fasta_reference):
     """
     Given a list of PDB files and a reference fasta file, run DFI analysis and plot the results indicating
     the putative flexible residues, selected using peak detection in scipy and only in the regions available in the structures
     
     Return a df with theses putative flexible residues
     """
+    l.info(f"START PLOTTING SUMMARY FOR: {structure_list}")
     fasta_dict = FASTA_get_resid_dict(fasta_reference)
-    # fasta_df = pd.DataFrame.from_dict(fasta_dict, orient='index')
     
     DFI_list = []
     rows = []
@@ -220,13 +214,17 @@ def plot_dfi_summary(structure_list, fasta_reference):
         DFI_df = run_dfi(file)
         DFI_list.append(DFI_df)
         rows.append('Template {}'.format(os.path.basename(file)))
+    l.info(f"DFI_list: {DFI_list}")
     
+    l.info(f"Setting up the fig and axes")
     fig, axes = plt.subplots(nrows=len(structure_list), ncols=1, figsize=(12, 8))
     print(f"AXES: {axes}")
 
     if len(structure_list) > 1:
         i = 0
-        for ax, row in zip(axes, rows):        
+        l.info(f"START PLOTTING DFI")
+        for ax, row in zip(axes, rows):   
+            l.info(f"ITERATION: {i}")     
             ax.set_ylabel(row, rotation=0, size='large', labelpad=90)
         
             # Convert DFI df to a dict {ResI : DFI}
@@ -255,8 +253,17 @@ def plot_dfi_summary(structure_list, fasta_reference):
             # this locator puts ticks at regular intervals
             loc = plticker.MultipleLocator(base=20)
             ax.xaxis.set_major_locator(loc)
+            l.info(f"CALCULATING HINGES")
+            reporter = StructuReport(structure_list[i])
+
+            hinges, hinges_nosig  = reporter.get_hinges()
             
-            
+            for hinge in hinges:
+                resid = [x.get_id() for x in hinge.get_elements()]
+                ax.axvspan(resid[0], resid[-1], color='green', alpha=0.4)
+            for hinge in hinges_nosig:
+                resid = [x.get_id() for x in hinge.get_elements()]
+                ax.axvspan(resid[0], resid[-1], color='red', alpha=0.4)
             
             if "domains" in row: 
                 ax.get_lines()[0].set_color("orange")
@@ -267,6 +274,7 @@ def plot_dfi_summary(structure_list, fasta_reference):
                 mplcursors.cursor(ax, hover=True).connect(
                     "add", lambda sel: sel.annotation.set_text("Experimental Structure\n text"))
             i += 1
+            l.info(f"ITERATION FINISHED: {i}")
 
         ax.set_xlabel(f"ResID", rotation=0, size='large')
         fig.tight_layout()
@@ -317,7 +325,85 @@ def plot_dfi_summary(structure_list, fasta_reference):
         fig.tight_layout()
 
 
+## CLASSES
+import bin.dfi
+import packman
+import pandas as pd
+from bin.utilities import get_filename_ext
 
+
+class StructuReport():
+    """
+    This is a class for reporting info about structures
+    """
+    def __init__(self, pdb_structure):
+        self.structure = pdb_structure
+
+    def get_dfi(self, save_csv=False):
+        """
+        returns a pandas dataframe with the Dynamic Flexibility Index
+        per residue
+        """
+        dfi_df = run_dfi(self.structure, save_csv)
+        return dfi_df
+
+    def get_hinges(self, alpha_range=None):
+        """
+        Run Hinge prediction from PACKMAN package. 
+        Returns a list of significant packman hinge objects, and a list of 
+        non-significant ones
+        alpha range: tuple with start and end alpha values, and setp size: e.g (2.5, 4.5, 0.5)
+        """
+        Protein = packman.molecule.load_structure(self.structure)
+        filename, ext = get_filename_ext(self.structure)
+        try:
+            Protein[0]
+        except Exception:
+            print("Make sure your filename is  of the form: XXXXX.pdb/XXXX.cif")
+
+        chains = [chain for chain in Protein[0].get_chains()]
+        backbone = [j for i in Protein[0][chains[0].get_id()].get_backbone() for j in i if j is not None]
+
+        if alpha_range:
+            alpha_start, alpha_stop, step_size = alpha_range[0], alpha_range[1], 
+            alpha_range[3] # Previously from 1 to 10
+            for i in np.arange(alpha_start, alpha_stop, step_size):
+                i = np.around(i, decimals=1)
+                l.info(f"Hinge detection with alpha {i}=")
+                try:
+                    packman.predict_hinge(backbone, Alpha=i, outputfile=open(str(i)+'.txt', 'w'))
+                except:
+                    l.info(f"Exception for alpha {i}")
+                    continue    
+        else:
+            packman.predict_hinge(backbone, Alpha=4.5, outputfile=open(str(f"{filename}_packman_output")+'.txt', 'w'))
+        
+        hinges = []
+        hinges_nosig = []
+        for hinge in backbone[0].get_parent().get_parent().get_hinges():
+            resids = [x.get_id() for x in hinge.get_elements()]
+            if hinge.get_pvalue() < 0.05: 
+                hinges.append(hinge)
+            else:
+                hinges_nosig.append(hinge)
+        return hinges, hinges_nosig
+    def get_coverage(self, reference_fasta, save_csv=False, outfile=None):
+        """
+        Given a reference fasta file, return a pandas dataframe with the coverage of
+        the structure w.r.t it. 
+
+        The df will have two columns 'ResID' (int) and 'Structure' (0/1)
+        save_csv: save the df as a csv
+        outfile: Name of the file path to save the csv 
+        """
+        ref_ids, covered_ids = extract_coincident_positions(reference_fasta, self.structure)
+        coverage_df = pd.DataFrame({"ResID":ref_ids,"Structure":covered_ids})
+        
+        if save_csv:
+            coverage_df.to_csv(outfile)
+
+
+        return coverage_df
 
 
 if __name__ == "__main__":
