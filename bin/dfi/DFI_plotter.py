@@ -16,7 +16,8 @@ def plot_dfi(reference_df, top_df):
 
     """
     # Save the plots
-    plt.plot(reference_df["ResI"].tolist(), reference_df["pctdfi"].tolist(), linewidth=5)
+    plt.plot(reference_df["ResI"].tolist(), reference_df["pctdfi"].tolist(), 
+    linewidth=5)
     plt.grid(True, axis = "x", color = "silver")
     plt.plot(top_df["ResI"].tolist(), top_df["pctdfi"].tolist(), marker='*', 
         markersize=20, label="Putative Flexible Residues", linestyle="None")
@@ -43,7 +44,7 @@ def plot_dfi(reference_df, top_df):
 
 
 
-def run_dfi(structure, save_csv=False):
+def run_dfi(structure):
     """
     Calculate DFI from a structure.
 
@@ -62,38 +63,16 @@ def run_dfi(structure, save_csv=False):
     # DFI dataframe (ResI, pctdfi)
     ref_resid_array = np.array(df_dfi["ResI"].tolist())
     ref_pctdfi_array = np.array(df_dfi["pctdfi"].tolist())
-    reference_df = pd.DataFrame({"ResI":ref_resid_array, "pctdfi":ref_pctdfi_array })
+    reference_df = pd.DataFrame({"ResI":ref_resid_array, 
+                                                "pctdfi":ref_pctdfi_array })
 
     # Insert a column with the name of the structure
     ID_list = [ref_name] * len(ref_pctdfi_array)
     reference_df.insert(loc=0, column="Chain", value=ID_list)
-
-    if save_csv:
-        reference_df.to_csv(f"{ref_name}_DFI.csv", encoding='utf-8', index=False, float_format='%.3f')
+       
     return reference_df
 
 
-
-def check_normality(array_list):
-    """
-    Given an array, tests whether it differs from a normal distribution.
-    
-    In this test the Ho = Sample comes from a normal distribution
-
-    It returns False (the Ho can be rejected) or True (Ho can be rejected)
-
-    ## CURRENTLY INACTIVE
-    """
-    z_values, p_value =stats.normaltest(array_list)
-    alpha = 0.05
-    if p_value < alpha:
-        concusion = """The null hypothesis (Sample comes from a normal \
-            distribution) can be rejected"""
-        return False
-    if p_value > alpha:
-        concusion = """The null hypothesis (Sample comes from a normal \
-            distribution) cannot be rejected"""
-        return True
 
 def extract_flexible_residues(dataframe):
     """
@@ -133,8 +112,9 @@ def extract_flexible_residues_peak(dataframe):
     
 def plot_peaks(dataframe):
     """
-    Given a dataframe, where the first column is the positions and the second is
-    some corresponding values, retrieve the peak positions usinc Scipy Peak detection
+    Given a dataframe, where the first column is the positions and the second 
+    is some corresponding values, retrieve the peak positions using Scipy Peak 
+    detection
     """
     x = dataframe.iloc[:, 0].values
     y = dataframe.iloc[:, 1].values
@@ -155,46 +135,5 @@ def plot_peaks(dataframe):
     return plt
 
 if __name__ == "__main__":
-    # pdb_structure = input("PDB file to examine: ").strip()
-    # resid_begin = int(input("Examine flexibility from residue number: ").strip())
-    # resid_end = int(input("Examine flexibility until residue number: ").strip())
-
-
-    parser = argparse.ArgumentParser(description='DFI anayser and plotter')
-    parser.add_argument('input_dir', 
-                        help='Input directory for the PDBs')
-    parser.add_argument('pdb_structure', 
-                        help='Reference structure')
-
-    
-    args = parser.parse_args()
-
-
-    # START
-
-    pdb_structure = args.pdb_structure
-    input_dir = args.input_dir
-    # pdb_structure = PurePosixPath(pdb_structure).name
-    
-    
-    i=1
-    for file in os.listdir(args.input_dir):
-        if i == 1:
-            print(f"Running DFI analysis for {file} and {pdb_structure}")
-            ref_df, compare_df= run_dfi(pdb_structure, os.path.join(args.input_dir, file))
-            # print(ref_df["ResI"].to_list())
-            # print(ref_df["pctdfi"].to_list())
-            top5percent = extract_flexible_residues(compare_df) 
-            print(top5percent.head(10) )
-            plt = plot_dfi(ref_df, top5percent)         
-            plt.show()
-            i = 2
-
-
-    exit()
-
-    for file in os.listdir(args.input_dir):
-        if os.path.join(args.input_dir, file) !=  pdb_structure and os.path.isfile(os.path.join(args.input_dir, file)):
-            print(f"Running DFI analysis for {file} and {pdb_structure}")
-            run_dfi(pdb_structure, os.path.join(args.input_dir, file), outdir=os.path.join(input_dir, "DFI_plots", ""))
+   pass
 

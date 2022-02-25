@@ -228,7 +228,8 @@ def write_hng_file(pdbfile, hinges, outfile):
     Protein = packman.molecule.load_structure(pdbfile)
     for i in Protein[0].get_chains():
         try:
-            ALL_RESIDUES[i.get_id()] = sorted([i.get_id() for i in Protein[0][i.get_id()].get_residues() if i!=None])
+            ALL_RESIDUES[i.get_id()] = sorted([i.get_id() for i in \
+                            Protein[0][i.get_id()].get_residues() if i!=None])
         except:
             None
 
@@ -240,32 +241,41 @@ def write_hng_file(pdbfile, hinges, outfile):
         ChainOfHinge = current_hinge.get_elements()[0].get_parent().get_id()
 
         if select_count==0:
-            hinge_res_ids = sorted([j.get_id() for j in current_hinge.get_elements()])
+            hinge_res_ids = sorted([j.get_id() for j in \
+                                                current_hinge.get_elements()])
             
             select_count += 1
             if(ALL_RESIDUES[ChainOfHinge][0]!=hinge_res_ids[0]):
-                fh.write(filename+'_'+ChainOfHinge +'\t'+ 'D'+str(select_count) +'\t'+ str(ALL_RESIDUES[ChainOfHinge][0])+':'+str(hinge_res_ids[0]-1)+'\n' )
-                fh.write(filename+'_'+ChainOfHinge +'\t'+ 'H'+str(select_count) +'\t'+ str(hinge_res_ids[0])+':'+str(hinge_res_ids[-1])+'\n' )
+                fh.write(filename+'_'+ChainOfHinge +'\t'+ 'D'+str(select_count) \
+                    +'\t'+ str(ALL_RESIDUES[ChainOfHinge][0])+':'\
+                        +str(hinge_res_ids[0]-1)+'\n' )
+                fh.write(filename+'_'+ChainOfHinge +'\t'+ 'H'+str(select_count) \
+                    +'\t'+ str(hinge_res_ids[0])+':'+str(hinge_res_ids[-1])+'\n' )
             else:
-                fh.write(filename+'_'+ChainOfHinge +'\t'+ 'H'+str(select_count) +'\t'+ str(hinge_res_ids[0])+':'+str(hinge_res_ids[-1])+'\n' )
+                fh.write(filename+'_'+ChainOfHinge +'\t'+ 'H'+str(select_count) \
+                    +'\t'+ str(hinge_res_ids[0])+':'+str(hinge_res_ids[-1])+'\n' )
             last_hinge_end = hinge_res_ids[-1]
         else:
             hinge_res_ids = sorted([j.get_id() for j in current_hinge.get_elements()])
             select_count += 1
-            fh.write(filename+'_'+ChainOfHinge +'\t'+ 'D'+str(select_count) +'\t'+ str(last_hinge_end+1)+':'+str(hinge_res_ids[0]-1)+'\n' )
-            fh.write(filename+'_'+ChainOfHinge +'\t'+ 'H'+str(select_count) +'\t'+ str(hinge_res_ids[0])+':'+str(hinge_res_ids[-1])+'\n' )
+            fh.write(filename+'_'+ChainOfHinge +'\t'+ 'D'+str(select_count) \
+                +'\t'+ str(last_hinge_end+1)+':'+str(hinge_res_ids[0]-1)+'\n' )
+            fh.write(filename+'_'+ChainOfHinge +'\t'+ 'H'+str(select_count) \
+                +'\t'+ str(hinge_res_ids[0])+':'+str(hinge_res_ids[-1])+'\n' )
             last_hinge_end = hinge_res_ids[-1]
         try:
-            if(ChainOfHinge != hinges[numi+1].get_elements()[0].get_parent().get_id() ):
+            if(ChainOfHinge != hinges[numi+1].get_elements()[0].get_parent().get_id()):
                 select_count += 1
-                fh.write(filename+'_'+ChainOfHinge +'\t'+ 'D'+str(select_count) +'\t'+ str(last_hinge_end+1)+':'+str(ALL_RESIDUES[ChainOfHinge][-1])+'\n' )
+                fh.write(filename+'_'+ChainOfHinge +'\t'+ 'D'+str(select_count) \
+                    +'\t'+ str(last_hinge_end+1)+':'+str(ALL_RESIDUES[ChainOfHinge][-1])+'\n' )
                 last_hinge_end = 0
         except:
             None
 
         if(last_hinge_end != ALL_RESIDUES[ChainOfHinge][-1]):
             select_count += 1
-            fh.write(filename+'_'+ChainOfHinge +'\t'+ 'D'+str(select_count) +'\t'+ str(last_hinge_end+1)+':'+str(ALL_RESIDUES[ChainOfHinge][-1])+'\n' )
+            fh.write(filename+'_'+ChainOfHinge +'\t'+ 'D'+str(select_count) \
+                +'\t'+ str(last_hinge_end+1)+':'+str(ALL_RESIDUES[ChainOfHinge][-1])+'\n' )
     fh.flush()
     fh.close()
 
