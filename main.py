@@ -92,16 +92,18 @@ if len(record_dict.keys()) == 1:
     l.info(f"Query length: {query_length}")
 
 
-# For now, it only forks with one squence at a time
-# for key in record_dict.items():
-#     print(key[0],"\n ",len(key[1].seq))
+
 
 # Create folders. last path element is empty to add a slash
 pdb_dir = os.path.join(args.outdir, query_name, "PDB", "" )
 fasta_dir = os.path.join(args.outdir, query_name, "FASTA", "" )
+report_dir = os.path.join(args.outdir, query_name, "REPORT", "" )
+hinges_dir = os.path.join(args.outdir, query_name, "HINGES", "" )
 
 Path(pdb_dir).mkdir(parents=True, exist_ok=True)
 Path(fasta_dir).mkdir(parents=True, exist_ok=True)
+Path(report_dir).mkdir(parents=True, exist_ok=True)
+Path(hinges_dir).mkdir(parents=True, exist_ok=True)
 
 ## 1. Check if the input sequence is already in the PDB  
 
@@ -255,9 +257,6 @@ dm = DataManager()
 dm.set_overwrite(True)
 
 
-
-
-
 l.info("Extracting high confidence domains")
 domains_dir = os.path.join(af_dir, "DOMAINS", "")
 Path(domains_dir).mkdir(parents=True, exist_ok=True)
@@ -278,14 +277,16 @@ if (args.alphamodel and args.PAE_json) or (args.run_alphafold):
             print("Segments found: %s" %(" ".join(chainid_list)))
 
             mmm = model_info.model.as_map_model_manager()
-            mmm.write_model(os.path.join(domains_dir, f"{PurePosixPath(filename).stem}_domains.pdb"))
+            mmm.write_model(os.path.join(domains_dir, 
+                            f"{PurePosixPath(filename).stem}_domains.pdb"))
             
-            structures_for_query.append(os.path.join(domains_dir, f"{PurePosixPath(filename).stem}_domains.pdb"))
+            structures_for_query.append(os.path.join(domains_dir, 
+                            f"{PurePosixPath(filename).stem}_domains.pdb"))
 
-            conf_domains = extract_residue_list(os.path.join(domains_dir, f"{PurePosixPath(filename).stem}_domains.pdb"), domains_dir)
+            conf_domains = extract_residue_list(os.path.join(domains_dir,  
+                            f"{PurePosixPath(filename).stem}_domains.pdb"), 
+                            domains_dir)
             l.info(f"Residue list of confident domains: {conf_domains}")
-
-
 
 
 ## Launch graphical summary 
@@ -299,12 +300,66 @@ plt.show()
 ### HINGE DETECTION ###
 from bin.graphical_summary import StructuReport
 
-# Get hinges and save them in a csv
+
 for structure in structures_for_query:
     reporter = StructuReport(structure)
-    hinges = reporter.get_hinges(alpha_range=None, save_csv=False)
+    # Get coverage of the structure
+    coverage_df = reporter.get_coverage(fasta, save_csv=True, outdir=report_dir)
+    # Get hinges and save the .hng files
+    hinges = reporter.get_hinges(alpha_range=None, 
+                                            save_csv=True, outdir=hinges_dir)
+    # Get DFI
+    dfi_df = reporter.get_dfi(save_csv=True, outdir=report_dir)
+                                    
+    
     
 plot_dfi_hinge_summary(structures_for_query, fasta)
+
+
+## Write Topology file
+from bin.custom_top import RigidBody, write_custom_topology
+from bin.utilities import pdb_to_fasta, get_chain_names, get_residue_range
+
+i = 0
+rigid_bodies = []
+for structure in structures_for_query:
+    
+    filename, extension = get_filename_ext(structure)
+    
+    # Generate fasta files
+    fastafile = pdb_to_fasta(structure, fasta_dir)
+    fasta_fn, fasta_ext = get_filename_ext(fastafile)
+
+    # Extract chain name
+    chain_ID = get_chain_names(structure)
+    if len(chain_ID) > 1:
+        print(f"{structure} has more than one chain, exiting")
+        exit(1)    
+    # Extract residue range
+    res_range = get_residue_range(structure)
+
+
+    
+    
+    rigid_body = RigidBody(resolution="all",
+    molecule_name= filename, 
+    color="blue" , 
+    fasta_fn=fastafile, 
+    fasta_id=fasta_fn, 
+    pdb_fn=structure, 
+    chain=chain_ID[0],
+    residue_range=res_range , 
+    rigid_body=i, 
+    super_rigid_body=i, 
+    chain_of_super_rigid_bodies="", 
+    pdb_offset=0, 
+    bead_size=10,
+    em_residues_per_gaussian=0,
+
+                     )
+    rigid_bodies.append(rigid_body)
+
+print(rigid_bodies[0].attributes)
 
 plt.show()
 

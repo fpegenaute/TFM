@@ -1,9 +1,7 @@
 from Bio.PDB.Structure import Structure
 from bin.process_predicted_model import *
 
-from Bio import *
 from Bio.PDB import MMCIFParser, PDBParser
-from bin.utilities import get_filename_ext
 
 def get_resid_list(structure_file, outdir):
     """

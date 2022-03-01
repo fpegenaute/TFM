@@ -329,6 +329,7 @@ class StructuReport():
         dfi_df = run_dfi(self.structure)
 
         if save_csv:
+            outdir = os.path.join(outdir, "DFI")
             out_path = os.path.join(outdir, f"{self.structure_ID}_DFI.csv")
             try:
                 dfi_df.to_csv(out_path, encoding='utf-8', 
@@ -392,9 +393,6 @@ class StructuReport():
                 print(f"Unexpected error opening {out_path} is",repr(err))
                 sys.exit(1)  # or replace this with "raise" ?
         
-
-
-        
         return hinges
 
     def get_hinges_split(self):
@@ -429,6 +427,7 @@ class StructuReport():
         coverage_df = pd.DataFrame({"ResID":ref_ids,"Structure":covered_ids})
         
         if save_csv:
+            outdir = os.path.join(outdir, "COVERAGE")
             out_path = os.path.join(outdir, f"{self.structure_ID}_coverage.csv")
             try:
                 coverage_df.to_csv(out_path, encoding='utf-8', 

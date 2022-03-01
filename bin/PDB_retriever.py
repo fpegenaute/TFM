@@ -84,24 +84,7 @@ def check_PDB_len(pdbfile, chain):
 
     return res_number
 
-def save_chain(structure_file, chain, outdir):
-    # get ID and extension
-    identifier, extension= get_filename_ext(structure_file)
-    identifier = identifier.upper()
-    l.info(f"ID: {identifier} . Extension: {extension}, ")
 
-    if extension == "pdb" or extension == "ent" :
-        parser = PDB.PDBParser(QUIET=True)
-    elif extension == "cif":
-        parser = PDB.MMCIFParser(QUIET=True)
-    else:
-        raise NameError("""Your file must have \"pdb\", \"ent\" or \"cif\" as 
-            an extension""")
-
-    # Get the structure
-    structure = parser.get_structure(identifier, structure_file) 
-    model = structure[0]
-    chain = model[chain]
 
 
 class ChainSplitter:

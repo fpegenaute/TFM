@@ -279,8 +279,101 @@ def write_hng_file(pdbfile, hinges, outfile):
     fh.flush()
     fh.close()
 
+from Bio import SeqIO
+from Bio.PDB import MMCIFParser, PDBParser
 
+def pdb_to_fasta(pdbfile, outdir):
+    """
+    Given a PDB/mmCif file, make a fasta file in the outdir
+    """
+    identifier = Path(pdbfile).stem.split('.')[0]
+    outfile = os.path.join(outdir, f"{identifier}_covered.fasta")
 
+    # get ID and extension
+    identifier, extension= get_filename_ext(pdbfile)
+    # identifier = identifier.upper()
+
+    if extension == "pdb" or extension == "ent" :
+        parser = PDBParser(QUIET=True)
+    elif extension == "cif":
+        parser = MMCIFParser(QUIET=True)
+    else:
+        raise NameError("""Your file must have \"pdb\", \"ent\" or \"cif\" as 
+            an extension""")
+    
+    structure = parser.get_structure(identifier, pdbfile) 
+    model = structure[0]
+    with open(outfile, "w") as out_fasta:
+        for chain in model.get_chains():
+            out_fasta.write('>' + identifier + "\n")
+            for res in chain.get_residues(): 
+                if res.id[0] == " ":               
+                    out_fasta.write(str(res.get_resname()))
+    
+    return outfile
+    
+def get_chain_names(structure_file):
+    """
+    Given a PDB/mmCif file, return a list with the names 
+    of the chains
+    """
+
+    # get ID and extension
+    identifier, extension= get_filename_ext(structure_file)
+    # identifier = identifier.upper()
+
+    if extension == "pdb" or extension == "ent" :
+        parser = PDBParser(QUIET=True)
+    elif extension == "cif":
+        parser = MMCIFParser(QUIET=True)
+    else:
+        raise NameError("""Your file must have \"pdb\", \"ent\" or \"cif\" as 
+            an extension""")
+
+    # Get the structure
+    structure = parser.get_structure(identifier, structure_file) 
+    model = structure[0]
+    chains = []
+    
+    for chain in model.get_chains():
+        chains.append(chain.get_id())
+   
+    return chains
+
+def get_residue_range(structure_file):
+    """
+    Given a PDB/mmCif file, extract the first and last aa positions.
+    Return them as a tuple
+    """
+
+    # get ID and extension
+    identifier, extension= get_filename_ext(structure_file)
+    # identifier = identifier.upper()
+
+    if extension == "pdb" or extension == "ent" :
+        parser = PDBParser(QUIET=True)
+    elif extension == "cif":
+        parser = MMCIFParser(QUIET=True)
+    else:
+        raise NameError("""Your file must have \"pdb\", \"ent\" or \"cif\" as 
+            an extension""")
+
+    # Get the structure
+    structure = parser.get_structure(identifier, structure_file) 
+    model = structure[0]
+    chains = []
+    
+    for chain in model.get_chains():
+        i = 0
+        for residue in chain.get_residues():
+            if residue.get_full_id()[3][0] == " ": # Exclude hetatm and h20
+                if i == 0:
+                    first = residue.get_full_id()[3][1]
+                    i += 1
+                else:
+                    last = residue.get_full_id()[3][1]
+   
+    return (first, last)
 ## CLASSES
     
     
