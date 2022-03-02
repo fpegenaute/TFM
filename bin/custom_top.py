@@ -44,7 +44,10 @@ class RigidBody():
         self.pdb_fn = pdb_fn
         self.chain = chain
         self.residue_range = residue_range
-        self.pdb_offset = pdb_offset
+        if self.residue_range[0] == 1:
+            self.pdb_offset = pdb_offset
+        else:
+            self.pdb_offset = - (self.residue_range[0] - 1)   
         self.bead_size = bead_size
         self.em_residues_per_gaussian = em_residues_per_gaussian
         self.rigid_body = rigid_body
