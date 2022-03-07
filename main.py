@@ -67,7 +67,7 @@ query_name = Path(fasta).stem.split('.')[0]
 logdir = os.path.join(args.outdir, query_name, "LOG", "")
 Path(logdir).mkdir(parents=True, exist_ok=True)
 
-l.basicConfig(format = "%(levelname)s:%(message)s", 
+l.basicConfig(format = "%(levelname)s:%(message)s",
                         filename = os.path.join(logdir, f"{query_name}.log"), 
                         level = l.DEBUG)
 
@@ -92,18 +92,19 @@ if len(record_dict.keys()) == 1:
     l.info(f"Query length: {query_length}")
 
 
-
-
 # Create folders. last path element is empty to add a slash
 pdb_dir = os.path.join(args.outdir, query_name, "PDB", "" )
 fasta_dir = os.path.join(args.outdir, query_name, "FASTA", "" )
 report_dir = os.path.join(args.outdir, query_name, "REPORT", "" )
 hinges_dir = os.path.join(args.outdir, query_name, "HINGES", "" )
+IMP_dir = os.path.join(args.outdir, query_name, "IMP", "" )
 
 Path(pdb_dir).mkdir(parents=True, exist_ok=True)
 Path(fasta_dir).mkdir(parents=True, exist_ok=True)
 Path(report_dir).mkdir(parents=True, exist_ok=True)
 Path(hinges_dir).mkdir(parents=True, exist_ok=True)
+Path(IMP_dir).mkdir(parents=True, exist_ok=True)
+
 
 ## 1. Check if the input sequence is already in the PDB  
 
@@ -318,17 +319,18 @@ plot_dfi_hinge_summary(structures_for_query, fasta)
 
 ## Write Topology file
 from bin.custom_top import RigidBody, write_custom_topology
-from bin.utilities import pdb_to_fasta, get_chain_names, get_residue_range
+from bin.utilities import get_chain_names, get_residue_range
 
-i = 0
+
+
+# Make rhe RigidBody objects from the structures
+i = 1
 rigid_bodies = []
 for structure in structures_for_query:
     
     filename, extension = get_filename_ext(structure)
     
     # Generate fasta files
-    fastafile = pdb_to_fasta(structure, fasta_dir)
-    fasta_fn, fasta_ext = get_filename_ext(fastafile)
 
     # Extract chain name
     chain_ID = get_chain_names(structure)
@@ -340,26 +342,50 @@ for structure in structures_for_query:
 
 
     
-    
+    # Create the RigidBody instance
     rigid_body = RigidBody(resolution="all",
     molecule_name= filename, 
     color="blue" , 
-    fasta_fn=fastafile, 
-    fasta_id=fasta_fn, 
+    fasta_fn=os.path.join(fasta_dir, f"{filename}.fasta"), 
+    fasta_id=f"{filename}.fasta", 
     pdb_fn=structure, 
     chain=chain_ID[0],
     residue_range=res_range , 
     rigid_body=i, 
-    super_rigid_body=i, 
+    super_rigid_body="", 
     chain_of_super_rigid_bodies="", 
-    pdb_offset=0, 
     bead_size=10,
     em_residues_per_gaussian=0,
 
                      )
     rigid_bodies.append(rigid_body)
+    i +=1
 
-print(rigid_bodies[0].attributes)
+
+## Provisional way of making the composite. Get the longest ones
+## IT doesn't work yet
+filtered_rigid_bodies = set()
+print("Making the composite")
+i = 0
+
+for rb1, rb2 in zip(rigid_bodies, rigid_bodies[1:]):
+        if rb1.get_length() > rb2.get_length() and  \
+            (rb1.residue_range[0] <= rb2.residue_range[0] and \
+                (rb1.residue_range[1] >= rb2.residue_range[1])) :
+            filtered_rigid_bodies.add(rb1)
+            print(f"ADDED RIGID BODY {rb1.molecule_name}")
+        else:
+            filtered_rigid_bodies.add(rb1)
+            filtered_rigid_bodies.add(rb2)
+            print(f"ADDED RIGID BODY {rb2.molecule_name}")
+
+
+# Convert to list and sort by thw ones who start earlier in the sequence
+filtered_rigid_bodies = list(filtered_rigid_bodies)
+filtered_rigid_bodies.sort(key=lambda x: x.residue_range[0])
+
+
+write_custom_topology(os.path.join(IMP_dir, f"{query_name}.topology"), filtered_rigid_bodies)
 
 plt.show()
 

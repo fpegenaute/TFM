@@ -1,10 +1,13 @@
 import os
-import pwd
 import subprocess
 import time
+from pathlib import Path
+import packman
+from Bio import SeqIO
+from Bio.PDB import MMCIFParser, PDBParser
+from Bio.SeqUtils import seq1
 
 ## CONFIG ##
-
 blastconfig = {
     "blastdb" : "/home/gallegolab/Desktop/TFM/databases/BLAST/pdbaa"
 
@@ -60,7 +63,6 @@ module load RoseTTAFold/v1.1.0-Miniconda3-4.7.10
 
 
 ## FUNCTIONS ##
-
 def get_filename_ext(filepath):
     """
     Given a file path, split it by dots and get the extension as the last element
@@ -214,10 +216,6 @@ def submit_RF_to_SLURM(query_fasta, outdir, workload_manager="sbatch", dummy_dir
     os.system("%s %s" % (workload_manager, script))
 
 
-import numpy as np
-from pathlib import Path
-import packman
-
 
 def write_hng_file(pdbfile, hinges, outfile):
     """
@@ -279,9 +277,6 @@ def write_hng_file(pdbfile, hinges, outfile):
     fh.flush()
     fh.close()
 
-from Bio import SeqIO
-from Bio.PDB import MMCIFParser, PDBParser
-
 def pdb_to_fasta(pdbfile, outdir):
     """
     Given a PDB/mmCif file, make a fasta file in the outdir
@@ -307,8 +302,10 @@ def pdb_to_fasta(pdbfile, outdir):
         for chain in model.get_chains():
             out_fasta.write('>' + identifier + "\n")
             for res in chain.get_residues(): 
-                if res.id[0] == " ":               
-                    out_fasta.write(str(res.get_resname()))
+                if res.id[0] == " ": 
+                    # seq1 changes 3 letter symbls to 1
+                    residue = seq1(str(res.get_resname()))              
+                    out_fasta.write(residue)
     
     return outfile
     
@@ -374,6 +371,8 @@ def get_residue_range(structure_file):
                     last = residue.get_full_id()[3][1]
    
     return (first, last)
+
+
 ## CLASSES
     
     
