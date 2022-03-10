@@ -375,7 +375,7 @@ def outputToDF(ATOMS, dfi, pctdfi, fdfi=None, pctfdfi=None, ls_ravg=None,
               'VAL': 'V',
               'MSE': 'M'}
     dfx = pd.DataFrame()
-    dfx['ResI'] = [ATOMS[i].res_index.strip(' ') for i in range(len(ATOMS))]
+    dfx['ResID'] = [ATOMS[i].res_index.strip(' ') for i in range(len(ATOMS))]
     dfx['dfi'] = dfi
     dfx['pctdfi'] = pctdfi
     dfx['ChainID'] = [ATOMS[i].chainID for i in range(len(ATOMS))]

@@ -9,14 +9,16 @@ Python file with:
 	- Python process to write custom topology file using data in molecule dict. 
 """
 
-from bin.utilities import get_filename_ext
+from pathlib import PurePosixPath
+from bin.utilities import get_filename_ext, choose_parser
 from Bio.PDB import MMCIFParser, PDBParser
+import itertools
 
 class RigidBody():
     """
     Object containing info for the IMP topology file. 
     
-    Arguments: Bio PDB Structure Object. Note that this class is not a Child of
+    Arguments: Bio PDB Structure Object. Note that this class is NOT a Child of
     Bio.PDB.Structure.
     
     Attributes:
@@ -36,7 +38,7 @@ class RigidBody():
      - chain_of_super_rigid_bodies (int) 
 
     """
-    def __init__(self, resolution, molecule_name, color, fasta_fn, fasta_id, 
+    def __init__(self, resolution, molecule_name, color, fasta_fn, 
         pdb_fn, chain, residue_range, 
         rigid_body, super_rigid_body, chain_of_super_rigid_bodies,  
         bead_size=10, em_residues_per_gaussian=0):
@@ -45,7 +47,7 @@ class RigidBody():
         self.molecule_name = molecule_name
         self.color = color
         self.fasta_fn = fasta_fn
-        self.fasta_id = fasta_id
+        self.fasta_id = PurePosixPath(fasta_fn).stem
         self.pdb_fn = pdb_fn
         self.chain = chain
         self.residue_range = residue_range
@@ -60,9 +62,12 @@ class RigidBody():
         self.rigid_body = rigid_body
         self.super_rigid_body = super_rigid_body
         self.chain_of_super_rigid_bodies = chain_of_super_rigid_bodies
-        self.attributes = [resolution, molecule_name, color, fasta_fn, fasta_id, pdb_fn, chain, 
-        residue_range, self.pdb_offset, bead_size, em_residues_per_gaussian, rigid_body,
-        super_rigid_body, chain_of_super_rigid_bodies]
+        self.overlap = []
+        self.attributes = [self.resolution, self.molecule_name, self.color, 
+            self.fasta_fn, self.fasta_id, self.pdb_fn, self.chain,
+            self.residue_range, self.pdb_offset, self.bead_size, 
+            self.em_residues_per_gaussian, self.rigid_body,
+            self.super_rigid_body, self.chain_of_super_rigid_bodies, self.overlap]
     
     def get_structure(self):
         """
@@ -80,7 +85,70 @@ class RigidBody():
             an extension""")
         structure = parser.get_structure(filename, self.pdb_fn) 
         return structure
+    
+    def get_resIDs(self):
+        """
+        Returns a list with the residue numbers of the rigid body
+        """
+        structure = self.get_structure()
+        chainID = self.chain
+        residues = []
+
+        chain = structure[0][chainID]
+        for residue in chain.get_residues():
+            if residue.get_full_id()[3][0] == " ": # Exclude hetatm and h20
+                residues.append(residue.id[1])
         
+    
+        return (residues)
+
+    def update_overlap(self, rigid_body):
+        """
+        Given another RigidBody instance, check their structural overlap, and 
+        update their overlap atttributes accordingly. Update also the residue range
+        """
+        overlap = list(set(self.get_resIDs()) & set(rigid_body.get_resIDs()))
+        overlap.sort()
+        
+        if overlap is not None:
+            if len(self.get_resIDs()) < len(rigid_body.get_resIDs()):
+                self.overlap = overlap
+                self.residue_range = (self.overlap[0], self.overlap[0])
+                print(f"overlap attribute updated for {self.pdb_fn}")
+            elif len(self.get_resIDs()) > len(rigid_body.get_resIDs()):
+                rigid_body.overlap = overlap
+                rigid_body.residue_range = (rigid_body.overlap[0], rigid_body.overlap[0])
+                print(f"overlap attribute updated for {rigid_body.pdb_fn}")
+            else:
+                if self.extract_avg_BFactor() < rigid_body.extract_avg_BFactor():
+                    self.overlap = overlap
+                    self.residue_range = (self.overlap[0], self.overlap[0])
+                    print(f"""Full overlap between {self.pdb_fn} and 
+                {rigid_body.pdb_fn} Assigning the full overlap to {self.pdb_fn} 
+                (It has lower average b factor). This means it will be 
+                discarded later, as overlap==length""")
+
+                elif self.extract_avg_BFactor() > rigid_body.extract_avg_BFactor():
+                    rigid_body.overlap = overlap
+                    rigid_body.residue_range = (rigid_body.overlap[0], rigid_body.overlap[0])
+                    print(f"""Full overlap between {self.pdb_fn} and 
+                {rigid_body.pdb_fn} Assigning the full overlap to {rigid_body.pdb_fn}  
+                (It has lower average b factor). This means it will be 
+                discarded later, as overlap==length""")
+                
+                else:
+                    self.overlap = overlap
+                    self.residue_range = (self.overlap[0], self.overlap[0])
+                    print(f"""Full overlap between {self.pdb_fn} and 
+                {rigid_body.pdb_fn} and equal average BFactors. Assigning arbitrarely
+                the full overlap to {self.pdb_fn}. This means it will be 
+                discarded later, as overlap==length""")
+            
+
+        else:
+            print(f"No overlap between {self.pdb_fn} and {rigid_body.pdb_fn}")
+                
+          
 
     def get_length(self):
         """
@@ -110,6 +178,27 @@ class RigidBody():
                     j += 1
         return total_res_BFactor/j
 
+        
+
+
+### FUNCTIONS
+
+def make_composite(rb_list):
+    """
+    Given a RigidBody list, retunr a RigidBody list containing the same RigidBodies, 
+    but with adjusted residue range, so they achieve the highest coverage possible
+    of the reference query fasta file avoiding overlaps. 
+    """
+    for pair in itertools.combinations(rb_list, 2):
+        rb1, rb2 = pair
+        rb1.update_overlap(rb2)
+    
+    # Discard RigidBodies fully overlapped
+    for rb in rb_list:
+        if len(rb.get_resIDs()) == len(rb.overlap):
+            rb_list.remove(rb)
+
+    return rb_list
 
 def write_custom_topology(path_to_file, rigid_body_list):
     """

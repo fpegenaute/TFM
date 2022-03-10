@@ -4,6 +4,7 @@ matplotlib
 # networkx
 jupyter_contrib_nbextensions
 nbconvert
+nbformat
 plotly
 mplcursors
 six

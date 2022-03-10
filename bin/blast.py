@@ -24,11 +24,12 @@ def run_blast_local(fasta, blastdb, outdir, db="pdbaa"):
     # Set environment variable to the DB path
     os.environ["BLASTDB"]=blastdb
     
-    # Call BLAST
+    # Call BLAST 
     blastp_cline = NcbiblastpCommandline(query=fasta, 
     db=db, matrix="BLOSUM80",outfmt=5, 
             out=os.path.join(outdir, f"{query}_blast.out"), 
-                    best_hit_overhang=0.1, best_hit_score_edge=0.1, evalue=0.000005)
+            # Filtering parameters
+                    best_hit_overhang=0.25, best_hit_score_edge=0.1, evalue=0.000005)
     stdout, stderr = blastp_cline()
 
     outblast = os.path.join(outdir, f"{query}_blast.out")
@@ -52,7 +53,7 @@ def exact_match_retriever(filename):
     i = 0
     for alignment in blast_record.alignments:
         for hsp in alignment.hsps:
-            if i < 50:
+            if i < 5 and (hsp.identities == hsp.align_length): 
                 # if alignment.length == len(hsp.query):
                 ID = alignment.hit_id[4:8].upper()
                 Chain = alignment.hit_id[-1]

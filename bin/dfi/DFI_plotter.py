@@ -16,13 +16,13 @@ def plot_dfi(reference_df, top_df):
 
     """
     # Save the plots
-    plt.plot(reference_df["ResI"].tolist(), reference_df["pctdfi"].tolist(), 
+    plt.plot(reference_df["ResID"].tolist(), reference_df["pctdfi"].tolist(), 
     linewidth=5)
     plt.grid(True, axis = "x", color = "silver")
-    plt.plot(top_df["ResI"].tolist(), top_df["pctdfi"].tolist(), marker='*', 
+    plt.plot(top_df["ResID"].tolist(), top_df["pctdfi"].tolist(), marker='*', 
         markersize=20, label="Putative Flexible Residues", linestyle="None")
     plt.xlabel('ResID', fontsize=30)
-    plt.xticks(np.arange(0, len(reference_df["ResI"].tolist()), step = 20))
+    plt.xticks(np.arange(0, len(reference_df["ResID"].tolist()), step = 20))
     plt.xticks(rotation=45)
     plt.ylabel('%DFI',  fontsize=30)
     plt.legend(bbox_to_anchor=(0., 1.005, 1., .102), loc=7,ncol=2, fontsize=30, 
@@ -50,7 +50,7 @@ def run_dfi(structure):
 
     - structure = PDB/mmCif file
 
-    return a pandas DF of (ResI, pctdfi) columns for each structure
+    return a pandas DF of (ResID, pctdfi) columns for each structure
     """
     ## Get names for the two structures.
     ref_name = PurePosixPath(structure).stem
@@ -60,10 +60,10 @@ def run_dfi(structure):
 
 
 
-    # DFI dataframe (ResI, pctdfi)
-    ref_resid_array = np.array(df_dfi["ResI"].tolist())
+    # DFI dataframe (ResID, pctdfi)
+    ref_resid_array = np.array(df_dfi["ResID"].tolist())
     ref_pctdfi_array = np.array(df_dfi["pctdfi"].tolist())
-    reference_df = pd.DataFrame({"ResI":ref_resid_array, 
+    reference_df = pd.DataFrame({"ResID":ref_resid_array, 
                                                 "pctdfi":ref_pctdfi_array })
 
     # Insert a column with the name of the structure
@@ -87,7 +87,7 @@ def extract_flexible_residues(dataframe):
 
     # get the residues with the top 5% %DFI
     dataframe.sort_values(by = "pctdfi")
-    length = len(dataframe["ResI"])
+    length = len(dataframe["ResID"])
     top5percent = dataframe.nlargest(int(length*0.05), "pctdfi")
 
     

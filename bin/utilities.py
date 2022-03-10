@@ -1,7 +1,7 @@
 import os
 import subprocess
 import time
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 import packman
 from Bio import SeqIO
 from Bio.PDB import MMCIFParser, PDBParser
@@ -71,9 +71,27 @@ def get_filename_ext(filepath):
     """
 
     extension = filepath.split(".")[-1]
-    filename = os.path.basename(filepath).split('.')[0]
+    filename = PurePosixPath(filepath).stem
     
     return filename, extension
+
+def choose_parser(pdbfile):
+    """
+    Check the extension of a file and return the according Bio.PDB structure 
+    parser, and the file name (assumed identifier)
+    """
+    # get ID and extension
+    identifier, extension= get_filename_ext(pdbfile)
+    # identifier = identifier.upper()
+
+    if extension == "pdb" or extension == "ent" :
+        parser = PDBParser(QUIET=True)
+    elif extension == "cif":
+        parser = MMCIFParser(QUIET=True)
+    else:
+        raise NameError("""Your file must have \"pdb\", \"ent\" or \"cif\" as 
+            an extension""")
+    return parser, identifier
 
 def number_of_jobs_in_queue(squeue="squeue"):
     """
@@ -216,7 +234,6 @@ def submit_RF_to_SLURM(query_fasta, outdir, workload_manager="sbatch", dummy_dir
     os.system("%s %s" % (workload_manager, script))
 
 
-
 def write_hng_file(pdbfile, hinges, outfile):
     """
     Generate a hinge file
@@ -281,21 +298,9 @@ def pdb_to_fasta(pdbfile, outdir):
     """
     Given a PDB/mmCif file, make a fasta file in the outdir
     """
-    identifier = Path(pdbfile).stem.split('.')[0]
-    outfile = os.path.join(outdir, f"{identifier}_covered.fasta")
-
     # get ID and extension
-    identifier, extension= get_filename_ext(pdbfile)
-    # identifier = identifier.upper()
-
-    if extension == "pdb" or extension == "ent" :
-        parser = PDBParser(QUIET=True)
-    elif extension == "cif":
-        parser = MMCIFParser(QUIET=True)
-    else:
-        raise NameError("""Your file must have \"pdb\", \"ent\" or \"cif\" as 
-            an extension""")
-    
+    parser, identifier = choose_parser(pdbfile)
+    outfile = os.path.join(outdir, f"{identifier}_covered.fasta")
     structure = parser.get_structure(identifier, pdbfile) 
     model = structure[0]
     with open(outfile, "w") as out_fasta:
@@ -316,16 +321,7 @@ def get_chain_names(structure_file):
     """
 
     # get ID and extension
-    identifier, extension= get_filename_ext(structure_file)
-    # identifier = identifier.upper()
-
-    if extension == "pdb" or extension == "ent" :
-        parser = PDBParser(QUIET=True)
-    elif extension == "cif":
-        parser = MMCIFParser(QUIET=True)
-    else:
-        raise NameError("""Your file must have \"pdb\", \"ent\" or \"cif\" as 
-            an extension""")
+    parser, identifier = choose_parser(structure_file)
 
     # Get the structure
     structure = parser.get_structure(identifier, structure_file) 
@@ -337,30 +333,23 @@ def get_chain_names(structure_file):
    
     return chains
 
-def get_residue_range(structure_file):
+def get_residue_range(structure_file, chain=None):
     """
     Given a PDB/mmCif file, extract the first and last aa positions.
     Return them as a tuple
+
+    Optionally, specify a chain for doing this operation
     """
 
-    # get ID and extension
-    identifier, extension= get_filename_ext(structure_file)
-    # identifier = identifier.upper()
-
-    if extension == "pdb" or extension == "ent" :
-        parser = PDBParser(QUIET=True)
-    elif extension == "cif":
-        parser = MMCIFParser(QUIET=True)
-    else:
-        raise NameError("""Your file must have \"pdb\", \"ent\" or \"cif\" as 
-            an extension""")
+    parser, identifier = choose_parser(structure_file)
 
     # Get the structure
     structure = parser.get_structure(identifier, structure_file) 
     model = structure[0]
     chains = []
     
-    for chain in model.get_chains():
+    if chain is not None:
+        chain = model[str(chain)]
         i = 0
         for residue in chain.get_residues():
             if residue.get_full_id()[3][0] == " ": # Exclude hetatm and h20
@@ -369,8 +358,21 @@ def get_residue_range(structure_file):
                     i += 1
                 else:
                     last = residue.get_full_id()[3][1]
+        
+    else:
+        for chain in model.get_chains():
+            i = 0
+            for residue in chain.get_residues():
+                if residue.get_full_id()[3][0] == " ": # Exclude hetatm and h20
+                    if i == 0:
+                        first = residue.get_full_id()[3][1]
+                        i += 1
+                    else:
+                        last = residue.get_full_id()[3][1]
    
     return (first, last)
+
+
 
 
 ## CLASSES

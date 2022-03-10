@@ -174,7 +174,7 @@ import matplotlib.ticker as plticker
 import pandas as pd
 import sys
 
-def plot_dfi_hinge_summary(structure_list, fasta_reference):
+def plot_dfi_hinge_summary(structure_list, fasta_reference, hinge_directory):
     """
     Given a list of PDB files and a reference fasta file, run DFI analysis and 
     plot the results indicating the putative flexible residues, selected using 
@@ -204,8 +204,8 @@ def plot_dfi_hinge_summary(structure_list, fasta_reference):
             l.info(f"ITERATION: {i}")     
             ax.set_ylabel(row, rotation=0, size='large', labelpad=90)
         
-            # Convert DFI df to a dict {ResI : DFI}
-            DFI_dict = DFI_list[i].set_index("ResI")["pctdfi"].to_dict()
+            # Convert DFI df to a dict {ResID : DFI}
+            DFI_dict = DFI_list[i].set_index("ResID")["pctdfi"].to_dict()
 
             # Ensure the types
             DFI_dict = {int(key) : float(value) for key,value in DFI_dict.items()}
@@ -233,7 +233,7 @@ def plot_dfi_hinge_summary(structure_list, fasta_reference):
             l.info(f"CALCULATING HINGES")
             reporter = StructuReport(structure_list[i])
 
-            hinges, hinges_nosig  = reporter.get_hinges_split()
+            hinges, hinges_nosig  = reporter.get_hinges_split(outdir=hinge_directory)
             
             for hinge in hinges:
                 resid = [x.get_id() for x in hinge.get_elements()]
@@ -261,8 +261,8 @@ def plot_dfi_hinge_summary(structure_list, fasta_reference):
      
         axes.set_ylabel(rows, rotation=0, size='large', labelpad=90)
     
-        # Convert DFI df to a dict {ResI : DFI}
-        DFI_dict = DFI_list[0].set_index("ResI")["pctdfi"].to_dict()
+        # Convert DFI df to a dict {ResID : DFI}
+        DFI_dict = DFI_list[0].set_index("ResID")["pctdfi"].to_dict()
 
         # Ensure the types
         DFI_dict = {int(key) : float(value) for key ,value in DFI_dict.items()}
@@ -340,6 +340,7 @@ class StructuReport():
                                             index=False, float_format='%.3f')
         return dfi_df
 
+
     def get_hinges(self, alpha_range=None, save_csv=False, outdir=None):
         """
         Run Hinge prediction from PACKMAN package. 
@@ -372,8 +373,9 @@ class StructuReport():
                     l.info(f"Exception for alpha {i}")
                     continue    
         else:
+            packman_out = os.path.join(outdir, f"{filename}_packman_output.txt")
             packman.predict_hinge(backbone, Alpha=4.5, 
-            outputfile=open(str(f"{filename}_packman_output")+'.txt', 'w'))
+            outputfile=open(str(packman_out), 'w'))
         
         hinges = []
         for hinge in backbone[0].get_parent().get_parent().get_hinges():
@@ -395,12 +397,12 @@ class StructuReport():
         
         return hinges
 
-    def get_hinges_split(self):
+    def get_hinges_split(self, outdir=None):
         """
         Returns the hinges in two lists, [significative hinges], [non-
         significative ones]. p > 0.05
         """
-        all_hinges = self.get_hinges()
+        all_hinges = self.get_hinges(outdir=outdir)
 
         hinges = []
         hinges_nosig = []
@@ -439,6 +441,50 @@ class StructuReport():
 
         return coverage_df
 
+    def get_dfi_coverage(self, reference_fasta, save_csv=False, outdir=None):
+        """
+        Given a reference fasta file, return a pandas dataframe with per residue
+        DFI of the regions covered by the structure w.r.t to the reference fasta 
+        sequence. 
+
+        The df will have two columns 'ResID' (int) and 'pctdfi' (0/1)
+        save_csv: save the df as a csv
+        outfile: Name of the file path to save the csv 
+        """
+        DFI_df = self.get_dfi()
+
+        # Get the dictionary of {position: aa} from the reference fasta file
+        fasta_dict = FASTA_get_resid_dict(reference_fasta)
+
+        # Transform dataframe into dictionary of the DFI of thestructure
+        DFI_dict = DFI_df.set_index("ResID")["pctdfi"].to_dict()
+
+        # Ensure the types
+        DFI_dict = {int(key) : float(value) for key, value in DFI_dict.items()}
+        
+        # Compare the reference Fasta and DFI dicts
+        DFI_coverage_dict = compare_dict_dict(fasta_dict, DFI_dict)
+        
+        # sorted by key, return a list of tuples
+        lists = sorted(DFI_coverage_dict.items())
+        x, y = zip(*lists) # unpack a list of pairs into two tuples
+        x = np.array(x)
+        y = np.array(y)
+
+        DFI_coverage_df = pd.DataFrame({"ResID": x, "pctdfi": y})
+
+        if save_csv:
+            outdir = os.path.join(outdir, "DFI")
+            out_path = os.path.join(outdir, f"{self.structure_ID}_DFI_coverage.csv")
+            try:
+                DFI_coverage_df.to_csv(out_path, encoding='utf-8', 
+                                            index=False, float_format='%.3f')
+            except Exception:
+                Path(outdir).mkdir(parents=True, exist_ok=True)
+                DFI_coverage_df.to_csv(out_path, encoding='utf-8', 
+                                            index=False, float_format='%.3f')
+
+        return DFI_coverage_df
 
 if __name__ == "__main__":
 

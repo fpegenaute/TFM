@@ -1,11 +1,9 @@
 from posixpath import join
-from Bio import PDB
-from Bio.PDB import *
-from iotbx import pdb
+from Bio.PDB import MMCIFParser, PDBParser, PDBList, PDBIO, Select
 import requests
 import os
 import logging as l
-from bin.utilities import get_filename_ext
+from bin.utilities import choose_parser
   
 def retrieve_pdb_info(hit_dict, pdb_dir, fasta_dir):
     """
@@ -54,21 +52,7 @@ def check_PDB_len(pdbfile, chain):
     Given a PDB/mmCIF file, check the actual length of the desired chain, 
     return the value
     """
-
-    # get ID and extension
-
-    identifier, extension= get_filename_ext(pdbfile)
-    identifier = identifier.upper()
-    l.info(f"ID: {identifier} . Extension: {extension}, ")
-
-    if extension == "pdb" or extension == "ent" :
-        parser = PDB.PDBParser(QUIET=True)
-    elif extension == "cif":
-        parser = PDB.MMCIFParser(QUIET=True)
-    else:
-        raise NameError("""Your file must have \"pdb\", \"ent\" or \"cif\" as 
-            an extension""")
-
+    parser, identifier = choose_parser(pdbfile)
     # Get the structure
     structure = parser.get_structure(identifier, pdbfile) 
     model = structure[0]
@@ -91,13 +75,12 @@ class ChainSplitter:
     def __init__(self, mmcif=True, out_dir=None):
         """ Create parsing and writing objects, specify output directory. """
         if mmcif ==True:
-            self.parser = PDB.MMCIFParser()
-            # self.writer = PDB.MMCIFIO()
-            self.writer = PDB.PDBIO()
+            self.parser = MMCIFParser()
+            self.writer = PDBIO()
 
         if mmcif ==False:
-            self.parser = PDB.PDBParser()
-            self.writer = PDB.PDBIO()
+            self.parser = PDBParser()
+            self.writer = PDBIO()
         
         if out_dir is None:
             out_dir = os.path.join(os.getcwd(), "chain_PDBs")
@@ -140,7 +123,7 @@ class ChainSplitter:
         return out_path
 
 
-class SelectChains(PDB.Select):
+class SelectChains(Select):
     """ Only accept the specified chains when saving. """
     def __init__(self, chain_letters):
         self.chain_letters = chain_letters

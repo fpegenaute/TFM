@@ -11,7 +11,7 @@ except ImportError:
 
 def test_Il2Y():
     sample = StringIO("""
-    ResI,ChainID,Res,R,dfi,pctdfi,fdfi,pctfdfi,adfi,ravg,rmin,A
+    ResID,ChainID,Res,R,dfi,pctdfi,fdfi,pctfdfi,adfi,ravg,rmin,A
 1,A,ASN,N,0.0739300399161,0.95,0.733721,0.55,0.45,14.8066793711,14.8066793711,NotA
 2,A,LEU,L,0.0570598728478,0.75,0.760436,0.65,0.5,13.3382425379,13.3382425379,NotA
 3,A,TYR,Y,0.0366594203159,0.3,0.767825,0.7,0.45,10.9987171979,10.9987171979,NotA

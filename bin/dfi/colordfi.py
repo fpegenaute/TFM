@@ -88,7 +88,7 @@ def colorbydfi(CSVFIL, PDBFIL, Verbose=False, colorbyparam='pctdfi',
         if True:
             resind = ATOMS[i].res_index
             chainind = ATOMS[i].chainID
-            resmask = (data.ResI == int(resind))
+            resmask = (data.ResID == int(resind))
             chainmask = (data.ChainID == chainind)
             val = data[resmask & chainmask][colorbyparam].values[0]
             if Verbose:

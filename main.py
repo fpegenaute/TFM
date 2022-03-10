@@ -18,9 +18,10 @@ import os
 import shutil
 from bin.extract_flexible_residues import extract_residue_list
 from bin.process_predicted_model import *
-from bin.graphical_summary import plot_coverage, plot_dfi_hinge_summary
+from bin.graphical_summary import  plot_dfi_hinge_summary
 from matplotlib import pyplot as plt
-
+import nbformat
+from nbconvert.preprocessors import ExecutePreprocessor, CellExecutionError
 
 
 
@@ -294,7 +295,7 @@ if (args.alphamodel and args.PAE_json) or (args.run_alphafold):
 l.info(f"CONFIDENT FILES: {structures_for_query}")
 nrow = len(structures_for_query)
 l.info(f"NROW: {nrow}")
-plot_coverage(fasta, structures_for_query, nrow)
+# plot_coverage(fasta, structures_for_query, nrow)
 
 plt.show()
 
@@ -310,11 +311,10 @@ for structure in structures_for_query:
     hinges = reporter.get_hinges(alpha_range=None, 
                                             save_csv=True, outdir=hinges_dir)
     # Get DFI
-    dfi_df = reporter.get_dfi(save_csv=True, outdir=report_dir)
+    dfi_df = reporter.get_dfi_coverage(reference_fasta=fasta, save_csv=True, outdir=report_dir)
                                     
-    
-    
-plot_dfi_hinge_summary(structures_for_query, fasta)
+  
+# plot_dfi_hinge_summary(structures_for_query, fasta, hinges_dir)
 
 
 ## Write Topology file
@@ -330,63 +330,99 @@ for structure in structures_for_query:
     
     filename, extension = get_filename_ext(structure)
     
-    # Generate fasta files
-
     # Extract chain name
-    chain_ID = get_chain_names(structure)
-    if len(chain_ID) > 1:
-        print(f"{structure} has more than one chain, exiting")
-        exit(1)    
+    chain_IDs = get_chain_names(structure)
+    if len(chain_IDs) > 1:
+        print(f"""{structure} has more than one chain, Assuming a RF/AF model, 
+        creating individual rigid bodies for each chain""")
+        
+
+        for chain in chain_IDs:
+            # Extract residue range
+            res_range = get_residue_range(structure, chain=chain)    
+            # Create the RigidBody instance
+            rigid_body = RigidBody(resolution="all",
+            molecule_name= f"{filename}_{chain}", 
+            color="orange" , 
+            fasta_fn=fasta, 
+            # fasta_id=fasta, 
+            pdb_fn=structure, 
+            chain=chain,
+            residue_range=res_range , 
+            rigid_body=i, 
+            super_rigid_body="", 
+            chain_of_super_rigid_bodies="", 
+            bead_size=20,
+            em_residues_per_gaussian=0)
+            # Add the rigid body to a list
+            rigid_bodies.append(rigid_body)
+            i +=1
+
+
     # Extract residue range
-    res_range = get_residue_range(structure)
-
-
-    
+    res_range = get_residue_range(structure)    
     # Create the RigidBody instance
     rigid_body = RigidBody(resolution="all",
     molecule_name= filename, 
     color="blue" , 
-    fasta_fn=os.path.join(fasta_dir, f"{filename}.fasta"), 
-    fasta_id=f"{filename}.fasta", 
+    fasta_fn=fasta, 
+    # fasta_id=fasta, 
     pdb_fn=structure, 
-    chain=chain_ID[0],
+    chain=chain_IDs[0],
     residue_range=res_range , 
     rigid_body=i, 
     super_rigid_body="", 
     chain_of_super_rigid_bodies="", 
     bead_size=10,
-    em_residues_per_gaussian=0,
+    em_residues_per_gaussian=0)
 
-                     )
+    # Add the rigid body to a list
     rigid_bodies.append(rigid_body)
     i +=1
 
+## MAKE THE COMPOSITE
+from bin.custom_top import make_composite
 
-## Provisional way of making the composite. Get the longest ones
-## IT doesn't work yet
-filtered_rigid_bodies = set()
-print("Making the composite")
-i = 0
-
-for rb1, rb2 in zip(rigid_bodies, rigid_bodies[1:]):
-        if rb1.get_length() > rb2.get_length() and  \
-            (rb1.residue_range[0] <= rb2.residue_range[0] and \
-                (rb1.residue_range[1] >= rb2.residue_range[1])) :
-            filtered_rigid_bodies.add(rb1)
-            print(f"ADDED RIGID BODY {rb1.molecule_name}")
-        else:
-            filtered_rigid_bodies.add(rb1)
-            filtered_rigid_bodies.add(rb2)
-            print(f"ADDED RIGID BODY {rb2.molecule_name}")
+composite_rb = make_composite(rigid_bodies)
 
 
-# Convert to list and sort by thw ones who start earlier in the sequence
-filtered_rigid_bodies = list(filtered_rigid_bodies)
-filtered_rigid_bodies.sort(key=lambda x: x.residue_range[0])
+# Convert to list and sort by the ones who start earlier in the sequence
+rigid_bodies.sort(key=lambda x: x.residue_range[0])
+
+# Write the topology file
+write_custom_topology(os.path.join(IMP_dir, f"{query_name}.topology"), rigid_bodies)
+
+# Finally, write the automatic report
+report_template = os.path.join(args.outdir, query_name, "report_template.ipynb")
+shutil.copy("src/report_template.ipynb", report_template)
 
 
-write_custom_topology(os.path.join(IMP_dir, f"{query_name}.topology"), filtered_rigid_bodies)
 
-plt.show()
+notebook_dir = os.path.join(args.outdir, query_name)
+final_report = os.path.join(notebook_dir, f"{query_name}_report.ipynb")
+
+with open(report_template) as f:
+    nb = nbformat.read(f, as_version=4)
+    ep = ExecutePreprocessor(timeout=600)
+    
+    # Execute/run the notebook
+    try:
+        out = ep.preprocess(nb, {'metadata': {'path': notebook_dir}})
+    except CellExecutionError:
+        out = None
+        msg = f"Error executing the notebook"
+        msg += f"See notebook  for the traceback.'"
+        print(msg)
+        raise
+    finally:
+        with open(final_report, mode='w', encoding='utf-8') as f:
+            nbformat.write(nb, f)
+        os.remove(report_template)
+        
+
+import subprocess
+subprocess.run(["jupyter", "nbconvert", "--to", "html", "--no-input", "--no-prompt ", f"{final_report}",])
+
+
 
 
