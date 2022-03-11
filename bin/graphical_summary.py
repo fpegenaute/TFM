@@ -341,13 +341,17 @@ class StructuReport():
         return dfi_df
 
 
-    def get_hinges(self, alpha_range=None, save_csv=False, outdir=None):
+    def get_hinges(self, alpha_range=None, save_hng=False, outdir=None):
         """
         Run Hinge prediction from PACKMAN package. 
-        Returns a list of significant packman hinge objects, and a list of 
-        non-significant ones
+        Returns a list of all packman hinge objects.
+        
+
         alpha range: tuple with start and end alpha values, and setp size: 
         e.g (2.5, 4.5, 0.5)
+
+        save_csv_ Save a .csv file with the significant hinges (p < 0.05)
+        outdir: where tosave the .csv file
         """
         Protein = packman.molecule.load_structure(self.structure)
         filename, ext = get_filename_ext(self.structure)
@@ -378,10 +382,16 @@ class StructuReport():
             outputfile=open(str(packman_out), 'w'))
         
         hinges = []
+        all_hinges = []
         for hinge in backbone[0].get_parent().get_parent().get_hinges():
-                hinges.append(hinge)
+                if hinge.get_pvalue() < 0.05:
+                    hinges.append(hinge)
+                    all_hinges.append(hinge)
+                else:
+                    all_hinges.append(hinge)
+
            
-        if save_csv:
+        if save_hng:
             out_path = os.path.join(outdir, f"{self.structure_ID}.hng")
             try:
                 write_hng_file(self.structure, hinges, out_path)
@@ -395,7 +405,7 @@ class StructuReport():
                 print(f"Unexpected error opening {out_path} is",repr(err))
                 sys.exit(1)  # or replace this with "raise" ?
         
-        return hinges
+        return all_hinges
 
     def get_hinges_split(self, outdir=None):
         """

@@ -309,7 +309,7 @@ for structure in structures_for_query:
     coverage_df = reporter.get_coverage(fasta, save_csv=True, outdir=report_dir)
     # Get hinges and save the .hng files
     hinges = reporter.get_hinges(alpha_range=None, 
-                                            save_csv=True, outdir=hinges_dir)
+                                            save_hng=True, outdir=hinges_dir)
     # Get DFI
     dfi_df = reporter.get_dfi_coverage(reference_fasta=fasta, save_csv=True, outdir=report_dir)
                                     
@@ -382,8 +382,25 @@ for structure in structures_for_query:
 
 ## MAKE THE COMPOSITE
 from bin.custom_top import make_composite
+import pandas as pd
 
 composite_rb = make_composite(rigid_bodies)
+
+
+## TO DO: export the coverage composite csv 
+i=0
+for rb in composite_rb:
+    coverage = rb.get_coverage()
+    if i == 0:
+        composite_coverage = coverage
+        i+=1
+    else:
+        merged_left = pd.merge(left=composite_coverage, right=coverage, 
+                        how="left", left_on="ResID", right_on="Structure")
+    
+        
+    
+
 
 
 # Convert to list and sort by the ones who start earlier in the sequence

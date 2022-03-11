@@ -10,9 +10,12 @@ Python file with:
 """
 
 from pathlib import PurePosixPath
-from bin.utilities import get_filename_ext, choose_parser
+from bin.utilities import get_filename_ext
 from Bio.PDB import MMCIFParser, PDBParser
 import itertools
+import pandas as pd
+import os
+from pathlib import Path
 
 class RigidBody():
     """
@@ -146,9 +149,7 @@ class RigidBody():
             
 
         else:
-            print(f"No overlap between {self.pdb_fn} and {rigid_body.pdb_fn}")
-                
-          
+            print(f"No overlap between {self.pdb_fn} and {rigid_body.pdb_fn}")   
 
     def get_length(self):
         """
@@ -178,17 +179,56 @@ class RigidBody():
                     j += 1
         return total_res_BFactor/j
 
+    def get_coverage(self, save_csv=False, outdir=None):
+        """
+        Return a pandas dataframe with the 
+        coverage of the structure w.r.t it. 
+
+        The df will have two columns 'ResID' (int) and 'Structure' (0/1)
+        save_csv: save the df as a csv
+        outfile: Name of the file path to save the csv 
+        """
+        ref_ids, covered_ids = extract_coincident_positions(self.fasta_fn, 
+                                                                self.pdb_fn)
+        coverage_df = pd.DataFrame({"ResID":ref_ids,"Structure":covered_ids})
+
+        if save_csv:
+            outdir = os.path.join(outdir, "COVERAGE")
+            out_path = os.path.join(outdir, f"{self.structure_ID}_coverage.csv")
+            try:
+                coverage_df.to_csv(out_path, encoding='utf-8', 
+                                            index=False, float_format='%.3f')
+            except Exception:
+                Path(outdir).mkdir(parents=True, exist_ok=True)
+                coverage_df.to_csv(out_path, encoding='utf-8', 
+                                            index=False, float_format='%.3f')
+
+        return coverage_df
+
+        
+
         
 
 
 ### FUNCTIONS
+from bin.graphical_summary import extract_coincident_positions
 
-def make_composite(rb_list):
+def make_composite(rb_list, reference_fasta=None, save_csv=False, outdir=None):
     """
     Given a RigidBody list, retunr a RigidBody list containing the same RigidBodies, 
     but with adjusted residue range, so they achieve the highest coverage possible
-    of the reference query fasta file avoiding overlaps. 
+    of the reference query fasta file avoiding overlaps.
+
+    Args:
+        - rb_list: List of RigidBody objects
+        - reference_fasta: Reference sequence
+        - save_csv: Save a csv with the columns: "Reference", "RigidBody1","RigidBodyN"  
+             - Reference: Reference resIDs
+             - RigidBodyN: ResID present in the RigidBodies (0 absent/1 present)
+        - outdir: Directory to store the composite .csv file
+
     """
+    
     for pair in itertools.combinations(rb_list, 2):
         rb1, rb2 = pair
         rb1.update_overlap(rb2)
@@ -197,6 +237,7 @@ def make_composite(rb_list):
     for rb in rb_list:
         if len(rb.get_resIDs()) == len(rb.overlap):
             rb_list.remove(rb)
+
 
     return rb_list
 
