@@ -4,6 +4,7 @@
 ###################### ferran.pegenaute@upf.edu ###############################
 #################### ferran.pegenaute01@gmail.com #############################
 
+from doctest import REPORT_CDIFF
 from re import T
 import matplotlib.pyplot as plt
 
@@ -20,6 +21,7 @@ from bin.extract_flexible_residues import extract_residue_list
 from bin.process_predicted_model import *
 from bin.graphical_summary import  plot_dfi_hinge_summary
 from matplotlib import pyplot as plt
+import fnmatch
 import nbformat
 from nbconvert.preprocessors import ExecutePreprocessor, CellExecutionError
 
@@ -248,7 +250,7 @@ params = master_phil.extract()
 master_phil.format(python_object=params).show(out=sys.stdout)
 p = params.process_predicted_model
 
-p.b_value_field_is = 'lddt'
+
 p.domain_size = 15
 p.remove_low_confidence_residues = True
 p.maximum_rmsd = 1.5
@@ -266,6 +268,7 @@ l.info(f"Domains will be stored in:{domains_dir}")
 af_conficent_regions = []
 
 if (args.alphamodel and args.PAE_json) or (args.run_alphafold):
+    p.b_value_field_is = 'lddt'
     for filename in os.listdir(af_dir):
         if os.path.isfile(os.path.join(af_dir, filename)):
             l.info(f"Processing file: {filename}")
@@ -279,11 +282,28 @@ if (args.alphamodel and args.PAE_json) or (args.run_alphafold):
             print("Segments found: %s" %(" ".join(chainid_list)))
 
             mmm = model_info.model.as_map_model_manager()
+            
+            # Write all the domains in one file
             mmm.write_model(os.path.join(domains_dir, 
                             f"{PurePosixPath(filename).stem}_domains.pdb"))
             
-            structures_for_query.append(os.path.join(domains_dir, 
-                            f"{PurePosixPath(filename).stem}_domains.pdb"))
+            # Write different domains in different files
+            for chainid in chainid_list:
+                selection_string = "chain %s" %(chainid)
+                ph = model_info.model.get_hierarchy()
+                asc1 = ph.atom_selection_cache()
+                sel = asc1.selection(selection_string)
+                m1 = model_info.model.select(sel)
+                # dm.write_model_file(m1, '%s_%s.pdb' %(output_file_name[:-4],chainid))
+                filepath = os.path.join(domains_dir, 
+                        f"{PurePosixPath(filename).stem}_{chainid}_AF.pdb")
+                dm.write_model_file(m1, filepath)
+                structures_for_query.append(filepath)
+                
+
+            
+            # structures_for_query.append(os.path.join(domains_dir, 
+            #                 f"{PurePosixPath(filename).stem}_domains.pdb"))
 
             conf_domains = extract_residue_list(os.path.join(domains_dir,  
                             f"{PurePosixPath(filename).stem}_domains.pdb"), 
@@ -332,10 +352,8 @@ for structure in structures_for_query:
     
     # Extract chain name
     chain_IDs = get_chain_names(structure)
-    if len(chain_IDs) > 1:
-        print(f"""{structure} has more than one chain, Assuming a RF/AF model, 
-        creating individual rigid bodies for each chain""")
-        
+    if len(chain_IDs) > 1 or fnmatch.fnmatch(structure, "*AF.pdb"):
+        print(f"""{structure}: Assuming a AlphaFold model""")
 
         for chain in chain_IDs:
             # Extract residue range
@@ -353,10 +371,39 @@ for structure in structures_for_query:
             super_rigid_body="", 
             chain_of_super_rigid_bodies="", 
             bead_size=20,
-            em_residues_per_gaussian=0)
+            em_residues_per_gaussian=0, 
+            type="AF_model")
             # Add the rigid body to a list
             rigid_bodies.append(rigid_body)
             i +=1
+    
+    if  fnmatch.fnmatch(structure, "*RF.pdb"):
+        print(f"""{structure}: Assuming a RoseTTaFold model""")
+
+        for chain in chain_IDs:
+            # Extract residue range
+            res_range = get_residue_range(structure, chain=chain)    
+            # Create the RigidBody instance
+            rigid_body = RigidBody(resolution="all",
+            molecule_name= f"{filename}_{chain}", 
+            color="orange" , 
+            fasta_fn=fasta, 
+            # fasta_id=fasta, 
+            pdb_fn=structure, 
+            chain=chain,
+            residue_range=res_range , 
+            rigid_body=i, 
+            super_rigid_body="", 
+            chain_of_super_rigid_bodies="", 
+            bead_size=20,
+            em_residues_per_gaussian=0, 
+            type="RF_model")
+            # Add the rigid body to a list
+            rigid_bodies.append(rigid_body)
+            i +=1
+    if len(chain_IDs) > 1:
+        print(f"Skipping {structure}, since it has more than one chain")
+
 
 
     # Extract residue range
@@ -374,7 +421,8 @@ for structure in structures_for_query:
     super_rigid_body="", 
     chain_of_super_rigid_bodies="", 
     bead_size=10,
-    em_residues_per_gaussian=0)
+    em_residues_per_gaussian=0, 
+    type="experimental")
 
     # Add the rigid body to a list
     rigid_bodies.append(rigid_body)
@@ -395,8 +443,16 @@ for rb in composite_rb:
         composite_coverage = coverage
         i+=1
     else:
-        merged_left = pd.merge(left=composite_coverage, right=coverage, 
-                        how="left", left_on="ResID", right_on="Structure")
+        if i == 1:
+            merged_left = pd.merge(left=composite_coverage, right=coverage, 
+                        how="left", left_on="ResID", right_on="ResID")
+        else:
+            merged_left = pd.merge(left=merged_left, right=coverage, 
+                        how="left", left_on="ResID", right_on="ResID")
+
+out_path = os.path.join(report_dir, "COVERAGE", f"{query_name}_composite_coverage.csv")
+merged_left.to_csv(out_path, encoding='utf-8', 
+                                            index=False, float_format='%.3f')
     
         
     

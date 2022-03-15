@@ -39,11 +39,13 @@ class RigidBody():
      - rigid_body (int)
      - super_rigid_body (int)
      - chain_of_super_rigid_bodies (int) 
+     - overlap (list)
+     - type (str)
 
     """
     def __init__(self, resolution, molecule_name, color, fasta_fn, 
         pdb_fn, chain, residue_range, 
-        rigid_body, super_rigid_body, chain_of_super_rigid_bodies,  
+        rigid_body, super_rigid_body, chain_of_super_rigid_bodies, type,  
         bead_size=10, em_residues_per_gaussian=0):
 
         self.resolution = resolution
@@ -66,6 +68,7 @@ class RigidBody():
         self.super_rigid_body = super_rigid_body
         self.chain_of_super_rigid_bodies = chain_of_super_rigid_bodies
         self.overlap = []
+        self.type = type
         self.attributes = [self.resolution, self.molecule_name, self.color, 
             self.fasta_fn, self.fasta_id, self.pdb_fn, self.chain,
             self.residue_range, self.pdb_offset, self.bead_size, 
@@ -113,19 +116,23 @@ class RigidBody():
         overlap = list(set(self.get_resIDs()) & set(rigid_body.get_resIDs()))
         overlap.sort()
         
-        if overlap is not None:
+        print(f"OVERLAP PRE: {rigid_body.overlap}")
+        print(f"SELF PRE: {self.pdb_fn}, RB: {rigid_body.pdb_fn}")
+        if len(overlap) >= 1:
             if len(self.get_resIDs()) < len(rigid_body.get_resIDs()):
                 self.overlap = overlap
-                self.residue_range = (self.overlap[0], self.overlap[0])
+                self.residue_range = (self.overlap[0], self.overlap[-1])
                 print(f"overlap attribute updated for {self.pdb_fn}")
             elif len(self.get_resIDs()) > len(rigid_body.get_resIDs()):
                 rigid_body.overlap = overlap
-                rigid_body.residue_range = (rigid_body.overlap[0], rigid_body.overlap[0])
+                print(f"OVERLAP: {rigid_body.overlap}")
+                print(f"SELF: {self.pdb_fn}, RB: {rigid_body.pdb_fn}")
+                rigid_body.residue_range = (rigid_body.overlap[0], rigid_body.overlap[-1])
                 print(f"overlap attribute updated for {rigid_body.pdb_fn}")
             else:
                 if self.extract_avg_BFactor() < rigid_body.extract_avg_BFactor():
                     self.overlap = overlap
-                    self.residue_range = (self.overlap[0], self.overlap[0])
+                    self.residue_range = (self.overlap[0], self.overlap[-1])
                     print(f"""Full overlap between {self.pdb_fn} and 
                 {rigid_body.pdb_fn} Assigning the full overlap to {self.pdb_fn} 
                 (It has lower average b factor). This means it will be 
@@ -133,7 +140,8 @@ class RigidBody():
 
                 elif self.extract_avg_BFactor() > rigid_body.extract_avg_BFactor():
                     rigid_body.overlap = overlap
-                    rigid_body.residue_range = (rigid_body.overlap[0], rigid_body.overlap[0])
+                    rigid_body.residue_range = (rigid_body.overlap[0], 
+                                    rigid_body.overlap[-1])
                     print(f"""Full overlap between {self.pdb_fn} and 
                 {rigid_body.pdb_fn} Assigning the full overlap to {rigid_body.pdb_fn}  
                 (It has lower average b factor). This means it will be 
@@ -141,15 +149,14 @@ class RigidBody():
                 
                 else:
                     self.overlap = overlap
-                    self.residue_range = (self.overlap[0], self.overlap[0])
+                    self.residue_range = (self.overlap[0], self.overlap[-1])
                     print(f"""Full overlap between {self.pdb_fn} and 
                 {rigid_body.pdb_fn} and equal average BFactors. Assigning arbitrarely
                 the full overlap to {self.pdb_fn}. This means it will be 
                 discarded later, as overlap==length""")
-            
-
         else:
-            print(f"No overlap between {self.pdb_fn} and {rigid_body.pdb_fn}")   
+            print(f"No overlap between {self.pdb_fn} and {rigid_body.pdb_fn}")
+               
 
     def get_length(self):
         """
@@ -190,7 +197,8 @@ class RigidBody():
         """
         ref_ids, covered_ids = extract_coincident_positions(self.fasta_fn, 
                                                                 self.pdb_fn)
-        coverage_df = pd.DataFrame({"ResID":ref_ids,"Structure":covered_ids})
+        coverage_df = pd.DataFrame({"ResID":ref_ids,
+                                    f"Structure{self.pdb_fn}" :covered_ids})
 
         if save_csv:
             outdir = os.path.join(outdir, "COVERAGE")
@@ -237,6 +245,7 @@ def make_composite(rb_list, reference_fasta=None, save_csv=False, outdir=None):
     for rb in rb_list:
         if len(rb.get_resIDs()) == len(rb.overlap):
             rb_list.remove(rb)
+
 
 
     return rb_list
