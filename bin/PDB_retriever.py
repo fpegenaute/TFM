@@ -27,7 +27,7 @@ def retrieve_pdb_info(hit_dict, pdb_dir, fasta_dir):
     pdbl = PDBList() 
     pdb_list = hit_dict.keys()
 
-    input(f"PDB List = {len(pdb_list)} Press Enter to continue...")
+    #input(f"PDB List = {len(pdb_list)} Press Enter to continue...")
     for template in pdb_list:
         # Dowload the PDB file from the web
         pdbl.retrieve_pdb_file(template, pdir=pdb_dir)     

@@ -435,7 +435,8 @@ import pandas as pd
 composite_rb = make_composite(rigid_bodies)
 
 
-## TO DO: export the coverage composite csv 
+# Exprt the composite coverage in .csv
+out_path = os.path.join(report_dir, "COVERAGE", f"{query_name}_composite_coverage.csv")
 i=0
 for rb in composite_rb:
     coverage = rb.get_coverage()
@@ -446,13 +447,20 @@ for rb in composite_rb:
         if i == 1:
             merged_left = pd.merge(left=composite_coverage, right=coverage, 
                         how="left", left_on="ResID", right_on="ResID")
+            i+=1
         else:
             merged_left = pd.merge(left=merged_left, right=coverage, 
                         how="left", left_on="ResID", right_on="ResID")
+            i+=1
 
-out_path = os.path.join(report_dir, "COVERAGE", f"{query_name}_composite_coverage.csv")
-merged_left.to_csv(out_path, encoding='utf-8', 
+if i == 1:
+    composite_coverage.to_csv(out_path, encoding='utf-8', 
                                             index=False, float_format='%.3f')
+elif i > 1:
+    merged_left.to_csv(out_path, encoding='utf-8', 
+                                            index=False, float_format='%.3f')
+
+
     
         
     

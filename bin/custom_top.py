@@ -116,8 +116,7 @@ class RigidBody():
         overlap = list(set(self.get_resIDs()) & set(rigid_body.get_resIDs()))
         overlap.sort()
         
-        print(f"OVERLAP PRE: {rigid_body.overlap}")
-        print(f"SELF PRE: {self.pdb_fn}, RB: {rigid_body.pdb_fn}")
+        
         if len(overlap) >= 1:
             if len(self.get_resIDs()) < len(rigid_body.get_resIDs()):
                 self.overlap = overlap
@@ -125,8 +124,6 @@ class RigidBody():
                 print(f"overlap attribute updated for {self.pdb_fn}")
             elif len(self.get_resIDs()) > len(rigid_body.get_resIDs()):
                 rigid_body.overlap = overlap
-                print(f"OVERLAP: {rigid_body.overlap}")
-                print(f"SELF: {self.pdb_fn}, RB: {rigid_body.pdb_fn}")
                 rigid_body.residue_range = (rigid_body.overlap[0], rigid_body.overlap[-1])
                 print(f"overlap attribute updated for {rigid_body.pdb_fn}")
             else:
@@ -245,6 +242,16 @@ def make_composite(rb_list, reference_fasta=None, save_csv=False, outdir=None):
     for rb in rb_list:
         if len(rb.get_resIDs()) == len(rb.overlap):
             rb_list.remove(rb)
+    
+    # Discard RBs whose overlap is fully covered by another structure
+    for pair in itertools.combinations(rb_list, 2):
+        rb1, rb2 = pair
+        if len(set(rb2.overlap) & set(rb1.get_resIDs())) == len(set(rb2.overlap)):
+            rb_list.remove(rb2)
+            continue
+        if len(set(rb1.overlap) & set(rb2.get_resIDs())) == len(set(rb1.overlap)):
+            rb_list.remove(rb1)
+            
 
 
 
