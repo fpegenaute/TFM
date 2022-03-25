@@ -10,12 +10,16 @@ Python file with:
 """
 
 from pathlib import PurePosixPath
+from tkinter.messagebox import NO
 from bin.utilities import get_filename_ext
 from Bio.PDB import MMCIFParser, PDBParser
 import itertools
 import pandas as pd
 import os
 from pathlib import Path
+import logging as l
+import fnmatch
+import copy
 
 class RigidBody():
     """
@@ -118,41 +122,81 @@ class RigidBody():
         
         
         if len(overlap) >= 1:
-            if len(self.get_resIDs()) < len(rigid_body.get_resIDs()):
+            # Prioritize the experimental structures
+            if fnmatch.fnmatch(self.pdb_fn, "*[AR]F.pdb") and \
+            ("AF.pdb" not in str(rigid_body.pdb_fn) and "RF.pdb" not in str(rigid_body.pdb_fn)):
                 self.overlap = overlap
                 self.residue_range = (self.overlap[0], self.overlap[-1])
-                print(f"overlap attribute updated for {self.pdb_fn}")
+                l.info(f"""Overlap attribute updated for {self.pdb_fn} 
+                (predicted structure)""")
+                return
+            elif fnmatch.fnmatch(rigid_body.pdb_fn, "*[AR]F.pdb") and \
+                 ("AF.pdb" not in str(self.pdb_fn) and "RF.pdb" not in str(self.pdb_fn)):
+                rigid_body.overlap = overlap
+                rigid_body.residue_range = \
+                    (rigid_body.overlap[0], rigid_body.overlap[-1])
+                l.info(f"""overlap attribute updated for {self.pdb_fn}  
+                (predicted structure)""")
+                return
+            # If both are models, choose the biggest one
+            elif fnmatch.fnmatch(self.pdb_fn, "*[AR]F.pdb") and \
+                fnmatch.fnmatch(rigid_body.pdb_fn, "*[AR]F.pdb"):
+                    if len(self.get_resIDs()) < len(rigid_body.get_resIDs()):
+                        self.overlap = overlap
+                        self.residue_range = \
+                            (self.overlap[0], self.overlap[-1])
+                        l.info(f"overlap attribute updated for {self.pdb_fn}")
+                        return
+                    elif len(self.get_resIDs()) > len(rigid_body.get_resIDs()):
+                        rigid_body.overlap = overlap
+                        rigid_body.residue_range = \
+                            (rigid_body.overlap[0], rigid_body.overlap[-1])
+                    l.info(f"""overlap attribute updated for 
+                    {rigid_body.pdb_fn}""")
+                    return
+            # If both are experimental, choose the biggest one
+            elif len(self.get_resIDs()) < len(rigid_body.get_resIDs()):
+                self.overlap = overlap
+                self.residue_range = (self.overlap[0], self.overlap[-1])
+                l.info(f"overlap attribute updated for {self.pdb_fn}")
+                return
             elif len(self.get_resIDs()) > len(rigid_body.get_resIDs()):
                 rigid_body.overlap = overlap
-                rigid_body.residue_range = (rigid_body.overlap[0], rigid_body.overlap[-1])
-                print(f"overlap attribute updated for {rigid_body.pdb_fn}")
-            else:
+                rigid_body.residue_range = \
+                    (rigid_body.overlap[0], rigid_body.overlap[-1])
+                l.info(f"overlap attribute updated for {rigid_body.pdb_fn}")
+                return
+            elif len(self.get_resIDs()) == len(rigid_body.get_resIDs()):
                 if self.extract_avg_BFactor() < rigid_body.extract_avg_BFactor():
                     self.overlap = overlap
                     self.residue_range = (self.overlap[0], self.overlap[-1])
-                    print(f"""Full overlap between {self.pdb_fn} and 
-                {rigid_body.pdb_fn} Assigning the full overlap to {self.pdb_fn} 
-                (It has lower average b factor). This means it will be 
-                discarded later, as overlap==length""")
+                    l.info(f"""Full overlap between {self.pdb_fn} and 
+                    {rigid_body.pdb_fn} Assigning the full overlap to {self.pdb_fn} 
+                    (It has lower average b factor). This means it will be 
+                    discarded later, as overlap==length""")
+                    return
 
                 elif self.extract_avg_BFactor() > rigid_body.extract_avg_BFactor():
                     rigid_body.overlap = overlap
                     rigid_body.residue_range = (rigid_body.overlap[0], 
                                     rigid_body.overlap[-1])
-                    print(f"""Full overlap between {self.pdb_fn} and 
-                {rigid_body.pdb_fn} Assigning the full overlap to {rigid_body.pdb_fn}  
-                (It has lower average b factor). This means it will be 
-                discarded later, as overlap==length""")
+                    l.info(f"""Full overlap between {self.pdb_fn} and 
+                    {rigid_body.pdb_fn} Assigning the full overlap to {rigid_body.pdb_fn}  
+                    (It has lower average b factor). This means it will be 
+                    discarded later, as overlap==length""")
+                    return
                 
                 else:
                     self.overlap = overlap
                     self.residue_range = (self.overlap[0], self.overlap[-1])
-                    print(f"""Full overlap between {self.pdb_fn} and 
-                {rigid_body.pdb_fn} and equal average BFactors. Assigning arbitrarely
-                the full overlap to {self.pdb_fn}. This means it will be 
-                discarded later, as overlap==length""")
+                    l.info(f"""Full overlap between {self.pdb_fn} and 
+                    {rigid_body.pdb_fn} and equal average BFactors. Assigning arbitrarely
+                    the full overlap to {self.pdb_fn}. This means it will be 
+                    discarded later, as overlap==length""")
+                    return
         else:
-            print(f"No overlap between {self.pdb_fn} and {rigid_body.pdb_fn}")
+            l.info(f"No overlap between {self.pdb_fn} and {rigid_body.pdb_fn}")
+            return
                
 
     def get_length(self):
@@ -195,7 +239,7 @@ class RigidBody():
         ref_ids, covered_ids = extract_coincident_positions(self.fasta_fn, 
                                                                 self.pdb_fn)
         coverage_df = pd.DataFrame({"ResID":ref_ids,
-                                    f"Structure{self.pdb_fn}" :covered_ids})
+                                    f"{self.pdb_fn}" :covered_ids})
 
         if save_csv:
             outdir = os.path.join(outdir, "COVERAGE")
@@ -233,29 +277,58 @@ def make_composite(rb_list, reference_fasta=None, save_csv=False, outdir=None):
         - outdir: Directory to store the composite .csv file
 
     """
-    
-    for pair in itertools.combinations(rb_list, 2):
-        rb1, rb2 = pair
-        rb1.update_overlap(rb2)
-    
-    # Discard RigidBodies fully overlapped
+    print(f"ORIGINAL RB LIST LEN: {len(rb_list)}")
+
+    # Discard RigidBodies fully overlapped (no gaps in the pdbs)
     for rb in rb_list:
         if len(rb.get_resIDs()) == len(rb.overlap):
             rb_list.remove(rb)
+    print(f"RB LIST LEN AFTER 1st CLEANSE: {len(rb_list)}")
     
-    # Discard RBs whose overlap is fully covered by another structure
-    for pair in itertools.combinations(rb_list, 2):
-        rb1, rb2 = pair
-        if len(set(rb2.overlap) & set(rb1.get_resIDs())) == len(set(rb2.overlap)):
-            rb_list.remove(rb2)
+    # Now, a more refined cleanse
+    rb_dict = {}
+    for rb in rb_list:
+        rb_dict.update({rb : "include"})
+    # print(f"DICT: {rb_dict.items()}")
+
+
+    # calculate the overlaps
+    for pair in itertools.combinations(rb_dict.keys(), 2):
+        rb1, rb2 = pair     
+        rb1.update_overlap(rb2)
+        # print(f"OVERLAP RB1: {rb1.overlap}, RB2 OL: {rb2.overlap}")
+    
+    for pair in itertools.combinations(rb_dict.keys(), 2):
+        l.info(f"Comparing {rb1.pdb_fn} and {rb2.pdb_fn}")
+        if len(set(rb2.get_resIDs()) & set(rb1.get_resIDs())) == len(set(rb2.overlap)):
+            if len(rb2.overlap) > 0:
+                rb_dict[rb2] = "discard"
+                l.info(f"REMOVING RB2 {rb2.pdb_fn}")
+                l.info(f"LENGTH RB2 {rb2.pdb_fn} OL: {len(set(rb2.overlap))}")
+                l.info(f"LENGTH RB1 {rb1.pdb_fn} RESIDS: {len(set(rb1.get_resIDs()))}")
+                continue
             continue
-        if len(set(rb1.overlap) & set(rb2.get_resIDs())) == len(set(rb1.overlap)):
-            rb_list.remove(rb1)
-            
+        if len(set(rb1.get_resIDs()) & set(rb2.get_resIDs())) == len(set(rb1.overlap)):
+            if len(rb1.overlap) > 0:
+                rb_dict[rb1] = "discard"
+                l.info(f"REMOVING RB1{rb1.pdb_fn}")
+                l.info(f"LENGTH RB1 {rb1.pdb_fn} OL: {len(set(rb1.overlap))}")
+                l.info(f"LENGTH RB2 {rb2.pdb_fn} RESIDS: {len(set(rb2.get_resIDs()))}")
+                continue
+            continue
+    # print(f"DICT UPDATED: {rb_dict.items()}")
+    
+    clean_rb_list = [rb for rb in rb_dict.keys() if rb_dict[rb] == "include"]
+    
+    print(f"FINAL RB LIST LEN: {len(clean_rb_list)}")
+    
 
+    return clean_rb_list
 
-
-    return rb_list
+def compare_pairs(rb_list, pair):
+    """
+    Compare two rigid bodies and return them updated
+    """
 
 def write_custom_topology(path_to_file, rigid_body_list):
     """
@@ -265,13 +338,15 @@ def write_custom_topology(path_to_file, rigid_body_list):
     """
     top_file = open(path_to_file, "w")
     # Write header of topology
-    header = ["molecule_name", "color", "fasta_fn", "fasta_id", "pdb_fn", "chain", "residue_range",
-              "pdb_offset", "bead_size", "em_residues_per_gaussian", "rigid_body", "super_rigid_body",
+    header = ["molecule_name", "color", "fasta_fn", "fasta_id", "pdb_fn", 
+    "chain", "residue_range", "pdb_offset", "bead_size", 
+    "em_residues_per_gaussian", "rigid_body", "super_rigid_body",
               "chain_of_super_rigid_bodies"]
     top_file.write("|{:15}|{:10}|{:20}|{:15}|{:16}|{:7}|{:15}|{:11}|{:11}|"
-                   "{:28}|{:12}|{:19}|{:27}|\n".format(header[0], header[1], header[2], header[3], header[4],
-                                                       header[5], header[6], header[7], header[8], header[9],
-                                                       header[10], header[11], header[12]))
+                   "{:28}|{:12}|{:19}|{:27}|\n".format(header[0], header[1], 
+                    header[2], header[3], header[4], header[5], header[6], 
+                    header[7], header[8], header[9], header[10], header[11], 
+                    header[12]))
     # Write molecule lines from dictionary
     # Notice that you can modify the following line acording to the desired output
     rigid_body_counter = 1
@@ -290,9 +365,9 @@ def write_custom_topology(path_to_file, rigid_body_list):
         em_gaussian = rb.em_residues_per_gaussian
         if resolution == "all":
             top_file.write("|{:15}|{:10}|{:20}|{:15}|{:16}|{:7}|{:15}|{:11}|{:11}|"
-                           "{:28}|{:<12}|{:19}|{:27}|\n".format(mol_name, color, fasta_fn, fasta_id, pdb_fn,
-                                                                chain, "all", offset, bead_size, em_gaussian,
-                                                                rigid_body_counter, "", ""))
+                           "{:28}|{:<12}|{:19}|{:27}|\n".format(mol_name, color, 
+                           fasta_fn, fasta_id, pdb_fn, chain, "all", offset,
+                           bead_size, em_gaussian, rigid_body_counter, "", ""))
             rigid_body_counter += 1
         else:
             # If you want to add different options for X molecules (DNA or Proteins) this
@@ -300,20 +375,22 @@ def write_custom_topology(path_to_file, rigid_body_list):
             for n in range(start_residue, last_residue + 1, resolution):
                 if start_residue + resolution <= last_residue:
                     top_file.write("|{:15}|{:10}|{:20}|{:15}|{:16}|{:7}|{:15}|{:11}|{:11}|"
-                                   "{:28}|{:<12}|{:19}|{:27}|\n".format(mol_name, color, fasta_fn, fasta_id, pdb_fn,
-                                                                        chain, "{},{}".format(start_residue,
-                                                                                              start_residue + resolution),
-                                                                        offset, bead_size, em_gaussian,
-                                                                        rigid_body_counter, "", ""))
+                                   "{:28}|{:<12}|{:19}|{:27}|\n".format(mol_name, 
+                                   color, fasta_fn, fasta_id, pdb_fn, chain, 
+                                   "{},{}".format(start_residue, 
+                                   start_residue + resolution), offset, 
+                                   bead_size, em_gaussian, rigid_body_counter, 
+                                   "", ""))
                     start_residue += resolution + 1
                     rigid_body_counter += 1
                 else:
                     top_file.write("|{:15}|{:10}|{:20}|{:15}|{:16}|{:7}|{:15}|{:11}|{:11}|"
-                                "{:28}|{:<12}|{:19}|{:27}|\n".format(mol_name, color, fasta_fn, fasta_id, pdb_fn,
-                                                                    chain, "{},{}".format(start_residue,
-                                                                                            last_residue),
-                                                                    offset, bead_size, em_gaussian,
-                                                                    rigid_body_counter, "", ""))
+                                "{:28}|{:<12}|{:19}|{:27}|\n".format(mol_name, 
+                                color, fasta_fn, fasta_id, pdb_fn, chain, 
+                                "{},{}".format(start_residue, last_residue),
+                                offset, bead_size, em_gaussian,
+                                rigid_body_counter, "", ""))
+                    
                     rigid_body_counter += 1
                     break
         top_file.write("\n")  # write a blank line between different molecules
@@ -323,8 +400,10 @@ if __name__ == '__main__':
 
     
 
-    rb1 = RigidBody("all", "DNA_A", "red", "complex.fasta", "DNA1,DNA", "complex.pdb", "a", (1, 250), "0", "1", "0")
-    rb2 = RigidBody("all", "DNA_B", "blue", "complex.fasta", "DNA2,DNA", "complex.pdb", "b", (251, 500), "0", "1", "0")
+    rb1 = RigidBody("all", "DNA_A", "red", "complex.fasta", "DNA1,DNA", 
+        "complex.pdb", "a", (1, 250), "0", "1", "0")
+    rb2 = RigidBody("all", "DNA_B", "blue", "complex.fasta", "DNA2,DNA", 
+        "complex.pdb", "b", (251, 500), "0", "1", "0")
 
     rb_list = [rb1, rb2]
 

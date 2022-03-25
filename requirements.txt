@@ -3,6 +3,7 @@ py-packman
 matplotlib
 # networkx
 jupyter_contrib_nbextensions
+jupyter-dash
 nbconvert
 nbformat
 plotly

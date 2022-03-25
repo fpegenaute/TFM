@@ -378,8 +378,11 @@ class StructuReport():
                     continue    
         else:
             packman_out = os.path.join(outdir, f"{filename}_packman_output.txt")
-            packman.predict_hinge(backbone, Alpha=4.5, 
-            outputfile=open(str(packman_out), 'w'))
+            try:
+                packman.predict_hinge(backbone, Alpha=4.5, 
+                outputfile=open(str(packman_out), 'w'))
+            except Exception:
+                l.warn(f"PACKMAN Hinge prediction did not work for{self.structure}")
         
         hinges = []
         all_hinges = []
@@ -436,7 +439,7 @@ class StructuReport():
         """
         ref_ids, covered_ids = extract_coincident_positions(reference_fasta, 
                                                                 self.structure)
-        coverage_df = pd.DataFrame({"ResID":ref_ids,"Structure":covered_ids})
+        coverage_df = pd.DataFrame({"ResID":ref_ids, f"{self.structure_ID}":covered_ids})
         
         if save_csv:
             outdir = os.path.join(outdir, "COVERAGE")

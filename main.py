@@ -17,9 +17,9 @@ import logging as l
 from pathlib import Path, PurePosixPath
 import os
 import shutil
+from bin.graphical_summary import StructuReport
 from bin.extract_flexible_residues import extract_residue_list
 from bin.process_predicted_model import *
-from bin.graphical_summary import  plot_dfi_hinge_summary
 from matplotlib import pyplot as plt
 import fnmatch
 import nbformat
@@ -81,7 +81,6 @@ if args.verbose:
 	l.getLogger().addHandler(l.StreamHandler())		
 
 
-## Info about the query
 
 record_dict = IO.to_dict(IO.parse(fasta, "fasta"))
 if len(record_dict.keys()) > 1:
@@ -95,13 +94,16 @@ if len(record_dict.keys()) == 1:
     l.info(f"Query length: {query_length}")
 
 
-# Create folders. last path element is empty to add a slash
+l.info(f"Create folders:")
+blast_dir = os.path.join(args.outdir, query_name,  "BLAST", "" )
 pdb_dir = os.path.join(args.outdir, query_name, "PDB", "" )
 fasta_dir = os.path.join(args.outdir, query_name, "FASTA", "" )
 report_dir = os.path.join(args.outdir, query_name, "REPORT", "" )
 hinges_dir = os.path.join(args.outdir, query_name, "HINGES", "" )
 IMP_dir = os.path.join(args.outdir, query_name, "IMP", "" )
+l.info(f"{pdb_dir}, {fasta_dir}, {report_dir}, {hinges_dir}, {IMP_dir} .")
 
+Path(blast_dir).mkdir(parents=True, exist_ok=True)
 Path(pdb_dir).mkdir(parents=True, exist_ok=True)
 Path(fasta_dir).mkdir(parents=True, exist_ok=True)
 Path(report_dir).mkdir(parents=True, exist_ok=True)
@@ -109,15 +111,13 @@ Path(hinges_dir).mkdir(parents=True, exist_ok=True)
 Path(IMP_dir).mkdir(parents=True, exist_ok=True)
 
 
+
+
 ## 1. Check if the input sequence is already in the PDB  
 
-# Locate the Database
+l.info("### BLAST ###")
 blastdb = cfg.blastconfig["blastdb"]
 l.info(f"BLAST database is located at: {blastdb}")
-
-# Create folders. last path element is empty to add a slash
-blast_dir = os.path.join(args.outdir, query_name,  "BLAST", "" )
-Path(blast_dir).mkdir(parents=True, exist_ok=True)
 l.info(f"The BLAST output will be stored in:{blast_dir}")
 
 # Run BLAST
@@ -131,19 +131,18 @@ l.info(f""" The target sequence has close homologs in the PDB with
     code/s: {exact_matches.keys()}""")
 
 structures_for_query = []
-# Retrieve exact matches from the PDB
+l.info(f"Structures for query: {structures_for_query}")
 
-# Retrieve
+# Retrieve from the PDB
+l.info("Retrieving structures from the pdb")
 if exact_matches:
     retrieve_pdb_info(exact_matches, pdb_dir, fasta_dir)
     # Check lengths of the actual PDB Chains and store them accordingly
     for file in os.listdir(pdb_dir):
-        
         current = os.path.join(pdb_dir, file)
         if os.path.isfile(current):
             l.info(f"File being processed: {file}")
             identifier = file.split(".")[0].upper()
-            # Check which chain of the hit should it choose
             
             # Make the directory for the chains
             chain_dir = os.path.join(pdb_dir, "CHAINS", "" )
@@ -155,18 +154,18 @@ if exact_matches:
             splitter = ChainSplitter(mmcif=True, out_dir=chain_dir)
             chain_path = splitter.make_pdb(os.path.join(pdb_dir, file), 
                                     exact_matches[identifier], overwrite=True )
-            # structures_for_query.append(chain_path)
-            # print(f"STRUCTURES FOR QUERY: {structures_for_query}")
             
             # Store partial matches (<95% of the query length)
             pdb_len = check_PDB_len(chain_path, exact_matches[identifier])
-            l.info(f"Length of the template {PurePosixPath(chain_path).name}: {pdb_len}")
+            l.info(f"""Length of the template {PurePosixPath(chain_path).name}: 
+                                {pdb_len}""")
             
             l.info(f"PDB_LEN: {pdb_len} . QUERY_LEN: {query_length}")
             if pdb_len > 10 and pdb_len < (0.95*query_length):
-                l.info(f"""{PurePosixPath(chain_path).name} has length {pdb_len}, it will be stored 
-                    as a partial match""")
-                newpath = os.path.join(pdb_dir,"partial", f"{PurePosixPath(chain_path).name}")
+                l.info(f"""{PurePosixPath(chain_path).name} has length {pdb_len}, 
+                it will be stored as a partial match""")
+                newpath = os.path.join(pdb_dir,"partial", 
+                                f"{PurePosixPath(chain_path).name}")
                 try:
                     l.info(f"MOVING {chain_path} TO {newpath}")
                     shutil.move(chain_path, newpath)
@@ -178,9 +177,10 @@ if exact_matches:
                     shutil.move(chain_path, newpath)
                     structures_for_query.append(newpath)
             if pdb_len > 10 and pdb_len > (0.95*query_length):
-                l.info(f"""{PurePosixPath(chain_path).name} has length {pdb_len}, it will be stored 
-                    as a full-length match""")
-                newpath = os.path.join(pdb_dir,"total", f"{PurePosixPath(chain_path).name}")
+                l.info(f"""{PurePosixPath(chain_path).name} has length {pdb_len}, 
+                it will be stored as a full-length match""")
+                newpath = os.path.join(pdb_dir,"total", 
+                                f"{PurePosixPath(chain_path).name}")
                 try:
                     shutil.move(chain_path, newpath)
                     structures_for_query.append(newpath)
@@ -192,83 +192,84 @@ if exact_matches:
                     structures_for_query.append(newpath)
 
 # Don't forget the user's templates!
+l.info("Checking user's templates")
 if args.custom_templates:
         structures_for_query.append(args.custom_templates)
         
 
-
 ### ALPHAFOLD & PAE
-
-# Make folder for the AF2 output
-af_dir = os.path.join(args.outdir,  query_name, "ALPHAFOLD", "" )
-l.info(f"Creating folder for AF2 output in:{af_dir}")
-Path(af_dir).mkdir(parents=True, exist_ok=True)
-
-# Make the directory for PAE
-PAE_dir = os.path.join(af_dir,  "PAE", "" )
-Path(PAE_dir).mkdir(parents=True, exist_ok=True)
-
-   
+  
 # If you want to use your AF model and PAE file:
 if args.alphamodel:
-    # Store the AF model and the PAE file in the correct folders
+    l.info(f"custom AF model detected: {args.alphamodel}")
+    af_dir = os.path.join(args.outdir,  query_name, "ALPHAFOLD", "" )
+    Path(af_dir).mkdir(parents=True, exist_ok=True)
     AF_server_model = args.alphamodel
-    shutil.copy(AF_server_model, os.path.join(af_dir, PurePosixPath(AF_server_model).name))
+    shutil.copy(AF_server_model, os.path.join(af_dir, 
+                    PurePosixPath(AF_server_model).name))
 if args.PAE_json:
+    l.info(f"custom PAE matrix detected: {args.PAE_json}")
+    PAE_dir = os.path.join(af_dir,  "PAE", "" )
+    Path(PAE_dir).mkdir(parents=True, exist_ok=True)
     PAE_json = args.PAE_json
 
 from bin.utilities import submit_AF_to_SLURM, submit_RF_to_SLURM
 
 if args.run_alphafold:
-    submit_AF_to_SLURM(fasta, af_dir, workload_manager="sbatch", dummy_dir=".", max_jobs_in_queue=None )
+    l.info(f"Submitting AF2 SLURM batch script")
+    af_dir = os.path.join(args.outdir,  query_name, "ALPHAFOLD", "" )
+    Path(af_dir).mkdir(parents=True, exist_ok=True)
+    submit_AF_to_SLURM(fasta, af_dir, workload_manager="sbatch", 
+                    dummy_dir=".", max_jobs_in_queue=None )
 
 
 ### ROSETTAFOLD
 
 # Make folder for the RFoutput
-rf_dir = os.path.join(args.outdir,  query_name, "ROSETTAFOLD", "" )
-l.info(f"Creating folder for RoseTTaFold output in:{rf_dir}")
-Path(rf_dir).mkdir(parents=True, exist_ok=True)
+
 
 
    
-# If you want to use your RF model and PAE file:
+# If you want to use your RF model:
 if args.rosettamodel:
+    l.info(f"custom RF model detected: {args.rosettamodel}")
+    rf_dir = os.path.join(args.outdir,  query_name, "ROSETTAFOLD", "" )
+    Path(rf_dir).mkdir(parents=True, exist_ok=True)
     # Store the AF model and the PAE file in the correct folders
     RF_custom_model = args.rosettamodel
     shutil.copy(RF_custom_model, os.path.join(rf_dir, PurePosixPath(RF_custom_model).name))
-# If you want to send a RF job to a HPC Cluster
 if args.run_rosettafold:
+    l.info(f"Submitting RF SLURM batch script")
+    rf_dir = os.path.join(args.outdir,  query_name, "ROSETTAFOLD", "" )
+    Path(rf_dir).mkdir(parents=True, exist_ok=True)
     submit_RF_to_SLURM(fasta, rf_dir, workload_manager="sbatch", dummy_dir=".", max_jobs_in_queue=None)
 
 ### Extract confident regions
 
-
-# Setting up the parameters for the PHENIX library
-master_phil = iotbx.phil.parse(master_phil_str)
-params = master_phil.extract()
-master_phil.format(python_object=params).show(out=sys.stdout)
-p = params.process_predicted_model
-
-
-p.domain_size = 15
-p.remove_low_confidence_residues = True
-p.maximum_rmsd = 1.5
-p.split_model_by_compact_regions = True
-
-from iotbx.data_manager import DataManager
-dm = DataManager()
-dm.set_overwrite(True)
-
-
-l.info("Extracting high confidence domains")
-domains_dir = os.path.join(af_dir, "DOMAINS", "")
-Path(domains_dir).mkdir(parents=True, exist_ok=True)
-l.info(f"Domains will be stored in:{domains_dir}")
-af_conficent_regions = []
-
 if (args.alphamodel and args.PAE_json) or (args.run_alphafold):
+    # Setting up the parameters for the PHENIX library
+    master_phil = iotbx.phil.parse(master_phil_str)
+    params = master_phil.extract()
+    master_phil.format(python_object=params).show(out=sys.stdout)
+    p = params.process_predicted_model
+    p.domain_size = 15
+    p.remove_low_confidence_residues = True
+    p.maximum_rmsd = 1.5
+    p.split_model_by_compact_regions = True
     p.b_value_field_is = 'lddt'
+
+    from iotbx.data_manager import DataManager
+    
+    dm = DataManager()
+    dm.set_overwrite(True)
+
+
+    l.info("Extracting AF2 high confidence domains")
+    domains_dir = os.path.join(af_dir, "DOMAINS", "")
+    Path(domains_dir).mkdir(parents=True, exist_ok=True)
+    l.info(f"Domains will be stored in:{domains_dir}")
+    
+    af_conficent_regions = []
     for filename in os.listdir(af_dir):
         if os.path.isfile(os.path.join(af_dir, filename)):
             l.info(f"Processing file: {filename}")
@@ -294,16 +295,11 @@ if (args.alphamodel and args.PAE_json) or (args.run_alphafold):
                 asc1 = ph.atom_selection_cache()
                 sel = asc1.selection(selection_string)
                 m1 = model_info.model.select(sel)
-                # dm.write_model_file(m1, '%s_%s.pdb' %(output_file_name[:-4],chainid))
                 filepath = os.path.join(domains_dir, 
                         f"{PurePosixPath(filename).stem}_{chainid}_AF.pdb")
                 dm.write_model_file(m1, filepath)
                 structures_for_query.append(filepath)
                 
-
-            
-            # structures_for_query.append(os.path.join(domains_dir, 
-            #                 f"{PurePosixPath(filename).stem}_domains.pdb"))
 
             conf_domains = extract_residue_list(os.path.join(domains_dir,  
                             f"{PurePosixPath(filename).stem}_domains.pdb"), 
@@ -311,18 +307,12 @@ if (args.alphamodel and args.PAE_json) or (args.run_alphafold):
             l.info(f"Residue list of confident domains: {conf_domains}")
 
 
-## Launch graphical summary 
 l.info(f"CONFIDENT FILES: {structures_for_query}")
 nrow = len(structures_for_query)
 l.info(f"NROW: {nrow}")
-# plot_coverage(fasta, structures_for_query, nrow)
-
-plt.show()
-
-### HINGE DETECTION ###
-from bin.graphical_summary import StructuReport
 
 
+l.info("### HINGE DETECTION ###")
 for structure in structures_for_query:
     reporter = StructuReport(structure)
     # Get coverage of the structure
@@ -334,7 +324,6 @@ for structure in structures_for_query:
     dfi_df = reporter.get_dfi_coverage(reference_fasta=fasta, save_csv=True, outdir=report_dir)
                                     
   
-# plot_dfi_hinge_summary(structures_for_query, fasta, hinges_dir)
 
 
 ## Write Topology file
@@ -461,9 +450,7 @@ elif i > 1:
                                             index=False, float_format='%.3f')
 
 
-    
-        
-    
+
 
 
 
@@ -482,28 +469,30 @@ shutil.copy("src/report_template.ipynb", report_template)
 notebook_dir = os.path.join(args.outdir, query_name)
 final_report = os.path.join(notebook_dir, f"{query_name}_report.ipynb")
 
+
+
 with open(report_template) as f:
     nb = nbformat.read(f, as_version=4)
-    ep = ExecutePreprocessor(timeout=600)
+    ep = ExecutePreprocessor(timeout=600,  )
     
-    # Execute/run the notebook
-    try:
-        out = ep.preprocess(nb, {'metadata': {'path': notebook_dir}})
-    except CellExecutionError:
-        out = None
-        msg = f"Error executing the notebook"
-        msg += f"See notebook  for the traceback.'"
-        print(msg)
-        raise
-    finally:
-        with open(final_report, mode='w', encoding='utf-8') as f:
-            nbformat.write(nb, f)
-        os.remove(report_template)
-        
+# Execute/run the notebook
+try:
+    out = ep.preprocess(nb, {'metadata': {'path': notebook_dir}})
+except CellExecutionError:
+    out = None
+    msg = f"Error executing the notebook"
+    msg += f"See notebook  for the traceback.'"
+    print(msg)
+    raise
+finally:
+    with open(final_report, mode='w', encoding='utf-8') as f:
+        nbformat.write(nb, f)
+    os.remove(report_template)
+    
 
 import subprocess
-subprocess.run(["jupyter", "nbconvert", "--to", "html", "--no-input", "--no-prompt ", f"{final_report}",])
-
-
+# subprocess.run(["jupyter", "nbconvert", "--to", "notebook", "--execute", f"{final_report}", "--output", f"{final_report}"])
+print("SUBPROCESS CALL")
+subprocess.run(["jupyter", "nbconvert", "--execute", "--to", "html", "--no-input", "--no-prompt ", f"{final_report}",])
 
 

@@ -1,0 +1,45 @@
+|molecule_name  |color     |fasta_fn            |fasta_id       |pdb_fn          |chain  |residue_range  |pdb_offset |bead_size  |em_residues_per_gaussian    |rigid_body  |super_rigid_body   |chain_of_super_rigid_bodies|
+|5lg4_B         |blue      |input_fasta/SEC3.fasta|SEC3           |test_output/SEC3/PDB/partial/5lg4_B.pdb|B      |all            |        -73|         10|                           0|1           |                   |                           |
+
+|SEC3_AF_A1_AF_1|orange    |input_fasta/SEC3.fasta|SEC3           |test_output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A1_AF.pdb|1      |all            |        -75|         20|                           0|2           |                   |                           |
+
+|SEC3_AF_A1_AF  |blue      |input_fasta/SEC3.fasta|SEC3           |test_output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A1_AF.pdb|1      |all            |        -75|         10|                           0|3           |                   |                           |
+
+|SEC3_AF_A2_AF_2|orange    |input_fasta/SEC3.fasta|SEC3           |test_output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A2_AF.pdb|2      |all            |       -324|         20|                           0|4           |                   |                           |
+
+|SEC3_AF_A2_AF  |blue      |input_fasta/SEC3.fasta|SEC3           |test_output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A2_AF.pdb|2      |all            |       -324|         10|                           0|5           |                   |                           |
+
+|5yfp_A         |blue      |input_fasta/SEC3.fasta|SEC3           |test_output/SEC3/PDB/partial/5yfp_A.pdb|A      |all            |       -610|         10|                           0|6           |                   |                           |
+
+|SEC3_AF_A3_AF_3|orange    |input_fasta/SEC3.fasta|SEC3           |test_output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A3_AF.pdb|3      |all            |       -640|         20|                           0|7           |                   |                           |
+
+|SEC3_AF_A3_AF  |blue      |input_fasta/SEC3.fasta|SEC3           |test_output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A3_AF.pdb|3      |all            |       -640|         10|                           0|8           |                   |                           |
+
+|SEC3_AF_A4_AF_4|orange    |input_fasta/SEC3.fasta|SEC3           |test_output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A4_AF.pdb|4      |all            |       -674|         20|                           0|9           |                   |                           |
+
+|SEC3_AF_A4_AF  |blue      |input_fasta/SEC3.fasta|SEC3           |test_output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A4_AF.pdb|4      |all            |       -674|         10|                           0|10          |                   |                           |
+
+|SEC3_AF_A5_AF_5|orange    |input_fasta/SEC3.fasta|SEC3           |test_output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A5_AF.pdb|5      |all            |       -715|         20|                           0|11          |                   |                           |
+
+|SEC3_AF_A5_AF  |blue      |input_fasta/SEC3.fasta|SEC3           |test_output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A5_AF.pdb|5      |all            |       -715|         10|                           0|12          |                   |                           |
+
+|SEC3_AF_A6_AF_6|orange    |input_fasta/SEC3.fasta|SEC3           |test_output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A6_AF.pdb|6      |all            |       -801|         20|                           0|13          |                   |                           |
+
+|SEC3_AF_A6_AF  |blue      |input_fasta/SEC3.fasta|SEC3           |test_output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A6_AF.pdb|6      |all            |       -801|         10|                           0|14          |                   |                           |
+
+|SEC3_AF_A7_AF_7|orange    |input_fasta/SEC3.fasta|SEC3           |test_output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A7_AF.pdb|7      |all            |       -854|         20|                           0|15          |                   |                           |
+
+|SEC3_AF_A7_AF  |blue      |input_fasta/SEC3.fasta|SEC3           |test_output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A7_AF.pdb|7      |all            |       -854|         10|                           0|16          |                   |                           |
+
+|SEC3_AF_A8_AF_8|orange    |input_fasta/SEC3.fasta|SEC3           |test_output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A8_AF.pdb|8      |all            |       -892|         20|                           0|17          |                   |                           |
+
+|SEC3_AF_A8_AF  |blue      |input_fasta/SEC3.fasta|SEC3           |test_output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A8_AF.pdb|8      |all            |       -892|         10|                           0|18          |                   |                           |
+
+|SEC3_AF_A9_AF_9|orange    |input_fasta/SEC3.fasta|SEC3           |test_output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A9_AF.pdb|9      |all            |      -1178|         20|                           0|19          |                   |                           |
+
+|SEC3_AF_A9_AF  |blue      |input_fasta/SEC3.fasta|SEC3           |test_output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A9_AF.pdb|9      |all            |      -1178|         10|                           0|20          |                   |                           |
+
+|SEC3_AF_10_AF_0|orange    |input_fasta/SEC3.fasta|SEC3           |test_output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_10_AF.pdb|0      |all            |      -1206|         20|                           0|21          |                   |                           |
+
+|SEC3_AF_10_AF  |blue      |input_fasta/SEC3.fasta|SEC3           |test_output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_10_AF.pdb|0      |all            |      -1206|         10|                           0|22          |                   |                           |
+
