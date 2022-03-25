@@ -45,6 +45,7 @@ class RigidBody():
      - chain_of_super_rigid_bodies (int) 
      - overlap (list)
      - type (str)
+     - include (Bool)
 
     """
     def __init__(self, resolution, molecule_name, color, fasta_fn, 
@@ -73,11 +74,13 @@ class RigidBody():
         self.chain_of_super_rigid_bodies = chain_of_super_rigid_bodies
         self.overlap = []
         self.type = type
+        self.include = True
         self.attributes = [self.resolution, self.molecule_name, self.color, 
             self.fasta_fn, self.fasta_id, self.pdb_fn, self.chain,
             self.residue_range, self.pdb_offset, self.bead_size, 
             self.em_residues_per_gaussian, self.rigid_body,
-            self.super_rigid_body, self.chain_of_super_rigid_bodies, self.overlap]
+            self.super_rigid_body, self.chain_of_super_rigid_bodies, self.overlap, 
+            self.type, self.include]
     
     def get_structure(self):
         """
@@ -286,23 +289,19 @@ def make_composite(rb_list, reference_fasta=None, save_csv=False, outdir=None):
     print(f"RB LIST LEN AFTER 1st CLEANSE: {len(rb_list)}")
     
     # Now, a more refined cleanse
-    rb_dict = {}
-    for rb in rb_list:
-        rb_dict.update({rb : "include"})
-    # print(f"DICT: {rb_dict.items()}")
 
 
     # calculate the overlaps
-    for pair in itertools.combinations(rb_dict.keys(), 2):
+    for pair in itertools.combinations(rb_list, 2):
         rb1, rb2 = pair     
         rb1.update_overlap(rb2)
         # print(f"OVERLAP RB1: {rb1.overlap}, RB2 OL: {rb2.overlap}")
     
-    for pair in itertools.combinations(rb_dict.keys(), 2):
+    for pair in itertools.combinations(rb_list, 2):
         l.info(f"Comparing {rb1.pdb_fn} and {rb2.pdb_fn}")
         if len(set(rb2.get_resIDs()) & set(rb1.get_resIDs())) == len(set(rb2.overlap)):
             if len(rb2.overlap) > 0:
-                rb_dict[rb2] = "discard"
+                rb2.include = False
                 l.info(f"REMOVING RB2 {rb2.pdb_fn}")
                 l.info(f"LENGTH RB2 {rb2.pdb_fn} OL: {len(set(rb2.overlap))}")
                 l.info(f"LENGTH RB1 {rb1.pdb_fn} RESIDS: {len(set(rb1.get_resIDs()))}")
@@ -310,7 +309,7 @@ def make_composite(rb_list, reference_fasta=None, save_csv=False, outdir=None):
             continue
         if len(set(rb1.get_resIDs()) & set(rb2.get_resIDs())) == len(set(rb1.overlap)):
             if len(rb1.overlap) > 0:
-                rb_dict[rb1] = "discard"
+                rb1.include = False
                 l.info(f"REMOVING RB1{rb1.pdb_fn}")
                 l.info(f"LENGTH RB1 {rb1.pdb_fn} OL: {len(set(rb1.overlap))}")
                 l.info(f"LENGTH RB2 {rb2.pdb_fn} RESIDS: {len(set(rb2.get_resIDs()))}")
@@ -318,17 +317,14 @@ def make_composite(rb_list, reference_fasta=None, save_csv=False, outdir=None):
             continue
     # print(f"DICT UPDATED: {rb_dict.items()}")
     
-    clean_rb_list = [rb for rb in rb_dict.keys() if rb_dict[rb] == "include"]
+    clean_rb_list = [rb for rb in rb_list if rb.include == True]
     
     print(f"FINAL RB LIST LEN: {len(clean_rb_list)}")
     
 
     return clean_rb_list
 
-def compare_pairs(rb_list, pair):
-    """
-    Compare two rigid bodies and return them updated
-    """
+
 
 def write_custom_topology(path_to_file, rigid_body_list):
     """
