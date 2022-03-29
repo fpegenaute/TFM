@@ -282,6 +282,12 @@ def make_composite(rb_list, reference_fasta=None, save_csv=False, outdir=None):
     """
     print(f"ORIGINAL RB LIST LEN: {len(rb_list)}")
 
+    # calculate the overlaps
+    for pair in itertools.combinations(rb_list, 2):
+        rb1, rb2 = pair     
+        rb1.update_overlap(rb2)
+        print(f"OVERLAP {rb1.pdb_fn}: {len(rb1.overlap)}, OL {rb2.pdb_fn}: {len(rb2.overlap)}")
+
     # Discard RigidBodies fully overlapped (no gaps in the pdbs)
     for rb in rb_list:
         if len(rb.get_resIDs()) == len(rb.overlap):
@@ -289,32 +295,26 @@ def make_composite(rb_list, reference_fasta=None, save_csv=False, outdir=None):
     print(f"RB LIST LEN AFTER 1st CLEANSE: {len(rb_list)}")
     
     # Now, a more refined cleanse
-
-
-    # calculate the overlaps
     for pair in itertools.combinations(rb_list, 2):
-        rb1, rb2 = pair     
-        rb1.update_overlap(rb2)
-        # print(f"OVERLAP RB1: {rb1.overlap}, RB2 OL: {rb2.overlap}")
-    
-    for pair in itertools.combinations(rb_list, 2):
+        rb1, rb2 = pair
         l.info(f"Comparing {rb1.pdb_fn} and {rb2.pdb_fn}")
+        if len(rb1.get_resIDs()) == len(rb1.overlap):
+            rb1.include = False
+        if len(rb2.get_resIDs()) == len(rb2.overlap):
+            rb2.include = False
         if len(set(rb2.get_resIDs()) & set(rb1.get_resIDs())) == len(set(rb2.overlap)):
             if len(rb2.overlap) > 0:
                 rb2.include = False
                 l.info(f"REMOVING RB2 {rb2.pdb_fn}")
                 l.info(f"LENGTH RB2 {rb2.pdb_fn} OL: {len(set(rb2.overlap))}")
                 l.info(f"LENGTH RB1 {rb1.pdb_fn} RESIDS: {len(set(rb1.get_resIDs()))}")
-                continue
-            continue
         if len(set(rb1.get_resIDs()) & set(rb2.get_resIDs())) == len(set(rb1.overlap)):
             if len(rb1.overlap) > 0:
                 rb1.include = False
                 l.info(f"REMOVING RB1{rb1.pdb_fn}")
                 l.info(f"LENGTH RB1 {rb1.pdb_fn} OL: {len(set(rb1.overlap))}")
                 l.info(f"LENGTH RB2 {rb2.pdb_fn} RESIDS: {len(set(rb2.get_resIDs()))}")
-                continue
-            continue
+   
     # print(f"DICT UPDATED: {rb_dict.items()}")
     
     clean_rb_list = [rb for rb in rb_list if rb.include == True]

@@ -472,10 +472,13 @@ elif i > 1:
 
 
 # Convert to list and sort by the ones who start earlier in the sequence
-rigid_bodies.sort(key=lambda x: x.residue_range[0])
+composite_rb.sort(key=lambda x: x.residue_range[0])
 
 # Write the topology file
-write_custom_topology(os.path.join(IMP_dir, f"{query_name}.topology"), rigid_bodies)
+write_custom_topology(os.path.join(IMP_dir, f"{query_name}.topology"), composite_rb)
+
+
+exit(0)
 
 # Finally, write the automatic report
 report_template = os.path.join(args.outdir, query_name, "report_template.ipynb")
