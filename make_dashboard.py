@@ -32,7 +32,7 @@ for child in Path("test_output/").iterdir():
     if child.is_dir():
         all_outputs.append(str(child))
 
-## Buttons, etc
+### DASH LAYOUT
 app.layout = html.Div([
     html.Div(children=[
         html.Label('Select Output'),
@@ -128,9 +128,75 @@ def update_graph(options_chosen):
     
     return fig1
 
+@app.callback(
+    Output('flex-plot', 'figure'),
+    [Input('frag-dropdown', 'value')]
+    )
+def update_graph(options_chosen):
+    dfi_dict = read_DFI_csvs(os.path.join(options_chosen, "REPORT", "DFI"))
+    hng_dict = read_hng_files(os.path.join(options_chosen, "HINGES"))
 
+    fig2 = make_subplots(rows=len(dfi_dict.keys()), cols=1, shared_xaxes=True)
 
+    i = 1
+    for dfi_file in dfi_dict.keys():
+        df = dfi_dict[dfi_file]
+        fig2.append_trace(go.Scatter(
+            x=df[df.columns[0]], # resIDs
+            y=df[df.columns[1]], # pctdfi
+            name=str(df.columns[1])
+        ), row=i, col=1)
+        if "AF_DFI" not in str(dfi_file.stem) and "RF_DFI" not in str(dfi_file.stem):
+            j =1
+            for hng_file in hng_dict.keys():
+                if str(PurePosixPath(dfi_file).stem)[0:-13] == str(PurePosixPath(hng_file).stem):
+                    for hinge in hng_dict[hng_file]:
+                        fig2.add_vrect(
+                            x0=hinge.split(':')[0], 
+                            x1=hinge.split(':')[1],
+                            annotation_text=f"H{j}", annotation_position="top left",
+                            fillcolor="#52BE80", opacity=0.2,
+                            layer="below", line_width=0, 
+                        row=i, col=1)
+                j += 1
+        i +=1
+    fig2.update_layout(height=600, width=1200, title_text="DFI profiles + Predicted hinges", 
+                      margin_pad=0, barmode="group")
+    fig2.update_yaxes(showgrid=False, range=[0,1], nticks=2)
+    return fig2
 
+@app.callback(
+    Output('composite-plot', 'figure'),
+    [Input('frag-dropdown', 'value')]
+    )
+def update_graph(options_chosen):
+    composite_dir = os.path.join(options_chosen, "REPORT", "COVERAGE")
+    comp_dict = read_compsite_files(composite_dir)
+
+    # Plot
+    comp_filenames = []
+    fig3 = make_subplots(rows=len(comp_dict.keys())+1, cols=1, shared_xaxes=True)
+
+    for file in comp_dict.keys():
+        df = comp_dict[file]
+        print(len(df.columns))
+        fig3 = make_subplots(rows=len(df.columns)-1, cols=1, shared_xaxes=True)
+        i = 0
+        for column in df.columns:
+            if i >= 1:
+                fig3.append_trace(go.Scatter(
+                    x=df.iloc[:,0],
+                    y=df[df.columns[i]],
+                    fill='tozeroy',
+                    name=str(column)
+                ), row=i, col=1)
+            i +=1
+            comp_filenames.append(file)
+        fig3.update_layout(height=600, width=1200, title_text="Composite coverage", 
+                            margin_pad=0, barmode="overlay")
+        fig3.update_yaxes(showgrid=False, range=[0,1], nticks=2)
+
+    return fig3
 
 if __name__ == "__main__":
     # For Development only, otherwise use gunicorn or uwsgi to launch, e.g.
