@@ -45,3 +45,10 @@ as possible (avoiding overlaps).
 This comopsite will be used to automatically build an 
 [IMP topology file](https://integrativemodeling.org/2.5.0/doc/ref/classIMP_1_1pmi_1_1topology_1_1TopologyReader.html)
 """
+
+custom_md = """
+## Output
+
+In this section you can generate custom outputs, apart from the ones generated
+by the program. 
+"""

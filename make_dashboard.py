@@ -1,6 +1,6 @@
 # import functions and text
 from bin.dashboard.dashboard_functions import read_compsite_files, read_DFI_csvs, read_hng_files
-from bin.dashboard.text_boxes import intro_md, flex_md, composite_md
+from bin.dashboard.text_boxes import intro_md, flex_md, composite_md, custom_md
 import os
 
 # File management/OS
@@ -48,9 +48,6 @@ app.layout = html.Div([
         dcc.Graph(
             id='coverage-plot',
         ),
-        
-        html.Br(),
-        html.Label('Radio Items'),
         ], 
     style={'padding': 10, 'flex': 1}
     ),
@@ -70,37 +67,30 @@ app.layout = html.Div([
         ),
         dcc.Graph(
             id='composite-plot',
-            # figure=fig3,
         ),
     ], style={'padding': 10, 'flex': 1}),
-
+    
     html.Div(children=[
-        # html.Label('Checkboxes'),
-        # dcc.Checklist(
-        #     options=[
-        #         {"label" : x, "value" : x, "disabled" : False}
-        #         for x in all_filenames
-        #     ],
-        #     value=[all_filenames[0]],
-        #     id="frag-checkbox"
-        # ),
+        dcc.Markdown(
+            children=custom_md
+        ),
+        html.Label('Select Output'),
+        dcc.Dropdown(
+            id="customtop-dropdown",
+            multi=True),
 
-        html.Br(),
-        html.Label('Slider'),
-        dcc.Slider(
-            min=0,
-            max=9,
-            marks={i: f'Label {i}' if i == 1 else str(i) for i in range(1, 6)},
-            value=5,
-        )
-    ], style={'padding': 10, 'flex': 1})])
+        dcc.Graph(
+            id='customtop-plot',
+        ),
+    ], style={'padding': 10, 'flex': 1}),
+])
 
+# Update coverage plot
 @app.callback(
     Output('coverage-plot', 'figure'),
     [Input('frag-dropdown', 'value')]
     )
 def update_graph(options_chosen):
-    ## COVERAGE ##
     i = 0
     df_list = []
     structure_list = []
@@ -128,6 +118,7 @@ def update_graph(options_chosen):
     
     return fig1
 
+# Update Flex Plot
 @app.callback(
     Output('flex-plot', 'figure'),
     [Input('frag-dropdown', 'value')]
@@ -144,7 +135,7 @@ def update_graph(options_chosen):
         fig2.append_trace(go.Scatter(
             x=df[df.columns[0]], # resIDs
             y=df[df.columns[1]], # pctdfi
-            name=str(df.columns[1])
+            name=str(dfi_file)
         ), row=i, col=1)
         if "AF_DFI" not in str(dfi_file.stem) and "RF_DFI" not in str(dfi_file.stem):
             j =1
@@ -165,6 +156,7 @@ def update_graph(options_chosen):
     fig2.update_yaxes(showgrid=False, range=[0,1], nticks=2)
     return fig2
 
+# Update composite Plot
 @app.callback(
     Output('composite-plot', 'figure'),
     [Input('frag-dropdown', 'value')]
@@ -197,6 +189,67 @@ def update_graph(options_chosen):
         fig3.update_yaxes(showgrid=False, range=[0,1], nticks=2)
 
     return fig3
+
+# Update options for dropdown for custom topology
+@app.callback(
+    Output('customtop-dropdown', 'options'),
+    [Input('frag-dropdown', 'value')]
+    )
+def update_dropdown(selected_output):
+    structure_list = []
+    for child in Path(os.path.join(selected_output, "REPORT", "COVERAGE")).iterdir():
+        if child.is_file() and "composite" not in str(child):
+            structure_list.append(str(child))
+    print(f"STRUCT_LIST {structure_list}")
+    # return [{"label": x, "value": x} for x in structure_list]
+    return structure_list
+
+# Update values for dropdown custom topology
+@app.callback(
+    Output('customtop-dropdown', 'value'),
+    [Input('customtop-dropdown', 'options')]
+    )
+def update_dropdown(selected_options):
+    return selected_options
+
+
+# Update custom composite
+@app.callback(
+    Output('customtop-plot', 'figure'),
+    [Input('customtop-dropdown', 'value')]
+    )
+def update_graph(options_chosen):
+    print(f"OPTIONS CHOSEN UPDATE CUSTOM-PLOT {options_chosen}")
+    
+    if len(options_chosen) == 0:
+        return None
+
+    i = 0
+    df_list = []
+    structure_list = []
+    for file in options_chosen:
+            if "composite" not in str(file):
+                i += 1
+                df = pd.read_csv(file)
+                df_list.append(df)
+                structure_list.append(file)
+                
+    fig4 = make_subplots(rows=i, cols=1, shared_xaxes=True)
+
+    i = 1
+    for df in df_list:
+        fig4.append_trace(go.Scatter(
+            x=df[df.columns[0]], # ResID
+            y=df[df.columns[1]],
+            fill='tozeroy', 
+            name=str(structure_list[i-1])
+        ), row=i, col=1)
+        i +=1
+
+    fig4.update_layout(height=400, width=1000, title_text="Coverage")
+    fig4.update_yaxes(showgrid=False, range=[0,1], nticks=2)
+    
+    return fig4
 
 if __name__ == "__main__":
     # For Development only, otherwise use gunicorn or uwsgi to launch, e.g.
