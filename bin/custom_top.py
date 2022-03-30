@@ -287,14 +287,8 @@ def make_composite(rb_list, reference_fasta=None, save_csv=False, outdir=None):
         rb1, rb2 = pair     
         rb1.update_overlap(rb2)
         print(f"OVERLAP {rb1.pdb_fn}: {len(rb1.overlap)}, OL {rb2.pdb_fn}: {len(rb2.overlap)}")
-
-    # Discard RigidBodies fully overlapped (no gaps in the pdbs)
-    for rb in rb_list:
-        if len(rb.get_resIDs()) == len(rb.overlap):
-            rb_list.remove(rb)
-    print(f"RB LIST LEN AFTER 1st CLEANSE: {len(rb_list)}")
     
-    # Now, a more refined cleanse
+    # Clean the overlapping fragments
     for pair in itertools.combinations(rb_list, 2):
         rb1, rb2 = pair
         l.info(f"Comparing {rb1.pdb_fn} and {rb2.pdb_fn}")
