@@ -40,8 +40,12 @@ SLURMconfig_AF = """#!/bin/bash
 module purge
 module load modulepath/noarch
 module load AlphaFold/2.1.0-Miniconda3-4.7.10
-source activate alphafold-2.1.0
+source activate alphafold.F-2.1.0
 module load CUDA/11.1.0
+
+module load CUDA/11.1.0
+
+alphafold_path="/homes/users/fpegenaute/opt/alphafold.F-2.1.0/alphafold"
 """
 
 SLURMconfig_RF = """#!/bin/bash
@@ -181,7 +185,7 @@ def submit_AF_to_SLURM(query_fasta, outdir, workload_manager="sbatch", dummy_dir
 
     script = os.path.join(cwd,"alpha_test.sh")
 
-    command = f"""echo $alphafold_path/run_alphafold.sh -d {AF2config["AF2datadir"]} -o {outdir} -m {AF2config["AF2preset_monomer"]} -f {query_fasta} -t {today} --is_prokaryote_list={AF2config["AF2_prokaryote"]} -g {AF2config["AF2_useGPU"]}"""
+    command = "${alphafold_path}run_alphafold.sh -d"+AF2config["AF2datadir"]+" -o "+outdir+" -m "+AF2config["AF2preset_monomer"]+" -f "+query_fasta+" -t "+today+" --is_prokaryote_list="+AF2config["AF2_prokaryote"]+" -g "+AF2config["AF2_useGPU"]
 
     # Use the config for SLURM given in a file and add your command
     with open(script,"w") as batch_script:

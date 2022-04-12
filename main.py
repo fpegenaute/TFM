@@ -477,7 +477,9 @@ composite_rb.sort(key=lambda x: x.residue_range[0])
 # Write the topology file
 write_custom_topology(os.path.join(IMP_dir, f"{query_name}.topology"), composite_rb)
 
+from make_dashboard import *
 
+app.run_server()
 exit(0)
 
 # Finally, write the automatic report

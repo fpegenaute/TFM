@@ -2,6 +2,7 @@
 from bin.dashboard.dashboard_functions import read_compsite_files, read_DFI_csvs, read_hng_files
 from bin.dashboard.text_boxes import intro_md, flex_md, composite_md, custom_md
 import os
+from bin.custom_top import make_composite
 
 # File management/OS
 from pathlib import Path, PurePosixPath
@@ -14,9 +15,11 @@ import plotly.graph_objects as go
 import pandas as pd
 
 ## DASH
-from dash import Dash, dcc, html, Input, Output
+from dash import Dash, dcc, html, Input, Output, State
 import webbrowser
 import subprocess
+
+
 
 
 ## Config
@@ -59,7 +62,8 @@ app.layout = html.Div([
         dcc.Graph(
             id='flex-plot',
         ),
-    ], style={'padding': 10, 'flex': 1}),
+    ], style={'padding': 10, 'flex': 1}
+    ),
 
     html.Div(children=[
         dcc.Markdown(
@@ -68,7 +72,8 @@ app.layout = html.Div([
         dcc.Graph(
             id='composite-plot',
         ),
-    ], style={'padding': 10, 'flex': 1}),
+    ], style={'padding': 10, 'flex': 1}
+    ),
     
     html.Div(children=[
         dcc.Markdown(
@@ -82,8 +87,154 @@ app.layout = html.Div([
         dcc.Graph(
             id='customtop-plot',
         ),
-    ], style={'padding': 10, 'flex': 1}),
+    ], style={'padding': 10, 'flex': 1}
+    ),
+    
+    html.Div(children=[
+        html.Button(
+            "Generate IMP Topology File",
+            id="create-topology",
+            n_clicks=0),
+    ], style={'padding': 10, 'flex': 1}
+    ),
+
+    html.Div(
+        id='custom-top-output'
+    ),
+    
 ])
+
+from bin.utilities  import get_filename_ext, get_chain_names, get_residue_range
+import fnmatch
+from bin.custom_top import RigidBody, write_custom_topology
+from bin.custom_top import make_composite
+from pathlib import Path
+
+@app.callback(
+    Output(component_id='custom-top-output', component_property='children'),
+    Input(component_id='create-topology', component_property='n_clicks'),
+    Input(component_id='customtop-dropdown', component_property='value'),
+    Input(component_id='frag-dropdown',  component_property='value')
+)
+def onclick_topology(nclicks, fragments, output_dir):
+    if nclicks > 0:
+        i = 1
+        rigid_bodies = []
+        for csv in fragments: 
+            frag_name = os.path.basename(csv) 
+            for path in Path(output_dir).rglob('*.pdb'):
+                if frag_name[0:5] in  os.path.basename(path): # Provisional, only takes the first letters of the PDB file 
+                    filename, extension = get_filename_ext(str(path))
+                    
+                    # Extract chain name
+                    chain_IDs = get_chain_names(path)
+                    if len(chain_IDs) > 1 or fnmatch.fnmatch(path, "*AF.pdb"):
+                        print(f"""{path}: Assuming a AlphaFold model""")
+
+                        for chain in chain_IDs:
+                            # Extract residue range
+                            res_range = get_residue_range(str(path), chain=chain)    
+                            # Create the RigidBody instance
+                            rigid_body = RigidBody(resolution="all",
+                            molecule_name= f"{filename}_{chain}", 
+                            color="orange" , 
+                            fasta_fn="TESTING FASTA FILENAME",
+                            # fasta_fn=fasta, 
+                            pdb_fn=path, 
+                            chain=chain,
+                            residue_range=res_range , 
+                            rigid_body=i, 
+                            super_rigid_body="", 
+                            chain_of_super_rigid_bodies="", 
+                            bead_size=20,
+                            em_residues_per_gaussian=0, 
+                            type="AF_model")
+                            # Add the rigid body to a list
+                            rigid_bodies.append(rigid_body)
+                            i +=1
+                    elif fnmatch.fnmatch(path, "*RF.pdb"):
+                        print(f"""{path}: Assuming a RoseTTaFold model""")
+
+                        for chain in chain_IDs:
+                            # Extract residue range
+                            res_range = get_residue_range(path, chain=chain)    
+                            # Create the RigidBody instance
+                            rigid_body = RigidBody(resolution="all",
+                            molecule_name= f"{filename}_{chain}", 
+                            color="orange" , 
+                            fasta_fn="TESTING FASTA FILENAME",
+                            # fasta_fn=fasta,  
+                            pdb_fn=path, 
+                            chain=chain,
+                            residue_range=res_range , 
+                            rigid_body=i, 
+                            super_rigid_body="", 
+                            chain_of_super_rigid_bodies="", 
+                            bead_size=20,
+                            em_residues_per_gaussian=0, 
+                            type="RF_model")
+                            # Add the rigid body to a list
+                            rigid_bodies.append(rigid_body)
+                            i +=1
+                    elif len(chain_IDs) > 1:
+                        print(f"Assuming {path},experimental with multiple chains")
+                        for chain in chain_IDs:
+                            # Extract residue range
+                            res_range = get_residue_range(path, chain=chain)    
+                            # Create the RigidBody instance
+                            rigid_body = RigidBody(resolution="all",
+                            molecule_name= f"{filename}_{chain}", 
+                            color="blue" , 
+                            fasta_fn="TESTING FASTA FILENAME",
+                            # fasta_fn=fasta, 
+                            pdb_fn=path, 
+                            chain=chain,
+                            residue_range=res_range , 
+                            rigid_body=i, 
+                            super_rigid_body="", 
+                            chain_of_super_rigid_bodies="", 
+                            bead_size=10,
+                            em_residues_per_gaussian=0, 
+                            type="experimental")
+                            # Add the rigid body to a list
+                            rigid_bodies.append(rigid_body)
+                            i +=1
+                    else:
+                        # Extract residue range
+                        res_range = get_residue_range(path)    
+                        # Create the RigidBody instance
+                        rigid_body = RigidBody(resolution="all",
+                        molecule_name= filename, 
+                        color="blue" , 
+                        fasta_fn="TESTING FASTA FILENAME",
+                        # fasta_fn=fasta, 
+                        pdb_fn=path, 
+                        chain=chain_IDs[0],
+                        residue_range=res_range , 
+                        rigid_body=i, 
+                        super_rigid_body="", 
+                        chain_of_super_rigid_bodies="", 
+                        bead_size=10,
+                        em_residues_per_gaussian=0, 
+                        type="experimental")
+
+                        # Add the rigid body to a list
+                        rigid_bodies.append(rigid_body)
+                        i +=1
+
+        ## MAKE THE COMPOSITE
+        composite_rb = make_composite(rigid_bodies)
+
+
+        # Convert to list and sort by the ones who start earlier in the sequence
+        composite_rb.sort(key=lambda x: x.residue_range[0])
+
+        # Write the topology file
+        write_custom_topology(("button_test.topology"), composite_rb)
+
+
+    return f"""N clicks: {nclicks}, \nFragments Selected: {fragments}"""
+
 
 # Update coverage plot
 @app.callback(
@@ -218,9 +369,7 @@ def update_dropdown(selected_options):
     Output('customtop-plot', 'figure'),
     [Input('customtop-dropdown', 'value')]
     )
-def update_graph(options_chosen):
-    print(f"OPTIONS CHOSEN UPDATE CUSTOM-PLOT {options_chosen}")
-    
+def update_graph(options_chosen):    
     if len(options_chosen) == 0:
         return None
 
@@ -250,6 +399,18 @@ def update_graph(options_chosen):
     fig4.update_yaxes(showgrid=False, range=[0,1], nticks=2)
     
     return fig4
+
+# @app.callback(
+#     Output('container-button-basic', 'children'),
+#     Input('submit-val', 'n_clicks'),
+#     State('input-on-submit', 'value')
+# )
+# def update_output(n_clicks, value):
+#     return 'The input value was "{}" and the button has been clicked {} times'.format(
+#         value,
+#         n_clicks
+#     )
+
 
 if __name__ == "__main__":
     # For Development only, otherwise use gunicorn or uwsgi to launch, e.g.

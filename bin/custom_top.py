@@ -309,7 +309,6 @@ def make_composite(rb_list, reference_fasta=None, save_csv=False, outdir=None):
                 l.info(f"LENGTH RB1 {rb1.pdb_fn} OL: {len(set(rb1.overlap))}")
                 l.info(f"LENGTH RB2 {rb2.pdb_fn} RESIDS: {len(set(rb2.get_resIDs()))}")
    
-    # print(f"DICT UPDATED: {rb_dict.items()}")
     
     clean_rb_list = [rb for rb in rb_list if rb.include == True]
     
