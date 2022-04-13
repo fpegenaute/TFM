@@ -24,7 +24,8 @@ from matplotlib import pyplot as plt
 import fnmatch
 import nbformat
 from nbconvert.preprocessors import ExecutePreprocessor, CellExecutionError
-
+from bin.custom_top import make_rb_list, make_composite, write_custom_topology
+import pandas as pd
 
 
 
@@ -326,117 +327,10 @@ for structure in structures_for_query:
   
 
 
-## Write Topology file
-from bin.custom_top import RigidBody, write_custom_topology
-from bin.utilities import get_chain_names, get_residue_range
+## Write Topology file ##
 
+rigid_bodies = make_rb_list(structures_for_query, fasta)
 
-
-# Make rhe RigidBody objects from the structures
-i = 1
-rigid_bodies = []
-for structure in structures_for_query:    
-    filename, extension = get_filename_ext(structure)
-    
-    # Extract chain name
-    chain_IDs = get_chain_names(structure)
-    if len(chain_IDs) > 1 or fnmatch.fnmatch(structure, "*AF.pdb"):
-        print(f"""{structure}: Assuming a AlphaFold model""")
-
-        for chain in chain_IDs:
-            # Extract residue range
-            res_range = get_residue_range(structure, chain=chain)    
-            # Create the RigidBody instance
-            rigid_body = RigidBody(resolution="all",
-            molecule_name= f"{filename}_{chain}", 
-            color="orange" , 
-            fasta_fn=fasta, 
-            # fasta_id=fasta, 
-            pdb_fn=structure, 
-            chain=chain,
-            residue_range=res_range , 
-            rigid_body=i, 
-            super_rigid_body="", 
-            chain_of_super_rigid_bodies="", 
-            bead_size=20,
-            em_residues_per_gaussian=0, 
-            type="AF_model")
-            # Add the rigid body to a list
-            rigid_bodies.append(rigid_body)
-            i +=1
-    elif fnmatch.fnmatch(structure, "*RF.pdb"):
-        print(f"""{structure}: Assuming a RoseTTaFold model""")
-
-        for chain in chain_IDs:
-            # Extract residue range
-            res_range = get_residue_range(structure, chain=chain)    
-            # Create the RigidBody instance
-            rigid_body = RigidBody(resolution="all",
-            molecule_name= f"{filename}_{chain}", 
-            color="orange" , 
-            fasta_fn=fasta, 
-            # fasta_id=fasta, 
-            pdb_fn=structure, 
-            chain=chain,
-            residue_range=res_range , 
-            rigid_body=i, 
-            super_rigid_body="", 
-            chain_of_super_rigid_bodies="", 
-            bead_size=20,
-            em_residues_per_gaussian=0, 
-            type="RF_model")
-            # Add the rigid body to a list
-            rigid_bodies.append(rigid_body)
-            i +=1
-    elif len(chain_IDs) > 1:
-        print(f"Assuming {structure},experimental with multiple chains")
-        for chain in chain_IDs:
-            # Extract residue range
-            res_range = get_residue_range(structure, chain=chain)    
-            # Create the RigidBody instance
-            rigid_body = RigidBody(resolution="all",
-            molecule_name= f"{filename}_{chain}", 
-            color="blue" , 
-            fasta_fn=fasta, 
-            # fasta_id=fasta, 
-            pdb_fn=structure, 
-            chain=chain,
-            residue_range=res_range , 
-            rigid_body=i, 
-            super_rigid_body="", 
-            chain_of_super_rigid_bodies="", 
-            bead_size=10,
-            em_residues_per_gaussian=0, 
-            type="experimental")
-            # Add the rigid body to a list
-            rigid_bodies.append(rigid_body)
-            i +=1
-    else:
-        # Extract residue range
-        res_range = get_residue_range(structure)    
-        # Create the RigidBody instance
-        rigid_body = RigidBody(resolution="all",
-        molecule_name= filename, 
-        color="blue" , 
-        fasta_fn=fasta, 
-        # fasta_id=fasta, 
-        pdb_fn=structure, 
-        chain=chain_IDs[0],
-        residue_range=res_range , 
-        rigid_body=i, 
-        super_rigid_body="", 
-        chain_of_super_rigid_bodies="", 
-        bead_size=10,
-        em_residues_per_gaussian=0, 
-        type="experimental")
-
-        # Add the rigid body to a list
-        rigid_bodies.append(rigid_body)
-        i +=1
-
-## MAKE THE COMPOSITE
-from bin.custom_top import make_composite
-import pandas as pd
 
 composite_rb = make_composite(rigid_bodies)
 

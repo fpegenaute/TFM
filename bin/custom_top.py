@@ -317,7 +317,119 @@ def make_composite(rb_list, reference_fasta=None, save_csv=False, outdir=None):
 
     return clean_rb_list
 
+from bin.utilities import get_chain_names, get_residue_range
 
+def make_rb_list(structures_list, fasta):
+    """
+    Given a list of paths of PDB or mmcif files, return a list of all of them as 
+    RigidBody Objects. Classify them as AlphaFold models, RoseTTaFold models, or 
+    experimental structures.
+
+    Include as an argument the reference fasta file that all the structures 
+    correspond to
+    """
+    i = 1
+    rigid_bodies = []
+    for structure in structures_list:    
+        filename, extension = get_filename_ext(structure)
+        
+        # Extract chain name
+        chain_IDs = get_chain_names(structure)
+        if len(chain_IDs) > 1 or fnmatch.fnmatch(structure, "*AF.pdb"):
+            print(f"""{structure}: Assuming a AlphaFold model""")
+
+            for chain in chain_IDs:
+                # Extract residue range
+                res_range = get_residue_range(structure, chain=chain)    
+                # Create the RigidBody instance
+                rigid_body = RigidBody(resolution="all",
+                molecule_name= f"{filename}_{chain}", 
+                color="orange" , 
+                fasta_fn=fasta, 
+                # fasta_id=fasta, 
+                pdb_fn=structure, 
+                chain=chain,
+                residue_range=res_range , 
+                rigid_body=i, 
+                super_rigid_body="", 
+                chain_of_super_rigid_bodies="", 
+                bead_size=20,
+                em_residues_per_gaussian=0, 
+                type="AF_model")
+                # Add the rigid body to a list
+                rigid_bodies.append(rigid_body)
+                i +=1
+        elif fnmatch.fnmatch(structure, "*RF.pdb"):
+            print(f"""{structure}: Assuming a RoseTTaFold model""")
+
+            for chain in chain_IDs:
+                # Extract residue range
+                res_range = get_residue_range(structure, chain=chain)    
+                # Create the RigidBody instance
+                rigid_body = RigidBody(resolution="all",
+                molecule_name= f"{filename}_{chain}", 
+                color="orange" , 
+                fasta_fn=fasta, 
+                # fasta_id=fasta, 
+                pdb_fn=structure, 
+                chain=chain,
+                residue_range=res_range , 
+                rigid_body=i, 
+                super_rigid_body="", 
+                chain_of_super_rigid_bodies="", 
+                bead_size=20,
+                em_residues_per_gaussian=0, 
+                type="RF_model")
+                # Add the rigid body to a list
+                rigid_bodies.append(rigid_body)
+                i +=1
+        elif len(chain_IDs) > 1:
+            print(f"Assuming {structure},experimental with multiple chains")
+            for chain in chain_IDs:
+                # Extract residue range
+                res_range = get_residue_range(structure, chain=chain)    
+                # Create the RigidBody instance
+                rigid_body = RigidBody(resolution="all",
+                molecule_name= f"{filename}_{chain}", 
+                color="blue" , 
+                fasta_fn=fasta, 
+                # fasta_id=fasta, 
+                pdb_fn=structure, 
+                chain=chain,
+                residue_range=res_range , 
+                rigid_body=i, 
+                super_rigid_body="", 
+                chain_of_super_rigid_bodies="", 
+                bead_size=10,
+                em_residues_per_gaussian=0, 
+                type="experimental")
+                # Add the rigid body to a list
+                rigid_bodies.append(rigid_body)
+                i +=1
+        else:
+            # Extract residue range
+            res_range = get_residue_range(structure)    
+            # Create the RigidBody instance
+            rigid_body = RigidBody(resolution="all",
+            molecule_name= filename, 
+            color="blue" , 
+            fasta_fn=fasta, 
+            # fasta_id=fasta, 
+            pdb_fn=structure, 
+            chain=chain_IDs[0],
+            residue_range=res_range , 
+            rigid_body=i, 
+            super_rigid_body="", 
+            chain_of_super_rigid_bodies="", 
+            bead_size=10,
+            em_residues_per_gaussian=0, 
+            type="experimental")
+
+            # Add the rigid body to a list
+            rigid_bodies.append(rigid_body)
+            i +=1
+
+    return rigid_bodies
 
 def write_custom_topology(path_to_file, rigid_body_list):
     """
@@ -355,9 +467,11 @@ def write_custom_topology(path_to_file, rigid_body_list):
         if resolution == "all":
             top_file.write("|{:15}|{:10}|{:20}|{:15}|{:16}|{:7}|{:15}|{:11}|{:11}|"
                            "{:28}|{:<12}|{:19}|{:27}|\n".format(mol_name, color, 
-                           fasta_fn, fasta_id, pdb_fn, chain, "all", offset,
+                           fasta_fn, fasta_id, str(pdb_fn), chain, "all", offset,
                            bead_size, em_gaussian, rigid_body_counter, "", ""))
             rigid_body_counter += 1
+
+            
         else:
             # If you want to add different options for X molecules (DNA or Proteins) this
             # is a way

@@ -45,7 +45,7 @@ module load CUDA/11.1.0
 
 module load CUDA/11.1.0
 
-alphafold_path="/homes/users/fpegenaute/opt/alphafold.F-2.1.0/alphafold"
+alphafold_path="/homes/users/fpegenaute/opt/alphafold.F-2.1.0/alphafold/"
 """
 
 SLURMconfig_RF = """#!/bin/bash
@@ -73,7 +73,7 @@ def get_filename_ext(filepath):
     Also, take the basename in the path and split it by the point, get the first
     element as the name of the file
     """
-
+    filepath = str(filepath)
     extension = filepath.split(".")[-1]
     filename = PurePosixPath(filepath).stem
     
