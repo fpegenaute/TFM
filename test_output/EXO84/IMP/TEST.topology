@@ -1,17 +1,1 @@
 |molecule_name  |color     |fasta_fn            |fasta_id       |pdb_fn          |chain  |residue_range  |pdb_offset |bead_size  |em_residues_per_gaussian    |rigid_body  |super_rigid_body   |chain_of_super_rigid_bodies|
-|EXO84_AF_A1_AF_1|orange    |test_output/EXO84   |EXO84          |test_output/EXO84/ALPHAFOLD/DOMAINS/EXO84_AF_A1_AF.pdb|1      |all            |       -136|         20|                           0|1           |                   |                           |
-
-|EXO84_AF_A1_AF_1|orange    |test_output/EXO84   |EXO84          |test_output/EXO84/ALPHAFOLD/DOMAINS/EXO84_AF_A1_AF.pdb|1      |all            |       -136|         20|                           0|2           |                   |                           |
-
-|5yfp_H         |blue      |test_output/EXO84   |EXO84          |test_output/EXO84/PDB/partial/5yfp_H.pdb|H      |all            |       -168|         10|                           0|3           |                   |                           |
-
-|EXO84_AF_A2_AF_2|orange    |test_output/EXO84   |EXO84          |test_output/EXO84/ALPHAFOLD/DOMAINS/EXO84_AF_A2_AF.pdb|2      |all            |       -230|         20|                           0|4           |                   |                           |
-
-|EXO84_AF_A2_AF_2|orange    |test_output/EXO84   |EXO84          |test_output/EXO84/ALPHAFOLD/DOMAINS/EXO84_AF_A2_AF.pdb|2      |all            |       -230|         20|                           0|5           |                   |                           |
-
-|EXO84_AF_A3_AF_3|orange    |test_output/EXO84   |EXO84          |test_output/EXO84/ALPHAFOLD/DOMAINS/EXO84_AF_A3_AF.pdb|3      |all            |       -447|         20|                           0|6           |                   |                           |
-
-|EXO84_AF_A3_AF_3|orange    |test_output/EXO84   |EXO84          |test_output/EXO84/ALPHAFOLD/DOMAINS/EXO84_AF_A3_AF.pdb|3      |all            |       -447|         20|                           0|7           |                   |                           |
-
-|2d2s_A         |blue      |test_output/EXO84   |EXO84          |test_output/EXO84/PDB/partial/2d2s_A.pdb|A      |all            |       -524|         10|                           0|8           |                   |                           |
-

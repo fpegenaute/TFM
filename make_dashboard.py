@@ -303,30 +303,31 @@ def onclick_topology(nclicks, selected_fragments, output_dir):
                         structure_list.append(child)
     except:
         pass
+    
     try:
         for child in Path(os.path.join(output_dir, "PDB", "CHAINS")).iterdir():
             if child.is_file() and "composite" not in str(child):
                 for name in selected_fragments:
                     if os.path.basename(child)[0:-4] == os.path.basename(name)[0:-13]:
                         structure_list.append(child)
-
     except:
         pass
+    
     try:
         for child in Path(os.path.join(output_dir, "ALPHAFOLD", "DOMAINS")).iterdir():
             if child.is_file() and "confident" not in str(child) and "domains" not in str(child):
                 for name in selected_fragments:
-                    if os.path.basename(child)[0:-4] == os.path.basename(name)[0:-13]:
+                    if str(os.path.basename(child)[0:-4]) == str(os.path.basename(name)[0:-13]):
                         structure_list.append(child)
-                structure_list.append(child)
     except:
         pass
-    try:
-        for child in Path(os.path.join(output_dir, "ROSETTAFOLD", "DOMAINS")).iterdir():
-            if child.is_file() and "confident" not in str(child):
-                structure_list.append(child)
-    except:
-        pass
+    
+    # try:
+    #     for child in Path(os.path.join(output_dir, "ROSETTAFOLD", "DOMAINS")).iterdir():
+    #         if child.is_file() and "confident" not in str(child):
+    #             structure_list.append(child)
+    # except:
+    #     pass
      
 
 
