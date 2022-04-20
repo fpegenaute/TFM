@@ -1,7 +1,12 @@
 # TFM
 Master Thesis for the MSc in Bioinformatics for Health Sciences (Universitat Pompeu Fabra)
-## Installatiopn and Requirements
+## Installation and Requirements
 
+This program uses external programs to work, so you need to have them installed.
+these are:
+    BLAST (MANDATORY). [Install BLAST](https://blast.ncbi.nlm.nih.gov/Blast.cgi?PAGE_TYPE=BlastDocs&DOC_TYPE=Download)
+    AlphaFold, non-docker setup. [Install AlphaFold2](https://github.com/kalininalab/alphafold_non_docker)
+    RoseTTaFold [Install RoseTTaFold](https://github.com/RosettaCommons/RoseTTAFold)
 Download this repository.
 ```console
 your@user:~$ git clone https://github.com/fpegenaute/TFM.git
@@ -27,6 +32,13 @@ all the dependencies as:
 your@user:~$ conda env create -f environment.yaml --name your_env
 ```
 
+After all the dpendencies are installed, you need to configure the program. 
+Open the file config.py inside the bin/ folder, and change:
+
+```text
+code();
+address@domain.com
+```
 
 ## Considerations
 
