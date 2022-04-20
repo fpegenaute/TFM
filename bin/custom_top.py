@@ -456,7 +456,7 @@ def write_custom_topology(path_to_file, rigid_body_list):
         mol_name = rb.molecule_name
         color = rb.color
         fasta_fn = os.path.abspath(rb.fasta_fn)
-        fasta_id = rb.fasta_id
+        fasta_id = rb.fasta_id+":"+rb.chain
         pdb_fn = os.path.abspath(rb.pdb_fn)
         chain = rb.chain
         start_residue = rb.residue_range[0]
