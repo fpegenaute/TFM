@@ -322,16 +322,18 @@ def onclick_topology(nclicks, selected_fragments, output_dir):
     except:
         pass
     
-    # try:
-    #     for child in Path(os.path.join(output_dir, "ROSETTAFOLD", "DOMAINS")).iterdir():
-    #         if child.is_file() and "confident" not in str(child):
-    #             structure_list.append(child)
-    # except:
-    #     pass
+    try:
+        for child in Path(os.path.join(output_dir, "ROSETTAFOLD", "DOMAINS")).iterdir():
+            if child.is_file() and "confident" not in str(child) and "domains" not in str(child):
+                for name in selected_fragments:
+                    if str(os.path.basename(child)[0:-4]) == str(os.path.basename(name)[0:-13]):
+                        structure_list.append(child)
+    except:
+        pass
      
+    fasta = "input_fasta/"+str(os.path.basename(output_dir))+".fasta"
 
-
-    rigid_bodies = make_rb_list(structure_list, str(output_dir))
+    rigid_bodies = make_rb_list(structure_list, fasta)
     
     rigid_bodies.sort(key=lambda x: x.residue_range[0])
     str_out = str(output_dir)

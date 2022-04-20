@@ -336,7 +336,7 @@ def make_rb_list(structures_list, fasta):
         # Extract chain name
         chain_IDs = get_chain_names(structure)
         if len(chain_IDs) > 1 or fnmatch.fnmatch(structure, "*AF.pdb"):
-            print(f"""{structure}: Assuming a AlphaFold model""")
+            l.info(f"""{structure}: Assuming a AlphaFold model""")
 
             for chain in chain_IDs:
                 # Extract residue range
@@ -360,7 +360,7 @@ def make_rb_list(structures_list, fasta):
                 rigid_bodies.append(rigid_body)
                 i +=1
         elif fnmatch.fnmatch(structure, "*RF.pdb"):
-            print(f"""{structure}: Assuming a RoseTTaFold model""")
+            l.info(f"""{structure}: Assuming a RoseTTaFold model""")
 
             for chain in chain_IDs:
                 # Extract residue range
@@ -384,7 +384,7 @@ def make_rb_list(structures_list, fasta):
                 rigid_bodies.append(rigid_body)
                 i +=1
         elif len(chain_IDs) > 1:
-            print(f"Assuming {structure},experimental with multiple chains")
+            l.info(f"Assuming {structure},experimental with multiple chains")
             for chain in chain_IDs:
                 # Extract residue range
                 res_range = get_residue_range(structure, chain=chain)    
@@ -455,9 +455,9 @@ def write_custom_topology(path_to_file, rigid_body_list):
         resolution = rb.resolution
         mol_name = rb.molecule_name
         color = rb.color
-        fasta_fn = rb.fasta_fn
+        fasta_fn = os.path.abspath(rb.fasta_fn)
         fasta_id = rb.fasta_id
-        pdb_fn = rb.pdb_fn
+        pdb_fn = os.path.abspath(rb.pdb_fn)
         chain = rb.chain
         start_residue = rb.residue_range[0]
         last_residue = rb.residue_range[1]
