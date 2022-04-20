@@ -6,67 +6,9 @@ import packman
 from Bio import SeqIO
 from Bio.PDB import MMCIFParser, PDBParser
 from Bio.SeqUtils import seq1
-
-## CONFIG ##
-blastconfig = {
-    "blastdb" : "/home/gallegolab/Desktop/TFM/databases/BLAST/pdbaa"
-
-}
-
-AF2config = {
-    "AF2command" : "bash $alphafold_path/run_alphafold.sh", 
-    "AF2datadir" : "$ALPHAFOLD_DATA_DIR", 
-    "AF2preset_monomer" : "monomer",
-    "AF2preset_monomer_ptm" : "monomer_ptm", 
-    "AF2preset_multimer" : "multimer", 
-    "AF2_useGPU" : "true", 
-    "AF2_prokaryote" : "false", 
-    }
-
-
-
-SLURMconfig_AF = """#!/bin/bash
-
-#SBATCH -N 1
-#SBATCH -n 2
-#SBATCH -p normal
-#SBATCH --gres=gpu:1
-#SBATCH --gres-flags=enforce-binding
-#SBATCH --mem 200G
-#SBATCH -t 5-20:00:00
-#SBATCH --mail-type=ALL
-#SBATCH --mail-user=ferran.pegenaute@upf.edu
-
-module purge
-module load modulepath/noarch
-module load AlphaFold/2.1.0-Miniconda3-4.7.10
-source activate alphafold.F-2.1.0
-module load CUDA/11.1.0
-
-module load CUDA/11.1.0
-
-alphafold_path="/homes/users/fpegenaute/opt/alphafold.F-2.1.0/alphafold/"
-"""
-
-SLURMconfig_RF = """#!/bin/bash
-
-#SBATCH -N 1
-#SBATCH -n 2
-#SBATCH -p normal
-#SBATCH --gres=gpu:1
-#SBATCH --gres-flags=enforce-binding
-#SBATCH --mem 200G
-#SBATCH -t 5-20:00:00
-#SBATCH --mail-type=ALL
-#SBATCH --mail-user=ferran.pegenaute@upf.edu
-
-module purge
-module load modulepath/noarch
-module load RoseTTAFold/v1.1.0-Miniconda3-4.7.10
-"""
-
-
+from bin.config import SLURMconfig_AF, SLURMconfig_RF, AF2config
 ## FUNCTIONS ##
+
 def get_filename_ext(filepath):
     """
     Given a file path, split it by dots and get the extension as the last element

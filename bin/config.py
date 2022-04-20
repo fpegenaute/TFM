@@ -1,7 +1,9 @@
+# This file contains the location of the database for BLAST to use, and the
+# text to be placed on the batch scripts for SLURM when running AlphaFold or 
+# RoseTTaFold
 
 blastconfig = {
     "blastdb" : "/home/gallegolab/Desktop/TFM/databases/BLAST/pdbaa"
-
 }
 
 AF2config = {
@@ -13,8 +15,8 @@ AF2config = {
     "AF2_useGPU" : "true", 
     "AF2_prokaryote" : "false", 
     }
-SLURMconfig = """
-#!/bin/bash
+
+SLURMconfig_AF = """#!/bin/bash
 
 #SBATCH -N 1
 #SBATCH -n 2
@@ -29,15 +31,30 @@ SLURMconfig = """
 module purge
 module load modulepath/noarch
 module load AlphaFold/2.1.0-Miniconda3-4.7.10
-source activate alphafold-2.1.0
+source activate alphafold.F-2.1.0
 module load CUDA/11.1.0
+
+module load CUDA/11.1.0
+
+alphafold_path="/homes/users/fpegenaute/opt/alphafold.F-2.1.0/alphafold/"
 """
-SSHconfig = {
-    "HPCCluster" : "marvin",
-    "Public_key": "", 
-}
 
+SLURMconfig_RF = """#!/bin/bash
 
+#SBATCH -N 1
+#SBATCH -n 2
+#SBATCH -p normal
+#SBATCH --gres=gpu:1
+#SBATCH --gres-flags=enforce-binding
+#SBATCH --mem 200G
+#SBATCH -t 5-20:00:00
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=ferran.pegenaute@upf.edu
+
+module purge
+module load modulepath/noarch
+module load RoseTTAFold/v1.1.0-Miniconda3-4.7.10
+"""
 
 if __name__ == "__main__":
     print("config.py file not executable!")
