@@ -1,5 +1,32 @@
 # TFM
 Master Thesis for the MSc in Bioinformatics for Health Sciences (Universitat Pompeu Fabra)
+## Installatiopn and Requirements
+
+Download this repository.
+```console
+your@user:~$ git clone https://github.com/fpegenaute/TFM.git
+```
+
+It is recommended that you create a virtual environment to avoid dependency
+problems.
+
+```console
+your@user:~$ conda create --name your_env python=3.8
+```
+
+In this environment, install the Python packages needed by the program
+
+```console
+your@user:~$ pip install requirements.txt
+```
+
+Alternatively, if you have conda installed, you can create the environment with
+all the dependencies as:
+
+```console
+your@user:~$ conda env create -f environment.yaml --name your_env
+```
+
 
 ## Considerations
 
@@ -20,6 +47,6 @@ Configuration:
 
     To use AlphaFold:
 
-    
+
 
 
