@@ -1,8 +1,9 @@
 # import functions and text
 from bin.dashboard.dashboard_functions import read_compsite_files, read_DFI_csvs, read_hng_files
-from bin.dashboard.text_boxes import intro_md, flex_md, composite_md, custom_md
+from bin.dashboard.text_boxes import intro_md, flex_md, composite_md
 import os
-from bin.custom_top import make_composite
+from bin.custom_top import  write_custom_topology
+from pathlib import Path
 
 # File management/OS
 from pathlib import Path, PurePosixPath
@@ -33,9 +34,11 @@ app.css.config.serve_locally = True
 app.scripts.config.serve_locally = True
 
 all_outputs = []
-for child in Path("test_output/").iterdir():
+for child in Path("output/").iterdir():
     if child.is_dir():
         all_outputs.append(str(child))
+
+
 
 ### DASH LAYOUT
 app.layout = html.Div([
@@ -74,20 +77,10 @@ app.layout = html.Div([
         dcc.Graph(
             id='composite-plot',
         ),
-    ], style={'padding': 10, 'flex': 1}
-    ),
-    
-    html.Div(children=[
-        dcc.Markdown(
-            children=custom_md
-        ),
-        html.Label('Select Output'),
-        dcc.Dropdown(
-            id="customtop-dropdown",
-            multi=True),
-
-        dcc.Graph(
-            id='customtop-plot',
+        html.Label('Select Output')
+        ,
+        dcc.Checklist(
+            id="customtop-checklist"
         ),
     ], style={'padding': 10, 'flex': 1}
     ),
@@ -106,11 +99,7 @@ app.layout = html.Div([
     
 ])
 
-from bin.utilities  import get_filename_ext, get_chain_names, get_residue_range
-import fnmatch
-from bin.custom_top import RigidBody, write_custom_topology
-from bin.custom_top import make_composite
-from pathlib import Path
+
 
 
 # Update coverage plot
@@ -180,47 +169,50 @@ def update_graph(options_chosen):
                 j += 1
         i +=1
     fig2.update_layout(height=600, width=1200, title_text="DFI profiles + Predicted hinges", 
-                      margin_pad=0, barmode="group")
+                      margin_pad=0, barmode="group", legend=dict(orientation="h"))
     fig2.update_yaxes(showgrid=False, range=[0,1], nticks=2)
     return fig2
 
-# Update composite Plot
+# # Update composite Plot
+# @app.callback(
+#     Output('composite-plot', 'figure'),
+#     [Input('output-dropdown', 'value')]
+#     )
+# def update_graph(output_chosen):
+#     composite_dir = os.path.join(output_chosen, "REPORT", "COVERAGE")
+#     comp_dict = read_compsite_files(composite_dir)
+
+#     # Plot
+#     comp_filenames = []
+#     fig3 = make_subplots(rows=len(comp_dict.keys())+1, cols=1, shared_xaxes=True)
+
+#     for file in comp_dict.keys():
+#         df = comp_dict[file]
+#         print(len(df.columns))
+#         fig3 = make_subplots(rows=len(df.columns)-1, cols=1, shared_xaxes=True)
+#         i = 0
+#         for column in df.columns:
+#             if i >= 1:
+#                 fig3.append_trace(go.Scatter(
+#                     x=df.iloc[:,0],
+#                     y=df[df.columns[i]],
+#                     fill='tozeroy',
+#                     name=str(column)
+#                 ), row=i, col=1)
+#             i +=1
+#             comp_filenames.append(file)
+#         fig3.update_layout(height=600, width=1200, title_text="Composite coverage", 
+#                             margin_pad=0, barmode="overlay")
+#         fig3.update_yaxes(showgrid=False, range=[0,1], nticks=2)
+
+#     return fig3
+
+
+
+# Update options for checklist for custom topology
 @app.callback(
-    Output('composite-plot', 'figure'),
-    [Input('output-dropdown', 'value')]
-    )
-def update_graph(options_chosen):
-    composite_dir = os.path.join(options_chosen, "REPORT", "COVERAGE")
-    comp_dict = read_compsite_files(composite_dir)
-
-    # Plot
-    comp_filenames = []
-    fig3 = make_subplots(rows=len(comp_dict.keys())+1, cols=1, shared_xaxes=True)
-
-    for file in comp_dict.keys():
-        df = comp_dict[file]
-        print(len(df.columns))
-        fig3 = make_subplots(rows=len(df.columns)-1, cols=1, shared_xaxes=True)
-        i = 0
-        for column in df.columns:
-            if i >= 1:
-                fig3.append_trace(go.Scatter(
-                    x=df.iloc[:,0],
-                    y=df[df.columns[i]],
-                    fill='tozeroy',
-                    name=str(column)
-                ), row=i, col=1)
-            i +=1
-            comp_filenames.append(file)
-        fig3.update_layout(height=600, width=1200, title_text="Composite coverage", 
-                            margin_pad=0, barmode="overlay")
-        fig3.update_yaxes(showgrid=False, range=[0,1], nticks=2)
-
-    return fig3
-
-# Update options for dropdown for custom topology
-@app.callback(
-    Output('customtop-dropdown', 'options'),
+    Output('customtop-checklist', 'options'),
+    Output('customtop-checklist', 'value'),
     [Input('output-dropdown', 'value')]
     )
 def update_dropdown(selected_output):
@@ -228,27 +220,39 @@ def update_dropdown(selected_output):
     for child in Path(os.path.join(selected_output, "REPORT", "COVERAGE")).iterdir():
         if child.is_file() and "composite" not in str(child):
             structure_list.append(str(child))
-    print(f"STRUCT_LIST {structure_list}")
-    # return [{"label": x, "value": x} for x in structure_list]
-    return structure_list
 
-# Update values for dropdown custom topology
-@app.callback(
-    Output('customtop-dropdown', 'value'),
-    [Input('customtop-dropdown', 'options')]
-    )
-def update_dropdown(selected_options):
-    return selected_options
+    
+    comp_dict = read_compsite_files(os.path.join(selected_output, "REPORT", "COVERAGE"))
+    split_path = selected_output.split("/")
+    out_name = split_path[-1]
+    filename = os.path.join(selected_output, "REPORT", "COVERAGE", f"{out_name}_composite_coverage.csv")
+    df = pd.read_csv(filename)
+    initial_structure_list = []
+    for str1 in df.columns[1:]:
+        id1 = str(os.path.basename(str1))
+        for str2 in structure_list:
+            id2 = str(os.path.basename(str2))
+            print(f"COMPARING: {id1} and {id2}")
+            if id1[0:-4] == id2[0:-13]:
+                initial_structure_list.append(str2)
+                print(f"ADDED {str2}")
+    
+        
+    return structure_list, initial_structure_list
 
 
 # Update custom composite
 @app.callback(
-    Output('customtop-plot', 'figure'),
-    [Input('customtop-dropdown', 'value')]
+    Output('composite-plot', 'figure'),
+    [Input('customtop-checklist', 'value')]
     )
 def update_graph(options_chosen):    
     if len(options_chosen) == 0:
         return None
+
+    if options_chosen is None:
+        fig = {}
+        return fig
 
     i = 0
     df_list = []
@@ -281,7 +285,7 @@ def update_graph(options_chosen):
 @app.callback(
     Output(component_id='custom-top-output', component_property='children'),
     Input(component_id='create-topology', component_property='n_clicks'),
-    State(component_id='customtop-dropdown', component_property='value'),
+    State(component_id='customtop-checklist', component_property='value'),
     State(component_id='output-dropdown',  component_property='value')
 )
 def onclick_topology(nclicks, selected_fragments, output_dir):
@@ -340,7 +344,7 @@ def onclick_topology(nclicks, selected_fragments, output_dir):
     out_name = str_out.split("/")[-1]
     # Write the topology file
     # write_custom_topology(os.path.join(output_dir, "IMP", f"{out_name}.topology"), rigid_bodies)
-    write_custom_topology(os.path.join(output_dir, "IMP", "TEST.topology"), rigid_bodies)
+    write_custom_topology(os.path.join(output_dir, "IMP", f"{out_name}_custom.topology"), rigid_bodies)
     
     
     return f"""N clicks: {nclicks}, \nFragments Selected: {selected_fragments},

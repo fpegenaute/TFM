@@ -359,6 +359,7 @@ class StructuReport():
             Protein[0]
         except Exception:
             print("Make sure your filename is  of the form: XXXXX.pdb/XXXX.cif")
+            print(f"FILENAME: {filename}")
 
         chains = [chain for chain in Protein[0].get_chains()]
         backbone = [j for i in Protein[0][chains[0].get_id()].get_backbone() \

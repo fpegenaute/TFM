@@ -307,6 +307,77 @@ if (args.alphamodel and args.PAE_json) or (args.run_alphafold):
                             domains_dir)
             l.info(f"Residue list of confident domains: {conf_domains}")
 
+# For Rosettafold models
+if os.path.exists(os.path.join(args.outdir,  query_name, "ROSETTAFOLD", "" )):
+    rf_dir = os.path.join(args.outdir,  query_name, "ROSETTAFOLD", "" )
+    # Setting up the parameters for the PHENIX library
+    master_phil = iotbx.phil.parse(master_phil_str)
+    params = master_phil.extract()
+    master_phil.format(python_object=params).show(out=sys.stdout)
+    p = params.process_predicted_model
+    p.domain_size = 15
+    p.remove_low_confidence_residues = True
+    p.maximum_rmsd = 1.5
+    p.split_model_by_compact_regions = True
+    p.b_value_field_is = 'rmsd'
+
+    from iotbx.data_manager import DataManager
+    
+    dm = DataManager()
+    dm.set_overwrite(True)
+
+
+    l.info("Extracting RoseTTaFold high confidence domains")
+    domains_dir = os.path.join(rf_dir, "DOMAINS", "")
+    Path(domains_dir).mkdir(parents=True, exist_ok=True)
+    l.info(f"Domains will be stored in:{domains_dir}")
+    abs_rf_dir = os.path.abspath(rf_dir)
+    rf_conficent_regions = []
+    for filename in os.listdir(rf_dir):
+        if os.path.isfile(os.path.join(abs_rf_dir,filename)):
+            newname = filename.split(".")
+            print(f"LIST NEWNAME: {newname}")
+            noext = newname[0:-1]
+            noext = "-".join(noext)
+            ext = newname[-1]
+            newname = noext+"."+ext
+            print(f"NEWNAME: {newname}")
+            filename = os.path.join(abs_rf_dir, filename)
+            newname = os.path.join(abs_rf_dir, newname)
+            os.rename(filename, newname)
+
+            l.info(f"Processing file: {newname}")
+            print("\nProcessing and splitting model into domains")
+            
+            m = dm.get_model(newname)
+            model_info = process_predicted_model(m,  params)
+
+            chainid_list = model_info.chainid_list
+            print("Segments found: %s" %(" ".join(chainid_list)))
+
+            mmm = model_info.model.as_map_model_manager()
+            
+            # Write all the domains in one file
+            mmm.write_model(os.path.join(domains_dir, 
+                            f"{PurePosixPath(newname).stem}_domains.pdb"))
+            
+            # Write different domains in different files
+            for chainid in chainid_list:
+                selection_string = "chain %s" %(chainid)
+                ph = model_info.model.get_hierarchy()
+                asc1 = ph.atom_selection_cache()
+                sel = asc1.selection(selection_string)
+                m1 = model_info.model.select(sel)
+                filepath = os.path.join(domains_dir, 
+                        f"{PurePosixPath(newname).stem}_{chainid}_RF.pdb")
+                dm.write_model_file(m1, filepath)
+                structures_for_query.append(filepath)
+                
+
+            conf_domains = extract_residue_list(os.path.join(domains_dir,  
+                            f"{PurePosixPath(newname).stem}_domains.pdb"), 
+                            domains_dir)
+            l.info(f"Residue list of confident domains: {conf_domains}")
 
 l.info(f"CONFIDENT FILES: {structures_for_query}")
 nrow = len(structures_for_query)
