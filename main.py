@@ -310,6 +310,7 @@ if (args.alphamodel and args.PAE_json) or (args.run_alphafold):
 # For Rosettafold models
 if os.path.exists(os.path.join(args.outdir,  query_name, "ROSETTAFOLD", "" )):
     rf_dir = os.path.join(args.outdir,  query_name, "ROSETTAFOLD", "" )
+    rf_models_dir = os.path.join(rf_dir, "model", "")
     # Setting up the parameters for the PHENIX library
     master_phil = iotbx.phil.parse(master_phil_str)
     params = master_phil.extract()
@@ -317,7 +318,7 @@ if os.path.exists(os.path.join(args.outdir,  query_name, "ROSETTAFOLD", "" )):
     p = params.process_predicted_model
     p.domain_size = 15
     p.remove_low_confidence_residues = True
-    p.maximum_rmsd = 1.5
+    p.maximum_rmsd = 2
     p.split_model_by_compact_regions = True
     p.b_value_field_is = 'rmsd'
 
@@ -331,17 +332,19 @@ if os.path.exists(os.path.join(args.outdir,  query_name, "ROSETTAFOLD", "" )):
     domains_dir = os.path.join(rf_dir, "DOMAINS", "")
     Path(domains_dir).mkdir(parents=True, exist_ok=True)
     l.info(f"Domains will be stored in:{domains_dir}")
-    abs_rf_dir = os.path.abspath(rf_dir)
+    abs_rf_dir = os.path.abspath(rf_models_dir)
     rf_conficent_regions = []
-    for filename in os.listdir(rf_dir):
-        if os.path.isfile(os.path.join(abs_rf_dir,filename)):
+    for filename in os.listdir(abs_rf_dir):
+        if os.path.isfile(os.path.join(abs_rf_dir,filename)) and \
+            (fnmatch.fnmatch(filename, "model_*.crderr.pdb") or \
+                fnmatch.fnmatch(filename, "model_*-crderr.pdb") ): 
             newname = filename.split(".")
-            print(f"LIST NEWNAME: {newname}")
+            l.info(f"LIST NEWNAME: {newname}")
             noext = newname[0:-1]
             noext = "-".join(noext)
             ext = newname[-1]
             newname = noext+"."+ext
-            print(f"NEWNAME: {newname}")
+            l.info(f"NEWNAME: {newname}")
             filename = os.path.join(abs_rf_dir, filename)
             newname = os.path.join(abs_rf_dir, newname)
             os.rename(filename, newname)

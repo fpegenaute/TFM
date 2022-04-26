@@ -1,0 +1,20 @@
+Filename= Output.pdb	| Chain(s)= 4	| AlphaValue= 4.5	| MinimumHingeLength= 5	| EccentricityClusters= 4
+Hindge Residues(Predicted):
+
+Hinge #1
+Residues: HIS-686 to PHE-695
+
+STATISTICS
+		N	Min	Max	Mean	Mode	Median	STDDev
+Total   	136	17.81	59.03	33.13264705882353	17.81	31.715	11.136609820192016
+Hinge   	40	17.81	31.8	25.104000000000003	17.81	25.25	4.542805740949088
+NonHinge	96	19.62	59.03	36.477916666666665	19.62	35.95	11.360157341621148
+
+p-value:	9.999000099990002e-05
+
+Pymol Terminal Commands for Visualizing:
+color blue, resi 686:695
+import plane
+plane.make_plane_points(name='HingePlane1', l1=[-50.312, 12.045, 64.3829951136697], l2=[-50.312, 6.082, 63.68560315539292], l3=[-34.367, 6.082, 66.0987723157411], center=False, makepseudo=False)
+set cgo_transparency, 0.35, HingePlane1
+#--------------------------------------------------#
