@@ -56,19 +56,24 @@ def run_dfi(structure):
     ref_name = PurePosixPath(structure).stem
     
     print("Running DFI analysis")
-    df_dfi = bin.dfi.dfi_calc.calc_dfi(structure)
+    try:
+        df_dfi = bin.dfi.dfi_calc.calc_dfi(structure)
+        # DFI dataframe (ResID, pctdfi)
+        ref_resid_array = np.array(df_dfi["ResID"].tolist())
+        ref_pctdfi_array = np.array(df_dfi["pctdfi"].tolist())
+        reference_df = pd.DataFrame({"ResID":ref_resid_array, 
+                                                    "pctdfi":ref_pctdfi_array })
+
+        # Insert a column with the name of the structure
+        ID_list = [ref_name] * len(ref_pctdfi_array)
+        reference_df.insert(loc=0, column="Chain", value=ID_list)
+    except Exception:
+        reference_df = pd.DataFrame({"ResID":[], 
+                                                    "pctdfi":[]})
 
 
 
-    # DFI dataframe (ResID, pctdfi)
-    ref_resid_array = np.array(df_dfi["ResID"].tolist())
-    ref_pctdfi_array = np.array(df_dfi["pctdfi"].tolist())
-    reference_df = pd.DataFrame({"ResID":ref_resid_array, 
-                                                "pctdfi":ref_pctdfi_array })
-
-    # Insert a column with the name of the structure
-    ID_list = [ref_name] * len(ref_pctdfi_array)
-    reference_df.insert(loc=0, column="Chain", value=ID_list)
+    
        
     return reference_df
 

@@ -17,7 +17,6 @@ import pandas as pd
 
 ## DASH
 from dash import Dash, dcc, html, Input, Output, State
-import webbrowser
 import subprocess
 
 #Custom topology
@@ -130,7 +129,8 @@ def update_graph(options_chosen):
         ), row=i, col=1)
         i +=1
 
-    fig1.update_layout(height=400, width=1000, title_text="Coverage")
+    # fig1.update_layout(height=400, width=1000, title_text="Coverage")
+    fig1.update_layout(title_text="Coverage")
     fig1.update_yaxes(showgrid=False, range=[0,1], nticks=2)
     
     return fig1
@@ -168,7 +168,9 @@ def update_graph(options_chosen):
                         row=i, col=1)
                 j += 1
         i +=1
-    fig2.update_layout(height=600, width=1200, title_text="DFI profiles + Predicted hinges", 
+    # fig2.update_layout(height=600, width=1200, title_text="DFI profiles + Predicted hinges", 
+    #                   margin_pad=0, barmode="group", legend=dict(orientation="h"))
+    fig2.update_layout(title_text="DFI profiles + Predicted hinges", 
                       margin_pad=0, barmode="group", legend=dict(orientation="h"))
     fig2.update_yaxes(showgrid=False, range=[0,1], nticks=2)
     return fig2
@@ -276,7 +278,8 @@ def update_graph(options_chosen):
         ), row=i, col=1)
         i +=1
 
-    fig4.update_layout(height=400, width=1000, title_text="Coverage")
+    # fig4.update_layout(height=400, width=1000, title_text="Coverage")
+    fig4.update_layout(title_text="Coverage")
     fig4.update_yaxes(showgrid=False, range=[0,1], nticks=2)
     
     return fig4

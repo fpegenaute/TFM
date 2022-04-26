@@ -2,109 +2,109 @@ Filename= Output.pdb	| Chain(s)= A	| AlphaValue= 4.5	| MinimumHingeLength= 5	| E
 Hindge Residues(Predicted):
 
 Hinge #1
-Residues: GLU-615 to LEU-664
+Residues: ILE-616 to GLN-662
 
 STATISTICS
 		N	Min	Max	Mean	Mode	Median	STDDev
 Total   	2688	34.92	999.99	454.8876785714286	999.99	457.22	195.04331483359698
-Hinge   	200	53.58	270.24	147.299	53.58	130.95499999999998	64.06876103843433
-NonHinge	2488	34.92	999.99	479.6134565916399	999.99	476.385	180.42511730034423
+Hinge   	188	53.58	270.24	147.1238297872341	53.58	118.19	64.4532670070798
+NonHinge	2500	34.92	999.99	478.03152	999.99	474.12	181.47113382907375
 
 p-value:	9.999000099990002e-05
 
 Pymol Terminal Commands for Visualizing:
-color blue, resi 615:664
+color blue, resi 616:662
 import plane
-plane.make_plane_points(name='HingePlane1', l1=[206.731, 207.444, 207.78320119220643], l2=[206.731, 170.122, 201.9638692149419], l3=[244.728, 170.122, 213.1056222460548], center=False, makepseudo=False)
+plane.make_plane_points(name='HingePlane1', l1=[206.731, 207.444, 208.9426498582227], l2=[206.731, 174.141, 203.15657258427467], l3=[244.728, 174.141, 212.879520289492], center=False, makepseudo=False)
 set cgo_transparency, 0.35, HingePlane1
 #--------------------------------------------------#
 
 Hinge #2
-Residues: GLU-811 to ILE-844
+Residues: ASN-819 to THR-836
 
 STATISTICS
 		N	Min	Max	Mean	Mode	Median	STDDev
 Total   	2688	34.92	999.99	454.8876785714286	999.99	457.22	195.04331483359698
-Hinge   	136	276.32	686.26	493.27882352941185	276.32	505.92499999999995	133.1654100283842
-NonHinge	2552	34.92	999.99	452.8417554858934	999.99	453.145	197.5891047447864
+Hinge   	72	379.64	669.06	518.9044444444445	379.64	506.245	81.28371062876157
+NonHinge	2616	34.92	999.99	453.125749235474	999.99	453.145	196.9547579780389
 
-p-value:	0.016798320167983202
+p-value:	0.004299570042995701
 
 Pymol Terminal Commands for Visualizing:
-color blue, resi 811:844
+color blue, resi 819:836
 import plane
-plane.make_plane_points(name='HingePlane2', l1=[190.166, 181.156, 221.6022447543481], l2=[190.166, 159.545, 204.3630518442856], l3=[204.524, 159.545, 219.85510334821814], center=False, makepseudo=False)
+plane.make_plane_points(name='HingePlane2', l1=[192.646, 181.156, 225.0946050544425], l2=[192.646, 165.823, 218.2688003245075], l3=[204.524, 165.823, 228.10486882468714], center=False, makepseudo=False)
 set cgo_transparency, 0.35, HingePlane2
 #--------------------------------------------------#
 
 Hinge #3
-Residues: GLN-852 to ASP-885
+Residues: TYR-855 to GLY-883
 
 STATISTICS
 		N	Min	Max	Mean	Mode	Median	STDDev
 Total   	2688	34.92	999.99	454.8876785714286	999.99	457.22	195.04331483359698
-Hinge   	136	336.35	886.63	496.06676470588235	336.35	466.03	132.30055041281148
-NonHinge	2552	34.92	999.99	452.6931818181818	999.99	456.625	197.58855610542298
+Hinge   	116	336.35	813.32	476.50896551724134	336.35	464.49	100.48517891554191
+NonHinge	2572	34.92	999.99	453.912534992224	999.99	457.15	198.19231276186596
 
-p-value:	0.0117988201179882
+p-value:	0.21447855214478553
 
 Pymol Terminal Commands for Visualizing:
-color blue, resi 852:885
+color blue, resi 855:883
 import plane
-plane.make_plane_points(name='HingePlane3', l1=[198.575, 201.649, 237.32685002214902], l2=[198.575, 166.485, 200.18072545077285], l3=[216.463, 166.485, 209.56779078821853], center=False, makepseudo=False)
+plane.make_plane_points(name='HingePlane3', l1=[198.575, 196.692, 228.77214143317875], l2=[198.575, 167.979, 202.6426253297171], l3=[213.108, 167.979, 215.1045067868678], center=False, makepseudo=False)
 set cgo_transparency, 0.35, HingePlane3
 #--------------------------------------------------#
 
 Hinge #4
-Residues: LYS-911 to SER-952
+Residues: ASP-914 to SER-951
 
 STATISTICS
 		N	Min	Max	Mean	Mode	Median	STDDev
 Total   	2688	34.92	999.99	454.8876785714286	999.99	457.22	195.04331483359698
-Hinge   	168	354.67	570.03	418.2071428571428	354.67	420.265	43.66697336964523
-NonHinge	2520	34.92	999.99	457.33304761904765	999.99	467.11	200.8860955649916
+Hinge   	152	354.67	518.63	412.41999999999996	354.67	417.70000000000005	37.729738515142834
+NonHinge	2536	34.92	999.99	457.43305993690853	999.99	466.29499999999996	200.30504397084863
 
-p-value:	0.0103989601039896
+p-value:	0.0058994100589941
 
 Pymol Terminal Commands for Visualizing:
-color blue, resi 911:952
+color blue, resi 914:951
 import plane
-plane.make_plane_points(name='HingePlane4', l1=[202.887, 194.06, 226.52044493490575], l2=[202.887, 155.378, 207.21389683099784], l3=[227.807, 155.378, 236.48462296650916], center=False, makepseudo=False)
+plane.make_plane_points(name='HingePlane4', l1=[202.887, 193.446, 231.49001430155334], l2=[202.887, 158.86, 208.32029232248766], l3=[225.249, 158.86, 227.70850217663644], center=False, makepseudo=False)
 set cgo_transparency, 0.35, HingePlane4
 #--------------------------------------------------#
 
 Hinge #5
-Residues: PHE-963 to SER-1043
+Residues: ASP-965 to PHE-1040
 
 STATISTICS
 		N	Min	Max	Mean	Mode	Median	STDDev
 Total   	2688	34.92	999.99	454.8876785714286	999.99	457.22	195.04331483359698
-Hinge   	324	178.79	669.77	416.1230864197531	178.79	395.16	130.14008065046133
-NonHinge	2364	34.92	999.99	460.20059221658204	999.99	462.23	201.74325357728094
+Hinge   	304	178.79	669.77	411.6617105263158	178.79	389.435	130.13697775793335
+NonHinge	2384	34.92	999.99	460.3997147651006	999.99	462.26	201.15827478426132
 
-p-value:	0.0004999500049995
+p-value:	9.999000099990002e-05
 
 Pymol Terminal Commands for Visualizing:
-color blue, resi 963:1043
+color blue, resi 965:1040
 import plane
-plane.make_plane_points(name='HingePlane5', l1=[200.468, 203.186, 225.40726297245348], l2=[200.468, 154.253, 214.764237586943], l3=[238.774, 154.253, 226.5332373677914], center=False, makepseudo=False)
+plane.make_plane_points(name='HingePlane5', l1=[202.316, 198.771, 223.97856816076904], l2=[202.316, 159.319, 214.52186584309788], l3=[235.228, 159.319, 227.0071508612105], center=False, makepseudo=False)
 set cgo_transparency, 0.35, HingePlane5
 #--------------------------------------------------#
 
 Hinge #6
-Residues: PRO-1087 to ARG-1124
+Residues: GLU-1094 to ASN-1120
 
 STATISTICS
 		N	Min	Max	Mean	Mode	Median	STDDev
 Total   	2688	34.92	999.99	454.8876785714286	999.99	457.22	195.04331483359698
-Hinge   	152	351.12	637.07	487.2436842105264	351.12	484.495	75.49259637526865
-NonHinge	2536	34.92	999.99	452.9483596214511	999.99	452.79999999999995	199.78465979346817
+Hinge   	108	367.32	637.07	496.55222222222227	367.32	489.46	69.66740490482503
+NonHinge	2580	34.92	999.99	453.1435813953488	999.99	453.09	198.38211973390986
 
-p-value:	0.0385961403859614
+p-value:	0.022797720227977204
 
 Pymol Terminal Commands for Visualizing:
-color blue, resi 1087:1124
+color blue, resi 1094:1120
 import plane
-plane.make_plane_points(name='HingePlane6', l1=[220.211, 197.169, 254.7824916085058], l2=[220.211, 170.77, 237.6200011970417], l3=[243.765, 170.77, 225.81203059930624], center=False, makepseudo=False)
+plane.make_plane_points(name='HingePlane6', l1=[220.211, 191.729, 250.01731824905846], l2=[220.211, 170.77, 237.08233452949324], l3=[241.003, 170.77, 228.26649814970273], center=False, makepseudo=False)
 set cgo_transparency, 0.35, HingePlane6
 #--------------------------------------------------#

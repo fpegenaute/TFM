@@ -2,19 +2,37 @@ Filename= Output.pdb	| Chain(s)= 1	| AlphaValue= 4.5	| MinimumHingeLength= 5	| E
 Hindge Residues(Predicted):
 
 Hinge #1
-Residues: LYS-800 to ARG-808
+Residues: THR-802 to ILE-809
 
 STATISTICS
 		N	Min	Max	Mean	Mode	Median	STDDev
-Total   	120	30.7	56.1	39.00600000000001	31.85	36.965	7.293345185852648
-Hinge   	36	31.85	39.82	33.916666666666664	31.85	33.61	2.4632273319547444
-NonHinge	84	30.7	56.1	41.18714285714286	31.27	39.82	7.584954495175139
+Total   	232	30.7	104.23	56.66362068965517	31.85	51.955	21.733309465860973
+Hinge   	32	31.85	36.03	33.17875000000001	31.85	33.019999999999996	1.3875287159190617
+NonHinge	200	30.7	104.23	60.421200000000006	31.27	56.485	21.100637776143166
 
 p-value:	9.999000099990002e-05
 
 Pymol Terminal Commands for Visualizing:
-color blue, resi 800:808
+color blue, resi 802:809
 import plane
-plane.make_plane_points(name='HingePlane1', l1=[-259.368, 126.34, -19.58711617000598], l2=[-259.368, 117.059, -19.52679745306649], l3=[-246.694, 117.059, -19.592878891600332], center=False, makepseudo=False)
+plane.make_plane_points(name='HingePlane1', l1=[-257.795, 123.528, -20.487627091081624], l2=[-257.795, 115.398, -20.86958498369422], l3=[-246.114, 115.398, -19.537065854331473], center=False, makepseudo=False)
 set cgo_transparency, 0.35, HingePlane1
+#--------------------------------------------------#
+
+Hinge #2
+Residues: PHE-840 to PHE-846
+
+STATISTICS
+		N	Min	Max	Mean	Mode	Median	STDDev
+Total   	232	30.7	104.23	56.66362068965517	31.85	51.955	21.733309465860973
+Hinge   	28	50.85	84.33	61.057142857142836	50.85	56.87	11.245131917266898
+NonHinge	204	30.7	104.23	56.06058823529412	31.85	46.56	22.733189299621174
+
+p-value:	0.256974302569743
+
+Pymol Terminal Commands for Visualizing:
+color blue, resi 840:846
+import plane
+plane.make_plane_points(name='HingePlane2', l1=[-259.932, 112.131, -20.778317879197104], l2=[-259.932, 107.289, -20.249587481138263], l3=[-248.294, 107.289, -17.61429012918208], center=False, makepseudo=False)
+set cgo_transparency, 0.35, HingePlane2
 #--------------------------------------------------#
