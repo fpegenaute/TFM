@@ -226,19 +226,16 @@ if args.run_alphafold:
 
 ### ROSETTAFOLD
 
-# Make folder for the RFoutput
-
-
-
    
 # If you want to use your RF model:
 if args.rosettamodel:
     l.info(f"custom RF model detected: {args.rosettamodel}")
     rf_dir = os.path.join(args.outdir,  query_name, "ROSETTAFOLD", "" )
+    custom_rf_dir = os.path.join(rf_dir, "CUSTOM")
     Path(rf_dir).mkdir(parents=True, exist_ok=True)
-    # Store the AF model and the PAE file in the correct folders
+    Path(custom_rf_dir).mkdir(parents=True, exist_ok=True)
     RF_custom_model = args.rosettamodel
-    shutil.copy(RF_custom_model, os.path.join(rf_dir, PurePosixPath(RF_custom_model).name))
+    shutil.copy(RF_custom_model, os.path.join(custom_rf_dir, PurePosixPath(RF_custom_model).name))
 if args.run_rosettafold:
     l.info(f"Submitting RF SLURM batch script")
     rf_dir = os.path.join(args.outdir,  query_name, "ROSETTAFOLD", "" )
@@ -333,6 +330,7 @@ if os.path.exists(os.path.join(args.outdir,  query_name, "ROSETTAFOLD", "" )):
     Path(domains_dir).mkdir(parents=True, exist_ok=True)
     l.info(f"Domains will be stored in:{domains_dir}")
     abs_rf_dir = os.path.abspath(rf_models_dir)
+    abs_custom_rf_dir = os.path.abspath(rf_models_dir)
     rf_conficent_regions = []
     for filename in os.listdir(abs_rf_dir):
         if os.path.isfile(os.path.join(abs_rf_dir,filename)) and \
@@ -375,7 +373,49 @@ if os.path.exists(os.path.join(args.outdir,  query_name, "ROSETTAFOLD", "" )):
                         f"{PurePosixPath(newname).stem}_{chainid}_RF.pdb")
                 dm.write_model_file(m1, filepath)
                 structures_for_query.append(filepath)
+    for filename in os.listdir(abs_custom_rf_dir):
+        if os.path.isfile(os.path.join(abs_rf_dir,filename)): 
+            newname = filename.split(".")
+            noext = newname[0:-1]
+            noext = "-".join(noext)
+            ext = newname[-1]
+            newname = noext+"."+ext
+            l.info(f"NEWNAME: {newname}")
+            filename = os.path.join(abs_custom_rf_dir, filename)
+            newname = os.path.join(abs_custom_rf_dir, newname)
+            os.rename(filename, newname)
+
+            l.info(f"Processing file: {newname}")
+            print("\nProcessing and splitting model into domains")
+            
+            m = dm.get_model(newname)
+            model_info = process_predicted_model(m,  params)
+
+            chainid_list = model_info.chainid_list
+            print("Segments found: %s" %(" ".join(chainid_list)))
+
+            mmm = model_info.model.as_map_model_manager()
+            
+            # Write all the domains in one file
+            mmm.write_model(os.path.join(domains_dir, 
+                            f"{PurePosixPath(newname).stem}_domains.pdb"))
+            
+            # Write different domains in different files
+            for chainid in chainid_list:
+                selection_string = "chain %s" %(chainid)
+                ph = model_info.model.get_hierarchy()
+                asc1 = ph.atom_selection_cache()
+                sel = asc1.selection(selection_string)
+                m1 = model_info.model.select(sel)
+                filepath = os.path.join(domains_dir, 
+                        f"{PurePosixPath(newname).stem}_{chainid}_RF.pdb")
+                dm.write_model_file(m1, filepath)
+                structures_for_query.append(filepath)
                 
+
+            conf_domains = extract_residue_list(os.path.join(domains_dir,  
+                            f"{PurePosixPath(newname).stem}_domains.pdb"), 
+                            domains_dir)           
 
             conf_domains = extract_residue_list(os.path.join(domains_dir,  
                             f"{PurePosixPath(newname).stem}_domains.pdb"), 
@@ -384,10 +424,10 @@ if os.path.exists(os.path.join(args.outdir,  query_name, "ROSETTAFOLD", "" )):
 
 l.info(f"CONFIDENT FILES: {structures_for_query}")
 nrow = len(structures_for_query)
-l.info(f"NROW: {nrow}")
 
 
-l.info("### HINGE DETECTION ###")
+
+l.info("### HINGE DETECTION and DFI ###")
 for structure in structures_for_query:
     reporter = StructuReport(structure)
     # Get coverage of the structure
