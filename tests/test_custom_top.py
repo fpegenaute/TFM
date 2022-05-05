@@ -41,13 +41,28 @@ class TestRigidbody(unittest.TestCase):
             bead_size=20,
             em_residues_per_gaussian=0, 
             type="AF_model")
+        
+        self.rb3 = RigidBody(resolution="all",
+            molecule_name= "SEC3_RF_A1_RF", 
+            color="orange" , 
+            fasta_fn="input_fasta/SEC3.fasta", 
+            # fasta_id=fasta, 
+            pdb_fn="output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A1_RF.pdb", 
+            chain="1",
+            residue_range=(135,230) , 
+            rigid_body=3, 
+            super_rigid_body="", 
+            chain_of_super_rigid_bodies="", 
+            bead_size=20,
+            em_residues_per_gaussian=0, 
+            type="RF_model")
     
 
     # Testing some of the automatically generated attributes
     def test_pdb_offset(self):
-        expected_offset = -73
-        self.assertEqual(expected_offset, self.rb1.pdb_offset)
+        self.assertEqual(-73, self.rb1.pdb_offset)
         self.assertEqual(-324, self.rb2.pdb_offset)
+        self.assertEqual(-134, self.rb3.pdb_offset)
 
     def test_fasta_fn(self):
         expected_fasta = "input_fasta/SEC3.fasta"
@@ -61,10 +76,13 @@ class TestRigidbody(unittest.TestCase):
     def test_get_ResIDs(self):
         resids = self.rb1.get_resIDs()
         self.assertGreater(len(resids), 0)
+        self.assertEqual(len(self.rb3.get_resIDs()), 62)
     
     def test_update_overlap(self):
+        self.rb1.update_overlap(self.rb3)
         self.assertEqual(len(self.rb1.overlap), 0)
         self.assertEqual(len(self.rb2.overlap), 0)
+        self.assertEqual(len(self.rb3.overlap), 62)
     
     def test_get_length(self):
         self.assertEqual(self.rb1.get_length(), 175)
