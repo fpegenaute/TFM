@@ -114,7 +114,7 @@ class RigidBody():
         
     
         return (residues)
-
+    
     def update_overlap(self, rigid_body):
         """
         Given another RigidBody instance, check their structural overlap, and 
@@ -196,10 +196,10 @@ class RigidBody():
                     {rigid_body.pdb_fn} and equal average BFactors. Assigning arbitrarely
                     the full overlap to {self.pdb_fn}. This means it will be 
                     discarded later, as overlap==length""")
-                    return
+                    return 
         else:
             l.info(f"No overlap between {self.pdb_fn} and {rigid_body.pdb_fn}")
-            return
+            return 
                
 
     def get_length(self):
@@ -235,7 +235,7 @@ class RigidBody():
         Return a pandas dataframe with the 
         coverage of the structure w.r.t it. 
 
-        The df will have two columns 'ResID' (int) and 'Structure' (0/1)
+        The df will have two columns 'ResID' (int) and 'filename' (0/1)
         save_csv: save the df as a csv
         outfile: Name of the file path to save the csv 
         """
