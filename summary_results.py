@@ -22,13 +22,13 @@ class Result():
         """
         df_list = []
         result_dict = {}
-        for child in Path(self.out_dir).iterdir():
-            if child.is_dir():
-                abs_child = abspath(child)
-                coverage_dir = os.path.join(abs_child, "REPORT", "COVERAGE", "")
-                for file in Path(coverage_dir).iterdir():
-                    df = pd.read_csv(file)
-                    df_list.append(df)
+        if Path(self.out_dir).is_dir():
+            abs_out = abspath(self.out_dir)
+            coverage_dir = os.path.join(abs_out, "REPORT", "COVERAGE", "")
+            for file in Path(coverage_dir).iterdir():
+                df = pd.read_csv(file)
+                df_list.append(df)
+
             i = 1
             for df in df_list:
                 if len(df_list) > i:
@@ -38,6 +38,7 @@ class Result():
                                 right_on = "ResID", 
                                 how = 'left')
                         i += 1
+                        print(df_merged)
                         continue
                     if i > 1:
                         df_merged = pd.merge(df_merged , df_list[i], 
@@ -45,14 +46,14 @@ class Result():
                                 right_on = "ResID", 
                                 how = 'left')
                         i += 1
-            # Sum the occurrences
-            df_merged['Sum'] = df_merged.iloc[:,1:].sum(axis=1)
-            # Get the number of rows with coverage (sum > 0)
-            total = len(df_merged.index)
-            covered = df_merged[df_merged.Sum > 0].shape[0]
-            percent = (covered/total)*100
 
-            result_dict.update({str(child) : { "Total": total , "Covered" : covered, "%" : percent}})
+        df_merged['Sum'] = df_merged.iloc[:,1:].sum(axis=1)
+        # Get the number of rows with coverage (sum > 0)
+        total = len(df_merged.index)
+        covered = df_merged[df_merged.Sum > 0].shape[0]
+        percent = (covered/total)*100
+
+        result_dict.update({str(self.out_dir) : { "Total": total , "Covered" : covered, "%" : percent}})
 
         return result_dict
 
@@ -62,10 +63,16 @@ class Result():
         """
         for child in Path(self.out_dir).iterdir():
             if child.is_dir():
-                abs_child = abspath(child)
-                coverage_dir = os.path.join(abs_child, "REPORT", "COVERAGE", "")
+                abs_out = abspath(child)
+                coverage_dir = os.path.join(abs_out, "REPORT", "COVERAGE", "")
 
-if __name__ == "__main__":    
-    result = Result("output/")
+
+
+
+    
+if __name__ == "__main__":  
+    
+    # Reszults for SEC3  
+    result = Result("output/SEC3")
     coverage = result.get_coverage()
     print(coverage)

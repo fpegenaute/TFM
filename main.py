@@ -373,44 +373,44 @@ if os.path.exists(os.path.join(args.outdir,  query_name, "ROSETTAFOLD", "" )):
                         f"{PurePosixPath(newname).stem}_{chainid}_RF.pdb")
                 dm.write_model_file(m1, filepath)
                 structures_for_query.append(filepath)
-    for filename in os.listdir(abs_custom_rf_dir):
-        if os.path.isfile(os.path.join(abs_rf_dir,filename)): 
-            newname = filename.split(".")
-            noext = newname[0:-1]
-            noext = "-".join(noext)
-            ext = newname[-1]
-            newname = noext+"."+ext
-            l.info(f"NEWNAME: {newname}")
-            filename = os.path.join(abs_custom_rf_dir, filename)
-            newname = os.path.join(abs_custom_rf_dir, newname)
-            os.rename(filename, newname)
+    # for filename in os.listdir(abs_custom_rf_dir):
+    #     if os.path.isfile(os.path.join(abs_rf_dir,filename)): 
+    #         newname = filename.split(".")
+    #         noext = newname[0:-1]
+    #         noext = "-".join(noext)
+    #         ext = newname[-1]
+    #         newname = noext+"."+ext
+    #         l.info(f"NEWNAME: {newname}")
+    #         filename = os.path.join(abs_custom_rf_dir, filename)
+    #         newname = os.path.join(abs_custom_rf_dir, newname)
+    #         os.rename(filename, newname)
 
-            l.info(f"Processing file: {newname}")
-            print("\nProcessing and splitting model into domains")
+    #         l.info(f"Processing file: {newname}")
+    #         print("\nProcessing and splitting model into domains")
             
-            m = dm.get_model(newname)
-            model_info = process_predicted_model(m,  params)
+    #         m = dm.get_model(newname)
+    #         model_info = process_predicted_model(m,  params)
 
-            chainid_list = model_info.chainid_list
-            print("Segments found: %s" %(" ".join(chainid_list)))
+    #         chainid_list = model_info.chainid_list
+    #         print("Segments found: %s" %(" ".join(chainid_list)))
 
-            mmm = model_info.model.as_map_model_manager()
+    #         mmm = model_info.model.as_map_model_manager()
             
-            # Write all the domains in one file
-            mmm.write_model(os.path.join(domains_dir, 
-                            f"{PurePosixPath(newname).stem}_domains.pdb"))
+    #         # Write all the domains in one file
+    #         mmm.write_model(os.path.join(domains_dir, 
+    #                         f"{PurePosixPath(newname).stem}_domains.pdb"))
             
-            # Write different domains in different files
-            for chainid in chainid_list:
-                selection_string = "chain %s" %(chainid)
-                ph = model_info.model.get_hierarchy()
-                asc1 = ph.atom_selection_cache()
-                sel = asc1.selection(selection_string)
-                m1 = model_info.model.select(sel)
-                filepath = os.path.join(domains_dir, 
-                        f"{PurePosixPath(newname).stem}_{chainid}_RF.pdb")
-                dm.write_model_file(m1, filepath)
-                structures_for_query.append(filepath)
+    #         # Write different domains in different files
+    #         for chainid in chainid_list:
+    #             selection_string = "chain %s" %(chainid)
+    #             ph = model_info.model.get_hierarchy()
+    #             asc1 = ph.atom_selection_cache()
+    #             sel = asc1.selection(selection_string)
+    #             m1 = model_info.model.select(sel)
+    #             filepath = os.path.join(domains_dir, 
+    #                     f"{PurePosixPath(newname).stem}_{chainid}_RF.pdb")
+    #             dm.write_model_file(m1, filepath)
+    #             structures_for_query.append(filepath)
                 
 
             conf_domains = extract_residue_list(os.path.join(domains_dir,  
