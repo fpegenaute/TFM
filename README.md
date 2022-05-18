@@ -94,12 +94,40 @@ structure is still unknown. You will find its sequence in FASTA format on the
 "input_fasta" directory. All the sequences you want to stydy have to be in that
 directory for the whole program to work.
 
+Here atre some usage examples. All of them asssume that you are in the TFM
+directory.
+
+First, activate your environment
+
+```console
+conda activate your_env
+```
+
 The simplest use case would be just looking for structures on the PDB:
 
+```console
+python3 main.py input_fasta/SEC3.fasta output
+```
+
+You will find your results in the "output" directory. Also, to enter the interactive
+user interface, right click on the address from the Dash output that will appear on your terminal, 
+and press "open address".
 
 
+Maybe you want to use some AlphaFold model you downloaded from the AlphaFold-EBi database.
 
-Uniformity in the naming:
+```console
+python3 main.py input_fasta/SEC3.fasta output -af AF2/SEC3_AF.pdb -j AF2/SEC3_PAE.json
+```
+
+Also, if you are running the program in a computer cluster with SLURM as a Workload manager,
+you could actuallr y run AlphaFold or RoseTTaFold. Let's try roseTTaFold:
+
+```console
+python3 main.py input_fasta/SEC3.fasta output -j AF2/SEC3_PAE.json -rr
+```
+
+## Important considerations
 
 If your protein of interest is Sec3, for example:
 - You need to locate it in the folder input_fasta/
