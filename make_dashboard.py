@@ -32,7 +32,7 @@ external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 app = Dash(__name__, external_stylesheets=external_stylesheets)
 app.css.config.serve_locally = True
 app.scripts.config.serve_locally = True
-
+server = app.server
 all_outputs = []
 for child in Path("output/").iterdir():
     if child.is_dir():
@@ -337,7 +337,8 @@ if __name__ == "__main__":
 
     try:
         app.run_server(debug=True, port = port)
-    
+        
+
     except OSError:
         print(f""" Port already in use, in bin/make_dashboard.py line XX, 
     change the number of the port to one that is not occupied.
