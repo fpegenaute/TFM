@@ -257,6 +257,69 @@ class RigidBody():
 
         return coverage_df
 
+    def split_rb_hinges(self, hinges_list):
+        """
+        Given a RigidBody instance and a list of hinges, split that RigidBody.
+
+        - self: rigidBody instance
+        - hinges_list: list of hinges in tuple format, e.g. [ (2,5), (124,456) ]
+
+        """
+        rb_list = []
+
+        # Sort them by appearence on the protein seq
+        hinges_list.sort(key=lambda tup: tup[0])
+
+        
+        if len(hinges_list) == 0:
+            rb_list.append(self)
+            return rb_list    
+        elif len(hinges_list) == 1:
+            rb1 = copy.deepcopy(self)
+            rb1.residue_range = (0, hinges_list[0][0])
+            rb2 = copy.deepcopy(self)
+            rb2.residue_range = (hinges_list[0][1], self.residue_range[1])
+            rb_list = rb_list + [rb1, rb2]
+            return rb_list    
+        else:
+            i = 1
+            while i < (len(hinges_list)):
+                print(f"I = {i}")
+                # make sure no hinges are overlapping
+                if hinges_list[i-1][1] >= hinges_list[i][0]:
+                    print(f"""hinges {hinges_list[i]} and {hinges_list[i+1]} overlapped, 
+                    discarding both""")
+                    i+=1
+                else:
+                    rb1 = copy.deepcopy(self)
+                    # First hinge
+                    if i == 0 and hinges_list[i][0] != 0 :
+                        rb1.residue_range = (0, hinges_list[i][0])
+                        i+=1
+                    elif i == 0 and hinges_list[i][0] == 0 :
+                        rb1.residue_range = (0, hinges_list[i][1])
+                        i+=1
+                        
+                    # Middle of the hinges
+                    elif i > 0:
+                        rb1.residue_range = (hinges_list[i-1][1], hinges_list[i][0])
+                        # last hinge
+                        if hinges_list[i][1] == self.residue_range[1]:
+                            i+=1
+                            continue
+                            
+                        elif hinges_list[i][1] != self.residue_range[1]:
+                            rb2 = copy.deepcopy(self)
+                            rb2.residue_range = (hinges_list[i][1], self.residue_range[1])
+                            rb_list.append(rb2)
+                            i+=1
+                    rb_list.append(rb1)
+                    i+=1
+
+                return rb_list
+
+    
+
         
 
         
@@ -477,6 +540,18 @@ def write_custom_topology(path_to_file, rigid_body_list):
                     break
         top_file.write("\n")  # write a blank line between different molecules
     top_file.close()
+
+
+
+
+
+
+    
+    # Split the rb in different rbs in function of the hinges
+      
+
+
+
 
 if __name__ == '__main__':
 

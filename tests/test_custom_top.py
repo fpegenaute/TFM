@@ -17,7 +17,7 @@ class TestRigidbody(unittest.TestCase):
             color="blue" , 
             fasta_fn="input_fasta/SEC3.fasta", 
             # fasta_id=fasta, 
-            pdb_fn="output/SEC3/PDB/partial/5lg4_B.pdb", 
+            pdb_fn="RESULTS/output/SEC3/PDB/partial/5lg4_B.pdb", 
             chain="B",
             residue_range= (74,249), 
             rigid_body=1, 
@@ -32,7 +32,7 @@ class TestRigidbody(unittest.TestCase):
             color="orange" , 
             fasta_fn="input_fasta/SEC3.fasta", 
             # fasta_id=fasta, 
-            pdb_fn="output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A2_AF.pdb", 
+            pdb_fn="RESULTS/output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A2_AF.pdb", 
             chain="2",
             residue_range=(325,450) , 
             rigid_body=2, 
@@ -47,7 +47,7 @@ class TestRigidbody(unittest.TestCase):
             color="orange" , 
             fasta_fn="input_fasta/SEC3.fasta", 
             # fasta_id=fasta, 
-            pdb_fn="output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A1_RF.pdb", 
+            pdb_fn="RESULTS/output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A1_RF.pdb", 
             chain="1",
             residue_range=(135,230) , 
             rigid_body=3, 
@@ -103,6 +103,18 @@ class TestRigidbody(unittest.TestCase):
             len(coverage_df[coverage_df.columns[0]]), 
             len(coverage_df[coverage_df.columns[1]])
             )
+    def test_split_rb_hinges(self):
+        # Use case: 1 hinge, 2 rbs
+        rb_list = self.rb1.split_rb_hinges([(100,130)])
+        res_ranges = [rb.residue_range for rb in rb_list]
+        self.assertCountEqual(res_ranges, [(0, 100), (130, 249)])
+
+        # Use case: >1 hinges
+        rb_list = self.rb1.split_rb_hinges([(76,86), (100,130), (140,220)])
+        print(len(rb_list))
+        hinges_list = [rb.residue_range for rb in rb_list] 
+        hinges_list.sort(key=lambda tup: tup[0])
+        print(hinges_list)
 
     
         
