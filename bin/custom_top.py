@@ -282,41 +282,38 @@ class RigidBody():
             rb_list = rb_list + [rb1, rb2]
             return rb_list    
         else:
-            i = 1
-            while i < (len(hinges_list)):
-                print(f"I = {i}")
+            for index in range(len(hinges_list)):
+                print(f"INDEX {index}")
                 # make sure no hinges are overlapping
-                if hinges_list[i-1][1] >= hinges_list[i][0]:
-                    print(f"""hinges {hinges_list[i]} and {hinges_list[i+1]} overlapped, 
-                    discarding both""")
-                    i+=1
-                else:
-                    rb1 = copy.deepcopy(self)
-                    # First hinge
-                    if i == 0 and hinges_list[i][0] != 0 :
-                        rb1.residue_range = (0, hinges_list[i][0])
-                        i+=1
-                    elif i == 0 and hinges_list[i][0] == 0 :
-                        rb1.residue_range = (0, hinges_list[i][1])
-                        i+=1
-                        
-                    # Middle of the hinges
-                    elif i > 0:
-                        rb1.residue_range = (hinges_list[i-1][1], hinges_list[i][0])
-                        # last hinge
-                        if hinges_list[i][1] == self.residue_range[1]:
-                            i+=1
-                            continue
-                            
-                        elif hinges_list[i][1] != self.residue_range[1]:
+                # if hinges_list[index][1] >= hinges_list[index+1][0]:
+                #     print(f"""hinges {hinges_list[index]} and {hinges_list[index+1]} overlapped, 
+                #     discarding both""")
+                # else:
+                    
+                rb1 = copy.deepcopy(self)
+                if index == 0:
+                    if hinges_list[index][0] != 0 :
+                        rb1.residue_range = (0, hinges_list[index][0])
+                    if hinges_list[index][0] == 0 :
+                        rb1.residue_range = (0, hinges_list[index][1]) 
+                if index > 0:
+                    if index != (len(hinges_list)-1):
+                        rb1.residue_range = (hinges_list[index-1][1], hinges_list[index][0])
+            
+                    if index == (len(hinges_list)-1):
+                        if hinges_list[index][1] < self.residue_range[1]:
+                            # rb1.residue_range = (hinges_list[index][1], self.residue_range[1])
+                            rb1.residue_range = (hinges_list[index-1][1], hinges_list[index][0])
                             rb2 = copy.deepcopy(self)
-                            rb2.residue_range = (hinges_list[i][1], self.residue_range[1])
-                            rb_list.append(rb2)
-                            i+=1
-                    rb_list.append(rb1)
-                    i+=1
+                            rb2.residue_range = (hinges_list[index][1], self.residue_range[1])
+                            rb_list = rb_list + [rb2]
+                        if hinges_list[index][1] == self.residue_range[1]:
+                            rb1.residue_range = (hinges_list[index-1][1], hinges_list[index][0])
+                rb_list = rb_list + [rb1]
 
-                return rb_list
+                
+
+        return rb_list
 
     
 
