@@ -283,32 +283,33 @@ class RigidBody():
             return rb_list    
         else:
             for index in range(len(hinges_list)):
-                print(f"INDEX {index}")
                 # make sure no hinges are overlapping
                 # if hinges_list[index][1] >= hinges_list[index+1][0]:
                 #     print(f"""hinges {hinges_list[index]} and {hinges_list[index+1]} overlapped, 
                 #     discarding both""")
                 # else:
-                    
                 rb1 = copy.deepcopy(self)
                 if index == 0:
                     if hinges_list[index][0] != 0 :
                         rb1.residue_range = (0, hinges_list[index][0])
                     if hinges_list[index][0] == 0 :
-                        rb1.residue_range = (0, hinges_list[index][1]) 
+                        rb1.residue_range = (0, hinges_list[index][1])
+                    if hinges_list[index][0] < self.residue_range[0]:
+                        rb1.residue_range = (0, hinges_list[index][1])
                 if index > 0:
                     if index != (len(hinges_list)-1):
                         rb1.residue_range = (hinges_list[index-1][1], hinges_list[index][0])
             
                     if index == (len(hinges_list)-1):
                         if hinges_list[index][1] < self.residue_range[1]:
-                            # rb1.residue_range = (hinges_list[index][1], self.residue_range[1])
                             rb1.residue_range = (hinges_list[index-1][1], hinges_list[index][0])
                             rb2 = copy.deepcopy(self)
                             rb2.residue_range = (hinges_list[index][1], self.residue_range[1])
                             rb_list = rb_list + [rb2]
                         if hinges_list[index][1] == self.residue_range[1]:
                             rb1.residue_range = (hinges_list[index-1][1], hinges_list[index][0])
+                        if hinges_list[index][1] >= self.residue_range[1]:
+                            rb1.residue_range = (hinges_list[index][0], self.residue_range[1])
                 rb_list = rb_list + [rb1]
 
                 

@@ -2,4 +2,4 @@
 .DS_store
 
 # Ignore ROSETTAFOLD Output for SEC3 (REMOVE AFTER TESTING)
-output/SEC3/ROSETTAFOLD/**
+output/**
