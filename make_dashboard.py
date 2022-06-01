@@ -108,15 +108,13 @@ app.layout = html.Div([
     html.Div(children=[
         html.Button(
             "Generate IMP Topology File",
-            id="create-topology",
+            id="create-topology-button",
             n_clicks=0),
     ], style={'padding': 10, 'flex': 1}
     ),
 
     
 ])
-
-
 
 
 # Update coverage plot
@@ -188,8 +186,6 @@ def update_graph(options_chosen):
                     row=i, col=1)
                     j += 1
         i +=1
-    # fig2.update_layout(height=600, width=1200, title_text="DFI profiles + Predicted hinges", 
-    #                   margin_pad=0, barmode="group", legend=dict(orientation="h"))
     fig2.update_layout(title_text="DFI profiles + Predicted hinges", 
                       margin_pad=10, barmode="group", legend=dict(orientation="h",  y=-0.35))
     fig2.update_yaxes(showgrid=False, range=[0,1], nticks=2)
@@ -274,13 +270,14 @@ def update_graph(options_chosen):
 # Create topology file on click
 @app.callback(
     Output(component_id='hinges-output', component_property='children'),
-    Input(component_id='customtop-checklist', component_property='value'),
+    State(component_id='customtop-checklist', component_property='value'),
+    Input(component_id="create-topology-button", component_property="n_clicks"),
     State(component_id='output-dropdown',  component_property='value'),
     State(component_id="hinges-input", component_property="children")
 )
-def onclick_topology(selected_fragments, output_dir, str_hinges_input):
+def onclick_topology(selected_fragments, n_clicks, output_dir, str_hinges_input):
     structure_list = []
-    
+    clicks = n_clicks
     try:
         for child in Path(os.path.join(output_dir, "PDB", "total")).iterdir():
              if child.is_file() and "composite" not in str(child):
@@ -353,8 +350,11 @@ def onclick_topology(selected_fragments, output_dir, str_hinges_input):
     # Write the topology file
     write_custom_topology(os.path.join(output_dir, "IMP", f"{out_name}_custom.topology"), final_rigid_bodies)
     
+    rb_names = [str(rb.pdb_fn) for rb in final_rigid_bodies]
+    nl = '<br>'
+    text = f"Topology file created with:{nl}{nl.join(rb_names)}"
     
-    return f"""{[rb.pdb_fn for rb in final_rigid_bodies] }"""
+    return text
 
 
 if __name__ == "__main__":

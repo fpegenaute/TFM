@@ -265,7 +265,7 @@ class RigidBody():
         - hinges_list: list of hinges in tuple format, e.g. [ (2,5), (124,456) ]
 
         """
-        rb_list = []
+        rb_list = [copy.deepcopy(self)]
 
         # Sort them by appearence on the protein seq
         hinges_list.sort(key=lambda tup: tup[0])
@@ -289,6 +289,13 @@ class RigidBody():
                 #     discarding both""")
                 # else:
                 rb1 = copy.deepcopy(self)
+                if hinges_list[index][0] < self.residue_range[0] and \
+                    hinges_list[index][1] < self.residue_range[0]:
+                    continue
+                if hinges_list[index][0] > self.residue_range[1] and \
+                    hinges_list[index][1] > self.residue_range[1]:
+                    continue
+
                 if index == 0:
                     if hinges_list[index][0] != 0 :
                         rb1.residue_range = (0, hinges_list[index][0])
@@ -305,11 +312,13 @@ class RigidBody():
                             rb1.residue_range = (hinges_list[index-1][1], hinges_list[index][0])
                             rb2 = copy.deepcopy(self)
                             rb2.residue_range = (hinges_list[index][1], self.residue_range[1])
+                            rb2.pdb_offset = - (rb2.residue_range[0] - 1)
                             rb_list = rb_list + [rb2]
                         if hinges_list[index][1] == self.residue_range[1]:
                             rb1.residue_range = (hinges_list[index-1][1], hinges_list[index][0])
                         if hinges_list[index][1] >= self.residue_range[1]:
                             rb1.residue_range = (hinges_list[index][0], self.residue_range[1])
+                rb1.pdb_offset = - (rb1.residue_range[0] - 1)
                 rb_list = rb_list + [rb1]
 
                 
