@@ -75,12 +75,10 @@ Let's imagine you have a proterin of 200 amino acids. The DFI and PACKMAN hinge
 prediction are indicating a putative hinge region between positions 50 and 100 
 and another  one between 120 and 130.
 
-First, you will have to select the structure file you want to apply these 
-regions to.
 
 In the box, you will need to introduce the hinges with the following format:
 50:100,120:130
 
-The program will split the structure, in the topology file, according to the 
+The program will split the structures, in the topology file, according to the 
 hinges introduced.
 """

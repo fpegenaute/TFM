@@ -98,12 +98,12 @@ app.layout = html.Div([
     html.Div(
         id='custom-top-output'
     ),
-
-    html.Div(
-        id="hinges-input", 
-        children="10:20,100:150"
+    html.Div(children=[
+        dcc.Input(id='custom-hinges-input', 
+            placeholder='Enter hinges here:', 
+            value="0:0", type='text') 
+    ], style={'padding': 10, 'flex': 1}
     ),
-
 
     html.Div(children=[
         html.Button(
@@ -273,7 +273,7 @@ def update_graph(options_chosen):
     State(component_id='customtop-checklist', component_property='value'),
     Input(component_id="create-topology-button", component_property="n_clicks"),
     State(component_id='output-dropdown',  component_property='value'),
-    State(component_id="hinges-input", component_property="children")
+    State(component_id="custom-hinges-input", component_property="value")
 )
 def onclick_topology(selected_fragments, n_clicks, output_dir, str_hinges_input):
     structure_list = []
@@ -350,11 +350,9 @@ def onclick_topology(selected_fragments, n_clicks, output_dir, str_hinges_input)
     # Write the topology file
     write_custom_topology(os.path.join(output_dir, "IMP", f"{out_name}_custom.topology"), final_rigid_bodies)
     
-    rb_names = [str(rb.pdb_fn) for rb in final_rigid_bodies]
-    nl = '<br>'
-    text = f"Topology file created with:{nl}{nl.join(rb_names)}"
+     
     
-    return text
+    return f"Topology file created with:{[str(rb.pdb_fn) for rb in final_rigid_bodies]}"
 
 
 if __name__ == "__main__":

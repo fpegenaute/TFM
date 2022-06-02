@@ -320,6 +320,8 @@ class RigidBody():
                             rb1.residue_range = (hinges_list[index][0], self.residue_range[1])
                 rb1.pdb_offset = - (rb1.residue_range[0] - 1)
                 rb_list = rb_list + [rb1]
+                if len(rb_list) == 0:
+                    rb_list = rb_list + self
 
                 
 
