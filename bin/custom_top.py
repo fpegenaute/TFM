@@ -293,7 +293,6 @@ class RigidBody():
                      hinges_list[0][1] < self.residue_range[1]:
                         rb1.residue_range = (hinges_list[0][1], self.residue_range[1])
                         rb_list = rb_list + [rb1]
-                        
                 # hinge starting at the beginning of the structure
                 if hinges_list[0][0] == self.residue_range[0] and\
                     hinges_list[0][1] < self.residue_range[1]:
@@ -306,17 +305,17 @@ class RigidBody():
                         rb2 = copy.deepcopy(self)
                         rb2.residue_range = (hinges_list[0][1], self.residue_range[1])
                         rb_list = rb_list + [rb1, rb2]
-                # hinge covering the end of the structure
-                if hinges_list[0][0] > self.residue_range[0] and\
-                    hinges_list[0][0] < self.residue_range[1] and\
-                     hinges_list[0][1] > self.residue_range[1]:
-                        rb1.residue_range = (self.residue_range[0],hinges_list[0][0])
-                        rb_list = rb_list + [rb1]
                 # hinge ending at the end of the structure
                 if hinges_list[0][1] == self.residue_range[1] and\
                     hinges_list[0][0] < self.residue_range[1] and \
                         hinges_list[0][0] > self.residue_range[0]:
                         rb1.residue_range = (self.residue_range[0], hinges_list[0][0])
+                        rb_list = rb_list + [rb1]
+                # hinge covering the end of the structure
+                if hinges_list[0][0] > self.residue_range[0] and\
+                    hinges_list[0][0] < self.residue_range[1] and\
+                     hinges_list[0][1] > self.residue_range[1]:
+                        rb1.residue_range = (self.residue_range[0],hinges_list[0][0])
                         rb_list = rb_list + [rb1]
                 
                 return rb_list    
@@ -560,48 +559,48 @@ def write_custom_topology(path_to_file, rigid_body_list):
         offset = rb.pdb_offset
         bead_size = rb.bead_size
         em_gaussian = rb.em_residues_per_gaussian
-        if resolution == "all":
-            top_file.write("|{:15}|{:10}|{:20}|{:15}|{:16}|{:7}|{:15}|{:11}|{:11}|"
-                           "{:28}|{:<12}|{:19}|{:27}|\n".format(mol_name, color, 
-                           fasta_fn, fasta_id, str(pdb_fn), chain, "all", offset,
-                           bead_size, em_gaussian, rigid_body_counter, "", ""))
-            rigid_body_counter += 1
+        # if resolution == "all":
+        #     top_file.write("|{:15}|{:10}|{:20}|{:15}|{:16}|{:7}|{:15}|{:11}|{:11}|"
+        #                    "{:28}|{:<12}|{:19}|{:27}|\n".format(mol_name, color, 
+        #                    fasta_fn, fasta_id, str(pdb_fn), chain, "all", offset,
+        #                    bead_size, em_gaussian, rigid_body_counter, "", ""))
+        #     rigid_body_counter += 1
 
             
-        else:
-            # If you want to add different options for X molecules (DNA or Proteins) this
-            # is a way
-            for n in range(start_residue, last_residue + 1, resolution):
-                if start_residue + resolution <= last_residue:
-                    top_file.write("|{:15}|{:10}|{:20}|{:15}|{:16}|{:7}|{:15}|{:11}|{:11}|"
-                                   "{:28}|{:<12}|{:19}|{:27}|\n".format(mol_name, 
-                                   color, fasta_fn, fasta_id, pdb_fn, chain, 
-                                   "{},{}".format(start_residue, 
-                                   start_residue + resolution), offset, 
-                                   bead_size, em_gaussian, rigid_body_counter, 
-                                   "", ""))
-                    start_residue += resolution + 1
-                    rigid_body_counter += 1
-                else:
-                    top_file.write("|{:15}|{:10}|{:20}|{:15}|{:16}|{:7}|{:15}|{:11}|{:11}|"
-                                "{:28}|{:<12}|{:19}|{:27}|\n".format(mol_name, 
-                                color, fasta_fn, fasta_id, pdb_fn, chain, 
-                                "{},{}".format(start_residue, last_residue),
-                                offset, bead_size, em_gaussian,
-                                rigid_body_counter, "", ""))
+        # else:
+        #     # If you want to add different options for X molecules (DNA or Proteins) this
+        #     # is a way
+            # for n in range(start_residue, last_residue + 1, resolution):
+            #     if start_residue + resolution <= last_residue:
+            #         top_file.write("|{:15}|{:10}|{:20}|{:15}|{:16}|{:7}|{:15}|{:11}|{:11}|"
+            #                        "{:28}|{:<12}|{:19}|{:27}|\n".format(mol_name, 
+            #                        color, fasta_fn, fasta_id, pdb_fn, chain, 
+            #                        "{},{}".format(start_residue, 
+            #                        start_residue + resolution), offset, 
+            #                        bead_size, em_gaussian, rigid_body_counter, 
+            #                        "", ""))
+            #         start_residue += resolution + 1
+            #         rigid_body_counter += 1
+            #     else:
+            #         top_file.write("|{:15}|{:10}|{:20}|{:15}|{:16}|{:7}|{:15}|{:11}|{:11}|"
+            #                     "{:28}|{:<12}|{:19}|{:27}|\n".format(mol_name, 
+            #                     color, fasta_fn, fasta_id, pdb_fn, chain, 
+            #                     "{},{}".format(start_residue, last_residue),
+            #                     offset, bead_size, em_gaussian,
+            #                     rigid_body_counter, "", ""))
                     
-                    rigid_body_counter += 1
-                    break
+            #         rigid_body_counter += 1
+            #         break
+        top_file.write("|{:15}|{:10}|{:20}|{:15}|{:16}|{:7}|{:15}|{:11}|{:11}|"
+                           "{:28}|{:<12}|{:19}|{:27}|\n".format(mol_name, color, 
+                           fasta_fn, fasta_id, str(pdb_fn), chain,"{},{}".format(start_residue, 
+                            last_residue), offset, bead_size, em_gaussian, 
+                            rigid_body_counter, "", ""))
+        rigid_body_counter += 1
+
+
         top_file.write("\n")  # write a blank line between different molecules
     top_file.close()
-
-
-
-
-
-
-    
-    # Split the rb in different rbs in function of the hinges
       
 
 
