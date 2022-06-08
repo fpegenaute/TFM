@@ -112,13 +112,13 @@ class TestRigidbody(unittest.TestCase):
         # Use case: 1 hinge, 2 rbs
         rb_list = self.rb1.split_rb_hinges([(100,130)])
         res_ranges = [rb.residue_range for rb in rb_list]
-        self.assertCountEqual(res_ranges, [(0, 100), (130, 249)])
+        self.assertCountEqual(res_ranges, [(74, 100), (130, 249)])
 
         # Use case: >1 hinges
         rb_list = self.rb1.split_rb_hinges([(76,86), (100,130), (140,220)])
         res_ranges = [rb.residue_range for rb in rb_list] 
         res_ranges.sort(key=lambda tup: tup[0])
-        self.assertCountEqual(res_ranges, [(0, 76), (86, 100), (130, 140), (220, 249)])
+        self.assertCountEqual(res_ranges, [(74, 76), (86, 100), (130, 140), (220, 249)])
 
 
     

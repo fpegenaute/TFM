@@ -317,6 +317,7 @@ class RigidBody():
                      hinges_list[0][1] > self.residue_range[1]:
                         rb1.residue_range = (self.residue_range[0],hinges_list[0][0])
                         rb_list = rb_list + [rb1]
+                return rb_list
             
         elif len(hinges_list) > 1:
             for index in range(len(hinges_list)):                
