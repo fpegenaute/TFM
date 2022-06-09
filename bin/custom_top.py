@@ -499,7 +499,7 @@ def make_rb_list(structures_list, fasta):
                 rigid_body=i, 
                 super_rigid_body="", 
                 chain_of_super_rigid_bodies="", 
-                bead_size=20,
+                bead_size=4,
                 em_residues_per_gaussian=0, 
                 type="AF_model")
                 # Add the rigid body to a list
@@ -523,7 +523,7 @@ def make_rb_list(structures_list, fasta):
                 rigid_body=i, 
                 super_rigid_body="", 
                 chain_of_super_rigid_bodies="", 
-                bead_size=20,
+                bead_size=4,
                 em_residues_per_gaussian=0, 
                 type="RF_model")
                 # Add the rigid body to a list
