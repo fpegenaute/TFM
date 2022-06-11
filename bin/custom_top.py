@@ -430,7 +430,7 @@ class RigidBody():
 
 
 ### FUNCTIONS
-from bin.graphical_summary import extract_coincident_positions, plot_dfi_hinge_summary
+from bin.graphical_summary import PDB_get_resid_set, extract_coincident_positions, plot_dfi_hinge_summary
 
 def make_composite(rb_list, reference_fasta=None, save_csv=False, outdir=None):
     """
@@ -583,12 +583,22 @@ def write_custom_topology(path_to_file, rigid_body_list):
     :param path_to_file: path to write custom topology
     :rigid_body_list: list of RigidBody objects
     """
+
     top_file = open(path_to_file, "w")
     # Write header of topology
     header = ["molecule_name", "color", "fasta_fn", "fasta_id", "pdb_fn", 
     "chain", "residue_range", "pdb_offset", "bead_size", 
     "em_residues_per_gaussian", "rigid_body", "super_rigid_body",
               "chain_of_super_rigid_bodies"]
+    # fasta_dir = os.path.abspath(PurePosixPath(rigid_body_list[0].fasta_fn).parent)
+    # pdb_dir = os.path.abspath(PurePosixPath(rigid_body_list[0].pdb_fn).parent.parent.parent)
+    # IMP won't read abs paths from the topology file :)
+    pdb_dir = "../"
+    fasta_dir = "../../../input_fasta"
+    top_file.write(f"|directories|"+"\n")
+    top_file.write(f"|pdb_dir|{pdb_dir}|"+"\n")
+    top_file.write(f"|fasta_dir|{fasta_dir}|"+"\n")
+    top_file.write("\n")
     top_file.write("|{:15}|{:10}|{:20}|{:15}|{:16}|{:7}|{:15}|{:11}|{:11}|"
                    "{:28}|{:12}|{:19}|{:27}|\n".format(header[0], header[1], 
                     header[2], header[3], header[4], header[5], header[6], 
@@ -601,9 +611,9 @@ def write_custom_topology(path_to_file, rigid_body_list):
         resolution = rb.resolution
         mol_name = rb.molecule_name
         color = rb.color
-        fasta_fn = os.path.abspath(rb.fasta_fn)
+        fasta_fn = PurePosixPath(rb.fasta_fn).name
         fasta_id = rb.fasta_id+":"+rb.chain
-        pdb_fn = os.path.abspath(rb.pdb_fn)
+        pdb_fn = Path(*Path(rb.pdb_fn).parts[-3:])
         chain = rb.chain
         start_residue = rb.residue_range[0]
         last_residue = rb.residue_range[1]
