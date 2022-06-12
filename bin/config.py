@@ -3,7 +3,11 @@
 # RoseTTaFold
 
 blastconfig = {
-    "blastdb" : "/home/gallegolab/Desktop/TFM/databases/BLAST/pdbaa"
+    "blastdb" : "/home/gallegolab/Desktop/TFM/databases/BLAST/pdbaa",
+    "eval_cutoff" : 0.000005, 
+    "best_hit_score_edge" : 0.1, 
+    "best_hit_overhang" : 0.25,
+    "min_length_match" : 5
 }
 
 AF2config = {
@@ -56,5 +60,16 @@ module load modulepath/noarch
 module load RoseTTAFold/v1.1.0-Miniconda3-4.7.10
 """
 
+PACKMANconfig ={
+    "alpha" : 4.5,
+    "alpha_range" : None
+}
+
+CCTBXconfig = {
+    "AF2_maximum_rmsd" : 1.5,
+    "AF2_domain_size" : 15,
+    "RF_maximum_rmsd" : 2, 
+    "RF_domain_size" : 15
+}
 if __name__ == "__main__":
     print("config.py file not executable!")

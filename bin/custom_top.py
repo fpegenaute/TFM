@@ -422,15 +422,10 @@ class RigidBody():
 
             return rb_list    
         
-    
-
-        
-
-        
 
 
 ### FUNCTIONS
-from bin.graphical_summary import PDB_get_resid_set, extract_coincident_positions, plot_dfi_hinge_summary
+from bin.graphical_summary import PDB_get_resid_set, extract_coincident_positions 
 
 def make_composite(rb_list, reference_fasta=None, save_csv=False, outdir=None):
     """

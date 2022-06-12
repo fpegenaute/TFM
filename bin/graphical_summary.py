@@ -8,6 +8,7 @@ from Bio import SeqIO
 import os
 import bin.utilities
 import mplcursors
+from config import PACKMANconfig
 
 
 
@@ -170,139 +171,8 @@ def plot_coverage(fastafile, pdblist, nrow):
     
 from bin.dfi.DFI_plotter import run_dfi
 from scipy.signal import find_peaks
-import matplotlib.ticker as plticker
 import pandas as pd
 import sys
-
-def plot_dfi_hinge_summary(structure_list, fasta_reference, hinge_directory):
-    """
-    Given a list of PDB files and a reference fasta file, run DFI analysis and 
-    plot the results indicating the putative flexible residues, selected using 
-    peak detection in scipy and only in the regions available in the structures
-    
-    Return a df with theses putative flexible residues
-    """
-    l.info(f"START PLOTTING SUMMARY FOR: {structure_list}")
-    fasta_dict = FASTA_get_resid_dict(fasta_reference)
-    
-    DFI_list = []
-    rows = []
-    for file in structure_list:
-        DFI_df = run_dfi(file)
-        DFI_list.append(DFI_df)
-        rows.append('Template {}'.format(os.path.basename(file)))
-    l.info(f"DFI_list: {DFI_list}")
-    
-    l.info(f"Setting up the fig and axes")
-    fig, axes = plt.subplots(nrows=len(structure_list), ncols=1, figsize=(12, 8))
-    print(f"AXES: {axes}")
-
-    if len(structure_list) > 1:
-        i = 0
-        l.info(f"START PLOTTING DFI")
-        for ax, row in zip(axes, rows):   
-            l.info(f"ITERATION: {i}")     
-            ax.set_ylabel(row, rotation=0, size='large', labelpad=90)
-        
-            # Convert DFI df to a dict {ResID : DFI}
-            DFI_dict = DFI_list[i].set_index("ResID")["pctdfi"].to_dict()
-
-            # Ensure the types
-            DFI_dict = {int(key) : float(value) for key,value in DFI_dict.items()}
-            
-            # Compare the reference Fasta and DFI dicts
-            DFI_coverage_dict = compare_dict_dict(fasta_dict, DFI_dict)
-            
-            # sorted by key, return a list of tuples        
-            lists = sorted(DFI_coverage_dict.items()) 
-
-            x, y = zip(*lists) # unpack a list of pairs into two tuples
-            x = np.array(x)
-            y = np.array(y)
-
-            idx, properties = find_peaks(y, prominence=0.2, width=1)
-
-            ax.plot(x, y)
-            ax.plot(idx, y[idx], "x")
-            ax.set_title("x = peaks")
-            plt.setp(ax.get_xticklabels(), rotation=30, ha="right")
-            
-            # this locator puts ticks at regular intervals
-            loc = plticker.MultipleLocator(base=20)
-            ax.xaxis.set_major_locator(loc)
-            l.info(f"CALCULATING HINGES")
-            reporter = StructuReport(structure_list[i])
-
-            hinges, hinges_nosig  = reporter.get_hinges_split(outdir=hinge_directory)
-            
-            for hinge in hinges:
-                resid = [x.get_id() for x in hinge.get_elements()]
-                ax.axvspan(resid[0], resid[-1], color='green', alpha=0.4)
-            for hinge in hinges_nosig:
-                resid = [x.get_id() for x in hinge.get_elements()]
-                ax.axvspan(resid[0], resid[-1], color='red', alpha=0.4)
-            
-            if "domains" in row: 
-                ax.get_lines()[0].set_color("orange")
-                mplcursors.cursor(ax, hover=True).connect(
-                    "add", lambda sel: sel.annotation.set_text("AF2 Domains \
-                        model\n text"))
-            else:
-                ax.get_lines()[0].set_color("blue")
-                mplcursors.cursor(ax, hover=True).connect(
-                    "add", lambda sel: sel.annotation.set_text("Experimental \
-                        Structure\n text"))
-            i += 1
-            l.info(f"ITERATION FINISHED: {i}")
-
-        ax.set_xlabel(f"ResID", rotation=0, size='large')
-        fig.tight_layout()
-    else:
-     
-        axes.set_ylabel(rows, rotation=0, size='large', labelpad=90)
-    
-        # Convert DFI df to a dict {ResID : DFI}
-        DFI_dict = DFI_list[0].set_index("ResID")["pctdfi"].to_dict()
-
-        # Ensure the types
-        DFI_dict = {int(key) : float(value) for key ,value in DFI_dict.items()}
-        
-        # Compare the reference Fasta and DFI dicts
-        DFI_coverage_dict = compare_dict_dict(fasta_dict, DFI_dict)
-        
-        # sorted by key, return a list of tuples
-        lists = sorted(DFI_coverage_dict.items())
-        x, y = zip(*lists) # unpack a list of pairs into two tuples
-        x = np.array(x)
-        y = np.array(y)
-
-        idx, properties = find_peaks(y, prominence=0.2, width=1)
-
-        axes.plot(x, y)
-        axes.plot(idx, y[idx], "x")
-        axes.set_title("x = peaks")
-        plt.setp(axes.get_xticklabels(), rotation=30, ha="right")
-        
-        # this locator puts ticks at regular intervals
-        loc = plticker.MultipleLocator(base=20)
-        axes.xaxis.set_major_locator(loc)
-        
-        
-        
-        if "domains" in rows: 
-            axes.get_lines()[0].set_color("orange")
-            mplcursors.cursor(axes, hover=True).connect(
-                "add", lambda sel: sel.annotation.set_text("AF2 Domains \
-                    model\n text"))
-        else:
-            axes.get_lines()[0].set_color("blue")
-            mplcursors.cursor(axes, hover=True).connect(
-                "add", lambda sel: sel.annotation.set_text("Experimental \
-                    Structure\n text"))
-    
-
-        axes.set_xlabel(f"ResID", rotation=0, size='large')
-        fig.tight_layout()
 
 
 ## CLASSES
@@ -380,7 +250,7 @@ class StructuReport():
         else:
             packman_out = os.path.join(outdir, f"{filename}_packman_output.txt")
             try:
-                packman.predict_hinge(backbone, Alpha=4.5, 
+                packman.predict_hinge(backbone, Alpha=PACKMANconfig["alpha"], 
                 outputfile=open(str(packman_out), 'w'))
             except Exception:
                 l.warn(f"PACKMAN Hinge prediction did not work for{self.structure}")

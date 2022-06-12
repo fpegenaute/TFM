@@ -117,14 +117,11 @@ Path(IMP_dir).mkdir(parents=True, exist_ok=True)
 ## 1. Check if the input sequence is already in the PDB  
 
 l.info("### BLAST ###")
-blastdb = cfg.blastconfig["blastdb"]
-l.info(f"BLAST database is located at: {blastdb}")
+
 l.info(f"The BLAST output will be stored in:{blast_dir}")
 
 # Run BLAST
-l.info(f"Starting BLAST. Query: {fasta}, Database: {Path(blastdb).stem}")
-outblast = run_blast_local(fasta, blastdb, blast_dir)
-l.info(f"BLAST results stored in : {outblast}")
+outblast = run_blast_local(fasta, blast_dir)
 
 # Catch exact matches
 exact_matches = exact_match_retriever(outblast)
@@ -250,10 +247,8 @@ if (args.alphamodel and args.PAE_json) or (args.run_alphafold):
     params = master_phil.extract()
     master_phil.format(python_object=params).show(out=sys.stdout)
     p = params.process_predicted_model
-    p.domain_size = 15
-    p.remove_low_confidence_residues = True
-    p.maximum_rmsd = 1.5
-    p.split_model_by_compact_regions = True
+    p.domain_size = cfg.CCTBXconfig["AF2_domain_size"]
+    p.maximum_rmsd = cfg.CCTBXconfig["AF2_maximum_rmsd"]
     p.b_value_field_is = 'lddt'
 
     from iotbx.data_manager import DataManager
@@ -313,10 +308,8 @@ if os.path.exists(os.path.join(args.outdir,  query_name, "ROSETTAFOLD", "" )):
     params = master_phil.extract()
     master_phil.format(python_object=params).show(out=sys.stdout)
     p = params.process_predicted_model
-    p.domain_size = 15
-    p.remove_low_confidence_residues = True
-    p.maximum_rmsd = 2
-    p.split_model_by_compact_regions = True
+    p.domain_size = cfg.CCTBXconfig["RF_domain_size"]
+    p.maximum_rmsd = cfg.CCTBXconfig["RF_maximum_rmsd"]
     p.b_value_field_is = 'rmsd'
 
     from iotbx.data_manager import DataManager
@@ -433,7 +426,7 @@ for structure in structures_for_query:
     # Get coverage of the structure
     coverage_df = reporter.get_coverage(fasta, save_csv=True, outdir=report_dir)
     # Get hinges and save the .hng files
-    hinges = reporter.get_hinges(alpha_range=None, 
+    hinges = reporter.get_hinges(alpha_range=cfg.PACKMANconfig["alpha_range"], 
                                             save_hng=True, outdir=hinges_dir)
     # Get DFI
     dfi_df = reporter.get_dfi_coverage(reference_fasta=fasta, save_csv=True, outdir=report_dir)

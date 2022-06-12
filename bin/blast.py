@@ -3,10 +3,12 @@ from Bio import SeqIO
 import os
 from Bio.Blast import NCBIXML
 from pathlib import Path
+from config import blastconfig
+import logging as l 
 
 from Bio.PDB.Dice import extract
 
-def run_blast_local(fasta, blastdb, outdir, db="pdbaa"):
+def run_blast_local(fasta, outdir, db="pdbaa"):
     """
     Run BLAST Locally
 
@@ -17,7 +19,9 @@ def run_blast_local(fasta, blastdb, outdir, db="pdbaa"):
 
     Returns a string announcing where the results are
     """
-
+    blastdb = blastconfig["blastdb"]
+    l.info(f"Starting BLAST. Query: {fasta}, Database: {db}, located in: {blastdb}")
+    
     # Extract query name from filename
     query = Path(fasta).stem.split('.')[0]
 
@@ -25,24 +29,25 @@ def run_blast_local(fasta, blastdb, outdir, db="pdbaa"):
     os.environ["BLASTDB"]=blastdb
     
     # Call BLAST 
+    l.info("calling BLAST")
     blastp_cline = NcbiblastpCommandline(query=fasta, 
     db=db, matrix="BLOSUM80",outfmt=5, 
             out=os.path.join(outdir, f"{query}_blast.out"), 
             # Filtering parameters
-                    best_hit_overhang=0.25, best_hit_score_edge=0.1, evalue=0.000005)
+                    best_hit_overhang=blastconfig["best_hit_overhang"], 
+                    best_hit_score_edge=blastconfig["best_hit_score_edge"], 
+                    evalue=blastconfig["eval_cutoff"])
     stdout, stderr = blastp_cline()
 
     outblast = os.path.join(outdir, f"{query}_blast.out")
+    l.info(f"BLAST results in {outblast}")
     return outblast
 
 
 
 def exact_match_retriever(filename):
     """
-    Given a XML (format 5) formatted BLAST output retrieve the matches (up to 10)
-
-
-
+    Given a XML (format 5) formatted BLAST output retrieve the matches 
     """
 
     with open(filename) as result_handle:
@@ -53,7 +58,8 @@ def exact_match_retriever(filename):
     i = 0
     for alignment in blast_record.alignments:
         for hsp in alignment.hsps:
-            if i < 5 and (hsp.identities == hsp.align_length): 
+            if i < blastconfig["min_length_match"] and \
+                                (hsp.identities == hsp.align_length): 
                 ID = alignment.hit_id[4:8].upper()
                 Chain = alignment.hit_id[-1]
                 i+=1
@@ -62,13 +68,4 @@ def exact_match_retriever(filename):
 
 
 if __name__ == "__main__":
-    # Set vars for BLAST
-    blastdb = "/home/gallegolab/Desktop/TFM/databases/BLAST/pdbaa"
-    
-    fasta= "input_fasta/test.fa"
-  
-    # Run BLAST
-    outblast =run_blast_local(fasta, blastdb)
-    print(outblast)
-    matches = exact_match_retriever(outblast)
-    print(matches)
+    pass
