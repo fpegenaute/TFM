@@ -8,7 +8,7 @@ from Bio import SeqIO
 import os
 import bin.utilities
 import mplcursors
-from config import PACKMANconfig
+from bin.config import PACKMANconfig
 
 
 

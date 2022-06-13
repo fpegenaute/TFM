@@ -3,7 +3,7 @@ from Bio import SeqIO
 import os
 from Bio.Blast import NCBIXML
 from pathlib import Path
-from config import blastconfig
+from bin.config import blastconfig
 import logging as l 
 
 from Bio.PDB.Dice import extract
