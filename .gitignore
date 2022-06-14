@@ -1,5 +1,8 @@
 # Ignore Mac .DS_store 
 .DS_store
 
-# Ignore ROSETTAFOLD Output for SEC3 (REMOVE AFTER TESTING)
+# Ignore Output for SEC3 (REMOVE AFTER TESTING)
 output/**
+
+# Ignore cache
+__pycache__
