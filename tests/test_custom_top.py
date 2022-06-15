@@ -73,6 +73,25 @@ class TestRigidbody(unittest.TestCase):
         self.assertEqual(expected_fasta, self.rb1.fasta_id)
 
     # Tests for the methods
+    def test_get_full_PDB(self):
+        # Experimental struct
+        filename = self.rb1.get_full_PDB()
+        # print(f"EXP FILENAME {filename}")
+        self.assertEqual(str(filename[0]), "PDB/5lg4.cif" )
+        
+
+        # AF model
+        filename = self.rb2.get_full_PDB()
+        #print(f"AF FILENAME {filename}")
+        self.assertEqual(str(filename[0]), "ALPHAFOLD/SEC3_AF.pdb" )
+        
+
+        # RF model
+        filename = self.rb3.get_full_PDB()
+        print(f"RF FILENAME {filename}")
+        self.assertEqual(str(filename[0]), "ROSETTAFOLD/model/model_4.crderr.pdb" )
+        
+
     def test_get_ResIDs(self):
         resids = self.rb1.get_resIDs()
         self.assertGreater(len(resids), 0)

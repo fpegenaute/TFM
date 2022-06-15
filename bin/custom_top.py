@@ -81,7 +81,43 @@ class RigidBody():
             self.em_residues_per_gaussian, self.rigid_body,
             self.super_rigid_body, self.chain_of_super_rigid_bodies, self.overlap, 
             self.type, self.include]
-    
+    def get_full_PDB(self):
+        """
+        Get the name of the full pdb belonging to the chain of the RB
+        and the parent folder. e.g. PDB/5yfp.pdb
+        """
+        filename = str(Path(*Path(self.pdb_fn).parts[-1:]))
+        full_pdbs = []
+       
+        if "PDB" in str(self.pdb_fn):
+            filename = filename[0:-6]
+            path = os.path.abspath(Path(*Path(self.pdb_fn).parts[:-2]))
+            for child in Path(path).iterdir():
+                    if Path(child).is_file() and filename in str(child):
+                        full_pdbs.append(Path(*Path(child).parts[-2:]))
+            
+        if "-crderr" in filename:
+            filename = filename[0:-10]+filename[-4:]
+            filename = filename.replace("-", ".")
+            path = os.path.abspath(Path(*Path(self.pdb_fn).parts[:-2]))
+            for child in Path(path).iterdir():
+                    if "model" in str(child):
+                        for model_child in Path(child).iterdir():
+                            if Path(model_child).is_file() and filename in str(model_child):
+                                full_pdbs.append(Path(*Path(model_child).parts[-3:]))
+                                
+
+
+        if "ALPHAFOLD" in str(self.pdb_fn):
+            filename = filename[0:-10]+filename[-4:]
+            path = os.path.abspath(Path(*Path(self.pdb_fn).parts[:-2]))
+            for child in Path(path).iterdir():
+                if Path(child).is_file() and filename in str(child):
+                    full_pdbs.append(Path(*Path(child).parts[-2:]))
+        #     
+        return full_pdbs
+
+
     def get_structure(self):
         """
         Parse the structure file (self.pdb_fn) and return a structure object
@@ -590,10 +626,10 @@ def write_custom_topology(path_to_file, rigid_body_list):
     # IMP won't read abs paths from the topology file :)
     pdb_dir = "../"
     fasta_dir = "../../../input_fasta"
-    top_file.write(f"|directories|"+"\n")
-    top_file.write(f"|pdb_dir|{pdb_dir}|"+"\n")
-    top_file.write(f"|fasta_dir|{fasta_dir}|"+"\n")
-    top_file.write("\n")
+    # top_file.write(f"|directories|"+"\n")
+    # top_file.write(f"|pdb_dir|{pdb_dir}|"+"\n")
+    # top_file.write(f"|fasta_dir|{fasta_dir}|"+"\n")
+    # top_file.write("\n")
     top_file.write("|{:15}|{:10}|{:20}|{:15}|{:16}|{:7}|{:15}|{:11}|{:11}|"
                    "{:28}|{:12}|{:19}|{:27}|\n".format(header[0], header[1], 
                     header[2], header[3], header[4], header[5], header[6], 
@@ -604,10 +640,10 @@ def write_custom_topology(path_to_file, rigid_body_list):
     rigid_body_counter = 1
     for rb in rigid_body_list:
         resolution = rb.resolution
-        mol_name = rb.molecule_name
+        mol_name = rb.fasta_id
         color = rb.color
         fasta_fn = PurePosixPath(rb.fasta_fn).name
-        fasta_id = rb.fasta_id+":"+rb.chain
+        fasta_id = rb.fasta_id #+":"+rb.chain
         pdb_fn = Path(*Path(rb.pdb_fn).parts[-3:])
         chain = rb.chain
         start_residue = rb.residue_range[0]
