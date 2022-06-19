@@ -442,9 +442,16 @@ write_custom_topology(os.path.join(IMP_dir, f"{query_name}.topology"), composite
 os.rmdir("obsolete")
 os.remove("DCI_pymol_output.txt")
 
+
+
 from make_dashboard import *
 
+
 app.run_server()
+
+
+
+
 exit(0)
 
 

@@ -2,11 +2,9 @@ cctbx-base
 py-packman
 matplotlib
 # networkx
-jupyter_contrib_nbextensions
-jupyter-dash
+dash
 nbconvert
 nbformat
 plotly
 mplcursors
 six
-gunicorn

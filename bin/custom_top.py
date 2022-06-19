@@ -101,10 +101,10 @@ class RigidBody():
             filename = filename.replace("-", ".")
             path = os.path.abspath(Path(*Path(self.pdb_fn).parts[:-2]))
             for child in Path(path).iterdir():
-                    if "model" in str(child):
-                        for model_child in Path(child).iterdir():
-                            if Path(model_child).is_file() and filename in str(model_child):
-                                full_pdbs.append(Path(*Path(model_child).parts[-3:]))
+                    if Path(child).is_dir() and "DOMAINS" in str(child):
+                        for rosetta_child in Path(child).iterdir():
+                            if Path(rosetta_child).is_file() and filename in str(rosetta_child):
+                                full_pdbs.append(Path(*Path(rosetta_child).parts[-3:]))
                                 
 
 
@@ -112,8 +112,10 @@ class RigidBody():
             filename = filename[0:-10]+filename[-4:]
             path = os.path.abspath(Path(*Path(self.pdb_fn).parts[:-2]))
             for child in Path(path).iterdir():
-                if Path(child).is_file() and filename in str(child):
-                    full_pdbs.append(Path(*Path(child).parts[-2:]))
+                if Path(child).is_dir() and "DOMAINS" in str(child):
+                    for alpha_child in Path(child).iterdir():
+                        if "domains" in str(alpha_child):
+                            full_pdbs.append(Path(*Path(alpha_child).parts[-3:]))
         #     
         return full_pdbs
 
@@ -401,7 +403,6 @@ class RigidBody():
                                 rb_list = rb_list + [rb1]
                     
                 else:
-                    print("Index >0 ")
                     rb1 = rb_list[-1]
                     if hinges_list[index][0] < rb1.residue_range[0] and \
                         hinges_list[index][1] < rb1.residue_range[0]:
@@ -415,14 +416,12 @@ class RigidBody():
                     if hinges_list[index][0] < rb1.residue_range[0] and\
                         hinges_list[index][1] > rb1.residue_range[0] and \
                         hinges_list[index][1] < rb1.residue_range[1]:
-                            print("A1")
                             rb1.residue_range = (hinges_list[index][1], rb1.residue_range[1])
                             rb_list = rb_list + [rb1]
                             continue
                     # hinge starting at the beginning of the structure
                     if hinges_list[index][0] == rb1.residue_range[0] and\
                         hinges_list[index][1] < rb1.residue_range[1]:
-                            print("B1")
                             rb1.residue_range = (hinges_list[index][1], rb1.residue_range[1])
                             rb_list = rb_list + [rb1]
                             continue
@@ -430,18 +429,15 @@ class RigidBody():
                     # TO DO: apply the same correction of the rb_list[-1].residue_range to the rest of cases
                     if hinges_list[index][0] > rb1.residue_range[0] and \
                         hinges_list[index][1] < rb1.residue_range[1]:
-                            print(f"C1: {[rb.residue_range for rb in rb_list ]} ")
                             rb2 = copy.deepcopy(rb1)
                             rb2.residue_range = (hinges_list[index][1], rb1.residue_range[1])
                             rb_list[-1].residue_range = (rb1.residue_range[0], hinges_list[index][0])
                             rb_list = rb_list + [rb2]
-                            print(f"C2: {[rb.residue_range for rb in rb_list ]} ")
                             continue
                     # hinge ending at the end of the structure
                     if hinges_list[index][1] == rb1.residue_range[1] and\
                         hinges_list[index][0] < rb1.residue_range[1] and \
                             hinges_list[index][0] > rb1.residue_range[0]:
-                            print("D1")
                             rb1.residue_range = (rb1.residue_range[0], hinges_list[index][0])
                             rb_list = rb_list + [rb1]
                             continue
@@ -449,7 +445,6 @@ class RigidBody():
                     if hinges_list[index][0] > rb1.residue_range[0] and\
                         hinges_list[index][0] < rb1.residue_range[1] and\
                         hinges_list[index][1] > rb1.residue_range[1]:
-                            print("E1")
                             rb1.residue_range = (rb1.residue_range[0],hinges_list[index][0])
                             rb_list = rb_list + [rb1]
                             continue
@@ -621,15 +616,8 @@ def write_custom_topology(path_to_file, rigid_body_list):
     "chain", "residue_range", "pdb_offset", "bead_size", 
     "em_residues_per_gaussian", "rigid_body", "super_rigid_body",
               "chain_of_super_rigid_bodies"]
-    # fasta_dir = os.path.abspath(PurePosixPath(rigid_body_list[0].fasta_fn).parent)
-    # pdb_dir = os.path.abspath(PurePosixPath(rigid_body_list[0].pdb_fn).parent.parent.parent)
-    # IMP won't read abs paths from the topology file :)
-    pdb_dir = "../"
-    fasta_dir = "../../../input_fasta"
-    # top_file.write(f"|directories|"+"\n")
-    # top_file.write(f"|pdb_dir|{pdb_dir}|"+"\n")
-    # top_file.write(f"|fasta_dir|{fasta_dir}|"+"\n")
-    # top_file.write("\n")
+
+    
     top_file.write("|{:15}|{:10}|{:20}|{:15}|{:16}|{:7}|{:15}|{:11}|{:11}|"
                    "{:28}|{:12}|{:19}|{:27}|\n".format(header[0], header[1], 
                     header[2], header[3], header[4], header[5], header[6], 
@@ -644,11 +632,12 @@ def write_custom_topology(path_to_file, rigid_body_list):
         color = rb.color
         fasta_fn = PurePosixPath(rb.fasta_fn).name
         fasta_id = rb.fasta_id #+":"+rb.chain
-        pdb_fn = Path(*Path(rb.pdb_fn).parts[-3:])
+        pdb_fn = str(rb.get_full_PDB()[0])
         chain = rb.chain
         start_residue = rb.residue_range[0]
         last_residue = rb.residue_range[1]
-        offset = rb.pdb_offset
+        # offset = rb.pdb_offset
+        offset = "" # The offset is not necessary if the res range is correct
         bead_size = rb.bead_size
         em_gaussian = rb.em_residues_per_gaussian
         # if resolution == "all":

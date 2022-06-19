@@ -356,11 +356,10 @@ def onclick_topology(selected_fragments, n_clicks, output_dir, str_hinges_input)
 
 
 if __name__ == "__main__":
-    # For Development only, otherwise use gunicorn or uwsgi to launch, e.g.
-    # gunicorn -b 0.0.0.0:8050 index:app.server
-
     port = 8050 # Default port, change if occupied
 
+
+    
     try:
         app.run_server(debug=True, port = port)
         
