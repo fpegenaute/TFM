@@ -319,7 +319,6 @@ def get_residue_range(structure_file, chain=None):
     return (first, last)
 
     
-    
 
 
 

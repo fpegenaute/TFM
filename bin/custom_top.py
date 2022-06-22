@@ -13,6 +13,7 @@ from pathlib import PurePosixPath
 from tkinter.messagebox import NO
 from bin.utilities import get_filename_ext
 from Bio.PDB import MMCIFParser, PDBParser
+from Bio import SeqIO
 import itertools
 import pandas as pd
 import os
@@ -626,7 +627,8 @@ def write_custom_topology(path_to_file, rigid_body_list):
     # Write molecule lines from dictionary
     # Notice that you can modify the following line acording to the desired output
     rigid_body_counter = 1
-    for rb in rigid_body_list:
+    first = True
+    for rb in  rigid_body_list:
         resolution = rb.resolution
         mol_name = rb.fasta_id
         color = rb.color
@@ -640,47 +642,105 @@ def write_custom_topology(path_to_file, rigid_body_list):
         offset = "" # The offset is not necessary if the res range is correct
         bead_size = rb.bead_size
         em_gaussian = rb.em_residues_per_gaussian
-        # if resolution == "all":
-        #     top_file.write("|{:15}|{:10}|{:20}|{:15}|{:16}|{:7}|{:15}|{:11}|{:11}|"
-        #                    "{:28}|{:<12}|{:19}|{:27}|\n".format(mol_name, color, 
-        #                    fasta_fn, fasta_id, str(pdb_fn), chain, "all", offset,
-        #                    bead_size, em_gaussian, rigid_body_counter, "", ""))
-        #     rigid_body_counter += 1
+        print(f"RB COUNT {rigid_body_counter}")
+        if rigid_body_counter == 1:
+            if start_residue == 1:
+                top_file.write("|{:15}|{:10}|{:20}|{:15}|{:16}|{:7}|{:15}|{:11}|{:11}|"
+                            "{:28}|{:<12}|{:19}|{:27}|\n".format(mol_name, color, 
+                            fasta_fn, fasta_id, str(pdb_fn), chain,"{},{}".format(start_residue, 
+                                last_residue), offset, bead_size, em_gaussian, 
+                                rigid_body_counter, "", ""))
+                top_file.write("\n") 
+                rigid_body_counter += 1
+            elif start_residue > 1:
+                top_file.write("|{:15}|{:10}|{:20}|{:15}|{:16}|{:7}|{:15}|{:11}|{:11}|"
+                            "{:28}|{:<12}|{:19}|{:27}|\n".format(mol_name, "brown", 
+                            fasta_fn, fasta_id, "BEADS", chain,"{},{}".format(1, 
+                                start_residue-1), offset, bead_size, em_gaussian, 
+                                rigid_body_counter, "", ""))
+                top_file.write("\n") 
+                top_file.write("|{:15}|{:10}|{:20}|{:15}|{:16}|{:7}|{:15}|{:11}|{:11}|"
+                            "{:28}|{:<12}|{:19}|{:27}|\n".format(mol_name, color, 
+                            fasta_fn, fasta_id, str(pdb_fn), chain,"{},{}".format(start_residue, 
+                                last_residue), offset, bead_size, em_gaussian, 
+                                rigid_body_counter, "", ""))
+                top_file.write("\n") 
+                rigid_body_counter += 1
+            continue
+        if rigid_body_counter > 1 :
+            print(f"STARR{start_residue} RB  end + 2{rigid_body_list[rigid_body_counter-2].residue_range[1]+1}")
+            if rigid_body_counter < len(rigid_body_list):
+                print("A")
+                if start_residue == rigid_body_list[rigid_body_counter-2].residue_range[1]+1:
+                    print("A1")
+                    top_file.write("|{:15}|{:10}|{:20}|{:15}|{:16}|{:7}|{:15}|{:11}|{:11}|"
+                                "{:28}|{:<12}|{:19}|{:27}|\n".format(mol_name, color, 
+                                fasta_fn, fasta_id, str(pdb_fn), chain,"{},{}".format(start_residue, 
+                                    last_residue), offset, bead_size, em_gaussian, 
+                                    rigid_body_counter, "", ""))
+                    top_file.write("\n") 
+                    rigid_body_counter += 1
+                elif start_residue > rigid_body_list[rigid_body_counter-2].residue_range[1]+1:
+                    print(f"A2")
+                    top_file.write("|{:15}|{:10}|{:20}|{:15}|{:16}|{:7}|{:15}|{:11}|{:11}|"
+                                "{:28}|{:<12}|{:19}|{:27}|\n".format(mol_name, "brown", 
+                                fasta_fn, fasta_id, "BEADS", chain,"{},{}".format(rigid_body_list[rigid_body_counter-2].residue_range[1]+1, 
+                                    start_residue-1), offset, bead_size, em_gaussian, 
+                                    rigid_body_counter, "", ""))
+                    top_file.write("\n") 
+                    top_file.write("|{:15}|{:10}|{:20}|{:15}|{:16}|{:7}|{:15}|{:11}|{:11}|"
+                                "{:28}|{:<12}|{:19}|{:27}|\n".format(mol_name, color, 
+                                fasta_fn, fasta_id, str(pdb_fn), chain,"{},{}".format(start_residue, 
+                                    last_residue), offset, bead_size, em_gaussian, 
+                                    rigid_body_counter, "", ""))
+                    top_file.write("\n") 
+                    rigid_body_counter += 1
+                continue
+            if rigid_body_counter == len(rigid_body_list):
+                print("B")
+                records = list(SeqIO.parse(rb.fasta_fn, "fasta"))
+                sequence = str(records[0].seq)
+               
+                if start_residue == rigid_body_list[rigid_body_counter-2].residue_range[1]+1:
+                    print("B1")
+                    top_file.write("|{:15}|{:10}|{:20}|{:15}|{:16}|{:7}|{:15}|{:11}|{:11}|"
+                                "{:28}|{:<12}|{:19}|{:27}|\n".format(mol_name, color, 
+                                fasta_fn, fasta_id, str(pdb_fn), chain,"{},{}".format(start_residue, 
+                                    last_residue), offset, bead_size, em_gaussian, 
+                                    rigid_body_counter, "", ""))
+                    top_file.write("\n") 
+                    rigid_body_counter += 1
+                elif start_residue > rigid_body_list[rigid_body_counter-2].residue_range[1]+1:
+                    print("B2")
+                    top_file.write("|{:15}|{:10}|{:20}|{:15}|{:16}|{:7}|{:15}|{:11}|{:11}|"
+                                "{:28}|{:<12}|{:19}|{:27}|\n".format(mol_name, "brown", 
+                                fasta_fn, fasta_id, "BEADS", chain,"{},{}".format(rigid_body_list[rigid_body_counter-2].residue_range[1]+1, 
+                                    start_residue-1), offset, bead_size, em_gaussian, 
+                                    rigid_body_counter, "", ""))
+                    top_file.write("\n") 
+                    top_file.write("|{:15}|{:10}|{:20}|{:15}|{:16}|{:7}|{:15}|{:11}|{:11}|"
+                                "{:28}|{:<12}|{:19}|{:27}|\n".format(mol_name, color, 
+                                fasta_fn, fasta_id, str(pdb_fn), chain,"{},{}".format(start_residue, 
+                                    last_residue), offset, bead_size, em_gaussian, 
+                                    rigid_body_counter, "", ""))
+                    top_file.write("\n") 
+                    rigid_body_counter += 1
+                if last_residue == len(sequence):
+                    print("B3")
+                    continue
+                if last_residue < len(sequence):
+                    print("B4")
+                    top_file.write("|{:15}|{:10}|{:20}|{:15}|{:16}|{:7}|{:15}|{:11}|{:11}|"
+                                "{:28}|{:<12}|{:19}|{:27}|\n".format(mol_name, "brown", 
+                                fasta_fn, fasta_id, "BEADS", chain,"{},{}".format(last_residue+1, 
+                                    len(sequence)), offset, bead_size, em_gaussian, 
+                                    rigid_body_counter, "", ""))
+                    top_file.write("\n") 
+                    rigid_body_counter += 1
+            continue
 
-            
-        # else:
-        #     # If you want to add different options for X molecules (DNA or Proteins) this
-        #     # is a way
-            # for n in range(start_residue, last_residue + 1, resolution):
-            #     if start_residue + resolution <= last_residue:
-            #         top_file.write("|{:15}|{:10}|{:20}|{:15}|{:16}|{:7}|{:15}|{:11}|{:11}|"
-            #                        "{:28}|{:<12}|{:19}|{:27}|\n".format(mol_name, 
-            #                        color, fasta_fn, fasta_id, pdb_fn, chain, 
-            #                        "{},{}".format(start_residue, 
-            #                        start_residue + resolution), offset, 
-            #                        bead_size, em_gaussian, rigid_body_counter, 
-            #                        "", ""))
-            #         start_residue += resolution + 1
-            #         rigid_body_counter += 1
-            #     else:
-            #         top_file.write("|{:15}|{:10}|{:20}|{:15}|{:16}|{:7}|{:15}|{:11}|{:11}|"
-            #                     "{:28}|{:<12}|{:19}|{:27}|\n".format(mol_name, 
-            #                     color, fasta_fn, fasta_id, pdb_fn, chain, 
-            #                     "{},{}".format(start_residue, last_residue),
-            #                     offset, bead_size, em_gaussian,
-            #                     rigid_body_counter, "", ""))
-                    
-            #         rigid_body_counter += 1
-            #         break
-        top_file.write("|{:15}|{:10}|{:20}|{:15}|{:16}|{:7}|{:15}|{:11}|{:11}|"
-                           "{:28}|{:<12}|{:19}|{:27}|\n".format(mol_name, color, 
-                           fasta_fn, fasta_id, str(pdb_fn), chain,"{},{}".format(start_residue, 
-                            last_residue), offset, bead_size, em_gaussian, 
-                            rigid_body_counter, "", ""))
-        rigid_body_counter += 1
-
-
-        top_file.write("\n")  # write a blank line between different molecules
+            top_file.write("\n") 
+      
     top_file.close()
       
 
