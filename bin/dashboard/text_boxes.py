@@ -31,8 +31,8 @@ with some of these hinges.
 *Dynamic Flexibility Index*  
 This is per-residue index indicating the contribution of each residue to the 
 overall flexibility of the protein. It uses a method based in an Elastic Network 
-Model (ENM), which is a more lightweight (but less precise, obviously) alternative to 
-Molecular Dynamics. for more info, 
+Model (ENM), which is a more lightweight (but less precise, obviously) 
+alternative to Molecular Dynamics. for more info, 
 [here](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3673471/) is the original 
 paper.
 
@@ -58,7 +58,27 @@ sequence as possible, avoiding overlaps.
 This comopsite can be used to automatically build an 
 [IMP topology file](https://integrativemodeling.org/2.5.0/doc/ref/classIMP_1_1pmi_1_1topology_1_1TopologyReader.html)
 
-If you want to generate another topology file, with your custom choice of fragments, 
-simply select the fragments woy want to include and click the button "Create 
-Topology File". it will save yhe output inj the folder IMP of your selected output folder.
+If you want to generate another topology file, with your custom choice of 
+fragments, simply select the fragments woy want to include and click the button "Create 
+Topology File". it will save yhe output inj the folder IMP of your selected 
+output folder.
+"""
+
+hinges_md = """
+### Custom hinges
+In this section you can introduce hinge regions. Hinge regions are those regions
+of the protein that bend, allowing the movement of the more rigid domains, which 
+is essential for the interaciton of the proteins with other biomolecules.
+
+**How are hinges encoded?**  
+Let's imagine you have a proterin of 200 amino acids. The DFI and PACKMAN hinge 
+prediction are indicating a putative hinge region between positions 50 and 100 
+and another  one between 120 and 130.
+
+
+In the box, you will need to introduce the hinges with the following format:
+50:100,120:130
+
+The program will split the structures, in the topology file, according to the 
+hinges introduced.
 """

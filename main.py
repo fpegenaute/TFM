@@ -117,14 +117,11 @@ Path(IMP_dir).mkdir(parents=True, exist_ok=True)
 ## 1. Check if the input sequence is already in the PDB  
 
 l.info("### BLAST ###")
-blastdb = cfg.blastconfig["blastdb"]
-l.info(f"BLAST database is located at: {blastdb}")
+
 l.info(f"The BLAST output will be stored in:{blast_dir}")
 
 # Run BLAST
-l.info(f"Starting BLAST. Query: {fasta}, Database: {Path(blastdb).stem}")
-outblast = run_blast_local(fasta, blastdb, blast_dir)
-l.info(f"BLAST results stored in : {outblast}")
+outblast = run_blast_local(fasta, blast_dir)
 
 # Catch exact matches
 exact_matches = exact_match_retriever(outblast)
@@ -250,10 +247,8 @@ if (args.alphamodel and args.PAE_json) or (args.run_alphafold):
     params = master_phil.extract()
     master_phil.format(python_object=params).show(out=sys.stdout)
     p = params.process_predicted_model
-    p.domain_size = 15
-    p.remove_low_confidence_residues = True
-    p.maximum_rmsd = 1.5
-    p.split_model_by_compact_regions = True
+    p.domain_size = cfg.CCTBXconfig["AF2_domain_size"]
+    p.maximum_rmsd = cfg.CCTBXconfig["AF2_maximum_rmsd"]
     p.b_value_field_is = 'lddt'
 
     from iotbx.data_manager import DataManager
@@ -313,10 +308,8 @@ if os.path.exists(os.path.join(args.outdir,  query_name, "ROSETTAFOLD", "" )):
     params = master_phil.extract()
     master_phil.format(python_object=params).show(out=sys.stdout)
     p = params.process_predicted_model
-    p.domain_size = 15
-    p.remove_low_confidence_residues = True
-    p.maximum_rmsd = 2
-    p.split_model_by_compact_regions = True
+    p.domain_size = cfg.CCTBXconfig["RF_domain_size"]
+    p.maximum_rmsd = cfg.CCTBXconfig["RF_maximum_rmsd"]
     p.b_value_field_is = 'rmsd'
 
     from iotbx.data_manager import DataManager
@@ -373,45 +366,7 @@ if os.path.exists(os.path.join(args.outdir,  query_name, "ROSETTAFOLD", "" )):
                         f"{PurePosixPath(newname).stem}_{chainid}_RF.pdb")
                 dm.write_model_file(m1, filepath)
                 structures_for_query.append(filepath)
-    # for filename in os.listdir(abs_custom_rf_dir):
-    #     if os.path.isfile(os.path.join(abs_rf_dir,filename)): 
-    #         newname = filename.split(".")
-    #         noext = newname[0:-1]
-    #         noext = "-".join(noext)
-    #         ext = newname[-1]
-    #         newname = noext+"."+ext
-    #         l.info(f"NEWNAME: {newname}")
-    #         filename = os.path.join(abs_custom_rf_dir, filename)
-    #         newname = os.path.join(abs_custom_rf_dir, newname)
-    #         os.rename(filename, newname)
-
-    #         l.info(f"Processing file: {newname}")
-    #         print("\nProcessing and splitting model into domains")
-            
-    #         m = dm.get_model(newname)
-    #         model_info = process_predicted_model(m,  params)
-
-    #         chainid_list = model_info.chainid_list
-    #         print("Segments found: %s" %(" ".join(chainid_list)))
-
-    #         mmm = model_info.model.as_map_model_manager()
-            
-    #         # Write all the domains in one file
-    #         mmm.write_model(os.path.join(domains_dir, 
-    #                         f"{PurePosixPath(newname).stem}_domains.pdb"))
-            
-    #         # Write different domains in different files
-    #         for chainid in chainid_list:
-    #             selection_string = "chain %s" %(chainid)
-    #             ph = model_info.model.get_hierarchy()
-    #             asc1 = ph.atom_selection_cache()
-    #             sel = asc1.selection(selection_string)
-    #             m1 = model_info.model.select(sel)
-    #             filepath = os.path.join(domains_dir, 
-    #                     f"{PurePosixPath(newname).stem}_{chainid}_RF.pdb")
-    #             dm.write_model_file(m1, filepath)
-    #             structures_for_query.append(filepath)
-                
+                   
 
             conf_domains = extract_residue_list(os.path.join(domains_dir,  
                             f"{PurePosixPath(newname).stem}_domains.pdb"), 
@@ -433,7 +388,7 @@ for structure in structures_for_query:
     # Get coverage of the structure
     coverage_df = reporter.get_coverage(fasta, save_csv=True, outdir=report_dir)
     # Get hinges and save the .hng files
-    hinges = reporter.get_hinges(alpha_range=None, 
+    hinges = reporter.get_hinges(alpha_range=cfg.PACKMANconfig["alpha_range"], 
                                             save_hng=True, outdir=hinges_dir)
     # Get DFI
     dfi_df = reporter.get_dfi_coverage(reference_fasta=fasta, save_csv=True, outdir=report_dir)
@@ -484,45 +439,19 @@ composite_rb.sort(key=lambda x: x.residue_range[0])
 
 # Write the topology file
 write_custom_topology(os.path.join(IMP_dir, f"{query_name}.topology"), composite_rb)
+os.rmdir("obsolete")
+os.remove("DCI_pymol_output.txt")
+
+
 
 from make_dashboard import *
 
+
 app.run_server()
+
+
+
+
 exit(0)
-
-# Finally, write the automatic report
-report_template = os.path.join(args.outdir, query_name, "report_template.ipynb")
-shutil.copy("src/report_template.ipynb", report_template)
-
-
-
-notebook_dir = os.path.join(args.outdir, query_name)
-final_report = os.path.join(notebook_dir, f"{query_name}_report.ipynb")
-
-
-
-with open(report_template) as f:
-    nb = nbformat.read(f, as_version=4)
-    ep = ExecutePreprocessor(timeout=600,  )
-    
-# Execute/run the notebook
-try:
-    out = ep.preprocess(nb, {'metadata': {'path': notebook_dir}})
-except CellExecutionError:
-    out = None
-    msg = f"Error executing the notebook"
-    msg += f"See notebook  for the traceback.'"
-    print(msg)
-    raise
-finally:
-    with open(final_report, mode='w', encoding='utf-8') as f:
-        nbformat.write(nb, f)
-    os.remove(report_template)
-    
-
-import subprocess
-# subprocess.run(["jupyter", "nbconvert", "--to", "notebook", "--execute", f"{final_report}", "--output", f"{final_report}"])
-print("SUBPROCESS CALL")
-subprocess.run(["jupyter", "nbconvert", "--execute", "--to", "html", "--no-input", "--no-prompt ", f"{final_report}",])
 
 

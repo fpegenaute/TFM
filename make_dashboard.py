@@ -1,7 +1,7 @@
 # import functions and text
 from matplotlib.pyplot import title
 from bin.dashboard.dashboard_functions import read_compsite_files, read_DFI_csvs, read_hng_files
-from bin.dashboard.text_boxes import intro_md, flex_md, composite_md
+from bin.dashboard.text_boxes import intro_md, flex_md, composite_md, hinges_md
 import os
 from bin.custom_top import  write_custom_topology
 from pathlib import Path
@@ -86,20 +86,35 @@ app.layout = html.Div([
     ),
     
     html.Div(children=[
-        html.Button(
-            "Generate IMP Topology File",
-            id="create-topology",
-            n_clicks=0),
+        dcc.Markdown(
+            children=hinges_md
+        ),
     ], style={'padding': 10, 'flex': 1}
+    ),
+    html.Div(
+        id='hinges-output'
     ),
 
     html.Div(
         id='custom-top-output'
     ),
+    html.Div(children=[
+        dcc.Input(id='custom-hinges-input', 
+            placeholder='Enter hinges here:', 
+            value="0:0", type='text') 
+    ], style={'padding': 10, 'flex': 1}
+    ),
+
+    html.Div(children=[
+        html.Button(
+            "Generate IMP Topology File",
+            id="create-topology-button",
+            n_clicks=0),
+    ], style={'padding': 10, 'flex': 1}
+    ),
+
     
 ])
-
-
 
 
 # Update coverage plot
@@ -171,8 +186,6 @@ def update_graph(options_chosen):
                     row=i, col=1)
                     j += 1
         i +=1
-    # fig2.update_layout(height=600, width=1200, title_text="DFI profiles + Predicted hinges", 
-    #                   margin_pad=0, barmode="group", legend=dict(orientation="h"))
     fig2.update_layout(title_text="DFI profiles + Predicted hinges", 
                       margin_pad=10, barmode="group", legend=dict(orientation="h",  y=-0.35))
     fig2.update_yaxes(showgrid=False, range=[0,1], nticks=2)
@@ -254,15 +267,17 @@ def update_graph(options_chosen):
     
     return fig4
 
-# Create topology file on clock
+# Create topology file on click
 @app.callback(
-    Output(component_id='custom-top-output', component_property='children'),
-    Input(component_id='create-topology', component_property='n_clicks'),
+    Output(component_id='hinges-output', component_property='children'),
     State(component_id='customtop-checklist', component_property='value'),
-    State(component_id='output-dropdown',  component_property='value')
+    Input(component_id="create-topology-button", component_property="n_clicks"),
+    State(component_id='output-dropdown',  component_property='value'),
+    State(component_id="custom-hinges-input", component_property="value")
 )
-def onclick_topology(nclicks, selected_fragments, output_dir):
+def onclick_topology(selected_fragments, n_clicks, output_dir, str_hinges_input):
     structure_list = []
+    clicks = n_clicks
     try:
         for child in Path(os.path.join(output_dir, "PDB", "total")).iterdir():
              if child.is_file() and "composite" not in str(child):
@@ -311,30 +326,40 @@ def onclick_topology(nclicks, selected_fragments, output_dir):
     fasta = "input_fasta/"+str(os.path.basename(output_dir))+".fasta"
 
     rigid_bodies = make_rb_list(structure_list, fasta)
+
+    ## incorporate the hinges
+    hinges_list = [hinge for hinge in str_hinges_input.split(",")] 
+    hinges_list = [tuple(i.split(':')) for i in hinges_list]
+    hinges_list = [(int(i[0]), int(i[1])) for i in hinges_list]
+
+
+    final_rigid_bodies = []
     
-    rigid_bodies.sort(key=lambda x: x.residue_range[0])
+    for rb in rigid_bodies:
+        print(f"RB: {rb.pdb_fn}")
+        split_rb = rb.split_rb_hinges(hinges_list)
+        print(f"RB SPLIT: {[rb.residue_range for rb in split_rb]}")
+        final_rigid_bodies = final_rigid_bodies + split_rb
+
+    print(f"INITIAL = {len(rigid_bodies)}, FINAL = {len(final_rigid_bodies)}")
+
+    
+    final_rigid_bodies.sort(key=lambda x: x.residue_range[0])
     str_out = str(output_dir)
     out_name = str_out.split("/")[-1]
     # Write the topology file
-    # write_custom_topology(os.path.join(output_dir, "IMP", f"{out_name}.topology"), rigid_bodies)
-    write_custom_topology(os.path.join(output_dir, "IMP", f"{out_name}_custom.topology"), rigid_bodies)
+    write_custom_topology(os.path.join(output_dir, "IMP", f"{out_name}_custom.topology"), final_rigid_bodies)
     
+     
     
-    return f"""N clicks: {nclicks}, \nFragments Selected: {selected_fragments},
-    Outdir: {output_dir}/IMP/
-
-    Structure: {structure_list}
-    RBs: {[rb.pdb_fn for rb in rigid_bodies] }
-    """
-    
+    return f"Topology file created with:{[str(rb.pdb_fn) for rb in final_rigid_bodies]}"
 
 
 if __name__ == "__main__":
-    # For Development only, otherwise use gunicorn or uwsgi to launch, e.g.
-    # gunicorn -b 0.0.0.0:8050 index:app.server
-
     port = 8050 # Default port, change if occupied
 
+
+    
     try:
         app.run_server(debug=True, port = port)
         

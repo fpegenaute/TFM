@@ -13,6 +13,7 @@ from pathlib import PurePosixPath
 from tkinter.messagebox import NO
 from bin.utilities import get_filename_ext
 from Bio.PDB import MMCIFParser, PDBParser
+from Bio import SeqIO
 import itertools
 import pandas as pd
 import os
@@ -81,7 +82,45 @@ class RigidBody():
             self.em_residues_per_gaussian, self.rigid_body,
             self.super_rigid_body, self.chain_of_super_rigid_bodies, self.overlap, 
             self.type, self.include]
-    
+    def get_full_PDB(self):
+        """
+        Get the name of the full pdb belonging to the chain of the RB
+        and the parent folder. e.g. PDB/5yfp.pdb
+        """
+        filename = str(Path(*Path(self.pdb_fn).parts[-1:]))
+        full_pdbs = []
+       
+        if "PDB" in str(self.pdb_fn):
+            filename = filename[0:-6]
+            path = os.path.abspath(Path(*Path(self.pdb_fn).parts[:-2]))
+            for child in Path(path).iterdir():
+                    if Path(child).is_file() and filename in str(child):
+                        full_pdbs.append(Path(*Path(child).parts[-2:]))
+            
+        if "-crderr" in filename:
+            filename = filename[0:-10]+filename[-4:]
+            filename = filename.replace("-", ".")
+            path = os.path.abspath(Path(*Path(self.pdb_fn).parts[:-2]))
+            for child in Path(path).iterdir():
+                    if Path(child).is_dir() and "DOMAINS" in str(child):
+                        for rosetta_child in Path(child).iterdir():
+                            if Path(rosetta_child).is_file() and filename in str(rosetta_child):
+                                full_pdbs.append(Path(*Path(rosetta_child).parts[-3:]))
+                                
+
+
+        if "ALPHAFOLD" in str(self.pdb_fn):
+            filename = filename[0:-10]+filename[-4:]
+            path = os.path.abspath(Path(*Path(self.pdb_fn).parts[:-2]))
+            for child in Path(path).iterdir():
+                if Path(child).is_dir() and "DOMAINS" in str(child):
+                    for alpha_child in Path(child).iterdir():
+                        if "domains" in str(alpha_child):
+                            full_pdbs.append(Path(*Path(alpha_child).parts[-3:]))
+        #     
+        return full_pdbs
+
+
     def get_structure(self):
         """
         Parse the structure file (self.pdb_fn) and return a structure object
@@ -257,13 +296,168 @@ class RigidBody():
 
         return coverage_df
 
+    def split_rb_hinges(self, hinges_list):
+        """
+        Given a RigidBody instance and a list of hinges, split that RigidBody.
+
+        - self: rigidBody instance
+        - hinges_list: list of hinges in tuple format, e.g. [ (2,5), (124,456) ]
+
+        """
+        rb_list = []
+
+        # Sort them by appearence on the protein seq
+        hinges_list.sort(key=lambda tup: tup[0])
+
         
 
+        
+        if len(hinges_list) == 0:
+            rb_list.append(self)
+            return rb_list    
+        elif len(hinges_list) == 1:
+            if hinges_list[0][0] < self.residue_range[0] and \
+                    hinges_list[0][1] < self.residue_range[0]:
+                    rb_list.append(self)
+                    return rb_list 
+            elif hinges_list[0][0] > self.residue_range[1] and \
+                hinges_list[0][1] > self.residue_range[1]:
+                    rb_list.append(self)
+                    return rb_list 
+            else:
+                rb1 = copy.deepcopy(self)
+                # hinge covering the beginning of the structure
+                if hinges_list[0][0] < self.residue_range[0] and\
+                    hinges_list[0][1] > self.residue_range[0] and \
+                     hinges_list[0][1] < self.residue_range[1]:
+                        rb1.residue_range = (hinges_list[0][1], self.residue_range[1])
+                        rb_list = rb_list + [rb1]
+                # hinge starting at the beginning of the structure
+                if hinges_list[0][0] == self.residue_range[0] and\
+                    hinges_list[0][1] < self.residue_range[1]:
+                        rb1.residue_range = (hinges_list[0][1], self.residue_range[1])
+                        rb_list = rb_list + [rb1]
+                # hinge in the middle of the structure
+                if hinges_list[0][0] > self.residue_range[0] and \
+                     hinges_list[0][1] < self.residue_range[1]:
+                        rb1.residue_range = (self.residue_range[0], hinges_list[0][0], )
+                        rb2 = copy.deepcopy(self)
+                        rb2.residue_range = (hinges_list[0][1], self.residue_range[1])
+                        rb_list = rb_list + [rb1, rb2]
+                # hinge ending at the end of the structure
+                if hinges_list[0][1] == self.residue_range[1] and\
+                    hinges_list[0][0] < self.residue_range[1] and \
+                        hinges_list[0][0] > self.residue_range[0]:
+                        rb1.residue_range = (self.residue_range[0], hinges_list[0][0])
+                        rb_list = rb_list + [rb1]
+                # hinge covering the end of the structure
+                if hinges_list[0][0] > self.residue_range[0] and\
+                    hinges_list[0][0] < self.residue_range[1] and\
+                     hinges_list[0][1] > self.residue_range[1]:
+                        rb1.residue_range = (self.residue_range[0],hinges_list[0][0])
+                        rb_list = rb_list + [rb1]
+                return rb_list
+            
+        elif len(hinges_list) > 1:
+            for index in range(len(hinges_list)):                
+                if index == 0:
+                    print("index0")
+                    if hinges_list[index][0] < self.residue_range[0] and \
+                        hinges_list[index][1] < self.residue_range[0]:
+                            rb_list.append(self)
+                            continue
+                    elif hinges_list[index][0] > self.residue_range[1] and \
+                        hinges_list[index][1] > self.residue_range[1]:
+                            rb_list.append(self)
+                            continue
+                    else:
+                        rb1 = copy.deepcopy(self)
+                        # hinge covering the beginning of the structure
+                        if hinges_list[index][0] < self.residue_range[0] and\
+                            hinges_list[index][1] > self.residue_range[0] and \
+                            hinges_list[index][1] < self.residue_range[1]:
+                                rb1.residue_range = (hinges_list[index][1], self.residue_range[1])
+                                rb_list = rb_list + [rb1]
+                        # hinge starting at the beginning of the structure
+                        if hinges_list[index][0] == self.residue_range[0] and\
+                            hinges_list[index][1] < self.residue_range[1]:
+                                rb1.residue_range = (hinges_list[index][1], self.residue_range[1])
+                                rb_list = rb_list + [rb1]
+                        # hinge in the middle of the structure
+                        if hinges_list[index][0] > self.residue_range[0] and \
+                            hinges_list[index][1] < self.residue_range[1]:
+                                rb1.residue_range = (self.residue_range[0], hinges_list[index][0], )
+                                rb2 = copy.deepcopy(self)
+                                rb2.residue_range = (hinges_list[index][1], self.residue_range[1])
+                                rb_list = rb_list + [rb1, rb2]
+                        # hinge ending at the end of the structure
+                        if hinges_list[index][1] == self.residue_range[1] and\
+                            hinges_list[index][0] < self.residue_range[1] and \
+                                hinges_list[index][0] > self.residue_range[0]:
+                                rb1.residue_range = (self.residue_range[0], hinges_list[index][0])
+                                rb_list = rb_list + [rb1]
+                        # hinge covering the end of the structure
+                        if hinges_list[index][0] > self.residue_range[0] and\
+                            hinges_list[index][0] < self.residue_range[1] and\
+                            hinges_list[index][1] > self.residue_range[1]:
+                                rb1.residue_range = (self.residue_range[0],hinges_list[index][0])
+                                rb_list = rb_list + [rb1]
+                    
+                else:
+                    rb1 = rb_list[-1]
+                    if hinges_list[index][0] < rb1.residue_range[0] and \
+                        hinges_list[index][1] < rb1.residue_range[0]:
+                        rb_list.append(rb1)
+                        continue
+                    elif hinges_list[index][0] > rb1.residue_range[1] and \
+                        hinges_list[index][1] > rb1.residue_range[1]:
+                        rb_list.append(rb1)
+                        continue
+                    # hinge covering the beginning of the structure
+                    if hinges_list[index][0] < rb1.residue_range[0] and\
+                        hinges_list[index][1] > rb1.residue_range[0] and \
+                        hinges_list[index][1] < rb1.residue_range[1]:
+                            rb1.residue_range = (hinges_list[index][1], rb1.residue_range[1])
+                            rb_list = rb_list + [rb1]
+                            continue
+                    # hinge starting at the beginning of the structure
+                    if hinges_list[index][0] == rb1.residue_range[0] and\
+                        hinges_list[index][1] < rb1.residue_range[1]:
+                            rb1.residue_range = (hinges_list[index][1], rb1.residue_range[1])
+                            rb_list = rb_list + [rb1]
+                            continue
+                    # hinge in the middle of the structure
+                    # TO DO: apply the same correction of the rb_list[-1].residue_range to the rest of cases
+                    if hinges_list[index][0] > rb1.residue_range[0] and \
+                        hinges_list[index][1] < rb1.residue_range[1]:
+                            rb2 = copy.deepcopy(rb1)
+                            rb2.residue_range = (hinges_list[index][1], rb1.residue_range[1])
+                            rb_list[-1].residue_range = (rb1.residue_range[0], hinges_list[index][0])
+                            rb_list = rb_list + [rb2]
+                            continue
+                    # hinge ending at the end of the structure
+                    if hinges_list[index][1] == rb1.residue_range[1] and\
+                        hinges_list[index][0] < rb1.residue_range[1] and \
+                            hinges_list[index][0] > rb1.residue_range[0]:
+                            rb1.residue_range = (rb1.residue_range[0], hinges_list[index][0])
+                            rb_list = rb_list + [rb1]
+                            continue
+                    # hinge covering the end of the structure
+                    if hinges_list[index][0] > rb1.residue_range[0] and\
+                        hinges_list[index][0] < rb1.residue_range[1] and\
+                        hinges_list[index][1] > rb1.residue_range[1]:
+                            rb1.residue_range = (rb1.residue_range[0],hinges_list[index][0])
+                            rb_list = rb_list + [rb1]
+                            continue
+
+
+
+            return rb_list    
         
 
 
 ### FUNCTIONS
-from bin.graphical_summary import extract_coincident_positions
+from bin.graphical_summary import PDB_get_resid_set, extract_coincident_positions 
 
 def make_composite(rb_list, reference_fasta=None, save_csv=False, outdir=None):
     """
@@ -332,7 +526,7 @@ def make_rb_list(structures_list, fasta):
                 rigid_body=i, 
                 super_rigid_body="", 
                 chain_of_super_rigid_bodies="", 
-                bead_size=20,
+                bead_size=4,
                 em_residues_per_gaussian=0, 
                 type="AF_model")
                 # Add the rigid body to a list
@@ -356,7 +550,7 @@ def make_rb_list(structures_list, fasta):
                 rigid_body=i, 
                 super_rigid_body="", 
                 chain_of_super_rigid_bodies="", 
-                bead_size=20,
+                bead_size=4,
                 em_residues_per_gaussian=0, 
                 type="RF_model")
                 # Add the rigid body to a list
@@ -416,12 +610,15 @@ def write_custom_topology(path_to_file, rigid_body_list):
     :param path_to_file: path to write custom topology
     :rigid_body_list: list of RigidBody objects
     """
+
     top_file = open(path_to_file, "w")
     # Write header of topology
     header = ["molecule_name", "color", "fasta_fn", "fasta_id", "pdb_fn", 
     "chain", "residue_range", "pdb_offset", "bead_size", 
     "em_residues_per_gaussian", "rigid_body", "super_rigid_body",
               "chain_of_super_rigid_bodies"]
+
+    
     top_file.write("|{:15}|{:10}|{:20}|{:15}|{:16}|{:7}|{:15}|{:11}|{:11}|"
                    "{:28}|{:12}|{:19}|{:27}|\n".format(header[0], header[1], 
                     header[2], header[3], header[4], header[5], header[6], 
@@ -430,53 +627,125 @@ def write_custom_topology(path_to_file, rigid_body_list):
     # Write molecule lines from dictionary
     # Notice that you can modify the following line acording to the desired output
     rigid_body_counter = 1
-    for rb in rigid_body_list:
+    first = True
+    for rb in  rigid_body_list:
         resolution = rb.resolution
-        mol_name = rb.molecule_name
+        mol_name = rb.fasta_id
         color = rb.color
-        fasta_fn = os.path.abspath(rb.fasta_fn)
-        fasta_id = rb.fasta_id+":"+rb.chain
-        pdb_fn = os.path.abspath(rb.pdb_fn)
+        fasta_fn = PurePosixPath(rb.fasta_fn).name
+        fasta_id = rb.fasta_id #+":"+rb.chain
+        pdb_fn = str(rb.get_full_PDB()[0])
         chain = rb.chain
         start_residue = rb.residue_range[0]
         last_residue = rb.residue_range[1]
-        offset = rb.pdb_offset
+        # offset = rb.pdb_offset
+        offset = "" # The offset is not necessary if the res range is correct
         bead_size = rb.bead_size
         em_gaussian = rb.em_residues_per_gaussian
-        if resolution == "all":
-            top_file.write("|{:15}|{:10}|{:20}|{:15}|{:16}|{:7}|{:15}|{:11}|{:11}|"
-                           "{:28}|{:<12}|{:19}|{:27}|\n".format(mol_name, color, 
-                           fasta_fn, fasta_id, str(pdb_fn), chain, "all", offset,
-                           bead_size, em_gaussian, rigid_body_counter, "", ""))
-            rigid_body_counter += 1
-
-            
-        else:
-            # If you want to add different options for X molecules (DNA or Proteins) this
-            # is a way
-            for n in range(start_residue, last_residue + 1, resolution):
-                if start_residue + resolution <= last_residue:
-                    top_file.write("|{:15}|{:10}|{:20}|{:15}|{:16}|{:7}|{:15}|{:11}|{:11}|"
-                                   "{:28}|{:<12}|{:19}|{:27}|\n".format(mol_name, 
-                                   color, fasta_fn, fasta_id, pdb_fn, chain, 
-                                   "{},{}".format(start_residue, 
-                                   start_residue + resolution), offset, 
-                                   bead_size, em_gaussian, rigid_body_counter, 
-                                   "", ""))
-                    start_residue += resolution + 1
-                    rigid_body_counter += 1
-                else:
-                    top_file.write("|{:15}|{:10}|{:20}|{:15}|{:16}|{:7}|{:15}|{:11}|{:11}|"
-                                "{:28}|{:<12}|{:19}|{:27}|\n".format(mol_name, 
-                                color, fasta_fn, fasta_id, pdb_fn, chain, 
-                                "{},{}".format(start_residue, last_residue),
-                                offset, bead_size, em_gaussian,
+        print(f"RB COUNT {rigid_body_counter}")
+        if rigid_body_counter == 1:
+            if start_residue == 1:
+                top_file.write("|{:15}|{:10}|{:20}|{:15}|{:16}|{:7}|{:15}|{:11}|{:11}|"
+                            "{:28}|{:<12}|{:19}|{:27}|\n".format(mol_name, color, 
+                            fasta_fn, fasta_id, str(pdb_fn), chain,"{},{}".format(start_residue, 
+                                last_residue), offset, bead_size, em_gaussian, 
                                 rigid_body_counter, "", ""))
-                    
+                top_file.write("\n") 
+                rigid_body_counter += 1
+            elif start_residue > 1:
+                top_file.write("|{:15}|{:10}|{:20}|{:15}|{:16}|{:7}|{:15}|{:11}|{:11}|"
+                            "{:28}|{:<12}|{:19}|{:27}|\n".format(mol_name, "brown", 
+                            fasta_fn, fasta_id, "BEADS", chain,"{},{}".format(1, 
+                                start_residue-1), offset, bead_size, em_gaussian, 
+                                rigid_body_counter, "", ""))
+                top_file.write("\n") 
+                top_file.write("|{:15}|{:10}|{:20}|{:15}|{:16}|{:7}|{:15}|{:11}|{:11}|"
+                            "{:28}|{:<12}|{:19}|{:27}|\n".format(mol_name, color, 
+                            fasta_fn, fasta_id, str(pdb_fn), chain,"{},{}".format(start_residue, 
+                                last_residue), offset, bead_size, em_gaussian, 
+                                rigid_body_counter, "", ""))
+                top_file.write("\n") 
+                rigid_body_counter += 1
+            continue
+        if rigid_body_counter > 1 :
+            print(f"STARR{start_residue} RB  end + 2{rigid_body_list[rigid_body_counter-2].residue_range[1]+1}")
+            if rigid_body_counter < len(rigid_body_list):
+                print("A")
+                if start_residue == rigid_body_list[rigid_body_counter-2].residue_range[1]+1:
+                    print("A1")
+                    top_file.write("|{:15}|{:10}|{:20}|{:15}|{:16}|{:7}|{:15}|{:11}|{:11}|"
+                                "{:28}|{:<12}|{:19}|{:27}|\n".format(mol_name, color, 
+                                fasta_fn, fasta_id, str(pdb_fn), chain,"{},{}".format(start_residue, 
+                                    last_residue), offset, bead_size, em_gaussian, 
+                                    rigid_body_counter, "", ""))
+                    top_file.write("\n") 
                     rigid_body_counter += 1
-                    break
-        top_file.write("\n")  # write a blank line between different molecules
+                elif start_residue > rigid_body_list[rigid_body_counter-2].residue_range[1]+1:
+                    print(f"A2")
+                    top_file.write("|{:15}|{:10}|{:20}|{:15}|{:16}|{:7}|{:15}|{:11}|{:11}|"
+                                "{:28}|{:<12}|{:19}|{:27}|\n".format(mol_name, "brown", 
+                                fasta_fn, fasta_id, "BEADS", chain,"{},{}".format(rigid_body_list[rigid_body_counter-2].residue_range[1]+1, 
+                                    start_residue-1), offset, bead_size, em_gaussian, 
+                                    rigid_body_counter, "", ""))
+                    top_file.write("\n") 
+                    top_file.write("|{:15}|{:10}|{:20}|{:15}|{:16}|{:7}|{:15}|{:11}|{:11}|"
+                                "{:28}|{:<12}|{:19}|{:27}|\n".format(mol_name, color, 
+                                fasta_fn, fasta_id, str(pdb_fn), chain,"{},{}".format(start_residue, 
+                                    last_residue), offset, bead_size, em_gaussian, 
+                                    rigid_body_counter, "", ""))
+                    top_file.write("\n") 
+                    rigid_body_counter += 1
+                continue
+            if rigid_body_counter == len(rigid_body_list):
+                print("B")
+                records = list(SeqIO.parse(rb.fasta_fn, "fasta"))
+                sequence = str(records[0].seq)
+               
+                if start_residue == rigid_body_list[rigid_body_counter-2].residue_range[1]+1:
+                    print("B1")
+                    top_file.write("|{:15}|{:10}|{:20}|{:15}|{:16}|{:7}|{:15}|{:11}|{:11}|"
+                                "{:28}|{:<12}|{:19}|{:27}|\n".format(mol_name, color, 
+                                fasta_fn, fasta_id, str(pdb_fn), chain,"{},{}".format(start_residue, 
+                                    last_residue), offset, bead_size, em_gaussian, 
+                                    rigid_body_counter, "", ""))
+                    top_file.write("\n") 
+                    rigid_body_counter += 1
+                elif start_residue > rigid_body_list[rigid_body_counter-2].residue_range[1]+1:
+                    print("B2")
+                    top_file.write("|{:15}|{:10}|{:20}|{:15}|{:16}|{:7}|{:15}|{:11}|{:11}|"
+                                "{:28}|{:<12}|{:19}|{:27}|\n".format(mol_name, "brown", 
+                                fasta_fn, fasta_id, "BEADS", chain,"{},{}".format(rigid_body_list[rigid_body_counter-2].residue_range[1]+1, 
+                                    start_residue-1), offset, bead_size, em_gaussian, 
+                                    rigid_body_counter, "", ""))
+                    top_file.write("\n") 
+                    top_file.write("|{:15}|{:10}|{:20}|{:15}|{:16}|{:7}|{:15}|{:11}|{:11}|"
+                                "{:28}|{:<12}|{:19}|{:27}|\n".format(mol_name, color, 
+                                fasta_fn, fasta_id, str(pdb_fn), chain,"{},{}".format(start_residue, 
+                                    last_residue), offset, bead_size, em_gaussian, 
+                                    rigid_body_counter, "", ""))
+                    top_file.write("\n") 
+                    rigid_body_counter += 1
+                if last_residue == len(sequence):
+                    print("B3")
+                    continue
+                if last_residue < len(sequence):
+                    print("B4")
+                    top_file.write("|{:15}|{:10}|{:20}|{:15}|{:16}|{:7}|{:15}|{:11}|{:11}|"
+                                "{:28}|{:<12}|{:19}|{:27}|\n".format(mol_name, "brown", 
+                                fasta_fn, fasta_id, "BEADS", chain,"{},{}".format(last_residue+1, 
+                                    len(sequence)), offset, bead_size, em_gaussian, 
+                                    rigid_body_counter, "", ""))
+                    top_file.write("\n") 
+                    rigid_body_counter += 1
+            continue
+
+            top_file.write("\n") 
+      
     top_file.close()
+      
+
+
+
 
 if __name__ == '__main__':
 
