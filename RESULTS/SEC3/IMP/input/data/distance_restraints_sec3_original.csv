@@ -1,0 +1,4 @@
+tag,tag_residue,protein,protein_residue,chain,raw_distance,added_distance,final_distance,sd_tag_population
+tag_sec3,3001,SEC3,1332,A,202,14,215.95,11.051
+tag_sec3,3002,SEC3,1332,A,110,14,124,10.1
+tag_sec3,3003,SEC3,611,A,112,229.5,341.5,9.058

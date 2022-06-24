@@ -1,0 +1,74 @@
+Filename= Output.pdb	| Chain(s)= 0	| AlphaValue= 4.5	| MinimumHingeLength= 5	| EccentricityClusters= 4
+Hindge Residues(Predicted):
+
+Hinge #1
+Residues: LEU-1207 to PRO-1213
+
+STATISTICS
+		N	Min	Max	Mean	Mode	Median	STDDev
+Total   	420	13.1	57.72	26.74085714285714	21.89	23.98	10.31320559969094
+Hinge   	28	18.14	24.96	22.350000000000005	18.14	22.46	2.2742094387783576
+NonHinge	392	13.1	57.72	27.054489795918368	13.1	24.445	10.58841811646478
+
+p-value:	0.020097990200979902
+
+Pymol Terminal Commands for Visualizing:
+color blue, resi 1207:1213
+import plane
+plane.make_plane_points(name='HingePlane1', l1=[39.09, 11.503, -37.67616987336012], l2=[39.09, 6.067, -38.417070206440485], l3=[49.789, 6.067, -40.81122929835432], center=False, makepseudo=False)
+set cgo_transparency, 0.35, HingePlane1
+#--------------------------------------------------#
+
+Hinge #2
+Residues: THR-1262 to LEU-1267
+
+STATISTICS
+		N	Min	Max	Mean	Mode	Median	STDDev
+Total   	420	13.1	57.72	26.74085714285714	21.89	23.98	10.31320559969094
+Hinge   	24	15.92	18.47	17.30666666666667	15.92	17.494999999999997	0.9313192554412018
+NonHinge	396	13.1	57.72	27.31262626262626	21.89	24.62	10.345759448068087
+
+p-value:	9.999000099990002e-05
+
+Pymol Terminal Commands for Visualizing:
+color blue, resi 1262:1267
+import plane
+plane.make_plane_points(name='HingePlane2', l1=[33.839, 12.843, -46.214327939937974], l2=[33.839, 6.544, -44.11048988177927], l3=[40.191, 6.544, -47.47089728496637], center=False, makepseudo=False)
+set cgo_transparency, 0.35, HingePlane2
+#--------------------------------------------------#
+
+Hinge #3
+Residues: TRP-1292 to LEU-1304
+
+STATISTICS
+		N	Min	Max	Mean	Mode	Median	STDDev
+Total   	420	13.1	57.72	26.74085714285714	21.89	23.98	10.31320559969094
+Hinge   	52	13.1	20.26	15.755384615384616	13.1	15.51	1.9211639716372884
+NonHinge	368	15.44	57.72	28.29315217391304	21.89	26.009999999999998	10.070144091338582
+
+p-value:	9.999000099990002e-05
+
+Pymol Terminal Commands for Visualizing:
+color blue, resi 1292:1304
+import plane
+plane.make_plane_points(name='HingePlane3', l1=[29.033, 25.907, -36.84779314669413], l2=[29.033, 13.079, -37.669638398966875], l3=[45.668, 13.079, -37.90200520121172], center=False, makepseudo=False)
+set cgo_transparency, 0.35, HingePlane3
+#--------------------------------------------------#
+
+Hinge #4
+Residues: ASP-1325 to PHE-1330
+
+STATISTICS
+		N	Min	Max	Mean	Mode	Median	STDDev
+Total   	420	13.1	57.72	26.74085714285714	21.89	23.98	10.31320559969094
+Hinge   	24	15.57	18.45	17.503333333333334	15.57	18.0	1.0346926543128103
+NonHinge	396	13.1	57.72	27.30070707070707	21.89	24.62	10.356566087087584
+
+p-value:	9.999000099990002e-05
+
+Pymol Terminal Commands for Visualizing:
+color blue, resi 1325:1330
+import plane
+plane.make_plane_points(name='HingePlane4', l1=[30.066, 24.098, -47.14527492868185], l2=[30.066, 16.66, -47.19856185509625], l3=[38.545, 16.66, -47.79736183433613], center=False, makepseudo=False)
+set cgo_transparency, 0.35, HingePlane4
+#--------------------------------------------------#

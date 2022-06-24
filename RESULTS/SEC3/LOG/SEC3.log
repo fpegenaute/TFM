@@ -1,0 +1,1159 @@
+DEBUG:...STARTING...
+
+INFO:Query length: 1336
+INFO:Create folders:
+INFO:test_output/SEC3/PDB/, test_output/SEC3/FASTA/, test_output/SEC3/REPORT/, test_output/SEC3/HINGES/, test_output/SEC3/IMP/ .
+INFO:### BLAST ###
+INFO:BLAST database is located at: /homes/users/fpegenaute/scratch/TFM/databases/BLAST/pdbaa
+INFO:The BLAST output will be stored in:test_output/SEC3/BLAST/
+INFO:Starting BLAST. Query: input_fasta/SEC3.fasta, Database: pdbaa
+INFO:BLAST results stored in : test_output/SEC3/BLAST/SEC3_blast.out
+INFO: The target sequence has close homologs in the PDB with 
+    code/s: dict_keys(['5YFP', '5LG4'])
+INFO:Structures for query: []
+INFO:Retrieving structures from the pdb
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/5YFP HTTP/1.1" 200 5552
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/5LG4 HTTP/1.1" 200 950
+INFO:File being processed: 5lg4.cif
+INFO:Making directory for the chains at test_output/SEC3/PDB/CHAINS/
+INFO:Extracting the chain
+INFO:OUT PATH:test_output/SEC3/PDB/CHAINS/5lg4_B.pdb
+INFO:Extracting chain B from 5lg4.cif...
+INFO:Length of the template 5lg4_B.pdb: 
+                                174
+INFO:PDB_LEN: 174 . QUERY_LEN: 1336
+INFO:5lg4_B.pdb has length 174, 
+                it will be stored as a partial match
+INFO:MOVING test_output/SEC3/PDB/CHAINS/5lg4_B.pdb TO test_output/SEC3/PDB/partial/5lg4_B.pdb
+INFO:"test_output/SEC3/PDB/partial/" does not exist, it will be created
+INFO:File being processed: 5yfp.cif
+INFO:Making directory for the chains at test_output/SEC3/PDB/CHAINS/
+INFO:Extracting the chain
+INFO:OUT PATH:test_output/SEC3/PDB/CHAINS/5yfp_A.pdb
+INFO:Extracting chain A from 5yfp.cif...
+INFO:Length of the template 5yfp_A.pdb: 
+                                672
+INFO:PDB_LEN: 672 . QUERY_LEN: 1336
+INFO:5yfp_A.pdb has length 672, 
+                it will be stored as a partial match
+INFO:MOVING test_output/SEC3/PDB/CHAINS/5yfp_A.pdb TO test_output/SEC3/PDB/partial/5yfp_A.pdb
+INFO:Checking user's templates
+INFO:Submitting AF2 SLURM batch script
+INFO:Extracting AF2 high confidence domains
+INFO:Domains will be stored in:test_output/SEC3/ALPHAFOLD/DOMAINS/
+INFO:CONFIDENT FILES: ['test_output/SEC3/PDB/partial/5lg4_B.pdb', 'test_output/SEC3/PDB/partial/5yfp_A.pdb']
+INFO:NROW: 2
+INFO:### HINGE DETECTION ###
+DEBUG:...STARTING...
+
+INFO:Query length: 1336
+INFO:Create folders:
+INFO:test_output/SEC3/PDB/, test_output/SEC3/FASTA/, test_output/SEC3/REPORT/, test_output/SEC3/HINGES/, test_output/SEC3/IMP/ .
+INFO:### BLAST ###
+INFO:BLAST database is located at: /homes/users/fpegenaute/scratch/TFM/databases/BLAST/pdbaa
+INFO:The BLAST output will be stored in:test_output/SEC3/BLAST/
+INFO:Starting BLAST. Query: input_fasta/SEC3.fasta, Database: pdbaa
+INFO:BLAST results stored in : test_output/SEC3/BLAST/SEC3_blast.out
+INFO: The target sequence has close homologs in the PDB with 
+    code/s: dict_keys(['5YFP', '5LG4'])
+INFO:Structures for query: []
+INFO:Retrieving structures from the pdb
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/5YFP HTTP/1.1" 200 5548
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/5LG4 HTTP/1.1" 200 950
+INFO:File being processed: 5lg4.cif
+INFO:Making directory for the chains at test_output/SEC3/PDB/CHAINS/
+INFO:Extracting the chain
+INFO:OUT PATH:test_output/SEC3/PDB/CHAINS/5lg4_B.pdb
+INFO:Extracting chain B from 5lg4.cif...
+INFO:Length of the template 5lg4_B.pdb: 
+                                174
+INFO:PDB_LEN: 174 . QUERY_LEN: 1336
+INFO:5lg4_B.pdb has length 174, 
+                it will be stored as a partial match
+INFO:MOVING test_output/SEC3/PDB/CHAINS/5lg4_B.pdb TO test_output/SEC3/PDB/partial/5lg4_B.pdb
+INFO:File being processed: 5yfp.cif
+INFO:Making directory for the chains at test_output/SEC3/PDB/CHAINS/
+INFO:Extracting the chain
+INFO:OUT PATH:test_output/SEC3/PDB/CHAINS/5yfp_A.pdb
+INFO:Extracting chain A from 5yfp.cif...
+INFO:Length of the template 5yfp_A.pdb: 
+                                672
+INFO:PDB_LEN: 672 . QUERY_LEN: 1336
+INFO:5yfp_A.pdb has length 672, 
+                it will be stored as a partial match
+INFO:MOVING test_output/SEC3/PDB/CHAINS/5yfp_A.pdb TO test_output/SEC3/PDB/partial/5yfp_A.pdb
+INFO:Checking user's templates
+INFO:Submitting AF2 SLURM batch script
+INFO:Extracting AF2 high confidence domains
+INFO:Domains will be stored in:test_output/SEC3/ALPHAFOLD/DOMAINS/
+INFO:CONFIDENT FILES: ['test_output/SEC3/PDB/partial/5lg4_B.pdb', 'test_output/SEC3/PDB/partial/5yfp_A.pdb']
+INFO:NROW: 2
+INFO:### HINGE DETECTION ###
+DEBUG:...STARTING...
+
+INFO:Query length: 1336
+INFO:Create folders:
+INFO:test_output/SEC3/PDB/, test_output/SEC3/FASTA/, test_output/SEC3/REPORT/, test_output/SEC3/HINGES/, test_output/SEC3/IMP/ .
+INFO:### BLAST ###
+INFO:BLAST database is located at: /homes/users/fpegenaute/scratch/TFM/databases/BLAST/pdbaa
+INFO:The BLAST output will be stored in:test_output/SEC3/BLAST/
+INFO:Starting BLAST. Query: input_fasta/SEC3.fasta, Database: pdbaa
+INFO:BLAST results stored in : test_output/SEC3/BLAST/SEC3_blast.out
+INFO: The target sequence has close homologs in the PDB with 
+    code/s: dict_keys(['5YFP', '5LG4'])
+INFO:Structures for query: []
+INFO:Retrieving structures from the pdb
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/5YFP HTTP/1.1" 200 5548
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/5LG4 HTTP/1.1" 200 950
+INFO:File being processed: 5lg4.cif
+INFO:Making directory for the chains at test_output/SEC3/PDB/CHAINS/
+INFO:Extracting the chain
+INFO:OUT PATH:test_output/SEC3/PDB/CHAINS/5lg4_B.pdb
+INFO:Extracting chain B from 5lg4.cif...
+INFO:Length of the template 5lg4_B.pdb: 
+                                174
+INFO:PDB_LEN: 174 . QUERY_LEN: 1336
+INFO:5lg4_B.pdb has length 174, 
+                it will be stored as a partial match
+INFO:MOVING test_output/SEC3/PDB/CHAINS/5lg4_B.pdb TO test_output/SEC3/PDB/partial/5lg4_B.pdb
+INFO:File being processed: 5yfp.cif
+INFO:Making directory for the chains at test_output/SEC3/PDB/CHAINS/
+INFO:Extracting the chain
+INFO:OUT PATH:test_output/SEC3/PDB/CHAINS/5yfp_A.pdb
+INFO:Extracting chain A from 5yfp.cif...
+INFO:Length of the template 5yfp_A.pdb: 
+                                672
+INFO:PDB_LEN: 672 . QUERY_LEN: 1336
+INFO:5yfp_A.pdb has length 672, 
+                it will be stored as a partial match
+INFO:MOVING test_output/SEC3/PDB/CHAINS/5yfp_A.pdb TO test_output/SEC3/PDB/partial/5yfp_A.pdb
+INFO:Checking user's templates
+INFO:Submitting AF2 SLURM batch script
+INFO:Extracting AF2 high confidence domains
+INFO:Domains will be stored in:test_output/SEC3/ALPHAFOLD/DOMAINS/
+INFO:CONFIDENT FILES: ['test_output/SEC3/PDB/partial/5lg4_B.pdb', 'test_output/SEC3/PDB/partial/5yfp_A.pdb']
+INFO:NROW: 2
+INFO:### HINGE DETECTION ###
+INFO:No overlap between test_output/SEC3/PDB/partial/5lg4_B.pdb and test_output/SEC3/PDB/partial/5yfp_A.pdb
+INFO:Comparing test_output/SEC3/PDB/partial/5lg4_B.pdb and test_output/SEC3/PDB/partial/5yfp_A.pdb
+DEBUG:...STARTING...
+
+INFO:Query length: 1336
+INFO:Create folders:
+INFO:test_output/SEC3/PDB/, test_output/SEC3/FASTA/, test_output/SEC3/REPORT/, test_output/SEC3/HINGES/, test_output/SEC3/IMP/ .
+INFO:### BLAST ###
+INFO:BLAST database is located at: /homes/users/fpegenaute/scratch/TFM/databases/BLAST/pdbaa
+INFO:The BLAST output will be stored in:test_output/SEC3/BLAST/
+INFO:Starting BLAST. Query: input_fasta/SEC3.fasta, Database: pdbaa
+INFO:BLAST results stored in : test_output/SEC3/BLAST/SEC3_blast.out
+INFO: The target sequence has close homologs in the PDB with 
+    code/s: dict_keys(['5YFP', '5LG4'])
+INFO:Structures for query: []
+INFO:Retrieving structures from the pdb
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/5YFP HTTP/1.1" 200 5552
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/5LG4 HTTP/1.1" 200 950
+INFO:File being processed: 5lg4.cif
+INFO:Making directory for the chains at test_output/SEC3/PDB/CHAINS/
+INFO:Extracting the chain
+INFO:OUT PATH:test_output/SEC3/PDB/CHAINS/5lg4_B.pdb
+INFO:Extracting chain B from 5lg4.cif...
+INFO:Length of the template 5lg4_B.pdb: 
+                                174
+INFO:PDB_LEN: 174 . QUERY_LEN: 1336
+INFO:5lg4_B.pdb has length 174, 
+                it will be stored as a partial match
+INFO:MOVING test_output/SEC3/PDB/CHAINS/5lg4_B.pdb TO test_output/SEC3/PDB/partial/5lg4_B.pdb
+INFO:File being processed: 5yfp.cif
+INFO:Making directory for the chains at test_output/SEC3/PDB/CHAINS/
+INFO:Extracting the chain
+INFO:OUT PATH:test_output/SEC3/PDB/CHAINS/5yfp_A.pdb
+INFO:Extracting chain A from 5yfp.cif...
+INFO:Length of the template 5yfp_A.pdb: 
+                                672
+INFO:PDB_LEN: 672 . QUERY_LEN: 1336
+INFO:5yfp_A.pdb has length 672, 
+                it will be stored as a partial match
+INFO:MOVING test_output/SEC3/PDB/CHAINS/5yfp_A.pdb TO test_output/SEC3/PDB/partial/5yfp_A.pdb
+INFO:Checking user's templates
+INFO:Submitting AF2 SLURM batch script
+INFO:Extracting AF2 high confidence domains
+INFO:Domains will be stored in:test_output/SEC3/ALPHAFOLD/DOMAINS/
+INFO:CONFIDENT FILES: ['test_output/SEC3/PDB/partial/5lg4_B.pdb', 'test_output/SEC3/PDB/partial/5yfp_A.pdb']
+INFO:NROW: 2
+INFO:### HINGE DETECTION ###
+INFO:No overlap between test_output/SEC3/PDB/partial/5lg4_B.pdb and test_output/SEC3/PDB/partial/5yfp_A.pdb
+INFO:Comparing test_output/SEC3/PDB/partial/5lg4_B.pdb and test_output/SEC3/PDB/partial/5yfp_A.pdb
+DEBUG:...STARTING...
+
+INFO:Query length: 1336
+INFO:Create folders:
+INFO:test_output/SEC3/PDB/, test_output/SEC3/FASTA/, test_output/SEC3/REPORT/, test_output/SEC3/HINGES/, test_output/SEC3/IMP/ .
+INFO:### BLAST ###
+INFO:BLAST database is located at: /homes/users/fpegenaute/scratch/TFM/databases/BLAST/pdbaa
+INFO:The BLAST output will be stored in:test_output/SEC3/BLAST/
+INFO:Starting BLAST. Query: input_fasta/SEC3.fasta, Database: pdbaa
+INFO:BLAST results stored in : test_output/SEC3/BLAST/SEC3_blast.out
+INFO: The target sequence has close homologs in the PDB with 
+    code/s: dict_keys(['5YFP', '5LG4'])
+INFO:Structures for query: []
+INFO:Retrieving structures from the pdb
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/5YFP HTTP/1.1" 200 5552
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/5LG4 HTTP/1.1" 200 950
+INFO:File being processed: 5lg4.cif
+INFO:Making directory for the chains at test_output/SEC3/PDB/CHAINS/
+INFO:Extracting the chain
+INFO:OUT PATH:test_output/SEC3/PDB/CHAINS/5lg4_B.pdb
+INFO:Extracting chain B from 5lg4.cif...
+INFO:Length of the template 5lg4_B.pdb: 
+                                174
+INFO:PDB_LEN: 174 . QUERY_LEN: 1336
+INFO:5lg4_B.pdb has length 174, 
+                it will be stored as a partial match
+INFO:MOVING test_output/SEC3/PDB/CHAINS/5lg4_B.pdb TO test_output/SEC3/PDB/partial/5lg4_B.pdb
+INFO:File being processed: 5yfp.cif
+INFO:Making directory for the chains at test_output/SEC3/PDB/CHAINS/
+INFO:Extracting the chain
+INFO:OUT PATH:test_output/SEC3/PDB/CHAINS/5yfp_A.pdb
+INFO:Extracting chain A from 5yfp.cif...
+INFO:Length of the template 5yfp_A.pdb: 
+                                672
+INFO:PDB_LEN: 672 . QUERY_LEN: 1336
+INFO:5yfp_A.pdb has length 672, 
+                it will be stored as a partial match
+INFO:MOVING test_output/SEC3/PDB/CHAINS/5yfp_A.pdb TO test_output/SEC3/PDB/partial/5yfp_A.pdb
+INFO:Checking user's templates
+INFO:Submitting AF2 SLURM batch script
+INFO:Extracting AF2 high confidence domains
+INFO:Domains will be stored in:test_output/SEC3/ALPHAFOLD/DOMAINS/
+INFO:CONFIDENT FILES: ['test_output/SEC3/PDB/partial/5lg4_B.pdb', 'test_output/SEC3/PDB/partial/5yfp_A.pdb']
+INFO:NROW: 2
+INFO:### HINGE DETECTION ###
+INFO:No overlap between test_output/SEC3/PDB/partial/5lg4_B.pdb and test_output/SEC3/PDB/partial/5yfp_A.pdb
+INFO:Comparing test_output/SEC3/PDB/partial/5lg4_B.pdb and test_output/SEC3/PDB/partial/5yfp_A.pdb
+DEBUG:...STARTING...
+
+INFO:Query length: 1336
+INFO:Create folders:
+INFO:test_output/SEC3/PDB/, test_output/SEC3/FASTA/, test_output/SEC3/REPORT/, test_output/SEC3/HINGES/, test_output/SEC3/IMP/ .
+INFO:### BLAST ###
+INFO:BLAST database is located at: /homes/users/fpegenaute/scratch/TFM/databases/BLAST/pdbaa
+INFO:The BLAST output will be stored in:test_output/SEC3/BLAST/
+INFO:Starting BLAST. Query: input_fasta/SEC3.fasta, Database: pdbaa
+DEBUG:...STARTING...
+
+INFO:Query length: 1336
+INFO:Create folders:
+INFO:test_output/SEC3/PDB/, test_output/SEC3/FASTA/, test_output/SEC3/REPORT/, test_output/SEC3/HINGES/, test_output/SEC3/IMP/ .
+INFO:### BLAST ###
+INFO:BLAST database is located at: /homes/users/fpegenaute/scratch/TFM/databases/BLAST/pdbaa
+INFO:The BLAST output will be stored in:test_output/SEC3/BLAST/
+INFO:Starting BLAST. Query: input_fasta/SEC3.fasta, Database: pdbaa
+INFO:BLAST results stored in : test_output/SEC3/BLAST/SEC3_blast.out
+INFO: The target sequence has close homologs in the PDB with 
+    code/s: dict_keys(['5YFP', '5LG4'])
+INFO:Structures for query: []
+INFO:Retrieving structures from the pdb
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/5YFP HTTP/1.1" 200 5552
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/5LG4 HTTP/1.1" 200 950
+INFO:File being processed: 5lg4.cif
+INFO:Making directory for the chains at test_output/SEC3/PDB/CHAINS/
+INFO:Extracting the chain
+INFO:OUT PATH:test_output/SEC3/PDB/CHAINS/5lg4_B.pdb
+INFO:Extracting chain B from 5lg4.cif...
+INFO:Length of the template 5lg4_B.pdb: 
+                                174
+INFO:PDB_LEN: 174 . QUERY_LEN: 1336
+INFO:5lg4_B.pdb has length 174, 
+                it will be stored as a partial match
+INFO:MOVING test_output/SEC3/PDB/CHAINS/5lg4_B.pdb TO test_output/SEC3/PDB/partial/5lg4_B.pdb
+INFO:File being processed: 5yfp.cif
+INFO:Making directory for the chains at test_output/SEC3/PDB/CHAINS/
+INFO:Extracting the chain
+INFO:OUT PATH:test_output/SEC3/PDB/CHAINS/5yfp_A.pdb
+INFO:Extracting chain A from 5yfp.cif...
+INFO:Length of the template 5yfp_A.pdb: 
+                                672
+INFO:PDB_LEN: 672 . QUERY_LEN: 1336
+INFO:5yfp_A.pdb has length 672, 
+                it will be stored as a partial match
+INFO:MOVING test_output/SEC3/PDB/CHAINS/5yfp_A.pdb TO test_output/SEC3/PDB/partial/5yfp_A.pdb
+INFO:Checking user's templates
+INFO:Submitting RF SLURM batch script
+INFO:CONFIDENT FILES: ['test_output/SEC3/PDB/partial/5lg4_B.pdb', 'test_output/SEC3/PDB/partial/5yfp_A.pdb']
+INFO:NROW: 2
+INFO:### HINGE DETECTION ###
+INFO:No overlap between test_output/SEC3/PDB/partial/5lg4_B.pdb and test_output/SEC3/PDB/partial/5yfp_A.pdb
+INFO:Comparing test_output/SEC3/PDB/partial/5lg4_B.pdb and test_output/SEC3/PDB/partial/5yfp_A.pdb
+DEBUG:...STARTING...
+
+INFO:Query length: 1336
+INFO:Create folders:
+INFO:test_output/SEC3/PDB/, test_output/SEC3/FASTA/, test_output/SEC3/REPORT/, test_output/SEC3/HINGES/, test_output/SEC3/IMP/ .
+INFO:### BLAST ###
+INFO:BLAST database is located at: /homes/users/fpegenaute/scratch/TFM/databases/BLAST/pdbaa
+INFO:The BLAST output will be stored in:test_output/SEC3/BLAST/
+INFO:Starting BLAST. Query: input_fasta/SEC3.fasta, Database: pdbaa
+INFO:BLAST results stored in : test_output/SEC3/BLAST/SEC3_blast.out
+INFO: The target sequence has close homologs in the PDB with 
+    code/s: dict_keys(['5YFP', '5LG4'])
+INFO:Structures for query: []
+INFO:Retrieving structures from the pdb
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/5YFP HTTP/1.1" 200 5548
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/5LG4 HTTP/1.1" 200 950
+INFO:File being processed: 5lg4.cif
+INFO:Making directory for the chains at test_output/SEC3/PDB/CHAINS/
+INFO:Extracting the chain
+INFO:OUT PATH:test_output/SEC3/PDB/CHAINS/5lg4_B.pdb
+INFO:Extracting chain B from 5lg4.cif...
+INFO:Length of the template 5lg4_B.pdb: 
+                                174
+INFO:PDB_LEN: 174 . QUERY_LEN: 1336
+INFO:5lg4_B.pdb has length 174, 
+                it will be stored as a partial match
+INFO:MOVING test_output/SEC3/PDB/CHAINS/5lg4_B.pdb TO test_output/SEC3/PDB/partial/5lg4_B.pdb
+INFO:File being processed: 5yfp.cif
+INFO:Making directory for the chains at test_output/SEC3/PDB/CHAINS/
+INFO:Extracting the chain
+INFO:OUT PATH:test_output/SEC3/PDB/CHAINS/5yfp_A.pdb
+INFO:Extracting chain A from 5yfp.cif...
+INFO:Length of the template 5yfp_A.pdb: 
+                                672
+INFO:PDB_LEN: 672 . QUERY_LEN: 1336
+INFO:5yfp_A.pdb has length 672, 
+                it will be stored as a partial match
+INFO:MOVING test_output/SEC3/PDB/CHAINS/5yfp_A.pdb TO test_output/SEC3/PDB/partial/5yfp_A.pdb
+INFO:Checking user's templates
+INFO:Submitting RF SLURM batch script
+INFO:CONFIDENT FILES: ['test_output/SEC3/PDB/partial/5lg4_B.pdb', 'test_output/SEC3/PDB/partial/5yfp_A.pdb']
+INFO:NROW: 2
+INFO:### HINGE DETECTION ###
+INFO:No overlap between test_output/SEC3/PDB/partial/5lg4_B.pdb and test_output/SEC3/PDB/partial/5yfp_A.pdb
+INFO:Comparing test_output/SEC3/PDB/partial/5lg4_B.pdb and test_output/SEC3/PDB/partial/5yfp_A.pdb
+DEBUG:...STARTING...
+
+INFO:Query length: 1336
+INFO:Create folders:
+INFO:test_output/SEC3/PDB/, test_output/SEC3/FASTA/, test_output/SEC3/REPORT/, test_output/SEC3/HINGES/, test_output/SEC3/IMP/ .
+INFO:### BLAST ###
+INFO:BLAST database is located at: /homes/users/fpegenaute/scratch/TFM/databases/BLAST/pdbaa
+INFO:The BLAST output will be stored in:test_output/SEC3/BLAST/
+INFO:Starting BLAST. Query: input_fasta/SEC3.fasta, Database: pdbaa
+INFO:BLAST results stored in : test_output/SEC3/BLAST/SEC3_blast.out
+INFO: The target sequence has close homologs in the PDB with 
+    code/s: dict_keys(['5YFP', '5LG4'])
+INFO:Structures for query: []
+INFO:Retrieving structures from the pdb
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/5YFP HTTP/1.1" 200 5552
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/5LG4 HTTP/1.1" 200 950
+INFO:File being processed: 5lg4.cif
+INFO:Making directory for the chains at test_output/SEC3/PDB/CHAINS/
+INFO:Extracting the chain
+INFO:OUT PATH:test_output/SEC3/PDB/CHAINS/5lg4_B.pdb
+INFO:Extracting chain B from 5lg4.cif...
+INFO:Length of the template 5lg4_B.pdb: 
+                                174
+INFO:PDB_LEN: 174 . QUERY_LEN: 1336
+INFO:5lg4_B.pdb has length 174, 
+                it will be stored as a partial match
+INFO:MOVING test_output/SEC3/PDB/CHAINS/5lg4_B.pdb TO test_output/SEC3/PDB/partial/5lg4_B.pdb
+INFO:File being processed: 5yfp.cif
+INFO:Making directory for the chains at test_output/SEC3/PDB/CHAINS/
+INFO:Extracting the chain
+INFO:OUT PATH:test_output/SEC3/PDB/CHAINS/5yfp_A.pdb
+INFO:Extracting chain A from 5yfp.cif...
+INFO:Length of the template 5yfp_A.pdb: 
+                                672
+INFO:PDB_LEN: 672 . QUERY_LEN: 1336
+INFO:5yfp_A.pdb has length 672, 
+                it will be stored as a partial match
+INFO:MOVING test_output/SEC3/PDB/CHAINS/5yfp_A.pdb TO test_output/SEC3/PDB/partial/5yfp_A.pdb
+INFO:Checking user's templates
+INFO:Submitting RF SLURM batch script
+INFO:CONFIDENT FILES: ['test_output/SEC3/PDB/partial/5lg4_B.pdb', 'test_output/SEC3/PDB/partial/5yfp_A.pdb']
+INFO:NROW: 2
+INFO:### HINGE DETECTION ###
+INFO:No overlap between test_output/SEC3/PDB/partial/5lg4_B.pdb and test_output/SEC3/PDB/partial/5yfp_A.pdb
+INFO:Comparing test_output/SEC3/PDB/partial/5lg4_B.pdb and test_output/SEC3/PDB/partial/5yfp_A.pdb
+DEBUG:...STARTING...
+
+INFO:Query length: 1336
+INFO:Create folders:
+INFO:output/SEC3/PDB/, output/SEC3/FASTA/, output/SEC3/REPORT/, output/SEC3/HINGES/, output/SEC3/IMP/ .
+INFO:### BLAST ###
+INFO:BLAST database is located at: /home/gallegolab/Desktop/TFM/databases/BLAST/pdbaa
+INFO:The BLAST output will be stored in:output/SEC3/BLAST/
+INFO:Starting BLAST. Query: input_fasta/SEC3.fasta, Database: pdbaa
+INFO:BLAST results stored in : output/SEC3/BLAST/SEC3_blast.out
+INFO: The target sequence has close homologs in the PDB with 
+    code/s: dict_keys(['5YFP', '5LG4'])
+INFO:Structures for query: []
+INFO:Retrieving structures from the pdb
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/5YFP HTTP/1.1" 200 5548
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/5LG4 HTTP/1.1" 200 950
+INFO:File being processed: 5yfp.cif
+INFO:Making directory for the chains at output/SEC3/PDB/CHAINS/
+INFO:Extracting the chain
+INFO:OUT PATH:output/SEC3/PDB/CHAINS/5yfp_A.pdb
+INFO:Extracting chain A from 5yfp.cif...
+INFO:Length of the template 5yfp_A.pdb: 
+                                672
+INFO:PDB_LEN: 672 . QUERY_LEN: 1336
+INFO:5yfp_A.pdb has length 672, 
+                it will be stored as a partial match
+INFO:MOVING output/SEC3/PDB/CHAINS/5yfp_A.pdb TO output/SEC3/PDB/partial/5yfp_A.pdb
+INFO:File being processed: 5lg4.cif
+INFO:Making directory for the chains at output/SEC3/PDB/CHAINS/
+INFO:Extracting the chain
+INFO:OUT PATH:output/SEC3/PDB/CHAINS/5lg4_B.pdb
+INFO:Extracting chain B from 5lg4.cif...
+INFO:Length of the template 5lg4_B.pdb: 
+                                174
+INFO:PDB_LEN: 174 . QUERY_LEN: 1336
+INFO:5lg4_B.pdb has length 174, 
+                it will be stored as a partial match
+INFO:MOVING output/SEC3/PDB/CHAINS/5lg4_B.pdb TO output/SEC3/PDB/partial/5lg4_B.pdb
+INFO:Checking user's templates
+INFO:custom AF model detected: AF2/SEC3_AF.pdb
+INFO:custom PAE matrix detected: AF2/SEC3_PAE.json
+INFO:Extracting AF2 high confidence domains
+INFO:Domains will be stored in:output/SEC3/ALPHAFOLD/DOMAINS/
+INFO:Processing file: SEC3_AF.pdb
+INFO:Extracting residues from a PDB file: output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_domains.pdb
+INFO:Residue list of confident domains: [('1', 76), ('1', 77), ('1', 78), ('1', 79), ('1', 80), ('1', 81), ('1', 82), ('1', 83), ('1', 84), ('1', 85), ('1', 86), ('1', 87), ('1', 88), ('1', 89), ('1', 90), ('1', 91), ('1', 92), ('1', 93), ('1', 94), ('1', 95), ('1', 96), ('1', 97), ('1', 103), ('1', 104), ('1', 105), ('1', 106), ('1', 107), ('1', 108), ('1', 109), ('1', 110), ('1', 111), ('1', 112), ('1', 113), ('1', 114), ('1', 115), ('1', 116), ('1', 117), ('1', 118), ('1', 119), ('1', 120), ('1', 121), ('1', 122), ('1', 123), ('1', 124), ('1', 125), ('1', 126), ('1', 127), ('1', 128), ('1', 129), ('1', 130), ('1', 131), ('1', 132), ('1', 133), ('1', 134), ('1', 135), ('1', 136), ('1', 137), ('1', 138), ('1', 139), ('1', 140), ('1', 141), ('1', 142), ('1', 143), ('1', 144), ('1', 145), ('1', 146), ('1', 147), ('1', 148), ('1', 149), ('1', 150), ('1', 151), ('1', 152), ('1', 153), ('1', 154), ('1', 155), ('1', 156), ('1', 157), ('1', 158), ('1', 159), ('1', 160), ('1', 161), ('1', 162), ('1', 163), ('1', 164), ('1', 165), ('1', 166), ('1', 167), ('1', 168), ('1', 169), ('1', 170), ('1', 171), ('1', 172), ('1', 173), ('1', 174), ('1', 175), ('1', 176), ('1', 177), ('1', 178), ('1', 179), ('1', 180), ('1', 181), ('1', 182), ('1', 183), ('1', 184), ('1', 185), ('1', 186), ('1', 187), ('1', 188), ('1', 189), ('1', 190), ('1', 191), ('1', 192), ('1', 193), ('1', 194), ('1', 195), ('1', 196), ('1', 197), ('1', 198), ('1', 199), ('1', 200), ('1', 201), ('1', 202), ('1', 203), ('1', 204), ('1', 205), ('1', 206), ('1', 207), ('1', 208), ('1', 209), ('1', 210), ('1', 211), ('1', 212), ('1', 213), ('1', 214), ('1', 215), ('1', 216), ('1', 217), ('1', 218), ('1', 219), ('1', 220), ('1', 221), ('1', 222), ('1', 223), ('1', 224), ('1', 225), ('1', 226), ('1', 227), ('1', 228), ('1', 229), ('1', 230), ('1', 231), ('1', 232), ('1', 233), ('1', 234), ('1', 235), ('1', 236), ('1', 237), ('1', 238), ('1', 239), ('1', 240), ('1', 241), ('1', 242), ('1', 243), ('1', 244), ('1', 245), ('1', 246), ('1', 247), ('1', 248)]
+INFO:Extracting RoseTTaFold high confidence domains
+INFO:Domains will be stored in:output/SEC3/ROSETTAFOLD/DOMAINS/
+INFO:LIST NEWNAME: ['model_5', 'crderr', 'pdb']
+INFO:NEWNAME: model_5-crderr.pdb
+INFO:Processing file: /home/gallegolab/Desktop/TFM/TFM/output/SEC3/ROSETTAFOLD/model/model_5-crderr.pdb
+INFO:Extracting residues from a PDB file: output/SEC3/ROSETTAFOLD/DOMAINS/model_5-crderr_domains.pdb
+INFO:Extracting residues from a PDB file: output/SEC3/ROSETTAFOLD/DOMAINS/model_5-crderr_domains.pdb
+INFO:Residue list of confident domains: [('1', 740), ('1', 741), ('1', 742), ('1', 743), ('1', 744), ('1', 745), ('1', 746), ('1', 747), ('1', 748), ('1', 759), ('1', 760), ('1', 761), ('1', 762), ('1', 763), ('1', 764), ('1', 765), ('1', 766), ('1', 767), ('1', 768), ('1', 769), ('1', 770), ('1', 771), ('1', 772), ('1', 773), ('1', 774), ('1', 795), ('1', 796), ('1', 797), ('1', 798), ('1', 799), ('1', 800), ('1', 801), ('1', 802), ('1', 803), ('1', 804), ('1', 805), ('1', 806), ('1', 807), ('1', 808), ('1', 809), ('1', 810), ('1', 811), ('1', 812), ('1', 813), ('1', 814), ('1', 815), ('1', 816), ('1', 817), ('1', 818), ('1', 840), ('1', 841), ('1', 842), ('1', 843), ('1', 844), ('1', 845), ('1', 846), ('1', 847), ('1', 848)]
+INFO:LIST NEWNAME: ['model_4', 'crderr', 'pdb']
+INFO:NEWNAME: model_4-crderr.pdb
+INFO:Processing file: /home/gallegolab/Desktop/TFM/TFM/output/SEC3/ROSETTAFOLD/model/model_4-crderr.pdb
+INFO:Extracting residues from a PDB file: output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_domains.pdb
+INFO:Extracting residues from a PDB file: output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_domains.pdb
+INFO:Residue list of confident domains: [('1', 135), ('1', 136), ('1', 137), ('1', 138), ('1', 139), ('1', 140), ('1', 141), ('1', 142), ('1', 168), ('1', 169), ('1', 170), ('1', 171), ('1', 172), ('1', 173), ('1', 174), ('1', 175), ('1', 176), ('1', 177), ('1', 178), ('1', 179), ('1', 189), ('1', 190), ('1', 191), ('1', 192), ('1', 193), ('1', 194), ('1', 195), ('1', 196), ('1', 197), ('1', 198), ('1', 199), ('1', 200), ('1', 201), ('1', 202), ('1', 203), ('1', 204), ('1', 205), ('1', 206), ('1', 207), ('1', 208), ('1', 209), ('1', 210), ('1', 211), ('1', 212), ('1', 213), ('1', 214), ('1', 215), ('1', 216), ('1', 217), ('1', 218), ('1', 219), ('1', 220), ('1', 221), ('1', 222), ('1', 223), ('1', 224), ('1', 225), ('1', 226), ('1', 227), ('1', 228), ('1', 229), ('1', 230)]
+INFO:LIST NEWNAME: ['model_3', 'crderr', 'pdb']
+INFO:NEWNAME: model_3-crderr.pdb
+INFO:Processing file: /home/gallegolab/Desktop/TFM/TFM/output/SEC3/ROSETTAFOLD/model/model_3-crderr.pdb
+INFO:Extracting residues from a PDB file: output/SEC3/ROSETTAFOLD/DOMAINS/model_3-crderr_domains.pdb
+INFO:Extracting residues from a PDB file: output/SEC3/ROSETTAFOLD/DOMAINS/model_3-crderr_domains.pdb
+INFO:Residue list of confident domains: [('1', 733), ('1', 734), ('1', 735), ('1', 736), ('1', 737), ('1', 738), ('1', 739), ('1', 740), ('1', 741), ('1', 742), ('1', 743), ('1', 744), ('1', 745), ('1', 746), ('1', 747), ('1', 748), ('1', 749), ('1', 750), ('1', 761), ('1', 762), ('1', 763), ('1', 764), ('1', 765), ('1', 766), ('1', 767), ('1', 768), ('1', 769), ('1', 770), ('1', 771), ('1', 805), ('1', 806), ('1', 807), ('1', 808), ('1', 809), ('1', 810), ('1', 1166), ('1', 1167), ('1', 1168), ('1', 1169), ('1', 1170), ('1', 1171)]
+INFO:LIST NEWNAME: ['model_2', 'crderr', 'pdb']
+INFO:NEWNAME: model_2-crderr.pdb
+INFO:Processing file: /home/gallegolab/Desktop/TFM/TFM/output/SEC3/ROSETTAFOLD/model/model_2-crderr.pdb
+INFO:Extracting residues from a PDB file: output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_domains.pdb
+INFO:Extracting residues from a PDB file: output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_domains.pdb
+INFO:Residue list of confident domains: [('1', 724), ('1', 725), ('1', 726), ('1', 727), ('1', 728), ('1', 732), ('1', 733), ('1', 734), ('1', 735), ('1', 736), ('1', 737), ('1', 738), ('1', 739), ('1', 740), ('1', 741), ('1', 742), ('1', 743), ('1', 744), ('1', 745), ('1', 746), ('1', 747), ('1', 748), ('1', 749), ('1', 762), ('1', 763), ('1', 764), ('1', 765), ('1', 766), ('1', 767), ('1', 768), ('1', 769), ('1', 770), ('1', 771), ('1', 804), ('1', 805), ('1', 806), ('1', 807), ('1', 808), ('1', 809), ('1', 810), ('1', 811)]
+INFO:LIST NEWNAME: ['model_1', 'crderr', 'pdb']
+INFO:NEWNAME: model_1-crderr.pdb
+INFO:Processing file: /home/gallegolab/Desktop/TFM/TFM/output/SEC3/ROSETTAFOLD/model/model_1-crderr.pdb
+INFO:Extracting residues from a PDB file: output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_domains.pdb
+INFO:Extracting residues from a PDB file: output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_domains.pdb
+INFO:Residue list of confident domains: [('1', 84), ('1', 85), ('1', 86), ('1', 87), ('1', 88), ('1', 89), ('1', 90), ('1', 91), ('1', 92), ('1', 106), ('1', 107), ('1', 108), ('1', 109), ('1', 110), ('1', 111), ('1', 112), ('1', 113), ('1', 114), ('1', 115), ('1', 116), ('1', 117), ('1', 118), ('1', 119), ('1', 120), ('1', 121), ('1', 122), ('1', 135), ('1', 136), ('1', 137), ('1', 138), ('1', 139), ('1', 140), ('1', 141), ('1', 142), ('1', 143), ('1', 144), ('1', 145), ('1', 146), ('1', 147), ('1', 148), ('1', 149), ('1', 150), ('1', 151), ('1', 152), ('1', 153), ('1', 154), ('1', 155), ('1', 156), ('1', 165), ('1', 166), ('1', 167), ('1', 168), ('1', 169), ('1', 170), ('1', 171), ('1', 172), ('1', 173), ('1', 174), ('1', 175), ('1', 176), ('1', 177), ('1', 178), ('1', 179), ('1', 180), ('1', 181), ('1', 182), ('1', 183), ('1', 184), ('1', 185), ('1', 186), ('1', 187), ('1', 188), ('1', 189), ('1', 190), ('1', 191), ('1', 192), ('1', 193), ('1', 194), ('1', 195), ('1', 196), ('1', 197), ('1', 198), ('1', 199), ('1', 200), ('1', 201), ('1', 202), ('1', 203), ('1', 204), ('1', 205), ('1', 206), ('1', 207), ('1', 208), ('1', 209), ('1', 210), ('1', 211), ('1', 212), ('1', 213), ('1', 214), ('1', 215), ('1', 216), ('1', 217), ('1', 218), ('1', 219), ('1', 220), ('1', 221), ('1', 222), ('1', 223), ('1', 224), ('1', 225), ('1', 226), ('1', 227), ('1', 228), ('1', 229), ('1', 230), ('1', 231), ('1', 239), ('1', 240), ('1', 241), ('1', 242), ('1', 243), ('1', 244), ('1', 245), ('1', 246), ('1', 247)]
+INFO:CONFIDENT FILES: ['output/SEC3/PDB/partial/5yfp_A.pdb', 'output/SEC3/PDB/partial/5lg4_B.pdb', 'output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A1_AF.pdb', 'output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A2_AF.pdb', 'output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A3_AF.pdb', 'output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A4_AF.pdb', 'output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A5_AF.pdb', 'output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A6_AF.pdb', 'output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A7_AF.pdb', 'output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A8_AF.pdb', 'output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A9_AF.pdb', 'output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_10_AF.pdb', 'output/SEC3/ROSETTAFOLD/DOMAINS/model_5-crderr_A1_RF.pdb', 'output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A1_RF.pdb', 'output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A2_RF.pdb', 'output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A3_RF.pdb', 'output/SEC3/ROSETTAFOLD/DOMAINS/model_3-crderr_A1_RF.pdb', 'output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A1_RF.pdb', 'output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A2_RF.pdb', 'output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A1_RF.pdb', 'output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A2_RF.pdb', 'output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A3_RF.pdb']
+INFO:### HINGE DETECTION and DFI ###
+WARNING:PACKMAN Hinge prediction did not work foroutput/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A8_AF.pdb
+WARNING:PACKMAN Hinge prediction did not work foroutput/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A3_RF.pdb
+WARNING:PACKMAN Hinge prediction did not work foroutput/SEC3/ROSETTAFOLD/DOMAINS/model_3-crderr_A1_RF.pdb
+INFO:output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A1_AF.pdb: Assuming a AlphaFold model
+INFO:output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A2_AF.pdb: Assuming a AlphaFold model
+INFO:output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A3_AF.pdb: Assuming a AlphaFold model
+INFO:output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A4_AF.pdb: Assuming a AlphaFold model
+INFO:output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A5_AF.pdb: Assuming a AlphaFold model
+INFO:output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A6_AF.pdb: Assuming a AlphaFold model
+INFO:output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A7_AF.pdb: Assuming a AlphaFold model
+INFO:output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A8_AF.pdb: Assuming a AlphaFold model
+INFO:output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A9_AF.pdb: Assuming a AlphaFold model
+INFO:output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_10_AF.pdb: Assuming a AlphaFold model
+INFO:output/SEC3/ROSETTAFOLD/DOMAINS/model_5-crderr_A1_RF.pdb: Assuming a RoseTTaFold model
+INFO:output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A1_RF.pdb: Assuming a RoseTTaFold model
+INFO:output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A2_RF.pdb: Assuming a RoseTTaFold model
+INFO:output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A3_RF.pdb: Assuming a RoseTTaFold model
+INFO:output/SEC3/ROSETTAFOLD/DOMAINS/model_3-crderr_A1_RF.pdb: Assuming a RoseTTaFold model
+INFO:output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A1_RF.pdb: Assuming a RoseTTaFold model
+INFO:output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A2_RF.pdb: Assuming a RoseTTaFold model
+INFO:output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A1_RF.pdb: Assuming a RoseTTaFold model
+INFO:output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A2_RF.pdb: Assuming a RoseTTaFold model
+INFO:output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A3_RF.pdb: Assuming a RoseTTaFold model
+INFO:No overlap between output/SEC3/PDB/partial/5yfp_A.pdb and output/SEC3/PDB/partial/5lg4_B.pdb
+INFO:No overlap between output/SEC3/PDB/partial/5yfp_A.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A1_AF.pdb
+INFO:No overlap between output/SEC3/PDB/partial/5yfp_A.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A2_AF.pdb
+INFO:overlap attribute updated for output/SEC3/PDB/partial/5yfp_A.pdb  
+                (predicted structure)
+INFO:overlap attribute updated for output/SEC3/PDB/partial/5yfp_A.pdb  
+                (predicted structure)
+INFO:overlap attribute updated for output/SEC3/PDB/partial/5yfp_A.pdb  
+                (predicted structure)
+INFO:overlap attribute updated for output/SEC3/PDB/partial/5yfp_A.pdb  
+                (predicted structure)
+INFO:overlap attribute updated for output/SEC3/PDB/partial/5yfp_A.pdb  
+                (predicted structure)
+INFO:overlap attribute updated for output/SEC3/PDB/partial/5yfp_A.pdb  
+                (predicted structure)
+INFO:overlap attribute updated for output/SEC3/PDB/partial/5yfp_A.pdb  
+                (predicted structure)
+INFO:overlap attribute updated for output/SEC3/PDB/partial/5yfp_A.pdb  
+                (predicted structure)
+INFO:overlap attribute updated for output/SEC3/PDB/partial/5yfp_A.pdb  
+                (predicted structure)
+INFO:No overlap between output/SEC3/PDB/partial/5yfp_A.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A1_RF.pdb
+INFO:overlap attribute updated for output/SEC3/PDB/partial/5yfp_A.pdb  
+                (predicted structure)
+INFO:overlap attribute updated for output/SEC3/PDB/partial/5yfp_A.pdb  
+                (predicted structure)
+INFO:overlap attribute updated for output/SEC3/PDB/partial/5yfp_A.pdb  
+                (predicted structure)
+INFO:overlap attribute updated for output/SEC3/PDB/partial/5yfp_A.pdb  
+                (predicted structure)
+INFO:overlap attribute updated for output/SEC3/PDB/partial/5yfp_A.pdb  
+                (predicted structure)
+INFO:No overlap between output/SEC3/PDB/partial/5yfp_A.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A1_RF.pdb
+INFO:overlap attribute updated for output/SEC3/PDB/partial/5yfp_A.pdb  
+                (predicted structure)
+INFO:overlap attribute updated for output/SEC3/PDB/partial/5yfp_A.pdb  
+                (predicted structure)
+INFO:overlap attribute updated for output/SEC3/PDB/partial/5lg4_B.pdb  
+                (predicted structure)
+INFO:No overlap between output/SEC3/PDB/partial/5lg4_B.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A2_AF.pdb
+INFO:No overlap between output/SEC3/PDB/partial/5lg4_B.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A3_AF.pdb
+INFO:No overlap between output/SEC3/PDB/partial/5lg4_B.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A4_AF.pdb
+INFO:No overlap between output/SEC3/PDB/partial/5lg4_B.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A5_AF.pdb
+INFO:No overlap between output/SEC3/PDB/partial/5lg4_B.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A6_AF.pdb
+INFO:No overlap between output/SEC3/PDB/partial/5lg4_B.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A7_AF.pdb
+INFO:No overlap between output/SEC3/PDB/partial/5lg4_B.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A8_AF.pdb
+INFO:No overlap between output/SEC3/PDB/partial/5lg4_B.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A9_AF.pdb
+INFO:No overlap between output/SEC3/PDB/partial/5lg4_B.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_10_AF.pdb
+INFO:No overlap between output/SEC3/PDB/partial/5lg4_B.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_5-crderr_A1_RF.pdb
+INFO:overlap attribute updated for output/SEC3/PDB/partial/5lg4_B.pdb  
+                (predicted structure)
+INFO:No overlap between output/SEC3/PDB/partial/5lg4_B.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A2_RF.pdb
+INFO:No overlap between output/SEC3/PDB/partial/5lg4_B.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A3_RF.pdb
+INFO:No overlap between output/SEC3/PDB/partial/5lg4_B.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_3-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/PDB/partial/5lg4_B.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/PDB/partial/5lg4_B.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A2_RF.pdb
+INFO:overlap attribute updated for output/SEC3/PDB/partial/5lg4_B.pdb  
+                (predicted structure)
+INFO:No overlap between output/SEC3/PDB/partial/5lg4_B.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A2_RF.pdb
+INFO:No overlap between output/SEC3/PDB/partial/5lg4_B.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A3_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A1_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A2_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A1_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A3_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A1_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A4_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A1_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A5_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A1_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A6_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A1_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A7_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A1_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A8_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A1_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A9_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A1_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_10_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A1_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_5-crderr_A1_RF.pdb
+INFO:overlap attribute updated for 
+                    output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A1_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A2_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A1_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A3_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A1_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_3-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A1_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A1_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A2_RF.pdb
+INFO:overlap attribute updated for 
+                    output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A1_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A2_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A1_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A3_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A2_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A3_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A2_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A4_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A2_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A5_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A2_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A6_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A2_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A7_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A2_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A8_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A2_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A9_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A2_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_10_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A2_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_5-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A2_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A2_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A2_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A2_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A3_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A2_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_3-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A2_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A2_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A2_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A2_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A2_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A2_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A2_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A3_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A3_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A4_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A3_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A5_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A3_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A6_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A3_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A7_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A3_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A8_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A3_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A9_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A3_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_10_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A3_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_5-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A3_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A3_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A2_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A3_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A3_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A3_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_3-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A3_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A3_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A2_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A3_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A3_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A2_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A3_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A3_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A4_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A5_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A4_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A6_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A4_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A7_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A4_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A8_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A4_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A9_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A4_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_10_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A4_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_5-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A4_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A4_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A2_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A4_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A3_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A4_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_3-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A4_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A4_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A2_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A4_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A4_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A2_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A4_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A3_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A5_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A6_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A5_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A7_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A5_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A8_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A5_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A9_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A5_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_10_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A5_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_5-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A5_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A5_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A2_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A5_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A3_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A5_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_3-crderr_A1_RF.pdb
+INFO:overlap attribute updated for output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A5_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A5_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A2_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A5_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A5_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A2_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A5_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A3_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A6_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A7_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A6_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A8_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A6_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A9_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A6_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_10_AF.pdb
+INFO:overlap attribute updated for output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A6_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A6_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A1_RF.pdb
+INFO:overlap attribute updated for output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A6_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A6_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A3_RF.pdb
+INFO:overlap attribute updated for output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A6_AF.pdb
+INFO:overlap attribute updated for output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A6_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A6_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A2_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A6_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A1_RF.pdb
+INFO:overlap attribute updated for output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A6_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A6_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A3_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A7_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A8_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A7_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A9_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A7_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_10_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A7_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_5-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A7_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A7_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A2_RF.pdb
+INFO:overlap attribute updated for 
+                    output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A3_RF.pdb
+INFO:overlap attribute updated for 
+                    output/SEC3/ROSETTAFOLD/DOMAINS/model_3-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A7_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A1_RF.pdb
+INFO:overlap attribute updated for 
+                    output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A2_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A7_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A7_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A2_RF.pdb
+INFO:overlap attribute updated for 
+                    output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A3_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A8_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A9_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A8_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_10_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A8_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_5-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A8_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A8_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A2_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A8_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A3_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A8_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_3-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A8_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A8_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A2_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A8_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A8_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A2_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A8_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A3_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A9_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_10_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A9_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_5-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A9_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A9_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A2_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A9_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A3_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A9_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_3-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A9_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A9_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A2_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A9_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A9_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A2_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A9_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A3_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_10_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_5-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_10_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_10_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A2_RF.pdb
+INFO:overlap attribute updated for 
+                    output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A3_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_10_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_3-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_10_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_10_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A2_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_10_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_10_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A2_RF.pdb
+INFO:overlap attribute updated for output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_10_AF.pdb
+INFO:No overlap between output/SEC3/ROSETTAFOLD/DOMAINS/model_5-crderr_A1_RF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A1_RF.pdb
+INFO:overlap attribute updated for 
+                    output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A2_RF.pdb
+INFO:No overlap between output/SEC3/ROSETTAFOLD/DOMAINS/model_5-crderr_A1_RF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A3_RF.pdb
+INFO:overlap attribute updated for 
+                    output/SEC3/ROSETTAFOLD/DOMAINS/model_3-crderr_A1_RF.pdb
+INFO:overlap attribute updated for 
+                    output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ROSETTAFOLD/DOMAINS/model_5-crderr_A1_RF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A2_RF.pdb
+INFO:No overlap between output/SEC3/ROSETTAFOLD/DOMAINS/model_5-crderr_A1_RF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A1_RF.pdb
+INFO:overlap attribute updated for 
+                    output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A2_RF.pdb
+INFO:No overlap between output/SEC3/ROSETTAFOLD/DOMAINS/model_5-crderr_A1_RF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A3_RF.pdb
+INFO:No overlap between output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A1_RF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A2_RF.pdb
+INFO:No overlap between output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A1_RF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A3_RF.pdb
+INFO:No overlap between output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A1_RF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_3-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A1_RF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A1_RF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A2_RF.pdb
+INFO:overlap attribute updated for output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A1_RF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A2_RF.pdb
+INFO:No overlap between output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A1_RF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A3_RF.pdb
+INFO:No overlap between output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A2_RF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A3_RF.pdb
+INFO:overlap attribute updated for 
+                    output/SEC3/ROSETTAFOLD/DOMAINS/model_3-crderr_A1_RF.pdb
+INFO:overlap attribute updated for 
+                    output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A2_RF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A2_RF.pdb
+INFO:No overlap between output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A2_RF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A1_RF.pdb
+INFO:overlap attribute updated for output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A2_RF.pdb
+INFO:No overlap between output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A2_RF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A3_RF.pdb
+INFO:No overlap between output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A3_RF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_3-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A3_RF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A1_RF.pdb
+INFO:overlap attribute updated for output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A3_RF.pdb
+INFO:No overlap between output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A3_RF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A3_RF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A2_RF.pdb
+INFO:overlap attribute updated for output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A3_RF.pdb
+INFO:overlap attribute updated for 
+                    output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A1_RF.pdb
+INFO:overlap attribute updated for output/SEC3/ROSETTAFOLD/DOMAINS/model_3-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ROSETTAFOLD/DOMAINS/model_3-crderr_A1_RF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A1_RF.pdb
+INFO:overlap attribute updated for output/SEC3/ROSETTAFOLD/DOMAINS/model_3-crderr_A1_RF.pdb
+INFO:overlap attribute updated for output/SEC3/ROSETTAFOLD/DOMAINS/model_3-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A1_RF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A2_RF.pdb
+INFO:No overlap between output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A1_RF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A1_RF.pdb
+INFO:overlap attribute updated for output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A1_RF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A3_RF.pdb
+INFO:No overlap between output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A2_RF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A2_RF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A2_RF.pdb
+INFO:overlap attribute updated for output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A2_RF.pdb
+INFO:No overlap between output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A1_RF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A2_RF.pdb
+INFO:No overlap between output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A1_RF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A3_RF.pdb
+INFO:No overlap between output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A2_RF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A3_RF.pdb
+INFO:Dash is running on http://127.0.0.1:8050/
+
+DEBUG:...STARTING...
+
+INFO:Query length: 1336
+INFO:Create folders:
+INFO:output/SEC3/PDB/, output/SEC3/FASTA/, output/SEC3/REPORT/, output/SEC3/HINGES/, output/SEC3/IMP/ .
+INFO:### BLAST ###
+INFO:The BLAST output will be stored in:output/SEC3/BLAST/
+INFO:Starting BLAST. Query: input_fasta/SEC3.fasta, Database: pdbaa, located in: /home/gallegolab/Desktop/TFM/databases/BLAST/pdbaa
+INFO:calling BLAST
+INFO:BLAST results in output/SEC3/BLAST/SEC3_blast.out
+INFO: The target sequence has close homologs in the PDB with 
+    code/s: dict_keys(['5YFP', '5LG4'])
+INFO:Structures for query: []
+INFO:Retrieving structures from the pdb
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/5YFP HTTP/1.1" 200 5548
+DEBUG:Starting new HTTPS connection (1): www.ebi.ac.uk:443
+DEBUG:https://www.ebi.ac.uk:443 "GET /pdbe/api/pdb/entry/molecules/5LG4 HTTP/1.1" 200 950
+INFO:File being processed: 5yfp.cif
+INFO:Making directory for the chains at output/SEC3/PDB/CHAINS/
+INFO:Extracting the chain
+INFO:OUT PATH:output/SEC3/PDB/CHAINS/5yfp_A.pdb
+INFO:Extracting chain A from 5yfp.cif...
+INFO:Length of the template 5yfp_A.pdb: 
+                                672
+INFO:PDB_LEN: 672 . QUERY_LEN: 1336
+INFO:5yfp_A.pdb has length 672, 
+                it will be stored as a partial match
+INFO:MOVING output/SEC3/PDB/CHAINS/5yfp_A.pdb TO output/SEC3/PDB/partial/5yfp_A.pdb
+INFO:File being processed: 5lg4.cif
+INFO:Making directory for the chains at output/SEC3/PDB/CHAINS/
+INFO:Extracting the chain
+INFO:OUT PATH:output/SEC3/PDB/CHAINS/5lg4_B.pdb
+INFO:Extracting chain B from 5lg4.cif...
+INFO:Length of the template 5lg4_B.pdb: 
+                                174
+INFO:PDB_LEN: 174 . QUERY_LEN: 1336
+INFO:5lg4_B.pdb has length 174, 
+                it will be stored as a partial match
+INFO:MOVING output/SEC3/PDB/CHAINS/5lg4_B.pdb TO output/SEC3/PDB/partial/5lg4_B.pdb
+INFO:Checking user's templates
+INFO:custom AF model detected: AF2/SEC3_AF.pdb
+INFO:custom PAE matrix detected: AF2/SEC3_PAE.json
+INFO:Extracting AF2 high confidence domains
+INFO:Domains will be stored in:output/SEC3/ALPHAFOLD/DOMAINS/
+INFO:Processing file: SEC3_AF.pdb
+INFO:Extracting residues from a PDB file: output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_domains.pdb
+INFO:Residue list of confident domains: [('1', 76), ('1', 77), ('1', 78), ('1', 79), ('1', 80), ('1', 81), ('1', 82), ('1', 83), ('1', 84), ('1', 85), ('1', 86), ('1', 87), ('1', 88), ('1', 89), ('1', 90), ('1', 91), ('1', 92), ('1', 93), ('1', 94), ('1', 95), ('1', 96), ('1', 97), ('1', 103), ('1', 104), ('1', 105), ('1', 106), ('1', 107), ('1', 108), ('1', 109), ('1', 110), ('1', 111), ('1', 112), ('1', 113), ('1', 114), ('1', 115), ('1', 116), ('1', 117), ('1', 118), ('1', 119), ('1', 120), ('1', 121), ('1', 122), ('1', 123), ('1', 124), ('1', 125), ('1', 126), ('1', 127), ('1', 128), ('1', 129), ('1', 130), ('1', 131), ('1', 132), ('1', 133), ('1', 134), ('1', 135), ('1', 136), ('1', 137), ('1', 138), ('1', 139), ('1', 140), ('1', 141), ('1', 142), ('1', 143), ('1', 144), ('1', 145), ('1', 146), ('1', 147), ('1', 148), ('1', 149), ('1', 150), ('1', 151), ('1', 152), ('1', 153), ('1', 154), ('1', 155), ('1', 156), ('1', 157), ('1', 158), ('1', 159), ('1', 160), ('1', 161), ('1', 162), ('1', 163), ('1', 164), ('1', 165), ('1', 166), ('1', 167), ('1', 168), ('1', 169), ('1', 170), ('1', 171), ('1', 172), ('1', 173), ('1', 174), ('1', 175), ('1', 176), ('1', 177), ('1', 178), ('1', 179), ('1', 180), ('1', 181), ('1', 182), ('1', 183), ('1', 184), ('1', 185), ('1', 186), ('1', 187), ('1', 188), ('1', 189), ('1', 190), ('1', 191), ('1', 192), ('1', 193), ('1', 194), ('1', 195), ('1', 196), ('1', 197), ('1', 198), ('1', 199), ('1', 200), ('1', 201), ('1', 202), ('1', 203), ('1', 204), ('1', 205), ('1', 206), ('1', 207), ('1', 208), ('1', 209), ('1', 210), ('1', 211), ('1', 212), ('1', 213), ('1', 214), ('1', 215), ('1', 216), ('1', 217), ('1', 218), ('1', 219), ('1', 220), ('1', 221), ('1', 222), ('1', 223), ('1', 224), ('1', 225), ('1', 226), ('1', 227), ('1', 228), ('1', 229), ('1', 230), ('1', 231), ('1', 232), ('1', 233), ('1', 234), ('1', 235), ('1', 236), ('1', 237), ('1', 238), ('1', 239), ('1', 240), ('1', 241), ('1', 242), ('1', 243), ('1', 244), ('1', 245), ('1', 246), ('1', 247), ('1', 248)]
+INFO:Extracting RoseTTaFold high confidence domains
+INFO:Domains will be stored in:output/SEC3/ROSETTAFOLD/DOMAINS/
+INFO:LIST NEWNAME: ['model_1-crderr', 'pdb']
+INFO:NEWNAME: model_1-crderr.pdb
+INFO:Processing file: /home/gallegolab/Desktop/TFM/TFM/output/SEC3/ROSETTAFOLD/model/model_1-crderr.pdb
+INFO:Extracting residues from a PDB file: output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_domains.pdb
+INFO:Extracting residues from a PDB file: output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_domains.pdb
+INFO:Residue list of confident domains: [('1', 84), ('1', 85), ('1', 86), ('1', 87), ('1', 88), ('1', 89), ('1', 90), ('1', 91), ('1', 92), ('1', 106), ('1', 107), ('1', 108), ('1', 109), ('1', 110), ('1', 111), ('1', 112), ('1', 113), ('1', 114), ('1', 115), ('1', 116), ('1', 117), ('1', 118), ('1', 119), ('1', 120), ('1', 121), ('1', 122), ('1', 135), ('1', 136), ('1', 137), ('1', 138), ('1', 139), ('1', 140), ('1', 141), ('1', 142), ('1', 143), ('1', 144), ('1', 145), ('1', 146), ('1', 147), ('1', 148), ('1', 149), ('1', 150), ('1', 151), ('1', 152), ('1', 153), ('1', 154), ('1', 155), ('1', 156), ('1', 165), ('1', 166), ('1', 167), ('1', 168), ('1', 169), ('1', 170), ('1', 171), ('1', 172), ('1', 173), ('1', 174), ('1', 175), ('1', 176), ('1', 177), ('1', 178), ('1', 179), ('1', 180), ('1', 181), ('1', 182), ('1', 183), ('1', 184), ('1', 185), ('1', 186), ('1', 187), ('1', 188), ('1', 189), ('1', 190), ('1', 191), ('1', 192), ('1', 193), ('1', 194), ('1', 195), ('1', 196), ('1', 197), ('1', 198), ('1', 199), ('1', 200), ('1', 201), ('1', 202), ('1', 203), ('1', 204), ('1', 205), ('1', 206), ('1', 207), ('1', 208), ('1', 209), ('1', 210), ('1', 211), ('1', 212), ('1', 213), ('1', 214), ('1', 215), ('1', 216), ('1', 217), ('1', 218), ('1', 219), ('1', 220), ('1', 221), ('1', 222), ('1', 223), ('1', 224), ('1', 225), ('1', 226), ('1', 227), ('1', 228), ('1', 229), ('1', 230), ('1', 231), ('1', 239), ('1', 240), ('1', 241), ('1', 242), ('1', 243), ('1', 244), ('1', 245), ('1', 246), ('1', 247)]
+INFO:LIST NEWNAME: ['model_3-crderr', 'pdb']
+INFO:NEWNAME: model_3-crderr.pdb
+INFO:Processing file: /home/gallegolab/Desktop/TFM/TFM/output/SEC3/ROSETTAFOLD/model/model_3-crderr.pdb
+INFO:Extracting residues from a PDB file: output/SEC3/ROSETTAFOLD/DOMAINS/model_3-crderr_domains.pdb
+INFO:Extracting residues from a PDB file: output/SEC3/ROSETTAFOLD/DOMAINS/model_3-crderr_domains.pdb
+INFO:Residue list of confident domains: [('1', 733), ('1', 734), ('1', 735), ('1', 736), ('1', 737), ('1', 738), ('1', 739), ('1', 740), ('1', 741), ('1', 742), ('1', 743), ('1', 744), ('1', 745), ('1', 746), ('1', 747), ('1', 748), ('1', 749), ('1', 750), ('1', 761), ('1', 762), ('1', 763), ('1', 764), ('1', 765), ('1', 766), ('1', 767), ('1', 768), ('1', 769), ('1', 770), ('1', 771), ('1', 805), ('1', 806), ('1', 807), ('1', 808), ('1', 809), ('1', 810), ('1', 1166), ('1', 1167), ('1', 1168), ('1', 1169), ('1', 1170), ('1', 1171)]
+INFO:LIST NEWNAME: ['model_2-crderr', 'pdb']
+INFO:NEWNAME: model_2-crderr.pdb
+INFO:Processing file: /home/gallegolab/Desktop/TFM/TFM/output/SEC3/ROSETTAFOLD/model/model_2-crderr.pdb
+INFO:Extracting residues from a PDB file: output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_domains.pdb
+INFO:Extracting residues from a PDB file: output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_domains.pdb
+INFO:Residue list of confident domains: [('1', 724), ('1', 725), ('1', 726), ('1', 727), ('1', 728), ('1', 732), ('1', 733), ('1', 734), ('1', 735), ('1', 736), ('1', 737), ('1', 738), ('1', 739), ('1', 740), ('1', 741), ('1', 742), ('1', 743), ('1', 744), ('1', 745), ('1', 746), ('1', 747), ('1', 748), ('1', 749), ('1', 762), ('1', 763), ('1', 764), ('1', 765), ('1', 766), ('1', 767), ('1', 768), ('1', 769), ('1', 770), ('1', 771), ('1', 804), ('1', 805), ('1', 806), ('1', 807), ('1', 808), ('1', 809), ('1', 810), ('1', 811)]
+INFO:LIST NEWNAME: ['model_5-crderr', 'pdb']
+INFO:NEWNAME: model_5-crderr.pdb
+INFO:Processing file: /home/gallegolab/Desktop/TFM/TFM/output/SEC3/ROSETTAFOLD/model/model_5-crderr.pdb
+INFO:Extracting residues from a PDB file: output/SEC3/ROSETTAFOLD/DOMAINS/model_5-crderr_domains.pdb
+INFO:Extracting residues from a PDB file: output/SEC3/ROSETTAFOLD/DOMAINS/model_5-crderr_domains.pdb
+INFO:Residue list of confident domains: [('1', 740), ('1', 741), ('1', 742), ('1', 743), ('1', 744), ('1', 745), ('1', 746), ('1', 747), ('1', 748), ('1', 759), ('1', 760), ('1', 761), ('1', 762), ('1', 763), ('1', 764), ('1', 765), ('1', 766), ('1', 767), ('1', 768), ('1', 769), ('1', 770), ('1', 771), ('1', 772), ('1', 773), ('1', 774), ('1', 795), ('1', 796), ('1', 797), ('1', 798), ('1', 799), ('1', 800), ('1', 801), ('1', 802), ('1', 803), ('1', 804), ('1', 805), ('1', 806), ('1', 807), ('1', 808), ('1', 809), ('1', 810), ('1', 811), ('1', 812), ('1', 813), ('1', 814), ('1', 815), ('1', 816), ('1', 817), ('1', 818), ('1', 840), ('1', 841), ('1', 842), ('1', 843), ('1', 844), ('1', 845), ('1', 846), ('1', 847), ('1', 848)]
+INFO:LIST NEWNAME: ['model_4-crderr', 'pdb']
+INFO:NEWNAME: model_4-crderr.pdb
+INFO:Processing file: /home/gallegolab/Desktop/TFM/TFM/output/SEC3/ROSETTAFOLD/model/model_4-crderr.pdb
+INFO:Extracting residues from a PDB file: output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_domains.pdb
+INFO:Extracting residues from a PDB file: output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_domains.pdb
+INFO:Residue list of confident domains: [('1', 135), ('1', 136), ('1', 137), ('1', 138), ('1', 139), ('1', 140), ('1', 141), ('1', 142), ('1', 168), ('1', 169), ('1', 170), ('1', 171), ('1', 172), ('1', 173), ('1', 174), ('1', 175), ('1', 176), ('1', 177), ('1', 178), ('1', 179), ('1', 189), ('1', 190), ('1', 191), ('1', 192), ('1', 193), ('1', 194), ('1', 195), ('1', 196), ('1', 197), ('1', 198), ('1', 199), ('1', 200), ('1', 201), ('1', 202), ('1', 203), ('1', 204), ('1', 205), ('1', 206), ('1', 207), ('1', 208), ('1', 209), ('1', 210), ('1', 211), ('1', 212), ('1', 213), ('1', 214), ('1', 215), ('1', 216), ('1', 217), ('1', 218), ('1', 219), ('1', 220), ('1', 221), ('1', 222), ('1', 223), ('1', 224), ('1', 225), ('1', 226), ('1', 227), ('1', 228), ('1', 229), ('1', 230)]
+INFO:CONFIDENT FILES: ['output/SEC3/PDB/partial/5yfp_A.pdb', 'output/SEC3/PDB/partial/5lg4_B.pdb', 'output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A1_AF.pdb', 'output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A2_AF.pdb', 'output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A3_AF.pdb', 'output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A4_AF.pdb', 'output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A5_AF.pdb', 'output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A6_AF.pdb', 'output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A7_AF.pdb', 'output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A8_AF.pdb', 'output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A9_AF.pdb', 'output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_10_AF.pdb', 'output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A1_RF.pdb', 'output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A2_RF.pdb', 'output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A3_RF.pdb', 'output/SEC3/ROSETTAFOLD/DOMAINS/model_3-crderr_A1_RF.pdb', 'output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A1_RF.pdb', 'output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A2_RF.pdb', 'output/SEC3/ROSETTAFOLD/DOMAINS/model_5-crderr_A1_RF.pdb', 'output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A1_RF.pdb', 'output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A2_RF.pdb', 'output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A3_RF.pdb']
+INFO:### HINGE DETECTION and DFI ###
+WARNING:PACKMAN Hinge prediction did not work foroutput/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A8_AF.pdb
+WARNING:PACKMAN Hinge prediction did not work foroutput/SEC3/ROSETTAFOLD/DOMAINS/model_3-crderr_A1_RF.pdb
+WARNING:PACKMAN Hinge prediction did not work foroutput/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A3_RF.pdb
+INFO:output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A1_AF.pdb: Assuming a AlphaFold model
+INFO:output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A2_AF.pdb: Assuming a AlphaFold model
+INFO:output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A3_AF.pdb: Assuming a AlphaFold model
+INFO:output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A4_AF.pdb: Assuming a AlphaFold model
+INFO:output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A5_AF.pdb: Assuming a AlphaFold model
+INFO:output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A6_AF.pdb: Assuming a AlphaFold model
+INFO:output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A7_AF.pdb: Assuming a AlphaFold model
+INFO:output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A8_AF.pdb: Assuming a AlphaFold model
+INFO:output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A9_AF.pdb: Assuming a AlphaFold model
+INFO:output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_10_AF.pdb: Assuming a AlphaFold model
+INFO:output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A1_RF.pdb: Assuming a RoseTTaFold model
+INFO:output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A2_RF.pdb: Assuming a RoseTTaFold model
+INFO:output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A3_RF.pdb: Assuming a RoseTTaFold model
+INFO:output/SEC3/ROSETTAFOLD/DOMAINS/model_3-crderr_A1_RF.pdb: Assuming a RoseTTaFold model
+INFO:output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A1_RF.pdb: Assuming a RoseTTaFold model
+INFO:output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A2_RF.pdb: Assuming a RoseTTaFold model
+INFO:output/SEC3/ROSETTAFOLD/DOMAINS/model_5-crderr_A1_RF.pdb: Assuming a RoseTTaFold model
+INFO:output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A1_RF.pdb: Assuming a RoseTTaFold model
+INFO:output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A2_RF.pdb: Assuming a RoseTTaFold model
+INFO:output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A3_RF.pdb: Assuming a RoseTTaFold model
+INFO:No overlap between output/SEC3/PDB/partial/5yfp_A.pdb and output/SEC3/PDB/partial/5lg4_B.pdb
+INFO:No overlap between output/SEC3/PDB/partial/5yfp_A.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A1_AF.pdb
+INFO:No overlap between output/SEC3/PDB/partial/5yfp_A.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A2_AF.pdb
+INFO:overlap attribute updated for output/SEC3/PDB/partial/5yfp_A.pdb  
+                (predicted structure)
+INFO:overlap attribute updated for output/SEC3/PDB/partial/5yfp_A.pdb  
+                (predicted structure)
+INFO:overlap attribute updated for output/SEC3/PDB/partial/5yfp_A.pdb  
+                (predicted structure)
+INFO:overlap attribute updated for output/SEC3/PDB/partial/5yfp_A.pdb  
+                (predicted structure)
+INFO:overlap attribute updated for output/SEC3/PDB/partial/5yfp_A.pdb  
+                (predicted structure)
+INFO:overlap attribute updated for output/SEC3/PDB/partial/5yfp_A.pdb  
+                (predicted structure)
+INFO:overlap attribute updated for output/SEC3/PDB/partial/5yfp_A.pdb  
+                (predicted structure)
+INFO:overlap attribute updated for output/SEC3/PDB/partial/5yfp_A.pdb  
+                (predicted structure)
+INFO:No overlap between output/SEC3/PDB/partial/5yfp_A.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A1_RF.pdb
+INFO:overlap attribute updated for output/SEC3/PDB/partial/5yfp_A.pdb  
+                (predicted structure)
+INFO:overlap attribute updated for output/SEC3/PDB/partial/5yfp_A.pdb  
+                (predicted structure)
+INFO:overlap attribute updated for output/SEC3/PDB/partial/5yfp_A.pdb  
+                (predicted structure)
+INFO:overlap attribute updated for output/SEC3/PDB/partial/5yfp_A.pdb  
+                (predicted structure)
+INFO:overlap attribute updated for output/SEC3/PDB/partial/5yfp_A.pdb  
+                (predicted structure)
+INFO:overlap attribute updated for output/SEC3/PDB/partial/5yfp_A.pdb  
+                (predicted structure)
+INFO:No overlap between output/SEC3/PDB/partial/5yfp_A.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A1_RF.pdb
+INFO:overlap attribute updated for output/SEC3/PDB/partial/5yfp_A.pdb  
+                (predicted structure)
+INFO:overlap attribute updated for output/SEC3/PDB/partial/5yfp_A.pdb  
+                (predicted structure)
+INFO:overlap attribute updated for output/SEC3/PDB/partial/5lg4_B.pdb  
+                (predicted structure)
+INFO:No overlap between output/SEC3/PDB/partial/5lg4_B.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A2_AF.pdb
+INFO:No overlap between output/SEC3/PDB/partial/5lg4_B.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A3_AF.pdb
+INFO:No overlap between output/SEC3/PDB/partial/5lg4_B.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A4_AF.pdb
+INFO:No overlap between output/SEC3/PDB/partial/5lg4_B.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A5_AF.pdb
+INFO:No overlap between output/SEC3/PDB/partial/5lg4_B.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A6_AF.pdb
+INFO:No overlap between output/SEC3/PDB/partial/5lg4_B.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A7_AF.pdb
+INFO:No overlap between output/SEC3/PDB/partial/5lg4_B.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A8_AF.pdb
+INFO:No overlap between output/SEC3/PDB/partial/5lg4_B.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A9_AF.pdb
+INFO:No overlap between output/SEC3/PDB/partial/5lg4_B.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_10_AF.pdb
+INFO:overlap attribute updated for output/SEC3/PDB/partial/5lg4_B.pdb  
+                (predicted structure)
+INFO:No overlap between output/SEC3/PDB/partial/5lg4_B.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A2_RF.pdb
+INFO:No overlap between output/SEC3/PDB/partial/5lg4_B.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A3_RF.pdb
+INFO:No overlap between output/SEC3/PDB/partial/5lg4_B.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_3-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/PDB/partial/5lg4_B.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/PDB/partial/5lg4_B.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A2_RF.pdb
+INFO:No overlap between output/SEC3/PDB/partial/5lg4_B.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_5-crderr_A1_RF.pdb
+INFO:overlap attribute updated for output/SEC3/PDB/partial/5lg4_B.pdb  
+                (predicted structure)
+INFO:No overlap between output/SEC3/PDB/partial/5lg4_B.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A2_RF.pdb
+INFO:No overlap between output/SEC3/PDB/partial/5lg4_B.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A3_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A1_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A2_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A1_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A3_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A1_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A4_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A1_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A5_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A1_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A6_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A1_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A7_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A1_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A8_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A1_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A9_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A1_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_10_AF.pdb
+INFO:overlap attribute updated for 
+                    output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A1_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A2_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A1_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A3_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A1_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_3-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A1_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A1_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A2_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A1_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_5-crderr_A1_RF.pdb
+INFO:overlap attribute updated for 
+                    output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A1_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A2_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A1_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A3_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A2_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A3_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A2_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A4_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A2_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A5_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A2_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A6_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A2_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A7_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A2_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A8_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A2_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A9_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A2_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_10_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A2_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A2_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A2_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A2_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A3_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A2_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_3-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A2_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A2_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A2_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A2_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_5-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A2_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A2_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A2_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A2_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A3_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A3_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A4_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A3_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A5_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A3_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A6_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A3_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A7_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A3_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A8_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A3_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A9_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A3_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_10_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A3_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A3_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A2_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A3_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A3_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A3_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_3-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A3_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A3_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A2_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A3_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_5-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A3_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A3_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A2_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A3_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A3_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A4_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A5_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A4_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A6_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A4_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A7_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A4_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A8_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A4_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A9_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A4_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_10_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A4_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A4_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A2_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A4_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A3_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A4_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_3-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A4_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A4_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A2_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A4_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_5-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A4_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A4_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A2_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A4_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A3_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A5_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A6_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A5_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A7_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A5_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A8_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A5_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A9_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A5_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_10_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A5_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A5_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A2_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A5_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A3_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A5_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_3-crderr_A1_RF.pdb
+INFO:overlap attribute updated for output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A5_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A5_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A2_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A5_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_5-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A5_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A5_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A2_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A5_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A3_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A6_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A7_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A6_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A8_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A6_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A9_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A6_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_10_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A6_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A1_RF.pdb
+INFO:overlap attribute updated for output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A6_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A6_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A3_RF.pdb
+INFO:overlap attribute updated for output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A6_AF.pdb
+INFO:overlap attribute updated for output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A6_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A6_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A2_RF.pdb
+INFO:overlap attribute updated for output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A6_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A6_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A1_RF.pdb
+INFO:overlap attribute updated for output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A6_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A6_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A3_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A7_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A8_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A7_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A9_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A7_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_10_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A7_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A7_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A2_RF.pdb
+INFO:overlap attribute updated for 
+                    output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A3_RF.pdb
+INFO:overlap attribute updated for 
+                    output/SEC3/ROSETTAFOLD/DOMAINS/model_3-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A7_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A1_RF.pdb
+INFO:overlap attribute updated for 
+                    output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A2_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A7_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_5-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A7_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A7_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A2_RF.pdb
+INFO:overlap attribute updated for 
+                    output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A3_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A8_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A9_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A8_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_10_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A8_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A8_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A2_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A8_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A3_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A8_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_3-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A8_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A8_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A2_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A8_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_5-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A8_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A8_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A2_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A8_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A3_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A9_AF.pdb and output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_10_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A9_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A9_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A2_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A9_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A3_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A9_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_3-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A9_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A9_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A2_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A9_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_5-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A9_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A9_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A2_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_A9_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A3_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_10_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_10_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A2_RF.pdb
+INFO:overlap attribute updated for output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_10_AF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_10_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_3-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_10_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_10_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A2_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_10_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_5-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_10_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ALPHAFOLD/DOMAINS/SEC3_AF_10_AF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A2_RF.pdb
+INFO:overlap attribute updated for 
+                    output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A3_RF.pdb
+INFO:No overlap between output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A1_RF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A2_RF.pdb
+INFO:No overlap between output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A1_RF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A3_RF.pdb
+INFO:No overlap between output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A1_RF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_3-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A1_RF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A1_RF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A2_RF.pdb
+INFO:No overlap between output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A1_RF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_5-crderr_A1_RF.pdb
+INFO:overlap attribute updated for 
+                    output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A1_RF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A2_RF.pdb
+INFO:No overlap between output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A1_RF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A3_RF.pdb
+INFO:No overlap between output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A2_RF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A3_RF.pdb
+INFO:overlap attribute updated for 
+                    output/SEC3/ROSETTAFOLD/DOMAINS/model_3-crderr_A1_RF.pdb
+INFO:overlap attribute updated for 
+                    output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A2_RF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A2_RF.pdb
+INFO:overlap attribute updated for output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A2_RF.pdb
+INFO:No overlap between output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A2_RF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A1_RF.pdb
+INFO:overlap attribute updated for 
+                    output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A2_RF.pdb
+INFO:No overlap between output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A2_RF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A3_RF.pdb
+INFO:overlap attribute updated for 
+                    output/SEC3/ROSETTAFOLD/DOMAINS/model_3-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A3_RF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A1_RF.pdb
+INFO:overlap attribute updated for 
+                    output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A2_RF.pdb
+INFO:No overlap between output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A3_RF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_5-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A3_RF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ROSETTAFOLD/DOMAINS/model_1-crderr_A3_RF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A2_RF.pdb
+INFO:overlap attribute updated for 
+                    output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A3_RF.pdb
+INFO:overlap attribute updated for 
+                    output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A1_RF.pdb
+INFO:overlap attribute updated for output/SEC3/ROSETTAFOLD/DOMAINS/model_3-crderr_A1_RF.pdb
+INFO:overlap attribute updated for output/SEC3/ROSETTAFOLD/DOMAINS/model_3-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ROSETTAFOLD/DOMAINS/model_3-crderr_A1_RF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A1_RF.pdb
+INFO:overlap attribute updated for output/SEC3/ROSETTAFOLD/DOMAINS/model_3-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ROSETTAFOLD/DOMAINS/model_3-crderr_A1_RF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A3_RF.pdb
+INFO:No overlap between output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A1_RF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A2_RF.pdb
+INFO:overlap attribute updated for output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A1_RF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A1_RF.pdb
+INFO:overlap attribute updated for output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A1_RF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A3_RF.pdb
+INFO:No overlap between output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A2_RF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_5-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A2_RF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A1_RF.pdb
+INFO:No overlap between output/SEC3/ROSETTAFOLD/DOMAINS/model_2-crderr_A2_RF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A2_RF.pdb
+INFO:overlap attribute updated for 
+                    output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A3_RF.pdb
+INFO:No overlap between output/SEC3/ROSETTAFOLD/DOMAINS/model_5-crderr_A1_RF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A1_RF.pdb
+INFO:overlap attribute updated for 
+                    output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A2_RF.pdb
+INFO:No overlap between output/SEC3/ROSETTAFOLD/DOMAINS/model_5-crderr_A1_RF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A3_RF.pdb
+INFO:No overlap between output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A1_RF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A2_RF.pdb
+INFO:No overlap between output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A1_RF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A3_RF.pdb
+INFO:No overlap between output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A2_RF.pdb and output/SEC3/ROSETTAFOLD/DOMAINS/model_4-crderr_A3_RF.pdb
+INFO:Dash is running on http://127.0.0.1:8050/
+
+INFO: * Running on http://127.0.0.1:8050/ (Press CTRL+C to quit)
+INFO:127.0.0.1 - - [12/Jun/2022 16:37:22] "GET / HTTP/1.1" 200 -
+INFO:127.0.0.1 - - [12/Jun/2022 16:37:22] "GET /_dash-component-suites/dash/deps/react@16.v2_3_0m1647965636.14.0.min.js HTTP/1.1" 200 -
+INFO:127.0.0.1 - - [12/Jun/2022 16:37:22] "GET /_dash-component-suites/dash/deps/polyfill@7.v2_3_0m1647965636.12.1.min.js HTTP/1.1" 200 -
+INFO:127.0.0.1 - - [12/Jun/2022 16:37:22] "GET /_dash-component-suites/dash/deps/react-dom@16.v2_3_0m1647965636.14.0.min.js HTTP/1.1" 200 -
+INFO:127.0.0.1 - - [12/Jun/2022 16:37:22] "GET /_dash-component-suites/dash/deps/prop-types@15.v2_3_0m1647965636.7.2.min.js HTTP/1.1" 200 -
+INFO:127.0.0.1 - - [12/Jun/2022 16:37:22] "GET /_dash-component-suites/dash/dash-renderer/build/dash_renderer.v2_3_0m1647965636.min.js HTTP/1.1" 200 -
+INFO:127.0.0.1 - - [12/Jun/2022 16:37:22] "GET /_dash-component-suites/dash/dcc/dash_core_components.v2_3_0m1647965636.js HTTP/1.1" 200 -
+INFO:127.0.0.1 - - [12/Jun/2022 16:37:22] "GET /_dash-component-suites/dash/html/dash_html_components.v2_0_2m1647965636.min.js HTTP/1.1" 200 -
+INFO:127.0.0.1 - - [12/Jun/2022 16:37:22] "GET /_dash-component-suites/dash/dash_table/bundle.v5_1_1m1647965636.js HTTP/1.1" 200 -
+INFO:127.0.0.1 - - [12/Jun/2022 16:37:23] "GET /_dash-dependencies HTTP/1.1" 200 -
+INFO:127.0.0.1 - - [12/Jun/2022 16:37:23] "GET /_dash-layout HTTP/1.1" 200 -
+INFO:127.0.0.1 - - [12/Jun/2022 16:37:23] "GET /_dash-component-suites/dash/dcc/async-dropdown.js HTTP/1.1" 200 -
+INFO:127.0.0.1 - - [12/Jun/2022 16:37:23] "GET /_dash-component-suites/dash/dcc/async-graph.js HTTP/1.1" 200 -
+INFO:127.0.0.1 - - [12/Jun/2022 16:37:23] "GET /_dash-component-suites/dash/dcc/async-markdown.js HTTP/1.1" 200 -
+INFO:127.0.0.1 - - [12/Jun/2022 16:37:23] "GET /_dash-component-suites/dash/dcc/async-plotlyjs.js HTTP/1.1" 200 -
+INFO:127.0.0.1 - - [12/Jun/2022 16:37:23] "POST /_dash-update-component HTTP/1.1" 200 -
+INFO:127.0.0.1 - - [12/Jun/2022 16:37:23] "POST /_dash-update-component HTTP/1.1" 200 -
+INFO:127.0.0.1 - - [12/Jun/2022 16:37:23] "GET /_dash-component-suites/dash/dcc/async-highlight.js HTTP/1.1" 200 -
+INFO:127.0.0.1 - - [12/Jun/2022 16:37:23] "POST /_dash-update-component HTTP/1.1" 200 -
+INFO:127.0.0.1 - - [12/Jun/2022 16:37:23] "POST /_dash-update-component HTTP/1.1" 200 -
+INFO:127.0.0.1 - - [12/Jun/2022 16:37:23] "POST /_dash-update-component HTTP/1.1" 200 -

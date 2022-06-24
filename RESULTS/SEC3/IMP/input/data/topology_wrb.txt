@@ -1,0 +1,45 @@
+|molecule_name  |color     |fasta_fn  |fasta_id|pdb_fn  |chain|residue_range|pdb_offset|bead_size|em_residues_per_gaussian|rigid_body|super_rigid_body|chain_of_super_rigid_bodies|
+
+
+|sec5           |orange    |5YFP.fasta|5YFP:B  |IMP/input/data/5yfp.pdb|B    |1,154        |0         |10       |0                       |1         |1               |                           |
+|sec5           |orange    |5YFP.fasta|5YFP:B  |IMP/input/data/5yfp.pdb|B    |155,231      |0         |10       |0                       |1         |1             |                           |
+|sec5           |orange    |5YFP.fasta|5YFP:B  |IMP/input/data/5yfp.pdb|B    |232,971      |0         |10       |0                       |1         |1              |                           |
+
+|sec6           |yellow    |5YFP.fasta|5YFP:C  |IMP/input/data/5yfp.pdb|C    |1,17         |0         |10       |0                       |2         |1               |                           |
+|sec6           |yellow    |5YFP.fasta|5YFP:C  |IMP/input/data/5yfp.pdb|C    |18,88        |0         |10       |0                       |2         |1               |                           |
+|sec6           |yellow    |5YFP.fasta|5YFP:C  |IMP/input/data/5yfp.pdb|C    |89,805       |0         |10       |0                       |2         |1               |                           |
+
+|sec8           |pink      |5YFP.fasta|5YFP:D  |IMP/input/data/5yfp.pdb|D    |22,90        |0         |10       |0                       |3         |1               |                           |
+|sec8           |pink      |5YFP.fasta|5YFP:D  |IMP/input/data/5yfp.pdb|D    |91,177       |0         |10       |0                       |3         |1               |                           |
+|sec8           |pink      |5YFP.fasta|5YFP:D  |IMP/input/data/5yfp.pdb|D    |178,1065     |0         |10       |0                       |3         |1               |                           |
+
+|sec10          |brown     |5YFP.fasta|5YFP:E  |IMP/input/data/5yfp.pdb|E    |3,57         |0         |10       |0                       |4         |2               |                           |
+|sec10          |brown     |5YFP.fasta|5YFP:E  |IMP/input/data/5yfp.pdb|E    |58,172       |0         |10       |0                       |4         |2               |                           |
+|sec10          |brown     |5YFP.fasta|5YFP:E  |IMP/input/data/5yfp.pdb|E    |173,867      |0         |10       |0                       |4         |2               |                           |
+
+|sec15          |purple    |5YFP.fasta|5YFP:F  |IMP/input/data/5yfp.pdb|F    |42,77        |0         |10       |0                       |4         |2               |                           |
+|sec15          |purple    |5YFP.fasta|5YFP:F  |IMP/input/data/5yfp.pdb|F    |78,186       |0         |10       |0                       |4         |2               |                           |
+|sec15          |purple    |5YFP.fasta|5YFP:F  |IMP/input/data/5yfp.pdb|F    |189,890      |0         |10       |0                       |4         |2               |                           |
+
+|exo70          |red       |5YFP.fasta|5YFP:G  |IMP/input/data/5yfp.pdb|G    |1,68         |0         |10       |0                       |4         |2               |                           |
+|exo70          |red       |5YFP.fasta|5YFP:G  |IMP/input/data/5yfp.pdb|G    |69,114       |0         |10       |0                       |4         |2               |                           |
+|exo70          |red       |5YFP.fasta|5YFP:G  |IMP/input/data/5yfp.pdb|G    |115,623      |0         |10       |0                       |4         |2               |                           |
+
+|exo84          |green     |5YFP.fasta|5YFP:H  |IMP/input/data/5yfp.pdb|H    |169,196      |0         |10       |0                       |4         |2               |                           |
+|exo84          |green     |5YFP.fasta|5YFP:H  |IMP/input/data/5yfp.pdb|H    |197,276      |0         |10       |0                       |4         |2               |                           |
+|exo84          |green     |5YFP.fasta|5YFP:H  |IMP/input/data/5yfp.pdb|H    |277,753      |0         |10       |0                       |4         |2               |                           |
+
+
+|SEC3           |brown     |SEC3.fasta          |SEC3           |BEADS           |B      |1,73           |           |         10|                           0|1           |                   |                           |
+
+|SEC3           |blue      |SEC3.fasta          |SEC3           |PDB/5lg4.cif    |B      |74,249         |           |         10|                           0|1           |                   |                           |
+
+|SEC3           |brown     |SEC3.fasta          |SEC3           |BEADS           |2      |250,324        |           |          4|                           0|2           |                   |                           |
+
+|SEC3           |orange    |SEC3.fasta          |SEC3           |ALPHAFOLD/DOMAINS/SEC3_AF_domains.pdb|2      |325,450        |           |          4|                           0|2           |                   |                           |
+
+|SEC3           |brown     |SEC3.fasta          |SEC3           |BEADS           |A      |451,610        |           |         10|                           0|3           |                   |                           |
+
+|SEC3           |blue      |SEC3.fasta          |SEC3           |PDB/5yfp.cif    |A      |611,1332       |           |         10|                           0|3           |                   |                           |
+
+|SEC3           |brown     |SEC3.fasta          |SEC3           |BEADS           |A      |1333,1336      |           |         10|                           0|4           |                   |                           |
